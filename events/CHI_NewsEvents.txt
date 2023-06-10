@@ -1,0 +1,583 @@
+﻿###########################
+# News Events
+###########################
+add_namespace = chinews
+#中华苏维埃成立
+news_event = {
+	id = chinews.1
+	title = chinews.1.t
+	desc = chinews.1.d
+	picture = GFX_news_event_chinese_soldiers_mountain
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = chinews.1.a
+		trigger = {
+			TAG = YUN
+		}
+	}
+	option = {
+		name = chinews.1.b
+		trigger = {
+			NOT = {
+				TAG = YUN
+				TAG = ROC
+				TAG = CHI
+			}
+		}
+	}
+	option = {
+		name = chinews.1.c
+		trigger = {
+			TAG = ROC
+		}
+	}
+	option = {
+		name = chinews.1.e
+		trigger = {
+			TAG = CHI
+		}
+	}
+}
+
+#北伐宣言
+news_event = {
+	id = chinews.2
+	title = chinews.2.t
+	desc = chinews.2.d
+	picture = GFX_news_event_chinese_soldiers_mountain
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = chinews.2.a
+		trigger = {
+			TAG = ROC
+		}
+	}
+	option = {
+		name = chinews.2.b
+		trigger = {
+			NOT = {
+				TAG = ROC
+				TAG = CHI
+			}
+		}
+	}
+	option = {
+		name = chinews.2.c
+		trigger = {
+			TAG = CHI
+		}
+	}
+}
+
+#中华民国成立
+news_event = {
+	id = chinews.3
+	title = chinews.3.t
+	desc = chinews.3.d
+	picture = GFX_news_event_chinese_soldiers_mountain
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = chinews.3.a
+		trigger = {
+			TAG = ROC
+		}
+	}
+	option = {
+		name = chinews.3.b
+		trigger = {
+			NOT = {
+				TAG = ROC
+				TAG = MAN
+				TAG = YUN
+				TAG = XSM
+				TAG = SIK
+				TAG = MON
+				TAG = TIB
+			}
+		}
+	}
+	option = {
+		name = chinews.3.c
+		trigger = {
+			TAG = MAN
+			TAG = YUN
+			TAG = XSM
+			TAG = SIK
+			TAG = MON
+			TAG = TIB
+		}
+	}
+}
+
+#中华民国成立
+news_event = {
+	id = chinews.4
+	title = chinews.4.t
+	desc = chinews.4.d
+	picture = GFX_news_event_chinese_soldiers_mountain
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = chinews.4.a
+		trigger = {
+			TAG = ROC
+		}
+	}
+	option = {
+		name = chinews.4.b
+		trigger = {
+			NOT = {
+				TAG = ROC
+				TAG = MAN
+				TAG = YUN
+				TAG = XSM
+				TAG = SIK
+				TAG = MON
+				TAG = TIB
+			}
+		}
+	}
+	option = {
+		name = chinews.4.c
+		trigger = {
+			TAG = MAN
+			TAG = YUN
+			TAG = XSM
+			TAG = SIK
+			TAG = MON
+			TAG = TIB
+		}
+	}
+}
+
+#中华民国成立（奉天）
+news_event = {
+	id = chinews.5
+	title = chinews.5.t
+	desc = chinews.5.d
+	picture = GFX_news_event_fengtian_victory
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = chinews.5.a
+		trigger = {
+			TAG = MAN
+		}
+	}
+	option = {
+		name = chinews.5.b
+		trigger = {
+			NOT = {
+				TAG = MAN
+			}
+		}
+	}
+}
+
+#张作玲独揽大权
+news_event = {
+	id = chinews.6
+	title = chinews.6.t
+	desc = chinews.6.d
+	picture = GFX_news_event_CHI_northern_expedition
+	major = yes
+	is_triggered_only = yes
+	immediate = {
+		set_global_flag = CHI_REUNIT
+	}
+	option = {
+		name = chinews.6.a
+		set_country_flag = super_event_MAN_dashuai
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			TAG = MAN
+		}
+	}
+	option = {
+		name = chinews.6.b
+		set_country_flag = super_event_MAN_dashuai
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			NOT = {
+				TAG = MAN
+				has_government = fascism
+			}
+		}
+	}
+	option = {
+		name = chinews.6.c
+		set_country_flag = super_event_MAN_dashuai
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			NOT = {
+				TAG = MAN
+			}
+			has_government = fascism
+		}
+	}
+}
+
+#中国走向民主化
+news_event = {
+	id = chinews.7
+	title = chinews.7.t
+	desc = chinews.7.d
+	picture = GFX_news_event_fengtian_minzhu
+	major = yes
+	is_triggered_only = yes
+	immediate = {
+		set_global_flag = CHI_REUNIT
+	}
+	option = {
+		name = chinews.7.a
+		set_country_flag = super_event_MAN_shaoshuai
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			TAG = MAN
+		}
+	}
+	option = {
+		name = chinews.7.b
+		set_country_flag = super_event_MAN_shaoshuai
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			NOT = {
+				TAG = MAN
+			}
+			OR = {
+				has_government = democratic
+				has_government = neutrality
+			}
+		}
+	}
+	option = {
+		name = chinews.7.c
+		set_country_flag = super_event_MAN_shaoshuai
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			NOT = {
+				TAG = MAN
+			}
+			has_government = fascism
+		}
+	}
+	option = {
+		name = chinews.7.e
+		set_country_flag = super_event_MAN_shaoshuai
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			NOT = {
+				TAG = MAN
+			}
+			has_government = communism
+		}
+	}
+}
+
+#新中国成立
+news_event = {
+	id = chinews.8
+	title = chinews.8.t
+	desc = chinews.8.d
+	picture = GFX_event_PRC_CHI
+	major = yes
+	is_triggered_only = yes
+	immediate = {
+		set_global_flag = CHI_REUNIT
+	}
+	option = {
+		name = chinews.8.a
+		set_country_flag = super_event_PRC
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			TAG = MAN
+		}
+	}
+	option = {
+		name = chinews.8.b
+		set_country_flag = super_event_PRC
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			NOT = {
+				TAG = MAN
+			}
+			OR = {
+				has_government = democratic
+				has_government = neutrality
+				has_government = fascism
+			}
+		}
+	}
+	option = {
+		name = chinews.8.c
+		set_country_flag = super_event_PRC
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			NOT = {
+				TAG = MAN
+			}
+			has_government = communism
+		}
+	}
+}
+
+#虎妞统一中国
+news_event = {
+	id = chinews.9
+	title = chinews.9.t
+	desc = chinews.9.desc
+	picture = GFX_MAN_unit_china
+	major = yes
+	is_triggered_only = yes
+	immediate = {
+		set_global_flag = CHI_REUNIT
+	}
+	option = {
+		name = chinews.9.a
+		set_country_flag = super_event_MAN_huniu
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			tag = MAN
+		}
+	}
+	option = {
+		name = chinews.9.b
+		set_country_flag = super_event_MAN_huniu
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			tag = ENG
+		}
+	}
+	option = {
+		name = chinews.9.c
+		set_country_flag = super_event_MAN_huniu
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			has_government = communism
+		}
+	}
+	option = {
+		name = chinews.9.d
+		set_country_flag = super_event_MAN_huniu
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			tag = DVL
+		}
+	}
+	option = {
+		name = chinews.9.e
+		set_country_flag = super_event_MAN_huniu
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			not = {
+				or = {
+					tag = MAN
+					tag = ENG
+					tag = DVL
+					has_government = communism
+				}
+			}
+		}
+	}
+}
+
+#杀马特团长统一中国
+news_event = {
+	id = chinews.10
+	title = chinews.10.t
+	desc = chinews.10.desc
+	picture = GFX_MAN_unit_china
+	major = yes
+	is_triggered_only = yes
+	immediate = {
+		set_global_flag = CHI_REUNIT
+	}
+	option = {
+		name = chinews.10.a
+		set_country_flag = super_event_MAN_shamate
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			tag = MAN
+		}
+	}
+	option = {
+		name = chinews.10.b
+		set_country_flag = super_event_MAN_shamate
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			tag = ENG
+		}
+	}
+	option = {
+		name = chinews.10.c
+		set_country_flag = super_event_MAN_shamate
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			has_government = communism
+		}
+	}
+	option = {
+		name = chinews.10.d
+		set_country_flag = super_event_MAN_shamate
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			tag = DVL
+		}
+	}
+	option = {
+		name = chinews.10.e
+		set_country_flag = super_event_MAN_shamate
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			not = {
+				or = {
+					tag = MAN
+					tag = ENG
+					tag = DVL
+					has_government = communism
+				}
+			}
+		}
+	}
+}
+
+#东北国民党
+news_event = {
+	id = chinews.11
+	title = chinews.11.t
+	desc = chinews.11.desc
+	picture = GFX_MAN_unit_china
+	major = yes
+	is_triggered_only = yes
+	immediate = {
+		set_global_flag = CHI_REUNIT
+	}
+	option = {
+		name = chinews.11.a
+		set_country_flag = super_event_MAN_KMT
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			tag = MAN
+		}
+	}
+	option = {
+		name = chinews.11.b
+		set_country_flag = super_event_MAN_KMT
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			tag = ENG
+		}
+	}
+	option = {
+		name = chinews.11.c
+		set_country_flag = super_event_MAN_KMT
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			has_government = communism
+		}
+	}
+	option = {
+		name = chinews.11.d
+		set_country_flag = super_event_MAN_KMT
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			tag = DVL
+		}
+	}
+	option = {
+		name = chinews.11.e
+		set_country_flag = super_event_MAN_KMT
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			not = {
+				or = {
+					tag = MAN
+					tag = ENG
+					tag = DVL
+					has_government = communism
+				}
+			}
+		}
+	}
+}
+
+#中国统一战线
+news_event = {
+	id = chinews.12
+	title = chinews.12.t
+	desc = chinews.12.desc
+	picture = GFX_news_event_001
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = chinews.12.a
+		set_global_flag = CHI_war_again
+		set_country_flag = super_event_CHI_WAR_again
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			is_subject = no
+			is_chinese_country = yes
+		}
+	}
+	option = {
+		name = chinews.12.b
+		set_global_flag = CHI_war_again
+		set_country_flag = super_event_CHI_WAR_again
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			has_war_with = FROM
+			NOT = {
+				is_subject = no
+				is_chinese_country = yes
+			}
+		}
+	}
+	option = {
+		name = chinews.12.c
+		set_global_flag = CHI_war_again
+		set_country_flag = super_event_CHI_WAR_again
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			NOT = {
+				OR = {
+					has_war_with = FROM
+					AND = {
+						is_subject = no
+						is_chinese_country = yes
+					}
+				}
+			}
+		}
+	}
+}

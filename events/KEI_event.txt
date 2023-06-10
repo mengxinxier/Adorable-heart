@@ -1,0 +1,669 @@
+
+##### 天 启 之 国 事 件 #####
+
+add_namespace = KEI
+
+country_event = {#开局事件
+
+	#事件定义
+	id = KEI.0
+	title = KEI.0.t
+	desc = KEI.0.d
+	picture = GFX_report_event_KEI_0
+
+	#只能被调出来?
+	is_triggered_only = yes
+
+	#是否隐藏?
+	hidden = no
+
+	#只触发一次
+	fire_only_once = no
+
+	trigger = {#条件
+
+	}
+
+	mean_time_to_happen = {#检测时间间隔
+	
+	}
+
+	immediate = {#立即生效
+
+	}
+
+	option = {#选项1
+
+		name = KEI.0.a
+
+		ai_chance = {#AI选择倾向
+			factor = 0
+		}
+
+		set_global_flag = global_flag_KEI_game_start
+
+	}
+
+}
+
+country_event = {#瑞典请求加入
+	#事件定义
+	id = KEI.1
+	title = KEI.1.t
+	desc = KEI.1.d
+	picture = GFX_report_event_KEI_1
+	#只能被调出来?
+	is_triggered_only = yes
+	#是否隐藏?
+	hidden = no
+	#只触发一次
+	fire_only_once = no
+	option = {#这自然是好事
+		name = KEI.1.a
+		ai_chance = {#AI选择倾向
+			factor = 5
+		}
+		ENG = {
+			add_to_faction = CKP
+		}
+		CKP = {
+			country_event = {
+				days = 1
+				id = KEI.2
+			}
+		}
+	}
+	option = {#他们有什么用？
+		name = KEI.1.b
+		ai_chance = {#AI选择倾向
+			factor = 0
+		}
+		CKP = {
+			country_event = {
+				days = 1
+				id = KEI.3
+			}
+		}
+	}
+}
+country_event = {#进入圣杯
+	#事件定义
+	id = KEI.2
+	title = KEI.2.t
+	desc = KEI.2.d
+	picture = GFX_report_event_KEI_2
+	#只能被调出来?
+	is_triggered_only = yes
+	#是否隐藏?
+	hidden = no
+	#只触发一次
+	fire_only_once = no
+	option = {#选项1
+		name = KEI.2.a
+		ai_chance = {#AI选择倾向
+			factor = 5
+		}
+		news_event = KEI_news.2
+	}
+}
+country_event = {#被圣杯拒绝
+	#事件定义
+	id = KEI.3
+	title = KEI.3.t
+	desc = KEI.3.d
+	picture = GFX_report_event_KEI_3
+	#只能被调出来?
+	is_triggered_only = yes
+	#是否隐藏?
+	hidden = no
+	#只触发一次
+	fire_only_once = no
+	option = {#选项1
+		name = KEI.3.a
+		ai_chance = {#AI选择倾向
+			factor = 5
+		}
+		CKP = {
+			complete_national_focus = KEI_focu_50
+		}
+	}
+}
+
+country_event = {#选边站
+	#事件定义
+	id = KEI.4
+	title = KEI.4.t
+	desc = KEI.4.d
+	picture = GFX_report_event_KEI_4
+	#只能被调出来?
+	is_triggered_only = yes
+	#是否隐藏?
+	hidden = no
+	#只触发一次
+	fire_only_once = no
+	option = {#于强大的力量作对是愚蠢的
+		name = KEI.4.a
+		ai_chance = {#AI选择倾向
+			factor = 0
+		}
+		trigger = {
+			country_exists = DVL
+			DVL = {
+				has_government = fascism
+			}
+		}
+		set_global_flag = KEI_unit_to_DVL
+		DVL = {
+			country_event = {
+				days = 1
+				id = KEI.9
+			}
+		}
+	}
+	option = {#外星人滚出地球！
+		name = KEI.4.b
+		ai_chance = {#AI选择倾向
+			factor = 15
+		}
+		trigger = {
+			OR = {
+				OR = {
+					country_exists = AUS
+					AUS = {
+						has_government = fascism
+					}
+				}
+				OR = {
+					country_exists = GER
+					GER = {
+						has_government = fascism
+					}
+				}
+			}
+		}
+		set_global_flag = KEI_unit_to_GER
+		if = {
+			limit = {
+				country_exists = AUS
+			}
+			AUS = {
+				country_event = {
+					days = 1
+					id = KEI.9
+				}
+			}
+		}
+		if = {
+			limit = {
+				country_exists = GER
+			}
+			GER = {
+				country_event = {
+					days = 1
+					id = KEI.9
+				}
+			}
+		}
+	}
+}
+country_event = {#瑞典申请加入
+	#事件定义
+	id = KEI.9
+	title = KEI.9.t
+	desc = KEI.9.d
+	picture = GFX_report_event_KEI_9
+	#只能被调出来?
+	is_triggered_only = yes
+	#是否隐藏?
+	hidden = no
+	#只触发一次
+	fire_only_once = no
+	option = {#为什么要在意他们？
+		name = KEI.9.a
+		ai_chance = {#AI选择倾向
+			factor = 0
+		}
+		if = {
+			limit = {
+				OR = {
+					tag = AUS
+					tag = GER
+				}
+			}
+			set_global_flag = KEI_cant_unit_to_GER
+			CKP = {
+				country_event = {
+					days = 1
+					id = KEI.6
+				}
+			}
+		}
+		if = {
+			limit = {
+				tag = DVL
+			}
+			set_global_flag = KEI_cant_unit_to_DVL
+			CKP = {
+				country_event = {
+					days = 1
+					id = KEI.5
+				}
+			}
+		}
+	}
+	option = {#同意吧，少一条战线是一条战线。
+		name = KEI.9.b
+		ai_chance = {#AI选择倾向
+			factor = 0
+		}
+		if = {
+			limit = {
+				OR = {
+					tag = AUS
+					tag = GER
+				}
+			}
+			CKP = {
+				country_event = {
+					days = 1
+					id = KEI.8
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					tag = DVL
+				}
+			}
+			CKP = {
+				country_event = {
+					days = 1
+					id = KEI.7
+				}
+			}
+		}
+	}
+}
+country_event = {#外星人拒绝
+	#事件定义
+	id = KEI.5
+	title = KEI.5.t
+	desc = KEI.5.d
+	picture = GFX_report_event_KEI_5
+	#只能被调出来?
+	is_triggered_only = yes
+	#是否隐藏?
+	hidden = no
+	#只触发一次
+	fire_only_once = no
+	option = {#找德佬
+		name = KEI.5.a
+		ai_chance = {#AI选择倾向
+			factor = 0
+		}
+		trigger = {
+			NOT = {
+				has_global_flag = KEI_cant_unit_to_GER
+			}
+		}
+		if = {
+			limit = {
+				country_exists = AUS
+			}
+			AUS = {
+				country_event = {
+					days = 1
+					id = KEI.9
+				}
+			}
+		}
+		if = {
+			limit = {
+				country_exists = GER
+			}
+			GER = {
+				country_event = {
+					days = 1
+					id = KEI.9
+				}
+			}
+		}
+	}
+	option = {#靠自己
+		name = KEI.5.b
+		ai_chance = {#AI选择倾向
+			factor = 0
+		}
+		CKP = {
+			complete_national_focus = KEI_focu_56
+		}
+	}
+}
+country_event = {#德佬拒绝
+	#事件定义
+	id = KEI.6
+	title = KEI.6.t
+	desc = KEI.6.d
+	picture = GFX_report_event_KEI_6
+	#只能被调出来?
+	is_triggered_only = yes
+	#是否隐藏?
+	hidden = no
+	#只触发一次
+	fire_only_once = no
+	option = {#找外星人
+		name = KEI.6.a
+		ai_chance = {#AI选择倾向
+			factor = 0
+		}
+		trigger = {
+			NOT = {
+				has_global_flag = KEI_cant_unit_to_DVL
+			}
+		}
+		if = {
+			limit = {
+				country_exists = DVL
+			}
+			DVL = {
+				country_event = {
+					days = 1
+					id = KEI.9
+				}
+			}
+		}
+	}
+	option = {#靠自己
+		name = KEI.6.b
+		ai_chance = {#AI选择倾向
+			factor = 0
+		}
+		CKP = {
+			complete_national_focus = KEI_focu_56
+		}
+	}
+}
+country_event = {#呆逼同意
+	#事件定义
+	id = KEI.7
+	title = KEI.7.t
+	desc = KEI.7.d
+	picture = GFX_report_event_KEI_7
+	#只能被调出来?
+	is_triggered_only = yes
+	#是否隐藏?
+	hidden = no
+	#只触发一次
+	fire_only_once = no
+	option = {#同意了
+		name = KEI.7.a
+		ai_chance = {#AI选择倾向
+			factor = 0
+		}
+		DVL = {
+			add_to_faction = CKP
+		}
+		news_event = KEI_news.5
+	}
+}
+country_event = {#德佬同意
+	#事件定义
+	id = KEI.8
+	title = KEI.8.t
+	desc = KEI.8.d
+	picture = GFX_report_event_KEI_8
+	#只能被调出来?
+	is_triggered_only = yes
+	#是否隐藏?
+	hidden = no
+	#只触发一次
+	fire_only_once = no
+	option = {#同意了
+		name = KEI.8.a
+		ai_chance = {#AI选择倾向
+			factor = 0
+		}
+		if = {
+			limit = {
+				country_exists = AUS
+			}
+			AUS = {
+				add_to_faction = CKP
+			}
+			news_event = KEI_news.3
+		}
+		if = {
+			limit = {
+				country_exists = GER
+			}
+			GER = {
+				add_to_faction = CKP
+			}
+			news_event = KEI_news.4
+		}
+	}
+}
+
+country_event = {#加苏联
+	#事件定义
+	id = KEI.10
+	title = KEI.10.t
+	desc = KEI.10.d
+	picture = GFX_report_event_KEI_10
+	#只能被调出来?
+	is_triggered_only = yes
+	#是否隐藏?
+	hidden = no
+	#只触发一次
+	fire_only_once = no
+	option = {#同意
+		name = KEI.10.a
+		ai_chance = {#AI选择倾向
+			factor = 5
+		}
+		SOV = {
+			add_to_faction = CKP
+		}
+		CKP = {
+			country_event = {
+				days = 1
+				id = KEI.11
+			}
+		}
+	}
+	option = {#拒绝
+		name = KEI.10.b
+		ai_chance = {#AI选择倾向
+			factor = 0
+		}
+		CKP = {
+			country_event = {
+				days = 1
+				id = KEI.12
+			}
+		}
+	}
+}
+country_event = {#进共产国际
+	#事件定义
+	id = KEI.11
+	title = KEI.11.t
+	desc = KEI.11.d
+	picture = GFX_report_event_KEI_11
+	#只能被调出来?
+	is_triggered_only = yes
+	#是否隐藏?
+	hidden = no
+	#只触发一次
+	fire_only_once = no
+	option = {#选项1
+		name = KEI.11.a
+		ai_chance = {#AI选择倾向
+			factor = 5
+		}
+		news_event = KEI_news.6
+	}
+}
+country_event = {#苏联拒绝
+	#事件定义
+	id = KEI.12
+	title = KEI.12.t
+	desc = KEI.12.d
+	picture = GFX_report_event_KEI_12
+	#只能被调出来?
+	is_triggered_only = yes
+	#是否隐藏?
+	hidden = no
+	#只触发一次
+	fire_only_once = no
+	option = {#选项1
+		name = KEI.12.a
+		ai_chance = {#AI选择倾向
+			factor = 5
+		}
+		CKP = {
+			complete_national_focus = KEI_focu_59
+		}
+	}
+}
+
+
+country_event = {#共同作战
+	#事件定义
+	id = KEI.13
+	title = KEI.13.t
+	desc = KEI.13.d
+	picture = GFX_report_event_KEI_13
+	#只能被调出来?
+	is_triggered_only = yes
+	#是否隐藏?
+	hidden = no
+	#只触发一次
+	fire_only_once = no
+	option = {#同意
+		name = KEI.13.a
+		ai_chance = {#AI选择倾向
+			factor = 5
+		}
+		CKP = {
+			country_event = {
+				days = 1
+				id = KEI.14
+			}
+		}
+		if = {
+			limit = {
+				tag = NOR
+			}
+			ENG = {
+				add_to_faction = NOR
+			}
+			news_event = KEI_news.7
+		}
+		if = {
+			limit = {
+				tag = DEN
+			}
+			ENG = {
+				add_to_faction = DEN
+			}
+			news_event = KEI_news.7
+		}
+		if = {
+			limit = {
+				tag = FIN
+			}
+			ENG = {
+				add_to_faction = FIN
+			}
+			news_event = KEI_news.7
+		}
+	}
+	option = {#拒绝
+		name = KEI.13.b
+		ai_chance = {#AI选择倾向
+			factor = 0
+		}
+		CKP = {
+			country_event = {
+				days = 1
+				id = KEI.15
+			}
+		}
+	}
+}
+country_event = {#做
+	#事件定义
+	id = KEI.14
+	title = KEI.14.t
+	desc = KEI.14.d
+	picture = GFX_report_event_KEI_14
+	#只能被调出来?
+	is_triggered_only = yes
+	#是否隐藏?
+	hidden = no
+	#只触发一次
+	fire_only_once = no
+	option = {#选项1
+		name = KEI.14.a
+		ai_chance = {#AI选择倾向
+			factor = 5
+		}
+		
+	}
+}
+country_event = {#爬
+	#事件定义
+	id = KEI.15
+	title = KEI.15.t
+	desc = KEI.15.d
+	picture = GFX_report_event_KEI_15
+	#只能被调出来?
+	is_triggered_only = yes
+	#是否隐藏?
+	hidden = no
+	#只触发一次
+	fire_only_once = no
+	option = {#选项1
+		name = KEI.15.a
+		ai_chance = {#AI选择倾向
+			factor = 5
+		}
+		
+	}
+}
+
+country_event = {#超事件触发器
+	#事件定义
+	id = KEI.16
+	title = KEI.16.t
+	desc = KEI.16.d
+	picture = GFX_report_event_KEI_16
+	#只能被调出来?
+	is_triggered_only = yes
+	#是否隐藏?
+	hidden = yes
+	#只触发一次
+	fire_only_once = no
+	immediate = {#立即生效
+		if = {#点下了建立杜伦布联盟就执行这个
+			limit = {
+				has_global_flag = KEI_Syndicate_Union_setup_super_event
+			}
+			set_country_flag = super_event_CKP_Dorobo_Union
+			set_country_flag = adorable_heart_Super_Event_Visible
+			adorable_heart_fire_super_event = yes
+		}
+		else = {#没点下建立杜伦布联盟就执行这个
+			#查询作者的精神状态#
+			#set_country_flag = FUCKING_CLOCKWORKPLANET_SET_UP_FUCKING_THE_HOLY_SHIT'S_APOCALYPSIS_PATRIA
+			set_country_flag = super_event_CKP_Apocalypsis_Patriam
+			set_country_flag = adorable_heart_Super_Event_Visible
+			adorable_heart_fire_super_event = yes
+		}
+	}
+	option = {#选项1
+		name = KEI.16.a
+	}
+}

@@ -1,0 +1,292 @@
+﻿add_namespace = RJE_prisoner
+country_event = {
+	id = RJE_prisoner.1
+	title = RJE_prisoner.1.t
+	desc = RJE_prisoner.1.d
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event RJE_prisoner.1 FROM = [From.GetName]"
+	}
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = RJE_prisoner.1.a
+		ai_chance = {
+			factor = 10
+		}
+		hidden_effect = {
+			country_event = {
+				id = RJE_prisoner.4
+			}
+		}
+	}
+	option = {
+		name = RJE_prisoner.1.b
+		ai_chance = {
+			factor = 10
+		}
+		hidden_effect = {
+			country_event = {
+				id = RJE_prisoner.3
+			}
+		}
+	}
+	option = {
+		name = RJE_prisoner.1.c
+		ai_chance = {
+			factor = 10
+		}
+		trigger = {
+			RJE = {
+				NOT = {
+					has_country_flag = RJE_talk_with_Oda_Nobunaga
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = RJE_prisoner.5
+			}
+		}
+	}
+	option = {
+		name = RJE_prisoner.1.e
+		ai_chance = {
+			factor = 10
+		}
+		country_event = {
+			id = RJE_prisoner.2
+		}
+	}
+}
+
+country_event = {
+	id = RJE_prisoner.2
+	title = RJE_prisoner.2.t
+	desc = RJE_prisoner.2.d
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event RJE_prisoner.2 FROM = [From.GetName]"
+	}
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = RJE_prisoner.2.a
+		ai_chance = {
+			factor = 10
+		}
+		clr_country_flag = JAP_PRISON_THINKING
+		custom_effect_tooltip = RJE_Favorability_lost
+		add_to_variable = {
+			var = RJE_Soji_Okita_Favorability
+			value = -100
+		}
+		clamp_variable = {
+			var = RJE_Soji_Okita_Favorability
+			min = -100
+			max = 100
+		}
+	}
+}
+
+country_event = {
+	id = RJE_prisoner.3
+	title = RJE_prisoner.3.t
+	desc = RJE_prisoner.3.d
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event RJE_prisoner.3 FROM = [From.GetName]"
+	}
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = RJE
+	}
+	option = {
+		name = RJE_prisoner.3.a
+		ai_chance = {
+			factor = 10
+		}
+		clr_country_flag = JAP_PRISON_THINKING
+		custom_effect_tooltip = RJE_Favorability_add_few
+		add_to_variable = {
+			var = RJE_Soji_Okita_Favorability
+			value = 5
+		}
+		clamp_variable = {
+			var = RJE_Soji_Okita_Favorability
+			min = -100
+			max = 100
+		}
+	}
+}
+
+country_event = {
+	id = RJE_prisoner.4
+	title = RJE_prisoner.4.t
+	desc = {
+		text = RJE_prisoner.4.d.talk
+		trigger = {
+			RJE = {
+				has_country_flag = RJE_talk_with_Oda_Nobunaga
+			}
+		}
+	}
+	desc = {
+		text = RJE_prisoner.4.d.notalk
+		trigger = {
+			RJE = {
+				NOT = {
+					has_country_flag = RJE_talk_with_Oda_Nobunaga
+				}
+			}
+		}
+	}
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event RJE_prisoner.4 FROM = [From.GetName]"
+	}
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = RJE_prisoner.4.a.talk
+		ai_chance = {
+			factor = 10
+		}
+		trigger = {
+			RJE = {
+				has_country_flag = RJE_talk_with_Oda_Nobunaga
+			}
+		}
+		custom_effect_tooltip = RJE_Favorability_add_normal
+		add_to_variable = {
+			var = RJE_Soji_Okita_Favorability
+			value = 25
+		}
+		clamp_variable = {
+			var = RJE_Soji_Okita_Favorability
+			min = -100
+			max = 100
+		}
+		clr_country_flag = JAP_PRISON_THINKING
+	}
+	option = {
+		name = RJE_prisoner.4.a.notalk
+		ai_chance = {
+			factor = 10
+		}
+		trigger = {
+			RJE = {
+				NOT = {
+					has_country_flag = RJE_talk_with_Oda_Nobunaga
+				}
+			}
+		}
+		custom_effect_tooltip = RJE_Favorability_add_few
+		add_to_variable = {
+			var = RJE_Soji_Okita_Favorability
+			value = 5
+		}
+		clamp_variable = {
+			var = RJE_Soji_Okita_Favorability
+			min = -100
+			max = 100
+		}
+		clr_country_flag = JAP_PRISON_THINKING
+	}
+}
+
+country_event = {
+	id = RJE_prisoner.5
+	title = RJE_prisoner.5.t
+	desc = RJE_prisoner.5.d
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event RJE_prisoner.5 FROM = [From.GetName]"
+	}
+	picture = GFX_RJE_event_meeting_room
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = RJE_prisoner.5.a
+		ai_chance = {
+			factor = 10
+		}
+		set_country_flag = RJE_talk_with_Oda_Nobunaga
+		custom_effect_tooltip = RJE_Favorability_add_huge
+		add_to_variable = {
+			var = RJE_Soji_Okita_Favorability
+			value = 40
+		}
+		clamp_variable = {
+			var = RJE_Soji_Okita_Favorability
+			min = -100
+			max = 100
+		}
+		clr_country_flag = JAP_PRISON_THINKING
+	}
+}
+
+country_event = {
+	id = RJE_prisoner.6
+	title = RJE_prisoner.6.t
+	desc = RJE_prisoner.6.d
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event RJE_prisoner.6 FROM = [From.GetName]"
+	}
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = RJE_prisoner.6.a
+		ai_chance = {
+			factor = 10
+		}
+		set_country_flag = RJE_brainwash_Soji_Okita
+	}
+}
+
+# country_event = {
+# 	id = RJE_prisoner.7
+# 	title = RJE_prisoner.7.t
+# 	desc = RJE_prisoner.7.d
+# 	immediate = {
+# 		log = "[GetDateText]: [Root.GetName]: event RJE_prisoner.7 FROM = [From.GetName]"
+# 	}
+# 	picture = GFX_RJE_event_meeting_room
+# 	fire_only_once = yes
+# 	is_triggered_only = yes
+# 	option = {
+# 		name = RJE_prisoner.7.a
+# 		ai_chance = {
+# 			factor = 6
+# 		}
+# 		RJE = {
+# 			transfer_state = 408
+# 			transfer_state = 409
+# 		}
+# 	}
+# }
+# country_event = { 
+# id = RJE.8
+# title = RJE.8.t
+# desc = RJE.8.d
+# immediate = {
+# 	log = "[GetDateText]: [Root.GetName]: event RJE.8 FROM = [From.GetName]"
+# }
+# picture = GFX_RJE_event_meeting_room
+# fire_only_once = yes
+# is_triggered_only = no
+# trigger = {
+# 	tag = RJE
+# 	KOR = {
+# 		exists = no
+# 	}
+# 	owns_state = 525
+# 	owns_state = 527
+# }
+# mean_time_to_happen = {
+# 	hours = 1
+# }
+# option = {
+# 	name = RJE.8.a
+# 	ai_chance = {
+# 		factor = 6
+# 	}
+# 	set_global_flag = RJE_JAP_over
+# }
+# }

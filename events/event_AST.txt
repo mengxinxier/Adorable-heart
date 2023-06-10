@@ -1,0 +1,807 @@
+﻿###########################
+# AST
+###########################
+add_namespace = ast
+#加盟国帮助建设
+country_event = {
+	id = ast.1
+	title = ast.1.t
+	desc = ast.1.d
+	picture = GFX_event_Saber
+	is_triggered_only = yes
+	option = {
+		name = ast.1.a
+		add_offsite_building = {
+			type = industrial_complex
+			level = 3
+		}
+		add_offsite_building = {
+			type = arms_factory
+			level = 3
+		}
+	}
+}
+
+#（武侦）刺杀莉莎成功
+country_event = {
+	id = ast.2
+	title = ast.2.t
+	desc = ast.2.d
+	picture = GFX_report_event_soviet_purge_officers_01
+	is_triggered_only = yes
+	option = {
+		name = ast.2.a
+		DVL = {
+			country_event = ast.3
+		}
+		news_event = {
+			days = 2
+			id = news.749
+		}
+	}
+}
+
+#（德国）莉莎遇刺
+country_event = {
+	id = ast.3
+	title = ast.3.t
+	desc = ast.3.d
+	picture = GFX_event_Saber
+	is_triggered_only = yes
+	option = {
+		name = ast.3.a
+		kill_country_leader = yes
+		remove_unit_leader = 10
+		add_timed_idea = {
+			idea = gaocenghunluan
+			days = 180
+		}
+		create_country_leader = {
+			name = "赫尔曼·戈林"
+			desc = "POLITICS_HERMANN_GORING_DESC"
+			picture = "Portrait_Germany_Hermann_Goring.dds"
+			expire = "1965.1.1"
+			ideology = nazism
+			traits = {
+			}
+		}
+	}
+	option = {
+		name = ast.3.b
+		kill_country_leader = yes
+		remove_unit_leader = 10
+		add_timed_idea = {
+			idea = gaocenghunluan
+			days = 180
+		}
+		create_country_leader = {
+			name = "海因里希·希姆莱"
+			desc = "POLITICS_HERMANN_GORING_DESC"
+			picture = "Portrait_Germany_Heinrich_Himmler.dds"
+			expire = "1965.1.1"
+			ideology = nazism
+			traits = {
+			}
+		}
+	}
+}
+
+#（武侦）刺杀世羽成功
+country_event = {
+	id = ast.4
+	title = ast.4.t
+	desc = ast.4.d
+	picture = GFX_report_event_soviet_purge_officers_01
+	is_triggered_only = yes
+	option = {
+		name = ast.2.a
+		SHY = {
+			country_event = ast.5
+		}
+		news_event = {
+			days = 2
+			id = news.751
+		}
+	}
+}
+
+#（伊甸）世羽遇刺
+country_event = {
+	id = ast.5
+	title = ast.5.t
+	desc = ast.5.d
+	picture = GFX_report_event_germany_politician_handshake
+	is_triggered_only = yes
+	option = {
+		name = ast.5.a
+		kill_country_leader = yes
+		remove_unit_leader = 7750
+		add_timed_idea = {
+			idea = gaocenghunluan
+			days = 180
+		}
+		hidden_effect = {
+			create_country_leader = {
+				name = "泰奥多尔·巴赫斯坦恩"
+				desc = "POLITICS_HERMANN_GORING_DESC"
+				picture = "taiaoduoer.dds"
+				expire = "1965.1.1"
+				ideology = nazism
+				traits = {
+					yidian
+				}
+			}
+			create_country_leader = {
+				name = "泰奥多尔·巴赫斯坦恩"
+				desc = "POLITICS_HERMANN_GORING_DESC"
+				picture = "taiaoduoer.dds"
+				expire = "1965.1.1"
+				ideology = despotism
+				traits = {
+					yidian
+				}
+			}
+		}
+	}
+	option = {
+		name = ast.5.b
+		kill_country_leader = yes
+		remove_unit_leader = 7750
+		add_timed_idea = {
+			idea = gaocenghunluan
+			days = 180
+		}
+		hidden_effect = {
+			create_country_leader = {
+				name = "大海原"
+				desc = "POLITICS_HERMANN_GORING_DESC"
+				picture = "dahaiyuan_2.dds"
+				expire = "1965.1.1"
+				ideology = nazism
+				traits = {
+					da_haiyuan
+					popular_queen
+					xiao_gongzhu
+				}
+			}
+			create_country_leader = {
+				name = "大海原"
+				desc = "POLITICS_HERMANN_GORING_DESC"
+				picture = "dahaiyuan_2.dds"
+				expire = "1965.1.1"
+				ideology = despotism
+				traits = {
+					da_haiyuan
+					popular_queen
+					xiao_gongzhu
+				}
+			}
+		}
+	}
+}
+
+#（武侦）刺杀狂三成功
+country_event = {
+	id = ast.6
+	title = ast.6.t
+	desc = ast.6.d
+	picture = GFX_report_event_soviet_purge_officers_01
+	is_triggered_only = yes
+	option = {
+		name = ast.2.a
+		USA = {
+			country_event = ast.7
+		}
+		news_event = {
+			days = 2
+			id = news.752
+		}
+	}
+}
+
+#（精灵国）狂三遇刺
+country_event = {
+	id = ast.7
+	title = ast.7.t
+	desc = ast.7.d
+	picture = GFX_report_event_japanese_parade
+	is_triggered_only = yes
+	option = {
+		name = ast.7.a
+		kill_country_leader = yes
+		remove_unit_leader = 333
+		add_timed_idea = {
+			idea = gaocenghunluan
+			days = 180
+		}
+		create_country_leader = {
+			name = "四糸乃"
+			desc = "POLITICS_HERMANN_GORING_DESC"
+			picture = "Portrait_USA_Harry_Truman.dds"
+			expire = "1965.1.1"
+			ideology = liberalism
+			traits = {
+			}
+		}
+	}
+	option = {
+		name = ast.7.b
+		kill_country_leader = yes
+		remove_unit_leader = 333
+		add_timed_idea = {
+			idea = gaocenghunluan
+			days = 180
+		}
+		create_country_leader = {
+			name = "崇宫澪"
+			desc = "POLITICS_HERMANN_GORING_DESC"
+			picture = "ling.dds"
+			expire = "1965.1.1"
+			ideology = liberalism
+			traits = {
+			}
+		}
+	}
+}
+
+#（武侦）刺杀斯大林成功
+country_event = {
+	id = ast.8
+	title = ast.8.t
+	desc = ast.8.d
+	picture = GFX_report_event_soviet_purge_officers_01
+	is_triggered_only = yes
+	option = {
+		name = ast.2.a
+		SOV = {
+			country_event = ast.9
+		}
+		news_event = {
+			days = 2
+			id = news.753
+		}
+	}
+}
+
+#（苏联）斯大林遇刺
+country_event = {
+	id = ast.9
+	title = ast.9.t
+	desc = ast.9.d
+	picture = GFX_report_event_stalin_propaganda
+	is_triggered_only = yes
+	option = {
+		name = ast.9.a
+		kill_country_leader = yes
+		add_timed_idea = {
+			idea = gaocenghunluan
+			days = 180
+		}
+		create_country_leader = {
+			name = "尼基塔·蔻尔"
+			desc = "POLITICS_HERMANN_GORING_DESC"
+			picture = "kouer.dds"
+			expire = "1965.1.1"
+			ideology = stalinism
+			traits = {
+			}
+		}
+	}
+	option = {
+		name = ast.9.b
+		kill_country_leader = yes
+		add_timed_idea = {
+			idea = gaocenghunluan
+			days = 180
+		}
+		create_country_leader = {
+			name = "格奥尔吉·朱可夫"
+			desc = "POLITICS_HERMANN_GORING_DESC"
+			picture = "ak47.dds"
+			expire = "1965.1.1"
+			ideology = stalinism
+			traits = {
+			}
+		}
+	}
+}
+
+#（武侦）刺杀大和成功
+country_event = {
+	id = ast.10
+	title = ast.10.t
+	desc = ast.10.d
+	picture = GFX_report_event_soviet_purge_officers_01
+	is_triggered_only = yes
+	option = {
+		name = ast.2.a
+		JAP = {
+			country_event = ast.11
+		}
+		news_event = {
+			days = 2
+			id = news.750
+		}
+	}
+}
+
+#（樱花）玲帝遇刺
+country_event = {
+	id = ast.11
+	title = ast.11.t
+	desc = ast.11.d
+	picture = GFX_report_event_hitler_china
+	is_triggered_only = yes
+	option = {
+		name = ast.11.a
+		kill_country_leader = yes
+		add_timed_idea = {
+			idea = gaocenghunluan
+			days = 180
+		}
+		create_country_leader = {
+			name = "桜子"
+			desc = "POLITICS_HERMANN_GORING_DESC"
+			picture = "yingzi.dds"
+			expire = "1965.1.1"
+			ideology = fascism_ideology
+			traits = {
+				inexperienced_imperialist
+			}
+		}
+	}
+}
+
+#武侦内战
+country_event = {
+	id = ast.12
+	title = ast.12.t
+	desc = ast.12.d
+	picture = GFX_report_event_japanese_officers
+	is_triggered_only = yes
+	option = {
+		name = ast.12.a
+		hidden_effect = {
+			set_capital = 521
+			set_stability = 0.7
+			set_war_support = 0.7
+			add_ideas = qixijihua
+			start_civil_war = {
+				ruling_party = neutrality
+				ideology = democratic
+				size = 0.5
+				capital = 517
+				states = {
+					285
+					517
+					519
+					674
+					522
+					520
+				}
+				keep_unit_leaders = {
+					9940
+					9941
+				}
+			}
+			set_cosmetic_tag = AST_yidian
+			load_oob = "AST_neizhanjundui"
+			random_other_country = {
+				limit = {
+					original_tag = AST
+					has_government = democratic
+				}
+				load_oob = "AST_wuzhenweidui"
+			}
+		}
+	}
+}
+
+#（东印度）把地交出来
+country_event = {
+	id = ast.13
+	title = ast.13.t
+	desc = ast.13.d
+	picture = GFX_report_event_soviet_purge_officers_01
+	is_triggered_only = yes
+	option = {
+		name = ast.13.a
+		SHY = {
+			transfer_state = 669
+			add_state_core = 669
+		}
+	}
+}
+
+#结婚/娶世羽
+country_event = {
+	id = ast.14
+	title = ast.14.t
+	desc = ast.14.d
+	picture = GFX_report_event_germany_politician_handshake
+	is_triggered_only = yes
+	option = {
+		name = ast.14.a
+		if = {
+			limit = {
+				SHY = {
+					is_in_faction = yes
+					is_faction_leader = yes
+				}
+			}
+			SHY = {
+				add_to_faction = AST
+			}
+		}
+		every_country = {
+			limit = {
+				has_war_with = SHY
+			}
+			declare_war_on = {
+				target = ROOT
+				type = annex_everything
+			}
+		}
+		every_country = {
+			limit = {
+				is_subject_of = SHY
+			}
+			set_country_flag = shiyudegou
+		}
+		every_country = {
+			limit = {
+				has_country_flag = shiyudegou
+			}
+			AST = {
+				puppet = PREV
+			}
+		}
+		AST = {
+			annex_country = {
+				target = SHY
+				transfer_troops = yes
+			}
+		}
+		SHY = {
+			every_unit_leader = {
+				set_nationality = AST
+			}
+		}
+		set_faction_name = AST_mofa_tongmeng
+		add_ideas = junzhu
+		news_event = {
+			days = 2
+			id = news.754
+		}
+	}
+}
+
+#结婚/嫁世羽
+country_event = {
+	id = ast.15
+	title = ast.15.t
+	desc = ast.15.d
+	picture = GFX_report_event_soviet_purge_officers_01
+	is_triggered_only = yes
+	option = {
+		name = ast.15.a
+		set_cosmetic_tag = AST_YIDIAN
+		set_country_flag = mingmeng_shiyu
+		every_country = {
+			limit = {
+				has_war_with = SHY
+			}
+			declare_war_on = {
+				target = ROOT
+				type = annex_everything
+			}
+		}
+		every_country = {
+			limit = {
+				is_subject_of = SHY
+			}
+			set_country_flag = shiyudegou
+		}
+		every_country = {
+			limit = {
+				has_country_flag = shiyudegou
+			}
+			AST = {
+				puppet = PREV
+			}
+		}
+		AST = {
+			annex_country = {
+				target = SHY
+				transfer_troops = yes
+			}
+		}
+		SHY = {
+			every_unit_leader = {
+				set_nationality = AST
+			}
+		}
+		custom_effect_tooltip = chongxuanlingdaoren
+		news_event = {
+			days = 1
+			id = news.201314
+		}
+	}
+}
+
+#与圣杯互不侵犯
+country_event = {
+	id = ast.16
+	title = ast.16.t
+	desc = ast.16.d
+	picture = GFX_report_event_soviet_purge_officers_01
+	is_triggered_only = yes
+	option = {
+		name = ast.16.a
+		ai_chance = {
+			factor = 30
+		}
+		AST = {
+			transfer_state = 284
+			add_state_core = 284
+			transfer_state = 723
+			add_state_core = 723
+		}
+		every_country = {
+			limit = {
+				is_in_faction_with = ENG
+			}
+			effect_tooltip = {
+				diplomatic_relation = {
+					country = AST
+					relation = non_aggression_pact
+					active = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = ast.16.b
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = -50
+		stability_factor = -0.1
+		AST = {
+			country_event = ast.17
+		}
+	}
+}
+
+#圣杯拒绝领土诉求
+country_event = {
+	id = ast.17
+	title = ast.17.t
+	desc = ast.17.d
+	picture = GFX_event_Saber
+	is_triggered_only = yes
+	option = {
+		name = ast.17.a
+		add_state_core = 723
+		add_state_core = 284
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = ENG
+		}
+	}
+}
+
+#亚里亚失败
+country_event = {
+	id = ast.900
+	title = ast.900.t
+	desc = ast.900.d
+	picture = GFX_report_event_soviet_purge_officers_01
+	is_triggered_only = yes
+	option = {
+		name = ast.900.a
+		add_stability = -0.1
+		remove_unit_leader = 900
+	}
+}
+
+#峰里子失败
+country_event = {
+	id = ast.901
+	title = ast.901.t
+	desc = ast.901.d
+	picture = GFX_report_event_soviet_purge_officers_01
+	is_triggered_only = yes
+	option = {
+		name = ast.900.a
+		add_stability = -0.1
+		remove_unit_leader = 901
+	}
+}
+
+#雷姬失败
+country_event = {
+	id = ast.902
+	title = ast.902.t
+	desc = ast.902.d
+	picture = GFX_report_event_soviet_purge_officers_01
+	is_triggered_only = yes
+	option = {
+		name = ast.900.a
+		add_stability = -0.1
+		remove_unit_leader = 902
+	}
+}
+
+#成濑由佳里失败
+country_event = {
+	id = ast.903
+	title = ast.903.t
+	desc = ast.903.d
+	picture = GFX_report_event_soviet_purge_officers_01
+	is_triggered_only = yes
+	option = {
+		name = ast.900.a
+		add_stability = -0.1
+		remove_unit_leader = 903
+	}
+}
+
+#风魔阳菜失败
+country_event = {
+	id = ast.904
+	title = ast.904.t
+	desc = ast.904.d
+	picture = GFX_report_event_soviet_purge_officers_01
+	is_triggered_only = yes
+	option = {
+		name = ast.900.a
+		add_stability = -0.1
+		remove_unit_leader = 904
+	}
+}
+
+#星伽白雪里失败
+country_event = {
+	id = ast.905
+	title = ast.905.t
+	desc = ast.905.d
+	picture = GFX_report_event_soviet_purge_officers_01
+	is_triggered_only = yes
+	option = {
+		name = ast.900.a
+		add_stability = -0.1
+		remove_unit_leader = 905
+	}
+}
+
+#武侦申请扩大权力
+country_event = {
+	id = ast.20
+	title = ast.20.t
+	desc = ast.20.d
+	picture = GFX_report_event_soviet_purge_officers_01
+	is_triggered_only = yes
+	option = {
+		name = ast.20.a
+		AST = {
+			country_event = ast.21
+		}
+	}
+	option = {
+		name = ast.20.b
+		add_political_power = -50
+		AST = {
+			country_event = ast.22
+		}
+	}
+}
+
+#准许吞并新西兰
+country_event = {
+	id = ast.21
+	title = ast.21.t
+	desc = ast.21.d
+	picture = GFX_event_Saber
+	is_triggered_only = yes
+	option = {
+		name = ast.21.a
+		284 = {
+			remove_core_of = NZL
+		}
+		723 = {
+			remove_core_of = NZL
+		}
+		add_state_core = 284
+		add_state_core = 723
+		annex_country = {
+			target = NZL
+			transfer_troops = yes
+		}
+		news_event = {
+			days = 1
+			id = news.748
+		}
+	}
+}
+
+#不准合并新西兰
+country_event = {
+	id = ast.22
+	title = ast.22.t
+	desc = ast.22.d
+	picture = GFX_event_Saber
+	is_triggered_only = yes
+	option = {
+		name = ast.22.a
+		add_autonomy_ratio = {
+			value = 0.15
+		}
+	}
+}
+
+#伊甸渗透着破坏
+country_event = {
+	id = ast.23
+	title = ast.23.t
+	desc = ast.23.d
+	picture = GFX_report_event_airplane_crash
+	trigger = {
+		NOT = {
+			has_government = neutrality
+		}
+		tag = AST
+		has_idea = xiejiao_1
+	}
+	mean_time_to_happen = {
+		days = 120
+	}
+	option = {
+		name = ast.23.a
+		has_stability < 0.4
+		if = {
+			limit = {
+				has_stability > 0.5
+			}
+			add_stability = -0.05
+		}
+		if = {
+			limit = {
+				has_political_power > 100
+			}
+			add_political_power = -50
+		}
+		if = {
+			limit = {
+				num_of_factories > 24
+			}
+			random_owned_controlled_state = {
+				limit = {
+					industrial_complex > 0
+				}
+				damage_building = {
+					type = industrial_complex
+					damage = 0.8
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					arms_factory > 0
+				}
+				damage_building = {
+					type = arms_factory
+					damage = 0.8
+				}
+			}
+			random_owned_controlled_state = {
+				limit = {
+					infrastructure > 3
+				}
+				damage_building = {
+					type = infrastructure
+					damage = 2
+				}
+			}
+		}
+	}
+}

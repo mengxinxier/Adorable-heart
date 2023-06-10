@@ -1,0 +1,1626 @@
+#####################################
+# Syria Events - almost fake
+#####################################
+# Saudi Arabia Events - final peace
+#####################################
+
+add_namespace = syria
+add_namespace = saudi_arabia
+
+country_event = {
+	id = syria.1
+	title = syria.1.t
+	desc = syria.1.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = syria.1.a
+		ai_chance = {
+			factor = 100
+		}
+		add_stability = 0.10
+		#custom_effect_tooltip = SYR_the_eighth_arab_congress_tt
+	}
+}
+
+country_event = {
+	id = saudi_arabia.1
+	title = saudi_arabia.1.t
+	desc = saudi_arabia.1.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_global_flag = Telaviv_Shooting_case_flag } }
+				set_global_flag = Telaviv_Shooting_case_flag
+			}
+			if = {
+				limit = { TAG = SYR }
+				set_country_flag = SYR_same_faction
+				every_country = {
+					limit = {
+						is_in_faction_with = ROOT
+						NOT = { has_country_flag = SYR_same_faction }
+					}
+					set_country_flag = SYR_same_faction
+				}
+				every_country = {
+					limit = { is_ai = no }
+					news_event = { id = ME_news.1 hours = 6 }
+				}
+				dismantle_faction = yes
+			}
+			if = {
+				limit = { TAG = LAN }
+				country_event = { id = saudi_arabia.6 days = 2 }
+			}
+		}
+	}
+	
+	option = {
+		name = saudi_arabia.1.a
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+			limit = { ROOT = { TAG = SYR } }
+			add_stability = -0.50
+			hidden_effect = { load_focus_tree = generic_focus }
+			custom_effect_tooltip = SYR_saudi_arabia_tt
+		}
+		else_if = {
+			limit = { ROOT = { TAG = PAL } }
+			PAL_state_of_mind_reduce = yes
+			unlock_decision_category_tooltip = PAL_storm_watch_decision_catrgory
+			activate_decision = PAL_chase_murderer
+			unlock_decision_tooltip = PAL_add_a_fire
+			#PAL_state_of_mind_improve = yes
+		}
+	}
+}
+
+country_event = {
+	id = saudi_arabia.2
+	title = saudi_arabia.2.t
+	desc = saudi_arabia.2.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = TUR_LAN_Middle_East_War_flag
+			mark_focus_tree_layout_dirty = yes
+			country_event = { id = saudi_arabia.8 days = 90 }
+			TUR = {
+				country_event = { id = saudi_arabia.7 days = 1 }
+			}
+		}
+	}
+	
+	option = {
+		name = saudi_arabia.2.a
+		ai_chance = {
+			factor = 100
+		}
+		effect_tooltip = {
+			TUR = {
+				country_event = { id = saudi_arabia.7 days = 1 }
+			}
+		}
+		custom_effect_tooltip = global_modifier_focus_tree_tt
+	}
+}
+
+#reaction of britain
+country_event = {
+	id = saudi_arabia.3
+	title = saudi_arabia.3.t
+	desc = saudi_arabia.3.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = saudi_arabia.3.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = saudi_arabia.4
+	title = saudi_arabia.4.t
+	desc = saudi_arabia.4.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = TUR_LAN_Middle_East_War_flag
+			mark_focus_tree_layout_dirty = yes
+			country_event = { id = saudi_arabia.8 days = 90 }
+			TUR = { country_event = { id = saudi_arabia.7 days = 1 } }
+		}
+	}
+	
+	option = {
+		name = saudi_arabia.4.a
+		ai_chance = {
+			factor = 100
+		}
+		effect_tooltip = {
+			TUR = {
+				country_event = { id = saudi_arabia.7 days = 1 }
+			}
+		}
+		custom_effect_tooltip = global_modifier_focus_tree_tt
+	}
+}
+
+#reaction of britain
+country_event = {
+	id = saudi_arabia.5
+	title = saudi_arabia.5.t
+	desc = saudi_arabia.5.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = saudi_arabia.5.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+#change leader
+country_event = {
+	id = saudi_arabia.6
+	title = saudi_arabia.6.t
+	desc = saudi_arabia.6.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			create_faction = ArabicUnion
+			every_country = {
+				limit = { has_country_flag = SYR_same_faction }
+				ROOT = { add_to_faction = PREV }
+			}
+		}
+	}
+	
+	option = {
+		name = saudi_arabia.6.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					has_country_flag = SYR_same_faction
+				}
+				clr_country_flag = SYR_same_faction
+			}
+		}
+		add_war_support = 0.05
+	}
+}
+
+#innocent turkey
+country_event = {
+	id = saudi_arabia.7
+	title = saudi_arabia.7.t
+	desc = saudi_arabia.7.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = TUR_LAN_Middle_East_War_flag
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	
+	option = {
+		name = saudi_arabia.7.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_effect_tooltip = global_modifier_focus_tree_tt
+		add_war_support = 0.05
+	}
+}
+
+country_event = {
+	id = saudi_arabia.8
+	title = saudi_arabia.8.t
+	desc = saudi_arabia.8.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { ROOT = { TAG = LAN } }
+				if = {
+					limit = { NOT = { has_completed_focus = LAN_MEW_speech_in_damascus } }
+					complete_national_focus = LAN_MEW_speech_in_damascus
+				}
+				TUR = {
+					set_country_flag = MEW_real_flag
+					country_event = { id = saudi_arabia.8 hours = 6 }
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = saudi_arabia.8.a
+		ai_chance = {
+			factor = 100
+		}
+		trigger = { ROOT = { TAG = LAN } }
+		add_ideas = LAN_MEW_speech_in_damascus
+	}
+	option = {
+		name = saudi_arabia.8.b
+		ai_chance = {
+			factor = 100
+		}
+		trigger = { ROOT = { TAG = TUR } }
+	}
+}
+
+country_event = {
+	id = saudi_arabia.9
+	title = saudi_arabia.9.t
+	desc = saudi_arabia.9.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			mark_focus_tree_layout_dirty = yes
+			set_country_flag = LAN_MEW_focus_show_flag
+			FROM = {
+				country_event = { id = saudi_arabia.10 days = 1 }
+			}
+		}
+	}
+	
+	option = {
+		name = saudi_arabia.9.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_effect_tooltip = global_modifier_focus_tree_tt
+		add_war_support = 0.10
+		effect_tooltip = {
+			FROM = {
+				country_event = { id = saudi_arabia.10 days = 1 }
+			}
+		}
+		TUR = {
+			country_event = { id = saudi_arabia.11 days = 1 }
+		}
+	}
+}
+
+country_event = {
+	id = saudi_arabia.10
+	title = saudi_arabia.10.t
+	desc = saudi_arabia.10.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = saudi_arabia.10.a
+		ai_chance = {
+			factor = 100
+		}
+		add_political_power = 25
+	}
+}
+
+country_event = {
+	id = saudi_arabia.11
+	title = saudi_arabia.11.t
+	desc = saudi_arabia.11.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = saudi_arabia.11.a
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+			limit = { NOT = { is_in_faction_with = FROM } }
+			create_faction = AnkaraTreaty
+			ROOT = { add_to_faction = FROM }
+		}
+		else = { add_war_support = 0.05 }
+	}
+}
+
+country_event = {
+	id = saudi_arabia.12
+	title = saudi_arabia.12.t
+	desc = saudi_arabia.12.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			KUR = {
+				set_cosmetic_tag = KUR_Kaleidoscope
+				set_party_name = {
+					ideology = neutrality
+					long_name = KUR_kaleidoscope_party_long
+					name = KUR_kaleidoscope_party
+				}
+				add_ideas = TUR_at_the_edge_of_kaleidoscope
+			}
+			every_other_country = {
+				limit = {
+					any_controlled_state = {
+						is_core_of = KUR
+					}
+				}
+				country_event = { id = saudi_arabia.15 days = 1 }
+			}
+		}
+	}
+	
+	option = {
+		name = saudi_arabia.12.a
+		ai_chance = {
+			factor = 100
+		}
+		effect_tooltip = {
+			KUR = {
+				set_cosmetic_tag = KUR_Kaleidoscope
+				set_party_name = {
+					ideology = neutrality
+					long_name = KUR_kaleidoscope_party_long
+					name = KUR_kaleidoscope_party
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = saudi_arabia.13
+	title = saudi_arabia.13.t
+	desc = saudi_arabia.13.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = saudi_arabia.13.a
+		ai_chance = {
+			factor = 100
+		}
+		add_political_power = -25
+		add_war_support = 0.05
+	}
+}
+
+country_event = {
+	id = saudi_arabia.14
+	title = saudi_arabia.14.t
+	desc = saudi_arabia.14.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = saudi_arabia.14.a
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+			limit = {
+				NOT = { has_war_with = TUR }
+			}
+			hidden_effect = {
+				set_global_flag = Middle_East_War_flag
+			}
+			declare_war_on = {
+				target = TUR
+				type = take_state_focus
+				generator = { 350 352 }
+			}
+			declare_war_on = {
+				target = PER
+				type = take_state_focus
+				generator = { 417 421 }
+			}
+		}
+		else = {
+			add_political_power = -25
+		}
+	}
+	
+	option = {
+		name = saudi_arabia.14.b
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = 25
+	}
+}
+
+country_event = {
+	id = saudi_arabia.60
+	title = saudi_arabia.60.t
+	desc = saudi_arabia.60.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		declare_war_on = {
+			target = TUR
+			type = take_state_focus
+			generator = { 350 352 }
+		}
+		declare_war_on = {
+			target = PER
+			type = take_state_focus
+			generator = { 417 421 }
+		}
+	}
+	
+	option = {
+		name = saudi_arabia.60.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = saudi_arabia.15
+	title = saudi_arabia.15.t
+	desc = saudi_arabia.15.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = saudi_arabia.15.a
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+			limit = { NOT = { has_completed_focus = TUR_MEW_secure_back } }
+			every_controlled_state = {
+				limit = {
+					is_core_of = KUR
+					is_core_of = ROOT
+				}
+				remove_core_of = ROOT
+				hidden_effect = {
+					start_resistance = yes
+					#no_compliance_gain = yes
+					set_compliance = 10
+					set_resistance = 20
+					set_garrison_strength = 1.2
+				}
+			}
+		}
+		else = {
+			every_controlled_state = {
+				limit = {
+					is_core_of = KUR
+					is_core_of = ROOT
+				}
+				remove_core_of = ROOT
+				add_dynamic_modifier = { modifier = TUR_suppress_state_rebellion }
+				hidden_effect = {
+					start_resistance = yes
+					set_compliance = 10
+					set_resistance = 20
+					set_garrison_strength = 1.2
+				}
+			}
+		}
+		effect_tooltip = {
+			KUR = {
+				set_cosmetic_tag = KUR_Kaleidoscope
+				set_party_name = {
+					ideology = neutrality
+					long_name = KUR_kaleidoscope_party_long
+					name = KUR_kaleidoscope_party
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = saudi_arabia.16
+	title = saudi_arabia.16.t
+	desc = saudi_arabia.16.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			every_state = {
+				limit = {
+					is_core_of = KUR
+					NOT = { is_controlled_by = TUR }
+					NOT = { is_controlled_by = PER }
+				}
+				KUR = { transfer_state = PREV }
+			}
+			every_country = {
+				limit = { 819 = { is_core_of = PREV } }
+				819 = { remove_core_of = PREV }
+			}
+			819 = { add_core_of = KUR }
+			KUR = { transfer_state = 819 }
+			if = {
+				limit = { TUR = { has_country_flag = TUR_MEW_test_mechs_flag } }
+				TUR = {
+					clr_country_flag = TUR_MEW_test_mechs_flag
+					country_event = { id = saudi_arabia.39 days = 6 }
+				}
+			}
+			if = {
+				limit = { LAN = { has_template = "阿拉伯军队" } }
+				LAN = { country_event = { id = saudi_arabia.62 days = 6 } }
+			}
+			TUR = { country_event = { id = saudi_arabia.63 days = 3 } }
+		}
+	}
+	
+	option = {
+		name = saudi_arabia.16.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					LAN = { is_faction_leader = yes }
+					KUR = { NOT = { is_in_faction_with = LAN } }
+				}
+				LAN = { add_to_faction = KUR }
+			}
+			if = {
+				limit = { KUR = { NOT = { is_subject_of = LAN } } }
+				LAN = {
+					set_autonomy = {
+						target = KUR
+						autonomous_state = autonomy_integrated_puppet
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = saudi_arabia.17
+	title = saudi_arabia.17.t
+	desc = saudi_arabia.17.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			LAN = { set_country_flag = { flag = MEW_days_60 days = 60 value = 1 } }
+			TUR = { set_country_flag = { flag = MEW_days_60 days = 60 value = 1 } }
+		}
+	}
+	
+	option = {
+		name = saudi_arabia.17.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				add = 5
+				TAG = TUR
+				350 = { NOT = { is_controlled_by = TUR } }
+			}
+			modifier = {
+				add = 5
+				TAG = TUR
+				352 = { NOT = { is_controlled_by = TUR } }
+			}
+			modifier = {
+				add = 5
+				TAG = TUR
+				417 = { NOT = { is_controlled_by = PER } }
+			}
+			modifier = {
+				add = 5
+				TAG = TUR
+				421 = { NOT = { is_controlled_by = PER } }
+			}
+			modifier = {
+				add = 5
+				TAG = LAN
+				SYR = { has_capitulated = yes }
+			}
+			modifier = {
+				add = 5
+				TAG = LAN
+				IRQ = { has_capitulated = yes }
+			}
+			modifier = {
+				add = 10
+				TAG = LAN
+				LAN = { surrender_progress > 0.1 }
+			}
+			modifier = {
+				add = 80
+				TAG = TUR
+				TUR = { surrender_progress > 0.5 }
+			}
+			modifier = {
+				add = 80
+				TAG = LAN
+				LAN = { surrender_progress > 0.5 }
+			}
+		}
+		FROM = { country_event = { id = saudi_arabia.18 hours = 5 } }
+	}
+	option = {
+		name = saudi_arabia.17.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				add = -5
+				TAG = TUR
+				350 = { is_controlled_by = TUR }
+			}
+			modifier = {
+				add = -5
+				TAG = TUR
+				352 = { is_controlled_by = TUR }
+			}
+			modifier = {
+				add = -5
+				TAG = TUR
+				417 = { is_controlled_by = PER }
+			}
+			modifier = {
+				add = -5
+				TAG = TUR
+				421 = { is_controlled_by = PER }
+			}
+			modifier = {
+				add = -5
+				TAG = LAN
+				SYR = { has_capitulated = no }
+			}
+			modifier = {
+				add = -5
+				TAG = LAN
+				IRQ = { has_capitulated = no }
+			}
+			modifier = {
+				add = -10
+				TAG = LAN
+				LAN = { surrender_progress < 0.1 }
+			}
+		}
+		FROM = { country_event = { id = saudi_arabia.19 hours = 5 } }
+	}
+}
+
+country_event = {
+	id = saudi_arabia.18
+	title = saudi_arabia.18.t
+	desc = saudi_arabia.18.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			every_state = {
+				limit = {
+					is_core_of = KUR
+					NOT = { is_controlled_by = TUR }
+					NOT = { is_controlled_by = PER }
+				}
+				KUR = { transfer_state = PREV }
+			}
+			LAN = {
+				white_peace = {
+					tag = TUR
+					message = LAN_MEW_message
+				}
+				white_peace = {
+					tag = PER
+					message = LAN_MEW_message
+				}
+				every_other_country = {
+					limit = {
+						is_in_faction_with = LAN
+						any_owned_state = {
+							is_capital = yes
+							is_on_continent = middle_east
+						}
+					}
+					white_peace = {
+						tag = TUR
+						message = LAN_MEW_message
+					}
+					white_peace = {
+						tag = PER
+						message = LAN_MEW_message
+					}
+				}
+			}
+			every_country = {
+				limit = {
+					has_country_flag = TUR_LAN_Middle_East_War_flag
+				}
+				clr_country_flag = TUR_LAN_Middle_East_War_flag
+			}
+			every_country = {
+				limit = { 819 = { is_core_of = PREV } }
+				819 = { remove_core_of = PREV }
+			}
+			819 = { add_core_of = KUR }
+			KUR = { transfer_state = 819 }
+			#clr_global_flag = Middle_East_War_flag
+		}
+	}
+	
+	option = {
+		name = saudi_arabia.18.a
+		ai_chance = {
+			factor = 100
+		}
+		effect_tooltip = {
+			LAN = { white_peace = TUR }
+		}
+		hidden_effect = {
+			if = {
+				limit = { TUR = { has_country_flag = TUR_MEW_test_mechs_flag } }
+				TUR = {
+					clr_country_flag = TUR_MEW_test_mechs_flag
+					country_event = { id = saudi_arabia.39 days = 6 }
+				}
+			}
+			if = {
+				limit = { LAN = { has_template = "阿拉伯军队" } }
+				LAN = { country_event = { id = saudi_arabia.62 days = 6 } }
+			}
+			TUR = { country_event = { id = saudi_arabia.63 days = 3 } }
+			if = {
+				limit = {
+					LAN = { is_faction_leader = yes }
+					KUR = { NOT = { is_in_faction_with = LAN } }
+				}
+				LAN = { add_to_faction = KUR }
+			}
+			if = {
+				limit = { KUR = { NOT = { is_subject_of = LAN } } }
+				LAN = {
+					set_autonomy = {
+						target = KUR
+						autonomous_state = autonomy_integrated_puppet
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = saudi_arabia.19
+	title = saudi_arabia.19.t
+	desc = saudi_arabia.19.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = saudi_arabia.19.a
+		ai_chance = {
+			factor = 100
+		}
+		add_political_power = -25
+	}
+}
+
+
+#oil occur
+country_event = {
+	id = saudi_arabia.31
+	title = saudi_arabia.31.t
+	desc = saudi_arabia.31.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	immediate = { hidden_effect = { mark_focus_tree_layout_dirty = yes } }
+	
+	option = {
+		name = saudi_arabia.31.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_effect_tooltip = global_modifier_focus_tree_tt
+	}
+}
+
+country_event = {
+	id = saudi_arabia.32
+	title = saudi_arabia.32.t
+	desc = saudi_arabia.32.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	immediate = { hidden_effect = { set_country_flag = MEOIL_remake_oil_treaty_success_flag } }
+	
+	option = {
+		name = saudi_arabia.32.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = saudi_arabia.33
+	title = saudi_arabia.33.t
+	desc = saudi_arabia.33.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	immediate = { hidden_effect = { set_country_flag = MEOIL_remake_oil_treaty_failed_flag } }
+	
+	option = {
+		name = saudi_arabia.33.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = saudi_arabia.34
+	title = saudi_arabia.34.t
+	desc = saudi_arabia.34.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = saudi_arabia.34.a
+		ai_chance = {
+			factor = 100
+		}
+		effect_tooltip = {
+			add_timed_idea = { idea = MEOIL_buy_oil_treaty_ENG days = 90 }
+		}
+	}
+}
+
+country_event = {
+	id = saudi_arabia.35
+	title = saudi_arabia.35.t
+	desc = saudi_arabia.35.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = saudi_arabia.35.a
+		ai_chance = {
+			factor = 100
+		}
+		FROM = { country_event = { id = saudi_arabia.32 days = 1 } }
+	}
+	
+	option = {
+		name = saudi_arabia.35.b
+		ai_chance = {
+			factor = 100
+		}
+		FROM = { country_event = { id = saudi_arabia.33 days = 1 } }
+	}
+}
+
+country_event = {
+	id = saudi_arabia.36
+	title = saudi_arabia.36.t
+	desc = saudi_arabia.36.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = saudi_arabia.36.a
+		ai_chance = {
+			factor = 100
+		}
+		add_political_power = 150
+		FROM = {
+			country_event = { id = saudi_arabia.37 days = 1 }
+			effect_tooltip = {
+				every_state = {
+					limit = {
+						is_core_of = YEM
+						is_controlled_by = YEM
+						is_on_continent = middle_east
+					}
+					remove_core_of = YEM
+					add_core_of = FROM
+					FROM = { transfer_state = PREV }
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = saudi_arabia.36.b
+		ai_chance = {
+			factor = 100
+		}
+		FROM = { country_event = { id = saudi_arabia.38 days = 1 } }
+	}
+}
+
+country_event = {
+	id = saudi_arabia.37
+	title = saudi_arabia.37.t
+	desc = saudi_arabia.37.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = saudi_arabia.37.a
+		ai_chance = {
+			factor = 100
+		}
+		add_political_power = -150
+		every_state = {
+			limit = {
+				is_core_of = YEM
+				is_controlled_by = YEM
+				is_on_continent = middle_east
+			}
+			remove_core_of = YEM
+			add_core_of = ROOT
+			ROOT = { transfer_state = PREV }
+		}
+	}
+}
+
+country_event = {
+	id = saudi_arabia.38
+	title = saudi_arabia.38.t
+	desc = saudi_arabia.38.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = saudi_arabia.38.a
+		ai_chance = {
+			factor = 100
+		}
+		add_political_power = 100
+	}
+}
+
+country_event = {
+	id = saudi_arabia.39
+	title = saudi_arabia.39.t
+	desc = saudi_arabia.39.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = saudi_arabia.39.a
+		ai_chance = {
+			factor = 100
+		}
+		add_political_power = 30
+		delete_unit_template_and_units = {
+			division_template = "Test Mech Troops" 
+			disband = yes
+		}
+		hidden_effect = {
+			if = {
+				limit = { has_country_flag = TUR_MEW_test_mechs_flag }
+				clr_country_flag = TUR_MEW_test_mechs_flag
+			}
+		}
+	}
+}
+
+country_event = {
+	id = saudi_arabia.51
+	title = saudi_arabia.51.t
+	desc = saudi_arabia.51.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	trigger = {
+		TAG = LAN
+		has_war = no
+		has_completed_focus = LAN_MEW_revange
+		NOT = { has_country_flag = TUR_LAN_Middle_East_War_flag }
+		OR = {
+			has_completed_focus = LAN_our_future
+			AND = {
+				has_completed_focus = LAN_revise_kaiser_constitution
+				has_country_flag = LAN_kindness_Karyl
+			}
+		}
+	}
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = { days = 90 }
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = LAN_WH_way_home_flag
+			add_dynamic_modifier = { modifier = LAN_way_home }
+		}
+	}
+	
+	option = {
+		name = saudi_arabia.51.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			mark_focus_tree_layout_dirty = yes
+		}
+		custom_effect_tooltip = global_modifier_focus_tree_tt
+	}
+}
+
+country_event = {
+	id = saudi_arabia.52
+	title = saudi_arabia.52.t
+	desc = saudi_arabia.52.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = saudi_arabia.52.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = saudi_arabia.53
+	title = saudi_arabia.53.t
+	desc = saudi_arabia.53.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = saudi_arabia.53.a
+		ai_chance = {
+			factor = 30
+		}
+		add_political_power = 25
+		#random_owned_state = {
+		#	limit = {
+		#		OR = {
+		#			has_resources_amount = { resource = oil amount > 0 delivered = no }
+		#			has_resources_amount = { resource = aluminium amount > 0 delivered = no }
+		#			has_resources_amount = { resource = rubber amount > 0 delivered = no }
+		#			has_resources_amount = { resource = tungsten amount > 0 delivered = no }
+		#			has_resources_amount = { resource = steel amount > 0 delivered = no }
+		#			has_resources_amount = { resource = chromium amount > 0 delivered = no }
+		#		}
+		#	}
+		#	owner = { give_resource_rights = { receiver = FROM state = PREV } }
+		#}
+		#FROM = { country_event = { id = saudi_arabia.55 days = 1 } }
+	}
+	
+	option = {
+		name = saudi_arabia.53.b
+		ai_chance = {
+			factor = 70
+		}
+		#FROM = { country_event = { id = saudi_arabia.56 days = 1 } }
+	}
+}
+
+country_event = {
+	id = saudi_arabia.54
+	title = saudi_arabia.54.t
+	desc = saudi_arabia.54.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = saudi_arabia.54.a
+		ai_chance = {
+			factor = 0
+			modifier = {
+				add = 5
+				any_neighbor_country = { TAG = FROM }
+				OR = {
+					is_in_faction = no
+					AND = {
+						is_in_faction = yes
+						ROOT = {
+							faction_leader = {
+								strength_ratio = {
+									tag = FROM
+									ratio < 1
+								}
+							}
+						}
+					}
+				}
+				OR = {
+					is_subject = no
+					AND = {
+						is_subject = yes
+						ROOT = {
+							OVERLORD = {
+								strength_ratio = {
+									tag = FROM
+									ratio < 1
+								}
+							}
+						}
+					}
+				}
+				strength_ratio = {
+					tag = FROM
+					ratio < 1
+				}
+			}
+		}
+		FROM = { country_event = { id = saudi_arabia.55 days = 1 } }
+		effect_tooltip = {
+			FROM = {
+				set_autonomy = {
+					target = ROOT
+					autonomous_state = autonomy_integrated_puppet
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = saudi_arabia.54.b
+		ai_chance = {
+			factor = 95
+		}
+		add_war_support = 0.10
+		every_owned_state = {
+			limit = {
+				OR = {
+					has_resources_amount = { resource = oil amount > 0 delivered = no }
+					has_resources_amount = { resource = aluminium amount > 0 delivered = no }
+					has_resources_amount = { resource = rubber amount > 0 delivered = no }
+					has_resources_amount = { resource = tungsten amount > 0 delivered = no }
+					has_resources_amount = { resource = steel amount > 0 delivered = no }
+					has_resources_amount = { resource = chromium amount > 0 delivered = no }
+				}
+			}
+			add_claim_by = FROM
+		}
+		FROM = {
+			country_event = { id = saudi_arabia.56 days = 1 }
+		}
+	}
+}
+
+country_event = {
+	id = saudi_arabia.55
+	title = saudi_arabia.55.t
+	desc = saudi_arabia.55.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = saudi_arabia.55.a
+		ai_chance = {
+			factor = 30
+		}
+		set_autonomy = {
+			target = FROM
+			autonomous_state = autonomy_integrated_puppet
+		}
+	}
+}
+
+country_event = {
+	id = saudi_arabia.56
+	title = saudi_arabia.56.t
+	desc = saudi_arabia.56.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = saudi_arabia.56.a
+		ai_chance = {
+			factor = 30
+		}
+		create_wargoal = {
+			target = FROM
+			type = annex_everything
+		}
+	}
+}
+
+country_event = {
+	id = saudi_arabia.57
+	title = saudi_arabia.57.t
+	desc = saudi_arabia.57.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = saudi_arabia.57.a
+		ai_chance = {
+			factor = 30
+		}
+		add_political_power = 300
+	}
+}
+
+country_event = {
+	id = saudi_arabia.58
+	title = saudi_arabia.58.t
+	desc = saudi_arabia.58.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = saudi_arabia.58.a
+		ai_chance = {
+			factor = 30
+		}
+		add_political_power = -10
+		uncomplete_national_focus = { focus = LAN_WH_start_test }
+	}
+}
+
+country_event = {
+	id = saudi_arabia.59
+	title = saudi_arabia.59.t
+	desc = saudi_arabia.59.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = saudi_arabia.59.a
+		ai_chance = {
+			factor = 30
+		}
+		every_other_country = {
+			limit = {
+				is_in_faction_with = ROOT
+				NOT = { has_war_with = TUR }
+				NOT = { has_war_with = PER }
+			}
+			declare_war_on = {
+				target = TUR
+				type = take_state_focus
+				generator = { 350 352 }
+			}
+			declare_war_on = {
+				target = PER
+				type = take_state_focus
+				generator = { 417 421 }
+			}
+		}
+		#this might be used in saudi_arabia.60
+		custom_effect_tooltip = saudi_arabia_59_tt
+		hidden_effect = {
+			division_template = {
+				name = "阿拉伯军队"
+				is_locked = yes
+				division_names_group = LAN_INF_01
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					#artillery_brigade = { x = 1 y = 0 }
+				}
+			}
+			if = {
+				limit = { is_ai = yes }
+				random_owned_state = {
+					limit = { is_capital = yes }
+					create_unit = {
+						division = "division_template = \"阿拉伯军队\" start_experience_factor = 0.25 start_equipment_factor = 1.0 start_manpower_factor = 1.0" 
+						owner = ROOT
+						count = 36
+					}
+				}
+			}
+			else = {
+				random_owned_state = {
+					limit = { is_capital = yes }
+					create_unit = {
+						division = "division_template = \"阿拉伯军队\" start_experience_factor = 0.20 start_equipment_factor = 1.0 start_manpower_factor = 0.8" 
+						owner = ROOT
+						count = 18
+					}
+				}
+			}
+		}
+	}
+}
+
+#saudi_arabia.60 has been used
+country_event = {
+	id = saudi_arabia.61
+	title = saudi_arabia.61.t
+	desc = saudi_arabia.61.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = saudi_arabia.61.a
+		ai_chance = {
+			factor = 30
+		}
+		add_war_support = 0.05
+		add_stability = 0.05
+		army_experience = 15
+	}
+}
+
+country_event = {
+	id = saudi_arabia.62
+	title = saudi_arabia.62.t
+	desc = saudi_arabia.62.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = saudi_arabia.62.a
+		ai_chance = {
+			factor = 30
+		}
+		add_political_power = -50
+		army_experience = 10
+		custom_effect_tooltip = saudi_arabia_62.tt
+		hidden_effect = {
+			delete_unit_template_and_units = {
+				division_template = "阿拉伯军队" 
+				disband = no
+			}
+			division_template = {
+				name = "阿拉伯军队"
+				division_names_group = LAN_INF_01
+				regiments = {
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+					artillery_brigade = { x = 3 y = 0 }
+				}
+			}
+			if = {
+				limit = { is_ai = yes }
+				random_owned_state = {
+					limit = { is_capital = yes }
+					create_unit = {
+						division = "division_template = \"阿拉伯军队\" start_experience_factor = 0.25 start_equipment_factor = 1.0 start_manpower_factor = 1.0" 
+						owner = ROOT
+						count = 9
+					}
+				}
+			}
+			else = {
+				random_owned_state = {
+					limit = { is_capital = yes }
+					create_unit = {
+						division = "division_template = \"阿拉伯军队\" start_experience_factor = 0.20 start_equipment_factor = 1.0 start_manpower_factor = 1.0" 
+						owner = ROOT
+						count = 3
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = saudi_arabia.63
+	title = saudi_arabia.63.t
+	desc = saudi_arabia.63.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = { dismantle_faction = yes }
+	}
+	
+	option = {
+		name = saudi_arabia.61.a
+		ai_chance = {
+			factor = 30
+		}
+		add_political_power = -15
+		effect_tooltip = { dismantle_faction = yes }
+	}
+}
+
+
+
+
+country_event = {
+	id = saudi_arabia.101
+	title = saudi_arabia.101.t
+	desc = saudi_arabia.101.desc
+	picture = GFX_report_event_japan_army_mountainside
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = saudi_arabia.101.a
+		ai_chance = { factor = 100 }
+		every_country = {
+			limit = {
+				OR = {
+					TAG = TUR
+					is_in_faction_with = TUR
+					is_subject_of = TUR
+				}
+			}
+			set_country_flag = TUR_same_faction
+		}
+		every_country = {
+			limit = {
+				OR = {
+					TAG = LAN
+					is_in_faction_with = LAN
+					is_subject_of = LAN
+				}
+			}
+			set_country_flag = LAN_same_faction
+		}
+		LAN = {
+			if = {
+				limit = {
+					is_in_faction = yes
+					is_faction_leader = yes
+				}
+				dismantle_faction = yes
+			}
+			else_if = {
+				limit = {
+					is_in_faction = yes
+					is_faction_leader = no
+				}
+				every_other_country = {
+					limit = {
+						is_faction_leader = yes
+						is_in_faction_with = LAN
+					}
+					every_country = {
+						limit = {
+							OR = {
+								TAG = LAN
+								is_subject_of = LAN
+							}
+						}
+						remove_from_faction = PREV
+					}
+				}
+			}
+		}
+		TUR = {
+			if = {
+				limit = {
+					is_in_faction = yes
+					is_faction_leader = yes
+				}
+				dismantle_faction = yes
+			}
+			else_if = {
+				limit = {
+					is_in_faction = yes
+					is_faction_leader = no
+				}
+				every_other_country = {
+					limit = {
+						is_faction_leader = yes
+						is_in_faction_with = TUR
+					}
+					every_country = {
+						limit = {
+							OR = {
+								TAG = TUR
+								is_subject_of = TUR
+							}
+						}
+						remove_from_faction = PREV
+					}
+				}
+			}
+		}
+		FROM = {
+			create_faction = "Middle_East_Defence_Union"
+			#create_faction = "Organization_of_Petroleum_Exporting_Countries"
+			every_country = {
+				limit = {
+					is_in_faction = no
+					OR = {
+						has_country_flag = TUR_same_faction
+						has_country_flag = LAN_same_faction
+					}
+				}
+				FROM = { add_to_faction = PREV }
+			}
+		}
+		FROM = {
+			add_opinion_modifier = { target = ROOT modifier = incredible_alliance }
+			add_ideas = TUR_LAN_common_enemy_idea
+		}
+		ROOT = {
+			add_opinion_modifier = { target = FROM modifier = incredible_alliance }
+			add_ideas = TUR_LAN_common_enemy_idea
+		}
+	}
+	option = {
+		name = saudi_arabia.101.b
+		ai_chance = { factor = 0 }
+		trigger = { is_ai = no }
+		add_political_power = 150
+	}
+}

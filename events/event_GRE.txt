@@ -1,0 +1,969 @@
+﻿add_namespace = gre_ah
+country_event = {
+	id = gre_ah.0
+	title = gre_ah.0.t
+	desc = gre_ah.0.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = gre_ah.0.a
+		add_political_power = -300
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = gre_ah.1
+	title = gre_ah.1.t
+	desc = gre_ah.1.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			GRE_health_of_regent_worsen = yes
+			if = {
+				limit = { check_variable = { GRE_health_of_regent_var > 3 } }
+				country_event = { id = gre_ah.6 days = 5 }
+			}
+			else = { country_event = { id = gre_ah.2 days = 8 } }
+		}
+	}
+	
+	option = {
+		name = gre_ah.1.a
+		ai_chance = {
+			base = 100
+		}
+		effect_tooltip = { GRE_health_of_regent_worsen = yes }
+	}
+}
+
+country_event = {
+	id = gre_ah.2
+	title = gre_ah.2.t
+	desc = gre_ah.2.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			GRE_health_of_regent_worsen = yes
+			if = {
+				limit = { check_variable = { GRE_health_of_regent_var > 3 } }
+				country_event = { id = gre_ah.6 days = 5 }
+			}
+			else = { country_event = { id = gre_ah.3 days = 8 } }
+		}
+	}
+	
+	option = {
+		name = gre_ah.2.a
+		ai_chance = {
+			base = 100
+		}
+		effect_tooltip = { GRE_health_of_regent_worsen = yes }
+	}
+}
+
+country_event = {
+	id = gre_ah.3
+	title = gre_ah.3.t
+	desc = gre_ah.3.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			GRE_health_of_regent_worsen = yes
+			if = {
+				limit = { check_variable = { GRE_health_of_regent_var > 3 } }
+				country_event = { id = gre_ah.6 days = 5 }
+			}
+			else = { country_event = { id = gre_ah.4 days = 8 } }
+		}
+	}
+	
+	option = {
+		name = gre_ah.3.a
+		ai_chance = {
+			base = 100
+		}
+		effect_tooltip = { GRE_health_of_regent_worsen = yes }
+	}
+}
+
+country_event = {
+	id = gre_ah.4
+	title = gre_ah.4.t
+	desc = gre_ah.4.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			GRE_health_of_regent_worsen = yes
+			if = {
+				limit = { check_variable = { GRE_health_of_regent_var > 3 } }
+				country_event = { id = gre_ah.6 days = 5 }
+			}
+			else = { country_event = { id = gre_ah.5 days = 8 } }
+		}
+	}
+	
+	option = {
+		name = gre_ah.4.a
+		ai_chance = {
+			base = 100
+		}
+		effect_tooltip = { GRE_health_of_regent_worsen = yes }
+	}
+}
+
+country_event = {
+	id = gre_ah.5
+	title = gre_ah.5.t
+	desc = gre_ah.5.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			GRE_health_of_regent_worsen = yes
+			country_event = { id = gre_ah.6 days = 8 }
+		}
+	}
+	
+	option = {
+		name = gre_ah.5.a
+		ai_chance = {
+			base = 100
+		}
+		effect_tooltip = { GRE_health_of_regent_worsen = yes }
+	}
+}
+
+country_event = {
+	id = gre_ah.6
+	title = gre_ah.6.t
+	desc = gre_ah.6.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { has_idea = GRE_Leonidas_idea }
+				remove_ideas = GRE_Leonidas_idea
+			}
+			GRE_health_of_regent_worsen = yes
+			country_event = { id = gre_ah.7 days = 3 hours = 5 }
+		}
+	}
+	
+	option = {
+		name = gre_ah.6.a
+		ai_chance = {
+			base = 100
+		}
+		effect_tooltip = { remove_ideas = GRE_Leonidas_idea }
+	}
+}
+
+country_event = {
+	id = gre_ah.7
+	title = gre_ah.7.t
+	desc = gre_ah.7.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = GRE_regent_death_flag
+			remove_country_leader_role = {
+				character = GRE_Leonidas
+				ideology = one_party_system_subtype
+			}
+			GRE_remove_all_SL = yes
+			set_country_flag = GRE_Stheno_SL_flag
+			add_ideas = GRE_Premier_Stheno
+			add_country_leader_role = {
+				character = GRE_Euryale
+				country_leader = {
+					ideology = one_party_system_subtype
+					traits = { eye_of_euryale }
+					expire = "1965.1.1.1"
+					id = -1
+				}
+				promote_leader = yes
+			}
+			unlock_national_focus = GRE_AH_medical_conference
+			reload_focus_tree = yes
+			#load_focus_tree = generic_focus
+		}
+	}
+	
+	option = {
+		name = gre_ah.7.a
+		ai_chance = {
+			base = 100
+		}
+		effect_tooltip = {
+			reload_focus_tree = yes
+			add_country_leader_role = {
+				character = GRE_Euryale
+				country_leader = {
+					ideology = one_party_system_subtype
+					traits = { eye_of_euryale }
+					expire = "1965.1.1.1"
+					id = -1
+				}
+				promote_leader = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = gre_ah.8
+	title = gre_ah.8.t
+	desc = gre_ah.8.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			add_dynamic_modifier = { modifier = GRE_economic_crisis_factor }
+			remove_ideas = GRE_economic_colonization_from_eng
+			add_ideas = GRE_economic_crisis
+			set_variable = { GRE_remove_economic_crisis_var = 1000 }
+			set_country_flag = GRE_crisis_occur_flag
+			if = {
+				limit = { NOT = { has_country_flag = GRE_regent_death_flag } }
+				set_country_flag = GRE_regent_death_flag
+			}
+			reload_focus_tree = yes
+		}
+	}
+	
+	option = {
+		name = gre_ah.8.a
+		ai_chance = {
+			base = 100
+		}
+		unlock_national_focus = GRE_AH_fight_against_economy
+		custom_effect_tooltip = gre_ah_8_tt
+	}
+}
+
+country_event = {
+	id = gre_ah.9
+	title = gre_ah.9.t
+	desc = gre_ah.9.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = gre_ah.9.a
+		ai_chance = { base = 100 }
+		hidden_effect = { set_country_flag = GRE_confiscate_eng_enterprise_flag }
+	}
+	
+	option = {
+		name = gre_ah.9.b
+		ai_chance = { base = 100 }
+		hidden_effect = { set_country_flag = GRE_confiscate_usa_enterprise_flag }
+	}
+	
+	option = {
+		name = gre_ah.9.c
+		ai_chance = { base = 100 }
+		hidden_effect = { set_country_flag = GRE_confiscate_fra_enterprise_flag }
+	}
+	
+	option = {
+		name = gre_ah.9.d
+		ai_chance = { base = 100 }
+		hidden_effect = { set_country_flag = GRE_forget_it_flag }
+	}
+}
+
+#This is welcome event, Don't ask me why the serial number is 10.
+#Ok, now is hidden event
+country_event = {
+	id = gre_ah.10
+	hidden = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			every_controlled_state = {
+				limit = {
+					NOT = { is_core_of = ROOT }
+					is_core_of = TUR
+				}
+				set_variable = { THIS.GRE_tur_state_production_speed_var = -0.50 }
+				set_variable = { THIS.GRE_tur_state_resistance_growth_var = 1.00 }
+				set_variable = { THIS.GRE_tur_state_required_garrison_var = 0.25 }
+				set_state_flag = TUR_BFTB_TUR_spoil_flag
+				add_dynamic_modifier = { modifier = GRE_resistance_from_Turks scope = GRE }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = gre_ah.11
+	title = gre_ah.11.t
+	desc = gre_ah.11.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			add_ideas = GRE_obstruct_of_hephaestion
+		}
+	}
+	
+	option = {
+		name = gre_ah.11.a
+		ai_chance = {
+			base = 100
+		}
+		effect_tooltip = { add_ideas = GRE_obstruct_of_hephaestion }
+	}
+}
+
+country_event = {
+	id = gre_ah.12
+	title = gre_ah.12.t
+	desc = gre_ah.12.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+	}
+	
+	option = {
+		name = gre_ah.12.a
+		ai_chance = {
+			base = 100
+		}
+		add_stability = -0.02
+		add_manpower = 500
+		if = {
+			limit = { has_idea = GRE_worker_strike }
+			remove_ideas = GRE_worker_strike
+		}
+	}
+}
+
+country_event = {
+	id = gre_ah.13
+	title = gre_ah.13.t
+	desc = gre_ah.13.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+	}
+	
+	option = {
+		name = gre_ah.13.a
+		ai_chance = {
+			base = 100
+		}
+		if = {
+			limit = { ROOT = { TAG = SOV } }
+			FROM = { set_country_flag = GRE_AH_soviet_agree_help_flag }
+		}
+		if = {
+			limit = { ROOT = { TAG = FRA } }
+			FROM = { set_country_flag = GRE_AH_france_agree_help_flag }
+		}
+	}
+	
+	option = {
+		name = gre_ah.13.b
+		ai_chance = {
+			base = 10
+		}
+		
+	}
+}
+
+country_event = {
+	id = gre_ah.14
+	title = gre_ah.14.t
+	desc = gre_ah.14.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+	}
+	
+	option = {
+		name = gre_ah.14.a
+		ai_chance = {
+			base = 100
+		}
+		ENG = { country_event = { id = gre_ah.15 days = 7 } }
+	}
+}
+
+country_event = {
+	id = gre_ah.15
+	title = gre_ah.15.t
+	desc = gre_ah.15.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+	}
+	
+	option = {
+		name = gre_ah.15.a
+		ai_chance = {
+			base = 10
+		}
+		custom_effect_tooltip = gre_ah_15_a_tt
+		FROM = { country_event = { id = gre_ah.24 days = 7 } }
+	}
+	
+	option = {
+		name = gre_ah.15.b
+		ai_chance = {
+			base = 100
+		}
+		custom_effect_tooltip = gre_ah_15_b_tt
+		FROM = { country_event = { id = gre_ah.25 days = 7 } }
+	}
+	
+	option = {
+		name = gre_ah.15.c
+		ai_chance = {
+			base = 10
+		}
+		custom_effect_tooltip = gre_ah_15_c_tt
+		FROM = { country_event = { id = gre_ah.26 days = 7 } }
+	}
+}
+
+country_event = {
+	id = gre_ah.16
+	title = gre_ah.16.t
+	desc = gre_ah.16.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+	}
+	
+	option = {
+		name = gre_ah.16.a
+		ai_chance = {
+			base = 100
+		}
+		country_event = { id = gre_ah.17 days = 4 }
+	}
+}
+
+country_event = {
+	id = gre_ah.17
+	title = gre_ah.17.t
+	desc = gre_ah.17.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = GRE_funeral_has_been_held_flag
+			unlock_national_focus = GRE_AH_fate_of_greece
+		}
+	}
+	
+	option = {
+		name = gre_ah.17.a
+		ai_chance = {
+			base = 100
+		}
+		effect_tooltip = { remove_ideas = GRE_hostile_communists }
+		hidden_effect = {
+			set_variable = { GRE_communist_loyalty = 0 }
+			GRE_political_instability_update_effect = yes
+			country_event = { id = gre_ah.22 days = 9 }
+		}
+	}
+}
+
+country_event = {
+	id = gre_ah.18
+	title = gre_ah.18.t
+	desc = gre_ah.18.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = gre_ah.18.a
+		ai_chance = {
+			base = 100
+		}
+		send_equipment = {
+			equipment = artillery_equipment
+			amount = 500
+			target = GRE
+		}
+		send_equipment = {
+			type = support_equipment
+			amount = 100
+			target = GRE
+		}
+		FROM = { country_event = { id = gre_ah.19 days = 3 } }
+	}
+	
+	option = {
+		name = gre_ah.18.b
+		ai_chance = {
+			base = 50
+		}
+		add_political_power = 10
+		FROM = { country_event = { id = gre_ah.20 days = 3 } }
+	}
+}
+
+country_event = {
+	id = gre_ah.19
+	title = gre_ah.19.t
+	desc = gre_ah.19.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = gre_ah.19.a
+		ai_chance = {
+			base = 100
+		}
+		add_political_power = 10
+		add_equipment_to_stockpile = {
+			type = light_tank_chassis_2
+			variant_name = "Panzer II Ausf. a"
+			amount = 300
+			producer = GER
+		}
+	}
+}
+
+country_event = {
+	id = gre_ah.20
+	title = gre_ah.20.t
+	desc = gre_ah.20.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = gre_ah.20.a
+		ai_chance = {
+			base = 100
+		}
+		add_political_power = -10
+	}
+}
+
+country_event = {
+	id = gre_ah.21
+	title = gre_ah.21.t
+	desc = gre_ah.21.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_temp_variable = { GRE_AE_var = ROOT.army_experience }
+			multiply_temp_variable = {
+				var = GRE_AE_var
+				value = -1
+			}
+		}
+	}
+	
+	option = {
+		name = gre_ah.21.a
+		ai_chance = {
+			base = 20
+		}
+		custom_effect_tooltip = gre_ah_21_a_tt
+		army_experience = GRE_AE_var
+		add_stability = 0.05
+		add_war_support = 0.05
+		set_country_flag = GRE_army_reform_1_flag
+		clear_variable = GRE_AE_var
+		unlock_decision_category_tooltip = GRE_AH_greek_army_force_system
+	}
+	
+	option = {
+		name = gre_ah.21.b
+		ai_chance = {
+			base = 100
+		}
+		custom_effect_tooltip = gre_ah_21_b_tt
+		add_political_power = 50
+		add_timed_idea = { idea = GRE_military_opposition_complete days = 90 }
+		set_country_flag = GRE_army_reform_2_flag
+		unlock_decision_category_tooltip = GRE_AH_greek_army_force_system
+	}
+	
+	option = {
+		name = gre_ah.21.c
+		ai_chance = {
+			base = 20
+		}
+		custom_effect_tooltip = gre_ah_21_c_tt
+		add_political_power = 25
+		add_timed_idea = { idea = GRE_military_opposition_part days = 45 }
+		set_country_flag = GRE_army_reform_3_flag
+		unlock_decision_category_tooltip = GRE_AH_greek_army_force_system
+	}
+}
+
+country_event = {
+	id = gre_ah.22
+	title = gre_ah.22.t
+	desc = gre_ah.22.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = gre_ah.22.a
+		ai_chance = {
+			base = 100
+		}
+		complete_national_focus = GRE_AH_royal_meeting
+	}
+	
+	option = {
+		name = gre_ah.22.b
+		ai_chance = {
+			base = 100
+		}
+		complete_national_focus = GRE_AH_meeting
+	}
+	
+	option = {
+		name = gre_ah.22.c
+		ai_chance = {
+			base = 100
+		}
+		complete_national_focus = GRE_AH_human_meeting
+	}
+}
+
+country_event = {
+	id = gre_ah.23
+	title = gre_ah.23.t
+	desc = gre_ah.23.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = gre_ah.23.a
+		ai_chance = {
+			base = 100
+		}
+		add_stability = -0.20
+		add_political_power = 200
+	}
+}
+
+country_event = {
+	id = gre_ah.24
+	title = gre_ah.24.t
+	desc = gre_ah.24.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = gre_ah.24.a
+		ai_chance = {
+			base = 100
+		}
+		set_variable = { GRE_help_from_eng_var = 1 }
+		activate_mission = GRE_help_from_eng_mission
+		FROM = { country_event = { id = gre_ah.27 days = 2 } }
+	}
+}
+
+country_event = {
+	id = gre_ah.25
+	title = gre_ah.25.t
+	desc = gre_ah.25.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = gre_ah.25.a
+		ai_chance = {
+			base = 10
+		}
+		set_variable = { GRE_debt_level_var = 1 }
+		FROM = { country_event = { id = gre_ah.28 days = 7 } }
+	}
+	
+	option = {
+		name = gre_ah.25.b
+		ai_chance = {
+			base = 70
+		}
+		set_variable = { GRE_debt_level_var = 2 }
+		FROM = { country_event = { id = gre_ah.29 days = 7 } }
+	}
+	
+	option = {
+		name = gre_ah.25.c
+		ai_chance = {
+			base = 20
+		}
+		set_variable = { GRE_debt_level_var = 3 }
+		FROM = { country_event = { id = gre_ah.30 days = 7 } }
+	}
+}
+
+country_event = {
+	id = gre_ah.26
+	title = gre_ah.26.t
+	desc = gre_ah.26.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = GRE_refuse_from_ENG_flag
+		}
+	}
+	
+	option = {
+		name = gre_ah.26.a
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+}
+
+country_event = {
+	id = gre_ah.27
+	title = gre_ah.27.t
+	desc = gre_ah.27.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = gre_ah.27.a
+		ai_chance = {
+			base = 100
+		}
+		add_political_power = 150
+	}
+}
+
+country_event = {
+	id = gre_ah.28
+	title = gre_ah.28.t
+	desc = gre_ah.28.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = gre_ah.28.a
+		ai_chance = {
+			base = 5
+		}
+		FROM = { country_event = { id = gre_ah.31 days = 7 } }
+	}
+	
+	option = {
+		name = gre_ah.28.b
+		ai_chance = {
+			base = 2
+			modifier = {
+				factor = var:FROM.GRE_debt_level_var
+			}
+		}
+		FROM = { country_event = { id = gre_ah.32 days = 7 } }
+	}
+}
+
+country_event = {
+	id = gre_ah.29
+	title = gre_ah.29.t
+	desc = gre_ah.29.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = gre_ah.29.a
+		ai_chance = {
+			base = 5
+		}
+		FROM = { country_event = { id = gre_ah.31 days = 7 } }
+	}
+	
+	option = {
+		name = gre_ah.29.b
+		ai_chance = {
+			base = 2
+			modifier = {
+				factor = var:FROM.GRE_debt_level_var
+			}
+		}
+		FROM = { country_event = { id = gre_ah.32 days = 7 } }
+	}
+}
+
+country_event = {
+	id = gre_ah.30
+	title = gre_ah.30.t
+	desc = gre_ah.30.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	option = {
+		name = gre_ah.30.a
+		ai_chance = {
+			base = 5
+		}
+		FROM = { country_event = { id = gre_ah.31 days = 7 } }
+	}
+	
+	option = {
+		name = gre_ah.30.b
+		ai_chance = {
+			base = 2
+			modifier = {
+				factor = var:FROM.GRE_debt_level_var
+			}
+		}
+		FROM = { country_event = { id = gre_ah.32 days = 7 } }
+	}
+}
+
+country_event = {
+	id = gre_ah.31
+	title = gre_ah.31.t
+	desc = gre_ah.31.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			complete_national_focus = GRE_AH_ask_for_eng
+		}
+	}
+	
+	option = {
+		name = gre_ah.31.a
+		ai_chance = {
+			base = 100
+		}
+		if = {
+			limit = { check_variable = { GRE_debt_level_var = 1 } }
+			set_variable = { GRE_debts_from_eng_var = 500 }
+		}
+		else_if = {
+			limit = { check_variable = { GRE_debt_level_var = 2 } }
+			set_variable = { GRE_debts_from_eng_var = 1250 }
+		}
+		else_if = {
+			limit = { check_variable = { GRE_debt_level_var = 3 } }
+			set_variable = { GRE_debts_from_eng_var = 2000 }
+		}
+		add_political_power = 10
+		effect_tooltip = { complete_national_focus = GRE_AH_ask_for_eng }
+	}
+}
+
+country_event = {
+	id = gre_ah.32
+	title = gre_ah.32.t
+	desc = gre_ah.32.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = GRE_refuse_from_ENG_flag
+		}
+	}
+	
+	option = {
+		name = gre_ah.32.a
+		ai_chance = {
+			base = 100
+		}
+		add_political_power = -10
+	}
+}

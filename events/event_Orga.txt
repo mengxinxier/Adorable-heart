@@ -1,0 +1,178 @@
+﻿###########################
+#  Events
+###########################
+add_namespace = orga
+####政治线路####
+#召开大会
+country_event = {
+	id = orga.1
+	title = orga.1.t
+	desc = orga.1.d
+	picture = GFX_report_event_spr_anarchist_uprising2
+	is_triggered_only = yes
+	option = {
+		name = orga.1.a
+		complete_national_focus = ROM_orga_live
+		ai_chance = {
+			base = 10
+			modifier = {
+				has_game_rule = {
+					rule = AH_ROM_ai_behavior_SELECTION
+					option = ROM_GAME_RULE_2
+				}
+				factor = 0
+			}
+			modifier = {
+				has_game_rule = {
+					rule = AH_ROM_ai_behavior_SELECTION
+					option = ROM_GAME_RULE_3
+				}
+				factor = 0
+			}
+			modifier = {
+				has_game_rule = {
+					rule = AH_ROM_ai_behavior_SELECTION
+					option = ROM_GAME_RULE_4
+				}
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = orga.1.b
+		country_event = {
+			id = orga.2
+			days = 1
+		}
+		set_country_flag = xiwangzhihua
+		retire_character = ROM_leader_aoerjia
+		ai_chance = {
+			base = 50
+			modifier = {
+				has_game_rule = {
+					rule = AH_ROM_ai_behavior_SELECTION
+					option = ROM_GAME_RULE_1
+				}
+				factor = 0
+			}
+		}
+	}
+}
+
+#继承人
+country_event = {
+	id = orga.2
+	title = orga.2.t
+	desc = orga.2.d
+	picture = GFX_report_event_romania_parliament
+	is_triggered_only = yes
+	option = {
+		name = orga.2.a
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.6
+		}
+		complete_national_focus = ROM_orga_dead
+		complete_national_focus = ROM_Kudelia
+		custom_effect_tooltip = available_political_advisor
+		show_ideas_tooltip = ROM_fumitan
+		ai_chance = {
+			factor = 30
+			modifier = {
+				has_game_rule = {
+					rule = AH_ROM_ai_behavior_SELECTION
+					option = ROM_GAME_RULE_4
+				}
+				add = -10
+			}
+		}
+	}
+	option = {
+		name = orga.2.b
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.6
+		}
+		complete_national_focus = ROM_orga_dead
+		complete_national_focus = ROM_McGillis
+		ai_chance = {
+			factor = 10
+			modifier = {
+				has_game_rule = {
+					rule = AH_ROM_ai_behavior_SELECTION
+					option = ROM_GAME_RULE_3
+				}
+				add = -10
+			}
+		}
+	}
+}
+
+#凶手被捕
+country_event = {
+	id = orga.3
+	title = orga.3.t
+	desc = orga.3.d
+	picture = GFX_report_event_generic_read_write
+	is_triggered_only = yes
+	option = {
+		name = orga.3.a
+		add_political_power = 80
+	}
+	option = {
+		name = orga.3.b
+		add_stability = 0.05
+	}
+}
+
+#演讲
+country_event = {
+	id = orga.4
+	title = orga.4.t
+	desc = orga.4.d
+	picture = GFX_report_event_generic_rally
+	is_triggered_only = yes
+	option = {
+		name = orga.4.a
+		add_political_power = 150
+		add_war_support = 0.3
+	}
+}
+
+####其他事件####
+#接纳灾民
+country_event = {
+	id = orga.5
+	title = orga.5.t
+	desc = orga.5.d
+	trigger = {
+		UKR = {
+			has_war_with = SOV
+		}
+		tag = ROM
+		is_neighbor_of = UKR
+	}
+	fire_only_once = yes
+	option = {
+		name = orga.5.a
+		add_stability = -0.1
+		add_political_power = 15
+		78 = {
+			add_manpower = 114514
+		}
+		83 = {
+			add_manpower = 1919810
+		}
+		84 = {
+			add_manpower = 223333
+		}
+	}
+}

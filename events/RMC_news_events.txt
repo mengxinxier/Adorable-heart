@@ -1,0 +1,80 @@
+﻿add_namespace = homnews
+add_namespace = homfocus
+news_event = {
+	id = homnews.1
+	title = homnews.1.t
+	desc = homnews.1.d
+	picture = GFX_event_Aqua
+	trigger = {
+		date > 1936.1.1
+		TAG = RMC
+	}
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = homnews.1.a
+	}
+}
+
+country_event = {
+	id = homfocus.1
+	title = homfocus.1.t
+	desc = homfocus.1.d
+	picture = GFX_event_hom
+	trigger = {
+		tag = RMC
+		has_completed_focus = meeting_of_ways
+	}
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = homfocus.1.a
+		set_party_name = {
+			ideology = communism
+			long_name = 意呆利自由魔法防御委员会
+			name = 自由委员会
+		}
+		remove_from_faction = RMC
+		diplomatic_relation = {
+			country = ITA
+			relation = non_aggression_pact
+			active = yes
+		}
+		complete_national_focus = civial_war
+	}
+	option = {
+		name = homfocus.1.b
+		complete_national_focus = peace_Ways
+	}
+}
+
+news_event = {
+	id = homnews.2
+	tilte = homnews.2.t
+	desc = homnews.2.d
+	picture = GFX_news_event_DVL_FRA_SPACE_NUKE
+	major = yes
+	trigger = {
+		has_completed_focus = anc_hurry
+	}
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = homnews.2.a
+		trigger = {
+			not = {
+				tag = RMC
+			}
+		}
+	}
+	option = {
+		name = homnews.2.b
+		trigger = {
+			tag = RMC
+		}
+	}
+}

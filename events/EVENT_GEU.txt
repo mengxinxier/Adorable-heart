@@ -1,0 +1,1378 @@
+add_namespace = germany_union
+news_event = {
+	###德共胜利
+	id = germany_union.0001
+	title = germany_union.0001.t
+	picture = GFX_news_GEU_victory
+	desc = germany_union.0001.d
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = germany_union.0001.a
+		trigger = {
+			tag = GEU
+		}
+		set_country_flag = super_event_GEU_VIC
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+	}
+	option = {
+		name = germany_union.0001.b
+		trigger = {
+			NOT = {
+				tag = GEU
+			}
+		}
+		set_country_flag = super_event_GEU_VIC
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+	}
+}
+
+country_event = {
+	#我们胜利了
+	id = germany_union.0002
+	title = germany_union.0002.t
+	desc = germany_union.0002.d
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = germany_union.0002.a
+		trigger = {
+			tag = GER
+		}
+		hidden_effect = {
+			news_event = {
+				id = ah_germany.10
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = germany_union.0002.a
+		trigger = {
+			tag = GEU
+		}
+		hidden_effect = {
+			news_event = {
+				id = germany_union.0001
+				days = 1
+			}
+		}
+		add_ideas = geu_civil_social_scar
+		add_ideas = geu_civil_econmic_scar
+		set_country_flag = GEU_WIN_CIVIL_WAR
+	}
+}
+
+country_event = {
+	#海森堡到来
+	id = germany_union.0003
+	title = germany_union.0003.t
+	desc = germany_union.0003.desc
+	picture = GFX_GEU_Heisenberg_coming
+	is_triggered_only = yes
+	fire_only_once = no
+	immediate = {
+		set_country_flag = heisenberg_coming
+		hidden_effect = {
+			GER = {
+				retire_character = GER_heisenberg
+			}
+		}
+	}
+	option = {
+		name = germany_union.0003.a
+		add_tech_bonus = {
+			name = secret_bonus
+			bonus = 3
+			uses = 1
+			category = nuclear
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_tech = atomic_research
+				}
+			}
+			set_technology = {
+				atomic_research = 1
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_tech = nuclear_reactor
+				}
+			}
+			set_technology = {
+				nuclear_reactor = 1
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_tech = nukes
+				}
+				date>1942.6.01
+			}
+			set_technology = {
+				nukes = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	#大会开始
+	id = germany_union.0004
+	title = germany_union.0004.t
+	desc = germany_union.0004.desc
+	#picture = GFX_GEU_Heisenberg_coming
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = germany_union.0004.a
+		country_event = {
+			id = germany_union.0006
+			days = 2
+		}
+	}
+}
+
+country_event = {
+	#第二项议程：军队政策
+	id = germany_union.0006
+	title = germany_union.0006.t
+	desc = germany_union.0006.desc
+	#picture = GFX_GEU_Heisenberg_coming
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = germany_union.0006.a
+		#中央红军
+		set_country_flag = GEU_centre_red_army
+		country_event = {
+			id = germany_union.0007
+			days = 2
+		}
+	}
+	option = {
+		name = germany_union.0006.c
+		#赤卫队
+		set_country_flag = GEU_civil_army
+		country_event = {
+			id = germany_union.0007
+			days = 2
+		}
+	}
+}
+
+country_event = {
+	#第三项议程：处置纳粹
+	id = germany_union.0007
+	title = germany_union.0007.t
+	desc = germany_union.0007.desc
+	#picture = GFX_GEU_Heisenberg_coming
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = germany_union.0007.a
+		#全部处死
+		add_stability = 0.4
+		set_country_flag = GEU_nazi_dead
+		country_event = {
+			id = germany_union.0008
+			days = 2
+		}
+	}
+	option = {
+		name = germany_union.0007.b
+		#审判政府官员，军人是无辜的
+		add_stability = -0.2
+		add_political_power = -100
+		hidden_effect = {
+			GER = {
+				every_character = {
+					limit = {
+						is_unit_leader = yes
+						not = {
+							is_character = GER_xier
+						}
+					}
+					set_nationality = GEU
+				}
+			}
+		}
+		set_country_flag = GEU_nazi_army_alive
+		country_event = {
+			id = germany_union.0008
+			days = 2
+		}
+	}
+}
+
+country_event = {
+	#第四项议程：莉莎的地位
+	id = germany_union.0008
+	title = germany_union.0008.t
+	desc = germany_union.0008.desc
+	#picture = GFX_GEU_Heisenberg_coming
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = germany_union.0008.a
+		#德国的英雄
+		add_stability = 0.2
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.2
+		}
+		set_country_flag = GEU_lisha_hore
+		country_event = {
+			id = germany_union.0009
+			days = 2
+		}
+		hidden_effect = {
+			country_event = {
+				id = germany_union.0025
+				days = 365
+			}
+		}
+	}
+	option = {
+		name = germany_union.0008.b
+		#德国的英雄，但是路线错误了
+		add_stability = 0.1
+		set_country_flag = GEU_lisha_wrong_way
+		country_event = {
+			id = germany_union.0009
+			days = 2
+		}
+		hidden_effect = {
+			country_event = {
+				id = germany_union.0026
+				days = 365
+			}
+		}
+	}
+	option = {
+		name = germany_union.0008.c
+		#我们可以做的更好
+		add_popularity = {
+			ideology = fascism
+			popularity = -0.2
+		}
+		set_country_flag = GEU_lisha_rubbish
+		country_event = {
+			id = germany_union.0009
+			days = 2
+		}
+		hidden_effect = {
+			country_event = {
+				id = germany_union.0027
+				days = 365
+			}
+		}
+	}
+}
+
+country_event = {
+	#第五项议程：外星人的遗迹
+	id = germany_union.0009
+	title = germany_union.0009.t
+	desc = germany_union.0009.desc
+	#picture = GFX_GEU_Heisenberg_coming
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = germany_union.0009.a
+		#或许我们可以学习苏联人，把它刷成红色
+		add_stability = 0.2
+		add_political_power = -50
+		set_country_flag = GEU_paint_red
+		country_event = {
+			id = germany_union.0010
+			days = 2
+		}
+	}
+	option = {
+		name = germany_union.0009.b
+		#保留
+		set_country_flag = GEU_stay_et
+		country_event = {
+			id = germany_union.0010
+			days = 2
+		}
+	}
+	option = {
+		name = germany_union.0009.c
+		#全部拆除
+		add_stability = -0.2
+		add_political_power = 100
+		set_country_flag = GEU_et_all_gone
+		country_event = {
+			id = germany_union.0010
+			days = 2
+		}
+	}
+}
+
+country_event = {
+	#第六项议程：外交政策
+	id = germany_union.0010
+	title = germany_union.0010.t
+	desc = germany_union.0010.desc
+	#picture = GFX_GEU_Heisenberg_coming
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = germany_union.0010.b
+		#只有第三国际才是我们的朋友
+		set_country_flag = GEU_only_3rd
+		country_event = {
+			id = germany_union.0005
+			days = 2
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = germany_union.0010.c
+		#第三国际已经腐化，我们必须领导新的工人国际
+		set_country_flag = GEU_4th_lianmeng
+		country_event = {
+			id = germany_union.0005
+			days = 2
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	#第七项议程：部长会议主席选举
+	id = germany_union.0005
+	title = germany_union.0005.t
+	desc = germany_union.0005.desc
+	#picture = GFX_GEU_Heisenberg_coming
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = germany_union.0005.a
+		#莉萨·恩格尔
+		add_ideas = GEU_Lisa_Engel_idea
+		#set_country_flag = GEU_COM_PLAN
+		country_event = {
+			id = germany_union.0011
+			days = 2
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = germany_union.0005.b
+		#保尔·列维
+		add_ideas = GEU_Paul_Levi_idea
+		set_country_flag = GEU_Paul_LeviPinpower
+		country_event = {
+			id = germany_union.0011
+			days = 2
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = germany_union.0005.c
+		#卡罗·米伦多夫
+		add_ideas = GEU_Carlo_Mierendorff_idea
+		set_country_flag = GEU_Carlo_Mierendorffinpower
+		country_event = {
+			id = germany_union.0011
+			days = 2
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = germany_union.0005.d
+		#艾妮丝菲亚·温·帕雷提亚
+		add_ideas = GEU_Anisufia_idea
+		set_country_flag = GEU_Anisufia_inpower
+		country_event = {
+			id = germany_union.0011
+			days = 2
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	#第八项议程：第一届主席与其内阁
+	id = germany_union.0011
+	title = germany_union.0011.t
+	desc = germany_union.0011.desc
+	#picture = GFX_GEU_Heisenberg_coming
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = germany_union.0011.a
+		custom_effect_tooltip = have_not_complete
+		#恩斯特·台尔曼
+		set_country_flag = GEU_ernst_thalmann_in_power
+		complete_national_focus = GEU_laborer_conference
+		hidden_effect = {
+			set_cosmetic_tag = GEU_2
+			set_party_name = {
+				ideology = communism
+				long_name = KPD_thalmann_LONG
+				name = KPD_SCIEN
+			}
+		}
+		ai_chance = {
+			base = 30
+		}
+	}
+	option = {
+		name = germany_union.0011.b
+		#薇莲·皮克
+		set_country_flag = GEU_Wilhelm_Pieck_in_power
+		complete_national_focus = GEU_laborer_conference
+		hidden_effect = {
+			GEU_Wilhelm_Pieck = {
+				add_country_leader_role = {
+					country_leader = {
+						desc = "GEU_Wilhelm_Pieck_INT"
+						ideology = leninism
+						traits = {
+							jiandingde_lieningzhuyi
+						}
+						expire = "1999.1.1.1"
+						id = -1
+					}
+					promote_leader = yes
+				}
+			}
+			set_party_name = {
+				ideology = communism
+				long_name = KPD_Pieck_LONG
+				name = KPD_SCIEN
+			}
+			set_cosmetic_tag = Pieck_GEU
+		}
+		ai_chance = {
+			base = 30
+		}
+	}
+	option = {
+		name = germany_union.0011.c
+		custom_effect_tooltip = have_not_complete
+		#沃纳·卡尔·海森堡
+		set_country_flag = GEU_Werner_Karl_Heisenberg_in_power
+		complete_national_focus = GEU_laborer_conference
+		hidden_effect = {
+			GEU_Werner_Karl_Heisenberg = {
+				add_country_leader_role = {
+					country_leader = {
+						desc = "GEU_Werner_Karl_Heisenberg_desc"
+						ideology = quantum_Farsighted_socialism
+						traits = {
+							Heisenberg
+						}
+						expire = "1999.1.1.1"
+						id = -1
+					}
+					promote_leader = yes
+				}
+			}
+			set_party_name = {
+				ideology = communism
+				long_name = KPD_SCIEN_LONG
+				name = KPD_SCIEN
+			}
+			set_cosmetic_tag = SCE_GEU
+		}
+		ai_chance = {
+			base = 5
+		}
+	}
+}
+
+news_event = {
+	###欧盟
+	id = germany_union.0012
+	title = germany_union.0012.t
+	picture = GFX_GEU_Europe
+	desc = germany_union.0012.desc
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = germany_union.0012.a
+		trigger = {
+			tag = GEU
+		}
+		set_country_flag = super_event_GEU_Europe
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+	}
+	option = {
+		name = germany_union.0012.b
+		trigger = {
+			NOT = {
+				tag = GEU
+			}
+		}
+		set_country_flag = super_event_GEU_Europe
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+	}
+}
+
+country_event = {
+	#家电下乡
+	id = germany_union.0013
+	title = germany_union.0013.t
+	desc = germany_union.0013.desc
+	#picture = GFX_GEU_Heisenberg_coming
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = germany_union.0013.a
+		add_stability = 0.3
+	}
+}
+
+country_event = {
+	#新的国名
+	id = germany_union.0014
+	title = germany_union.0014.t
+	#desc = germany_union.0013.desc
+	#picture = GFX_GEU_Heisenberg_coming
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = europe_GEU_communism
+		set_cosmetic_tag = europe_GEU_communism
+		hidden_effect = {
+			news_event = {
+				id = germany_union.0012
+			}
+		}
+	}
+	option = {
+		name = europe_GEU_1_communism
+		set_cosmetic_tag = europe_GEU_1_communism
+		hidden_effect = {
+			news_event = {
+				id = germany_union.0012
+			}
+		}
+	}
+	option = {
+		name = europe_GEU_2_communism
+		set_cosmetic_tag = europe_GEU_2_communism
+		hidden_effect = {
+			news_event = {
+				id = germany_union.0012
+			}
+		}
+	}
+	option = {
+		name = europe_GEU_3_communism
+		set_cosmetic_tag = europe_GEU_3_communism
+		hidden_effect = {
+			news_event = {
+				id = germany_union.0012
+			}
+		}
+	}
+}
+
+country_event = {
+	#欧洲之心？
+	id = germany_union.0015
+	title = germany_union.0015.t
+	desc = germany_union.0015.desc
+	#picture = GFX_GEU_Heisenberg_coming
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = germany_union.0015.a
+		set_province_name = {
+			id = 6521
+			name = "欧洲之心"
+		}
+		set_victory_points = {
+			province = 6521
+			value = 100
+		}
+	}
+	option = {
+		name = germany_union.0015.b
+	}
+}
+
+country_event = {
+	#[GEU.Getname]邀请我们加入[GEU.GetFactionName]
+	id = germany_union.0016
+	title = germany_union.0016.t
+	#desc = germany_union.0016.desc
+	#picture = GFX_GEU_Heisenberg_coming
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = germany_union.0016.a
+		GEU = {
+			add_to_faction = ROOT
+		}
+		hidden_effect = {
+			news_event = {
+				id = generic.2003
+				days = 1
+			}
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				is_in_faction = no
+				add = 10
+			}
+			modifier = {
+				is_faction_leader = yes
+				add = -100
+			}
+			modifier = {
+				any_home_area_neighbor_country = {
+					tag = SOV
+				}
+				add = -100
+			}
+		}
+	}
+	option = {
+		name = germany_union.0016.b
+		GEU = {
+			country_event = {
+				id = germany_union.0017
+				days = 1
+			}
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				is_in_faction = yes
+				add = 10
+			}
+			modifier = {
+				is_faction_leader = yes
+				add = 100
+			}
+			modifier = {
+				any_home_area_neighbor_country = {
+					tag = SOV
+				}
+				add = 100
+			}
+		}
+	}
+}
+
+country_event = {
+	#[ROOT.Getname]拒绝了
+	id = germany_union.0017
+	title = germany_union.0017.t
+	#desc = germany_union.0016.desc
+	#picture = GFX_GEU_Heisenberg_coming
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = germany_union.0017.a
+	}
+}
+
+country_event = {
+	#[GEU.Getname]邀请我们组建欧盟
+	id = germany_union.0018
+	title = germany_union.0018.t
+	#desc = germany_union.0016.desc
+	#picture = GFX_GEU_Heisenberg_coming
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = germany_union.0018.a
+		GEU = {
+			country_event = {
+				id = germany_union.0019
+				days = 1
+			}
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				is_subject_of = GEU
+				add = 100
+			}
+			modifier = {
+				add = 50
+				or = {
+					and = {
+						GEU = {
+							has_government = democratic
+						}
+						has_government = democratic
+					}
+					and = {
+						GEU = {
+							has_government = fascism
+						}
+						has_government = fascism
+					}
+					and = {
+						GEU = {
+							has_government = communism
+						}
+						has_government = communism
+					}
+					and = {
+						GEU = {
+							has_government = neutrality
+						}
+						has_government = neutrality
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = germany_union.0018.b
+		leave_faction = yes
+		GEU = {
+			country_event = {
+				id = germany_union.0020
+				days = 1
+			}
+		}
+		ai_chance = {
+			base = 100
+			modifier = {
+				is_subject_of = GEU
+				add = -100
+			}
+			modifier = {
+				add = -50
+				or = {
+					and = {
+						GEU = {
+							has_government = democratic
+						}
+						has_government = democratic
+					}
+					and = {
+						GEU = {
+							has_government = fascism
+						}
+						has_government = fascism
+					}
+					and = {
+						GEU = {
+							has_government = communism
+						}
+						has_government = communism
+					}
+					and = {
+						GEU = {
+							has_government = neutrality
+						}
+						has_government = neutrality
+					}
+				}
+			}
+		}
+	}
+}
+
+#[FROM.Getname]同意了
+country_event = {
+	id = germany_union.0019
+	title = germany_union.0019.t
+	is_triggered_only = yes
+	option = {
+		name = germany_union.0019.a
+		annex_country = {
+			target = FROM
+			transfer_troops = yes
+		}
+		FROM = {
+			every_unit_leader = {
+				set_nationality = ROOT
+			}
+		}
+	}
+}
+
+#[FROM.Getname]拒绝了
+country_event = {
+	id = germany_union.0020
+	title = germany_union.0020.t
+	is_triggered_only = yes
+	option = {
+		name = germany_union.0020.a
+		create_wargoal = {
+			target = FROM
+			type = annex_everything
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = germany_union.0020.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+#要求争议领土
+country_event = {
+	id = germany_union.0021
+	title = germany_union.0021.t
+	desc = germany_union.0021.desc
+	is_triggered_only = yes
+	option = {
+		name = germany_union.0021.a
+		every_state = {
+			limit = {
+				has_state_flag = L_GER
+				is_controlled_by = ROOT
+			}
+			GEU = {
+				transfer_state = PREV
+			}
+		}
+		GEU = {
+			country_event = {
+				id = germany_union.0022
+			}
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = -100
+				any_controlled_state = {
+					has_state_flag = L_GER
+					is_core_of = ROOT
+				}
+			}
+			modifier = {
+				add = 10
+				has_government = GEU
+			}
+			modifier = {
+				add = 30
+				is_in_faction_with = GEU
+			}
+			modifier = {
+				add = 100
+				is_subject_of = GEU
+			}
+		}
+	}
+	option = {
+		name = germany_union.0021.b
+		GEU = {
+			country_event = {
+				id = germany_union.0023
+			}
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = 100
+				any_controlled_state = {
+					has_state_flag = L_GER
+					is_core_of = ROOT
+				}
+			}
+			modifier = {
+				add = -20
+				is_subject = yes
+			}
+			modifier = {
+				add = -200
+				is_subject_of = GEU
+			}
+		}
+	}
+}
+
+#[FROM.Getname]同意了
+country_event = {
+	id = germany_union.0022
+	title = germany_union.0022.t
+	is_triggered_only = yes
+	option = {
+		name = germany_union.0022.a
+	}
+}
+
+#[FROM.Getname]拒绝了
+country_event = {
+	id = germany_union.0023
+	title = germany_union.0023.t
+	is_triggered_only = yes
+	option = {
+		name = germany_union.0023.a
+		create_wargoal = {
+			target = FROM
+			type = annex_everything
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = germany_union.0023.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+#婚礼
+country_event = {
+	id = germany_union.0024
+	title = germany_union.0024.t
+	desc = germany_union.0024.desc
+	picture = GFX_GEU_hunli
+	is_triggered_only = yes
+	option = {
+		name = germany_union.0024.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+#“她”为何人？
+country_event = {
+	id = germany_union.0025
+	title = germany_union.0025.t
+	desc = germany_union.0025.desc
+	picture = GFX_event_lisha
+	is_triggered_only = yes
+	option = {
+		name = germany_union.0025.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+#“她”为何人？
+country_event = {
+	id = germany_union.0026
+	title = germany_union.0026.t
+	desc = germany_union.0026.desc
+	picture = GFX_event_lisha
+	is_triggered_only = yes
+	option = {
+		name = germany_union.0026.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+#“她”为何人？
+country_event = {
+	id = germany_union.0027
+	title = germany_union.0027.t
+	desc = germany_union.0027.desc
+	picture = GFX_event_lisha
+	is_triggered_only = yes
+	option = {
+		name = germany_union.0027.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	id = germany_union.2000
+	title = germany_union.2000.t
+	desc = germany_union.2000.d
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = germany_union.2000.a
+		set_variable = {
+			GEU_Werner_Karl_Heisenberg_icon_x = 322
+		}
+		set_variable = {
+			GEU_Werner_Karl_Heisenberg_icon_y = 120
+		}
+		set_variable = {
+			GEU_Werner_Karl_Heisenberg_frame_x = 314
+		}
+		set_variable = {
+			GEU_Werner_Karl_Heisenberg_frame_y = 115
+		}
+		set_variable = {
+			GEU_Werner_Karl_Heisenberg_name_y = 334
+		}
+		set_variable = {
+			GEU_Paul_Dirac_icon_x = 222
+		}
+		set_variable = {
+			GEU_Paul_Dirac_icon_y = 420
+		}
+		set_variable = {
+			GEU_Paul_Dirac_frame_x = 214
+		}
+		set_variable = {
+			GEU_Paul_Dirac_frame_y = 415
+		}
+		set_variable = {
+			GEU_Paul_Dirac_name_y = 634
+		}
+		set_variable = {
+			GEU_Wolfgang_Ernst_Pauli_icon_x = 422
+		}
+		set_variable = {
+			GEU_Wolfgang_Ernst_Pauli_icon_y = 420
+		}
+		set_variable = {
+			GEU_Wolfgang_Ernst_Pauli_frame_x = 414
+		}
+		set_variable = {
+			GEU_Wolfgang_Ernst_Pauli_frame_y = 415
+		}
+		set_variable = {
+			GEU_Wolfgang_Ernst_Pauli_name_y = 634
+		}
+	}
+	option = {
+		name = germany_union.2000.b
+		set_variable = {
+			GEU_Werner_Karl_Heisenberg_icon_y = 420
+		}
+		set_variable = {
+			GEU_Werner_Karl_Heisenberg_frame_y = 415
+		}
+		set_variable = {
+			GEU_Werner_Karl_Heisenberg_name_y = 634
+		}
+		set_variable = {
+			GEU_Paul_Dirac_icon_x = 122
+		}
+		set_variable = {
+			GEU_Paul_Dirac_frame_x = 114
+		}
+		set_variable = {
+			GEU_Wolfgang_Ernst_Pauli_icon_x = 522
+		}
+		set_variable = {
+			GEU_Wolfgang_Ernst_Pauli_frame_x = 514
+		}
+	}
+	option = {
+		name = germany_union.2000.c
+		every_state = {
+			limit = {
+				is_on_continent = europe
+			}
+			add_core_of = GEU
+			GEU = {
+				transfer_state = PREV
+			}
+		}
+		set_cosmetic_tag = europe_GEU
+	}
+	option = {
+		name = germany_union.2000.c
+		every_state = {
+			limit = {
+				has_state_flag = L_GER
+			}
+			GEU = {
+				transfer_state = PREV
+			}
+		}
+	}
+	option = {
+		name = germany_union.2000.c
+		set_cosmetic_tag = German_Socialist_Union
+		every_state = {
+			limit = {
+				or = {
+					state = 58
+					state = 782
+				}
+			}
+			SHL = {
+				add_state_core = PREV
+				transfer_state = PREV
+			}
+			GEU = {
+				set_autonomy = {
+					target = SHL
+					autonomy_state = autonomy_GEU_autonomy_state
+				}
+			}
+		}
+	}
+	option = {
+		name = BAY_GEU_autonomy_GEU_autonomy_state
+		every_state = {
+			limit = {
+				or = {
+					state = 52
+					state = 53
+					state = 54
+				}
+			}
+			BAY = {
+				add_state_core = PREV
+				transfer_state = PREV
+			}
+			GEU = {
+				set_autonomy = {
+					target = BAY
+					autonomy_state = autonomy_GEU_autonomy_state
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = germany_union.2001
+	title = germany_union.2000.t
+	desc = germany_union.2000.d
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = German_Socialist_Union_communism
+		set_cosmetic_tag = German_Socialist_Union
+	}
+	option = {
+		name = BAY_GEU_autonomy_GEU_autonomy_state
+		every_state = {
+			limit = {
+				or = {
+					state = 52
+					state = 53
+					state = 54
+				}
+			}
+			BAY = {
+				add_state_core = PREV
+			}
+			GEU = {
+				remove_state_core = PREV
+				release_autonomy = {
+					target = BAY
+					autonomy_state = autonomy_GEU_autonomy_state
+					freedom_level = 0.5
+					release_non_owned_controlled = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = PRE_GEU_autonomy_GEU_autonomy_state
+		every_state = {
+			limit = {
+				or = {
+					state = 188
+					state = 5
+					state = 777
+					state = 776
+				}
+			}
+			PRE = {
+				add_state_core = PREV
+			}
+			GEU = {
+				remove_state_core = PREV
+				release_autonomy = {
+					target = PRE
+					autonomy_state = autonomy_GEU_autonomy_state
+					freedom_level = 0.5
+					release_non_owned_controlled = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = SAX_GEU_autonomy_GEU_autonomy_state
+		every_state = {
+			limit = {
+				or = {
+					state = 147
+					state = 65
+					state = 60
+				}
+			}
+			SAX = {
+				add_state_core = PREV
+			}
+			GEU = {
+				remove_state_core = PREV
+				release_autonomy = {
+					target = SAX
+					autonomy_state = autonomy_GEU_autonomy_state
+					freedom_level = 0.5
+					release_non_owned_controlled = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = HAN_GEU_autonomy_GEU_autonomy_state
+		every_state = {
+			limit = {
+				or = {
+					state = 59
+					state = 56
+					state = 57
+				}
+			}
+			HAN = {
+				add_state_core = PREV
+			}
+			GEU = {
+				remove_state_core = PREV
+				release_autonomy = {
+					target = HAN
+					autonomy_state = autonomy_GEU_autonomy_state
+					freedom_level = 0.5
+					release_non_owned_controlled = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = nothing
+	}
+}
+
+country_event = {
+	id = germany_union.2002
+	title = germany_union.2000.t
+	desc = germany_union.2000.d
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = WUR_GEU_autonomy_GEU_autonomy_state
+		every_state = {
+			limit = {
+				or = {
+					state = 780
+					state = 50
+				}
+			}
+			WUR = {
+				add_state_core = PREV
+			}
+			GEU = {
+				remove_state_core = PREV
+				release_autonomy = {
+					target = WUR
+					autonomy_state = autonomy_GEU_autonomy_state
+					freedom_level = 0.5
+					release_non_owned_controlled = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = SHL_GEU_autonomy_GEU_autonomy_state
+		every_state = {
+			limit = {
+				or = {
+					state = 58
+					state = 782
+				}
+			}
+			SHL = {
+				add_state_core = PREV
+			}
+			GEU = {
+				remove_state_core = PREV
+				release_autonomy = {
+					target = SHL
+					autonomy_state = autonomy_GEU_autonomy_state
+					freedom_level = 0.5
+					release_non_owned_controlled = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = RHI_GEU_autonomy_GEU_autonomy_state
+		every_state = {
+			limit = {
+				or = {
+					state = 42
+					state = 781
+					state = 51
+					state = 55
+				}
+			}
+			RHI = {
+				add_state_core = PREV
+			}
+			GEU = {
+				remove_state_core = PREV
+				release_autonomy = {
+					target = RHI
+					autonomy_state = autonomy_GEU_autonomy_state
+					freedom_level = 0.5
+					release_non_owned_controlled = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = AUS_GEU_autonomy_GEU_autonomy_state
+		every_state = {
+			limit = {
+				or = {
+					region = 21
+					state = 784
+				}
+			}
+			AUS = {
+				add_state_core = PREV
+			}
+			GEU = {
+				remove_state_core = PREV
+				release_autonomy = {
+					target = AUS
+					autonomy_state = autonomy_GEU_autonomy_state
+					freedom_level = 0.5
+					release_non_owned_controlled = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = nothing
+	}
+}

@@ -1,0 +1,1730 @@
+﻿###########################
+# News Events
+###########################
+add_namespace = PAN
+#解除魔眼
+news_event = {
+id = PAN.1
+title = PAN.1.t
+desc = PAN.1.d
+picture =GFX_report_event_PAN_1
+major = no
+trigger={
+
+tag=PAN
+date>1936.5.20
+}
+fire_only_once=yes
+option = {
+name = PAN.1.a
+
+remove_ideas = moyan
+set_global_flag = PAN_moyan
+hidden_effect = {
+country_lock_all_division_template = no
+}
+}
+}
+
+#向苏联询问援助
+news_event = {
+id = PAN.6
+title = PAN.6.t
+desc = PAN.6.d
+major = no
+fire_only_once = yes
+picture =GFX_report_event_PAN_6
+trigger={
+
+tag=PAN
+date > 1937.1.30}
+option={name=PAN.6.a
+SOV={news_event = PAN.7}	
+}
+}
+#苏联的答复
+news_event = {
+id = PAN.7
+title = PAN.7.t
+desc = PAN.7.d
+major = no
+picture =GFX_report_event_PAN_7
+is_triggered_only=yes
+option={name=PAN.7.a
+ai_chance = {
+factor = 1
+}
+army_experience=15
+PAN={news_event = PAN.11}	
+
+}
+option={name=PAN.7.b
+ai_chance = {
+factor = 100
+}
+add_timed_idea = {idea=junhuoyuanzhu days = 100 } = 100
+
+PAN={news_event = PAN.12}
+}	
+
+}
+
+#援助少量军火
+news_event = {
+id = PAN.11
+title = PAN.11.t
+desc = PAN.11.d
+picture =GFX_report_event_PAN_11
+major = no
+is_triggered_only=yes
+option={name=PAN.11.a
+add_equipment_to_stockpile = {
+type = Artifact_equipments_0
+amount = 6000
+producer = SOV
+}
+}
+}
+news_event = {
+id = PAN.24
+title = PAN.24.t
+desc = PAN.24.d
+major = no
+is_triggered_only=yes
+picture =GFX_report_event_PAN_33
+option={name=PAN.24.a
+ai_chance = {
+factor = 100
+}
+PAN={news_event = PAN.26}	
+}
+option={name=PAN.24.b
+ai_chance = {
+factor = 0
+}
+PAN={news_event = PAN.27}
+create_wargoal = { target =PAN
+type=annex_everything
+}
+
+}
+}
+news_event = {
+id = PAN.25
+title = PAN.25.t
+desc = PAN.25.d
+major = no
+is_triggered_only=yes
+picture =GFX_report_event_PAN_32
+option={name=PAN.25.a
+ai_chance = {
+factor = 100
+}
+PAN={news_event = PAN.28}	
+PAN = { add_to_faction = CUB}
+}
+option={name=PAN.25.b
+ai_chance = {
+factor = 0
+}
+PAN={news_event = PAN.29}	
+create_wargoal = { target =PAN
+type=annex_everything
+}}
+}
+
+news_event = {
+id = PAN.26
+title = PAN.26.t
+desc = PAN.26.d
+major =no
+picture =GFX_report_event_PAN_36
+is_triggered_only=yes
+option={name=PAN.26.a
+set_autonomy = {
+target = CUB
+autonomy_state =autonomy_integrated_puppet
+
+}
+
+}
+}
+news_event = {
+id = PAN.27
+title = PAN.27.t
+desc = PAN.27.d
+major = no
+is_triggered_only=yes
+picture =GFX_report_event_PAN_34
+option={name=PAN.27.a
+}
+
+}
+
+news_event = {
+id = PAN.28
+title = PAN.28.t
+desc = PAN.28.d
+major = no
+picture =GFX_report_event_PAN_37
+is_triggered_only=yes
+option={name=PAN.28.a
+}
+
+
+}
+news_event = {
+id = PAN.29
+title = PAN.29.t
+desc = PAN.29.d
+major = no
+is_triggered_only=yes
+picture =GFX_report_event_PAN_35
+option={name=PAN.29.a
+}
+
+
+}
+news_event = {
+id = PAN.30
+title = PAN.30.t
+desc = PAN.30.d
+major = no
+is_triggered_only=yes
+picture =GFX_report_event_PAN_38
+option={name=PAN.30.a
+ai_chance = {
+factor = 100
+}
+CUB={news_event=PAN.31}
+
+}
+option={name=PAN.30.b
+ai_chance = {
+factor = 0
+}
+CUB={news_event=PAN.32}
+}
+
+}
+news_event = {
+id = PAN.31
+title = PAN.31.t
+desc = PAN.31.d
+major = no
+is_triggered_only=yes
+picture =GFX_report_event_PAN_39
+option={name=PAN.31.a
+CUB={add_state_core =477
+transfer_state=477}
+
+
+}
+}
+news_event = {
+id = PAN.32
+title = PAN.32.t
+desc = PAN.32.d
+major = no
+is_triggered_only=yes
+picture =GFX_report_event_PAN_40
+option={name=PAN.32.a
+}
+}
+news_event = {
+id = PAN.33
+title = PAN.33.t
+desc = PAN.33.d
+major = no
+is_triggered_only=yes
+picture =GFX_report_event_PAN_41
+option={name=PAN.33.a
+}
+}
+
+
+
+
+
+#援助大量军火
+news_event = {
+id = PAN.12
+title = PAN.12.t
+desc = PAN.12.d
+picture =GFX_report_event_PAN_12
+major = no
+is_triggered_only=yes
+option={name=PAN.12.a
+add_equipment_to_stockpile = {
+type =Artifact_equipments_0
+amount = 12000
+producer =PAN}
+add_equipment_to_stockpile ={ 
+type = Holylance_equipments_0
+amount = 4000
+producer =PAN}
+
+
+}
+}
+news_event = {
+id = PAN.0
+title = PAN.0.t
+desc = PAN.0.d
+picture =GFX_report_event_PAN_0
+major = no
+trigger={
+tag=PAN
+}
+fire_only_once=yes
+option={name=PAN.0.a}
+}
+
+
+#幻体
+news_event = {
+
+id = PAN.10
+title = PAN.10.t
+desc = PAN.10.d
+picture =GFX_report_event_PAN_10
+major = no
+is_triggered_only=yes
+option={name=PAN.10.a}
+}
+#九条都
+news_event = {
+
+id = PAN.16
+title = PAN.16.t
+desc = PAN.16.d
+picture =GFX_report_event_PAN_16
+major = no
+is_triggered_only=yes
+option={name=PAN.16.a}
+}
+#春风
+news_event = {
+
+id = PAN.14
+title = PAN.14.t
+desc = PAN.14.d
+picture =GFX_report_event_PAN_14
+major = no
+is_triggered_only=yes
+option={name=PAN.14.a}
+}
+#新海天
+news_event = {
+
+id = PAN.15
+title = PAN.15.t
+desc = PAN.15.d
+picture =GFX_report_event_PAN_15
+major = no
+is_triggered_only=yes
+option={name=PAN.15.a}
+}
+#伊莉丝
+news_event = {
+
+id = PAN.13
+title = PAN.13.t
+desc = PAN.13.d
+picture =GFX_report_event_PAN_13
+major = no
+is_triggered_only=yes
+option={name=PAN.13.a}
+}
+#消灭
+news_event = {
+
+id = PAN.23
+title = PAN.23.t
+desc = PAN.23.d
+picture =GFX_report_event_PAN_23
+major = no
+is_triggered_only=yes
+option={name=PAN.23.a}
+}
+#希亚
+news_event = {
+
+id = PAN.20
+title = PAN.20.t
+desc = PAN.20.d
+picture =GFX_report_event_PAN_20
+major = no
+is_triggered_only=yes
+option={name=PAN.20.a}
+}
+
+news_event = {
+
+id = PAN.21
+title = PAN.21.t
+desc = PAN.21.d
+picture =GFX_report_event_PAN_21
+major = no
+is_triggered_only=yes
+option={name=PAN.21.a}
+}
+news_event = {
+
+id = PAN.35
+title = PAN.35.t
+desc = PAN.35.d
+picture =GFX_report_event_PAN_42
+major = no
+fire_only_once=yes
+trigger={
+
+tag=PAN
+date>1939.1.1
+}
+option={name=PAN.35.a
+set_technology = { Artifact_1= 1
+Ho_1=1 } 
+}
+}
+news_event = {
+
+id = PAN.36
+title = PAN.36.t
+desc = PAN.36.d
+picture =GFX_report_event_PAN_43
+major = no
+fire_only_once=yes
+trigger={
+
+tag=PAN
+date>1942.5.5
+}
+option={name=PAN.36.a
+set_technology = { Artifact_2=1 
+Ho_2=1}
+}
+}
+
+news_event = {
+
+id = PAN.37
+title = PAN.37.t
+desc = PAN.37.d
+picture =GFX_report_event_PAN_45
+major = no
+is_triggered_only=yes
+
+option={name=PAN.37.a
+ai_chance = {
+factor = 10
+}
+ROOT={	give_guarantee = FROM
+}
+ROOT={	give_military_access = FROM
+}
+}
+option={name=PAN.37.b
+ai_chance = {
+factor = 10
+}
+ROOT={	give_guarantee = FROM
+ROOT={	give_military_access = FROM
+}
+diplomatic_relation = {
+country = PAN
+relation = non_aggression_pact
+active = yes
+}
+}
+
+}
+}
+news_event = {
+
+id = PAN.38
+title = PAN.38.t
+desc = PAN.38.d
+picture =GFX_report_event_PAN_44
+major = no
+fire_only_once=yes
+trigger={
+
+tag=PAN
+date>1936.5.5
+}
+option={name=PAN.38.a
+ai_chance = {
+factor = 50
+}
+}option={name=PAN.38.b
+complete_national_focus = PAN_121
+ai_chance = {
+factor = 10
+}
+}
+}
+news_event = {
+
+id = PAN.39
+title = PAN.39.t
+desc = PAN.39.d
+picture =GFX_report_event_PAN_47
+major = no
+is_triggered_only=yes
+
+option={name=PAN.39.a
+add_political_power=100
+}
+}
+news_event = {
+id = PAN.40
+title = PAN.40.t
+desc = PAN.40.d
+picture =GFX_report_event_PAN_46
+major = no
+is_triggered_only=yes
+
+option={name=PAN.40.a
+add_stability =0.1
+}
+}
+news_event = {
+
+id = PAN.41
+title = PAN.41.t
+desc = PAN.41.d
+picture =GFX_report_event_PAN_52
+major = no
+is_triggered_only=yes
+
+option={name=PAN.41.a
+army_experience =20
+navy_experience = 20
+air_experience = 20
+}
+}
+news_event = {
+
+id = PAN.42
+title = PAN.42.t
+desc = PAN.42.d
+picture =GFX_report_event_PAN_50
+major = no
+is_triggered_only=yes
+
+option={name=PAN.42.a
+add_political_power =50
+}
+}
+news_event = {
+
+id = PAN.43
+title = PAN.43.t
+desc = PAN.43.d
+picture =GFX_report_event_PAN_51
+major = no
+is_triggered_only=yes
+
+option={name=PAN.43.a
+add_political_power =50
+}
+}
+news_event = {
+
+id = PAN.44
+title = PAN.44.t
+desc = PAN.44.d
+picture =GFX_report_event_PAN_48
+major = no
+is_triggered_only=yes
+
+option={name=PAN.44.a
+add_political_power =50
+
+}
+
+}
+news_event = {
+
+id = PAN.45
+title = PAN.45.t
+desc = PAN.45.d
+picture =GFX_report_event_PAN_49
+major = no
+is_triggered_only=yes
+
+option={name=PAN.45.a
+add_to_variable={
+var=minzhongkuailedu_panbian
+value=100
+tooltip=PAN_xfd_100
+}
+add_to_variable={
+var=ubs_save
+value=100
+tooltip=100ubs_save
+}
+}
+
+option={name=PAN.45.b
+random_owned_controlled_state={
+limit = {
+is_core_of = ROOT
+}
+add_building_construction = {
+type=industrial_complex 
+level = 1
+instant_build = yes 
+}
+}
+random_owned_controlled_state={
+limit = {
+is_core_of = ROOT
+}
+add_building_construction = {
+type=industrial_complex 
+level = 1
+instant_build = yes 
+}
+}
+random_owned_controlled_state={
+limit = {
+is_core_of = ROOT
+}
+add_building_construction = {
+type=industrial_complex 
+level = 1
+instant_build = yes 
+}
+}
+random_owned_controlled_state={
+limit = {
+is_core_of = ROOT
+}
+add_building_construction = {
+type=industrial_complex 
+level = 1
+instant_build = yes 
+}
+}
+}
+option={name=PAN.45.c
+add_research_slot = 1
+}
+}
+
+news_event = {
+
+id = PAN.46
+title = PAN.46.t
+desc = PAN.46.d
+picture =GFX_report_event_PAN_81
+major = no
+is_triggered_only=yes
+
+option={name=PAN.46.a
+PAJ={news_event = PAN.47}
+}
+
+}
+news_event = {
+
+id = PAN.47
+title = PAN.47.t
+desc = PAN.47.d
+picture =GFX_report_event_PAN_79
+major = no
+is_triggered_only=yes
+
+option={name=PAN.47.a
+add_equipment_to_stockpile = {
+type = infantry_equipment_0
+amount = 6000
+producer = PAN
+}
+add_equipment_to_stockpile = {
+type =artillery_equipment_1
+amount = 300
+producer = PAN
+}
+}
+}
+news_event = {
+
+id = PAN.48
+title = PAN.48.t
+desc = PAN.48.d
+picture =GFX_report_event_PAN_78
+major = no
+is_triggered_only=yes
+
+option={name=PAN.48.a
+add_political_power =50
+
+}
+
+}
+news_event = {
+
+id = PAN.49
+title = PAN.49.t
+desc = PAN.49.d
+picture =GFX_report_event_PAN_71
+major = no
+is_triggered_only=yes
+
+option={name=PAN.49.a
+PAJ={news_event = PAN.50}
+}
+
+}
+news_event = {
+
+id = PAN.50
+title = PAN.50.t
+desc = PAN.50.d
+picture =GFX_report_event_PAN_73
+major = no
+is_triggered_only=yes
+
+option={name=PAN.50.a
+PAJ={news_event = PAN.51}
+}
+
+
+}
+
+news_event = {
+
+id = PAN.51
+title = PAN.51.t
+desc = PAN.51.d
+picture =GFX_report_event_PAN_72
+major = no
+is_triggered_only=yes
+
+option={name=PAN.51.a
+add_political_power =50
+PAJ={news_event = PAN.64}
+
+}
+}
+news_event = {
+
+id = PAN.64
+title = PAN.64.t
+desc = PAN.64.d
+picture =GFX_report_event_PAN_75
+major = no
+is_triggered_only=yes
+
+option={name=PAN.64.a
+hidden_effect = {
+set_country_flag =PAJ_cxyd
+
+}
+
+}
+}
+news_event = {
+
+id = PAN.52
+title = PAN.52.t
+desc = PAN.52.d
+picture =GFX_report_event_PAN_55
+major = no
+trigger={
+
+tag=PAJ
+date>1936.1.1
+}
+fire_only_once=yes
+
+option={name=PAN.52.a
+hidden_effect = {
+complete_national_focus=PAJ_110
+set_country_flag =PAJ_byhz
+}
+}
+}
+news_event = {
+
+id = PAN.53
+title = PAN.53.t
+desc = PAN.53.d
+picture =GFX_report_event_PAN_56
+major = no
+trigger={
+
+tag=PAJ
+date>1937.1.1
+}
+fire_only_once=yes
+
+option={name=PAN.53.a
+}
+}
+news_event = {
+
+id = PAN.54
+title = PAN.54.t
+desc = PAN.54.d
+picture =GFX_report_event_PAN_57
+major = no
+trigger={
+
+tag=PAJ
+date>1937.2.1
+}
+fire_only_once=yes
+
+option={name=PAN.54.a
+hidden_effect = {
+set_country_flag =PAJ_shao
+complete_national_focus=PAJ_112
+load_focus_tree = {
+tree =ANGELAT
+keep_completed = yes
+}
+mark_focus_tree_layout_dirty = yes
+}
+}
+}
+news_event = {
+
+id = PAN.55
+title = PAN.55.t
+desc = PAN.55.d
+picture =GFX_report_event_PAN_68
+major = no
+is_triggered_only=yes
+option={name=PAN.55.a
+PAJ={news_event = PAN.57}
+
+}
+}
+news_event = {
+
+id = PAN.56
+title = PAN.56.t
+desc = PAN.56.d
+picture =GFX_report_event_PAN_58
+major = no
+fire_only_once=yes
+trigger={
+
+tag=PAJ
+date>1936.5.5
+}
+option={name=PAN.56.a
+hidden_effect = {
+set_country_flag =PAJ_jinzi
+complete_national_focus=PAJ_113
+load_focus_tree = {
+tree =ANGELAT
+keep_completed = yes
+}
+mark_focus_tree_layout_dirty = yes
+}
+}
+}
+news_event = {
+
+id = PAN.69
+title = PAN.69.t
+desc = PAN.69.d
+picture =GFX_report_event_PAN_62
+major = no
+fire_only_once=yes
+trigger={
+
+tag=PAJ
+date>1936.7.5
+}
+option={name=PAN.69.a
+hidden_effect = {
+complete_national_focus=PAJ_111
+set_country_flag =PAJ_yinhong
+load_focus_tree = {
+tree =ANGELAT
+keep_completed = yes
+}
+mark_focus_tree_layout_dirty = yes
+}
+}
+}
+news_event = {
+
+id = PAN.57
+title = PAN.57.t
+desc = PAN.57.d
+picture =GFX_report_event_PAN_69
+major = no
+is_triggered_only=yes
+option={name=PAN.57.a
+hidden_effect = {
+set_country_flag =PAJ_chunzhen
+load_focus_tree = {
+tree =ANGELAT
+keep_completed = yes
+}
+mark_focus_tree_layout_dirty = yes
+}
+}
+}
+news_event = {
+
+id = PAN.58
+title = PAN.58.t
+desc = PAN.58.d
+picture =GFX_report_event_PAN_74
+major = no
+is_triggered_only=yes
+option={name=PAN.58.a
+PAJ={news_event = PAN.59}
+}
+}
+news_event = {
+
+id = PAN.59
+title = PAN.59.t
+desc = PAN.59.d
+picture =GFX_report_event_PAN_82
+major = no
+is_triggered_only=yes
+option={name=PAN.65.a
+PAJ={news_event = PAN.65}
+hidden_effect = {
+set_country_flag =PAJ_qihei
+
+}
+}
+}
+news_event = {
+
+id = PAN.65
+title = PAN.65.t
+desc = PAN.65.d
+picture =GFX_report_event_PAN_76
+major = no
+is_triggered_only=yes
+option={name=PAN.65.a
+PAJ={news_event = PAN.66}
+}
+}
+news_event = {
+
+id = PAN.66
+title = PAN.66.t
+desc = PAN.66.d
+picture =GFX_report_event_PAN_77
+major = no
+is_triggered_only=yes
+option={name=PAN.66.a
+hidden_effect = {
+load_focus_tree = {
+tree =ANGELAT
+keep_completed = yes
+}
+mark_focus_tree_layout_dirty = yes
+}
+}
+}
+news_event = {
+
+id = PAN.67
+title = PAN.67.t
+desc = PAN.67.d
+picture =GFX_report_event_PAN_70
+major = no
+is_triggered_only=yes
+option={name=PAN.67.a
+}
+}
+news_event = {
+
+id = PAN.68
+title = PAN.68.t
+desc = PAN.68.d
+picture =GFX_report_event_PAN_61
+major = no
+is_triggered_only=yes
+option={name=PAN.68.a
+}
+}
+news_event = {
+
+id = PAN.60
+title = PAN.60.t
+desc = PAN.60.d
+picture =GFX_report_event_PAN_83
+major = no
+is_triggered_only=yes
+option={name=PAN.60.a
+add_ideas=PAJ_tanke
+}
+option={name=PAN.60.b
+add_ideas=PAJ_bubing
+}
+}
+news_event = {
+
+id = PAN.61
+title = PAN.61.t
+desc = PAN.61.d
+picture =GFX_report_event_PAN_84
+major = no
+is_triggered_only=yes
+option={name=PAN.61.a
+add_ideas=PAJ_haijun1
+}
+option={name=PAN.61.b
+add_ideas=PAJ_haijun2
+}
+}
+news_event = {
+
+id = PAN.62
+title = PAN.62.t
+desc = PAN.62.d
+picture =GFX_report_event_PAN_60
+major = no
+is_triggered_only=yes
+option={name=PAN.62.a
+PAJ={news_event = PAN.63}
+}
+
+}
+news_event = {
+
+id = PAN.63
+title = PAN.63.t
+desc = PAN.63.d
+picture =GFX_report_event_PAN_59
+major = no
+is_triggered_only=yes
+option={name=PAN.63.a
+}
+
+}
+news_event = {
+
+id = PAN.70
+title = PAN.70.t
+desc = PAN.70.d
+picture =GFX_report_event_PAN_63
+major = no
+is_triggered_only=yes
+option={name=PAN.70.a
+PAJ={news_event=PAN.71
+}
+}
+}
+news_event = {
+
+id = PAN.71
+title = PAN.71.t
+desc = PAN.71.d
+picture =GFX_report_event_PAN_64
+major = no
+is_triggered_only=yes
+option={name=PAN.71.a
+PAJ={news_event=PAN.72
+}
+}
+}
+news_event = {
+
+id = PAN.72
+title = PAN.72.t
+desc = PAN.72.d
+picture =GFX_report_event_PAN_65
+major = no
+
+is_triggered_only=yes
+option={name=PAN.72.a
+news_event = PAN.73
+}
+}
+news_event = {
+
+id = PAN.75
+title = PAN.75.t
+desc = PAN.75.d
+picture =GFX_report_event_PAN_53
+major = no
+trigger={
+
+tag=PAN
+date>1936.3.1
+}
+fire_only_once=yes
+option={name=PAN.75.a
+}
+}
+news_event = {
+
+id = PAN.77
+title = PAN.77.t
+desc = PAN.77.d
+picture =GFX_report_event_PAN_80
+major = no
+trigger={
+is_in_faction = yes
+tag=PAJ
+has_war =no
+date > 1936.5.5
+
+}
+fire_only_once=yes
+option={name=PAN.77.a
+custom_effect_tooltip =PAN_77_E
+ai_chance = {
+factor = 100
+}
+hidden_effect = {
+
+set_country_flag=PAJ_ssgg
+load_focus_tree = {
+tree =ANGELAT
+}
+mark_focus_tree_layout_dirty = yes
+PAN={
+transfer_state=478}
+PAN={
+transfer_state=1123}
+PAN={
+transfer_state=1124}
+PAN={
+transfer_state=1125}
+PAN={
+transfer_state=1126}
+PAN={
+transfer_state=277}
+PAN={
+transfer_state=485}
+PAN={
+transfer_state=477}
+PAN={
+transfer_state=476}
+PAN={
+transfer_state=475}
+PAN={
+transfer_state=313}
+PAN={
+transfer_state=474}
+PAN={
+transfer_state=311}
+PAN={
+transfer_state=312}
+PAN={
+transfer_state=314}
+PAN={
+transfer_state=313}
+PAN={
+transfer_state=475}
+}
+
+}
+
+}
+news_event = {
+id = PAN.73
+title = PAN.73.t
+desc = PAN.73.d
+is_triggered_only = yes
+major = yes
+picture =GFX_report_event_PAN_66
+option = {
+name = PAN.73.a
+trigger = {
+TAG = PAJ
+}
+Set_country_flag=super_event_PAJ_GZZ
+set_country_flag =adorable_heart_Super_Event_Visible
+adorable_heart_fire_super_event = yes
+}
+option = {
+name = PAN.73.b
+trigger = {
+NOT={	
+tag=PAJ
+}
+}
+Set_country_flag=super_event_PAJ_GZZ
+set_country_flag =adorable_heart_Super_Event_Visible
+adorable_heart_fire_super_event = yes
+}
+
+}
+news_event = {
+id = PAN.74
+title = PAN.74.t
+desc = PAN.74.d
+is_triggered_only = yes
+major = yes
+picture =GFX_report_event_PAN_67
+option = {
+name = PAN.74.a
+trigger = {
+TAG = PAJ
+}
+Set_country_flag=super_event_PAJ_GG
+set_country_flag =adorable_heart_Super_Event_Visible
+adorable_heart_fire_super_event = yes
+}
+option = {
+name = PAN.74.b
+trigger = {
+NOT={	
+tag=PAJ
+}
+}
+Set_country_flag=super_event_PAJ_GG
+set_country_flag =adorable_heart_Super_Event_Visible
+adorable_heart_fire_super_event = yes
+}
+
+}
+news_event = {
+
+id = PAN.80
+title = PAN.80.t
+desc = PAN.80.d
+picture =GFX_report_event_PAN_54
+major = no
+is_triggered_only=yes
+option={name=PAN.80.a
+ai_chance = {
+factor = 100
+}
+PAN= {
+country_event = generic.2002
+}
+
+}
+option={name=PAN.80.b
+ai_chance = {
+factor = 0
+}
+}
+}
+news_event = {
+
+id = PAN.81
+title = PAN.81.t
+desc = PAN.81.d
+picture =GFX_report_event_PAN_54
+major = no
+is_triggered_only=yes
+option={name=PAN.81.a
+hidden_effect = {
+load_focus_tree = {
+tree =YOKINOYA
+keep_completed = yes
+}
+mark_focus_tree_layout_dirty = yes
+set_country_flag=PAN_longnv
+}
+}
+}
+news_event = {
+
+id = PAN.90
+title = PAN.90.t
+desc = PAN.90.d
+picture =GFX_report_event_PAN_54
+major = no
+is_triggered_only=yes
+option={name=PAN.90.a
+add_opinion_modifier = {
+target = PAN
+modifier = offered_support
+}
+reverse_add_opinion_modifier = {
+target = PAN
+modifier = offered_support
+}
+ROOT={	give_military_access = FROM
+}
+diplomatic_relation = {
+country = PAN
+relation = non_aggression_pact
+active = yes
+}
+ai_chance = {
+factor = 100
+}
+}
+option={name=PAN.90.b
+ai_chance = {
+factor = 0
+}
+}
+}
+news_event = {
+
+id = PAN.91
+title = PAN.91.t
+desc = PAN.91.d
+picture =GFX_report_event_PAN_54
+major = no
+is_triggered_only=yes
+option={name=PAN.91.a
+add_equipment_to_stockpile = {
+type = infantry_equipment_0
+amount = 6000
+producer = PAN
+}
+add_equipment_to_stockpile = {
+type =artillery_equipment_1
+amount = 300
+producer = PAN
+}
+
+
+}
+
+}
+
+#消灭与一
+news_event = {
+
+id = PAN.8
+title = PAN.8.t
+desc = PAN.8.d
+picture =GFX_report_event_PAN_8
+fire_only_once =yes
+major = no
+trigger = {
+tag=PAN
+NOT = { country_exists = GUA}
+}
+option={name=PAN.8.a
+news_event = PAN.9
+
+}
+}
+
+news_event = {
+is_triggered_only=yes
+id = PAN.98
+title = PAN.98.t
+desc = PAN.98.d
+picture =GFX_report_event_PAN_98
+major = no
+
+option={name=PAN.98.a
+news_event = PAN.99
+}
+} 
+
+
+#USER拯救
+news_event = {
+id = PAN.9
+title = PAN.9.t
+desc = PAN.9.d
+is_triggered_only = yes
+major = yes
+picture =GFX_report_event_PAN_9
+option = {
+name = PAN.9.a
+trigger = {
+TAG = PAN
+}
+Set_country_flag=super_event_PAN_USER
+set_country_flag =adorable_heart_Super_Event_Visible
+adorable_heart_fire_super_event = yes
+}
+option = {
+name = PAN.9.b
+trigger = {
+NOT={	
+tag=PAN
+}
+}
+Set_country_flag=super_event_PAN_USER
+set_country_flag =adorable_heart_Super_Event_Visible
+adorable_heart_fire_super_event = yes
+}
+
+}
+#保卫南美
+news_event={
+
+
+is_triggered_only = yes
+major = yes
+id=PAN.99
+title =PAN.99.t
+desc = PAN.99.d
+picture =GFX_report_event_PAN_99
+option={name=PAN.99.a
+trigger = {
+tag = PAN
+}
+Set_country_flag=super_event_PAN_WSY
+set_country_flag =adorable_heart_Super_Event_Visible
+adorable_heart_fire_super_event = yes
+}
+
+option = {
+name = PAN.99.b
+trigger = {
+NOT={	
+tag=PAN
+}
+}
+Set_country_flag=super_event_PAN_WSY
+set_country_flag =adorable_heart_Super_Event_Visible
+adorable_heart_fire_super_event = yes
+}	
+}
+
+#精灵合作事件
+news_event = {
+id = PAN.2
+title = PAN.2.t
+desc = PAN.2.d
+major = no
+picture =GFX_report_event_PAN_2	   
+fire_only_once=yes
+is_triggered_only = yes
+option = {
+name = PAN.2.a
+ai_chance = {
+factor = 10
+}
+ROOT = {365= {
+add_building_construction = {
+type = industrial_complex
+level = 1
+instant_build =yes 
+
+}
+}
+}
+
+
+
+FROM={304= {
+add_building_construction = {
+type = industrial_complex
+level = 1
+instant_build =yes 
+}
+}		
+news_event = {
+id = PAN.3
+days = 1
+}
+
+}
+}
+option = {
+name = PAN.2.b
+ai_chance = {
+factor = 10
+}
+ROOT={	365= {
+add_building_construction = {
+type = industrial_complex
+level = 2
+instant_build =yes 
+
+}
+}
+}
+FROM={	      
+317= {
+add_resource = {
+type = originium
+amount = 15
+
+}
+}	
+}		
+news_event = {
+id = PAN.4
+days = 1
+}
+
+}
+}
+
+#贸易新闻
+news_event = {
+trigger={
+
+tag=PAN
+}
+id=PAN.3
+picture =GFX_report_event_PAN_3
+major = no
+is_triggered_only = yes
+fire_only_once=yes
+title =PAN.3.t
+desc = PAN.3.d
+option={name=PAN.3.a}
+
+}
+#贸易新闻
+news_event = {
+trigger={
+
+tag=PAN
+}
+is_triggered_only = yes
+id=PAN.4
+picture =GFX_report_event_PAN_4
+major = no
+fire_only_once=yes
+title =PAN.4.t
+desc = PAN.4.d
+option={name=PAN.4.a}
+}
+news_event = {
+#戴比内战
+id = PAN.100
+title = PAN.100.t
+desc = PAN.100.d
+picture = GFX_event_DVL_AUS_refuse
+is_triggered_only = yes
+fire_only_once = yes
+immediate = {
+hidden_effect = {
+PAN = {
+transfer_state = 304
+transfer_state = 685
+transfer_state = 316
+transfer_state = 317
+transfer_state = 1071
+add_equipment_to_stockpile = {
+type = infantry_equipment_0
+amount = 40000
+}
+add_equipment_to_stockpile = {
+type = support_equipment
+amount = 1000
+}
+add_manpower = 800000
+division_template = {
+name = "内战民兵团"
+is_locked = yes
+regiments = {
+infantry = {
+x = 0
+y = 0
+}
+infantry = {
+x = 0
+y = 1
+}
+infantry = {
+x = 0
+y = 2
+}
+infantry = {
+x = 0
+y = 3
+}
+}
+}
+capital_scope = {
+create_unit = {
+division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+owner = PAN
+}
+create_unit = {
+division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+owner = PAN
+}
+create_unit = {
+division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+owner = PAN
+}
+create_unit = {
+division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+owner = PAN
+}
+create_unit = {
+division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+owner = PAN
+}
+create_unit = {
+division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+owner = PAN
+}
+create_unit = {
+division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+owner = PAN
+}
+create_unit = {
+division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+owner = PAN
+}
+create_unit = {
+division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+owner = PAN
+}
+create_unit = {
+division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+owner = PAN
+}
+}
+}
+PAY = {
+transfer_state = 312
+transfer_state = 314
+transfer_state = 313
+transfer_state = 311
+transfer_state = 474
+transfer_state = 475
+transfer_state = 476
+transfer_state = 477
+transfer_state = 277
+transfer_state = 485
+transfer_state = 478
+add_equipment_to_stockpile = {
+type = infantry_equipment_0
+amount = 40000
+}
+add_equipment_to_stockpile = {
+type = support_equipment
+amount = 1000
+}
+add_manpower = 800000
+inherit_technology = PAN
+division_template = {
+name = "内战民兵团"
+is_locked = yes
+regiments = {
+infantry = {
+x = 0
+y = 0
+}
+infantry = {
+x = 0
+y = 1
+}
+infantry = {
+x = 0
+y = 2
+}
+infantry = {
+x = 0
+y = 3
+}
+}
+}
+capital_scope = {
+create_unit = {
+division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+owner = PAY
+}
+create_unit = {
+division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+owner = PAY
+}
+create_unit = {
+division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+owner = PAY
+}
+create_unit = {
+division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+owner = PAY
+}
+create_unit = {
+division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+owner = PAY
+}
+create_unit = {
+division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+owner = PAY
+}
+create_unit = {
+division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+owner = PAY
+}
+create_unit = {
+division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+owner = PAY
+}
+create_unit = {
+division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+owner = PAY
+}
+create_unit = {
+division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+owner = PAY
+
+}
+}
+}
+every_state = {
+limit = {
+is_core_of = PAN
+}
+add_core_of = PAY 
+add_core_of = PAN
+}
+}
+}
+option = {
+name = PAN.100.a
+ai_chance = {
+factor = 0
+}
+hidden_effect = {
+PAN = {
+declare_war_on = {
+target = PAY
+type = annex_everything
+}
+
+}
+}
+}
+option = {
+name = PAN.100.b
+ai_chance = {
+factor = 100
+}
+
+hidden_effect = {
+PAY={news_event = {
+id = PAN.101
+days = 10
+}
+}
+PAY = {
+change_tag_from = PAN
+}
+PAY  = {
+declare_war_on = {
+target = PAN
+type = annex_everything
+}
+}
+}
+}
+}   
+news_event = {
+id = PAN.101
+title = PAN.101.t
+desc = PAN.101.d
+picture = GFX_event_DVL_AUS_refuse
+is_triggered_only = yes
+fire_only_once = yes
+option = {
+name = PAN.101.a
+every_state = {
+limit = {
+is_core_of = GUA
+}
+add_core_of = PAY
+}
+}
+}

@@ -1,0 +1,182 @@
+﻿add_namespace = SHY_britain
+country_event = {
+	id = SHY_britain.1
+	title = SHY_britain.1.t
+	desc = SHY_britain.1.d
+	picture = GFX_report_event_japanese_officers
+	is_triggered_only = yes
+	option = {
+		name = SHY_britain.1.a
+		add_political_power = -10
+		add_autonomy_ratio = {
+			value = 0.1
+		}
+		add_manpower = -30000
+		ENG = {
+			country_event = {
+				days = 10
+				id = SHY_britain.2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = SHY_britain.2
+	title = SHY_britain.2.t
+	desc = SHY_britain.2.d
+	picture = GFX_report_event_japanese_officers
+	is_triggered_only = yes
+	option = {
+		name = SHY_britain.2.a
+		hidden_effect = {
+			load_oob = ENG_jundui
+		}
+	}
+}
+
+country_event = {
+	id = SHY_britain.3
+	title = SHY_britain.3.t
+	desc = SHY_britain.3.d
+	picture = GFX_report_event_japanese_officers
+	is_triggered_only = yes
+	option = {
+		name = SHY_britain.3.a
+		add_ideas = luolianna
+	}
+}
+
+country_event = {
+	id = SHY_britain.4
+	title = SHY_britain.4.t
+	desc = SHY_britain.4.d
+	picture = GFX_event_Saber
+	is_triggered_only = yes
+	option = {
+		name = SHY_britain.4.a
+		if = {
+			limit = {
+				NOT = {
+					TAG = AST
+				}
+			}
+			add_political_power = -50
+			add_stability = -0.05
+		}
+		if = {
+			limit = {
+				TAG = AST
+			}
+			AST_jingfeiyusuan_level_down = yes
+		}
+	}
+}
+
+country_event = {
+	id = SHY_britain.5
+	title = SHY_britain.5.t
+	desc = SHY_britain.5.d
+	picture = GFX_event_Saber
+	is_triggered_only = yes
+	option = {
+		name = SHY_britain.5.a
+		ai_chance = {
+			base = 20
+		}
+		ENG = {
+			transfer_state = 118
+		}
+	}
+	option = {
+		name = SHY_britain.5.b
+		ai_chance = {
+			base = 10
+		}
+		ENG = {
+			country_event = SHY_britain.6
+		}
+	}
+}
+
+country_event = {
+	id = SHY_britain.6
+	title = SHY_britain.6.t
+	desc = SHY_britain.6.d
+	picture = GFX_report_event_polish_tanks_01
+	is_triggered_only = yes
+	option = {
+		name = SHY_britain.6.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = 10
+				has_army_manpower = {
+					size > 399999
+				}
+			}
+			modifier = {
+				add = 10
+				has_war_support > 0.6
+			}
+		}
+		declare_war_on = {
+			target = CCY
+			type = annex_everything
+		}
+		add_timed_idea = {
+			idea = buhelizhanzheng
+			days = 180
+		}
+	}
+	option = {
+		name = SHY_britain.6.b
+		ai_chance = {
+			base = 20
+		}
+		add_political_power = -50
+		add_war_support = -0.1
+	}
+}
+
+####经济殖民####
+country_event = {
+	id = SHY_britain.7
+	title = SHY_britain.7.t
+	desc = SHY_britain.7.d
+	picture = GFX_report_event_tanks_mexico_city
+	is_triggered_only = yes
+	option = {
+		name = SHY_britain.7.a
+		ai_chance = {
+			base = 10
+		}
+		add_stability = -0.08
+		add_political_power = -50
+		add_manpower = -10000
+		ENG = {
+			country_event = {
+				days = 1
+				id = SHY_britain.8
+			}
+		}
+	}
+}
+
+####从XX国榨取的利益####
+country_event = {
+	id = SHY_britain.8
+	title = SHY_britain.8.t
+	desc = SHY_britain.8.d
+	picture = GFX_report_event_ast_navy
+	is_triggered_only = yes
+	option = {
+		name = SHY_britain.8.a
+		ai_chance = {
+			base = 10
+		}
+		add_stability = 0.03
+		add_war_support = 0.02
+		add_political_power = 25
+	}
+}

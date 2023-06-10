@@ -1,0 +1,831 @@
+﻿###########################
+# News Events
+###########################
+add_namespace = news
+###火车银行世界事件###
+news_event = {
+	id = news.1050
+	title = news.1050.t
+	desc = news.1050.desc
+	picture = GFX_news_event_TRB_1
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1050.a
+		trigger = {
+			NOT = {
+				tag = TRB
+			}
+		}
+	}
+	option = {
+		name = news.1050.b
+		trigger = {
+			tag = TRB
+		}
+	}
+}
+
+news_event = {
+	id = news.1051
+	title = news.1051.t
+	desc = news.1051.desc
+	picture = GFX_news_event_TRB_2
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1051.a
+		trigger = {
+			NOT = {
+				tag = TRB
+			}
+		}
+	}
+	option = {
+		name = news.1051.b
+		trigger = {
+			tag = TRB
+		}
+	}
+}
+
+news_event = {
+	id = news.1052
+	title = news.1052.t
+	desc = news.1052.desc
+	picture = GFX_news_event_TRB_3
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1052.a
+		trigger = {
+			NOT = {
+				tag = TRB
+			}
+		}
+	}
+	option = {
+		name = news.1052.b
+		trigger = {
+			tag = TRB
+		}
+	}
+}
+
+news_event = {
+	id = news.1053
+	title = news.1052.t
+	desc = news.1053.desc
+	picture = GFX_news_event_TRB_3
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1052.a
+		trigger = {
+			NOT = {
+				tag = TRB
+			}
+		}
+	}
+	option = {
+		name = news.1052.b
+		trigger = {
+			tag = TRB
+		}
+	}
+}
+
+news_event = {
+	id = news.1054
+	title = news.1054.t
+	desc = news.1054.desc
+	picture = GFX_news_event_TRB_4
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1054.a
+		trigger = {
+			NOT = {
+				tag = TRB
+			}
+		}
+	}
+	option = {
+		name = news.1054.b
+		trigger = {
+			tag = TRB
+		}
+	}
+}
+
+news_event = {
+	id = news.1055
+	title = news.1055.t
+	desc = news.1055.desc
+	picture = GFX_news_event_TRB_5
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1055.a
+		trigger = {
+			NOT = {
+				tag = TRB
+			}
+		}
+	}
+	option = {
+		name = news.1055.b
+		trigger = {
+			tag = TRB
+		}
+	}
+}
+
+news_event = {
+	id = news.1056
+	title = news.1056.t
+	desc = news.1056.desc
+	picture = GFX_news_event_TRB_6
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1056.a
+		trigger = {
+			NOT = {
+				tag = TRB
+			}
+		}
+	}
+	option = {
+		name = news.1056.b
+		trigger = {
+			tag = TRB
+		}
+	}
+}
+
+news_event = {
+	id = news.1057
+	title = news.1057.t
+	desc = news.1057.desc
+	picture = GFX_news_event_TRB_7
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1057.a
+		trigger = {
+			NOT = {
+				tag = TRB
+			}
+			NOT = {
+				tag = ITA
+			}
+			NOT = {
+				tag = AUS
+			}
+		}
+	}
+	option = {
+		name = news.1057.b
+		trigger = {
+			tag = TRB
+		}
+	}
+	option = {
+		name = news.1057.c
+		trigger = {
+			tag = ITA
+			tag = AUS
+		}
+	}
+}
+
+news_event = {
+	id = news.1058
+	title = news.1058.t
+	desc = news.1058.desc
+	picture = GFX_news_event_TRB_8
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1058.a
+		trigger = {
+			NOT = {
+				tag = TRB
+			}
+		}
+	}
+	option = {
+		name = news.1058.b
+		trigger = {
+			tag = TRB
+		}
+	}
+}
+
+news_event = {
+	id = news.1059
+	title = news.1059.t
+	desc = news.1059.desc
+	picture = GFX_news_event_TRB_9
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1059.a
+		trigger = {
+			NOT = {
+				tag = TRB
+			}
+		}
+	}
+	option = {
+		name = news.1059.b
+		trigger = {
+			tag = TRB
+		}
+	}
+}
+
+news_event = {
+	id = news.1060
+	title = news.1060.t
+	desc = news.1060.desc
+	picture = GFX_news_event_TRB_10
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1060.a
+		trigger = {
+			NOT = {
+				tag = TRB
+			}
+		}
+	}
+	option = {
+		name = news.1060.b
+		trigger = {
+			tag = TRB
+		}
+	}
+}
+
+news_event = {
+	id = news.1061
+	title = news.1061.t
+	desc = news.1061.desc
+	picture = GFX_news_event_TRB_yizetai
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = news.1061.a
+		trigger = {
+			NOT = {
+				tag = AUS
+				tag = TRB
+			}
+		}
+	}
+	option = {
+		name = news.1061.b
+		trigger = {
+			tag = AUS
+		}
+	}
+	option = {
+		name = news.1061.c
+		trigger = {
+			tag = TRB
+		}
+	}
+}
+
+news_event = {
+	id = news.1062
+	title = news.1062.t
+	desc = news.1062.desc
+	picture = GFX_news_event_RJE_1
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = news.1062.a
+		trigger = {
+			NOT = {
+				tag = RJE
+				tag = JAP
+			}
+		}
+	}
+	option = {
+		name = news.1062.b
+		trigger = {
+			tag = RJE
+			tag = JAP
+		}
+	}
+}
+
+news_event = {
+	id = news.1063
+	title = news.1063.t
+	desc = news.1063.desc
+	picture = GFX_news_event_RJE_2
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = news.1063.a
+		trigger = {
+			NOT = {
+				tag = RJE
+			}
+		}
+	}
+	option = {
+		name = news.1063.b
+		trigger = {
+			tag = RJE
+		}
+	}
+}
+
+news_event = {
+	id = news.1064
+	title = news.1064.t
+	desc = news.1064.desc
+	picture = GFX_news_event_TRB_7
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = news.1064.a
+		trigger = {
+			NOT = {
+				tag = TRB
+			}
+		}
+	}
+	option = {
+		name = news.1064.b
+		trigger = {
+			tag = TRB
+		}
+	}
+}
+
+news_event = {
+	id = news.1065
+	title = news.1065.t
+	desc = news.1065.desc
+	picture = GFX_news_event_TRB_new_way
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = news.1065.a
+		trigger = {
+			NOT = {
+				tag = TRB
+			}
+		}
+	}
+	option = {
+		name = news.1065.b
+		trigger = {
+			tag = TRB
+		}
+	}
+}
+
+news_event = {
+	id = news.1066
+	title = news.1066.t
+	desc = news.1066.desc
+	picture = GFX_news_event_TRB_new_way
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = news.1066.a
+		trigger = {
+			NOT = {
+				tag = TRB
+			}
+		}
+	}
+	option = {
+		name = news.1066.b
+		trigger = {
+			tag = TRB
+		}
+	}
+}
+
+#############樱花国世界事件###########################
+# 樱花内战结束
+news_event = {
+	id = news.756
+	title = news.756.t
+	desc = news.756.desc
+	picture = GFX_news_event_king_speech
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = news.756.a
+		trigger = {
+			TAG = JAP
+		}
+	}
+	option = {
+		name = news.756.b
+		trigger = {
+			NOT = {
+				TAG = ENG
+				TAG = JAP
+			}
+		}
+	}
+	option = {
+		name = news.756.c
+		trigger = {
+			TAG = ENG
+		}
+	}
+}
+
+# 人类解放宣言
+news_event = {
+	id = news.757
+	title = news.757.t
+	desc = news.757.desc
+	picture = GFX_news_event_020
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.757.a
+		trigger = {
+			TAG = JAP
+		}
+	}
+	option = {
+		name = news.757.b
+		trigger = {
+			NOT = {
+				TAG = JAP
+			}
+		}
+	}
+}
+
+# 日本内战结束
+news_event = {
+	id = news.758
+	title = news.758.t
+	desc = news.758.desc
+	picture = GFX_news_event_017
+	major = yes
+	trigger = {
+		has_global_flag = JAP_neizhan
+		JAP = {
+			has_civil_war = no
+		}
+	}
+	immediate = {
+		clr_global_flag = JAP_neizhan
+		set_global_flag = JAP_neizhan_no
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = {
+		name = news.758.a
+		trigger = {
+			TAG = JAP
+		}
+	}
+	option = {
+		name = news.758.b
+		trigger = {
+			NOT = {
+				TAG = JAP
+			}
+		}
+	}
+}
+
+# 张作霖遇刺
+news_event = {
+	id = news.759
+	title = news.759.t
+	desc = news.759.desc
+	picture = GFX_news_event_saf_civil_war
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.759.a
+		trigger = {
+			TAG = JAP
+		}
+	}
+	option = {
+		name = news.759.b
+		trigger = {
+			TAG = MAN
+		}
+	}
+	option = {
+		name = news.759.c
+		trigger = {
+			NOT = {
+				TAG = JAP
+			}
+			NOT = {
+				TAG = MAN
+			}
+		}
+	}
+}
+
+#岛屿归还给樱花
+news_event = {
+	id = news.768
+	title = news.768.t
+	desc = news.768.desc
+	picture = GFX_news_event_japanese_army_parade
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.768.a
+		trigger = {
+			TAG = JAP
+		}
+	}
+	option = {
+		name = news.768.b
+		trigger = {
+			has_government = democratic
+			OR = {
+				TAG = ENG
+				is_in_faction_with = ENG
+			}
+			NOT = {
+				TAG = JAP
+			}
+		}
+	}
+	option = {
+		name = news.768.c
+		trigger = {
+			NOT = {
+				TAG = ENG
+				TAG = JAP
+				is_in_faction_with = ENG
+			}
+		}
+	}
+}
+
+#圣杯欺骗樱花
+news_event = {
+	id = news.769
+	title = news.769.t
+	desc = news.769.desc
+	picture = GFX_news_event_churchill_degaulle
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.769.a
+		trigger = {
+			TAG = JAP
+		}
+	}
+	option = {
+		name = news.769.b
+		trigger = {
+			has_government = democratic
+			OR = {
+				TAG = ENG
+				is_in_faction_with = ENG
+			}
+			NOT = {
+				TAG = JAP
+			}
+		}
+	}
+	option = {
+		name = news.769.c
+		trigger = {
+			NOT = {
+				TAG = ENG
+				TAG = JAP
+				is_in_faction_with = ENG
+			}
+		}
+	}
+}
+
+#樱花同意延长期限
+news_event = {
+	id = news.770
+	title = news.770.t
+	desc = news.770.desc
+	picture = GFX_news_event_japanese_army_parade
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.770.a
+		trigger = {
+			TAG = JAP
+		}
+	}
+	option = {
+		name = news.770.b
+		trigger = {
+			has_government = democratic
+			OR = {
+				TAG = ENG
+				is_in_faction_with = ENG
+			}
+			NOT = {
+				TAG = JAP
+			}
+		}
+	}
+	option = {
+		name = news.770.c
+		trigger = {
+			NOT = {
+				TAG = ENG
+				TAG = JAP
+				is_in_faction_with = ENG
+			}
+		}
+	}
+}
+
+#樱花国吞并朝鲜（民主线）
+news_event = {
+	id = news.771
+	title = news.771.t
+	desc = news.771.desc
+	picture = GFX_news_event_japanese_army_parade
+	major = yes
+	is_triggered_only = yes
+	immediate = {
+		set_global_flag = JAP_tunbing_KOR
+	}
+	option = {
+		name = news.770.a
+		trigger = {
+			TAG = JAP
+		}
+	}
+	option = {
+		name = news.771.b
+		trigger = {
+			OR = {
+				TAG = CHI
+				TAG = PRC
+				TAG = GXC
+			}
+		}
+	}
+	option = {
+		name = news.771.c
+		trigger = {
+			TAG = ENG
+		}
+	}
+	option = {
+		name = news.771.d
+		trigger = {
+			NOT = {
+				TAG = JAP
+				TAG = CHI
+				TAG = PRC
+				TAG = GXC
+				TAG = ENG
+			}
+		}
+	}
+}
+
+#樱花国吞并朝鲜（法西斯线）
+news_event = {
+	id = news.772
+	title = news.772.t
+	desc = news.772.desc
+	picture = GFX_news_event_AST_dahe
+	major = yes
+	trigger = {
+		NOT = {
+			has_global_flag = JAP_tunbing_KOR
+		}
+		JAP = {
+			has_government = fascism
+			controls_state = 527
+			controls_state = 525
+		}
+	}
+	immediate = {
+		set_global_flag = JAP_tunbing_KOR
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = {
+		name = news.7.a
+		trigger = {
+			TAG = JAP
+		}
+	}
+	option = {
+		name = news.772.b
+		trigger = {
+			OR = {
+				TAG = CHI
+				TAG = PRC
+				TAG = GXC
+			}
+		}
+	}
+	option = {
+		name = news.772.c
+		trigger = {
+			TAG = ENG
+		}
+	}
+	option = {
+		name = news.772.d
+		trigger = {
+			NOT = {
+				TAG = JAP
+				TAG = CHI
+				TAG = PRC
+				TAG = GXC
+				TAG = ENG
+			}
+		}
+	}
+}
+
+#樱花国吞并朝鲜（共产线）
+news_event = {
+	id = news.773
+	title = news.773.t
+	desc = news.773.desc
+	picture = GFX_news_event_king_speech
+	major = yes
+	trigger = {
+		NOT = {
+			has_global_flag = JAP_tunbing_KOR
+		}
+		JAP = {
+			has_government = communism
+			controls_state = 527
+			controls_state = 525
+		}
+	}
+	immediate = {
+		set_global_flag = JAP_tunbing_KOR
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = {
+		name = news.773.a
+		trigger = {
+			TAG = JAP
+		}
+	}
+	option = {
+		name = news.773.b
+		trigger = {
+			OR = {
+				TAG = CHI
+				TAG = PRC
+				TAG = GXC
+			}
+		}
+	}
+	option = {
+		name = news.773.c
+		trigger = {
+			NOT = {
+				TAG = JAP
+				TAG = CHI
+				TAG = PRC
+				TAG = GXC
+			}
+			has_government = communism
+		}
+	}
+	option = {
+		name = news.773.d
+		trigger = {
+			NOT = {
+				TAG = JAP
+				TAG = CHI
+				TAG = PRC
+				TAG = GXC
+				has_government = communism
+			}
+		}
+	}
+}

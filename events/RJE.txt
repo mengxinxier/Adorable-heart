@@ -1,0 +1,576 @@
+﻿add_namespace = RJE
+country_event = {
+	id = RJE.1
+	title = RJE.1.t
+	desc = RJE.1.d
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event RJE.1 FROM = [From.GetName]"
+	}
+	fire_only_once = yes
+	is_triggered_only = no
+	trigger = {
+		tag = RJE
+		RJE = {
+			has_full_control_of_state = 531
+		}
+	}
+	mean_time_to_happen = {
+		hours = 1
+	}
+	option = {
+		name = RJE.1.a
+		ai_chance = {
+			factor = 10
+		}
+		create_field_marshal = {
+			name = "织田信长"
+			portrait_path = "gfx/leaders/JAP/zhitian.dds"
+			skill = 5
+			attack_skill = 6
+			defense_skill = 2
+			planning_skill = 5
+			logistics_skill = 4
+			traits = {
+				brilliant_strategist
+				inflexible_strategist
+				politically_connected
+			}
+		}
+		create_field_marshal = {
+			name = "织田信奈"
+			portrait_path = "gfx/leaders/RJE/Portrait_RJE_Nobuna_Kita.png"
+			skill = 5
+			attack_skill = 7
+			defense_skill = 1
+			planning_skill = 5
+			logistics_skill = 4
+			traits = {
+				inflexible_strategist
+				politically_connected
+			}
+		}
+		create_corps_commander = {
+			name = "丹羽长秀"
+			portrait_path = "gfx/leaders/RJE/Portrait_RJE_Nagahide_Niwa.png"
+			skill = 3
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 7
+			logistics_skill = 6
+			traits = {
+				inflexible_strategist
+				trickster
+			}
+		}
+		create_corps_commander = {
+			name = "前田犬千代"
+			portrait_path = "gfx/leaders/RJE/Portrait_RJE_Maeda_Inuchiyo.png"
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 4
+			traits = {
+				trickster
+				hill_fighter
+			}
+		}
+		create_corps_commander = {
+			name = "竹中半兵卫"
+			portrait_path = "gfx/leaders/RJE/Portrait_RJE_Takenaka_Hanhyō.png"
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 8
+			logistics_skill = 6
+			traits = {
+				inflexible_strategist
+				infantry_expert
+			}
+		}
+		create_corps_commander = {
+			name = "明智光秀"
+			portrait_path = "gfx/leaders/RJE/Portrait_RJE_Akechi_Mitsuhide.png"
+			skill = 2
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 4
+			traits = {
+				infantry_expert
+			}
+		}
+		create_corps_commander = {
+			name = "蜂须贺五右卫门"
+			portrait_path = "gfx/leaders/RJE/Portrait_RJE_Hachisuka_Goemon.png"
+			skill = 3
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 4
+			logistics_skill = 3
+			traits = {
+			}
+		}
+		create_country_leader = {
+			name = "织田信长"
+			desc = "POLITICS_KONRAD_ADENAUER_DESC"
+			picture = "gfx/leaders/JAP/zhitian.dds"
+			expire = "1965.1.1"
+			ideology = marxism
+			traits = {
+				tianxiabuwu
+			}
+		}
+		set_party_name = {
+			ideology = communism
+			long_name = 御前会议樱花共产党
+			name = 樱花共产党
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.15
+		}
+		#set_global_flag = RJE_Oda_Nobunaga
+	}
+}
+
+country_event = {
+	id = RJE.2
+	title = RJE.2.t
+	desc = RJE.2.d
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event RJE.2 FROM = [From.GetName]"
+	}
+	fire_only_once = yes
+	is_triggered_only = no
+	trigger = {
+		tag = JAP
+		JAP = {
+			surrender_progress > 0.4
+		}
+	}
+	mean_time_to_happen = {
+		hours = 1
+	}
+	option = {
+		name = RJE.2.a
+		ai_chance = {
+			factor = 10
+		}
+		transfer_navy = {
+			target = KOR
+		}
+		KOR = {
+			white_peace = RJE
+			set_cosmetic_tag = JAP_lost_country
+			retire_country_leader = yes
+			create_country_leader = {
+				name = "冲田总司"
+				desc = "POLITICS_KONRAD_ADENAUER_DESC"
+				picture = "gfx/leaders/JAP/chongtian.dds"
+				expire = "1985.1.1"
+				ideology = liberalism
+				traits = {
+					zuizhong_wushi
+				}
+			}
+			set_party_name = {
+				ideology = democratic
+				long_name = 樱花流亡政府
+				name = 樱花流亡政府
+			}
+			transfer_state = 645
+			transfer_state = 648
+			transfer_state = 647
+			transfer_state = 646
+			transfer_state = 684
+			transfer_state = 633
+			add_state_core = 645
+			add_state_core = 648
+			add_state_core = 647
+			add_state_core = 646
+			add_state_core = 684
+			add_state_core = 633
+			change_tag_from = JAP
+		}
+		RJE = {
+			country_event = {
+				id = RJE.3
+				hours = 12
+			}
+		}
+	}
+}
+
+country_event = {
+	id = RJE.3
+	title = RJE.3.t
+	desc = RJE.3.d
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event RJE.3 FROM = [From.GetName]"
+	}
+	fire_only_once = yes
+	is_triggered_only = yes
+	trigger = {
+		tag = RJE
+	}
+	option = {
+		name = RJE.3.a
+		ai_chance = {
+			factor = 10
+		}
+		annex_country = {
+			target = JAP
+			transfer_troops = no
+		}
+		add_manpower = 114514
+		remove_ideas = RJE_Japan_division
+		add_ideas = caifa
+		add_ideas = jinv
+		set_country_flag = got_JAP_navy
+		add_state_core = 645
+		add_state_core = 648
+		add_state_core = 647
+		add_state_core = 646
+		add_state_core = 684
+		add_state_core = 633
+		KOR = {
+			transfer_ship = {
+				prefer_name = "长门"
+				type = battleship
+				target = KOR
+				exclude_refitting = yes
+			}
+			transfer_ship = {
+				prefer_name = "陆奥"
+				type = battleship
+				target = RJE
+				exclude_refitting = yes
+			}
+			transfer_ship = {
+				prefer_name = "榛名"
+				type = battleship
+				target = RJE
+				exclude_refitting = yes
+			}
+			transfer_ship = {
+				prefer_name = "扶桑"
+				type = battleship
+				target = RJE
+				exclude_refitting = yes
+			}
+			transfer_ship = {
+				prefer_name = "山城"
+				type = battleship
+				target = RJE
+				exclude_refitting = yes
+			}
+			transfer_ship = {
+				prefer_name = "高雄"
+				type = heavy_cruiser
+				target = RJE
+				exclude_refitting = yes
+			}
+			transfer_ship = {
+				prefer_name = "鸟海"
+				type = heavy_cruiser
+				target = RJE
+				exclude_refitting = yes
+			}
+			transfer_ship = {
+				prefer_name = "山崎"
+				type = heavy_cruiser
+				target = RJE
+				exclude_refitting = yes
+			}
+			transfer_ship = {
+				prefer_name = "五十铃"
+				type = light_cruiser
+				target = RJE
+				exclude_refitting = yes
+			}
+			transfer_ship = {
+				prefer_name = "球磨"
+				type = light_cruiser
+				target = RJE
+				exclude_refitting = yes
+			}
+			transfer_ship = {
+				prefer_name = "海风"
+				type = destroyer
+				target = RJE
+				exclude_refitting = yes
+			}
+			transfer_ship = {
+				prefer_name = "夕风"
+				type = destroyer
+				target = RJE
+				exclude_refitting = yes
+			}
+			transfer_ship = {
+				prefer_name = "太刀风"
+				type = destroyer
+				target = RJE
+				exclude_refitting = yes
+			}
+			transfer_ship = {
+				prefer_name = "帆风"
+				type = destroyer
+				target = RJE
+				exclude_refitting = yes
+			}
+			transfer_ship = {
+				prefer_name = "夕雾"
+				type = destroyer
+				target = RJE
+				exclude_refitting = yes
+			}
+			transfer_ship = {
+				prefer_name = "朝雾"
+				type = destroyer
+				target = RJE
+				exclude_refitting = yes
+			}
+			transfer_ship = {
+				prefer_name = "仙台"
+				type = light_cruiser
+				target = RJE
+				exclude_refitting = yes
+			}
+			transfer_ship = {
+				prefer_name = "神通"
+				type = light_cruiser
+				target = RJE
+				exclude_refitting = yes
+			}
+			transfer_ship = {
+				prefer_name = "长柄"
+				type = light_cruiser
+				target = RJE
+				exclude_refitting = yes
+			}
+			transfer_ship = {
+				prefer_name = "龙骧号"
+				type = carrier
+				target = RJE
+				exclude_refitting = yes
+			}
+			transfer_ship = {
+				prefer_name = "旗风"
+				type = destroyer
+				target = RJE
+				exclude_refitting = yes
+			}
+			transfer_ship = {
+				prefer_name = "朝风"
+				type = destroyer
+				target = RJE
+				exclude_refitting = yes
+			}
+			transfer_ship = {
+				prefer_name = "春风"
+				type = destroyer
+				target = RJE
+				exclude_refitting = yes
+			}
+			transfer_ship = {
+				prefer_name = "风"
+				type = destroyer
+				target = RJE
+				exclude_refitting = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = RJE.4
+	title = RJE.4.t
+	desc = RJE.4.d
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event RJE.4 FROM = [From.GetName]"
+	}
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = RJE.4.a
+		ai_chance = {
+			factor = 10
+		}
+		RJE = {
+			transfer_state = 530
+			transfer_state = 528
+		}
+	}
+	option = {
+		name = RJE.4.b
+		ai_chance = {
+			factor = 0
+		}
+		RJE = {
+			create_wargoal = {
+				type = take_core_state
+				target = RYU
+				generator = {
+					530
+					528
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = RJE.5
+	title = RJE.5.t
+	desc = RJE.5.d
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event RJE.5 FROM = [From.GetName]"
+	}
+	picture = GFX_RJE_event_meeting_room
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = RJE.5.a
+		ai_chance = {
+			factor = 10
+		}
+		add_war_support = 0.1
+	}
+}
+
+country_event = {
+	id = RJE.6
+	title = RJE.6.t
+	desc = RJE.6.d
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event RJE.6 FROM = [From.GetName]"
+	}
+	picture = GFX_RJE_event_meeting_room
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = RJE.6.a
+		ai_chance = {
+			factor = 10
+		}
+		add_war_support = 0.1
+	}
+}
+
+country_event = {
+	id = RJE.7
+	title = RJE.7.t
+	desc = RJE.7.d
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event RJE.7 FROM = [From.GetName]"
+	}
+	picture = GFX_RJE_event_meeting_room
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = RJE.7.a
+		ai_chance = {
+			factor = 6
+		}
+		RJE = {
+			transfer_state = 408
+			transfer_state = 409
+			country_event = {
+				id = RJE.10
+			}
+		}
+	}
+	option = {
+		name = RJE.7.b
+		ai_chance = {
+			factor = 5
+		}
+		RJE = {
+			country_event = {
+				id = RJE.9
+			}
+		}
+	}
+}
+
+country_event = {
+	id = RJE.8
+	title = RJE.8.t
+	desc = RJE.8.d
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event RJE.8 FROM = [From.GetName]"
+	}
+	picture = GFX_RJE_event_meeting_room
+	fire_only_once = yes
+	is_triggered_only = no
+	trigger = {
+		tag = RJE
+		KOR = {
+			exists = no
+		}
+		owns_state = 525
+		owns_state = 527
+	}
+	mean_time_to_happen = {
+		hours = 1
+	}
+	option = {
+		name = RJE.8.a
+		ai_chance = {
+			factor = 6
+		}
+		set_global_flag = RJE_JAP_over
+	}
+}
+
+country_event = {
+	id = RJE.9
+	title = RJE.9.t
+	desc = RJE.9.d
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event RJE.9 FROM = [From.GetName]"
+	}
+	picture = GFX_RJE_event_meeting_room
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = RJE.9.a
+		ai_chance = {
+			base = 10
+		}
+		declare_war_on = {
+			type = take_state
+			target = SOV
+			generator = {
+				408
+				409
+			}
+		}
+	}
+	option = {
+		name = RJE.9.b
+		add_war_support = -0.05
+		add_stability = -0.05
+	}
+}
+
+country_event = {
+	id = RJE.10
+	title = RJE.10.t
+	desc = RJE.10.d
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event RJE.10 FROM = [From.GetName]"
+	}
+	picture = GFX_RJE_event_meeting_room
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = RJE.10.a
+		ai_chance = {
+			base = 10
+		}
+		add_war_support = -0.05
+		add_stability = 0.05
+	}
+}

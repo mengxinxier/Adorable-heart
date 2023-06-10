@@ -1,0 +1,1614 @@
+add_namespace = tur_ah
+
+country_event = {
+	id = tur_ah.1
+	title = tur_ah.1.t
+	desc = tur_ah.1.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	#fire_only_once = yes
+	#mean_time_to_happen = { days = 1 }
+	#trigger = {
+	#}
+	option = {
+		name = tur_ah.1.a
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+}
+
+country_event = {
+	id = tur_ah.2
+	title = tur_ah.2.t
+	desc = tur_ah.2.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	option = {
+		name = tur_ah.2.a
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+}
+
+country_event = {
+	id = tur_ah.3
+	title = tur_ah.3.t
+	desc = tur_ah.3.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	option = {
+		name = tur_ah.3.a
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+}
+
+country_event = {
+	id = tur_ah.4
+	title = tur_ah.4.t
+	desc = tur_ah.4.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	option = {
+		name = tur_ah.4.a
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+}
+
+country_event = {
+	id = tur_ah.5
+	title = tur_ah.5.t
+	desc = tur_ah.5.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	option = {
+		name = tur_ah.5.a
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+}
+
+country_event = {
+	id = tur_ah.6
+	title = tur_ah.6.t
+	desc = tur_ah.6.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	option = {
+		name = tur_ah.6.a
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+}
+
+country_event = {
+	id = tur_ah.7
+	title = tur_ah.7.t
+	desc = tur_ah.7.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	option = {
+		name = tur_ah.7.a
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+}
+
+country_event = {
+	id = tur_ah.8
+	title = tur_ah.8.t
+	desc = tur_ah.8.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	option = {
+		name = tur_ah.8.a
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+}
+
+country_event = {
+	id = tur_ah.9
+	title = tur_ah.9.t
+	desc = tur_ah.9.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	option = {
+		name = tur_ah.9.a
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+	option = {
+		name = tur_ah.9.b
+		ai_chance = {
+			base = 10
+		}
+		FROM = { country_event = { id = tur_ah.10 days = 1 } }
+	}
+}
+
+country_event = {
+	id = tur_ah.10
+	title = tur_ah.10.t
+	desc = tur_ah.10.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	option = {
+		name = tur_ah.10.a
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+}
+
+country_event = {
+	id = tur_ah.11
+	title = tur_ah.11.t
+	desc = tur_ah.11.desc
+	picture = GFX_report_event_chamberlain_announce
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tur_ah.11.a
+		ai_chance = {
+			base = 100
+		}
+		ENG = {
+			country_event = { id = tur_ah.12 days = 1 }
+		}
+	}
+	option = {
+		name = tur_ah.11.b
+		ai_chance = {
+			base = 100
+		}
+		FRA = {
+			country_event = { id = tur_ah.12 days = 1 }
+		}
+	}
+	option = {
+		name = tur_ah.11.c
+		trigger = { country_exists = RIS }
+		ai_chance = {
+			base = 100
+		}
+		RIS = {
+			country_event = { id = tur_ah.12 days = 1 }
+		}
+	}
+}
+
+country_event = {
+	id = tur_ah.12
+	title = tur_ah.12.t
+	desc = tur_ah.12.desc
+	picture = GFX_report_event_chamberlain_announce
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tur_ah.12.a
+		ai_chance = {
+			base = 100
+		}
+		FROM = { country_event = { id = tur_ah.13 days = 1 } }
+	}
+	option = {
+		name = tur_ah.12.b
+		ai_chance = {
+			base = 100
+		}
+		FROM = { country_event = { id = tur_ah.14 days = 1 } }
+	}
+	option = {
+		name = tur_ah.12.c
+		ai_chance = {
+			base = 100
+		}
+		FROM = { country_event = { id = tur_ah.15 days = 1 } }
+	}
+}
+
+country_event = {
+	id = tur_ah.13
+	title = tur_ah.13.t
+	desc = tur_ah.13.desc
+	picture = GFX_report_event_chamberlain_announce
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tur_ah.13.a
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+}
+
+country_event = {
+	id = tur_ah.14
+	title = tur_ah.14.t
+	desc = tur_ah.14.desc
+	picture = GFX_report_event_chamberlain_announce
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tur_ah.14.a
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+}
+
+country_event = {
+	id = tur_ah.15
+	title = tur_ah.15.t
+	desc = tur_ah.15.desc
+	picture = GFX_report_event_chamberlain_announce
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tur_ah.15.a
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+}
+
+country_event = {
+	id = tur_ah.16
+	title = tur_ah.16.t
+	desc = tur_ah.16.desc
+	picture = GFX_report_event_chamberlain_announce
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tur_ah.16.a
+		ai_chance = {
+			base = 1
+		}
+		FROM = { country_event = { id = tur_ah.17 days = 1 } }
+	}
+	
+	option = {
+		name = tur_ah.16.b
+		ai_chance = {
+			base = 100
+		}
+		FROM = { country_event = { id = tur_ah.18 days = 1 } }
+	}
+}
+
+country_event = {
+	id = tur_ah.17
+	title = tur_ah.17.t
+	desc = tur_ah.17.desc
+	picture = GFX_report_event_chamberlain_announce
+	
+	is_triggered_only = yes
+	
+	option = {
+		ai_chance = {
+			base = 100
+		}
+		name = tur_ah.17.a
+		add_political_power = 50
+	}
+}
+
+country_event = {
+	id = tur_ah.18
+	title = tur_ah.18.t
+	desc = tur_ah.18.desc
+	picture = GFX_report_event_chamberlain_announce
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tur_ah.18.a
+		ai_chance = {
+			base = 100
+		}
+		add_political_power = -25
+	}
+}
+
+country_event = {
+	id = tur_ah.19
+	title = tur_ah.19.t
+	desc = tur_ah.19.desc
+	picture = GFX_report_event_chamberlain_announce
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tur_ah.19.a
+		ai_chance = {
+			base = 100
+		}
+		FROM = { country_event = { id = tur_ah.20 days = 1 } }
+	}
+	
+	option = {
+		name = tur_ah.19.b
+		ai_chance = {
+			base = 100
+		}
+		FROM = { country_event = { id = tur_ah.21 days = 1 } }
+	}
+	
+	option = {
+		name = tur_ah.19.c
+		ai_chance = {
+			base = 100
+		}
+		FROM = { country_event = { id = tur_ah.22 days = 1 } }
+	}
+}
+
+country_event = {
+	id = tur_ah.20
+	title = tur_ah.20.t
+	desc = tur_ah.20.desc
+	picture = GFX_report_event_chamberlain_announce
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tur_ah.20.a
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+}
+
+country_event = {
+	id = tur_ah.21
+	title = tur_ah.21.t
+	desc = tur_ah.21.desc
+	picture = GFX_report_event_chamberlain_announce
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tur_ah.21.a
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+}
+
+country_event = {
+	id = tur_ah.22
+	title = tur_ah.22.t
+	desc = tur_ah.22.desc
+	picture = GFX_report_event_chamberlain_announce
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tur_ah.22.a
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+}
+
+country_event = {
+	id = tur_ah.23
+	title = tur_ah.23.t
+	desc = tur_ah.23.desc
+	picture = GFX_report_event_chamberlain_announce
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tur_ah.23.a
+		ai_chance = {
+			base = 100
+		}
+		add_political_power = -10
+		add_ideas = TUR_trade_with_turkey
+		FROM = { country_event = { id = tur_ah.24 days = 2 } }
+	}
+	
+	option = {
+		name = tur_ah.23.b
+		ai_chance = {
+			base = 30
+		}
+		add_political_power = 10
+		FROM = { country_event = { id = tur_ah.25 days = 2 } }
+	}
+}
+
+country_event = {
+	id = tur_ah.24
+	title = tur_ah.24.t
+	desc = tur_ah.24.desc
+	picture = GFX_report_event_chamberlain_announce
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tur_ah.24.a
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+}
+
+country_event = {
+	id = tur_ah.25
+	title = tur_ah.25.t
+	desc = tur_ah.25.desc
+	picture = GFX_report_event_chamberlain_announce
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tur_ah.25.a
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = tur_ah.26
+	title = tur_ah.26.t
+	desc = tur_ah.26.d
+	picture = GFX_report_event_chamberlain_announce
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tur_ah.26.a
+		ai_chance = {
+			factor = 75
+		}
+		trigger = {
+			has_equipment = { small_plane_airframe > 100 }
+		}
+		send_equipment = {
+			target = FROM
+			type = small_plane_airframe
+			amount = 100
+		}
+		add_timed_idea = { idea = TUR_air_payment days = 180 }
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = tur_ah.27
+					days = 1
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = tur_ah.26.b
+		ai_chance = {
+			factor = 75
+		}
+		trigger = {
+			NOT = { has_equipment = { small_plane_airframe > 100 } }
+		}
+		send_equipment = {
+			target = FROM
+			type = small_plane_airframe
+			amount = 50
+		}
+		add_timed_idea = { idea = TUR_air_payment days = 180 }
+		add_timed_idea = { idea = TUR_fighter_production_diverted days = 120 }
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = tur_ah.27
+					days = 1
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = tur_ah.26.c
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+
+country_event = {
+	id = tur_ah.27
+	title = tur_ah.27.t
+	desc = tur_ah.27.d
+	picture = GFX_report_event_chamberlain_announce
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = tur_ah.27.a
+		ai_chance = {
+			factor = 75
+		}
+		#add_opinion_modifier = {
+		#	target = FROM
+		#	modifier = KIF_buy_new_plane
+		#}
+	}
+}
+
+#Turkish-Georgian Cooperative Resource Extraction - Turkish Offer to Soviets/Georgians
+country_event = {
+	id = tur_ah.28
+	title = tur_ah.28.t
+	desc = tur_ah.28.desc
+	picture = GFX_report_event_tur_soviets
+
+	is_triggered_only = yes
+	
+	option = {
+		name = tur_ah.28.a #this could signal a deepening of relations between us
+		ai_chance = {
+			base = 100
+		}
+		effect_tooltip = {
+			random_owned_controlled_state = {
+				limit = {
+					any_neighbor_state = { is_controlled_by = FROM }
+				}
+				prioritize = { 231 }
+				add_resource = {
+					type = steel
+					amount = 36
+				}
+			}
+			FROM = {
+				random_owned_controlled_state = {
+					limit = {
+						any_neighbor_state = { is_controlled_by = ROOT }
+					}
+					prioritize = { 585 }
+					add_resource = {
+						type = steel
+						amount = 14
+					}
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+				}
+				add_opinion_modifier = {
+					target = ROOT
+					modifier = TUR_joint_resource_extraction
+				}
+			}
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = TUR_joint_resource_extraction
+		}
+		FROM = { 
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = TUR_joint_resource_extraction
+			}
+			country_event = { id = tur_ah.29 hours = 8 }
+		}
+	}
+	option = {
+		name = tur_ah.28.b #we don't need their help!
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				has_idea = SOV_treaty_of_friendship_S_and_T
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				any_neighbor_state = { is_controlled_by = FROM }
+			}
+			prioritize = { 231 }
+			add_resource = {
+				type = steel
+				amount = 12
+			}
+		}
+		add_political_power = -50
+		FROM = { country_event = { id = tur_ah.30 hours = 8 } } 
+	}
+}
+
+#Turkish-Georgian Cooperative Resource Extraction - Soviets/Georgians Accept!
+country_event = {
+	id = tur_ah.29
+	title = tur_ah.29.t
+	desc = tur_ah.29.desc
+	picture = GFX_report_event_tur_inonu_diplomacy
+
+	is_triggered_only = yes
+	
+	option = {
+		name = tur_ah.29.a #hurrah!
+		ai_chance = {
+			base = 100
+		}
+		FROM = {
+			random_owned_controlled_state = {
+				limit = {
+					any_neighbor_state = { is_controlled_by = ROOT }
+				}
+				prioritize = { 231 }
+				add_resource = {
+					type = steel
+					amount = 36
+				}
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				any_neighbor_state = { is_controlled_by = FROM }
+			}
+			prioritize = { 585 }
+			add_resource = {
+				type = steel
+				amount = 14
+			}
+			add_building_construction = {
+				type = infrastructure
+				level = 2
+				instant_build = yes
+			}
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = TUR_joint_resource_extraction
+		}
+	}
+}
+
+#Turkish-Georgian Cooperative Resource Extraction - Soviets/Georgians Decline!
+country_event = {
+	id = tur_ah.30
+	title = tur_ah.30.t
+	desc = tur_ah.30.desc
+	picture = GFX_report_event_tur_soviets
+
+	is_triggered_only = yes
+	
+	option = {
+		name = tur_ah.30.a #curses!
+		ai_chance = {
+			base = 100
+		}
+		add_political_power = -75
+	}
+}
+
+country_event = {
+	id = tur_ah.31
+	title = tur_ah.31.t
+	desc = tur_ah.31.desc
+	picture = GFX_report_event_tur_ataturk_death
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_country_flag = TUR_kamel_retire_flag } }
+				TUR_remove_all_SL = yes
+				country_event = { id = tur_ah.33 days = 3 }
+			}
+			else = {
+				clr_country_flag = TUR_kamel_retire_flag
+			}
+		}
+	}
+
+	option = {
+		name = tur_ah.31.a
+		ai_chance = {
+			base = 100
+		}
+		add_stability = -0.15
+		add_political_power = -50
+		if = {
+			limit = { has_idea = TUR_hope_from_father_of_nation }
+			remove_ideas = TUR_hope_from_father_of_nation
+		}
+		else_if = {
+			limit = { has_idea = TUR_hope_from_father_of_nation_2 }
+			remove_ideas = TUR_hope_from_father_of_nation_2
+		}
+	}
+}
+
+country_event = {
+	id = tur_ah.32
+	title = tur_ah.32.t
+	desc = tur_ah.32.desc
+	picture = GFX_report_event_tur_ataturk_death
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = TUR_kamel_retire_flag
+			clr_country_flag = TUR_ataturk_getting_sickly
+		}
+	}
+
+	option = {
+		name = tur_ah.32.a
+		ai_chance = {
+			base = 100
+		}
+		hidden_effect = {
+			country_event = { id = tur_ah.33 days = 1 }
+			TUR_remove_all_SL = yes
+		}
+	}
+}
+
+country_event = {
+	id = tur_ah.33
+	title = tur_ah.33.t
+	desc = tur_ah.33.desc
+	picture = GFX_report_event_tur_ataturk_death
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { has_country_flag = TUR_temp_flag }
+				}
+				set_country_flag = TUR_temp_flag
+				clr_country_flag = TUR_ataturk_getting_sickly
+				clear_variable = TUR_ataturk_health_bar
+				if = {
+					limit = {
+						TUR_Mustafa_Kemal_Ataturk = { is_unit_leader = yes }
+					}
+					TUR_Mustafa_Kemal_Ataturk = { remove_unit_leader_role = yes }
+				}
+				set_variable = { TUR_kamel_army_officers_PS = 0 }
+			}
+		}
+	}
+	
+	option = {
+		name = tur_ah.33.a #liberal + democratic = Bayar and Ismet / Bayar
+		ai_chance = {
+			base = 100
+		}
+		hidden_effect = {
+			country_event = { id = tur_ah.38 days = 3 }
+			clr_country_flag = TUR_temp_flag
+			set_country_flag = TUR_Celal_Bayar_SL_flag
+		}
+		effect_tooltip = {
+			add_country_leader_role = {
+				character = TUR_celal_bayar
+				country_leader = {
+					expire = "1965.1.1"
+					ideology = liberalism
+					traits = { liberal_democratic_paragon }
+				}
+				promote_leader = yes
+			}
+		}
+	}
+	option = {
+		name = tur_ah.33.b #liberal + historic = Bayar and Ismet / Ismet
+		ai_chance = {
+			base = 100
+		}
+		hidden_effect = {
+			country_event = { id = tur_ah.38 days = 3 }
+			clr_country_flag = TUR_temp_flag
+			set_country_flag = TUR_Ismet_Inonu_SL_flag
+		}
+		effect_tooltip = {
+			add_country_leader_role = {
+				character = TUR_ismet_inonu
+				country_leader = {
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = { milli_sef }
+				}
+				promote_leader = yes
+			}
+		}
+	}
+	option = {
+		name = tur_ah.33.c
+		ai_chance = {
+			base = 100
+		}
+		hidden_effect = { country_event = { id = tur_ah.34 days = 10 } }
+	}
+}
+
+country_event = {
+	id = tur_ah.34
+	title = tur_ah.34.t
+	desc = tur_ah.34.desc
+	picture = GFX_report_event_tur_ataturk_death
+
+	is_triggered_only = yes
+
+	option = {
+		name = tur_ah.34.a #nationalist + fascist = Cakmak + Peker / Cakmak
+		ai_chance = {
+			base = 100
+		}
+		hidden_effect = {
+			country_event = { id = tur_ah.38 days = 3 }
+			clr_country_flag = TUR_temp_flag
+			set_country_flag = TUR_Fevzi_Cakmak_SL_flag
+		}
+		effect_tooltip = {
+			add_country_leader_role = {
+				character = TUR_fevzi_cakmak
+				country_leader = {
+					expire = "1965.1.1"
+					ideology = despotism
+					traits = { maresal }
+				}
+				promote_leader = yes
+			}
+		}
+	}
+	option = {
+		name = tur_ah.34.b #nationalist + fascist = Cakmak + Peker / Peker
+		ai_chance = {
+			base = 100
+		}
+		hidden_effect = {
+			country_event = { id = tur_ah.38 days = 3 }
+			clr_country_flag = TUR_temp_flag
+			set_country_flag = TUR_Recep_Peker_SL_flag
+		}
+		effect_tooltip = {
+			add_country_leader_role = {
+				character = TUR_mehmet_recep_peker
+				country_leader = {
+					ideology = fascism_ideology
+					traits = { the_statist }
+					expire = "1965.1.1.1"
+					id = -1
+				}
+				promote_leader = yes
+			}
+		}
+	}
+	option = {
+		name = tur_ah.34.c
+		ai_chance = {
+			base = 100
+		}
+		hidden_effect = { country_event = { id = tur_ah.35 days = 10 } }
+	}
+}
+
+country_event = {
+	id = tur_ah.35
+	title = tur_ah.35.t
+	desc = tur_ah.35.desc
+	picture = GFX_report_event_tur_ataturk_death
+
+	is_triggered_only = yes
+
+	option = {
+		name = tur_ah.35.a 
+		ai_chance = {
+			base = 100
+		}
+		hidden_effect = {
+			country_event = { id = tur_ah.38 days = 3 }
+			clr_country_flag = TUR_temp_flag
+			set_country_flag = TUR_Sefik_Husnu_SL_flag
+		}
+		effect_tooltip = {
+			add_country_leader_role = {
+				character = TUR_sefik_husnu
+				country_leader = {
+					expire = "1965.1.1"
+					ideology = syndicalism
+					traits = { the_academic }
+				}
+				promote_leader = yes
+			}
+		}
+	}
+	option = {
+		name = tur_ah.35.b
+		ai_chance = {
+			base = 100
+		}
+		hidden_effect = {
+			country_event = { id = tur_ah.38 days = 3 }
+			clr_country_flag = TUR_temp_flag
+			set_country_flag = TUR_Sevket_Sureyya_Aydemir_SL_flag
+		}
+		effect_tooltip = {
+			add_country_leader_role = {
+				character = TUR_sevket_sureyya_aydemir
+				country_leader = {
+					expire = "1965.1.1"
+					ideology = stalinism
+					traits = { reluctant_stalinist }
+				}
+				promote_leader = yes
+			}
+		}
+	}
+	option = {
+		name = tur_ah.35.c
+		ai_chance = {
+			base = 100
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { TUR_kamel_army_officers_PS = 0 }
+				}
+				country_event = { id = tur_ah.33 days = 10 }
+				add_to_variable = { TUR_kamel_army_officers_PS = 1 }
+			}
+			else_if = {
+				limit = {
+					check_variable = { TUR_kamel_army_officers_PS = 1 }
+				}
+				country_event = { id = tur_ah.36 days = 5 }
+				add_to_variable = { TUR_kamel_army_officers_PS = 1 }
+			}
+			else = {
+				country_event = { id = tur_ah.37 days = 3 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tur_ah.36
+	title = tur_ah.36.t
+	desc = tur_ah.36.desc
+	picture = GFX_report_event_tur_ataturk_death
+
+	is_triggered_only = yes
+
+	option = {
+		name = tur_ah.36.a #military junta
+		ai_chance = {
+			base = 100
+		}
+		hidden_effect = {
+			country_event = { id = tur_ah.38 days = 3 }
+			clr_country_flag = TUR_temp_flag
+			set_country_flag = TUR_Kazim_Orbay_SL_flag
+		}
+		effect_tooltip = {
+			add_country_leader_role = {
+				character = TUR_kazim_orbay
+				country_leader = {
+					expire = "1965.1.1"
+					ideology = despotism
+					traits = { celebrity_junta_leader }
+				}
+				promote_leader = yes
+			}
+		}
+	}
+	option = {
+		name = tur_ah.36.b
+		ai_chance = {
+			base = 100
+		}
+		hidden_effect = { country_event = tur_ah.33 }
+	}
+}
+
+country_event = {
+	id = tur_ah.37
+	title = tur_ah.37.t
+	desc = tur_ah.37.desc
+	picture = GFX_report_event_tur_ataturk_death
+
+	is_triggered_only = yes
+
+	option = {
+		name = tur_ah.37.a #easter egg :)
+		ai_chance = {
+			base = 100
+		}
+		clr_country_flag = TUR_temp_flag
+		set_country_flag = TUR_Veruca_SL_flag
+		hidden_effect = {
+			country_event = { id = tur_ah.38 days = 3 }
+		}
+		effect_tooltip = {
+			add_country_leader_role = {
+				character = TUR_Veruca
+				country_leader = {
+					expire = "1965.1.1"
+					ideology = despotism
+					traits = { prime_minister_Veruca }
+				}
+				promote_leader = yes
+			}
+		}
+	}
+	#option = {
+	#	name = tur_ah.37.b
+	#	hidden_effect = { country_event = tur_ah.35 }
+	#}
+}
+
+country_event = {
+	id = tur_ah.38
+	title = tur_ah.38.t
+	desc = tur_ah.38.desc
+	picture = GFX_report_event_tur_ataturk_death
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_country_flag = TUR_Veruca_SL_flag } }
+				set_variable = { TUR_kemalist_officers_loyalty = 2 }
+				set_variable = { TUR_kemalist_power_variable = 7 }
+				add_ideas = TUR_kemalist_army_officers_extended_power_neutral
+			}
+			else = {
+				set_variable = { TUR_kemalist_officers_loyalty = 3 }
+				set_variable = { TUR_kemalist_power_variable = 1 }
+				add_ideas = TUR_kemalist_army_officers_minimal_power_loyal
+			}
+			set_variable = { TUR_KAO_upset_var = 9 }
+			if = {
+				limit = {
+					NOT = { check_variable = { TUR_KAO_upset_var > 99 } }
+					TUR_kemalist_army_officers_active = yes
+					has_completed_focus = TUR_towards_diversification
+					NOT = { has_completed_focus = TUR_fate_of_military_corps }
+					NOT = { has_country_flag = TUR_Veruca_SL_flag }
+				}
+				activate_mission = TUR_KAO_upset
+			}
+		}
+	}
+
+	option = {
+		name = tur_ah.38.a
+		ai_chance = {
+			base = 100
+		}
+		effect_tooltip = {
+			if = {
+				limit = { NOT = { has_country_flag = TUR_Veruca_SL_flag } }
+				add_ideas = TUR_kemalist_army_officers_extended_power_neutral
+			}
+			else = {
+				add_ideas = TUR_kemalist_army_officers_minimal_power_loyal
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tur_ah.51
+	title = tur_ah.51.t
+	desc = tur_ah.51.desc
+	picture = GFX_report_event_tur_ataturk_death
+
+	is_triggered_only = yes
+
+	option = {
+		name = tur_ah.51.a
+		ai_chance = {
+			base = 100
+		}
+		custom_effect_tooltip = tur_ah_51_tt_1
+		add_political_power = -10
+		hidden_effect = {
+			set_country_flag = BTFB_bottom_pour_1_flag
+			event_target:TUR_BFTB_point_country_root = {
+				country_event = { id = tur_ah.52 hours = 8 }
+			}
+			event_target:TUR_BFTB_point_country_target = {
+				country_event = { id = tur_ah.53 hours = 8 }
+			}
+			event_target:TUR_BFTB_point_state = {
+				clr_state_flag = TUR_BFTB_point_flag
+			}
+		}
+	}
+	
+	option = {
+		name = tur_ah.51.b
+		ai_chance = {
+			base = 100
+		}
+		custom_effect_tooltip = tur_ah_51_tt_2
+		add_political_power = -10
+		hidden_effect = {
+			set_country_flag = BTFB_bottom_pour_2_flag
+			event_target:TUR_BFTB_point_country_root = {
+				country_event = { id = tur_ah.53 hours = 8 }
+			}
+			event_target:TUR_BFTB_point_country_target = {
+				country_event = { id = tur_ah.52 hours = 8 }
+			}
+			event_target:TUR_BFTB_point_state = {
+				clr_state_flag = TUR_BFTB_point_flag
+			}
+		}
+	}
+	
+	option = {
+		name = tur_ah.51.c
+		ai_chance = {
+			base = 100
+		}
+		custom_effect_tooltip = tur_ah_51_tt_3
+		add_political_power = 10
+		hidden_effect = {
+			event_target:TUR_BFTB_point_country_root = {
+				country_event = { id = tur_ah.54 hours = 8 }
+			}
+			event_target:TUR_BFTB_point_country_target = {
+				country_event = { id = tur_ah.54 hours = 8 }
+			}
+			event_target:TUR_BFTB_point_state = {
+				clr_state_flag = TUR_BFTB_point_flag
+			}
+		}
+	}
+	
+	option = {
+		name = tur_ah.51.d
+		ai_chance = {
+			base = 100
+		}
+		773 = { add_claim_by = ROOT }
+		custom_effect_tooltip = tur_ah_51_tt_4
+		add_political_power = -25
+		hidden_effect = {
+			event_target:TUR_BFTB_point_country_root = {
+				country_event = { id = tur_ah.55 hours = 8 }
+			}
+			event_target:TUR_BFTB_point_country_target = {
+				country_event = { id = tur_ah.55 hours = 8 }
+			}
+			event_target:TUR_BFTB_point_state = {
+				clr_state_flag = TUR_BFTB_point_flag
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tur_ah.52
+	title = tur_ah.52.t
+	desc = tur_ah.52.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	option = {
+		name = tur_ah.52.a
+		ai_chance = {
+			base = 100
+		}
+		add_political_power = 10
+	}
+}
+
+country_event = {
+	id = tur_ah.53
+	title = tur_ah.53.t
+	desc = tur_ah.53.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	option = {
+		name = tur_ah.53.a
+		ai_chance = {
+			base = 100
+		}
+		add_war_support = 0.01
+	}
+}
+
+country_event = {
+	id = tur_ah.54
+	title = tur_ah.54.t
+	desc = tur_ah.54.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	option = {
+		name = tur_ah.54.a
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+}
+
+country_event = {
+	id = tur_ah.55
+	title = tur_ah.55.t
+	desc = tur_ah.55.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	option = {
+		name = tur_ah.55.a
+		ai_chance = {
+			base = 100
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = TUR_disgusting_imperialist_behavior
+		}
+	}
+}
+
+country_event = {
+	id = tur_ah.56
+	title = tur_ah.56.t
+	desc = tur_ah.56.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	option = {
+		name = tur_ah.56.a
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+}
+
+country_event = {
+	id = tur_ah.57
+	title = tur_ah.57.t
+	desc = tur_ah.57.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	option = {
+		name = tur_ah.57.a
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+}
+
+country_event = {
+	id = tur_ah.58
+	title = tur_ah.58.t
+	desc = tur_ah.58.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	option = {
+		name = tur_ah.58.a
+		ai_chance = {
+			base = 10
+		}
+		
+	}
+	
+	option = {
+		name = tur_ah.58.b
+		ai_chance = {
+			base = 100
+		}
+		trigger = {
+		
+		}
+		FROM = { set_country_flag = TUR_LAN_recontact_flag }
+		set_country_flag = TUR_LAN_recontact_flag
+	}
+}
+
+country_event = {
+	id = tur_ah.61
+	title = tur_ah.61.t
+	desc = tur_ah.61.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	option = {
+		name = tur_ah.61.a
+		ai_chance = {
+			base = 10
+		}
+		hidden_effect = {
+			mark_focus_tree_layout_dirty = yes
+			complete_national_focus = TUR_the_second_day
+		}
+	}
+	
+	option = {
+		name = tur_ah.61.b
+		ai_chance = {
+			base = 100
+		}
+		hidden_effect = {
+			set_country_flag = TUR_joint_ruling_proposal_was_rejected_flag
+			mark_focus_tree_layout_dirty = yes
+			complete_national_focus = TUR_the_second_method
+		}
+	}
+}
+
+country_event = {
+	id = tur_ah.62
+	title = tur_ah.62.t
+	desc = tur_ah.62.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	option = {
+		name = tur_ah.62.a
+		ai_chance = {
+			base = 10
+		}
+		set_party_name = {
+			ideology = democratic
+			name = TUR_democratic_republic_people_party
+			long_name = TUR_democratic_republic_people_party_long
+		}
+		set_party_name = {
+			ideology = neutrality
+			name = TUR_democratic_republic_people_party
+			long_name = TUR_democratic_republic_people_party_long
+		}
+	}
+	
+	option = {
+		name = tur_ah.62.b
+		ai_chance = {
+			base = 100
+		}
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+		TUR_remove_all_SL = yes
+		set_country_flag = TUR_Fevzi_Cakmak_SL_flag
+		add_country_leader_role = {
+			character = TUR_mehmet_recep_peker
+			country_leader = {
+				ideology = fascism_ideology
+				traits = { the_statist }
+				expire = "1965.1.1.1"
+				id = -1
+			}
+			promote_leader = yes
+		}
+	}
+	
+	option = {
+		name = tur_ah.62.c
+		ai_chance = {
+			base = 100
+		}
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = no
+		}
+		TUR_remove_all_SL = yes
+		set_country_flag = TUR_Sefik_Husnu_SL_flag
+		add_country_leader_role = {
+			character = TUR_sevket_sureyya_aydemir
+			country_leader = {
+				expire = "1965.1.1"
+				ideology = stalinism
+				traits = { reluctant_stalinist }
+			}
+			promote_leader = yes
+		}
+	}
+}
+
+country_event = {
+	id = tur_ah.63
+	title = tur_ah.63.t
+	desc = tur_ah.63.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	option = {
+		name = tur_ah.63.a
+		ai_chance = {
+			base = 10
+		}
+		TUR_remove_all_SL = yes
+		set_country_flag = TUR_Celal_Bayar_SL_flag
+		add_country_leader_role = {
+			character = TUR_ismet_inonu
+			country_leader = {
+				expire = "1965.1.1"
+				ideology = one_party_system_subtype
+				traits = { milli_sef }
+			}
+			promote_leader = yes
+		}
+	}
+	
+	option = {
+		name = tur_ah.63.b
+		ai_chance = {
+			base = 100
+		}
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
+		}
+		TUR_remove_all_SL = yes
+		set_country_flag = TUR_Celal_Bayar_SL_flag
+		add_country_leader_role = {
+			character = TUR_adnan_menderes
+			country_leader = {
+				expire = "1965.1.1"
+				ideology = interim_government_subtype
+				traits = { man_of_the_nation }
+			}
+			promote_leader = yes
+		}
+	}
+}
+
+country_event = {
+	id = tur_ah.64
+	title = tur_ah.64.t
+	desc = tur_ah.64.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	option = {
+		name = tur_ah.64.a
+		ai_chance = {
+			base = 100
+		}
+		set_country_flag = TUR_left_flag
+		TUR_remove_all_SL = yes
+		set_country_flag = TUR_Sevket_Sureyya_Aydemir_SL_flag
+		if = {
+			limit = { NOT = { has_government = communism } }
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+			}
+		}
+		hidden_effect = { set_cosmetic_tag = TUR_syndicalism }
+		effect_tooltip = { retire_country_leader = yes }
+		add_country_leader_role = {
+			character = TUR_sefik_husnu
+			country_leader = {
+				expire = "1965.1.1"
+				ideology = syndicalism
+				traits = { the_academic }
+			}
+			promote_leader = yes
+		}
+	}
+	
+	option = {
+		name = tur_ah.64.b
+		ai_chance = {
+			base = 1
+		}
+		set_country_flag = TUR_right_flag
+	}
+}
+
+country_event = {
+	id = tur_ah.71
+	title = tur_ah.71.t
+	desc = tur_ah.71.desc
+	picture = GFX_report_event_usa_election_landon_roosevelt
+	
+	is_triggered_only = no
+	fire_only_once = yes
+	mean_time_to_happen = { days = 60 }
+	trigger = {
+		TAG = TUR
+		date > 1938.7.1
+		NOT = { has_war_with = GRE }
+		country_exists = GRE
+		NOT = { has_war_with = LAN }
+		NOT = { owns_state = 773 }
+		OR = {
+			has_completed_focus = TUR_MEW_attack_first
+			has_completed_focus = TUR_MEW_international_conciliation
+		}
+	}
+	immediate = {
+		hidden_effect = {
+			set_country_flag = TUR_BFTB_dice_flag
+		}
+	}
+	
+	option = {
+		name = tur_ah.71.a
+		hidden_effect = {
+			mark_focus_tree_layout_dirty = yes
+			complete_national_focus = TUR_BFTB_remember_fail
+			activate_mission = TUR_BFTB_war_counting_down
+		}
+		custom_effect_tooltip = global_modifier_focus_tree_tt
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+country_event = {
+	id = tur_ah.101
+	title = tur_ah.101.t
+	desc = tur_ah.101.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	option = {
+		name = tur_ah.101.a
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+}

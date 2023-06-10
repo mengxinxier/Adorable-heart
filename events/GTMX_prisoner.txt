@@ -1,0 +1,2099 @@
+add_namespace = prisoner
+###圣杯###
+news_event = {
+	id = prisoner.10
+	title = prisoner.10.t
+	desc = prisoner.10.d
+	picture = GFX_news_event_ENG_PRISONER_1
+	major = yes
+	trigger = {
+		ENG = {
+			exists = no
+		}
+		NOT = {
+			has_global_flag = GTMX_FALL_OF_ENG
+		}
+	}
+	immediate = {
+		set_global_flag = GTMX_FALL_OF_ENG
+	}
+	option = {
+		name = prisoner.10.a
+		trigger = {
+			controls_state = 126
+		}
+		set_country_flag = ENG_prisoner_owner
+	}
+	option = {
+		name = prisoner.10.b
+		trigger = {
+			NOT = {
+				controls_state = 126
+			}
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.11
+	title = prisoner.11.t
+	desc = prisoner.11.z
+	picture = GFX_event_PRISONER_anfu
+	is_triggered_only = yes
+	option = {
+		name = prisoner.11.a
+		hidden_effect = {
+			country_event = {
+				id = prisoner.15
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = prisoner.11.b
+		hidden_effect = {
+			country_event = {
+				id = prisoner.14
+			}
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+	option = {
+		name = prisoner.11.c
+		hidden_effect = {
+			country_event = {
+				id = prisoner.15
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = prisoner.11.d
+		hidden_effect = {
+			country_event = {
+				id = prisoner.15
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.14
+	title = prisoner.14.t
+	desc = prisoner.14.d
+	picture = GFX_event_ENG_PRISONER_1
+	is_triggered_only = yes
+	option = {
+		name = prisoner.14.a
+		clr_country_flag = ENG_prisoner_owner
+		clr_country_flag = ENG_PRISON_RUNNING
+		create_corps_commander = {
+			name = "阿斯托尔福"
+			portrait_path = "gfx/leaders/prisoner/afu2.dds"
+			traits = {
+				qishi
+				offensive_doctrine
+				defensive_doctrine
+				inspirational_leader
+			}
+			skill = 4
+			attack_skill = 3
+			defense_skill = 5
+			planning_skill = 5
+			logistics_skill = 3
+		}
+		create_corps_commander = {
+			name = "亚瑟·潘德雷根"
+			portrait_path = "gfx/leaders/prisoner/Arthur_Pendragon.dds"
+			traits = {
+				qishi
+				defensive_doctrine
+				inspirational_leader
+				fast_planner
+			}
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 4
+		}
+		create_corps_commander = {
+			name = "吉尔伽美什"
+			portrait_path = "gfx/leaders/prisoner/shanshan.dds"
+			traits = {
+				qishi
+				offensive_doctrine
+				fast_planner
+				expert_delegator
+				trait_engineer
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.15
+	title = prisoner.15.t
+	desc = prisoner.15.d
+	picture = GFX_event_ENG_PRISONER_2
+	is_triggered_only = yes
+	option = {
+		name = prisoner.15.a
+		clr_country_flag = ENG_PRISON_RUNNING
+	}
+}
+
+country_event = {
+	id = prisoner.12
+	title = prisoner.12.t
+	desc = prisoner.12.d
+	picture = GFX_event_PRISONER_xingxun
+	is_triggered_only = yes
+	option = {
+		name = prisoner.12.a
+		hidden_effect = {
+			country_event = {
+				id = prisoner.16
+			}
+		}
+	}
+	option = {
+		name = prisoner.12.b
+		hidden_effect = {
+			country_event = {
+				id = prisoner.16
+			}
+		}
+	}
+	option = {
+		name = prisoner.12.c
+		hidden_effect = {
+			country_event = {
+				id = prisoner.16
+			}
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.16
+	title = prisoner.16.t
+	desc = prisoner.16.d
+	picture = GFX_event_ENG_PRISONER_3
+	is_triggered_only = yes
+	option = {
+		name = prisoner.16.a
+		add_manpower = -2
+		clr_country_flag = ENG_PRISON_RUNNING
+	}
+}
+
+country_event = {
+	id = prisoner.13
+	title = prisoner.13.t
+	desc = prisoner.13.d
+	picture = GFX_event_ENG_PRISONER_4
+	is_triggered_only = yes
+	option = {
+		name = prisoner.13.a
+		clr_country_flag = ENG_prisoner_owner
+		clr_country_flag = ENG_PRISON_RUNNING
+		create_corps_commander = {
+			name = "阿斯托尔福"
+			portrait_path = "gfx/leaders/prisoner/afu2.dds"
+			traits = {
+				qishi
+				offensive_doctrine
+				defensive_doctrine
+				inspirational_leader
+			}
+			skill = 4
+			attack_skill = 3
+			defense_skill = 5
+			planning_skill = 5
+			logistics_skill = 3
+		}
+		create_field_marshal = {
+			name = "亚瑟·潘德雷根"
+			portrait_path = "gfx/leaders/prisoner/blacksaber.dds"
+			traits = {
+				qishi
+				defensive_doctrine
+				inspirational_leader
+				fast_planner
+				molixinao
+			}
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 4
+		}
+		create_corps_commander = {
+			name = "吉尔伽美什"
+			portrait_path = "gfx/leaders/prisoner/shanshan.dds"
+			traits = {
+				qishi
+				offensive_doctrine
+				fast_planner
+				expert_delegator
+				trait_engineer
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+}
+
+###幻想乡###
+news_event = {
+	id = prisoner.20
+	title = prisoner.20.t
+	desc = prisoner.20.d
+	picture = GFX_news_event_FRA_PRISONER_1
+	major = yes
+	is_triggered_only = yes
+	immediate = {
+		set_global_flag = GTMX_FALL_OF_FRA
+	}
+	option = {
+		name = prisoner.20.a
+		trigger = {
+			controls_state = 16
+		}
+		set_country_flag = FRA_prisoner_owner
+	}
+	option = {
+		name = prisoner.20.b
+		trigger = {
+			NOT = {
+				controls_state = 16
+			}
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.21
+	title = prisoner.21.t
+	desc = prisoner.21.d
+	picture = GFX_event_PRISONER_anfu
+	is_triggered_only = yes
+	option = {
+		name = prisoner.11.a
+		hidden_effect = {
+			country_event = {
+				id = prisoner.25
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = prisoner.11.b
+		hidden_effect = {
+			country_event = {
+				id = prisoner.25
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = prisoner.11.c
+		hidden_effect = {
+			country_event = {
+				id = prisoner.24
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = prisoner.11.d
+		hidden_effect = {
+			country_event = {
+				id = prisoner.25
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.24
+	title = prisoner.24.t
+	desc = prisoner.24.d
+	picture = GFX_event_FRA_PRISONER_1
+	is_triggered_only = yes
+	option = {
+		name = prisoner.24.a
+		add_to_variable = {
+			var = ubs_load
+			value = 105
+			tooltip = UBS_LOAD_UP_105
+		}
+		clr_country_flag = FRA_prisoner_owner
+		clr_country_flag = FRA_PRISON_RUNNING
+		FRA = {
+			every_character = {
+				limit = {
+					is_character = HKR_Reimu
+				}
+				set_nationality = ROOT
+			}
+			every_character = {
+				limit = {
+					is_character = MRY_Syameimaru
+				}
+				set_nationality = ROOT
+			}
+			every_character = {
+				limit = {
+					is_character = FRA_Marisa
+				}
+				set_nationality = ROOT
+			}
+		}
+		KMK = {
+			every_character = {
+				limit = {
+					or = {
+						is_character = HKR_Reimu
+						is_character = MRY_Syameimaru
+						is_character = FRA_Marisa
+					}
+				}
+				set_nationality = ROOT
+			}
+		}
+		MRY = {
+			every_character = {
+				limit = {
+					is_character = MRY_Syameimaru
+				}
+				set_nationality = ROOT
+			}
+		}
+		HKR = {
+			every_character = {
+				limit = {
+					is_character = HKR_Reimu
+				}
+				set_nationality = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.25
+	title = prisoner.25.t
+	desc = prisoner.25.d
+	picture = GFX_event_FRA_PRISONER_2
+	is_triggered_only = yes
+	option = {
+		name = prisoner.25.a
+		clr_country_flag = FRA_PRISON_RUNNING
+	}
+}
+
+country_event = {
+	id = prisoner.22
+	title = prisoner.22.t
+	desc = prisoner.22.d
+	picture = GFX_event_PRISONER_xingxun
+	is_triggered_only = yes
+	option = {
+		name = prisoner.12.a
+		hidden_effect = {
+			random_list = {
+				15 = {
+					country_event = {
+						id = prisoner.26
+					}
+				}
+				85 = {
+					country_event = {
+						id = prisoner.29
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = prisoner.12.b
+		hidden_effect = {
+			random_list = {
+				20 = {
+					country_event = {
+						id = prisoner.26
+					}
+				}
+				20 = {
+					country_event = {
+						id = prisoner.27
+					}
+				}
+				40 = {
+					country_event = {
+						id = prisoner.29
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = prisoner.12.c
+		hidden_effect = {
+			random_list = {
+				60 = {
+					country_event = {
+						id = prisoner.27
+					}
+				}
+				40 = {
+					country_event = {
+						id = prisoner.28
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.26
+	title = prisoner.26.t
+	desc = prisoner.26.d
+	picture = GFX_event_FRA_PRISONER_3
+	is_triggered_only = yes
+	option = {
+		name = prisoner.26.a
+		clr_country_flag = FRA_prisoner_owner
+		clr_country_flag = FRA_PRISON_RUNNING
+		create_field_marshal = {
+			name = "博丽灵梦"
+			portrait_path = "gfx/leaders/prisoner/lingmeng.dds"
+			traits = {
+				bagua
+				offensive_doctrine
+				inspirational_leader
+				fast_planner
+				xincunjiedi
+			}
+			skill = 5
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+		}
+		create_corps_commander = {
+			name = "射命丸文"
+			portrait_path = "gfx/leaders/prisoner/wenwen.dds"
+			traits = {
+				bagua
+				trait_engineer
+				urban_assault_specialist
+				xincunjiedi
+			}
+			skill = 5
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 5
+		}
+		create_corps_commander = {
+			name = "雾雨魔理沙"
+			portrait_path = "gfx/leaders/prisoner/molisha.dds"
+			traits = {
+				bagua
+				desert_fox
+				trait_mountaineer
+				xincunjiedi
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.27
+	title = prisoner.27.t
+	desc = prisoner.27.d
+	picture = GFX_event_FRA_PRISONER_4
+	is_triggered_only = yes
+	option = {
+		name = prisoner.27.a
+		clr_country_flag = FRA_prisoner_owner
+		clr_country_flag = FRA_PRISON_RUNNING
+		create_field_marshal = {
+			name = "博丽灵梦"
+			portrait_path = "gfx/leaders/prisoner/lingmeng.dds"
+			traits = {
+				bagua
+				offensive_doctrine
+				inspirational_leader
+				fast_planner
+				xincunjiedi
+			}
+			skill = 5
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+		}
+		create_corps_commander = {
+			name = "射命丸文"
+			portrait_path = "gfx/leaders/prisoner/wenwen.dds"
+			traits = {
+				bagua
+				trait_engineer
+				urban_assault_specialist
+				xincunjiedi
+			}
+			skill = 5
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 5
+		}
+		create_corps_commander = {
+			name = "雾雨魔理沙"
+			portrait_path = "gfx/leaders/prisoner/molisha.dds"
+			traits = {
+				bagua
+				desert_fox
+				trait_mountaineer
+				xincunjiedi
+				shangcan
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.28
+	title = prisoner.28.t
+	desc = prisoner.28.d
+	picture = GFX_event_FRA_PRISONER_5
+	is_triggered_only = yes
+	option = {
+		name = prisoner.28.a
+		clr_country_flag = FRA_prisoner_owner
+		clr_country_flag = FRA_PRISON_RUNNING
+		create_field_marshal = {
+			name = "博丽灵梦"
+			portrait_path = "gfx/leaders/prisoner/lingmeng.dds"
+			traits = {
+				bagua
+				offensive_doctrine
+				inspirational_leader
+				fast_planner
+				xincunjiedi
+			}
+			skill = 5
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+		}
+		create_corps_commander = {
+			name = "射命丸文"
+			portrait_path = "gfx/leaders/prisoner/wenwen.dds"
+			traits = {
+				bagua
+				trait_engineer
+				urban_assault_specialist
+				xincunjiedi
+			}
+			skill = 5
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 5
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.29
+	title = prisoner.29.t
+	desc = prisoner.29.d
+	picture = GFX_event_FRA_PRISONER_6
+	is_triggered_only = yes
+	option = {
+		name = prisoner.29.a
+		clr_country_flag = FRA_PRISON_RUNNING
+	}
+}
+
+country_event = {
+	id = prisoner.23
+	title = prisoner.23.t
+	desc = prisoner.23.d
+	picture = GFX_event_FRA_PRISONER_7
+	is_triggered_only = yes
+	option = {
+		name = prisoner.23.a
+		clr_country_flag = FRA_prisoner_owner
+		clr_country_flag = FRA_PRISON_RUNNING
+		create_field_marshal = {
+			name = "博丽灵梦"
+			portrait_path = "gfx/leaders/prisoner/blacklingmeng.dds"
+			traits = {
+				bagua
+				offensive_doctrine
+				inspirational_leader
+				fast_planner
+				molixinao
+			}
+			skill = 5
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+		}
+		create_corps_commander = {
+			name = "射命丸文"
+			portrait_path = "gfx/leaders/prisoner/wenwen.dds"
+			traits = {
+				bagua
+				trait_engineer
+				urban_assault_specialist
+			}
+			skill = 5
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 5
+		}
+		create_corps_commander = {
+			name = "雾雨魔理沙"
+			portrait_path = "gfx/leaders/prisoner/molisha.dds"
+			traits = {
+				bagua
+				desert_fox
+				trait_mountaineer
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+}
+
+###伊甸###
+news_event = {
+	id = prisoner.30
+	title = prisoner.30.t
+	desc = prisoner.30.d
+	picture = GFX_news_event_SHY_PRISONER_1
+	major = yes
+	is_triggered_only = yes
+	immediate = {
+		set_global_flag = GTMX_FALL_OF_SHY
+	}
+	option = {
+		name = prisoner.30.a
+		trigger = {
+			controls_state = 734
+		}
+		set_country_flag = SHY_prisoner_owner
+	}
+	option = {
+		name = prisoner.30.b
+		trigger = {
+			NOT = {
+				controls_state = 734
+			}
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.31
+	title = prisoner.31.t
+	desc = prisoner.31.d
+	picture = GFX_event_PRISONER_anfu
+	is_triggered_only = yes
+	option = {
+		name = prisoner.11.a
+		hidden_effect = {
+			country_event = {
+				id = prisoner.34
+			}
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+	option = {
+		name = prisoner.11.b
+		hidden_effect = {
+			country_event = {
+				id = prisoner.35
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = prisoner.11.c
+		hidden_effect = {
+			country_event = {
+				id = prisoner.35
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = prisoner.11.d
+		hidden_effect = {
+			country_event = {
+				id = prisoner.35
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.34
+	title = prisoner.34.t
+	desc = prisoner.34.d
+	picture = GFX_event_SHY_PRISONER_1
+	is_triggered_only = yes
+	option = {
+		name = prisoner.34.a
+		clr_country_flag = SHY_prisoner_owner
+		clr_country_flag = SHY_PRISON_RUNNING
+		create_corps_commander = {
+			name = "浅井美树"
+			portrait_path = "gfx/leaders/prisoner/meishu.dds"
+			traits = {
+				jingyan
+				defensive_doctrine
+				thorough_planner
+				logistics_wizard
+				offensive_doctrine
+			}
+			skill = 5
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 5
+			logistics_skill = 6
+		}
+		create_field_marshal = {
+			name = "世羽·波拿文都拉"
+			portrait_path = "gfx/leaders/prisoner/zhongli.dds"
+			traits = {
+				jingyan
+				thorough_planner
+				panzer_leader
+				trait_engineer
+				naval_invader
+				commando
+				fortress_buster
+			}
+			skill = 6
+			attack_skill = 7
+			defense_skill = 6
+			planning_skill = 6
+			logistics_skill = 7
+		}
+		create_navy_leader = {
+			name = "塩狩最仲"
+			portrait_path = "gfx/leaders/prisoner/zuizhong.dds"
+			traits = {
+				jingyan
+				aviation_enthusiast
+				gentlemanly
+				bold
+				flight_deck_manager
+				blue_water_expert
+			}
+			skill = 5
+			attack_skill = 4
+			defense_skill = 4
+			maneuvering_skill = 4
+			coordination_skill = 3
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.35
+	title = prisoner.35.t
+	desc = prisoner.35.d
+	picture = GFX_event_SHY_PRISONER_2
+	is_triggered_only = yes
+	option = {
+		name = prisoner.35.a
+		clr_country_flag = SHY_PRISON_RUNNING
+	}
+}
+
+country_event = {
+	id = prisoner.32
+	title = prisoner.32.t
+	desc = prisoner.32.d
+	picture = GFX_event_PRISONER_xingxun
+	is_triggered_only = yes
+	option = {
+		name = prisoner.12.a
+		hidden_effect = {
+			country_event = {
+				id = prisoner.36
+			}
+		}
+	}
+	option = {
+		name = prisoner.12.b
+		hidden_effect = {
+			country_event = {
+				id = prisoner.36
+			}
+		}
+	}
+	option = {
+		name = prisoner.12.c
+		hidden_effect = {
+			country_event = {
+				id = prisoner.36
+			}
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.36
+	title = prisoner.36.t
+	desc = prisoner.36.d
+	picture = GFX_event_SHY_PRISONER_3
+	is_triggered_only = yes
+	option = {
+		name = prisoner.36.a
+		clr_country_flag = SHY_PRISON_RUNNING
+		clr_country_flag = SHY_prisoner_owner
+	}
+}
+
+country_event = {
+	id = prisoner.33
+	title = prisoner.33.t
+	desc = prisoner.33.d
+	picture = GFX_event_SHY_PRISONER_4
+	is_triggered_only = yes
+	option = {
+		name = prisoner.33.a
+		clr_country_flag = SHY_prisoner_owner
+		clr_country_flag = SHY_PRISON_RUNNING
+		create_corps_commander = {
+			name = "浅井美树"
+			portrait_path = "gfx/leaders/prisoner/meishu.dds"
+			traits = {
+				jingyan
+				defensive_doctrine
+				thorough_planner
+				logistics_wizard
+				offensive_doctrine
+			}
+			skill = 5
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 5
+			logistics_skill = 6
+		}
+		create_field_marshal = {
+			name = "世羽·波拿文都拉"
+			portrait_path = "gfx/leaders/prisoner/blackshiyu.dds"
+			traits = {
+				jingyan
+				thorough_planner
+				panzer_leader
+				trait_engineer
+				naval_invader
+				commando
+				fortress_buster
+				molixinao
+			}
+			skill = 6
+			attack_skill = 7
+			defense_skill = 6
+			planning_skill = 6
+			logistics_skill = 7
+		}
+		create_navy_leader = {
+			name = "塩狩最仲"
+			portrait_path = "gfx/leaders/prisoner/zuizhong.dds"
+			traits = {
+				jingyan
+				aviation_enthusiast
+				gentlemanly
+				bold
+				flight_deck_manager
+				blue_water_expert
+			}
+			skill = 5
+			attack_skill = 4
+			defense_skill = 4
+			maneuvering_skill = 4
+			coordination_skill = 3
+		}
+	}
+}
+
+###超次元###
+news_event = {
+	id = prisoner.40
+	title = prisoner.40.t
+	desc = prisoner.40.d
+	picture = GFX_news_event_NPT_PRISONER_1
+	major = yes
+	trigger = {
+		NPT = {
+			exists = no
+			#has_unit_leader = 10000
+		}
+		NOT = {
+			has_global_flag = GTMX_FALL_OF_NPT
+		}
+	}
+	immediate = {
+		set_global_flag = GTMX_FALL_OF_NPT
+	}
+	option = {
+		name = prisoner.40.a
+		trigger = {
+			controls_state = 41
+		}
+		set_country_flag = NPT_prisoner_owner
+	}
+	option = {
+		name = prisoner.40.b
+		trigger = {
+			NOT = {
+				controls_state = 41
+			}
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.41
+	title = prisoner.41.t
+	desc = prisoner.41.d
+	picture = GFX_event_PRISONER_anfu
+	is_triggered_only = yes
+	option = {
+		name = prisoner.11.a
+		hidden_effect = {
+			country_event = {
+				id = prisoner.44
+			}
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+	option = {
+		name = prisoner.11.b
+		hidden_effect = {
+			country_event = {
+				id = prisoner.45
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = prisoner.11.c
+		hidden_effect = {
+			country_event = {
+				id = prisoner.45
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = prisoner.11.d
+		hidden_effect = {
+			country_event = {
+				id = prisoner.45
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.44
+	title = prisoner.44.t
+	desc = prisoner.44.d
+	picture = GFX_event_NPT_PRISONER_1
+	is_triggered_only = yes
+	option = {
+		name = prisoner.44.a
+		clr_country_flag = NPT_prisoner_owner
+		clr_country_flag = NPT_PRISON_RUNNING
+		create_corps_commander = {
+			name = "涅普姬雅"
+			portrait_path = "gfx/leaders/prisoner/Nepgear2.dds"
+			traits = {
+				organizer
+				inflexible_strategist
+				inspirational_leader
+				sharepower
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 6
+		}
+		create_corps_commander = {
+			name = "悠尼"
+			portrait_path = "gfx/leaders/prisoner/Uni.dds"
+			traits = {
+				bearer_of_artillery
+				trait_engineer
+				scavenger
+				sharepower
+			}
+			skill = 3
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+		}
+		create_field_marshal = {
+			name = "涅普迪努"
+			portrait_path = "gfx/leaders/prisoner/Purple_Heart.dds"
+			traits = {
+				organizer
+				inspirational_leader
+				commando
+				paratrooper
+				sharepower
+			}
+			skill = 5
+			attack_skill = 5
+			defense_skill = 5
+			planning_skill = 4
+			logistics_skill = 6
+		}
+		create_corps_commander = {
+			name = "诺瓦露"
+			portrait_path = "gfx/leaders/prisoner/Black_Heart.dds"
+			traits = {
+				panzer_leader
+				trait_engineer
+				fortress_buster
+				sharepower
+			}
+			skill = 5
+			attack_skill = 6
+			defense_skill = 3
+			planning_skill = 6
+			logistics_skill = 3
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.45
+	title = prisoner.45.t
+	desc = prisoner.45.d
+	picture = GFX_event_NPT_PRISONER_2
+	is_triggered_only = yes
+	option = {
+		name = prisoner.45.a
+		clr_country_flag = NPT_PRISON_RUNNING
+	}
+}
+
+country_event = {
+	id = prisoner.42
+	title = prisoner.42.t
+	desc = prisoner.42.d
+	picture = GFX_event_PRISONER_xingxun
+	is_triggered_only = yes
+	option = {
+		name = prisoner.12.a
+		hidden_effect = {
+			country_event = {
+				id = prisoner.46
+			}
+		}
+	}
+	option = {
+		name = prisoner.12.b
+		hidden_effect = {
+			country_event = {
+				id = prisoner.46
+			}
+		}
+	}
+	option = {
+		name = prisoner.12.c
+		hidden_effect = {
+			country_event = {
+				id = prisoner.46
+			}
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.46
+	title = prisoner.46.t
+	desc = prisoner.46.d
+	picture = GFX_event_NPT_PRISONER_3
+	is_triggered_only = yes
+	option = {
+		name = prisoner.46.a
+		clr_country_flag = NPT_PRISON_RUNNING
+	}
+}
+
+country_event = {
+	id = prisoner.43
+	title = prisoner.43.t
+	desc = prisoner.43.d
+	picture = GFX_event_NPT_PRISONER_4
+	is_triggered_only = yes
+	option = {
+		name = prisoner.43.a
+		clr_country_flag = NPT_PRISON_RUNNING
+	}
+}
+
+###精灵###
+news_event = {
+	id = prisoner.50
+	title = prisoner.50.t
+	desc = prisoner.50.d
+	picture = GFX_news_event_USA_PRISONER_1
+	major = yes
+	trigger = {
+		USA = {
+			exists = no
+		}
+		NOT = {
+			has_global_flag = GTMX_FALL_OF_USA
+		}
+	}
+	immediate = {
+		set_global_flag = GTMX_FALL_OF_USA
+	}
+	option = {
+		name = prisoner.50.a
+		trigger = {
+			controls_state = 361
+		}
+		set_country_flag = USA_prisoner_owner
+	}
+	option = {
+		name = prisoner.50.b
+		trigger = {
+			NOT = {
+				controls_state = 361
+			}
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.51
+	title = prisoner.51.t
+	desc = prisoner.51.d
+	picture = GFX_event_PRISONER_anfu
+	is_triggered_only = yes
+	option = {
+		name = prisoner.11.a
+		hidden_effect = {
+			country_event = {
+				id = prisoner.55
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = prisoner.11.b
+		hidden_effect = {
+			country_event = {
+				id = prisoner.54
+			}
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+	option = {
+		name = prisoner.11.c
+		hidden_effect = {
+			country_event = {
+				id = prisoner.55
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = prisoner.11.d
+		hidden_effect = {
+			country_event = {
+				id = prisoner.55
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.54
+	title = prisoner.54.t
+	desc = prisoner.54.d
+	picture = GFX_event_USA_PRISONER_1
+	is_triggered_only = yes
+	option = {
+		name = prisoner.54.a
+		clr_country_flag = USA_prisoner_owner
+		clr_country_flag = USA_PRISON_RUNNING
+		create_field_marshal = {
+			name = "夜刀神十香"
+			portrait_path = "gfx/leaders/USA/Yatogami_Tohka.dds"
+			traits = {
+				Princess
+				jingling
+				FRG_Army_blood
+				harsh_leader
+				inflexible_strategist
+				logistics_wizard
+			}
+			skill = 7
+			attack_skill = 8
+			defense_skill = 8
+			planning_skill = 1
+			logistics_skill = 8
+		}
+		create_corps_commander = {
+			name = "诱宵美九"
+			portrait_path = "gfx/leaders/USA/Izayoi_Miku.dds"
+			traits = {
+				Diva
+				jingling
+				media_personality
+				infantry_leader
+				commando
+				naval_invader
+			}
+			skill = 5
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 5
+		}
+		create_corps_commander = {
+			name = "八舞耶俱矢"
+			portrait_path = "gfx/leaders/USA/Yamai_Kaguya.dds"
+			traits = {
+				Yamai
+				FRG_Army_blood
+				jingling
+				armor_officer
+				trait_reckless
+				trickster
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 4
+		}
+		create_corps_commander = {
+			name = "八舞夕弦"
+			portrait_path = "gfx/leaders/USA/Yamai_Yuzuru.dds"
+			traits = {
+				Yamai
+				FRG_Army_blood
+				jingling
+				armor_officer
+				trait_cautious
+				trickster
+				naval_invader
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 2
+		}
+		create_corps_commander = {
+			name = "镜野七罪"
+			portrait_path = "gfx/leaders/USA/Kyono_Natsumi.dds"
+			traits = {
+				Witch
+				jingling
+				inflexible_strategist
+				trait_cautious
+				adaptable
+			}
+			skill = 4
+			attack_skill = 3
+			defense_skill = 5
+			planning_skill = 3
+			logistics_skill = 4
+		}
+		create_corps_commander = {
+			name = "星宫六喰"
+			portrait_path = "gfx/leaders/USA/Hoshimiya_Mukuro.dds"
+			traits = {
+				Zodiac
+				jingling
+				trait_reckless
+				panzer_leader
+				adaptable
+			}
+			skill = 5
+			attack_skill = 5
+			defense_skill = 5
+			planning_skill = 2
+			logistics_skill = 4
+		}
+		create_field_marshal = {
+			name = "五河琴里"
+			portrait_path = "gfx/leaders/USA/Itsuka_Kotori.dds"
+			traits = {
+				Efreet
+				jingling
+				brilliant_strategist
+				harsh_leader
+				bearer_of_artillery
+				expert_delegator
+			}
+			skill = 6
+			attack_skill = 7
+			defense_skill = 3
+			planning_skill = 6
+			logistics_skill = 6
+		}
+		create_corps_commander = {
+			name = "冰芽川四糸乃"
+			portrait_path = "gfx/leaders/USA/Himekawa_Yoshino.dds"
+			traits = {
+				Hermit
+				jingling
+				trait_cautious
+				cavalry_leader
+				winter_specialist
+				winter_expert
+			}
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 4
+		}
+		create_corps_commander = {
+			name = "时崎狂三"
+			portrait_path = "gfx/leaders/USA/Tokisaki_Kurumi.dds"
+			traits = {
+				Nightmare
+				jingling
+				war_hero
+				brilliant_strategist
+				trickster
+				skilled_staffer
+			}
+			skill = 6
+			attack_skill = 7
+			defense_skill = 3
+			planning_skill = 7
+			logistics_skill = 4
+		}
+		create_field_marshal = {
+			name = "本条二亚"
+			portrait_path = "gfx/leaders/USA/Honjo_Nia.dds"
+			traits = {
+				Sister
+				jingling
+				media_personality
+				trickster
+				organizer
+			}
+			skill = 6
+			attack_skill = 6
+			defense_skill = 1
+			planning_skill = 6
+			logistics_skill = 6
+		}
+		create_corps_commander = {
+			name = "鸢一折纸"
+			portrait_path = "gfx/leaders/USA/Tobiichi_Origami.dds"
+			traits = {
+				Angel
+				jingling
+				FRG_Army_blood
+				brilliant_strategist
+				trait_reckless
+				harsh_leader
+				commando
+				panzer_leader
+			}
+			skill = 6
+			attack_skill = 6
+			defense_skill = 5
+			planning_skill = 5
+			logistics_skill = 6
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.55
+	title = prisoner.55.t
+	desc = prisoner.55.d
+	picture = GFX_event_USA_PRISONER_2
+	is_triggered_only = yes
+	option = {
+		name = prisoner.55.a
+		clr_country_flag = USA_PRISON_RUNNING
+	}
+}
+
+country_event = {
+	id = prisoner.52
+	title = prisoner.52.t
+	desc = prisoner.52.d
+	picture = GFX_event_PRISONER_xingxun
+	is_triggered_only = yes
+	option = {
+		name = prisoner.12.a
+		hidden_effect = {
+			country_event = {
+				id = prisoner.56
+			}
+		}
+	}
+	option = {
+		name = prisoner.12.b
+		hidden_effect = {
+			country_event = {
+				id = prisoner.56
+			}
+		}
+	}
+	option = {
+		name = prisoner.12.c
+		hidden_effect = {
+			country_event = {
+				id = prisoner.56
+			}
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.56
+	title = prisoner.56.t
+	desc = prisoner.56.d
+	picture = GFX_event_USA_PRISONER_3
+	is_triggered_only = yes
+	option = {
+		name = prisoner.56.a
+		clr_country_flag = USA_prisoner_owner
+		clr_country_flag = USA_PRISON_RUNNING
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = yes
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 10
+			}
+			damage_building = {
+				type = arms_factory
+				damage = 10
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 10
+			}
+			damage_building = {
+				type = dockyard
+				damage = 10
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = yes
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 10
+			}
+			damage_building = {
+				type = arms_factory
+				damage = 10
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 10
+			}
+			damage_building = {
+				type = dockyard
+				damage = 10
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = yes
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 10
+			}
+			damage_building = {
+				type = arms_factory
+				damage = 10
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 10
+			}
+			damage_building = {
+				type = dockyard
+				damage = 10
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_core_of = yes
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 10
+			}
+			damage_building = {
+				type = arms_factory
+				damage = 10
+			}
+			damage_building = {
+				type = infrastructure
+				damage = 10
+			}
+			damage_building = {
+				type = dockyard
+				damage = 10
+			}
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.53
+	title = prisoner.53.t
+	desc = prisoner.53.d
+	picture = GFX_event_USA_PRISONER_4
+	is_triggered_only = yes
+	option = {
+		name = prisoner.53.a
+		clr_country_flag = USA_PRISON_RUNNING
+		clr_country_flag = USA_prisoner_owner
+		create_corps_commander = {
+			name = "时崎狂三"
+			portrait_path = "gfx/leaders/prisoner/black3.dds"
+			traits = {
+				Nightmare
+				jingling_alter
+				war_hero
+				brilliant_strategist
+				trickster
+				skilled_staffer
+			}
+			skill = 6
+			attack_skill = 7
+			defense_skill = 3
+			planning_skill = 7
+			logistics_skill = 4
+		}
+		create_corps_commander = {
+			name = "四糸乃"
+			portrait_path = "gfx/leaders/prisoner/black4.dds"
+			traits = {
+				Hermit
+				jingling_alter
+				trait_cautious
+				cavalry_leader
+				winter_specialist
+				winter_expert
+			}
+			skill = 4
+			attack_skill = 3
+			defense_skill = 4
+			planning_skill = 2
+			logistics_skill = 4
+		}
+		create_field_marshal = {
+			name = "鸢一折纸"
+			portrait_path = "gfx/leaders/prisoner/black1.dds"
+			traits = {
+				Angel
+				jingling_alter
+				FRG_Army_blood
+				brilliant_strategist
+				trait_reckless
+				harsh_leader
+				commando
+				panzer_leader
+			}
+			skill = 6
+			attack_skill = 6
+			defense_skill = 5
+			planning_skill = 5
+			logistics_skill = 6
+		}
+		create_field_marshal = {
+			name = "夜刀神天香"
+			portrait_path = "gfx/leaders/USA/Yatogami_Tohka_Alter.dds"
+			traits = {
+				Princess
+				jingling_alter
+				FRG_Army_blood
+				harsh_leader
+				inflexible_strategist
+				logistics_wizard
+			}
+			skill = 7
+			attack_skill = 8
+			defense_skill = 8
+			planning_skill = 2
+			logistics_skill = 7
+		}
+	}
+}
+
+###意呆莉###
+news_event = {
+	id = prisoner.60
+	title = prisoner.60.t
+	desc = prisoner.60.d
+	picture = GFX_news_event_ITA_PRISONER_1
+	major = yes
+	trigger = {
+		ITA = {
+			exists = no
+		}
+		NOT = {
+			has_global_flag = GTMX_FALL_OF_ITA
+		}
+	}
+	immediate = {
+		set_global_flag = GTMX_FALL_OF_ITA
+	}
+	option = {
+		name = prisoner.60.a
+		trigger = {
+			controls_state = 2
+		}
+		set_country_flag = ITA_prisoner_owner
+	}
+	option = {
+		name = prisoner.60.b
+		trigger = {
+			NOT = {
+				controls_state = 2
+			}
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.61
+	title = prisoner.61.t
+	desc = prisoner.61.d
+	picture = GFX_event_PRISONER_anfu
+	is_triggered_only = yes
+	option = {
+		name = prisoner.11.a
+		hidden_effect = {
+			country_event = {
+				id = prisoner.65
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = prisoner.11.b
+		hidden_effect = {
+			country_event = {
+				id = prisoner.65
+			}
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+	option = {
+		name = prisoner.11.c
+		hidden_effect = {
+			country_event = {
+				id = prisoner.65
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = prisoner.11.d
+		hidden_effect = {
+			country_event = {
+				id = prisoner.65
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.65
+	title = prisoner.65.t
+	desc = prisoner.65.d
+	picture = GFX_event_ITA_PRISONER_1
+	is_triggered_only = yes
+	option = {
+		name = prisoner.65.a
+		clr_country_flag = ITA_PRISON_RUNNING
+	}
+}
+
+country_event = {
+	id = prisoner.62
+	title = prisoner.62.t
+	desc = prisoner.62.d
+	picture = GFX_event_PRISONER_xingxun
+	is_triggered_only = yes
+	option = {
+		name = prisoner.12.a
+		hidden_effect = {
+			country_event = {
+				id = prisoner.66
+			}
+		}
+	}
+	option = {
+		name = prisoner.12.b
+		hidden_effect = {
+			country_event = {
+				id = prisoner.66
+			}
+		}
+	}
+	option = {
+		name = prisoner.12.c
+		hidden_effect = {
+			country_event = {
+				id = prisoner.66
+			}
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.66
+	title = prisoner.66.t
+	desc = prisoner.66.d
+	picture = GFX_event_ITA_PRISONER_2
+	is_triggered_only = yes
+	option = {
+		name = prisoner.66.a
+		clr_country_flag = ITA_PRISON_RUNNING
+		clr_country_flag = ITA_prisoner_owner
+		create_field_marshal = {
+			name = "阿库娅"
+			portrait_path = "gfx/leaders/prisoner/akeya.dds"
+			traits = {
+				hongjiu
+				thorough_planner
+				logistics_wizard
+				offensive_doctrine
+			}
+			skill = 5
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 4
+		}
+		create_corps_commander = {
+			name = "达克妮斯"
+			portrait_path = "gfx/leaders/prisoner/dakenisi.dds"
+			traits = {
+				hongjiu
+				desert_fox
+				swamp_fox
+				panzer_leader
+				fortress_buster
+				jungle_rat
+			}
+			skill = 5
+			attack_skill = 4
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 1
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.63
+	title = prisoner.63.t
+	desc = prisoner.63.d
+	picture = GFX_event_ITA_PRISONER_3
+	is_triggered_only = yes
+	option = {
+		name = prisoner.63.a
+		clr_country_flag = USA_PRISON_RUNNING
+	}
+}
+
+###戴比路克###
+news_event = {
+	id = prisoner.70
+	title = prisoner.70.t
+	desc = prisoner.70.d
+	picture = GFX_news_event_DVL_PRISONER_1
+	major = yes
+	trigger = {
+		DVL = {
+			exists = no
+		}
+		NOT = {
+			has_global_flag = GTMX_FALL_OF_DVL
+		}
+	}
+	immediate = {
+		set_global_flag = GTMX_FALL_OF_DVL
+	}
+	option = {
+		name = prisoner.70.a
+		trigger = {
+			controls_state = 64
+		}
+		set_country_flag = DVL_prisoner_owner
+	}
+	option = {
+		name = prisoner.70.b
+		trigger = {
+			NOT = {
+				controls_state = 64
+			}
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.71
+	title = prisoner.71.t
+	desc = prisoner.71.d
+	picture = GFX_event_PRISONER_anfu
+	is_triggered_only = yes
+	option = {
+		name = prisoner.11.a
+		hidden_effect = {
+			country_event = {
+				id = prisoner.75
+			}
+		}
+		ai_chance = {
+			factor = 25
+		}
+	}
+	option = {
+		name = prisoner.11.b
+		hidden_effect = {
+			country_event = {
+				id = prisoner.75
+			}
+		}
+		ai_chance = {
+			factor = 25
+		}
+	}
+	option = {
+		name = prisoner.11.c
+		hidden_effect = {
+			country_event = {
+				id = prisoner.75
+			}
+		}
+		ai_chance = {
+			factor = 25
+		}
+	}
+	option = {
+		name = prisoner.11.d
+		hidden_effect = {
+			country_event = {
+				id = prisoner.75
+			}
+		}
+		ai_chance = {
+			factor = 25
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.75
+	title = prisoner.75.t
+	desc = prisoner.75.d
+	picture = GFX_event_DVL_PRISONER_1
+	is_triggered_only = yes
+	option = {
+		name = prisoner.75.a
+		clr_country_flag = DVL_prisoner_owner
+		clr_country_flag = DVL_PRISON_RUNNING
+		create_corps_commander = {
+			name = "金色暗影"
+			portrait_path = "gfx/leaders/prisoner/DARKNESS.dds"
+			traits = {
+				biological_weapon
+				commando
+				adaptable
+				trickster
+			}
+			skill = 5
+			attack_skill = 6
+			defense_skill = 5
+			planning_skill = 4
+			logistics_skill = 4
+		}
+		create_corps_commander = {
+			name = "黑咲芽亚"
+			portrait_path = "gfx/leaders/prisoner/MEIA.dds"
+			traits = {
+				biological_weapon
+				commando
+				adaptable
+				trickster
+			}
+			skill = 5
+			attack_skill = 6
+			defense_skill = 6
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+}
+
+country_event = {
+	id = prisoner.72
+	title = prisoner.72.t
+	desc = prisoner.72.d
+	picture = GFX_news_event_yami
+	is_triggered_only = yes
+	option = {
+		name = prisoner.72.a
+		clr_country_flag = DVL_PRISON_RUNNING
+	}
+}
+
+country_event = {
+	id = prisoner.73
+	title = prisoner.73.t
+	desc = prisoner.73.d
+	picture = GFX_event_DVL_PRISONER_2
+	is_triggered_only = yes
+	option = {
+		name = prisoner.73.a
+		clr_country_flag = DVL_prisoner_owner
+		clr_country_flag = DVL_PRISON_RUNNING
+		create_corps_commander = {
+			name = "金色暗影"
+			portrait_path = "gfx/leaders/prisoner/DARKNESS2.dds"
+			traits = {
+				biological_weapon
+				commando
+				adaptable
+				trickster
+				molixinao
+			}
+			skill = 6
+			attack_skill = 7
+			defense_skill = 5
+			planning_skill = 5
+			logistics_skill = 5
+		}
+		create_corps_commander = {
+			name = "黑咲芽亚"
+			portrait_path = "gfx/leaders/prisoner/MEIA2.dds"
+			traits = {
+				biological_weapon
+				commando
+				adaptable
+				trickster
+				molixinao
+			}
+			skill = 6
+			attack_skill = 8
+			defense_skill = 6
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+}

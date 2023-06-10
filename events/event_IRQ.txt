@@ -1,0 +1,276 @@
+﻿###########################
+# IRQ
+###########################
+
+add_namespace = irq
+country_event = {
+	id = irq.1
+	title = irq.1.t
+	desc = irq.1.d
+	picture = GFX_report_event_carol_party
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = irq.1.a
+		ai_chance = { factor = 10 }
+		add_opinion_modifier = { target = FROM modifier = large_increase }
+		FROM = {
+			give_military_access = ENG
+		}
+	}
+}
+country_event = {
+	id = irq.2
+	title = irq.2.t
+	desc = irq.2.d
+	picture = GFX_report_event_yugoslavian_cavalry
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = irq.2.a
+		ai_chance = { factor = 10 }
+		give_resource_rights = { receiver = FROM state = 412 }
+		give_resource_rights = { receiver = FROM state = 413 }
+	}
+	option = {
+		name = irq.2.b
+		ai_chance = { factor = 10 }
+		add_war_support = 0.1
+		add_stability = 0.1
+		FROM = {
+			country_event = { days = 1 id = irq.3  }
+		}
+	}
+}
+
+country_event = {
+	id = irq.3
+	title = irq.3.t
+	desc = irq.3.d
+	picture = GFX_report_event_german_volunteers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = irq.3.a
+		ai_chance = { factor = 10 }
+		add_state_claim = 412
+		add_state_claim = 413
+		create_wargoal = {
+			type = annex_everything
+			target = FROM
+		}
+	}
+}
+
+country_event = {
+	id = irq.3001
+	title = irq.3001.t
+	desc = irq.3001.d
+	picture = GFX_report_event_german_volunteers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = irq.3001.a
+		ai_chance = { factor = 10 }
+		effect_tooltip = {
+			FROM = {
+				give_resource_rights = { receiver = ROOT state = 412 }
+				give_resource_rights = { receiver = ROOT state = 413 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = irq.4
+	title = irq.4.t
+	desc = irq.4.d
+	picture = GFX_report_event_asian_politicians
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = irq.4.a
+		ai_chance = { 
+			factor = 5
+			modifier = {
+				factor = 1
+				strength_ratio = {
+					tag = FROM
+					ratio < 1
+				}
+			}
+		}
+		
+		FROM ={
+			country_event = irq.5
+		}
+					
+	}
+	option = {
+		name = sau.61.b
+		ai_chance = { factor = 10 }
+					
+		FROM ={
+			country_event = irq.6
+		}
+	}
+
+}
+	
+country_event = {
+	id = irq.5
+	title = irq.5.t
+	desc = irq.5.d
+	picture = GFX_report_event_fighters
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = irq.5.a
+		ai_chance = { factor = 10 }
+		
+		give_resource_rights = { receiver = FROM state = 339 }
+		give_resource_rights = { receiver = FROM state = 362 }
+		
+	}
+
+}
+country_event = {
+	id = irq.6
+	title = irq.6.t
+	desc = irq.6.d
+	picture = GFX_report_event_fighters
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = irq.6.a
+		ai_chance = { factor = 10 }
+		add_state_claim = 362
+		add_state_claim = 339
+		create_wargoal = {
+			type = annex_everything
+			target = FROM
+		}
+	}
+}
+country_event = {
+	id = irq.7
+	title = irq.7.t
+	desc = irq.7.d
+	picture = GFX_report_event_hungarian_soldiers
+	
+	fire_only_once = yes
+	
+	trigger = {
+		TAG = IRQ
+		has_war_with = ENG
+		has_idea = jingjiyilai
+	}
+	
+	option = {
+		name = irq.7.a
+		ai_chance = { factor = 10 }
+		remove_ideas = jingjiyilai
+		add_timed_idea = {
+			idea = lianbangfengsuo
+			days = 730
+		}
+	}
+}
+country_event = {
+	id = irq.8
+	title = irq.8.t
+	desc = irq.8.d
+	picture = GFX_report_event_chinese_soldiers_02
+			
+	trigger = {
+		TAG = IRQ
+		has_idea = jianshe_lvzhou
+		NOT = { has_country_flag = lvzhou_huanchong }
+	}		
+
+	immediate = { set_country_flag = { flag = lvzhou_huanchong value = 1 days = 120 } }
+	
+	option = {
+		name = irq.8.a
+		ai_chance = { factor = 10 }
+		if = {
+			limit = {
+				has_country_flag = lvzhou_chengguo_1
+			}
+			add_stability = 0.07
+			add_political_power = 50
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			clr_country_flag = lvzhou_chengguo_1
+			set_country_flag = lvzhou_chengguo_2
+		}
+		else_if = {
+			limit = {
+				has_country_flag = lvzhou_chengguo_2
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			add_stability = 0.07
+			add_political_power = 50
+			
+			clr_country_flag = lvzhou_chengguo_2
+			set_country_flag = lvzhou_chengguo_3
+		}
+		else_if = {
+			limit = {
+				has_country_flag = lvzhou_chengguo_3
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			add_stability = 0.07
+			add_political_power = 50
+			
+			clr_country_flag = lvzhou_chengguo_3
+			set_country_flag = lvzhou_chengguo_4
+		}
+		else_if = {
+			limit = {
+				has_country_flag = lvzhou_chengguo_4
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			add_stability = 0.07
+			add_political_power = 50
+			
+			clr_country_flag = lvzhou_chengguo_4
+			set_country_flag = lvzhou_chengguo_5
+		}
+		else_if = {
+			limit = {
+				has_country_flag = lvzhou_chengguo_5
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+			}
+			add_stability = 0.07
+			add_political_power = 50
+			remove_ideas = anzai_1
+			remove_ideas = jianshe_lvzhou
+			clr_country_flag = lvzhou_chengguo_5
+			news_event = { days = 1 id = news.787 }
+			clr_country_flag = lvzhou_huanchong
+			set_country_flag = lvzhou_huanchong
+		}
+		
+	}
+}
+####灾害来袭（-人力）####
+####灾害来袭（-稳定）####
+####灾害来袭（破坏建筑）####
+####神の制裁####

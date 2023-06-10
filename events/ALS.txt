@@ -1,0 +1,76 @@
+﻿
+add_namespace = aquapower
+country_event = {
+    id = aquapower.1
+    title = aquapower.1.t
+    desc = aquapower.1.d
+    is_triggered_only = yes
+    option = {
+        name = aquapower.1.a
+        ai_chance = {
+            base = 100
+        }
+        ITA = {
+            set_autonomy = {
+                target = ALS
+                autonomy_state = autonomy_satellite
+            }
+        }
+    }
+    option = {
+        name = aquapower.1.b
+        117 = {
+            add_claim_by = ITA
+        }
+        742 = {
+            add_claim_by = ITA
+        }
+        837 = {
+            add_claim_by = ITA
+        }
+        156 = {
+            add_claim_by = ITA
+        }
+    }
+}
+country_event = {
+    id = aquapower.2
+    title = aquapower.2.t
+    desc = aquapower.2.d
+    is_triggered_only = yes
+    option = {
+        name = aquapower.2.a
+        add_stability = -0.1
+        create_wargoal = {
+            target = ITA
+            type = civil_war
+        }
+    }
+}
+country_event = {
+    id = aquapower.100
+    title = aquapower.100.t
+    desc = aquapower.100.d
+    is_triggered_only = yes
+    option = {
+        name = aquapower.100.a
+    }
+}
+country_event = {
+    id = aquapower.101
+    title = aquapower.101.t
+    desc = aquapower.101.d
+    is_triggered_only = yes
+    option = {
+        name = aquapower.101.a
+    }
+    option = {
+        name = aquapower.101.b
+        declare_war_on = {
+            target = ITA
+            type = puppet_wargoal_focus
+        }
+    }
+}
+
+

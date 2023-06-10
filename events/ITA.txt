@@ -1,0 +1,456 @@
+﻿add_namespace = italia
+country_event = {
+	id = italia.1
+	title = italia.1.t
+	desc = italia.1.d
+	#title和desc皆为文本代码，需在本地化文件写文本#
+	#通常来说trigger = { …… }与is_triggered_only = yes必须二选一
+	is_triggered_only = yes
+	#通常trigger = { …… }与fire_only_once = yes搭配
+	fire_only_once = yes
+	option = {
+		name = italia.1.a
+		country_event = italia.3
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = italia.3
+	title = italia.3.t
+	desc = italia.3.d
+	#title和desc皆为文本代码，需在本地化文件写文本#
+	#通常来说trigger = { …… }与is_triggered_only = yes必须二选一
+	is_triggered_only = yes
+	#通常trigger = { …… }与fire_only_once = yes搭配
+	fire_only_once = yes
+	option = {
+		name = italia.3.a
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = italia.2
+	title = italia.2.t
+	desc = italia.2.d
+	picture = GFX_country_event_mosuolini
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = italia.2.a
+		ITA_mosuolini = {
+			add_country_leader_role = {
+				country_leader = {
+					desc = "POLITICS_MOSUOLINI_DESC"
+					ideology = Mussolinism
+					expire = "1999.1.1.1"
+				}
+				promote_leader = yes
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = italia.2.b
+	}
+}
+
+unit_leader_event = {
+	id = italia.4
+	title = italia.4.t
+	desc = italia.4.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	hidden = no
+	option = {
+		name = italia.4.a
+		ai_chance = {
+			base = 100
+		}
+		ITA_hezhen = {
+			add_country_leader_role = {
+				country_leader = {
+					desc = "HEZHEN_DESC"
+					ideology = kazumaism
+					expire = "1999.1.1.1"
+				}
+				promote_leader = yes
+			}
+		}
+	}
+	option = {
+		name = italia.4.b
+	}
+}
+
+country_event = {
+	id = italia.5
+	title = italia.5.t
+	desc = italia.5.d
+	picture = "gfx/leaders/ITA/kazuma.dds"
+	is_triggered_only = yes
+	option = {
+		name = italia.5.a
+		ITA = {
+			ITA_hezhen = {
+				unit_leader_event = {
+					id = italia.4
+				}
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = italia.6
+	title = italia.6.t
+	desc = italia.6.d
+	is_triggered_only = yes
+	option = {
+		name = italia.6.a
+		ai_chance = {
+			base = 100
+		}
+		ITA_hezhen = {
+			add_country_leader_role = {
+				country_leader = {
+					desc = "HEZHEN_DESC"
+					ideology = kazumaism
+					expire = "1999.1.1.1"
+				}
+				promote_leader = yes
+			}
+		}
+	}
+	option = {
+		name = italia.6.b
+	}
+}
+
+country_event = {
+	id = italia.7
+	title = italia.7.t
+	desc = italia.7.d
+	is_triggered_only = yes
+	option = {
+		name = italia.7.a
+		ai_chance = {
+			base = 100
+		}
+		ITA_hezhen = {
+			add_country_leader_role = {
+				country_leader = {
+					desc = "HEZHEN_DESC"
+					ideology = kazumaism
+					expire = "1999.1.1.1"
+				}
+				promote_leader = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = italia.8
+	title = italia.8.t
+	desc = italia.8.d
+	is_triggered_only = yes
+	option = {
+		name = italia.8.a
+		ai_chance = {
+			base = 100
+		}
+		ITA = {
+			add_to_faction = ALS
+		}
+	}
+	option = {
+		name = italia.8.b
+		ITA = {
+			country_event = {
+				id = italia.9
+			}
+		}
+	}
+}
+
+country_event = {
+	id = italia.9
+	title = italia.9.t
+	desc = italia.9.d
+	is_triggered_only = yes
+	option = {
+		name = italia.9.a
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = italia.10
+	title = italia.10.t
+	desc = italia.10.d
+	is_triggered_only = yes
+	option = {
+		name = italia.10.a
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = italia.11
+	title = italia.11.t
+	desc = italia.11.d
+	is_triggered_only = yes
+	option = {
+		name = italia.11.a
+		ai_chance = {
+			base = 100
+		}
+		ITA = {
+			add_to_faction = RMC
+		}
+	}
+	option = {
+		name = italia.11.b
+		ITA = {
+			country_event = {
+				id = italia.10
+			}
+		}
+	}
+}
+
+country_event = {
+	id = italia.12
+	title = italia.12.t
+	desc = italia.12.d
+	is_triggered_only = yes
+	option = {
+		name = italia.12.a
+		ai_chance = {
+			base = 100
+		}
+		ITA_akeya = {
+			add_country_leader_role = {
+				country_leader = {
+					desc = "POLITICS_BENITO_MUSSOLINI_DESC"
+					ideology = anarchist_communism
+					traits = {
+						nvshenaqua
+					}
+					expire = "1965.1.1.1"
+				}
+				promote_leader = yes
+			}
+		}
+		swap_ideas = {
+			remove_idea = bendannvshen
+			add_idea = bendannvshen1
+		}
+	}
+	option = {
+		name = italia.12.b
+	}
+}
+
+country_event = {
+	id = italia.13
+	title = italia.13.t
+	desc = italia.13.d
+	is_triggered_only = yes
+	option = {
+		name = italia.13.a
+		ai_chance = {
+			base = 100
+		}
+		ITA_akeya = {
+			add_country_leader_role = {
+				country_leader = {
+					desc = "POLITICS_BENITO_MUSSOLINI_DESC"
+					ideology = godressism
+					traits = {
+						nvshenaqua
+					}
+					expire = "1965.1.1.1"
+				}
+				promote_leader = yes
+			}
+		}
+		swap_ideas = {
+			remove_idea = bendannvshen
+			add_idea = bendannvshen1
+		}
+	}
+	option = {
+		name = italia.13.b
+	}
+}
+
+country_event = {
+	id = italia.100
+	title = italia.100.t
+	desc = italia.100.d
+	is_triggered_only = yes
+	option = {
+		name = italia.100.a
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = italia.101
+	title = italia.101.t
+	desc = italia.101.d
+	is_triggered_only = yes
+	option = {
+		name = italia.101.a
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = italia.101.b
+		declare_war_on = {
+			target = ALS
+			type = puppet_wargoal_focus
+		}
+	}
+}
+
+country_event = {
+	id = italia.20
+	title = italia.20.t
+	desc = italia.20.d
+	is_triggered_only = yes
+	option = {
+		name = italia.20.a
+		ITA = {
+			annex_country = {
+				target = MOW
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = italia.20.b
+		ITA = {
+			declare_war_on = {
+				target = MOW
+				type = annex_everything
+			}
+		}
+	}
+}
+
+country_event = {
+	id = italia.14
+	title = italia.14.t
+	desc = italia.14.d
+	is_triggered_only = yes
+	option = {
+		name = italia.14.a
+		ITA = {
+			annex_country = {
+				target = RMC
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = italia.14.b
+	}
+}
+
+country_event = {
+	id = italia.16
+	title = italia.16.t
+	desc = italia.16.d
+	is_triggered_only = yes
+	option = {
+		name = italia.16.a
+		MOW = {
+			transfer_state = 550
+			transfer_state = 923
+			transfer_state = 921
+			transfer_state = 906
+			transfer_state = 268
+			transfer_state = 269
+			transfer_state = 559
+			transfer_state = 906
+			transfer_state = 944
+			transfer_state = 919
+			transfer_state = 922
+			transfer_state = 271
+			transfer_state = 920
+			add_state_core = 550
+			add_state_core = 923
+			add_state_core = 921
+			add_state_core = 906
+			add_state_core = 268
+			add_state_core = 269
+			add_state_core = 559
+			add_state_core = 906
+			add_state_core = 944
+			add_state_core = 919
+			add_state_core = 922
+			add_state_core = 271
+			add_state_core = 920
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = italia.16.b
+	}
+}
+
+news_event = {
+	id = italia.15
+	title = italia.15.t
+	desc = italia.15.d
+	is_triggered_only = yes
+	option = {
+		name = italia.15.a
+		ai_chance = {
+			base = 100
+		}
+		trigger = {
+			NOT = {
+				tag = ITA
+			}
+		}
+		set_country_flag = super_event_ITA_geming
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+	}
+	option = {
+		name = italia.15.b
+		trigger = {
+			tag = ITA
+		}
+		set_country_flag = super_event_ITA_geming
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+	}
+}

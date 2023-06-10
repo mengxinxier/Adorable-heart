@@ -1,0 +1,433 @@
+﻿add_namespace = egy
+#贝狄威尔总督任期到了
+country_event = {
+	id = egy.1
+	title = egy.1.t
+	desc = egy.1.d
+	picture = GFX_report_event_hitler_handshake
+	fire_only_once = yes
+	trigger = {
+		tag = EGY
+		EGY = {
+			is_subject_of = ENG
+		}
+		date > 1936.2.2
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = egy.1.a
+		ai_chance = {
+			factor = 10
+		}
+		set_country_flag = beidiweierliuren
+		complete_national_focus = EGY_beidiweier
+	}
+	option = {
+		name = egy.1.b
+		ai_chance = {
+			factor = 0
+		}
+		country_event = {
+			id = egy.2
+			days = 30
+		}
+		custom_effect_tooltip = diofurenzhong
+	}
+	option = {
+		name = egy.1.c
+		ai_chance = {
+			factor = 0
+		}
+		complete_national_focus = EGY_rangaijizaiciweida
+	}
+}
+
+#dio总督到了
+country_event = {
+	id = egy.2
+	title = egy.2.t
+	desc = egy.2.d
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = egy.2.a
+		ai_chance = {
+			factor = 10
+		}
+		set_country_flag = dio
+		complete_national_focus = EGY_bulanduzongdu
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+		add_political_power = 150
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.2
+		}
+		create_field_marshal = {
+			name = "迪奥·布兰度"
+			picture = "leader_dio.dds"
+			traits = {
+				brilliant_strategis
+				politically_connected
+				infantry_officer
+				offensive_doctrine
+			}
+			id = 9499
+			skill = 5
+			attack_skill = 6
+			defense_skill = 5
+			planning_skill = 5
+			logistics_skill = 5
+		}
+	}
+}
+
+#埃及申请自治
+country_event = {
+	id = egy.3
+	title = egy.3.t
+	desc = egy.3.d
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = egy.3.a
+		ai_chance = {
+			factor = 99
+		}
+		EGY = {
+			country_event = {
+				id = egy.4
+				hours = 6
+			}
+		}
+	}
+	option = {
+		name = egy.3.b
+		ai_chance = {
+			factor = 0.1
+		}
+		EGY = {
+			country_event = {
+				id = egy.5
+				hours = 6
+			}
+		}
+	}
+}
+
+#自治
+country_event = {
+	id = egy.4
+	title = egy.4.t
+	desc = egy.4.d
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = egy.4.a
+		ai_chance = {
+			factor = 99
+		}
+		ENG = {
+			set_autonomy = {
+				target = EGY
+				autonomy_state = autonomy_free
+			}
+		}
+		ENG = {
+			add_to_faction = EGY
+		}
+	}
+}
+
+#不准自治
+country_event = {
+	id = egy.5
+	title = egy.5.t
+	desc = egy.5.d
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = egy.5.a
+		ai_chance = {
+			factor = 99
+		}
+	}
+}
+
+#处理罗德岛
+country_event = {
+	id = egy.6
+	title = egy.6.t
+	desc = egy.6.d
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = egy.6.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = -150
+		set_country_flag = ldd_keep
+	}
+	option = {
+		name = egy.6.b
+		ai_chance = {
+			factor = 1
+		}
+		country_event = {
+			id = egy.7
+			hours = 6
+		}
+	}
+}
+
+#处理罗德岛结果
+country_event = {
+	id = egy.7
+	title = egy.7.t
+	desc = egy.7.d
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = egy.7.a
+		ai_chance = {
+			factor = 5
+		}
+		set_country_flag = ldd_crash
+		remove_unit_leader = 9600
+		remove_unit_leader = 6400
+		remove_unit_leader = 6401
+		remove_unit_leader = 6402
+		remove_unit_leader = 6403
+		remove_unit_leader = 6404
+		remove_unit_leader = 6405
+		remove_unit_leader = 6406
+		remove_unit_leader = 6407
+		remove_unit_leader = 6408
+		remove_unit_leader = 6409
+		remove_unit_leader = 6410
+		remove_unit_leader = 6411
+		remove_unit_leader = 6412
+		remove_unit_leader = 6413
+		remove_unit_leader = 6414
+		remove_unit_leader = 6415
+		remove_unit_leader = 6416
+	}
+	option = {
+		name = egy.7.b
+		ai_chance = {
+			factor = 1
+		}
+		kill_country_leader = yes
+		complete_national_focus = EGY_luodedaoshengli
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = no
+		}
+		add_stability = 0.1
+		add_popularity = {
+			ideology = communism
+			popularity = 0.6
+		}
+		remove_unit_leader = 9499
+		remove_ideas = egy_qiangzhizhengbing
+		remove_ideas = egy_zousimianhua
+		set_country_flag = ldd_win
+		unlock_decision_category_tooltip = ldd_build
+		set_cosmetic_tag = LDD_proclaimed
+	}
+}
+
+#选择法老
+country_event = {
+	id = egy.8
+	title = egy.8.t
+	desc = egy.8.d
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = egy.8.a
+		ai_chance = {
+			factor = 5
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_stability = 0.1
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.6
+		}
+		create_country_leader = {
+			name = "尼托克丽丝"
+			desc = ""
+			picture = "army_nituo.dds"
+			ideology = liberalism
+			traits = {
+				#
+			}
+		}
+		complete_national_focus = EGY_nituo
+	}
+	option = {
+		name = egy.8.b
+		ai_chance = {
+			factor = 1
+		}
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
+		}
+		add_stability = 0.1
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.4
+		}
+		create_country_leader = {
+			name = "拉美西斯二世"
+			desc = ""
+			picture = "army_laer.dds"
+			ideology = despotism
+			traits = {
+				#
+			}
+		}
+		complete_national_focus = EGY_aosimandisi
+	}
+}
+
+#埃及索要利比亚
+country_event = {
+	id = egy.9
+	title = egy.9.t
+	desc = egy.9.d
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = egy.9.a
+		ai_chance = {
+			factor = 5
+		}
+		EGY = {
+			transfer_state = 451
+			transfer_state = 663
+			transfer_state = 450
+			transfer_state = 662
+			transfer_state = 449
+			transfer_state = 448
+			transfer_state = 661
+			transfer_state = 273
+		}
+	}
+	option = {
+		name = egy.9.b
+		ai_chance = {
+			factor = 1
+		}
+		EGY = {
+			country_event = {
+				id = egy.10
+				hours = 6
+			}
+		}
+	}
+}
+
+#不给利比亚
+country_event = {
+	id = egy.10
+	title = egy.10.t
+	desc = egy.10.d
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = egy.10.a
+		ai_chance = {
+			factor = 5
+		}
+		451 = {
+			CONTROLLER = {
+				ROOT = {
+					create_wargoal = {
+						type = take_state_focus
+						target = PREV
+						expire = 0
+						generator = {
+							451
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#公审
+country_event = {
+	id = egy.11
+	title = egy.11.t
+	desc = egy.11.d
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = egy.11.a
+		ai_chance = {
+			factor = 5
+		}
+		remove_unit_leader = 9500
+		remove_unit_leader = 9501
+		remove_unit_leader = 9502
+		remove_unit_leader = 9503
+		remove_unit_leader = 9504
+		remove_unit_leader = 9505
+		remove_unit_leader = 9506
+		remove_unit_leader = 9507
+		remove_unit_leader = 9508
+		remove_unit_leader = 9509
+		add_stability = 0.1
+		add_political_power = 100
+		set_country_flag = tishen_crash
+		set_country_flag = xixuegui_crash
+	}
+	option = {
+		name = egy.11.b
+		ai_chance = {
+			factor = 5
+		}
+		remove_unit_leader = 9500
+		remove_unit_leader = 9501
+		remove_unit_leader = 9502
+		remove_unit_leader = 9503
+		remove_unit_leader = 9504
+		add_stability = -0.2
+		add_political_power = -150
+		set_country_flag = tishen_crash
+	}
+	option = {
+		name = egy.11.c
+		ai_chance = {
+			factor = 5
+		}
+		remove_unit_leader = 9505
+		remove_unit_leader = 9506
+		remove_unit_leader = 9507
+		remove_unit_leader = 9508
+		remove_unit_leader = 9509
+		add_stability = -0.2
+		add_political_power = -150
+		set_country_flag = xixuegui_crash
+	}
+	option = {
+		name = egy.11.e
+		ai_chance = {
+			factor = 5
+		}
+		add_stability = -0.3
+		add_political_power = -300
+	}
+}

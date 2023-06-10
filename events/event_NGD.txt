@@ -1,0 +1,275 @@
+add_namespace = NGD
+add_namespace = NGD_news
+add_namespace = NA_generic
+##大萧条
+country_event = {
+	id = NGD.0001
+	title = NGD.0001.title
+	desc = NGD.0001.desc
+	is_triggered_only = yes
+	option = {
+		name = NGD.0001.a
+		swap_ideas = {
+			remove_idea = NGD_A_thriving_economy
+			add_idea = NGD_The_Great_Depression
+		}
+		swap_ideas = {
+			remove_idea = NGD_Rigid_political_system
+			add_idea = NGD_Rigid_political_system_1
+		}
+		complete_national_focus = NGD_The_Roaring_Era_is_over
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+##辞职信
+country_event = {
+	id = NGD.0002
+	title = NGD.0002.title
+	desc = NGD.0002.desc
+	is_triggered_only = yes
+	option = {
+		name = NGD.0002.a
+		remove_ideas = NGD_Jingyuan_idea
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+##紧急选举
+country_event = {
+	id = NGD.0003
+	title = NGD.0003.title
+	desc = NGD.0003.desc
+	is_triggered_only = yes
+	option = {
+		name = NGD.0003.a
+		add_ideas = NGD_Tse_ven_Soong_idea
+		set_country_leader_ideology = Three_Principles_of_the_People_d
+		set_party_name = {
+			ideology = democratic
+			long_name = NGD_democratic_party_The_Grand_Alliance
+			name = NGD_democratic_party
+		}
+		complete_national_focus = NGD_Song_Ziwen_term_of_office
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+##没做好，别玩
+country_event = {
+	id = NGD.1000
+	title = NGD.1000.title
+	desc = NGD.1000.desc
+	is_triggered_only = yes
+	option = {
+		name = NGD.1000.a
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+##
+news_event = {
+	#北美战争
+	id = NA_generic.0001
+	title = NA_generic.0001.t
+	desc = NA_generic.0001.desc
+	picture = GFX_NA_WAR_news_pic
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	fire_only_once = no
+	immediate = {
+		hidden_effect = {
+			set_global_flag = NA_war_has_began
+			every_country = {
+				limit = {
+					or = {
+						tag = NFA
+						tag = USA
+						tag = FRG
+						tag = CAN
+						tag = NGD
+					}
+				}
+				every_state = {
+					limit = {
+						not = {
+							is_core_of = PREV
+						}
+						is_on_continent = north_america
+					}
+					add_claim_by = PREV
+				}
+			}
+			USA = {
+				declare_war_on = {
+					target = NFA
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = FRG
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = NGD
+					type = annex_everything
+				}
+			}
+			NFA = {
+				country_event = {
+					id = NA_generic.0003
+				}
+			}
+			FRG = {
+				declare_war_on = {
+					target = NFA
+					type = annex_everything
+				}
+				declare_war_on = {
+					target = NGD
+					type = annex_everything
+				}
+				country_event = {
+					id = NA_generic.0003
+				}
+			}
+			NGD = {
+				declare_war_on = {
+					target = NFA
+					type = annex_everything
+				}
+				country_event = {
+					id = NA_generic.0003
+				}
+			}
+		}
+	}
+	option = {
+		name = NA_generic.0001.a
+		trigger = {
+			or = {
+				tag = NFA
+				tag = USA
+				tag = FRG
+				tag = CAN
+				tag = NGD
+			}
+		}
+	}
+	option = {
+		name = NA_generic.0001.b
+		trigger = {
+			not = {
+				or = {
+					tag = NFA
+					tag = USA
+					tag = FRG
+					tag = CAN
+					tag = NGD
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	#北美统一
+	id = NA_generic.0002
+	title = NA_generic.0002.t
+	desc = NA_generic.0002.desc
+	picture = GFX_NA_WAR_news_pic
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	fire_only_once = no
+	immediate = {
+		set_global_flag = NA_has_been_united
+	}
+	option = {
+		name = NA_generic.0002.a
+		if = {
+			limit = {
+				FROM = {
+					tag = USA
+				}
+			}
+			set_country_flag = super_event_USA_unit
+			set_country_flag = adorable_heart_Super_Event_Visible
+			adorable_heart_fire_super_event = yes
+		}
+	}
+}
+
+#召唤民兵
+country_event = {
+	id = NA_generic.0003
+	title = NA_generic.0003.t
+	desc = NA_generic.0003.desc
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			set_technology = {
+				tech_irregulars = 1
+			}
+			division_template = {
+				name = "民兵团"
+				is_locked = yes
+				regiments = {
+					irregular_infantry = {
+						x = 0
+						y = 0
+					}
+					irregular_infantry = {
+						x = 0
+						y = 1
+					}
+					irregular_infantry = {
+						x = 0
+						y = 2
+					}
+					irregular_infantry = {
+						x = 0
+						y = 3
+					}
+				}
+			}
+			set_variable = {
+				ROOT.num_of_irregular_infantry = 0
+			}
+		}
+	}
+	option = {
+		name = NA_generic.0003.a
+		custom_effect_tooltip = GET_40_irregular_infantry
+		hidden_effect = {
+			while_loop_effect = {
+				limit = {
+					check_variable = {
+						ROOT.num_of_irregular_infantry<40
+					}
+				}
+				random_owned_controlled_state = {
+					create_unit = {
+						division = "name = \"民兵团\" division_template = \"民兵团\" start_experience_factor = 0"
+						owner = ROOT
+					}
+				}
+				add_to_variable = {
+					ROOT.num_of_irregular_infantry = 1
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,2767 @@
+﻿add_namespace = roc
+##一大召开
+country_event = {
+	id = roc.1
+	title = roc.1.t
+	desc = roc.1.d
+	picture = GFX_event_report_event_assembly_china
+	is_triggered_only = yes
+	option = {
+		name = roc.1.a
+		ai_chance = {
+			factor = 10
+		}
+		set_country_flag = roc_left_and_right
+		country_event = {
+			id = roc.2
+			days = 2
+		}
+		ROC = {
+			if = {
+				limit = {
+					is_ai = no
+					has_game_rule = {
+						rule = ban_ubs
+						option = only_ai
+					}
+				}
+				set_country_flag = UBS_not
+			}
+		}
+		ROC = {
+			if = {
+				limit = {
+					has_game_rule = {
+						rule = ban_ubs
+						option = all_no
+					}
+				}
+				set_country_flag = UBS_not
+			}
+		}
+	}
+}
+
+##第一项议程
+country_event = {
+	id = roc.2
+	title = roc.2.t
+	desc = roc.2.d
+	picture = GFX_event_report_event_bs
+	is_triggered_only = yes
+	option = {
+		name = roc.2.a
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = AH_ROC_ai_behavior_SELECTION
+					option = ROC_GAME_RULE_2
+				}
+			}
+		}
+		modify_country_flag = {
+			flag = roc_left_and_right
+			value = 1
+		}
+		custom_effect_tooltip = roc_left_add
+		country_event = {
+			id = roc.3
+			days = 2
+		}
+	}
+	option = {
+		name = roc.2.b
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = AH_ROC_ai_behavior_SELECTION
+						option = ROC_GAME_RULE_1
+					}
+					has_game_rule = {
+						rule = AH_ROC_ai_behavior_SELECTION
+						option = ROC_GAME_RULE_3
+					}
+				}
+			}
+		}
+		custom_effect_tooltip = roc_right_add
+		country_event = {
+			id = roc.3
+			days = 2
+		}
+	}
+}
+
+##第二项议程
+country_event = {
+	id = roc.3
+	title = roc.3.t
+	desc = roc.3.d
+	picture = GFX_event_report_event_sixth_central_committee_6th_plenary_session
+	is_triggered_only = yes
+	option = {
+		name = roc.3.a
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = AH_ROC_ai_behavior_SELECTION
+					option = ROC_GAME_RULE_2
+				}
+			}
+		}
+		modify_country_flag = {
+			flag = roc_left_and_right
+			value = 1
+		}
+		custom_effect_tooltip = roc_left_add
+		country_event = {
+			id = roc.4
+			days = 2
+		}
+	}
+	option = {
+		name = roc.3.b
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = AH_ROC_ai_behavior_SELECTION
+						option = ROC_GAME_RULE_1
+					}
+					has_game_rule = {
+						rule = AH_ROC_ai_behavior_SELECTION
+						option = ROC_GAME_RULE_3
+					}
+				}
+			}
+		}
+		custom_effect_tooltip = roc_right_add
+		country_event = {
+			id = roc.4
+			days = 2
+		}
+	}
+}
+
+##第三项议程
+country_event = {
+	id = roc.4
+	title = roc.4.t
+	desc = roc.4.d
+	picture = GFX_report_event_crowd_in_prague
+	is_triggered_only = yes
+	option = {
+		name = roc.4.a
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = AH_ROC_ai_behavior_SELECTION
+					option = ROC_GAME_RULE_2
+				}
+			}
+		}
+		modify_country_flag = {
+			flag = roc_left_and_right
+			value = 1
+		}
+		custom_effect_tooltip = roc_left_add
+		country_event = {
+			id = roc.5
+			days = 2
+		}
+	}
+	option = {
+		name = roc.4.b
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = AH_ROC_ai_behavior_SELECTION
+						option = ROC_GAME_RULE_1
+					}
+					has_game_rule = {
+						rule = AH_ROC_ai_behavior_SELECTION
+						option = ROC_GAME_RULE_3
+					}
+				}
+			}
+		}
+		custom_effect_tooltip = roc_right_add
+		country_event = {
+			id = roc.5
+			days = 2
+		}
+	}
+}
+
+##第四项议程
+country_event = {
+	id = roc.5
+	title = roc.5.t
+	desc = roc.5.d
+	picture = GFX_report_event_chinese_japanese_handshake
+	is_triggered_only = yes
+	option = {
+		name = roc.5.a
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = AH_ROC_ai_behavior_SELECTION
+					option = ROC_GAME_RULE_2
+				}
+			}
+		}
+		modify_country_flag = {
+			flag = roc_left_and_right
+			value = 1
+		}
+		custom_effect_tooltip = roc_left_add
+		country_event = {
+			id = roc.6
+			days = 2
+		}
+	}
+	option = {
+		name = roc.5.b
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = AH_ROC_ai_behavior_SELECTION
+						option = ROC_GAME_RULE_1
+					}
+					has_game_rule = {
+						rule = AH_ROC_ai_behavior_SELECTION
+						option = ROC_GAME_RULE_3
+					}
+				}
+			}
+		}
+		custom_effect_tooltip = roc_right_add
+		country_event = {
+			id = roc.6
+			days = 2
+		}
+	}
+}
+
+##第五项议程
+country_event = {
+	id = roc.6
+	title = roc.6.t
+	desc = roc.6.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+	is_triggered_only = yes
+	option = {
+		name = roc.6.a
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = AH_ROC_ai_behavior_SELECTION
+					option = ROC_GAME_RULE_2
+				}
+			}
+		}
+		modify_country_flag = {
+			flag = roc_left_and_right
+			value = 1
+		}
+		custom_effect_tooltip = roc_left_add
+		country_event = {
+			id = roc.7
+			days = 2
+		}
+	}
+	option = {
+		name = roc.6.b
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = AH_ROC_ai_behavior_SELECTION
+						option = ROC_GAME_RULE_1
+					}
+					has_game_rule = {
+						rule = AH_ROC_ai_behavior_SELECTION
+						option = ROC_GAME_RULE_3
+					}
+				}
+			}
+		}
+		custom_effect_tooltip = roc_right_add
+		country_event = {
+			id = roc.7
+			days = 2
+		}
+	}
+}
+
+##第六项议程
+country_event = {
+	id = roc.7
+	title = roc.7.t
+	desc = roc.7.d
+	picture = GFX_report_event_manchukuo_army_2
+	is_triggered_only = yes
+	option = {
+		name = roc.7.a
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = AH_ROC_ai_behavior_SELECTION
+					option = ROC_GAME_RULE_2
+				}
+			}
+		}
+		modify_country_flag = {
+			flag = roc_left_and_right
+			value = 1
+		}
+		custom_effect_tooltip = roc_left_add
+		country_event = {
+			id = roc.8
+			days = 2
+		}
+	}
+	option = {
+		name = roc.7.b
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = AH_ROC_ai_behavior_SELECTION
+						option = ROC_GAME_RULE_1
+					}
+					has_game_rule = {
+						rule = AH_ROC_ai_behavior_SELECTION
+						option = ROC_GAME_RULE_3
+					}
+				}
+			}
+		}
+		custom_effect_tooltip = roc_right_add
+		country_event = {
+			id = roc.8
+			days = 2
+		}
+	}
+}
+
+##第七项议程
+country_event = {
+	id = roc.8
+	title = roc.8.t
+	desc = roc.8.d
+	picture = GFX_report_event_chinese_soldiers
+	is_triggered_only = yes
+	option = {
+		name = roc.8.a
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = AH_ROC_ai_behavior_SELECTION
+					option = ROC_GAME_RULE_2
+				}
+			}
+		}
+		modify_country_flag = {
+			flag = roc_left_and_right
+			value = 1
+		}
+		custom_effect_tooltip = roc_left_add
+		country_event = {
+			id = roc.9
+			days = 2
+		}
+	}
+	option = {
+		name = roc.8.b
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0
+				OR = {
+					has_game_rule = {
+						rule = AH_ROC_ai_behavior_SELECTION
+						option = ROC_GAME_RULE_1
+					}
+					has_game_rule = {
+						rule = AH_ROC_ai_behavior_SELECTION
+						option = ROC_GAME_RULE_3
+					}
+				}
+			}
+		}
+		custom_effect_tooltip = roc_right_add
+		country_event = {
+			id = roc.9
+			days = 2
+		}
+	}
+}
+
+##大会结束
+country_event = {
+	id = roc.9
+	title = roc.9.t
+	desc = roc.9.d
+	picture = GFX_event_report_event_assembly_china
+	is_triggered_only = yes
+	option = {
+		name = roc.9.a
+		ai_chance = {
+			factor = 10
+		}
+		if = {
+			limit = {
+				has_country_flag = {
+					flag = roc_left_and_right
+					value > 4
+				}
+			}
+			set_country_flag = roc_left_win
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.4
+			}
+			else = {
+				set_country_flag = roc_right_win
+				add_popularity = {
+					ideology = neutrality
+					popularity = 0.1
+				}
+			}
+		}
+	}
+}
+
+##强硬右派的命运
+country_event = {
+	id = roc.10
+	title = roc.10.t
+	desc = roc.10.d
+	picture = GFX_report_event_china_politicians_captured
+	is_triggered_only = yes
+	option = {
+		name = roc.10.a
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = AH_ROC_ai_behavior_SELECTION
+					option = ROC_GAME_RULE_3
+				}
+			}
+		}
+		retire_character = ROC_changkaishen
+		remove_ideas = ROC_blue_shirts
+		add_popularity = {
+			ideology = fascism
+			popularity = -0.1
+		}
+		add_political_power = -150
+		add_stability = -0.05
+		add_war_support = -0.05
+	}
+	option = {
+		name = roc.10.b
+		ai_chance = {
+			base = 0
+		}
+		remove_ideas = ROC_blue_shirts
+		add_popularity = {
+			ideology = fascism
+			popularity = -0.1
+		}
+		add_political_power = -50
+		hidden_effect = {
+			country_event = {
+				id = roc.11
+				days = 35
+			}
+		}
+	}
+	option = {
+		name = roc.10.c
+		ai_chance = {
+			base = 0
+		}
+		retire_character = ROC_changkaishen
+		hidden_effect = {
+			country_event = {
+				id = roc.12
+				days = 300
+			}
+		}
+	}
+	option = {
+		name = roc.10.e
+		ai_chance = {
+			base = 20
+			modifier = {
+				factor = 0
+				has_game_rule = {
+					rule = AH_ROC_ai_behavior_SELECTION
+					option = ROC_GAME_RULE_1
+				}
+			}
+		}
+		hidden_effect = {
+			country_event = {
+				id = roc.13
+				days = 30
+			}
+		}
+	}
+}
+
+##失败的政变
+country_event = {
+	id = roc.11
+	title = roc.11.t
+	desc = roc.11.d
+	picture = GFX_report_event_chinese_soldiers_02
+	is_triggered_only = yes
+	option = {
+		name = roc.10.a
+		ai_chance = {
+			factor = 10
+		}
+		retire_character = ROC_changkaishen
+		add_stability = -0.1
+		add_political_power = -100
+		add_manpower = -100
+		592 = {
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 1
+			}
+		}
+	}
+}
+
+##蓝衣社宣告解散
+country_event = {
+	id = roc.12
+	title = roc.12.t
+	desc = roc.12.d
+	picture = GFX_report_event_tur_politician_march
+	is_triggered_only = yes
+	option = {
+		name = roc.12.a
+		ai_chance = {
+			factor = 10
+		}
+		remove_ideas = ROC_blue_shirts
+		add_popularity = {
+			ideology = fascism
+			popularity = -0.15
+		}
+	}
+}
+
+##政变
+country_event = {
+	id = roc.13
+	title = roc.13.t
+	desc = roc.13.d
+	picture = GFX_report_event_chinese_soldiers_running
+	is_triggered_only = yes
+	option = {
+		name = roc.13.a
+		ai_chance = {
+			factor = 10
+		}
+		set_country_flag = blue_coup
+		set_country_flag = roc_right_win
+		clr_country_flag = roc_left_win
+		unlock_national_focus = ROC_right_dominated
+		complete_national_focus = ROC_purge
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.4
+		}
+		ROC = {
+			activate_mission = ROC_blue_shirt_pressure
+			set_variable = {
+				roc_blue_pressure = 30
+			}
+		}
+	}
+}
+
+##清党
+country_event = {
+	id = roc.14
+	title = roc.14.t
+	desc = roc.14.d
+	picture = GFX_report_event_SOV_purge_administration
+	is_triggered_only = yes
+	option = {
+		name = roc.14.a
+		ai_chance = {
+			factor = 10
+		}
+		add_ideas = ROC_officer_be_purged_1
+		add_popularity = {
+			ideology = communism
+			popularity = -0.15
+		}
+		add_manpower = -10000
+		complete_tooltip = {
+			retire_character = ROC_561
+			retire_character = ROC_56
+			retire_character = ROC_59
+			retire_character = ROC_63
+			retire_character = ROC_64
+			retire_character = ROC_79
+			retire_character = ROC_80
+			retire_character = ROC_81
+			retire_character = ROC_92
+			retire_character = ROC_97
+			retire_character = ROC_linmiao
+			retire_character = ROC_liyunlong
+			retire_character = ROC_nz75
+			retire_character = ROC_xuechu
+			retire_character = ROC_zi
+			retire_character = ROC_zhaogang
+			retire_character = ROC_lidesheng
+		}
+		hidden_effect = {
+			ROC_561 = {
+				set_nationality = AHM
+			}
+			ROC_56 = {
+				set_nationality = AHM
+			}
+			ROC_59 = {
+				set_nationality = AHM
+			}
+			ROC_63 = {
+				set_nationality = AHM
+			}
+			ROC_64 = {
+				set_nationality = AHM
+			}
+			ROC_79 = {
+				set_nationality = AHM
+			}
+			ROC_80 = {
+				set_nationality = AHM
+			}
+			ROC_81 = {
+				set_nationality = AHM
+			}
+			ROC_92 = {
+				set_nationality = AHM
+			}
+			ROC_97 = {
+				set_nationality = AHM
+			}
+			ROC_linmiao = {
+				set_nationality = AHM
+			}
+			ROC_liyunlong = {
+				set_nationality = AHM
+			}
+			ROC_nz75 = {
+				set_nationality = AHM
+			}
+			ROC_xuechu = {
+				set_nationality = AHM
+			}
+			ROC_zi = {
+				set_nationality = AHM
+			}
+			ROC_zhaogang = {
+				set_nationality = AHM
+			}
+			ROC_lidesheng = {
+				set_nationality = AHM
+			}
+			if = {
+				limit = {
+					MAN = {
+						has_country_flag = dongbeiyizhi_flag
+					}
+				}
+				MAN = {
+					country_event = {
+						id = man.117
+						days = 3
+					}
+				}
+			}
+		}
+	}
+}
+
+##流亡者到来
+country_event = {
+	id = roc.15
+	title = roc.15.t
+	desc = roc.15.d
+	picture = GFX_report_event_chinese_officers
+	is_triggered_only = yes
+	option = {
+		name = roc.15.a
+		ai_chance = {
+			factor = 10
+		}
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.1
+		}
+		add_manpower = 80000
+		create_country_leader = {
+			name = "李德胜"
+			desc = "POLITICS_ZHANG_GUOTAO_DESC"
+			picture = "gfx/leaders/ROC/lidesheng.dds"
+			expire = "1965.1.1"
+			ideology = marxism
+			traits = {
+				cornered_fox
+			}
+		}
+		set_cosmetic_tag = YUN_CSR
+		hidden_effect = {
+			news_event = {
+				id = chinews.1
+				days = 1
+			}
+		}
+	}
+}
+
+##救济手段
+country_event = {
+	id = roc.16
+	title = roc.16.t
+	desc = roc.16.d
+	picture = GFX_event_report_event_china_henan_famine
+	is_triggered_only = yes
+	option = {
+		name = roc.16.a
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = -200
+		add_stability = -0.3
+		add_manpower = -500
+		hidden_effect = {
+			country_event = {
+				id = roc.17
+				days = 160
+			}
+		}
+	}
+	option = {
+		name = roc.16.b
+		ai_chance = {
+			factor = 10
+		}
+		add_ideas = ROC_foreign_rice
+		hidden_effect = {
+			country_event = {
+				id = roc.17
+				days = 220
+			}
+		}
+	}
+	option = {
+		name = roc.16.c
+		ai_chance = {
+			factor = 10
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -100
+			producer = ROC
+		}
+		add_ideas = ROC_hunting
+		hidden_effect = {
+			country_event = {
+				id = roc.17
+				days = 190
+			}
+		}
+	}
+}
+
+##饥荒消弭
+country_event = {
+	id = roc.17
+	title = roc.17.t
+	desc = roc.17.d
+	picture = GFX_event_report_event_china_henan_famine
+	is_triggered_only = yes
+	option = {
+		name = roc.17.a
+		ai_chance = {
+			factor = 10
+		}
+		if = {
+			limit = {
+				has_idea = ROC_foreign_rice
+			}
+			remove_ideas = ROC_foreign_rice
+		}
+		if = {
+			limit = {
+				has_idea = ROC_hunting
+			}
+			remove_ideas = ROC_hunting
+		}
+		remove_ideas = ROC_famine
+	}
+}
+
+##剿匪策略
+country_event = {
+	id = roc.18
+	title = roc.18.t
+	desc = roc.18.d
+	picture = GFX_report_event_chinese_soldiers_city_ruin
+	is_triggered_only = yes
+	option = {
+		name = roc.18.a
+		ai_chance = {
+			factor = 10
+		}
+		add_manpower = -200
+		hidden_effect = {
+			country_event = {
+				id = roc.19
+				days = 330
+			}
+		}
+	}
+	option = {
+		name = roc.18.b
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = -50
+		add_manpower = -1000
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -300
+			producer = ROC
+		}
+		hidden_effect = {
+			country_event = {
+				id = roc.19
+				days = 200
+			}
+		}
+	}
+	option = {
+		name = roc.18.c
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = -0.05
+		add_war_support = -0.1
+		add_ideas = ROC_pay_for_bandit
+		hidden_effect = {
+			country_event = {
+				id = roc.19
+				days = 150
+			}
+		}
+	}
+}
+
+##匪患清除
+country_event = {
+	id = roc.19
+	title = roc.19.t
+	desc = roc.19.d
+	picture = GFX_report_event_chinese_soldiers_city_ruin
+	is_triggered_only = yes
+	option = {
+		name = roc.19.a
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = 0.05
+		remove_ideas = ROC_many_bandit
+		if = {
+			limit = {
+				has_idea = ROC_pay_for_bandit
+			}
+			remove_ideas = ROC_pay_for_bandit
+		}
+	}
+}
+
+##北伐宣言
+country_event = {
+	id = roc.20
+	title = roc.20.t
+	desc = roc.20.d
+	picture = GFX_report_event_communist_leader
+	is_triggered_only = yes
+	option = {
+		name = roc.20.a
+		ai_chance = {
+			factor = 10
+		}
+		add_war_support = 0.15
+		add_opinion_modifier = {
+			target = CHI
+			modifier = ROC_beifaxuanyan
+		}
+		CHI = {
+			add_opinion_modifier = {
+				target = ROC
+				modifier = ROC_beifaxuanyan
+			}
+		}
+		hidden_effect = {
+			news_event = {
+				id = chinews.2
+				days = 1
+			}
+		}
+	}
+}
+
+##蓝衣社政变
+country_event = {
+	id = roc.21
+	title = roc.21.t
+	desc = roc.21.d
+	picture = GFX_report_event_hitler_parade
+	fire_only_once = yes
+	trigger = {
+		tag = ROC
+		check_variable = {
+			roc_blue_pressure > 95
+		}
+		is_subject = no
+	}
+	option = {
+		name = roc.21.a
+		ai_chance = {
+			factor = 10
+		}
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.4
+		}
+		set_country_flag = blue_win_without_chiang
+		set_country_flag = blue_win
+		unlock_national_focus = ROC_blue_coup
+	}
+}
+
+##整合蓝衣社
+country_event = {
+	id = roc.22
+	title = roc.22.t
+	desc = roc.22.d
+	picture = GFX_report_event_second_vienna_award_pact
+	is_triggered_only = yes
+	option = {
+		name = roc.22.a
+		ai_chance = {
+			factor = 10
+		}
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.4
+		}
+		set_country_flag = blue_win_with_chiang
+		set_country_flag = blue_win
+		unlock_national_focus = ROC_blue_coup
+	}
+}
+
+##新的领袖
+country_event = {
+	id = roc.23
+	title = roc.23.t
+	desc = roc.23.d
+	picture = GFX_report_event_fascist_speech
+	is_triggered_only = yes
+	option = {
+		name = roc.23.a
+		ai_chance = {
+			factor = 10
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.05
+		}
+	}
+	option = {
+		name = roc.23.b
+		ai_chance = {
+			factor = 10
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.05
+		}
+		ROC_lilaiwei = {
+			add_country_leader_role = {
+				country_leader = {
+					ideology = nazism
+					traits = {
+						polemarch
+						national_socialist_paramilitarist
+					}
+					expire = "1965.1.1.1"
+					id = -1
+				}
+				promote_leader = yes
+			}
+		}
+	}
+	option = {
+		name = roc.23.c
+		ai_chance = {
+			factor = 10
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.05
+		}
+		ROC_shi = {
+			add_country_leader_role = {
+				country_leader = {
+					ideology = nazism
+					traits = {
+						the_masses_opium
+						stalin_great_commander
+					}
+					expire = "1965.1.1.1"
+					id = -1
+				}
+				promote_leader = yes
+			}
+		}
+	}
+}
+
+##二次清党
+country_event = {
+	id = roc.24
+	title = roc.24.t
+	desc = roc.24.d
+	picture = GFX_report_event_ger_civil_war
+	is_triggered_only = yes
+	option = {
+		name = roc.24.a
+		ai_chance = {
+			factor = 10
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = -0.1
+		}
+		complete_tooltip = {
+			retire_character = ROC_lizongren
+			retire_character = ROC_chenhuijie
+			retire_character = ROC_sunliren
+			retire_character = ROC_xueyue
+			retire_character = ROC_tangshengzhi
+			retire_character = ROC_yixian
+			if = {
+				limit = {
+					has_country_flag = blue_win_without_chiang
+				}
+				retire_character = ROC_chuyunfei
+				retire_character = ROC_tangenbo
+				retire_character = ROC_huzongnan
+			}
+		}
+		add_timed_idea = {
+			idea = ROC_twice_purge_idea
+			days = 200
+		}
+		add_stability = -0.2
+		add_war_support = -0.15
+		hidden_effect = {
+			ROC_lizongren = {
+				set_nationality = AHM
+			}
+			ROC_chenhuijie = {
+				set_nationality = AHM
+			}
+			ROC_sunliren = {
+				set_nationality = AHM
+			}
+			ROC_xueyue = {
+				set_nationality = AHM
+			}
+			ROC_tangshengzhi = {
+				set_nationality = AHM
+			}
+			ROC_yixian = {
+				set_nationality = AHM
+			}
+			if = {
+				limit = {
+					has_country_flag = blue_win_without_chiang
+				}
+				ROC_chuyunfei = {
+					set_nationality = AHM
+				}
+				ROC_tangenbo = {
+					set_nationality = AHM
+				}
+				ROC_huzongnan = {
+					set_nationality = AHM
+				}
+			}
+		}
+	}
+}
+
+##来自国民政府的最后通牒
+country_event = {
+	id = roc.25
+	title = roc.25.t
+	desc = roc.25.d
+	picture = GFX_report_event_chinese_soldiers
+	is_triggered_only = yes
+	option = {
+		name = roc.25.a
+		ai_chance = {
+			base = 99
+			modifier = {
+				factor = 0
+				has_government = communism
+				ROC = {
+					has_country_flag = roc_right_win
+				}
+			}
+			modifier = {
+				factor = 0
+				has_government = fascism
+				ROC = {
+					has_country_flag = roc_left_win
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_flag = zhongli_win
+			}
+		}
+		ROC = {
+			country_event = {
+				id = roc.26
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = roc.25.b
+		ai_chance = {
+			base = 1
+		}
+		ROC = {
+			country_event = {
+				id = roc.27
+				days = 1
+			}
+		}
+	}
+}
+
+##西南同意了
+country_event = {
+	id = roc.26
+	title = roc.26.t
+	desc = roc.26.d
+	picture = GFX_report_event_chinese_soldiers
+	is_triggered_only = yes
+	option = {
+		name = roc.26.a
+		ai_chance = {
+			base = 99
+		}
+		every_country = {
+			limit = {
+				has_war_with = YUN
+			}
+			ROC = {
+				add_to_war = {
+					targeted_alliance = YUN
+					enemy = PREV
+					hostility_reason = asked_to_join
+				}
+			}
+		}
+		puppet = YUN
+		hidden_effect = {
+			YUN = {
+				set_cosmetic_tag = YUN_KMT
+			}
+		}
+	}
+}
+
+##西南拒绝了
+country_event = {
+	id = roc.27
+	title = roc.27.t
+	desc = roc.27.d
+	picture = GFX_report_event_chinese_soldiers
+	is_triggered_only = yes
+	option = {
+		name = roc.27.a
+		ai_chance = {
+			base = 99
+		}
+		create_wargoal = {
+			target = YUN
+			type = annex_everything
+		}
+	}
+}
+
+##国民政府想要谈判
+country_event = {
+	id = roc.28
+	title = roc.28.t
+	desc = roc.28.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = roc.28.a
+		ai_chance = {
+			base = 99
+		}
+		ROC = {
+			country_event = {
+				id = roc.29
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = roc.28.b
+		ai_chance = {
+			base = 0
+		}
+		ROC = {
+			country_event = {
+				id = roc.30
+				days = 1
+			}
+		}
+	}
+}
+
+##奉天同意谈判
+country_event = {
+	id = roc.29
+	title = roc.29.t
+	desc = roc.29.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = roc.29.a
+		ai_chance = {
+			base = 99
+		}
+		MAN = {
+			country_event = {
+				id = roc.31
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = roc.29.b
+		ai_chance = {
+			base = 0
+		}
+		MAN = {
+			country_event = {
+				id = roc.32
+				days = 1
+			}
+		}
+	}
+}
+
+##奉天拒绝谈判
+country_event = {
+	id = roc.30
+	title = roc.30.t
+	desc = roc.30.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = roc.30.a
+		ai_chance = {
+			base = 99
+		}
+		add_political_power = -50
+	}
+}
+
+##kmt要求结盟
+country_event = {
+	id = roc.31
+	title = roc.31.t
+	desc = roc.31.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = roc.31.a
+		ai_chance = {
+			base = 80
+		}
+		ROC = {
+			country_event = {
+				id = roc.33
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = roc.31.b
+		ai_chance = {
+			base = 20
+		}
+		ROC = {
+			country_event = {
+				id = roc.34
+				days = 1
+			}
+		}
+	}
+}
+
+##kmt要求互不侵犯
+country_event = {
+	id = roc.32
+	title = roc.32.t
+	desc = roc.32.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = roc.32.a
+		ai_chance = {
+			base = 99
+		}
+		ROC = {
+			country_event = {
+				id = roc.35
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = roc.32.b
+		ai_chance = {
+			base = 1
+		}
+		ROC = {
+			country_event = {
+				id = roc.34
+				days = 1
+			}
+		}
+	}
+}
+
+##奉天同意结盟
+country_event = {
+	id = roc.33
+	title = roc.33.t
+	desc = roc.33.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = roc.33.a
+		ai_chance = {
+			base = 99
+		}
+		give_guarantee = MAN
+		MAN = {
+			give_guarantee = ROC
+		}
+		MAN = {
+			give_military_access = ROC
+		}
+		MAN = {
+			add_opinion_modifier = {
+				target = ROC
+				modifier = ROC_ally_with_man
+			}
+		}
+		give_military_access = MAN
+		add_opinion_modifier = {
+			target = MAN
+			modifier = ROC_ally_with_man
+		}
+		add_ideas = ROC_MAN_ally
+		MAN = {
+			add_ideas = ROC_MAN_ally
+		}
+		CHI = {
+			country_event = {
+				id = roc.36
+				days = 1
+			}
+		}
+		add_ai_strategy = {
+			type = befriend
+			id = "MAN"
+			value = 200
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = "MAN"
+			value = 200
+		}
+		MAN = {
+			add_ai_strategy = {
+				type = befriend
+				id = "ROC"
+				value = 200
+			}
+			add_ai_strategy = {
+				type = alliance
+				id = "ROC"
+				value = 200
+			}
+		}
+		MAN = {
+			country_event = man.29
+		}
+	}
+}
+
+##奉天退出谈判
+country_event = {
+	id = roc.34
+	title = roc.34.t
+	desc = roc.34.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = roc.34.a
+		ai_chance = {
+			base = 99
+		}
+	}
+}
+
+##奉天同意互不侵犯
+country_event = {
+	id = roc.35
+	title = roc.35.t
+	desc = roc.35.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = roc.35.a
+		ai_chance = {
+			base = 99
+		}
+		diplomatic_relation = {
+			country = MAN
+			relation = non_aggression_pact
+			active = yes
+		}
+		MAN = {
+			add_opinion_modifier = {
+				target = ROC
+				modifier = ROC_ally_with_man
+			}
+		}
+		add_opinion_modifier = {
+			target = MAN
+			modifier = ROC_ally_with_man
+		}
+		add_ai_strategy = {
+			type = befriend
+			id = "MAN"
+			value = 100
+		}
+		MAN = {
+			add_ai_strategy = {
+				type = befriend
+				id = "ROC"
+				value = 100
+			}
+		}
+	}
+}
+
+##南北联盟
+country_event = {
+	id = roc.36
+	title = roc.36.t
+	desc = roc.36.d
+	picture = GFX_report_event_german_troops
+	is_triggered_only = yes
+	option = {
+		name = roc.36.a
+		ai_chance = {
+			base = 99
+		}
+		add_manpower = 10000
+		add_political_power = 150
+	}
+}
+
+##参战
+country_event = {
+	id = roc.37
+	title = roc.37.t
+	desc = roc.37.d
+	picture = GFX_report_event_tur_machine_gunners
+	fire_only_once = yes
+	trigger = {
+		tag = MAN
+		ROC = {
+			has_war_with = CHI
+		}
+		NOT = {
+			has_war_with = ROC
+		}
+		is_subject = no
+		has_idea = ROC_MAN_ally
+	}
+	option = {
+		name = roc.37.a
+		ai_chance = {
+			base = 99
+		}
+		declare_war_on = {
+			target = CHI
+			type = annex_everything
+		}
+		remove_ideas = ROC_MAN_ally
+		ROC = {
+			remove_ideas = ROC_MAN_ally
+		}
+	}
+	option = {
+		name = roc.37.b
+		ai_chance = {
+			base = 0
+		}
+		remove_ideas = ROC_MAN_ally
+		ROC = {
+			remove_ideas = ROC_MAN_ally
+		}
+		add_political_power = -100
+		add_war_support = -0.1
+	}
+}
+
+##参战
+country_event = {
+	id = roc.38
+	title = roc.38.t
+	desc = roc.38.d
+	picture = GFX_report_event_tur_machine_gunners
+	fire_only_once = yes
+	trigger = {
+		tag = ROC
+		MAN = {
+			has_war_with = CHI
+		}
+		NOT = {
+			has_war_with = MAN
+		}
+		is_subject = no
+		has_idea = ROC_MAN_ally
+	}
+	option = {
+		name = roc.38.a
+		ai_chance = {
+			base = 99
+		}
+		declare_war_on = {
+			target = CHI
+			type = annex_everything
+		}
+		remove_ideas = ROC_MAN_ally
+		MAN = {
+			remove_ideas = ROC_MAN_ally
+		}
+	}
+	option = {
+		name = roc.38.b
+		ai_chance = {
+			base = 0
+		}
+		remove_ideas = ROC_MAN_ally
+		add_political_power = -100
+		add_war_support = -0.1
+		MAN = {
+			remove_ideas = ROC_MAN_ally
+		}
+	}
+}
+
+##宪法草案
+country_event = {
+	id = roc.39
+	title = roc.39.t
+	desc = roc.39.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = roc.39.a
+		ai_chance = {
+			base = 99
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.08
+		}
+	}
+}
+
+##制宪大会
+country_event = {
+	id = roc.40
+	title = roc.40.t
+	desc = roc.40.d
+	picture = GFX_event_report_event_assembly_china
+	is_triggered_only = yes
+	option = {
+		name = roc.40.a
+		ai_chance = {
+			base = 99
+		}
+		add_stability = 0.05
+		add_political_power = 50
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+	}
+}
+
+##第一届大选
+country_event = {
+	id = roc.41
+	title = roc.41.t
+	desc = roc.41.d
+	picture = GFX_report_event_election_vote
+	is_triggered_only = yes
+	option = {
+		name = roc.41.a
+		ai_chance = {
+			base = 99
+		}
+		trigger = {
+			has_country_flag = roc_left_win
+		}
+		country_event = roc.42
+		set_country_flag = kmt_cpc_win_election
+	}
+	option = {
+		name = roc.41.b
+		ai_chance = {
+			base = 99
+		}
+		country_event = roc.43
+		set_country_flag = CDL_win_election
+	}
+	option = {
+		name = roc.41.c
+		ai_chance = {
+			base = 99
+		}
+		trigger = {
+			has_country_flag = roc_right_win
+		}
+		country_event = roc.44
+		set_country_flag = kmt_win_election
+	}
+}
+
+##国民党左派——人民阵线胜选
+country_event = {
+	id = roc.42
+	title = roc.42.t
+	desc = roc.42.d
+	picture = GFX_event_report_event_gathering_in_front_of_building
+	is_triggered_only = yes
+	option = {
+		name = roc.42.a
+		ai_chance = {
+			base = 99
+		}
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.4
+		}
+		promote_character = ROC_songqingling
+		set_global_flag = realize_democracy
+		custom_effect_tooltip = load_new_focus
+	}
+	option = {
+		name = roc.42.b
+		ai_chance = {
+			base = 99
+		}
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.4
+		}
+		promote_character = ROC_enya
+		set_global_flag = realize_democracy
+		custom_effect_tooltip = load_new_focus
+	}
+	option = {
+		name = roc.42.c
+		ai_chance = {
+			base = 99
+		}
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.4
+		}
+		promote_character = ROC_xinkeniang
+		set_global_flag = realize_democracy
+		custom_effect_tooltip = load_new_focus
+	}
+	option = {
+		name = roc.42.e
+		ai_chance = {
+			base = 99
+		}
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.4
+		}
+		promote_character = ROC_linxianming
+		set_global_flag = realize_democracy
+		custom_effect_tooltip = load_new_focus
+	}
+	option = {
+		name = roc.42.f
+		ai_chance = {
+			base = 99
+		}
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.4
+		}
+		promote_character = ROC_lidesheng
+		set_global_flag = realize_democracy
+		custom_effect_tooltip = load_new_focus
+	}
+}
+
+##中国民主同盟胜选
+country_event = {
+	id = roc.43
+	title = roc.43.t
+	desc = roc.43.d
+	picture = GFX_event_report_event_gathering_in_front_of_building
+	is_triggered_only = yes
+	option = {
+		name = roc.43.a
+		ai_chance = {
+			base = 99
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.4
+		}
+		promote_character = ROC_luxun
+		set_global_flag = realize_democracy
+		custom_effect_tooltip = load_new_focus
+		set_party_name = {
+			ideology = democratic
+			long_name = ROC_CDL_party_long
+			name = ROC_CDL_party
+		}
+	}
+	option = {
+		name = roc.43.b
+		ai_chance = {
+			base = 99
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.4
+		}
+		promote_character = ROC_linmingmei
+		set_global_flag = realize_democracy
+		custom_effect_tooltip = load_new_focus
+		set_party_name = {
+			ideology = democratic
+			long_name = ROC_CDL_party_long
+			name = ROC_CDL_party
+		}
+	}
+	option = {
+		name = roc.43.c
+		ai_chance = {
+			base = 99
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.4
+		}
+		promote_character = ROC_shaosiming
+		set_global_flag = realize_democracy
+		custom_effect_tooltip = load_new_focus
+		set_party_name = {
+			ideology = democratic
+			long_name = ROC_CDL_party_long
+			name = ROC_CDL_party
+		}
+	}
+	option = {
+		name = roc.43.e
+		ai_chance = {
+			base = 99
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.4
+		}
+		promote_character = ROC_jackiechan
+		set_global_flag = realize_democracy
+		custom_effect_tooltip = load_new_focus
+		set_party_name = {
+			ideology = democratic
+			long_name = ROC_CDL_party_long
+			name = ROC_CDL_party
+		}
+	}
+	option = {
+		name = roc.43.g
+		ai_chance = {
+			base = 99
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.4
+		}
+		promote_character = ROC_tushanhonghong
+		set_global_flag = realize_democracy
+		custom_effect_tooltip = load_new_focus
+		set_party_name = {
+			ideology = democratic
+			long_name = ROC_CDL_party_long
+			name = ROC_CDL_party
+		}
+	}
+	option = {
+		name = roc.43.h
+		ai_chance = {
+			base = 99
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.4
+		}
+		promote_character = ROC_fengqingxue
+		set_global_flag = realize_democracy
+		custom_effect_tooltip = load_new_focus
+		set_party_name = {
+			ideology = democratic
+			long_name = ROC_CDL_party_long
+			name = ROC_CDL_party
+		}
+	}
+}
+
+##国民党右派
+country_event = {
+	id = roc.44
+	title = roc.44.t
+	desc = roc.44.d
+	picture = GFX_event_report_event_gathering_in_front_of_building
+	is_triggered_only = yes
+	option = {
+		name = roc.44.a
+		ai_chance = {
+			base = 99
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.4
+		}
+		promote_character = ROC_changjingguo
+		set_global_flag = realize_democracy
+		custom_effect_tooltip = load_new_focus
+	}
+	option = {
+		name = roc.44.b
+		ai_chance = {
+			base = 99
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.4
+		}
+		promote_character = ROC_weiyanwu
+		set_global_flag = realize_democracy
+		custom_effect_tooltip = load_new_focus
+	}
+	option = {
+		name = roc.44.c
+		ai_chance = {
+			base = 99
+		}
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.4
+		}
+		promote_character = ROC_shenmeiling
+		set_global_flag = realize_democracy
+		custom_effect_tooltip = load_new_focus
+	}
+	option = {
+		name = roc.44.e
+		ai_chance = {
+			base = 99
+		}
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.4
+		}
+		promote_character = ROC_lizongren
+		set_global_flag = realize_democracy
+		custom_effect_tooltip = load_new_focus
+	}
+	option = {
+		name = roc.44.f
+		ai_chance = {
+			base = 99
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.4
+		}
+		promote_character = ROC_yixian
+		set_global_flag = realize_democracy
+		custom_effect_tooltip = load_new_focus
+	}
+}
+
+##邀请加入阵营	
+country_event = {
+	id = roc.45
+	title = roc.45.t
+	desc = roc.45.d
+	picture = GFX_report_event_chinese_japanese_handshake
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			save_event_target_as = ROCalliance_applicant
+			FROM = {
+				save_event_target_as = ROCalliance_inviter
+			}
+		}
+	}
+	option = {
+		name = roc.45.a
+		ai_chance = {
+			base = 100
+		}
+		FROM = {
+			add_to_faction = ROOT
+			country_event = {
+				id = roc.46
+				hours = 6
+			}
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = FROM
+			value = 200
+		}
+		hidden_effect = {
+			set_country_flag = alliance_applicant@ROOT
+			FROM = {
+				set_country_flag = alliance_inviter@ROOT
+			}
+			news_event = {
+				id = news.289
+				hours = 12
+			}
+		}
+	}
+	option = {
+		name = roc.45.b
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0.1
+				has_war = yes
+				FROM = {
+					has_war = no
+				}
+			}
+		}
+		FROM = {
+			country_event = {
+				id = roc.47
+				hours = 6
+			}
+		}
+	}
+}
+
+##加入阵营	
+country_event = {
+	id = roc.46
+	title = roc.46.t
+	desc = roc.46.d
+	picture = GFX_report_event_chinese_japanese_handshake
+	is_triggered_only = yes
+	option = {
+		name = roc.46.a
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+##拒绝加入阵营	
+country_event = {
+	id = roc.47
+	title = roc.47.t
+	desc = roc.47.d
+	picture = GFX_report_event_chinese_japanese_handshake
+	is_triggered_only = yes
+	option = {
+		name = roc.47.a
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+##国民党要求东北易帜	
+country_event = {
+	id = roc.48
+	title = roc.48.t
+	desc = roc.48.d
+	picture = GFX_report_event_chinese_soldiers_running
+	is_triggered_only = yes
+	option = {
+		name = roc.48.a
+		ai_chance = {
+			base = 80
+			modifier = {
+				factor = 0
+				MAN = {
+					has_government = communism
+				}
+			}
+		}
+		ROC = {
+			country_event = {
+				id = roc.49
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = roc.48.b
+		ai_chance = {
+			base = 20
+			modifier = {
+				owns_state = 608
+				add = 2.5
+			}
+		}
+		ROC = {
+			country_event = {
+				id = roc.50
+				days = 1
+			}
+		}
+	}
+}
+
+##东北同意易帜	
+country_event = {
+	id = roc.49
+	title = roc.49.t
+	desc = roc.49.d
+	picture = GFX_report_event_chamberlain_announce
+	is_triggered_only = yes
+	option = {
+		name = roc.49.a
+		ai_chance = {
+			base = 80
+		}
+		puppet = MAN
+	}
+}
+
+##东北拒绝易帜	
+country_event = {
+	id = roc.50
+	title = roc.50.t
+	desc = roc.50.d
+	picture = GFX_report_event_chinese_soldiers_running
+	is_triggered_only = yes
+	option = {
+		name = roc.50.a
+		ai_chance = {
+			base = 80
+		}
+		create_wargoal = {
+			target = MAN
+			type = annex_everything
+		}
+	}
+}
+
+##帝国效忠者的命运	
+country_event = {
+	id = roc.51
+	title = roc.51.t
+	desc = roc.51.d
+	picture = GFX_report_event_SOV_purge_administration
+	is_triggered_only = yes
+	option = {
+		name = roc.51.a
+		ai_chance = {
+			base = 80
+		}
+		add_political_power = 150
+		add_manpower = -1000
+	}
+	option = {
+		name = roc.51.b
+		ai_chance = {
+			base = 80
+		}
+		add_political_power = 100
+	}
+	option = {
+		name = roc.51.c
+		ai_chance = {
+			base = 80
+		}
+		add_political_power = -50
+		add_stability = -0.05
+		CHI = {
+			every_unit_leader = {
+				limit = {
+					OR = {
+						has_id = 4102
+						has_id = 4103
+						has_id = 4104
+						has_id = 4105
+						has_id = 4106
+						has_id = 4107
+					}
+				}
+				set_nationality = ROC
+			}
+		}
+	}
+	option = {
+		name = roc.51.e
+		ai_chance = {
+			base = 80
+		}
+		trigger = {
+			has_completed_focus = ROC_twice_purge
+		}
+		CHI = {
+			every_character = {
+				limit = {
+					is_unit_leader = yes
+					is_country_leader = no
+				}
+				set_nationality = ROC
+			}
+		}
+	}
+}
+
+###中国要求###	
+country_event = {
+	id = roc.52
+	title = roc.52.t
+	desc = roc.52.d
+	picture = GFX_report_event_chinese_soldiers
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	option = {
+		name = roc.52.a
+		ai_chance = {
+			factor = 10
+		}
+		ROC = {
+			country_event = {
+				days = 1
+				id = roc.53
+			}
+		}
+	}
+	option = {
+		name = roc.52.b
+		ai_chance = {
+			factor = 0
+		}
+		ROC = {
+			country_event = {
+				days = 1
+				id = roc.54
+			}
+		}
+		add_political_power = -50
+	}
+}
+
+###获得###	
+country_event = {
+	id = roc.53
+	title = roc.53.t
+	desc = roc.53.d
+	picture = GFX_report_event_japanese_soldiers_03
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	option = {
+		name = roc.53.a
+		ai_chance = {
+			factor = 10
+		}
+		transfer_state = 524
+		transfer_state = 743
+		transfer_state = 729
+		transfer_state = 326
+	}
+}
+
+###琉球拒绝-战争###	
+country_event = {
+	id = roc.54
+	title = roc.54.t
+	desc = roc.54.d
+	picture = GFX_report_event_lithuania_army
+	is_triggered_only = yes
+	option = {
+		name = roc.54.a
+		ai_chance = {
+			factor = 10
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = RYU
+		}
+	}
+}
+
+###冲击传统###	
+country_event = {
+	id = roc.55
+	title = roc.55.t
+	desc = roc.55.d
+	picture = GFX_report_event_spain_civil_war_volunteers_02
+	is_triggered_only = yes
+	option = {
+		name = roc.55.a
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = -50
+	}
+	option = {
+		name = roc.55.b
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = -0.05
+		set_country_flag = roc_people_disappointed
+		custom_effect_tooltip = you_let_people_disappointed
+	}
+}
+
+###民盟成立###	
+country_event = {
+	id = roc.56
+	title = roc.56.t
+	desc = roc.56.d
+	picture = GFX_report_event_generic_conference
+	is_triggered_only = yes
+	option = {
+		name = roc.56.a
+		ai_chance = {
+			factor = 10
+		}
+		add_political_power = -25
+		add_stability = -0.1
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.1
+		}
+	}
+	option = {
+		name = roc.56.b
+		ai_chance = {
+			factor = 10
+		}
+		set_country_flag = roc_people_disappointed
+		set_country_flag = roc_suppress_CDL
+		custom_effect_tooltip = you_let_people_disappointed
+		modify_country_flag = {
+			flag = roc_people_disappointed
+			value = 1
+		}
+	}
+}
+
+###民盟压倒性###	
+country_event = {
+	id = roc.57
+	title = roc.57.t
+	desc = roc.57.d
+	picture = GFX_event_report_event_assembly_china
+	is_triggered_only = yes
+	option = {
+		name = roc.57.a
+		ai_chance = {
+			factor = 10
+		}
+		country_event = {
+			id = roc.43
+			days = 1
+		}
+		set_country_flag = CDL_win_election
+	}
+	option = {
+		name = roc.57.b
+		ai_chance = {
+			factor = 10
+		}
+		country_event = {
+			id = roc.58
+			days = 1
+		}
+	}
+}
+
+###重拳出击###	
+country_event = {
+	id = roc.58
+	title = roc.58.t
+	desc = roc.58.d
+	picture = GFX_event_report_event_rfm
+	is_triggered_only = yes
+	option = {
+		name = roc.58.a
+		ai_chance = {
+			factor = 10
+		}
+		set_global_flag = xunzheng_forever
+		add_political_power = -250
+		add_stability = -0.3
+		add_war_support = -0.3
+		add_ideas = ROC_Popular_resistance_1
+		if = {
+			limit = {
+				has_country_flag = roc_left_win
+			}
+			ROC_wangzhaoming = {
+				add_country_leader_role = {
+					country_leader = {
+						ideology = despotism
+						traits = {
+							political_chameleon
+							the_statist
+						}
+						expire = "1965.1.1.1"
+						id = -1
+					}
+					promote_leader = yes
+				}
+			}
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = yes
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.5
+			}
+		}
+	}
+}
+
+########################
+news_event = {
+	#国左
+	id = roc.666
+	title = roc.666.t
+	picture = GFX_KMT_unit_china
+	desc = {
+		text = roc.666.d
+	}
+	trigger = {
+		wants_world_news = yes
+	}
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = roc.666.a
+		set_country_flag = super_event_LKMT
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			tag = ROC
+		}
+	}
+	option = {
+		name = roc.666.b
+		set_country_flag = super_event_LKMT
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			or = {
+				tag = ENG
+				tag = USA
+				tag = FRA
+			}
+		}
+	}
+	option = {
+		name = roc.666.c
+		set_country_flag = super_event_LKMT
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			or = {
+				tag = RJE
+				tag = JAP
+			}
+		}
+	}
+	option = {
+		name = roc.666.e
+		set_country_flag = super_event_LKMT
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			tag = DVL
+		}
+	}
+	option = {
+		name = roc.666.f
+		set_country_flag = super_event_LKMT
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			has_government = communism
+		}
+	}
+	option = {
+		name = roc.666.g
+		set_country_flag = super_event_LKMT
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			NOT = {
+				or = {
+					has_government = communism
+					tag = DVL
+					tag = RJE
+					tag = JAP
+					tag = ENG
+					tag = USA
+					tag = FRA
+					tag = ROC
+				}
+			}
+		}
+	}
+}
+
+###################################
+news_event = {
+	#国右
+	id = roc.667
+	title = roc.667.t
+	picture = GFX_KMT_unit_china
+	desc = {
+		text = roc.667.d
+	}
+	trigger = {
+		wants_world_news = yes
+	}
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = roc.667.a
+		set_country_flag = super_event_RKMT
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			tag = ROC
+		}
+	}
+	option = {
+		name = roc.667.b
+		set_country_flag = super_event_RKMT
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			or = {
+				tag = ENG
+				tag = USA
+				tag = FRA
+			}
+		}
+	}
+	option = {
+		name = roc.667.c
+		set_country_flag = super_event_RKMT
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			tag = DVL
+		}
+	}
+	option = {
+		name = roc.667.e
+		set_country_flag = super_event_RKMT
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			has_government = communism
+		}
+	}
+	option = {
+		name = roc.667.f
+		set_country_flag = super_event_RKMT
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			NOT = {
+				or = {
+					has_government = communism
+					tag = DVL
+					tag = ENG
+					tag = USA
+					tag = FRA
+					tag = ROC
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	#蓝衣社
+	id = roc.668
+	title = roc.668.t
+	picture = GFX_KMT_unit_china
+	desc = {
+		text = roc.668.d
+	}
+	trigger = {
+		wants_world_news = yes
+	}
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = roc.668.a
+		set_country_flag = super_event_LYS
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			tag = ROC
+		}
+	}
+	option = {
+		name = roc.668.b
+		set_country_flag = super_event_LYS
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			or = {
+				tag = ENG
+				tag = USA
+				tag = FRA
+			}
+		}
+	}
+	option = {
+		name = roc.668.c
+		set_country_flag = super_event_LYS
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			tag = DVL
+		}
+	}
+	option = {
+		name = roc.668.g
+		set_country_flag = super_event_LYS
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			tag = SOV
+		}
+	}
+	option = {
+		name = roc.668.e
+		set_country_flag = super_event_LYS
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			has_government = communism
+			NOT = {
+				tag = SOV
+			}
+		}
+	}
+	option = {
+		name = roc.668.f
+		set_country_flag = super_event_LYS
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			NOT = {
+				or = {
+					has_government = communism
+					tag = DVL
+					tag = ENG
+					tag = USA
+					tag = FRA
+					tag = ROC
+					tag = SOV
+				}
+			}
+		}
+	}
+}
+
+###############

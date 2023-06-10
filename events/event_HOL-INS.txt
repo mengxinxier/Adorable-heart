@@ -1,0 +1,160 @@
+﻿###########################
+# 荷兰和东葛朗特
+###########################
+add_namespace = hol
+#皇室丑闻
+country_event = {
+	id = hol.1
+	title = hol.1.t
+	desc = hol.1.d
+	picture = GFX_report_event_molotov_signing_pact
+	trigger = {
+		tag = HOL
+		date > 1936.3.1
+		date < 1936.12.1
+	}
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 50
+	}
+	option = {
+		name = hol.1.a
+		add_stability = -0.15
+		add_political_power = -100
+		INS = {
+			country_event = {
+				id = hol.2
+			}
+		}
+		hidden_effect = {
+			news_event = {
+				days = 3
+				id = news.755
+			}
+		}
+	}
+}
+
+#王子驾到
+country_event = {
+	id = hol.2
+	title = hol.2.t
+	desc = hol.2.d
+	picture = GFX_report_event_canadian_soldiers
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 10
+	}
+	option = {
+		name = hol.2.a
+		HOL = {
+			set_autonomy = {
+				target = INS
+				autonomy_state = autonomy_colony
+			}
+		}
+		set_country_flag = xiaer
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = "夏尔·凡多姆海威"
+			desc = "POLITICS_HERMANN_GORING_DESC"
+			picture = "xiaer.dds"
+			expire = "1985.1.1"
+			ideology = moderatism
+			traits = {
+			}
+		}
+		add_ideas = INS_wangzi
+	}
+}
+
+####夏尔起义####
+country_event = {
+	id = hol.3
+	title = hol.3.t
+	desc = hol.3.d
+	picture = GFX_report_event_hitler_parade
+	is_triggered_only = no
+	fire_only_once = yes
+	trigger = {
+		TAG = INS
+		INS = {
+			is_subject_of = HOL
+		}
+		fascism > 0.4
+		compare_autonomy_state > autonomy_puppet
+	}
+	option = {
+		name = hol.3.a
+		ai_chance = {
+			factor = 10
+		}
+		hidden_effect = {
+			set_stability = 0.5
+			set_war_support = 0.4
+			capital = 335
+			create_country_leader = {
+				name = "夏尔·凡多姆海威"
+				desc = "POLITICS_HERMANN_GORING_DESC"
+				picture = "xiaer_fascism.dds"
+				expire = "1985.1.1"
+				ideology = fascism_ideology
+				traits = {
+				}
+			}
+			set_cosmetic_tag = INS_FXS
+			start_civil_war = {
+				ruling_party = fascism
+				ideology = neutrality
+				size = 0.3
+				capital = 672
+				states = {
+					672
+					334
+				}
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.3
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.2
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = -0.1
+			}
+			load_oob = INS_fascism_jundui
+			add_ideas = qixijihua
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_0
+				amount = 10000
+				producer = INS
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = 10000
+				producer = INS
+			}
+			add_equipment_to_stockpile = {
+				type = fighter_equipment_0
+				amount = 500
+				producer = INS
+			}
+			random_other_country = {
+				limit = {
+					original_tag = INS
+					has_government = neutrality
+				}
+				retire_country_leader = yes
+				add_stability = -0.05
+				add_war_support = -0.05
+				load_oob = INS_neutrality_jundui
+			}
+		}
+	}
+}

@@ -1,0 +1,1039 @@
+﻿add_namespace = persia
+
+country_event = {
+	id = persia.1
+	title = persia.1.t
+	desc = persia.1.desc
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			country_event = { id = persia.2 days = 10 }
+		}
+	}
+	option = {
+		name = persia.1.a
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	id = persia.2
+	title = persia.2.t
+	desc = persia.2.desc
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			country_event = { id = persia.3 days = 10 }
+		}
+	}
+	option = {
+		name = persia.2.a
+		ai_chance = {
+			base = 10
+		}
+		complete_national_focus = PER_across_parliament
+		add_political_power = 50
+	}
+	option = {
+		name = persia.2.b
+		ai_chance = {
+			base = 10
+		}
+		complete_national_focus = PER_follow_parliament
+		add_stability = 0.08
+	}
+}
+
+country_event = {
+	id = persia.3
+	title = persia.3.t
+	desc = persia.3.desc
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			country_event = { id = persia.4 days = 10 }
+		}
+	}
+	option = {
+		name = persia.3.a
+		ai_chance = {
+			base = 10
+		}
+		complete_national_focus = PER_visit_research_area
+		add_timed_idea = { idea = PER_visit_research_area_idea days = 210 }
+	}
+	option = {
+		name = persia.3.b
+		ai_chance = {
+			base = 10
+		}
+		complete_national_focus = PER_visit_industry_area
+		random_owned_state = {
+			limit = { is_core_of = ROOT }
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = persia.4
+	title = persia.4.t
+	desc = persia.4.desc
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			country_event = { id = persia.5 days = 10 }
+		}
+	}
+	option = {
+		name = persia.4.a
+		ai_chance = {
+			base = 10
+		}
+		complete_national_focus = PER_bread_order
+		add_timed_idea = { idea = PER_bread_order days = 180 }
+	}
+	option = {
+		name = persia.4.b
+		ai_chance = {
+			base = 10
+		}
+		complete_national_focus = PER_oil_order
+		add_timed_idea = { idea = PER_oil_order days = 180 }
+	}
+}
+
+country_event = {
+	id = persia.5
+	title = persia.5.t
+	desc = persia.5.desc
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			country_event = { id = persia.6 days = 14 }
+		}
+	}
+	option = {
+		name = persia.5.a
+		ai_chance = {
+			base = 10
+		}
+		complete_national_focus = PER_northern_race
+		add_political_power = 10
+		TAM = { add_political_power = 10 }
+	}
+	option = {
+		name = persia.5.b
+		ai_chance = {
+			base = 10
+		}
+		complete_national_focus = PER_southern_race
+		add_command_power = 10
+		412 = {
+			add_building_construction = {
+				type = naval_base
+				level = 2
+				province = 7982
+				instant_build = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = persia.6
+	title = persia.6.t
+	desc = persia.6.desc
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			set_country_flag = PER_just_fool_want_work_flag
+			reload_focus_tree = yes
+			if = {
+				limit = { NOT = { has_completed_focus = PER_a_holiday } }
+				unlock_national_focus = PER_a_holiday
+			}
+			country_event = { id = persia.7 days = 2 }
+		}
+	}
+	option = {
+		name = persia.6.a
+		ai_chance = {
+			base = 10
+		}
+		effect_tooltip = { reload_focus_tree = yes }
+	}
+}
+
+country_event = {
+	id = persia.7
+	title = persia.7.t
+	desc = persia.7.desc
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			country_event = { id = persia.8 days = 7 }
+			complete_national_focus = PER_just_fool_want_work
+		}
+	}
+	option = {
+		name = persia.7.a
+		ai_chance = {
+			base = 10
+		}
+		effect_tooltip = { complete_national_focus = PER_just_fool_want_work }
+	}
+}
+
+country_event = {
+	id = persia.8
+	title = persia.8.t
+	desc = persia.8.desc
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = persia.8.a
+		ai_chance = {
+			base = 10
+		}
+		complete_national_focus = PER_Natsuki_government
+		hidden_effect = {
+			country_event = { id = persia.9 days = 7 random = 3 }
+		}
+	}
+	option = {
+		name = persia.8.b
+		ai_chance = {
+			base = 10
+		}
+		complete_national_focus = PER_trusted_partner
+		hidden_effect = {
+			country_event = { id = persia.9 days = 7 random = 3 }
+		}
+	}
+}
+
+country_event = {
+	id = persia.9
+	title = persia.9.t
+	desc = persia.9.desc
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			416 = { set_demilitarized_zone = yes }
+			418 = { set_demilitarized_zone = yes }
+			420 = { set_demilitarized_zone = yes }
+			419 = { set_demilitarized_zone = yes }
+			998 = { set_demilitarized_zone = yes }
+			set_variable = { PER_government_victory_var = 0 }
+			set_variable = { PER_opposition_victory_var = 0 }
+			country_event = { id = persia.10 days = 3 random = 2 }
+		}
+	}
+	option = {
+		name = persia.9.a
+		ai_chance = {
+			base = 10
+		}
+		effect_tooltip = {
+			416 = { set_demilitarized_zone = yes }
+			418 = { set_demilitarized_zone = yes }
+			420 = { set_demilitarized_zone = yes }
+			419 = { set_demilitarized_zone = yes }
+			998 = { set_demilitarized_zone = yes }
+		}
+	}
+}
+
+country_event = {
+	id = persia.10
+	title = persia.10.t
+	desc = persia.10.desc
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = persia.10.a
+		ai_chance = {
+			base = 10
+		}
+		hidden_effect = {
+			random_list = {
+				25 = {
+					add_to_variable = { PER_government_victory_var = 1 }
+					set_temp_variable = { PER_true_victory_var = PER_government_victory_var }
+					subtract_from_temp_variable = { PER_true_victory_var = PER_opposition_victory_var }
+					if = {
+						limit = { PER_PCW_will_done = yes }
+						PER_PCW_done = yes
+					}
+					else = {
+						set_country_flag = PER_416_gov_vic_flag
+						country_event = { id = persia.11 days = 7 random = 3 }
+					}
+				}
+				75 = {
+					add_to_variable = { PER_opposition_victory_var = 1 }
+					set_temp_variable = { PER_true_victory_var = PER_government_victory_var }
+					subtract_from_temp_variable = { PER_true_victory_var = PER_opposition_victory_var }
+					if = {
+						limit = { PER_PCW_will_done = yes }
+						PER_PCW_done = yes
+					}
+					else = {
+						set_country_flag = PER_416_opp_vic_flag
+						country_event = { id = persia.11 days = 7 random = 3 }
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = persia.10.b
+		ai_chance = {
+			base = 10
+		}
+		hidden_effect = {
+			random_list = {
+				75 = {
+					add_to_variable = { PER_government_victory_var = 1 }
+					set_temp_variable = { PER_true_victory_var = PER_government_victory_var }
+					subtract_from_temp_variable = { PER_true_victory_var = PER_opposition_victory_var }
+					if = {
+						limit = { PER_PCW_will_done = yes }
+						PER_PCW_done = yes
+					}
+					else = {
+						set_country_flag = PER_416_gov_vic_flag
+						country_event = { id = persia.11 days = 7 random = 3 }
+					}
+				}
+				25 = {
+					add_to_variable = { PER_opposition_victory_var = 1 }
+					set_temp_variable = { PER_true_victory_var = PER_government_victory_var }
+					subtract_from_temp_variable = { PER_true_victory_var = PER_opposition_victory_var }
+					if = {
+						limit = { PER_PCW_will_done = yes }
+						PER_PCW_done = yes
+					}
+					else = {
+						set_country_flag = PER_416_opp_vic_flag
+						country_event = { id = persia.11 days = 7 random = 3 }
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = persia.11
+	title = persia.11.t
+	desc = {
+		text = persia.11.desc.a
+		trigger = { has_country_flag = PER_416_gov_vic_flag }
+	}
+	desc = {
+		text = persia.11.desc.b
+		trigger = { has_country_flag = PER_416_opp_vic_flag }
+	}
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = persia.11.a
+		ai_chance = {
+			base = 10
+		}
+		hidden_effect = {
+			random_list = {
+				75 = {
+					add_to_variable = { PER_government_victory_var = 1 }
+					set_temp_variable = { PER_true_victory_var = PER_government_victory_var }
+					subtract_from_temp_variable = { PER_true_victory_var = PER_opposition_victory_var }
+					if = {
+						limit = { PER_PCW_will_done = yes }
+						PER_PCW_done = yes
+					}
+					else = {
+						set_country_flag = PER_420_gov_vic_flag
+						country_event = { id = persia.12 days = 7 random = 3 }
+					}
+				}
+				25 = {
+					add_to_variable = { PER_opposition_victory_var = 1 }
+					set_temp_variable = { PER_true_victory_var = PER_government_victory_var }
+					subtract_from_temp_variable = { PER_true_victory_var = PER_opposition_victory_var }
+					if = {
+						limit = { PER_PCW_will_done = yes }
+						PER_PCW_done = yes
+					}
+					else = {
+						set_country_flag = PER_420_opp_vic_flag
+						country_event = { id = persia.12 days = 7 random = 3 }
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = persia.11.b
+		ai_chance = {
+			base = 10
+		}
+		hidden_effect = {
+			random_list = {
+				25 = {
+					add_to_variable = { PER_government_victory_var = 1 }
+					set_temp_variable = { PER_true_victory_var = PER_government_victory_var }
+					subtract_from_temp_variable = { PER_true_victory_var = PER_opposition_victory_var }
+					if = {
+						limit = { PER_PCW_will_done = yes }
+						PER_PCW_done = yes
+					}
+					else = {
+						set_country_flag = PER_420_gov_vic_flag
+						country_event = { id = persia.12 days = 7 random = 3 }
+					}
+				}
+				75 = {
+					add_to_variable = { PER_opposition_victory_var = 1 }
+					set_temp_variable = { PER_true_victory_var = PER_government_victory_var }
+					subtract_from_temp_variable = { PER_true_victory_var = PER_opposition_victory_var }
+					if = {
+						limit = { PER_PCW_will_done = yes }
+						PER_PCW_done = yes
+					}
+					else = {
+						set_country_flag = PER_420_opp_vic_flag
+						country_event = { id = persia.12 days = 7 random = 3 }
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = persia.12
+	title = persia.12.t
+	desc = {
+		text = persia.12.desc.a
+		trigger = { has_country_flag = PER_420_gov_vic_flag }
+	}
+	desc = {
+		text = persia.12.desc.b
+		trigger = { has_country_flag = PER_420_opp_vic_flag }
+	}
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = persia.12.a
+		ai_chance = {
+			base = 10
+		}
+		hidden_effect = {
+			random_list = {
+				75 = {
+					add_to_variable = { PER_government_victory_var = 1 }
+					set_temp_variable = { PER_true_victory_var = PER_government_victory_var }
+					subtract_from_temp_variable = { PER_true_victory_var = PER_opposition_victory_var }
+					if = {
+						limit = { PER_PCW_will_done = yes }
+						PER_PCW_done = yes
+					}
+					else = {
+						set_country_flag = PER_418_gov_vic_flag
+						country_event = { id = persia.13 days = 7 random = 3 }
+					}
+				}
+				25 = {
+					add_to_variable = { PER_opposition_victory_var = 1 }
+					set_temp_variable = { PER_true_victory_var = PER_government_victory_var }
+					subtract_from_temp_variable = { PER_true_victory_var = PER_opposition_victory_var }
+					if = {
+						limit = { PER_PCW_will_done = yes }
+						PER_PCW_done = yes
+					}
+					else = {
+						set_country_flag = PER_418_opp_vic_flag
+						country_event = { id = persia.13 days = 7 random = 3 }
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = persia.12.b
+		ai_chance = {
+			base = 10
+		}
+		hidden_effect = {
+			random_list = {
+				25 = {
+					add_to_variable = { PER_government_victory_var = 1 }
+					set_temp_variable = { PER_true_victory_var = PER_government_victory_var }
+					subtract_from_temp_variable = { PER_true_victory_var = PER_opposition_victory_var }
+					if = {
+						limit = { PER_PCW_will_done = yes }
+						PER_PCW_done = yes
+					}
+					else = {
+						set_country_flag = PER_418_gov_vic_flag
+						country_event = { id = persia.13 days = 7 random = 3 }
+					}
+				}
+				75 = {
+					add_to_variable = { PER_opposition_victory_var = 1 }
+					set_temp_variable = { PER_true_victory_var = PER_government_victory_var }
+					subtract_from_temp_variable = { PER_true_victory_var = PER_opposition_victory_var }
+					if = {
+						limit = { PER_PCW_will_done = yes }
+						PER_PCW_done = yes
+					}
+					else = {
+						set_country_flag = PER_418_opp_vic_flag
+						country_event = { id = persia.13 days = 7 random = 3 }
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = persia.13
+	title = persia.13.t
+	desc = {
+		text = persia.13.desc.a
+		trigger = { has_country_flag = PER_418_gov_vic_flag }
+	}
+	desc = {
+		text = persia.13.desc.b
+		trigger = { has_country_flag = PER_418_opp_vic_flag }
+	}
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = persia.13.a
+		ai_chance = {
+			base = 10
+		}
+		hidden_effect = {
+			random_list = {
+				25 = {
+					add_to_variable = { PER_government_victory_var = 1 }
+					set_temp_variable = { PER_true_victory_var = PER_government_victory_var }
+					subtract_from_temp_variable = { PER_true_victory_var = PER_opposition_victory_var }
+					if = {
+						limit = { PER_PCW_will_done = yes }
+						PER_PCW_done = yes
+					}
+					else = {
+						set_country_flag = PER_419_gov_vic_flag
+						country_event = { id = persia.14 days = 7 random = 3 }
+					}
+				}
+				75 = {
+					add_to_variable = { PER_opposition_victory_var = 1 }
+					set_temp_variable = { PER_true_victory_var = PER_government_victory_var }
+					subtract_from_temp_variable = { PER_true_victory_var = PER_opposition_victory_var }
+					if = {
+						limit = { PER_PCW_will_done = yes }
+						PER_PCW_done = yes
+					}
+					else = {
+						set_country_flag = PER_419_opp_vic_flag
+						country_event = { id = persia.14 days = 7 random = 3 }
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = persia.13.b
+		ai_chance = {
+			base = 10
+		}
+		hidden_effect = {
+			random_list = {
+				75 = {
+					add_to_variable = { PER_government_victory_var = 1 }
+					set_temp_variable = { PER_true_victory_var = PER_government_victory_var }
+					subtract_from_temp_variable = { PER_true_victory_var = PER_opposition_victory_var }
+					if = {
+						limit = { PER_PCW_will_done = yes }
+						PER_PCW_done = yes
+					}
+					else = {
+						set_country_flag = PER_419_gov_vic_flag
+						country_event = { id = persia.14 days = 7 random = 3 }
+					}
+				}
+				25 = {
+					add_to_variable = { PER_opposition_victory_var = 1 }
+					set_temp_variable = { PER_true_victory_var = PER_government_victory_var }
+					subtract_from_temp_variable = { PER_true_victory_var = PER_opposition_victory_var }
+					if = {
+						limit = { PER_PCW_will_done = yes }
+						PER_PCW_done = yes
+					}
+					else = {
+						set_country_flag = PER_419_opp_vic_flag
+						country_event = { id = persia.14 days = 7 random = 3 }
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = persia.14
+	title = persia.14.t
+	desc = {
+		text = persia.14.desc.a
+		trigger = { has_country_flag = PER_419_gov_vic_flag }
+	}
+	desc = {
+		text = persia.14.desc.b
+		trigger = { has_country_flag = PER_419_opp_vic_flag }
+	}
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = persia.14.a
+		ai_chance = {
+			base = 10
+		}
+		hidden_effect = {
+			add_to_variable = { PER_government_victory_var = 1 }
+			PER_PCW_done = yes
+		}
+	}
+	option = {
+		name = persia.14.b
+		ai_chance = {
+			base = 10
+		}
+		hidden_effect = {
+			add_to_variable = { PER_opposition_victory_var = 1 }
+			PER_PCW_done = yes
+		}
+	}
+}
+
+country_event = {
+	id = persia.15
+	title = persia.15.t
+	desc = persia.15.desc
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			416 = { set_demilitarized_zone = no }
+			418 = { set_demilitarized_zone = no }
+			420 = { set_demilitarized_zone = no }
+			419 = { set_demilitarized_zone = no }
+			998 = { set_demilitarized_zone = no }
+			clear_variable = PER_government_victory_var
+			clear_variable = PER_opposition_victory_var
+		}
+	}
+	option = {
+		name = persia.15.a
+		ai_chance = {
+			base = 10
+		}
+		effect_tooltip = {
+			416 = { set_demilitarized_zone = no }
+			418 = { set_demilitarized_zone = no }
+			420 = { set_demilitarized_zone = no }
+			419 = { set_demilitarized_zone = no }
+			998 = { set_demilitarized_zone = no }
+		}
+		if = {
+			limit = { has_completed_focus = PER_Natsuki_government }
+			complete_national_focus = PER_result_of_prison
+		}
+		else_if = {
+			limit = { has_completed_focus = PER_trusted_partner }
+			complete_national_focus = PER_special_meeting
+		}
+	}
+}
+
+country_event = {
+	id = persia.16
+	title = persia.16.t
+	desc = persia.16.desc
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			416 = { set_demilitarized_zone = no }
+			418 = { set_demilitarized_zone = no }
+			420 = { set_demilitarized_zone = no }
+			419 = { set_demilitarized_zone = no }
+			998 = { set_demilitarized_zone = no }
+			clear_variable = PER_government_victory_var
+			clear_variable = PER_opposition_victory_var
+		}
+	}
+	option = {
+		name = persia.16.a
+		ai_chance = {
+			base = 10
+		}
+		effect_tooltip = {
+			416 = { set_demilitarized_zone = no }
+			418 = { set_demilitarized_zone = no }
+			420 = { set_demilitarized_zone = no }
+			419 = { set_demilitarized_zone = no }
+			998 = { set_demilitarized_zone = no }
+		}
+		if = {
+			limit = { has_completed_focus = PER_Natsuki_government }
+			complete_national_focus = PER_action_of_prison
+		}
+		else_if = {
+			limit = { has_completed_focus = PER_trusted_partner }
+			complete_national_focus = PER_new_country
+		}
+	}
+}
+
+country_event = {
+	id = persia.17
+	title = persia.17.t
+	desc = persia.17.desc
+	picture = GFX_report_event_hitler_handshake
+	trigger = {
+		tag = PER
+		date > 1936.1.14
+		is_ai = no
+		has_country_leader = { character = PER_Akatsuki_Kojo }
+		NOT = {
+			focus_progress = {
+				focus = PER_a_holiday
+				progress > 0
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	fire_only_once = yes
+	option = {
+		name = persia.17.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = -15
+		add_popularity = {
+			ideology = neutrality
+			popularity = -0.06
+		}
+	}
+}
+
+country_event = {
+	id = persia.18
+	title = persia.18.t
+	desc = persia.18.desc
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = persia.18.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = -15
+		random_controlled_state = {
+			limit = { is_core_of = ROOT }
+			prioritize = { 229 }
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		FROM = {
+			country_event = { id = persia.19 days = 1 }
+			effect_tooltip = {
+				random_controlled_state = {
+					limit = { is_core_of = ROOT }
+					prioritize = { 419 }
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+				add_political_power = 15
+			}
+		}
+	}
+	option = {
+		name = persia.18.b
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = 30
+		FROM = {
+			country_event = { id = persia.20 days = 1 }
+		}
+	}
+}
+
+country_event = {
+	id = persia.19
+	title = persia.19.t
+	desc = persia.19.desc
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = persia.19.a
+		ai_chance = {
+			base = 10
+		}
+		random_controlled_state = {
+			limit = { is_core_of = ROOT }
+			prioritize = { 419 }
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		add_political_power = 15
+	}
+}
+
+country_event = {
+	id = persia.20
+	title = persia.20.t
+	desc = persia.20.desc
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = persia.20.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = -15
+	}
+}
+
+country_event = {
+	id = persia.21
+	title = persia.21.t
+	desc = persia.21.desc
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = persia.21.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = -25
+		build_railway = {
+			start_province = 3618
+			target_province = 757
+		}
+		build_railway = {
+			start_province = 757
+			target_province = 7661
+		}
+		build_railway = {
+			start_province = 7661
+			target_province = 4473
+		}
+		add_opinion_modifier = {
+			target = FROM
+			modifier = PER_caspian_railway_modifier
+		}
+		FROM = {
+			country_event = { id = persia.22 days = 1 }
+			effect_tooltip = {
+				add_political_power = 15
+			}
+		}
+	}
+	option = {
+		name = persia.18.b
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = 20
+		FROM = {
+			country_event = { id = persia.23 days = 1 }
+		}
+	}
+}
+
+country_event = {
+	id = persia.22
+	title = persia.22.t
+	desc = persia.22.desc
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = persia.22.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = 15
+	}
+}
+
+country_event = {
+	id = persia.23
+	title = persia.23.t
+	desc = persia.23.desc
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = persia.23.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = -10
+		add_war_support = 0.02
+	}
+}
+
+country_event = {
+	id = persia.24
+	title = persia.24.t
+	desc = persia.24.desc
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = persia.24.a
+		ai_chance = {
+			base = 10
+		}
+		build_railway = {
+			start_province = 8099
+			target_province = 1459
+		}
+		add_political_power = 50
+	}
+}
+
+country_event = {
+	id = persia.25
+	title = persia.25.t
+	desc = persia.25.desc
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = persia.25.a
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = -50
+		random_owned_state = {
+			limit = {
+				is_core_of = ROOT
+				free_building_slots = {
+					building = arms_factory
+					size > 1
+					include_locked = yes
+				}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = arms_factory
+				level = 1
+				instant_build = yes
+			}
+		}
+		add_power_balance_value = {
+			id = PER_power_struggle_bop
+			value = 0.05
+		}
+	}
+	
+	option = {
+		name = persia.25.b
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = -150
+		random_owned_state = {
+			limit = {
+				is_core_of = ROOT
+				free_building_slots = {
+					building = industrial_complex
+					size > 1
+					include_locked = yes
+				}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			limit = {
+				is_core_of = ROOT
+				free_building_slots = {
+					building = arms_factory
+					size > 2
+					include_locked = yes
+				}
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+		random_owned_state = {
+			limit = {
+				is_core_of = ROOT
+				is_coastal = yes
+				free_building_slots = {
+					building = dockyard
+					size > 1
+					include_locked = yes
+				}
+			}
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = dockyard
+				level = 1
+				instant_build = yes
+			}
+		}
+		add_power_balance_value = {
+			id = PER_power_struggle_bop
+			value = 0.15
+		}
+	}
+}

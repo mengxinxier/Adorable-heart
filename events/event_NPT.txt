@@ -1,0 +1,749 @@
+add_namespace = neptune
+country_event = {
+	#共产线击败犯罪神
+	id = neptune.11
+	title = neptune.11.t
+	desc = neptune.11.d
+	picture = GFX_event_NPT_gcvictory
+	is_triggered_only = no
+	fire_only_once = no
+	trigger = {
+		AND = {
+			has_country_flag = NPT_FIGHT_AGAINST_GOC
+			has_idea = fanzuishen
+			has_idea = quanciyuanhongjun
+			NOT = {
+				has_war_with = GOC
+			}
+			NPT = {
+				exists = yes
+				has_capitulated = no
+			}
+		}
+	}
+	option = {
+		name = neptune.11.a
+		remove_ideas = fanzuishen
+		clr_country_flag = NPT_FIGHT_AGAINST_GOC
+		news_event = {
+			id = news.1003
+		}
+	}
+}
+
+country_event = {
+	#超次元索要无缘冢
+	id = neptune.12
+	title = neptune.12.t
+	desc = neptune.12.d
+	picture = GFX_event_NPT_suoyaobiliniusi
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = neptune.12.a
+		ai_chance = {
+			factor = 100
+		}
+		NPT = {
+			transfer_state = 779
+			add_state_core = 779
+			transfer_state = 984
+			add_state_core = 984
+			transfer_state = 817
+			add_state_core = 817
+			country_event = neptune.13
+		}
+		FRA = {
+			transfer_state = 290
+		}
+	}
+	option = {
+		name = neptune.12.b
+		ai_chance = {
+			factor = 0
+		}
+		NPT = {
+			create_wargoal = {
+				type = take_state_focus
+				target = FRA
+				generator = {
+					31
+				}
+			}
+			country_event = neptune.14
+		}
+	}
+}
+
+country_event = {
+	#幻想乡同意交换无缘冢
+	id = neptune.13
+	title = neptune.13.t
+	desc = neptune.13.d
+	picture = GFX_event_FRA_morisa
+	is_triggered_only = yes
+	option = {
+		name = neptune.13.a
+	}
+}
+
+country_event = {
+	#幻想乡拒绝交换无缘冢
+	id = neptune.14
+	title = neptune.14.t
+	desc = neptune.14.d
+	picture = GFX_event_FRA_morisa
+	is_triggered_only = yes
+	option = {
+		name = neptune.14.a
+	}
+}
+
+country_event = {
+	#民主线击败犯罪神
+	id = neptune.15
+	title = neptune.15.t
+	desc = neptune.15.d
+	picture = GFX_event_NPT_mzvictory
+	is_triggered_only = no
+	fire_only_once = no
+	trigger = {
+		AND = {
+			has_country_flag = NPT_FIGHT_AGAINST_GOC
+			has_idea = fanzuishen
+			has_idea = jinglingxueyuan
+			NOT = {
+				has_war_with = GOC
+			}
+			NPT = {
+				exists = yes
+				has_capitulated = no
+			}
+		}
+	}
+	option = {
+		name = neptune.15.a
+		remove_ideas = fanzuishen
+		clr_country_flag = NPT_FIGHT_AGAINST_GOC
+		news_event = {
+			id = news.1008
+		}
+	}
+}
+
+country_event = {
+	#蕾伊
+	id = neptune.16
+	title = neptune.16.t
+	desc = neptune.16.d
+	picture = GFX_event_NPT_atari01
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = neptune.16.a
+		ai_chance = {
+			factor = 50
+		}
+		set_country_flag = NPT_ATARI_RETURN01
+	}
+	option = {
+		name = neptune.16.b
+		ai_chance = {
+			factor = 50
+		}
+		add_stability = -0.05
+	}
+}
+
+country_event = {
+	#贝露遇刺
+	id = neptune.17
+	title = neptune.17.t
+	desc = neptune.17.d
+	picture = GFX_event_NPT_vertkilled
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		retire_character = NPT_vert
+	}
+	option = {
+		name = neptune.17.a
+		ai_chance = {
+			base = 20
+		}
+		clr_country_flag = NPT_ATARI_RETURN01
+		set_country_flag = NPT_ATARI_RETURN02
+	}
+	option = {
+		name = neptune.17.b
+		ai_chance = {
+			base = 60
+		}
+		add_stability = -0.05
+	}
+}
+
+country_event = {
+	#布兰开战
+	id = neptune.18
+	title = neptune.18.t
+	desc = neptune.18.d
+	picture = GFX_event_NPT_civilwar
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		hidden_effect = {
+			NPT = {
+				set_country_flag = NPT_FIGHT_AGAINST_LOW
+				retire_character = NPT_blanc
+				retire_character = NPT_Rom
+				retire_character = NPT_Ram
+			}
+			LOW = {
+				transfer_state = 793
+				division_template = {
+					name = "布兰亲卫队"
+					regiments = {
+						infantry = {
+							x = 0
+							y = 0
+						}
+						infantry = {
+							x = 0
+							y = 1
+						}
+						infantry = {
+							x = 0
+							y = 2
+						}
+						infantry = {
+							x = 0
+							y = 3
+						}
+						infantry = {
+							x = 0
+							y = 4
+						}
+						infantry = {
+							x = 1
+							y = 0
+						}
+					}
+				}
+				capital_scope = {
+					create_unit = {
+						division = "name = \"布兰亲兵\" division_template = \"布兰亲卫队\" start_experience_factor = 1"
+						owner = LOW
+					}
+					create_unit = {
+						division = "name = \"布兰亲兵\" division_template = \"布兰亲卫队\" start_experience_factor = 1"
+						owner = LOW
+					}
+					create_unit = {
+						division = "name = \"布兰亲兵\" division_template = \"布兰亲卫队\" start_experience_factor = 1"
+						owner = LOW
+					}
+					create_unit = {
+						division = "name = \"布兰亲兵\" division_template = \"布兰亲卫队\" start_experience_factor = 1"
+						owner = LOW
+					}
+					create_unit = {
+						division = "name = \"布兰亲兵\" division_template = \"布兰亲卫队\" start_experience_factor = 1"
+						owner = LOW
+					}
+				}
+				declare_war_on = {
+					target = NPT
+					type = annex_everything
+				}
+			}
+		}
+	}
+	option = {
+		name = neptune.18.a
+	}
+}
+
+country_event = {
+	#布兰贝露开战
+	id = neptune.19
+	title = neptune.19.t
+	desc = neptune.19.d
+	picture = GFX_event_NPT_civilwar
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		hidden_effect = {
+			NPT = {
+				set_country_flag = NPT_FIGHT_AGAINST_LOW
+				retire_character = NPT_blanc
+				retire_character = NPT_vert
+				retire_character = NPT_Rom
+				retire_character = NPT_Ram
+			}
+			LOW = {
+				transfer_state = 793
+				division_template = {
+					name = "布兰亲卫队"
+					regiments = {
+						infantry = {
+							x = 0
+							y = 0
+						}
+						infantry = {
+							x = 0
+							y = 1
+						}
+						infantry = {
+							x = 0
+							y = 2
+						}
+						infantry = {
+							x = 0
+							y = 3
+						}
+						infantry = {
+							x = 0
+							y = 4
+						}
+						infantry = {
+							x = 1
+							y = 0
+						}
+					}
+				}
+				division_template = {
+					name = "贝露亲卫队"
+					regiments = {
+						infantry = {
+							x = 0
+							y = 0
+						}
+						infantry = {
+							x = 0
+							y = 1
+						}
+						infantry = {
+							x = 0
+							y = 2
+						}
+						infantry = {
+							x = 0
+							y = 3
+						}
+						infantry = {
+							x = 0
+							y = 4
+						}
+					}
+				}
+				capital_scope = {
+					create_unit = {
+						division = "name = \"布兰亲兵\" division_template = \"布兰亲卫队\" start_experience_factor = 1"
+						owner = LOW
+					}
+					create_unit = {
+						division = "name = \"布兰亲兵\" division_template = \"布兰亲卫队\" start_experience_factor = 1"
+						owner = LOW
+					}
+					create_unit = {
+						division = "name = \"布兰亲兵\" division_template = \"布兰亲卫队\" start_experience_factor = 1"
+						owner = LOW
+					}
+					create_unit = {
+						division = "name = \"布兰亲兵\" division_template = \"布兰亲卫队\" start_experience_factor = 1"
+						owner = LOW
+					}
+					create_unit = {
+						division = "name = \"布兰亲兵\" division_template = \"布兰亲卫队\" start_experience_factor = 1"
+						owner = LOW
+					}
+				}
+				capital_scope = {
+					create_unit = {
+						division = "name = \"贝露亲兵\" division_template = \"贝露亲卫队\" start_experience_factor = 1"
+						owner = LOW
+					}
+					create_unit = {
+						division = "name = \"贝露亲兵\" division_template = \"贝露亲卫队\" start_experience_factor = 1"
+						owner = LOW
+					}
+					create_unit = {
+						division = "name = \"贝露亲兵\" division_template = \"贝露亲卫队\" start_experience_factor = 1"
+						owner = LOW
+					}
+					create_unit = {
+						division = "name = \"贝露亲兵\" division_template = \"贝露亲卫队\" start_experience_factor = 1"
+						owner = LOW
+					}
+					create_unit = {
+						division = "name = \"贝露亲兵\" division_template = \"贝露亲卫队\" start_experience_factor = 1"
+						owner = LOW
+					}
+				}
+				declare_war_on = {
+					target = NPT
+					type = annex_everything
+				}
+			}
+		}
+	}
+	option = {
+		name = neptune.19.a
+	}
+}
+
+country_event = {
+	#诺瓦露之死
+	id = neptune.20
+	title = neptune.20.t
+	desc = neptune.20.d
+	picture = GFX_event_NPT_noirekilled
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		retire_character = NPT_noire
+		retire_character = NPT_uni
+	}
+	option = {
+		name = neptune.20.a
+	}
+}
+
+country_event = {
+	#涅普迪努之死
+	id = neptune.21
+	title = neptune.21.t
+	desc = neptune.21.d
+	picture = GFX_event_NPT_neptunekilled
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		retire_character = NPT_neptune
+	}
+	option = {
+		name = neptune.21.a
+		news_event = {
+			id = news.1012
+		}
+	}
+}
+
+country_event = {
+	#决战犯罪神
+	id = neptune.22
+	title = neptune.22.t
+	desc = neptune.22.d
+	picture = GFX_event_NPT_fxsvictory
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		remove_ideas = fanzuishen
+		annex_country = {
+			target = GOC
+			transfer_troops = yes
+		}
+	}
+	option = {
+		name = neptune.22.a
+	}
+}
+
+country_event = {
+	#雅达利归来
+	id = neptune.23
+	title = neptune.23.t
+	desc = neptune.23.d
+	picture = GFX_event_NPT_atari_return
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = neptune.23.a
+		trigger = {
+			has_character = NPT_neptune
+		}
+		news_event = news.1013
+	}
+	option = {
+		name = neptune.23.b
+		trigger = {
+			NOT = {
+				has_character = NPT_neptune
+			}
+		}
+		ai_chance = {
+			factor = 50
+		}
+		news_event = news.1014
+	}
+	option = {
+		name = neptune.23.c
+		trigger = {
+			NOT = {
+				has_character = NPT_neptune
+			}
+		}
+		ai_chance = {
+			factor = 50
+		}
+		news_event = news.1015
+	}
+}
+
+country_event = {
+	#女皇加冕
+	id = neptune.24
+	title = neptune.24.t
+	desc = neptune.24.d
+	picture = GFX_event_NPT_high_queen
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = neptune.24.a
+		trigger = {
+			has_character = NPT_neptune
+		}
+		news_event = news.1016
+	}
+	option = {
+		name = neptune.24.b
+		trigger = {
+			NOT = {
+				has_character = NPT_neptune
+			}
+		}
+		news_event = news.1017
+	}
+}
+
+country_event = {
+	#海王星西瓜
+	id = neptune.25
+	title = neptune.25.t
+	desc = neptune.25.d
+	picture = GFX_event_NPT_watermelon
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = neptune.25.a
+		ai_chance = {
+			factor = 80
+		}
+		add_opinion_modifier = {
+			target = NPT
+			modifier = NPT_watermelon_selling
+		}
+		add_ideas = watermelon_from_NPT
+	}
+	option = {
+		ai_chance = {
+			factor = 20
+		}
+		name = neptune.25.b
+	}
+}
+
+country_event = {
+	#魔剑内战胜利
+	id = neptune.26
+	title = neptune.26.t
+	desc = neptune.26.d
+	picture = GFX_event_NPT_civilwar
+	is_triggered_only = no
+	fire_only_once = no
+	trigger = {
+		AND = {
+			has_country_flag = NPT_FIGHT_AGAINST_LOW
+			has_idea = mojian_1
+			NOT = {
+				has_war_with = LOW
+			}
+			NPT = {
+				exists = yes
+				has_capitulated = no
+			}
+		}
+	}
+	option = {
+		name = neptune.26.a
+		clr_country_flag = NPT_FIGHT_AGAINST_LOW
+		news_event = {
+			id = news.1009
+		}
+	}
+}
+
+country_event = {
+	#与幻想乡谈判
+	id = neptune.27
+	title = neptune.27.t
+	desc = neptune.27.d
+	picture = GFX_event_NPT_PRISONER_2
+	is_triggered_only = yes
+	option = {
+		name = neptune.27.a
+		ai_chance = {
+			factor = 100
+		}
+		NPT = {
+			country_event = neptune.28
+		}
+	}
+	option = {
+		name = neptune.27.b
+		ai_chance = {
+			factor = 0
+		}
+		NPT = {
+			country_event = neptune.29
+		}
+	}
+}
+
+country_event = {
+	#幻想乡同意了
+	id = neptune.28
+	title = neptune.28.t
+	desc = neptune.28.d
+	picture = GFX_event_NPT_watermelon
+	is_triggered_only = yes
+	option = {
+		name = neptune.28.a
+		NPT = {
+			set_country_flag = HXX_Agree
+			add_ideas = hezuokaifa
+		}
+		FRA = {
+			add_ideas = hezuokaifa
+		}
+	}
+}
+
+country_event = {
+	#幻想乡拒绝了
+	id = neptune.29
+	title = neptune.29.t
+	desc = neptune.29.d
+	picture = GFX_event_NPT_watermelon
+	is_triggered_only = yes
+	option = {
+		name = neptune.29.a
+		NPT = {
+			set_country_flag = NPT_can_war_to_FRA
+			add_state_core = 984
+			add_state_core = 779
+			add_state_core = 817
+		}
+	}
+}
+
+country_event = {
+	id = neptune.30
+	title = neptune.30.t
+	desc = neptune.30.d
+	#picture = GFX_event_MGU_PRISONER_1
+	is_triggered_only = yes
+	option = {
+		name = neptune.30.a
+		NPT = {
+			create_faction = "第三国际西线"
+			set_country_flag = NPT_OUR_faction
+		}
+		hidden_effect = {
+			news_event = {
+				id = generic.2007
+				days = 1
+			}
+		}
+		FRA = {
+			set_country_flag = C_W
+		}
+		trigger = {
+			NOT = {
+				has_country_flag = C_W
+			}
+		}
+	}
+	option = {
+		name = neptune.30.a
+		FRA = {
+			add_to_faction = NPT
+		}
+		set_country_flag = NPT_OUR_faction
+		news_event = {
+			id = generic.2003
+			days = 1
+		}
+		trigger = {
+			has_country_flag = C_W
+		}
+	}
+}
+
+country_event = {
+	id = neptune.31
+	is_triggered_only = yes
+	option = {
+		name = neptune.31.a
+		complete_national_focus = NPT_22
+		ai_chance = {
+			base = 5
+			modifier = {
+				has_game_rule = {
+					rule = AH_NPT_ai_behavior_SELECTION
+					option = NPT_GAME_RULE_1
+				}
+				add = -5
+			}
+			modifier = {
+				has_game_rule = {
+					rule = AH_NPT_ai_behavior_SELECTION
+					option = NPT_GAME_RULE_2
+				}
+				add = -5
+			}
+		}
+	}
+	option = {
+		name = neptune.31.a
+		complete_national_focus = NPT_21
+		ai_chance = {
+			base = 10
+			modifier = {
+				has_game_rule = {
+					rule = AH_NPT_ai_behavior_SELECTION
+					option = NPT_GAME_RULE_3
+				}
+				add = -10
+			}
+			modifier = {
+				has_game_rule = {
+					rule = AH_NPT_ai_behavior_SELECTION
+					option = NPT_GAME_RULE_2
+				}
+				add = -10
+			}
+		}
+	}
+	option = {
+		name = neptune.31.a
+		complete_national_focus = NPT_20
+		ai_chance = {
+			base = 15
+			modifier = {
+				has_game_rule = {
+					rule = AH_NPT_ai_behavior_SELECTION
+					option = NPT_GAME_RULE_3
+				}
+				add = -15
+			}
+			modifier = {
+				has_game_rule = {
+					rule = AH_NPT_ai_behavior_SELECTION
+					option = NPT_GAME_RULE_1
+				}
+				add = -15
+			}
+		}
+	}
+}

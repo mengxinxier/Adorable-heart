@@ -1,0 +1,981 @@
+add_namespace = citynews
+#伦敦
+news_event = {
+	id = citynews.001
+	title = citynews.001.t
+	picture = GFX_news_London
+	desc = {
+		text = citynews.001.desc.1
+		# trigger = {
+		# 	ROOT = white_tower_meeting_1
+		# }
+	}
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	fire_only_once = no
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event citynews.001"
+		126 = {
+			set_state_flag = state_has_fallen
+			owner = {
+				save_event_target_as = old_controller
+			}
+			controller = {
+				save_event_target_as = new_controller
+			}
+		}
+	}
+	option = {
+		#This is only a temporary setback!
+		name = citynews.001.a
+		trigger = {
+			tag = event_target:old_controller
+		}
+	}
+	option = {
+		#This is the beginning of the end
+		name = citynews.001.b
+		trigger = {
+			tag = event_target:new_controller
+		}
+	}
+	option = {
+		#With London in German hands, British defeat is inevitable
+		name = citynews.001.c
+		trigger = {
+			NOT = {
+				tag = event_target:old_controller
+				tag = event_target:new_controller
+			}
+		}
+	}
+}
+
+#人间之里
+news_event = {
+	id = citynews.002
+	title = citynews.002.t
+	picture = GFX_news_Paris
+	desc = {
+		text = citynews.002.desc.1
+		# trigger = {
+		# 	event_target:new_controller = {
+		# 		NOT = {
+		# 			tag = GER
+		# 		}
+		# 	}
+		# }
+	}
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	fire_only_once = no
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event citynews.002"
+		16 = {
+			set_state_flag = state_has_fallen
+			owner = {
+				save_event_target_as = old_controller
+			}
+			controller = {
+				save_event_target_as = new_controller
+			}
+		}
+	}
+	option = {
+		#This is only a temporary setback!
+		name = citynews.002.a
+		trigger = {
+			tag = event_target:old_controller
+		}
+	}
+	option = {
+		#This is the beginning of the end
+		name = citynews.002.b
+		trigger = {
+			tag = event_target:new_controller
+		}
+	}
+	option = {
+		#With London in German hands, British defeat is inevitable
+		name = citynews.002.c
+		trigger = {
+			NOT = {
+				tag = event_target:old_controller
+				tag = event_target:new_controller
+			}
+		}
+	}
+}
+
+#红魔馆
+news_event = {
+	id = citynews.003
+	title = citynews.003.t
+	picture = GFX_news_homo
+	desc = {
+		text = citynews.003.desc.1
+	}
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	fire_only_once = no
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event citynews.003"
+		925 = {
+			set_state_flag = state_has_fallen
+			owner = {
+				save_event_target_as = old_controller
+			}
+			controller = {
+				save_event_target_as = new_controller
+			}
+		}
+	}
+	option = {
+		#This is only a temporary setback!
+		name = citynews.003.a
+		trigger = {
+			tag = event_target:old_controller
+		}
+	}
+	option = {
+		#This is the beginning of the end
+		name = citynews.003.b
+		trigger = {
+			tag = event_target:new_controller
+		}
+	}
+	option = {
+		#With London in German hands, British defeat is inevitable
+		name = citynews.003.c
+		trigger = {
+			NOT = {
+				tag = event_target:old_controller
+				tag = event_target:new_controller
+			}
+		}
+	}
+}
+
+#柏林
+news_event = {
+	id = citynews.004
+	title = {
+		text = citynews.004.t.1
+		trigger = {
+			event_target:new_controller = {
+				tag = GER
+			}
+		}
+	}
+	title = {
+		text = citynews.004.t.2
+		trigger = {
+			event_target:new_controller = {
+				not = {
+					tag = GER
+				}
+			}
+		}
+	}
+	picture = GFX_news_Berlin
+	desc = {
+		text = citynews.004.desc.1
+		trigger = {
+			event_target:new_controller = {
+				tag = GER
+			}
+		}
+	}
+	desc = {
+		text = citynews.004.desc.2
+		trigger = {
+			event_target:new_controller = {
+				tag = SOV
+			}
+		}
+	}
+	desc = {
+		text = citynews.004.desc.3
+		trigger = {
+			event_target:new_controller = {
+				or = {
+					tag = FRA
+					tag = KMK
+				}
+			}
+		}
+	}
+	desc = {
+		text = citynews.004.desc.4
+		trigger = {
+			event_target:new_controller = {
+				tag = ENG
+			}
+		}
+	}
+	desc = {
+		text = citynews.004.desc.5
+		trigger = {
+			event_target:new_controller = {
+				NOT = {
+					or = {
+						tag = GER
+						tag = SOV
+						tag = FRA
+						tag = KMK
+						tag = ENG
+					}
+				}
+			}
+		}
+	}
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	fire_only_once = no
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event citynews.004"
+		64 = {
+			set_state_flag = state_has_fallen
+			owner = {
+				save_event_target_as = old_controller
+			}
+			controller = {
+				save_event_target_as = new_controller
+			}
+		}
+	}
+	option = {
+		name = citynews.004.a
+		trigger = {
+			tag = event_target:old_controller
+		}
+	}
+	option = {
+		name = citynews.004.b
+		trigger = {
+			event_target:new_controller = {
+				tag = GER
+			}
+			tag = event_target:new_controller
+		}
+	}
+	option = {
+		name = citynews.004.c
+		trigger = {
+			event_target:new_controller = {
+				tag = GER
+			}
+			NOT = {
+				tag = event_target:old_controller
+				tag = event_target:new_controller
+			}
+		}
+	}
+	option = {
+		name = citynews.004.d
+		trigger = {
+			event_target:new_controller = {
+				or = {
+					tag = FRA
+					tag = KMK
+				}
+			}
+			tag = event_target:new_controller
+		}
+	}
+	option = {
+		name = citynews.004.e
+		trigger = {
+			event_target:new_controller = {
+				or = {
+					tag = FRA
+					tag = KMK
+				}
+			}
+			NOT = {
+				tag = event_target:old_controller
+				tag = event_target:new_controller
+			}
+		}
+	}
+	option = {
+		name = citynews.004.f
+		trigger = {
+			event_target:new_controller = {
+				tag = SOV
+			}
+			tag = event_target:new_controller
+		}
+	}
+	option = {
+		name = citynews.004.g
+		trigger = {
+			event_target:new_controller = {
+				tag = SOV
+			}
+			NOT = {
+				tag = event_target:old_controller
+				tag = event_target:new_controller
+			}
+		}
+	}
+	option = {
+		name = citynews.004.h
+		trigger = {
+			event_target:new_controller = {
+				tag = ENG
+			}
+			tag = event_target:new_controller
+		}
+	}
+	option = {
+		name = citynews.004.i
+		trigger = {
+			event_target:new_controller = {
+				tag = ENG
+			}
+			NOT = {
+				tag = event_target:old_controller
+				tag = event_target:new_controller
+			}
+		}
+	}
+	option = {
+		name = citynews.004.j
+		trigger = {
+			event_target:new_controller = {
+				tag = RJE
+			}
+			tag = event_target:new_controller
+		}
+	}
+	option = {
+		name = citynews.004.k
+		trigger = {
+			event_target:new_controller = {
+				tag = RJE
+			}
+			NOT = {
+				tag = event_target:old_controller
+				tag = event_target:new_controller
+			}
+		}
+	}
+	option = {
+		name = citynews.004.l
+		trigger = {
+			event_target:new_controller = {
+				NOT = {
+					or = {
+						tag = GER
+						tag = SOV
+						tag = FRA
+						tag = KMK
+						tag = ENG
+						tag = RJE
+					}
+				}
+			}
+			tag = event_target:new_controller
+		}
+	}
+	option = {
+		name = citynews.004.m
+		trigger = {
+			event_target:new_controller = {
+				NOT = {
+					or = {
+						tag = GER
+						tag = SOV
+						tag = FRA
+						tag = KMK
+						tag = ENG
+						tag = RJE
+					}
+				}
+			}
+			NOT = {
+				tag = event_target:old_controller
+				tag = event_target:new_controller
+			}
+		}
+	}
+}
+
+#维也纳
+news_event = {
+	id = citynews.005
+	title = citynews.005.t
+	picture = GFX_news_Vienna
+	desc = {
+		text = citynews.005.desc.1
+		# trigger = {
+		# 	event_target:new_controller = {
+		# 		NOT = {
+		# 			tag = GER
+		# 		}
+		# 	}
+		# }
+	}
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	fire_only_once = no
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event citynews.005"
+		4 = {
+			set_state_flag = state_has_fallen
+			owner = {
+				save_event_target_as = old_controller
+			}
+			controller = {
+				save_event_target_as = new_controller
+			}
+		}
+	}
+	option = {
+		name = citynews.005.a
+		trigger = {
+			tag = event_target:old_controller
+		}
+	}
+	option = {
+		name = citynews.005.b
+		trigger = {
+			tag = event_target:new_controller
+		}
+	}
+	option = {
+		name = citynews.005.c
+		trigger = {
+			NOT = {
+				tag = event_target:old_controller
+				tag = event_target:new_controller
+			}
+		}
+	}
+}
+
+#莫斯科
+news_event = {
+	id = citynews.006
+	title = citynews.006.t
+	picture = GFX_news_Moscow
+	desc = {
+		text = citynews.006.desc.1
+		# trigger = {
+		# 	event_target:new_controller = {
+		# 		NOT = {
+		# 			tag = GER
+		# 		}
+		# 	}
+		# }
+	}
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	fire_only_once = no
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event citynews.006"
+		219 = {
+			set_state_flag = state_has_fallen
+			owner = {
+				save_event_target_as = old_controller
+			}
+			controller = {
+				save_event_target_as = new_controller
+			}
+		}
+	}
+	option = {
+		name = citynews.006.a
+		trigger = {
+			tag = event_target:old_controller
+		}
+	}
+	option = {
+		name = citynews.006.b
+		trigger = {
+			tag = event_target:new_controller
+		}
+	}
+	option = {
+		name = citynews.006.c
+		trigger = {
+			NOT = {
+				tag = event_target:old_controller
+				tag = event_target:new_controller
+			}
+		}
+	}
+}
+
+#列宁格勒
+news_event = {
+	id = citynews.007
+	title = citynews.007.t
+	picture = GFX_news_Leningrad
+	desc = {
+		text = citynews.007.desc.1
+		# trigger = {
+		# 	event_target:new_controller = {
+		# 		NOT = {
+		# 			tag = GER
+		# 		}
+		# 	}
+		# }
+	}
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	fire_only_once = no
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event citynews.007"
+		195 = {
+			set_state_flag = state_has_fallen
+			owner = {
+				save_event_target_as = old_controller
+			}
+			controller = {
+				save_event_target_as = new_controller
+			}
+		}
+	}
+	option = {
+		name = citynews.007.a
+		trigger = {
+			tag = event_target:old_controller
+		}
+	}
+	option = {
+		name = citynews.007.b
+		trigger = {
+			tag = event_target:new_controller
+		}
+	}
+	option = {
+		name = citynews.007.c
+		trigger = {
+			NOT = {
+				tag = event_target:old_controller
+				tag = event_target:new_controller
+			}
+		}
+	}
+}
+
+#斯大林格勒
+news_event = {
+	id = citynews.008
+	title = citynews.008.t
+	picture = GFX_news_Stalingrad
+	desc = {
+		text = citynews.008.desc.1
+		# trigger = {
+		# 	event_target:new_controller = {
+		# 		NOT = {
+		# 			tag = GER
+		# 		}
+		# 	}
+		# }
+	}
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	fire_only_once = no
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event citynews.008"
+		217 = {
+			set_state_flag = state_has_fallen
+			owner = {
+				save_event_target_as = old_controller
+			}
+			controller = {
+				save_event_target_as = new_controller
+			}
+		}
+	}
+	option = {
+		name = citynews.008.a
+		trigger = {
+			tag = event_target:old_controller
+		}
+	}
+	option = {
+		name = citynews.008.b
+		trigger = {
+			tag = event_target:new_controller
+		}
+	}
+	option = {
+		name = citynews.008.c
+		trigger = {
+			NOT = {
+				tag = event_target:old_controller
+				tag = event_target:new_controller
+			}
+		}
+	}
+}
+
+#东京
+news_event = {
+	id = citynews.009
+	title = citynews.009.t
+	picture = GFX_news_Tokyo
+	desc = {
+		text = citynews.009.desc.1
+		# trigger = {
+		# 	event_target:new_controller = {
+		# 		NOT = {
+		# 			tag = GER
+		# 		}
+		# 	}
+		# }
+	}
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	fire_only_once = no
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event citynews.009"
+		282 = {
+			set_state_flag = state_has_fallen
+			owner = {
+				save_event_target_as = old_controller
+			}
+			controller = {
+				save_event_target_as = new_controller
+			}
+		}
+	}
+	option = {
+		name = citynews.009.a
+		trigger = {
+			tag = event_target:old_controller
+		}
+	}
+	option = {
+		name = citynews.009.b
+		trigger = {
+			tag = event_target:new_controller
+		}
+	}
+	option = {
+		name = citynews.009.c
+		trigger = {
+			NOT = {
+				tag = event_target:old_controller
+				tag = event_target:new_controller
+			}
+		}
+	}
+}
+
+#华沙
+news_event = {
+	id = citynews.010
+	title = citynews.009.t
+	picture = GFX_news_Tokyo
+	desc = {
+		text = citynews.009.desc.1
+		# trigger = {
+		# 	event_target:new_controller = {
+		# 		NOT = {
+		# 			tag = GER
+		# 		}
+		# 	}
+		# }
+	}
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	fire_only_once = no
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event citynews.009"
+		282 = {
+			set_state_flag = state_has_fallen
+			owner = {
+				save_event_target_as = old_controller
+			}
+			controller = {
+				save_event_target_as = new_controller
+			}
+		}
+	}
+	option = {
+		name = citynews.009.a
+		trigger = {
+			tag = event_target:old_controller
+		}
+	}
+	option = {
+		name = citynews.009.b
+		trigger = {
+			tag = event_target:new_controller
+		}
+	}
+	option = {
+		name = citynews.009.c
+		trigger = {
+			NOT = {
+				tag = event_target:old_controller
+				tag = event_target:new_controller
+			}
+		}
+	}
+}
+
+#北京
+news_event = {
+	id = citynews.011
+	title = citynews.011.t
+	picture = GFX_news_beijing
+	desc = {
+		text = citynews.011.desc.1
+		trigger = {
+			event_target:new_controller = {
+				tag = ROC
+			}
+		}
+	}
+	desc = {
+		text = citynews.011.desc.2
+		trigger = {
+			event_target:new_controller = {
+				tag = MAN
+			}
+		}
+	}
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	fire_only_once = no
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event citynews.011"
+		608 = {
+			set_state_flag = state_has_fallen
+			owner = {
+				save_event_target_as = old_controller
+			}
+			controller = {
+				save_event_target_as = new_controller
+			}
+		}
+	}
+	option = {
+		name = citynews.011.a
+		trigger = {
+			tag = event_target:old_controller
+		}
+	}
+	option = {
+		name = citynews.011.b
+		trigger = {
+			tag = event_target:new_controller
+		}
+	}
+	option = {
+		name = citynews.011.c
+		trigger = {
+			NOT = {
+				tag = event_target:old_controller
+				tag = event_target:new_controller
+			}
+		}
+	}
+}
+
+#南京
+news_event = {
+	id = citynews.012
+	title = citynews.012.t
+	picture = GFX_news_Tokyo
+	desc = {
+		text = citynews.012.desc.1
+		# trigger = {
+		# 	event_target:new_controller = {
+		# 		NOT = {
+		# 			tag = GER
+		# 		}
+		# 	}
+		# }
+	}
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	fire_only_once = no
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event citynews.012"
+		613 = {
+			set_state_flag = state_has_fallen
+			owner = {
+				save_event_target_as = old_controller
+			}
+			controller = {
+				save_event_target_as = new_controller
+			}
+		}
+	}
+	option = {
+		name = citynews.012.a
+		trigger = {
+			tag = event_target:old_controller
+		}
+	}
+	option = {
+		name = citynews.012.b
+		trigger = {
+			tag = event_target:new_controller
+		}
+	}
+	option = {
+		name = citynews.012.c
+		trigger = {
+			NOT = {
+				tag = event_target:old_controller
+				tag = event_target:new_controller
+			}
+		}
+	}
+}
+
+#上海
+news_event = {
+	id = citynews.010
+	title = citynews.009.t
+	picture = GFX_news_Tokyo
+	desc = {
+		text = citynews.009.desc.1
+		# trigger = {
+		# 	event_target:new_controller = {
+		# 		NOT = {
+		# 			tag = GER
+		# 		}
+		# 	}
+		# }
+	}
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	fire_only_once = no
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event citynews.009"
+		282 = {
+			set_state_flag = state_has_fallen
+			owner = {
+				save_event_target_as = old_controller
+			}
+			controller = {
+				save_event_target_as = new_controller
+			}
+		}
+	}
+	option = {
+		name = citynews.009.a
+		trigger = {
+			tag = event_target:old_controller
+		}
+	}
+	option = {
+		name = citynews.009.b
+		trigger = {
+			tag = event_target:new_controller
+		}
+	}
+	option = {
+		name = citynews.009.c
+		trigger = {
+			NOT = {
+				tag = event_target:old_controller
+				tag = event_target:new_controller
+			}
+		}
+	}
+}
+
+#天津
+news_event = {
+	id = citynews.010
+	title = citynews.009.t
+	picture = GFX_news_Tokyo
+	desc = {
+		text = citynews.009.desc.1
+		# trigger = {
+		# 	event_target:new_controller = {
+		# 		NOT = {
+		# 			tag = GER
+		# 		}
+		# 	}
+		# }
+	}
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	fire_only_once = no
+	immediate = {
+		log = "[GetDateText]: [Root.GetName]: event citynews.009"
+		282 = {
+			set_state_flag = state_has_fallen
+			owner = {
+				save_event_target_as = old_controller
+			}
+			controller = {
+				save_event_target_as = new_controller
+			}
+		}
+	}
+	option = {
+		name = citynews.009.a
+		trigger = {
+			tag = event_target:old_controller
+		}
+	}
+	option = {
+		name = citynews.009.b
+		trigger = {
+			tag = event_target:new_controller
+		}
+	}
+	option = {
+		name = citynews.009.c
+		trigger = {
+			NOT = {
+				tag = event_target:old_controller
+				tag = event_target:new_controller
+			}
+		}
+	}
+}

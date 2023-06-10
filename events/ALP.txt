@@ -1,0 +1,31 @@
+﻿add_namespace = assaultlily
+
+	country_event = { 
+		id = assaultlily.1
+		title = assaultlily.1.t
+		desc = assaultlily.1.d
+		
+		major = no
+
+		is_triggered_only = yes
+		
+		fire_only_once = yes
+		
+		option = { 
+			name = assaultlily.1.a
+			ai_chance = { factor = 0 }
+			set_country_flag = assaultlily.1.a
+		}
+		
+		option = { 
+			name = assaultlily.1.b
+			ai_chance = { factor = 0 }
+			set_country_flag = assaultlily.1.b
+		}
+		option = { 
+			name = assaultlily.1.c
+			ai_chance = { factor = 1 }
+			set_country_flag = assaultlily.1.c
+		}
+	}
+	

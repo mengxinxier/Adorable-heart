@@ -1,0 +1,94 @@
+﻿add_namespace = ME_news
+
+#gun shoot
+news_event = {
+	id = ME_news.1
+	title = ME_news.1.t
+	desc = ME_news.1.desc
+	picture = news_event_032
+	
+	#major = yes
+	is_triggered_only = yes
+	option = {
+		name = ME_news.1.a
+	}
+}
+
+#Middle East War
+news_event = {
+	id = ME_news.2
+	title = ME_news.2.t
+	desc = ME_news.2.desc
+	picture = news_event_032
+	
+	#major = yes
+	is_triggered_only = yes
+	option = {
+		name = ME_news.2.a
+	}
+}
+
+#Ottoman invade Turkey
+news_event = {
+	id = ME_news.3
+	title = ME_news.3.t
+	desc = ME_news.3.desc
+	picture = news_event_032
+	
+	#major = yes
+	is_triggered_only = yes
+	option = {
+		trigger = {
+			NOT = {
+				TAG = TUR
+				TAG = OTT
+				TAG = RIS
+				TAG = ENG
+			}
+		}
+		name = ME_news.3.a
+	}
+	option = {
+		trigger = { TAG = OTT }
+		name = ME_news.3.b
+	}
+	option = {
+		trigger = { TAG = TUR }
+		name = ME_news.3.c
+	}
+	option = {
+		trigger = {
+			OR = {
+				TAG = ENG
+				TAG = RIS
+			}
+		}
+		name = ME_news.3.d
+	}
+}
+
+#oil occur
+news_event = {
+	id = ME_news.101
+	title = ME_news.101.t
+	desc = ME_news.101.desc
+	picture = news_event_032
+	
+	#major = yes
+	trigger = {
+		date > 1940.3.26
+		is_ai = no
+	}
+	
+	fire_only_once = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_global_flag = ME_oil_occur_flag
+		}
+	}
+	
+	option = {
+		name = ME_news.101.a
+	}
+}

@@ -1,0 +1,1819 @@
+add_namespace = TRY
+add_namespace = TRY_cosmetic
+add_namespace = TRY_from
+add_namespace = TRY_NEWS
+add_namespace = TRY_election
+country_event = {
+	id = TRY.1
+	title = TRY.1.t
+	desc = TRY.1.d
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			set_country_flag = TRY_HAS_PROBLEM
+			set_country_flag = TRY_seia_assassination
+			mark_focus_tree_layout_dirty = yes
+			every_country = {
+				limit = {
+					Kivotos_is_kivotos_country = yes
+					NOT = {
+						original_tag = TRY
+					}
+				}
+				news_event = {
+					id = TRY_NEWS.1
+					hours = 12
+				}
+			}
+		}
+	}
+	option = {
+		name = TRY.1.a
+		complete_national_focus = TRY_seia_assassination_focus_1
+	}
+}
+country_event = {
+	id = TRY.2
+	title = TRY.2.t
+	desc = TRY.2.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.2.a
+		set_country_flag = TRY_teaparty_nagisa_leader
+		add_to_variable = { 
+			var = TRY_S_additional_power
+			value = 0.1
+			tooltip = TRY_S_trait_tt
+		}
+		complete_national_focus = TRY_seia_assassination_focus_3
+		every_country = {
+			limit = {
+				Kivotos_is_kivotos_country = yes
+			}
+			news_event = {
+				id = TRY_NEWS.2
+				hours = 12
+			}
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = TRY.2.b
+		set_country_flag = TRY_teaparty_mika_leader
+		add_to_variable = { 
+			var = TRY_P_additional_power
+			value = 0.1
+			tooltip = TRY_P_trait_tt
+		}
+		complete_national_focus = TRY_seia_assassination_focus_5
+		every_country = {
+			limit = {
+				Kivotos_is_kivotos_country = yes
+			}
+			news_event = {
+				id = TRY_NEWS.3
+				hours = 12
+			}
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+}
+country_event = {
+	id = TRY.3
+	title = TRY.3.t
+	desc = TRY.3.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.3.a
+		trigger = {
+			check_variable = { TRY_leader_num = 1 }
+		}
+		set_country_flag = TRY_seia_assassination_end
+		clr_country_flag = TRY_HAS_PROBLEM
+		mark_focus_tree_layout_dirty = yes
+	}
+	option = {
+		name = TRY.3.b
+		trigger = {
+			check_variable = { TRY_leader_num = 2 }
+		}
+		set_country_flag = TRY_seia_assassination_end
+		clr_country_flag = TRY_HAS_PROBLEM
+		mark_focus_tree_layout_dirty = yes
+	}
+}
+country_event = {
+	id = TRY.4
+	title = TRY.4.t
+	desc = TRY.4.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.4.a
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.1
+		}
+		remove_ideas = TRY_Eden_Pact
+	}
+}
+country_event = {
+	id = TRY.5
+	title = TRY.5.t
+	desc = TRY.5.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.5.a
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.2
+		}
+		remove_ideas = TRY_Eden_Pact
+	}
+}
+country_event = {
+	id = TRY.6
+	title = TRY.6.t
+	desc = TRY.6.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.6.a
+	}
+}
+country_event = {
+	id = TRY.7
+	title = TRY.7.t
+	desc = TRY.7.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.7.a
+	}
+}
+country_event = {
+	id = TRY.8
+	title = TRY.8.t
+	desc = TRY.8.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.8.a
+	}
+}
+country_event = {
+	id = TRY.9
+	title = TRY.9.t
+	desc = TRY.9.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.9.a
+	}
+}
+country_event = {
+	id = TRY.10
+	title = TRY.10.t
+	desc = TRY.10.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.10.a
+	}
+}
+country_event = {
+	id = TRY.11
+	title = TRY.11.t
+	desc = TRY.11.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.11.a
+	}
+}
+country_event = {
+	id = TRY.12
+	title = TRY.12.t
+	desc = TRY.12.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.12.a
+	}
+}
+country_event = {
+	id = TRY.13
+	title = TRY.13.t
+	desc = TRY.13.d
+	is_triggered_only = yes
+	immediate = {
+		country_event = {
+			id = TRY.1301
+			days = 4
+		}
+	}
+	option = {
+		name = TRY.13.a
+	}
+}
+country_event = {
+	id = TRY.1301
+	title = TRY.1301.t
+	desc = TRY.1301.d
+	is_triggered_only = yes
+	immediate = {
+		country_event = {
+			id = TRY.1302
+			days = 4
+		}
+	}
+	option = {
+		name = TRY.1301.a
+	}
+}
+country_event = {
+	id = TRY.1302
+	title = TRY.1302.t
+	desc = TRY.1302.d
+	is_triggered_only = yes
+	immediate = {
+		country_event = {
+			id = TRY.1303
+			days = 4
+		}
+	}
+	option = {
+		name = TRY.1302.a
+	}
+}
+country_event = {
+	id = TRY.1303
+	title = TRY.1303.t
+	desc = TRY.1303.d
+	is_triggered_only = yes
+	immediate = {
+		country_event = {
+			id = TRY.1304
+			days = 7
+		}
+	}
+	option = {
+		name = TRY.1303.a
+	}
+}
+country_event = {
+	id = TRY.1304
+	title = TRY.1304.t
+	desc = TRY.1304.d
+	is_triggered_only = yes
+	immediate = {
+		complete_national_focus = TRY_nagisa_PROBLEM_3
+	}
+	option = {
+		name = TRY.1304.a
+		set_country_flag = TRY_mika_in_custody
+		clr_country_flag = TRY_nagisa_trait_1
+		remove_ideas = TRY_mika
+	}
+}
+country_event = {
+	id = TRY.14
+	title = TRY.14.t
+	desc = TRY.14.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.14.a
+	}
+}
+country_event = {
+	id = TRY.15
+	title = TRY.15.t
+	desc = TRY.15.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.15.a
+		add_political_power = -150
+		add_stability = -0.25
+		add_war_support = -0.25
+		country_event = TRY.1501
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = TRY.15.b
+		random_list = {
+			50 = {
+				country_event = TRY.1501
+			}
+			50 = {
+				country_event = TRY.1502
+			}
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0
+			}
+		}
+	}
+}
+country_event = {
+	id = TRY.1501
+	title = TRY.1501.t
+	desc = TRY.1501.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.1501.a
+		set_country_flag = TRY_NOT_PROBLEM_nagisa
+		set_country_flag = TRY_mika_in_custody
+		clr_country_flag = TRY_nagisa_trait_1
+		remove_ideas = TRY_mika
+	}
+}
+country_event = {
+	id = TRY.1502
+	title = TRY.1502.t
+	desc = TRY.1502.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.1502.a
+		set_country_flag = TRY_PROBLEM_mika
+		set_variable = { TRY_leader_num = 2 }
+		set_country_flag = TRY_nagisa_in_custody
+		remove_ideas = TRY_nagisa
+		set_country_flag = TRY_mika_trait_1
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.25
+		}
+		add_country_leader_role = {
+			character = TRY_TEA_PARTY
+			promote_leader = yes
+			country_leader = {
+				ideology = fascism_ideology
+				expire = "1965.1.1.1"
+			}
+		}
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+			name = TRY_neutrality_party
+			long_name = TRY_neutrality_party_long
+		}
+		subtract_from_variable = {
+			var = TRY_S_additional_power
+			value = 0.25
+			tooltip = TRY_S_power_lower_tt
+		}
+		subtract_from_variable = {
+			var = TRY_F_additional_power
+			value = 0.25
+			tooltip = TRY_F_power_lower_tt
+		}
+		country_event = {
+			id = TRY.2001
+			hours = 6
+		}
+	}
+}
+country_event = {
+	id = TRY.16
+	title = TRY.16.t
+	desc = TRY.16.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.16.a
+	}
+}
+country_event = {
+	id = TRY.17
+	title = TRY.17.t
+	desc = TRY.17.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.17.a
+	}
+}
+country_event = {
+	id = TRY.18
+	title = TRY.18.t
+	desc = TRY.18.d
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			set_variable = { TRY_other_faction_2_num = 1 }
+			clr_country_flag = TRY_sakurako_enable
+			remove_ideas = TRY_sakurako
+			set_country_flag = TRY_hanako_enable
+			add_ideas = TRY_hanako
+			add_trait = {
+				character = TRY_hanako
+				slot = political_advisor
+				trait = TRY_SIS_trait
+			}
+			remove_trait = {
+				character = TRY_sakurako
+				slot = political_advisor
+				trait = TRY_SIS_trait
+			}
+		}
+	}
+	option = {
+		name = TRY.18.a
+		custom_effect_tooltip = TRY_mika_6_tt
+	}
+}
+country_event = {
+	id = TRY.19
+	title = TRY.19.t
+	desc = TRY.19.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.19.a
+	}
+}
+country_event = {
+	id = TRY.20
+	title = TRY.20.t
+	desc = TRY.20.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.20.a
+		set_country_flag = TRY_GEH_war_get_reason
+	}
+}
+country_event = {
+	id = TRY.2001
+	title = TRY.2001.t
+	desc = TRY.2001.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.2001.a
+		set_country_flag = TRY_GEH_war_get_reason
+		mark_focus_tree_layout_dirty = yes
+	}
+}
+country_event = {
+	id = TRY.21
+	title = TRY.21.t
+	desc = TRY.21.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.21.a
+	}
+}
+country_event = {
+	id = TRY.2101
+	title = TRY.2101.t
+	desc = TRY.2101.d
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = TRY_ARI_betrayal
+		mark_focus_tree_layout_dirty = yes
+		hidden_effect = {
+			complete_national_focus = TRY_PartII_focus_Mika_13
+			delete_unit_template_and_units = {
+				division_template = "阿里乌斯部队"
+			}
+		}
+	}
+	option = {
+		name = TRY.2101.a
+	}
+}
+country_event = {
+	id = TRY.22
+	title = TRY.22.t
+	desc = TRY.22.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.22.a
+	}
+}
+country_event = {
+	id = TRY.23
+	title = TRY.23.t
+	desc = TRY.23.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.23.a
+	}
+}
+country_event = {
+	id = TRY.24
+	title = TRY.24.t
+	desc = TRY.24.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.24.a
+	}
+}
+country_event = {
+	id = TRY.25
+	title = TRY.25.t
+	desc = TRY.25.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.25.a
+		KVO = {
+			country_event = TRY_from.2
+		}
+	}
+}
+country_event = {
+	id = TRY.2501
+	title = TRY.2501.t
+	desc = TRY.2501.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.2501.a
+		set_cosmetic_tag = KVO_color_cosmetic
+	}
+}
+country_event = {
+	id = TRY.2502
+	title = TRY.2502.t
+	desc = TRY.2502.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.2502.a
+		complete_national_focus = TRY_Mika_diplomacy_focus_9
+	}
+}
+country_event = {
+	id = TRY.26
+	title = TRY.26.t
+	desc = TRY.26.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.26.a
+	}
+}
+country_event = {
+	id = TRY.27
+	title = TRY.27.t
+	desc = TRY.27.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.27.a
+	}
+}
+country_event = {
+	id = TRY.28
+	title = TRY.28.t
+	desc = TRY.28.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.28.a
+	}
+}
+country_event = {
+	id = TRY.29
+	title = TRY.29.t
+	desc = TRY.29.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.29.a
+	}
+}
+country_event = {
+	id = TRY.30
+	title = TRY.30.t
+	desc = TRY.30.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.30.a
+	}
+}
+country_event = {
+	id = TRY.31
+	title = TRY.31.t
+	desc = TRY.31.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.31.a
+		ABY = {
+			country_event = TRY_from.3
+		}
+	}
+}
+country_event = {
+	id = TRY.3101
+	title = TRY.3101.t
+	desc = TRY.3101.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.3101.a
+	}
+}
+country_event = {
+	id = TRY.3102
+	title = TRY.3102.t
+	desc = TRY.3102.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.3102.a
+		ABY = { leave_faction = yes }
+		declare_war_on = {
+			target = ABY
+			type = annex_everything
+		}
+		KVO = { country_event = TRY_from.5 }
+	}
+}
+country_event = {
+	id = TRY.32
+	title = TRY.32.t
+	desc = TRY.32.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.32.a
+	}
+}
+country_event = {
+	id = TRY.33
+	title = TRY.33.t
+	desc = TRY.33.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.33.a
+		complete_national_focus = TRY_Mika_politics_focus_10
+	}
+}
+country_event = {
+	id = TRY.3301
+	title = TRY.3301.t
+	desc = TRY.3301.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.3301.a
+		complete_national_focus = TRY_Mika_politics_focus_11
+	}
+	option = {
+		name = TRY.3301.b
+	}
+}
+
+country_event = {
+	id = TRY.34
+	title = TRY.34.t
+	desc = TRY.34.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.34.a
+	}
+}
+
+country_event = {
+	id = TRY.35
+	title = TRY.35.t
+	desc = TRY.35.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.35.a
+	}
+}
+
+country_event = {
+	id = TRY.36
+	title = TRY.36.t
+	desc = TRY.36.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.36.a
+		GER = { country_event = TRY_from.7 }
+	}
+}
+country_event = {
+	id = TRY.3601
+	title = TRY.3601.t
+	desc = TRY.3601.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.3601.a
+		add_opinion_modifier = {
+			target = FROM
+			modifier = TRY_GER_opm
+		}
+		add_ideas = TRY_GER_cooperation
+	}
+}
+country_event = {
+	id = TRY.3602
+	title = TRY.3602.t
+	desc = TRY.3602.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.3602.a
+	}
+}
+
+country_event = {
+	id = TRY.37
+	title = TRY.37.t
+	desc = TRY.37.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.37.a
+		GER = { country_event = TRY_from.8 }
+	}
+}
+country_event = {
+	id = TRY.3701
+	title = TRY.3701.t
+	desc = TRY.3701.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.3701.a
+	}
+}
+country_event = {
+	id = TRY.3702
+	title = TRY.3702.t
+	desc = TRY.3702.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.3702.a
+	}
+}
+
+country_event = {
+	id = TRY.38
+	title = TRY.38.t
+	desc = TRY.38.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.38.a
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.75
+			uses = 2
+			name = TRY.38.t
+			category = land_doctrine
+		}
+	}
+}
+country_event = {
+	id = TRY.3801
+	title = TRY.3801.t
+	desc = TRY.3801.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.3801.a
+	}
+}
+
+country_event = {
+	id = TRY.39
+	title = TRY.39.t
+	desc = TRY.39.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.39.a
+		add_ideas = TRY_GER_cooperation_1
+	}
+}
+country_event = {
+	id = TRY.3901
+	title = TRY.3901.t
+	desc = TRY.3901.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.3901.a
+	}
+}
+
+country_event = {
+	id = TRY.40
+	title = TRY.40.t
+	desc = TRY.40.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.40.a
+		add_ideas = TRY_GER_cooperation_2
+	}
+}
+country_event = {
+	id = TRY.4001
+	title = TRY.4001.t
+	desc = TRY.4001.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.4001.a
+	}
+}
+
+country_event = {
+	id = TRY.41
+	title = TRY.41.t
+	desc = TRY.41.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.41.a
+		complete_national_focus = TRY_Arius_base_focus_1
+		trigger = {
+			always = no ####################################
+		}
+	}
+	option = {
+		name = TRY.41.b
+		complete_national_focus = TRY_Teaparty_base_focus_1
+	}
+}
+country_event = {
+	id = TRY.42
+	title = TRY.42.t
+	desc = TRY.42.d
+	is_triggered_only = yes
+	option = {
+		name = TRY.42.a
+	}
+	option = {
+		name = TRY.42.b
+		add_political_power = -50
+		remove_trait = {
+			character = TRY_mika
+			slot = political_advisor
+			trait = TRY_mika_trait
+		}
+		add_trait = {
+			character = TRY_mika
+			slot = political_advisor
+			trait = TRY_mika_1_trait
+	    }
+		clr_country_flag = TRY_mika_in_custody
+	}
+}
+
+country_event = {
+	id = TRY_from.1
+	title = TRY_from.1.t
+	desc = TRY_from.1.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_from.1.a
+	}
+}
+
+country_event = {
+	id = TRY_from.2
+	title = TRY_from.2.t
+	desc = TRY_from.2.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_from.2.a
+		add_to_faction = TRY
+		TRY = {
+			country_event = TRY.2501
+		}
+		ai_chance = {
+			base = 2
+		}
+	}
+	option = {
+		name = TRY_from.2.b
+		TRY = {
+			country_event = TRY.2502
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+country_event = {
+	id = TRY_from.3
+	title = TRY_from.3.t
+	desc = TRY_from.3.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_from.3.a
+		TRY = {
+			country_event = TRY.3101
+			annex_country = {
+				target = ROOT
+			}
+		}
+		KVO = {
+			country_event = TRY_from.4
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = TRY_from.3.b
+		TRY = {
+			country_event = TRY.3102
+		}
+		ai_chance = {
+			base = 2
+		}
+	}
+}
+
+country_event = {
+	id = TRY_from.4
+	title = TRY_from.4.t
+	desc = TRY_from.4.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_from.4.a
+	}
+}
+
+country_event = {
+	id = TRY_from.5
+	title = TRY_from.5.t
+	desc = TRY_from.5.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_from.5.a
+	}
+}
+country_event = {
+	id = TRY_from.6
+	title = TRY_from.6.t
+	desc = TRY_from.6.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_from.6.a
+		TRY = {
+			add_to_faction = ROOT
+			country_event = TRY_from.601
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = TRY_from.6.b
+		TRY = {
+			country_event = TRY_from.602
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+country_event = {
+	id = TRY_from.601
+	title = TRY_from.601.t
+	desc = TRY_from.601.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_from.601.a
+	}
+}
+country_event = {
+	id = TRY_from.602
+	title = TRY_from.602.t
+	desc = TRY_from.602.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_from.602.a
+	}
+}
+country_event = {
+	id = TRY_from.7
+	title = TRY_from.7.t
+	desc = TRY_from.7.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_from.7.a
+		add_opinion_modifier = {
+			target = FROM
+			modifier = TRY_GER_opm
+		}
+		add_ideas = GER_TRY_cooperation
+		TRY = { country_event = TRY.3601 }
+		ai_chance = {
+			base = 3
+		}
+	}
+	option = {
+		name = TRY_from.7.b
+		TRY = { country_event = TRY.3602 }
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+		}
+	}
+}
+country_event = {
+	id = TRY_from.8
+	title = TRY_from.8.t
+	desc = TRY_from.8.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_from.8.a
+		add_to_faction = TRY
+		TRY = { country_event = TRY.3701 }
+		ai_chance = {
+			base = 3
+		}
+	}
+	option = {
+		name = TRY_from.8.b
+		TRY = { country_event = TRY.3702 }
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+		}
+	}
+}
+country_event = {
+	id = TRY_from.9
+	title = TRY_from.9.t
+	desc = TRY_from.9.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_from.9.a
+		set_technology = { Kivotos_infantry_equipment1 = 1 }
+		TRY = { country_event = TRY.38 }
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = TRY_from.9.b
+		set_technology = { Kivotos_artillery_equipment1 = 1 }
+		TRY = { country_event = TRY.38 }
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = TRY_from.9.c
+		TRY = { country_event = TRY.3801 }
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+country_event = {
+	id = TRY_from.10
+	title = TRY_from.10.t
+	desc = TRY_from.10.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_from.10.a
+		add_ideas = GER_TRY_cooperation_1
+		TRY = { country_event = TRY.39 }
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = TRY_from.10.b
+		TRY = { country_event = TRY.3901 }
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+country_event = {
+	id = TRY_from.11
+	title = TRY_from.11.t
+	desc = TRY_from.11.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_from.11.a
+		add_ideas = GER_TRY_cooperation_2
+		TRY = { country_event = TRY.40 }
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = TRY_from.11.b
+		TRY = { country_event = TRY.4001 }
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.1
+	title = TRY_cosmetic.1.t
+	desc = TRY_cosmetic.1.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.1.a
+	}
+}
+country_event = {
+	id = TRY_cosmetic.2
+	title = TRY_cosmetic.2.t
+	desc = TRY_cosmetic.2.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.2.a
+	}
+}
+country_event = {
+	id = TRY_cosmetic.3
+	title = TRY_cosmetic.3.t
+	desc = TRY_cosmetic.3.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.3.a
+	}
+}
+country_event = {
+	id = TRY_cosmetic.4
+	title = TRY_cosmetic.4.t
+	desc = TRY_cosmetic.4.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.4.a
+	}
+}
+country_event = {
+	id = TRY_cosmetic.5
+	title = TRY_cosmetic.5.t
+	desc = TRY_cosmetic.5.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.5.a
+	}
+}
+country_event = {
+	id = TRY_cosmetic.6
+	title = TRY_cosmetic.6.t
+	desc = TRY_cosmetic.6.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.6.a
+	}
+}
+country_event = {
+	id = TRY_cosmetic.7
+	title = TRY_cosmetic.7.t
+	desc = TRY_cosmetic.7.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.7.a
+	}
+}
+country_event = {
+	id = TRY_cosmetic.8
+	title = TRY_cosmetic.8.t
+	desc = TRY_cosmetic.8.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.8.a
+	}
+}
+country_event = {
+	id = TRY_cosmetic.9
+	title = TRY_cosmetic.9.t
+	desc = TRY_cosmetic.9.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.9.a
+	}
+}
+country_event = {
+	id = TRY_cosmetic.10
+	title = TRY_cosmetic.10.t
+	desc = TRY_cosmetic.10.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.10.a
+	}
+}
+country_event = {
+	id = TRY_cosmetic.11
+	title = TRY_cosmetic.11.t
+	desc = TRY_cosmetic.11.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.11.a
+	}
+}
+country_event = {
+	id = TRY_cosmetic.12
+	title = TRY_cosmetic.12.t
+	desc = TRY_cosmetic.12.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.12.a
+	}
+}
+country_event = {
+	id = TRY_cosmetic.13
+	title = TRY_cosmetic.13.t
+	desc = TRY_cosmetic.13.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.13.a
+	}
+}
+country_event = {
+	id = TRY_cosmetic.14
+	title = TRY_cosmetic.14.t
+	desc = TRY_cosmetic.14.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.14.a
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.15
+	title = TRY_cosmetic.15.t
+	desc = TRY_cosmetic.15.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.15.a
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.16
+	title = TRY_cosmetic.16.t
+	desc = TRY_cosmetic.16.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.16.a
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.17
+	title = TRY_cosmetic.17.t
+	desc = TRY_cosmetic.17.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.17.a
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.18
+	title = TRY_cosmetic.18.t
+	desc = TRY_cosmetic.18.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.18.a
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.19
+	title = TRY_cosmetic.19.t
+	desc = TRY_cosmetic.19.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.19.a
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.20
+	title = TRY_cosmetic.20.t
+	desc = TRY_cosmetic.20.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.20.a
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.21
+	title = TRY_cosmetic.21.t
+	desc = TRY_cosmetic.21.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.21.a
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.22
+	title = TRY_cosmetic.22.t
+	desc = TRY_cosmetic.22.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.22.a
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.23
+	title = TRY_cosmetic.23.t
+	desc = TRY_cosmetic.23.d
+	is_triggered_only = yes
+	immediate = {
+		complete_national_focus = TRY_PartII_focus_1
+	}
+	option = {
+		name = TRY_cosmetic.23.a
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.24
+	title = TRY_cosmetic.24.t
+	desc = TRY_cosmetic.24.d
+	is_triggered_only = yes
+	immediate = {
+		complete_national_focus = TRY_PartII_focus_2
+	}
+	option = {
+		name = TRY_cosmetic.24.a
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.25
+	title = TRY_cosmetic.25.t
+	desc = TRY_cosmetic.25.d
+	is_triggered_only = yes
+	immediate = {
+		complete_national_focus = TRY_PartII_focus_3
+	}
+	option = {
+		name = TRY_cosmetic.25.a
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.26
+	title = TRY_cosmetic.26.t
+	desc = TRY_cosmetic.26.d
+	is_triggered_only = yes
+	immediate = {
+		complete_national_focus = TRY_PartII_focus_4
+	}
+	option = {
+		name = TRY_cosmetic.26.a
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.27
+	title = TRY_cosmetic.27.t
+	desc = TRY_cosmetic.27.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.27.a
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.28
+	title = TRY_cosmetic.28.t
+	desc = TRY_cosmetic.28.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.28.a
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.29
+	title = TRY_cosmetic.29.t
+	desc = TRY_cosmetic.29.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.29.a
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.30
+	title = TRY_cosmetic.30.t
+	desc = TRY_cosmetic.30.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.30.a
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.31
+	title = TRY_cosmetic.31.t
+	desc = TRY_cosmetic.31.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.31.a
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.32
+	title = TRY_cosmetic.32.t
+	desc = TRY_cosmetic.32.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.32.a
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.33
+	title = TRY_cosmetic.33.t
+	desc = TRY_cosmetic.33.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.33.a
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.34
+	title = TRY_cosmetic.34.t
+	desc = TRY_cosmetic.34.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.34.a
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.35
+	title = TRY_cosmetic.35.t
+	desc = TRY_cosmetic.35.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.35.a
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.36
+	title = TRY_cosmetic.36.t
+	desc = TRY_cosmetic.36.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.36.a
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.37
+	title = TRY_cosmetic.37.t
+	desc = TRY_cosmetic.37.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.37.a
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.38
+	title = TRY_cosmetic.38.t
+	desc = TRY_cosmetic.38.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.38.a
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.39
+	title = TRY_cosmetic.39.t
+	desc = TRY_cosmetic.39.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.39.a
+	}
+}
+
+country_event = {
+	id = TRY_cosmetic.40
+	title = TRY_cosmetic.40.t
+	desc = TRY_cosmetic.40.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_cosmetic.40.a
+	}
+}
+
+news_event = {
+	id = TRY_NEWS.1
+	title = TRY_NEWS.1.t
+	desc = TRY_NEWS.1.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_NEWS.1.a
+		trigger = {
+			tag = GEH
+		}
+	}
+	option = {
+		name = TRY_NEWS.1.b
+		trigger = {
+			tag = KVO
+		}
+	}
+	option = {
+		name = TRY_NEWS.1.c
+		trigger = {
+			NOT = {
+				tag = KVO
+				tag = GEH
+			}
+		}
+	}
+}
+news_event = {
+	id = TRY_NEWS.2
+	title = TRY_NEWS.2.t
+	desc = TRY_NEWS.2.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_NEWS.2.a
+		trigger = {
+			tag = TRY
+		}
+	}
+	option = {
+		name = TRY_NEWS.2.b
+		trigger = {
+			tag = GEH
+		}
+	}
+	option = {
+		name = TRY_NEWS.2.c
+		trigger = {
+			NOT = {
+				tag = TRY
+				tag = GEH
+			}
+		}
+	}
+}
+news_event = {
+	id = TRY_NEWS.3
+	title = TRY_NEWS.3.t
+	desc = TRY_NEWS.3.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_NEWS.3.a
+		trigger = {
+			tag = TRY
+		}
+	}
+	option = {
+		name = TRY_NEWS.3.b
+		trigger = {
+			tag = GEH
+		}
+	}
+	option = {
+		name = TRY_NEWS.3.c
+		trigger = {
+			NOT = {
+				tag = TRY
+				tag = GEH
+			}
+		}
+	}
+}
+news_event = {
+	id = TRY_NEWS.4
+	title = TRY_NEWS.4.t
+	desc = TRY_NEWS.4.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_NEWS.4.a
+		trigger = {
+			tag = TRY
+		}
+	}
+	option = {
+		name = TRY_NEWS.4.b
+		trigger = {
+			tag = GEH
+		}
+	}
+	option = {
+		name = TRY_NEWS.4.c
+		trigger = {
+			NOT = {
+				tag = TRY
+				tag = GEH
+			}
+		}
+	}
+}
+
+country_event = {
+	id = TRY_election.1
+	title = TRY_election.1
+	desc = TRY_election.1.d
+	is_triggered_only = yes
+	hidden = yes
+	trigger = {
+		TAG = TRY
+	}
+	immediate = {
+		IF = {
+			limit = {
+				TRY = { has_war = yes }
+			}
+			country_event = TRY_election.3
+			else = {
+				country_event = TRY_election.2
+			}
+		}
+	}
+}
+country_event = {
+	id = TRY_election.2
+	title = TRY_election.2
+	desc = TRY_election.2.d
+	is_triggered_only = yes
+	immediate = {
+		set_variable_to_random = {
+			var = vote_support
+			max = 30
+			min = 10
+			integer = yes
+		}
+		set_variable_to_random = {
+			var = vote_oppose
+			max = 20
+			min = 10
+			integer = yes
+		}
+	}
+	option = {
+		name = TRY_election_1 #重视政治
+		trigger = { 
+			NOT = { 
+				check_variable = { TRY_get_decision_num > 0 } 
+				has_country_flag = TRY_decision_10_not_enable
+				has_idea = TRY_election_1_ieda
+			} 
+		}
+		set_variable = { TRY_get_decision_num = 10 }
+		set_variable = { TRY_election_vote_support = vote_support }
+		set_variable = { TRY_election_vote_oppose = vote_oppose }
+		custom_effect_tooltip = TRY_election_tt
+		effect_tooltip = { 
+			add_timed_idea = {
+				idea = TRY_election_1_ieda
+				days = 365
+			}
+		}
+	}
+	option = {
+		name = TRY_election_2 #重视建设
+		trigger = { 
+			NOT = { 
+				check_variable = { TRY_get_decision_num > 0 } 
+				has_country_flag = TRY_decision_11_not_enable
+				has_idea = TRY_election_2_ieda
+			} 
+		}
+		set_variable = { TRY_get_decision_num = 11 }
+		set_variable = { TRY_election_vote_support = vote_support }
+		set_variable = { TRY_election_vote_oppose = vote_oppose }
+		custom_effect_tooltip = TRY_election_tt
+		effect_tooltip = { 
+			add_timed_idea = {
+				idea = TRY_election_2_ieda
+				days = 365
+			}
+		}
+	}
+	option = {
+		name = TRY_election_3 #重视科技
+		trigger = { 
+			NOT = { 
+				check_variable = { TRY_get_decision_num > 0 } 
+				has_country_flag = TRY_decision_12_not_enable
+				has_idea = TRY_election_3_ieda
+			} 
+		}
+		set_variable = { TRY_get_decision_num = 12 }
+		set_variable = { TRY_election_vote_support = vote_support }
+		set_variable = { TRY_election_vote_oppose = vote_oppose }
+		custom_effect_tooltip = TRY_election_tt
+		effect_tooltip = { 
+			add_timed_idea = {
+				idea = TRY_election_3_ieda
+				days = 365
+			}
+		}
+	}
+	option = {
+		name = TRY_election_no
+		trigger = { NOT = { check_variable = { TRY_get_decision_num = 0 } } }
+	}
+}
+country_event = {
+	id = TRY_election.3
+	title = TRY_election.3
+	desc = TRY_election.3.d
+	is_triggered_only = yes
+	immediate = {
+		set_variable_to_random = {
+			var = vote_support
+			max = 30
+			min = 10
+			integer = yes
+		}
+		set_variable_to_random = {
+			var = vote_oppose
+			max = 20
+			min = 10
+			integer = yes
+		}
+	}
+	option = {
+		name = TRY_election_4 #重视生产
+		trigger = { 
+			NOT = { 
+				check_variable = { TRY_get_decision_num > 0 } 
+				has_country_flag = TRY_decision_13_not_enable
+				has_idea = TRY_election_4_ieda
+			} 
+		}
+		set_variable = { TRY_get_decision_num = 13 }
+		set_variable = { TRY_election_vote_support = vote_support }
+		set_variable = { TRY_election_vote_oppose = vote_oppose }
+		custom_effect_tooltip = TRY_election_tt
+		effect_tooltip = { 
+			add_timed_idea = {
+				idea = TRY_election_4_ieda
+				days = 365
+			}
+		}
+	}
+	option = {
+		name = TRY_election_5 #重视训练
+		trigger = { 
+			NOT = { 
+				check_variable = { TRY_get_decision_num > 0 } 
+				has_country_flag = TRY_decision_14_not_enable
+				has_idea = TRY_election_5_ieda
+			} 
+		}
+		set_variable = { TRY_get_decision_num = 14 }
+		set_variable = { TRY_election_vote_support = vote_support }
+		set_variable = { TRY_election_vote_oppose = vote_oppose }
+		custom_effect_tooltip = TRY_election_tt
+		effect_tooltip = { 
+			add_timed_idea = {
+				idea = TRY_election_5_ieda
+				days = 365
+			}
+		}
+	}
+	option = {
+		name = TRY_election_6 #重视战争
+		trigger = { 
+			NOT = { 
+				check_variable = { TRY_get_decision_num > 0 } 
+				has_country_flag = TRY_decision_15_not_enable
+				has_idea = TRY_election_6_ieda
+			} 
+		}
+		set_variable = { TRY_get_decision_num = 15 }
+		set_variable = { TRY_election_vote_support = vote_support }
+		set_variable = { TRY_election_vote_oppose = vote_oppose }
+		custom_effect_tooltip = TRY_election_tt
+		effect_tooltip = { 
+			add_timed_idea = {
+				idea = TRY_election_6_ieda
+				days = 365
+			}
+		}
+	}
+	option = {
+		name = TRY_election_no
+		trigger = { NOT = { check_variable = { TRY_get_decision_num = 0 } } }
+	}
+}
+country_event = {
+	id = TRY_election.4
+	title = TRY_election.4
+	desc = TRY_election.4.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_election.4.a
+	}
+}
+country_event = {
+	id = TRY_election.5
+	title = TRY_election.5
+	desc = TRY_election.5.d
+	is_triggered_only = yes
+	option = {
+		name = TRY_election.5.a
+		hold_election = ROOT
+	}
+}

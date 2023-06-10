@@ -1,0 +1,206 @@
+﻿add_namespace = ottoman
+
+country_event = {
+	id = ottoman.4
+	title = ottoman.4.t
+	desc = ottoman.4.desc
+	picture = GFX_report_event_hitler_handshake
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			set_country_flag = RIS_state_confirm_flag
+		}
+	}
+	option = {
+		name = ottoman.4.a
+		ai_chance = {
+			factor = 10
+		}
+		add_command_power = -25
+		add_political_power = -30
+		OTT = {
+			set_variable = { RIS_state_confirm_var = 1107 }
+			set_country_flag = OTT_state_turkey_antalya_flag
+		}
+		effect_tooltip = { 1107 = { add_core_of = OTT } }
+		hidden_effect = {
+			country_event = { id = ottoman.5 hours = 4 }
+		}
+	}
+	option = {
+		name = ottoman.4.b
+		ai_chance = {
+			factor = 10
+		}
+		add_command_power = -25
+		add_political_power = -30
+		OTT = {
+			set_variable = { RIS_state_confirm_var = 1108 }
+			set_country_flag = OTT_state_turkey_melsin_flag
+		}
+		effect_tooltip = { 1108 = { add_core_of = OTT } }
+		hidden_effect = {
+			country_event = { id = ottoman.5 hours = 4 }
+		}
+	}
+}
+
+country_event = {
+	id = ottoman.5
+	title = ottoman.5.t
+	desc = ottoman.5.desc
+	picture = GFX_report_event_hitler_handshake
+	fire_only_once = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { RIS = { is_ai = yes } }
+				if = {
+					limit = {
+						OTT = { 
+							NOT = {
+								has_country_flag = OTT_crack_infantry_2502_flag
+								has_country_flag = OTT_infantry_2502_flag
+							}
+						}
+					}
+					OTT = { set_country_flag = OTT_infantry_2502_flag }
+				}
+				if = {
+					limit = {
+						OTT = { 
+							NOT = {
+								has_country_flag = OTT_crack_infantry_2504_flag
+								has_country_flag = OTT_infantry_2504_flag
+							}
+						}
+					}
+					OTT = { set_country_flag = OTT_infantry_2504_flag }
+				}
+				if = {
+					limit = {
+						OTT = { 
+							NOT = {
+								has_country_flag = OTT_crack_infantry_2505_flag
+								has_country_flag = OTT_infantry_2505_flag
+							}
+						}
+					}
+					OTT = { set_country_flag = OTT_infantry_2505_flag }
+				}
+				if = {
+					limit = {
+						OTT = { 
+							NOT = {
+								has_country_flag = OTT_crack_infantry_2506_flag
+								has_country_flag = OTT_infantry_2506_flag
+							}
+						}
+					}
+					OTT = { set_country_flag = OTT_infantry_2506_flag }
+				}
+				if = {
+					limit = {
+						OTT = { 
+							NOT = {
+								has_country_flag = OTT_crack_armor_2501_flag
+								has_country_flag = OTT_armor_2501_flag
+							}
+						}
+					}
+					OTT = { set_country_flag = OTT_armor_2501_flag }
+				}
+				if = {
+					limit = {
+						OTT = { 
+							NOT = {
+								has_country_flag = OTT_crack_armor_2503_flag
+								has_country_flag = OTT_armor_2503_flag
+							}
+						}
+					}
+					OTT = { set_country_flag = OTT_armor_2503_flag }
+				}
+			}
+			OTT = {
+				if = {
+					limit = { has_country_flag = OTT_state_turkey_melsin_flag }
+					1108 = { set_demilitarized_zone = yes }
+				}
+				else_if = {
+					limit = { has_country_flag = OTT_state_turkey_antalya_flag }
+					1107 = { set_demilitarized_zone = yes }
+				}
+			}
+		}
+	}
+	option = {
+		name = ottoman.5.a
+		ai_chance = {
+			factor = 10
+		}
+		custom_effect_tooltip = ottoman_5_tt
+		hidden_effect = {
+			OTT = {
+				if = {
+					limit = { has_country_flag = OTT_state_turkey_melsin_flag }
+					1108 = {
+						set_demilitarized_zone = no
+						add_core_of = OTT
+					}
+					transfer_state = 1108
+				}
+				else_if = {
+					limit = { has_country_flag = OTT_state_turkey_antalya_flag }
+					1107 = {
+						set_demilitarized_zone = no
+						add_core_of = OTT
+					}
+					transfer_state = 1107
+				}
+				OTT_invade_turkey = yes
+				declare_war_on = {
+					target = TUR
+					type = annex_everything
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = ottoman.5.b
+		trigger = { is_ai = no }
+		ai_chance = {
+			factor = 0
+		}
+		custom_effect_tooltip = ottoman_5_tt
+		hidden_effect = {
+			OTT = {
+				if = {
+					limit = { has_country_flag = OTT_state_turkey_melsin_flag }
+					1108 = {
+						set_demilitarized_zone = no
+						add_core_of = OTT
+					}
+					transfer_state = 1108
+				}
+				else_if = {
+					limit = { has_country_flag = OTT_state_turkey_antalya_flag }
+					1107 = {
+						set_demilitarized_zone = no
+						add_core_of = OTT
+					}
+					transfer_state = 1107
+				}
+				OTT_invade_turkey = yes
+				declare_war_on = {
+					target = TUR
+					type = annex_everything
+				}
+			}
+		}
+		OTT = { change_tag_from = ROOT }
+	}
+}

@@ -1,0 +1,241 @@
+add_namespace = Kivotos_general
+add_namespace = Kivotos_union_leader_vote
+country_event = {
+	id = Kivotos_general.1
+	title = Kivotos_general.1
+	desc = Kivotos_general.1.d
+	is_triggered_only = yes
+	option = {
+		name = Kivotos_general.1.a
+		set_country_flag = Kivotos_hardliners_focus
+		custom_effect_tooltip = Kivotos_general.1.t
+		add_to_variable = {
+			vote_action_point = 100
+		}
+		ai_chance = {
+			base = 1
+			modifier = {
+				any_other_country = {
+					Kivotos_is_kivotos_country = yes
+					is_ai = no
+				}
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = Kivotos_general.1.b
+		add_ideas = Kivotos_general_KVO_idea_3
+		add_political_power = 100
+		custom_effect_tooltip = Kivotos_general.1.tt
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+country_event = {
+	id = Kivotos_general.2
+	title = Kivotos_general.2
+	desc = Kivotos_general.2.d
+	is_triggered_only = yes
+	option = {
+		name = Kivotos_general.2.a
+		FROM = { 
+			add_to_faction = ROOT 
+			country_event = Kivotos_general.3
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = Kivotos_general.2.b
+		FROM = { 
+			country_event = Kivotos_general.4
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+country_event = {
+	id = Kivotos_general.3
+	title = Kivotos_general.3
+	desc = Kivotos_general.3.d
+	is_triggered_only = yes
+	option = {
+		name = Kivotos_general.3.a
+	}
+}
+country_event = {
+	id = Kivotos_general.4
+	title = Kivotos_general.4
+	desc = Kivotos_general.4.d
+	is_triggered_only = yes
+	option = {
+		name = Kivotos_general.4.a
+		complete_national_focus = kivotos_general_diplomacy_faction_neutrality
+	}
+}
+country_event = {
+	id = Kivotos_general.5
+	title = Kivotos_general.5
+	desc = Kivotos_general.5.d
+	is_triggered_only = yes
+	option = {
+		name = Kivotos_general.5.a
+		random_country = {
+			limit = {
+				has_country_flag = Kivotos_vote_main
+			}
+			country_event = Kivotos_general.6
+		}
+	}
+}
+country_event = {
+	id = Kivotos_general.6
+	title = Kivotos_general.6
+	desc = Kivotos_general.6.d
+	is_triggered_only = yes
+	immediate = {
+		every_country = {
+			limit = {
+				Kivotos_is_kivotos_country = yes
+				has_country_flag = Kivotos_vote_yes
+			}
+			news_event = Kivotos_general.7
+		}
+		set_global_flag = Kivotos_union_leader_vote_start
+	}
+	option = {
+		name = Kivotos_general.6.a
+		annex_country = {
+			target = KVO
+		}
+		every_country = {
+			limit = {
+				Kivotos_is_kivotos_country = yes
+			}
+			drop_cosmetic_tag = yes
+		}
+	}
+}
+news_event = {
+	id = Kivotos_general.7
+	title = Kivotos_general.7
+	desc = Kivotos_general.7.d
+	is_triggered_only = yes
+	option = {
+		name = Kivotos_general.7.a
+	}
+}
+#联邦失能 1
+news_event = {
+	id = Kivotos_union_leader_vote.1
+	title = Kivotos_union_leader_vote.1
+	desc = Kivotos_union_leader_vote.1.d
+	is_triggered_only = yes
+	option = {
+		name = Kivotos_union_leader_vote.1.a
+	}
+}
+#邀请加入会议 2
+country_event = {
+	id = Kivotos_union_leader_vote.2
+	title = Kivotos_union_leader_vote.2
+	desc = Kivotos_union_leader_vote.2.d
+	is_triggered_only = yes
+	option = {
+		name = Kivotos_union_leader_vote.2.a
+		set_country_flag = Kivotos_vote_yes
+		FROM = { country_event = Kivotos_union_leader_vote.3 }
+		ai_chance = {
+			base = 1
+			modifier = {
+				has_war = yes
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = Kivotos_union_leader_vote.2.b
+		FROM = { country_event = Kivotos_union_leader_vote.4 }
+		ai_chance = {
+			base = 0
+			modifier = {
+				has_war = yes
+				add = 1
+			}
+		}
+	}
+}
+#接受 3
+country_event = {
+	id = Kivotos_union_leader_vote.3
+	title = Kivotos_union_leader_vote.3
+	desc = Kivotos_union_leader_vote.3.d
+	is_triggered_only = yes
+	option = {
+		name = Kivotos_union_leader_vote.3.a
+	}
+}
+#拒绝 4
+country_event = {
+	id = Kivotos_union_leader_vote.4
+	title = Kivotos_union_leader_vote.4
+	desc = Kivotos_union_leader_vote.4.d
+	is_triggered_only = yes
+	option = {
+		name = Kivotos_union_leader_vote.4.a
+	}
+}
+#会议结果——解散 5
+news_event = {
+	id = Kivotos_union_leader_vote.5
+	title = Kivotos_union_leader_vote.5
+	desc = Kivotos_union_leader_vote.5.d
+	is_triggered_only = yes
+	option = {
+		name = Kivotos_union_leader_vote.5.a
+	}
+}
+#会议结果——内战 6
+news_event = {
+	id = Kivotos_union_leader_vote.6
+	title = Kivotos_union_leader_vote.6
+	desc = Kivotos_union_leader_vote.6.d
+	is_triggered_only = yes
+	option = {
+		name = Kivotos_union_leader_vote.6.a
+	}
+}
+#会议结果——合并 7
+news_event = {
+	id = Kivotos_union_leader_vote.7
+	title = Kivotos_union_leader_vote.7
+	desc = Kivotos_union_leader_vote.7.d
+	is_triggered_only = yes
+	option = {
+		name = Kivotos_union_leader_vote.7.a
+	}
+}
+#会议结果——附庸 8
+news_event = {
+	id = Kivotos_union_leader_vote.8
+	title = Kivotos_union_leader_vote.8
+	desc = Kivotos_union_leader_vote.8.d
+	is_triggered_only = yes
+	option = {
+		name = Kivotos_union_leader_vote.8.a
+	}
+}
+#会议结果——重组 9
+news_event = {
+	id = Kivotos_union_leader_vote.9
+	title = Kivotos_union_leader_vote.9
+	desc = Kivotos_union_leader_vote.9.d
+	is_triggered_only = yes
+	option = {
+		name = Kivotos_union_leader_vote.9.a
+	}
+}

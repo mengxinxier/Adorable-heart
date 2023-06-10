@@ -1,0 +1,901 @@
+﻿###########################
+# Polish Events
+###########################
+add_namespace = pol
+add_namespace = poland
+#天外来客
+country_event = {
+	id = pol.1
+	title = pol.1.t
+	desc = pol.1.d
+	picture = GFX_idea_POL_tianwailaike
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = pol.1.a
+		add_corps_commander_role = {
+			character = POL_yawula
+			traits = {
+				jungle_rat
+				ranger
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 4
+		}
+		add_corps_commander_role = {
+			character = kesaitesi
+			traits = {
+				winter_specialist
+				winter_expert
+			}
+			skill = 5
+			attack_skill = 4
+			defense_skill = 5
+			planning_skill = 2
+			logistics_skill = 1
+		}
+		add_corps_commander_role = {
+			character = POL_saibasi
+			traits = {
+				urban_assault_specialist
+			}
+			skill = 5
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 4
+		}
+		add_navy_leader_role = {
+			character = POL_malei
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 5
+			logistics_skill = 4
+		}
+		add_corps_commander_role = {
+			character = POL_xiatiya
+			traits = {
+				panzer_leader
+				panzer_expert
+			}
+			skill = 5
+			attack_skill = 6
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 3
+		}
+		add_corps_commander_role = {
+			character = POL_yaerbeide
+			traits = {
+				panzer_leader
+				panzer_expert
+				adaptable
+			}
+			skill = 6
+			attack_skill = 2
+			defense_skill = 10
+			planning_skill = 6
+			logistics_skill = 5
+		}
+	}
+}
+
+#纳萨力克的王
+country_event = {
+	id = pol.2
+	title = pol.2.t
+	desc = pol.2.d
+	picture = GFX_idea_POL_nasalikedewang
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = pol.2.a
+		ai_chance = {
+			factor = 50
+		}
+	}
+	option = {
+		name = pol.2.b
+		ai_chance = {
+			factor = 50
+		}
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+		create_country_leader = {
+			name = "安兹乌尔恭"
+			desc = "POLITICS_HEINRICH_HIMMLER_DESC"
+			picture = "gfx/leaders/POL/anziwuergong.dds"
+			expire = "1999.1.1"
+			ideology = fascism_ideology
+			traits = {
+				nasalikedailiren
+			}
+		}
+	}
+}
+
+#亲自上阵
+country_event = {
+	id = pol.3
+	title = pol.3.t
+	desc = pol.3.d
+	picture = GFX_idea_POL_tianwailaike
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = pol.3.a
+		add_field_marshal_role = {
+			character = POL_shenmiren
+			traits = {
+				brilliant_strategist
+				panzer_leader
+				panzer_expert
+				adaptable
+			}
+			skill = 7
+			attack_skill = 7
+			defense_skill = 5
+			planning_skill = 5
+			logistics_skill = 6
+		}
+	}
+}
+
+#共处条约
+country_event = {
+	id = pol.4
+	title = pol.4.t
+	desc = pol.4.d
+	picture = GFX_idea_POL_gongchutiaoyue
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = pol.4.a
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = no
+		}
+	}
+}
+
+#去捷克斯洛伐克
+country_event = {
+	id = pol.5
+	title = pol.5.t
+	desc = pol.5.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = pol.5.a
+		country_event = pol.6
+	}
+	option = {
+		name = pol.5.b
+		country_event = pol.7
+	}
+}
+
+#到达布拉格
+country_event = {
+	id = pol.6
+	title = pol.6.t
+	desc = pol.6.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = pol.6.a
+		add_tech_bonus = {
+			name = POL_central_region_strategy
+			bonus = 1
+			uses = 1
+			category = industry
+		}
+	}
+	option = {
+		name = pol.6.b
+		add_tech_bonus = {
+			name = armor_bonus
+			bonus = 1
+			uses = 1
+			category = armor
+		}
+	}
+}
+
+#到达布拉迪斯拉发
+country_event = {
+	id = pol.7
+	title = pol.7.t
+	desc = pol.7.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = pol.7.a
+		country_event = pol.8
+	}
+	option = {
+		name = pol.7.b
+	}
+}
+
+#分裂计划
+country_event = {
+	id = pol.8
+	title = pol.8.t
+	desc = pol.8.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = pol.8.a
+		country_event = pol.9
+	}
+}
+
+#新成员
+country_event = {
+	id = pol.9
+	title = pol.9.t
+	desc = pol.9.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = pol.9.a
+		POL = {
+			transfer_state = 70
+			transfer_state = 71
+			transfer_state = 72
+			transfer_state = 73
+			transfer_state = 664
+		}
+		POL = {
+			give_military_access = CZE
+		}
+	}
+}
+
+#前往罗马尼亚
+country_event = {
+	id = pol.10
+	title = pol.10.t
+	desc = pol.10.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = pol.10.a
+		country_event = pol.11
+	}
+}
+
+#普洛耶什蒂
+country_event = {
+	id = pol.11
+	title = pol.11.t
+	desc = pol.11.d
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = pol.11.a
+		add_tech_bonus = {
+			name = GER_coal_liquidization
+			bonus = 2
+			uses = 1
+			category = synth_resources
+		}
+	}
+}
+
+country_event = {
+	id = poland.2
+	title = poland.2.t
+	desc = poland.2.d
+	picture = GFX_report_event_polish_tanks_01
+	is_triggered_only = yes
+	option = {
+		name = poland.2.a
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 0
+				OR = {
+					any_other_country = {
+						is_major = yes
+						OR = {
+							is_in_faction_with = POL
+							has_guaranteed = POL
+						}
+					}
+					has_idea = anti_soviet_pact
+				}
+			}
+		}
+		effect_tooltip = {
+			FROM = {
+				if = {
+					limit = {
+						POL = {
+							owns_state = 96
+							controls_state = 96
+						}
+					}
+					transfer_state = 96
+				}
+				if = {
+					limit = {
+						POL = {
+							owns_state = 95
+							controls_state = 95
+						}
+					}
+					transfer_state = 95
+				}
+				if = {
+					limit = {
+						POL = {
+							owns_state = 94
+							controls_state = 94
+						}
+					}
+					transfer_state = 94
+				}
+				if = {
+					limit = {
+						POL = {
+							owns_state = 93
+							controls_state = 93
+						}
+					}
+					transfer_state = 93
+				}
+				if = {
+					limit = {
+						POL = {
+							owns_state = 91
+							controls_state = 91
+						}
+					}
+					transfer_state = 91
+				}
+				if = {
+					limit = {
+						POL = {
+							owns_state = 89
+							controls_state = 89
+						}
+					}
+					transfer_state = 89
+				}
+				if = {
+					limit = {
+						POL = {
+							owns_state = 97
+							controls_state = 97
+						}
+					}
+					transfer_state = 97
+				}
+				if = {
+					limit = {
+						POL = {
+							owns_state = 784
+							controls_state = 784
+						}
+					}
+					transfer_state = 784
+				}
+			}
+		}
+		FROM = {
+			country_event = {
+				id = poland.3
+			}
+		}
+	}
+	option = {
+		name = poland.2.b
+		ai_chance = {
+			factor = 70
+		}
+		effect_tooltip = {
+			FROM = {
+				create_wargoal = {
+					type = take_state_focus
+					target = POL
+					generator = {
+						96
+						95
+						94
+						93
+						91
+						89
+						97
+						784
+					}
+				}
+			}
+		}
+		FROM = {
+			country_event = {
+				id = poland.4
+			}
+		}
+	}
+}
+
+# Poland Cedes the East
+country_event = {
+	id = poland.3
+	title = poland.3.t
+	desc = poland.3.d
+	picture = GFX_report_event_polish_tanks_01
+	is_triggered_only = yes
+	option = {
+		name = poland.3.a
+		if = {
+			limit = {
+				POL = {
+					owns_state = 96
+					controls_state = 96
+				}
+			}
+			transfer_state = 96
+		}
+		if = {
+			limit = {
+				POL = {
+					owns_state = 95
+					controls_state = 95
+				}
+			}
+			transfer_state = 95
+		}
+		if = {
+			limit = {
+				POL = {
+					owns_state = 94
+					controls_state = 94
+				}
+			}
+			transfer_state = 94
+		}
+		if = {
+			limit = {
+				POL = {
+					owns_state = 93
+					controls_state = 93
+				}
+			}
+			transfer_state = 93
+		}
+		if = {
+			limit = {
+				POL = {
+					owns_state = 91
+					controls_state = 91
+				}
+			}
+			transfer_state = 91
+		}
+		if = {
+			limit = {
+				POL = {
+					owns_state = 89
+					controls_state = 89
+				}
+			}
+			transfer_state = 89
+		}
+		if = {
+			limit = {
+				POL = {
+					owns_state = 97
+					controls_state = 97
+				}
+			}
+			transfer_state = 97
+		}
+		if = {
+			limit = {
+				POL = {
+					owns_state = 784
+					controls_state = 784
+				}
+			}
+			transfer_state = 784
+		}
+		hidden_effect = {
+			news_event = {
+				id = news.194
+			}
+		}
+	}
+}
+
+# Poland Refuses to Cede the East
+country_event = {
+	id = poland.4
+	title = poland.4.t
+	desc = poland.4.d
+	picture = GFX_report_event_polish_tanks_01
+	is_triggered_only = yes
+	option = {
+		name = poland.4.a
+		create_wargoal = {
+			type = take_state_focus
+			target = POL
+			generator = {
+				96
+				95
+				94
+				93
+				91
+				89
+				784
+			}
+		}
+	}
+}
+
+# Soviet Union Offers Protection
+country_event = {
+	id = poland.5
+	title = poland.5.t
+	desc = poland.5.d
+	picture = GFX_report_event_polish_tanks_01
+	is_triggered_only = yes
+	option = {
+		name = poland.5.a
+		ai_chance = {
+			base = 40
+			modifier = {
+				factor = 0
+				is_subject = yes
+				NOT = {
+					is_subject_of = FROM
+				}
+			}
+		}
+		effect_tooltip = {
+			add_state_claim = 5
+			add_state_claim = 63
+			add_state_claim = 68
+			add_state_claim = 66
+			add_state_claim = 67
+			custom_effect_tooltip = SOV_offer_poland_protection_tt
+			FROM = {
+				if = {
+					limit = {
+						POL = {
+							owns_state = 96
+							controls_state = 96
+						}
+					}
+					transfer_state = 96
+				}
+				if = {
+					limit = {
+						POL = {
+							owns_state = 95
+							controls_state = 95
+						}
+					}
+					transfer_state = 95
+				}
+				if = {
+					limit = {
+						POL = {
+							owns_state = 94
+							controls_state = 94
+						}
+					}
+					transfer_state = 94
+				}
+				if = {
+					limit = {
+						POL = {
+							owns_state = 93
+							controls_state = 93
+						}
+					}
+					transfer_state = 93
+				}
+				if = {
+					limit = {
+						POL = {
+							owns_state = 91
+							controls_state = 91
+						}
+					}
+					transfer_state = 91
+				}
+				if = {
+					limit = {
+						POL = {
+							owns_state = 89
+							controls_state = 89
+						}
+					}
+					transfer_state = 89
+				}
+				if = {
+					limit = {
+						POL = {
+							owns_state = 784
+							controls_state = 784
+						}
+					}
+					transfer_state = 784
+				}
+			}
+		}
+		hidden_effect = {
+			#SOV and POL more keen on cooperation
+			add_ai_strategy = {
+				type = alliance
+				id = FROM
+				value = 10
+			}
+			add_ai_strategy = {
+				type = befriend
+				id = FROM
+				value = 5
+			}
+			FROM = {
+				add_ai_strategy = {
+					type = alliance
+					id = ROOT
+					value = 10
+				}
+				add_ai_strategy = {
+					type = befriend
+					id = ROOT
+					value = 5
+				}
+			}
+		}
+		FROM = {
+			country_event = {
+				id = poland.6
+			}
+		}
+	}
+	option = {
+		name = poland.5.b
+		ai_chance = {
+			base = 60
+			modifier = {
+				factor = 0
+				is_in_faction_with = FROM
+				OR = {
+					is_subject = no
+					is_subject_of = FROM
+				}
+				is_faction_leader = no
+			}
+		}
+		effect_tooltip = {
+			FROM = {
+				create_wargoal = {
+					type = take_state_focus
+					target = POL
+					generator = {
+						96
+						95
+						94
+						93
+						91
+						89
+						784
+					}
+				}
+			}
+		}
+		FROM = {
+			country_event = {
+				id = poland.7
+			}
+		}
+	}
+}
+
+# Poland Accepts Protection
+country_event = {
+	id = poland.6
+	title = poland.6.t
+	desc = poland.6.d
+	picture = GFX_report_event_polish_tanks_01
+	is_triggered_only = yes
+	option = {
+		name = poland.6.a
+		POL = {
+			add_state_claim = 5
+			add_state_claim = 63
+			add_state_claim = 68
+			add_state_claim = 66
+			add_state_claim = 67
+			set_country_flag = POL_accepted_soviet_protection
+		}
+		custom_effect_tooltip = SOV_offer_poland_protection_tt
+		if = {
+			limit = {
+				POL = {
+					owns_state = 96
+				}
+			}
+			transfer_state = 96
+		}
+		if = {
+			limit = {
+				POL = {
+					owns_state = 95
+				}
+			}
+			transfer_state = 95
+		}
+		if = {
+			limit = {
+				POL = {
+					owns_state = 94
+				}
+			}
+			transfer_state = 94
+		}
+		if = {
+			limit = {
+				POL = {
+					owns_state = 93
+				}
+			}
+			transfer_state = 93
+		}
+		if = {
+			limit = {
+				POL = {
+					owns_state = 91
+				}
+			}
+			transfer_state = 91
+		}
+		if = {
+			limit = {
+				POL = {
+					owns_state = 89
+				}
+			}
+			transfer_state = 89
+		}
+		if = {
+			limit = {
+				POL = {
+					owns_state = 784
+				}
+			}
+			transfer_state = 784
+		}
+		hidden_effect = {
+			news_event = {
+				id = news.194
+			}
+		}
+	}
+}
+
+# Poland Refuses Protection
+country_event = {
+	id = poland.7
+	title = poland.7.t
+	desc = poland.7.d
+	picture = GFX_report_event_polish_tanks_01
+	is_triggered_only = yes
+	option = {
+		name = poland.7.a
+		create_wargoal = {
+			type = take_state_focus
+			target = POL
+			generator = {
+				96
+				95
+				94
+				93
+				91
+				89
+			}
+		}
+	}
+}
+
+country_event = {
+	id = poland.8
+	is_triggered_only = yes
+	option = {
+		name = poland.8.a
+		complete_national_focus = POL_48
+		ai_chance = {
+			base = 10
+			modifier = {
+				has_game_rule = {
+					rule = AH_POL_ai_behavior_SELECTION
+					option = POL_GAME_RULE_2
+				}
+				add = -10
+			}
+			modifier = {
+				has_game_rule = {
+					rule = AH_POL_ai_behavior_SELECTION
+					option = POL_GAME_RULE_3
+				}
+				add = -10
+			}
+		}
+	}
+	option = {
+		name = poland.8.b
+		complete_national_focus = POL_52
+		ai_chance = {
+			base = 10
+			modifier = {
+				has_game_rule = {
+					rule = AH_POL_ai_behavior_SELECTION
+					option = POL_GAME_RULE_1
+				}
+				add = -10
+			}
+			modifier = {
+				has_game_rule = {
+					rule = AH_POL_ai_behavior_SELECTION
+					option = POL_GAME_RULE_3
+				}
+				add = -10
+			}
+		}
+	}
+	option = {
+		name = poland.8.c
+		complete_national_focus = POL_53
+		ai_chance = {
+			base = 5
+			modifier = {
+				has_game_rule = {
+					rule = AH_POL_ai_behavior_SELECTION
+					option = POL_GAME_RULE_1
+				}
+				add = -5
+			}
+			modifier = {
+				has_game_rule = {
+					rule = AH_POL_ai_behavior_SELECTION
+					option = POL_GAME_RULE_2
+				}
+				add = -5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = poland.9
+	title = poland.9.t
+	desc = poland.9.d
+	is_triggered_only = yes
+	option = {
+		name = poland.9.a
+		DVL = {
+			country_event = generic.2002
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = poland.9.b
+		create_faction = "安兹·乌尔·恭联邦"
+		ai_chance = {
+			base = 5
+		}
+	}
+}

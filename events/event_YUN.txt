@@ -1,0 +1,218 @@
+﻿add_namespace = yun
+#开局介绍
+country_event = {
+	id = yun.1
+	title = yun.1.t
+	desc = yun.1.d
+	picture = GFX_report_event_merchant_ship_01
+	is_triggered_only = yes
+	option = {
+		name = yun.1.a
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+#内战爆发
+country_event = {
+	id = yun.2
+	title = yun.2.t
+	desc = yun.2.d
+	picture = GFX_report_event_merchant_ship_01
+	is_triggered_only = yes
+	option = {
+		name = yun.2.a
+		ai_chance = {
+			factor = 0
+		}
+		1051 = {
+			set_demilitarized_zone = yes
+		}
+		650 = {
+			set_demilitarized_zone = yes
+		}
+		816 = {
+			set_demilitarized_zone = yes
+		}
+		601 = {
+			set_demilitarized_zone = yes
+		}
+		325 = {
+			set_demilitarized_zone = yes
+		}
+		country_event = {
+			id = yun.3
+			days = 50
+		}
+		CHI = {
+			country_event = {
+				id = yun.4
+				days = 1
+			}
+		}
+		YUN = {
+			drop_cosmetic_tag = yes
+			leave_faction = yes
+		}
+		CHI = {
+			set_autonomy = {
+				target = YUN
+				autonomy_state = autonomy_free
+			}
+		}
+	}
+}
+
+#谁赢了
+country_event = {
+	id = yun.3
+	title = yun.3.t
+	desc = yun.3.d
+	picture = GFX_report_event_merchant_ship_01
+	is_triggered_only = yes
+	option = {
+		name = yun.3.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = 60
+				has_global_flag = chi_zhiyuan_yun
+			}
+		}
+		1051 = {
+			set_demilitarized_zone = no
+		}
+		650 = {
+			set_demilitarized_zone = no
+		}
+		816 = {
+			set_demilitarized_zone = no
+		}
+		601 = {
+			set_demilitarized_zone = no
+		}
+		325 = {
+			set_demilitarized_zone = no
+		}
+		set_country_flag = zhongli_win
+	}
+	option = {
+		name = yun.3.b
+		ai_chance = {
+			base = 15
+		}
+		1051 = {
+			set_demilitarized_zone = no
+		}
+		650 = {
+			set_demilitarized_zone = no
+		}
+		816 = {
+			set_demilitarized_zone = no
+		}
+		601 = {
+			set_demilitarized_zone = no
+		}
+		325 = {
+			set_demilitarized_zone = no
+		}
+		set_politics = {
+			ruling_party = communism
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.5
+		}
+		set_country_flag = redarmy_win
+		retire_character = YUN_leader_zhongli
+	}
+	option = {
+		name = yun.3.c
+		ai_chance = {
+			base = 5
+		}
+		1051 = {
+			set_demilitarized_zone = no
+		}
+		650 = {
+			set_demilitarized_zone = no
+		}
+		816 = {
+			set_demilitarized_zone = no
+		}
+		601 = {
+			set_demilitarized_zone = no
+		}
+		325 = {
+			set_demilitarized_zone = no
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.5
+		}
+		set_country_flag = keke_win
+		retire_character = YUN_leader_zhongli
+	}
+	option = {
+		name = yun.3.e
+		ai_chance = {
+			base = 5
+		}
+		1051 = {
+			set_demilitarized_zone = no
+		}
+		650 = {
+			set_demilitarized_zone = no
+		}
+		816 = {
+			set_demilitarized_zone = no
+		}
+		601 = {
+			set_demilitarized_zone = no
+		}
+		325 = {
+			set_demilitarized_zone = no
+		}
+		set_politics = {
+			ruling_party = fascism
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.5
+		}
+		set_country_flag = baobao_win
+		retire_character = YUN_leader_zhongli
+	}
+}
+
+#云南内战
+country_event = {
+	id = yun.4
+	title = yun.4.t
+	desc = yun.4.d
+	picture = GFX_report_event_merchant_ship_01
+	is_triggered_only = yes
+	option = {
+		name = yun.4.a
+		ai_chance = {
+			factor = 10
+		}
+	}	
+	option = {
+		name = yun.4.b
+		ai_chance = {
+			factor = 0
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -500
+		}
+	add_manpower = -500
+	set_global_flag = chi_zhiyuan_yun
+	}
+}

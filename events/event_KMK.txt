@@ -1,0 +1,1437 @@
+add_namespace = KMK
+add_namespace = KMK_news
+country_event = {
+	#
+	id = KMK.0001
+	title = KMK.0001.t
+	desc = KMK.0001.desc
+	picture = GFX_KMK_leimi_event
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = KMK.0001.a
+		country_event = {
+			id = KMK.0002
+			days = 1
+		}
+	}
+}
+
+country_event = {
+	#
+	id = KMK.0002
+	title = KMK.0002.t
+	desc = KMK.0002.desc
+	picture = GFX_KMK_leimi_event
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = KMK.0002.a
+		country_event = {
+			id = KMK.0003
+			days = 1
+		}
+	}
+}
+
+country_event = {
+	#
+	id = KMK.0003
+	title = KMK.0003.t
+	desc = KMK.0003.desc
+	picture = GFX_KMK_leimi_event
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = KMK.0003.a
+		country_event = {
+			id = KMK.0004
+			days = 1
+		}
+	}
+}
+
+country_event = {
+	#
+	id = KMK.0004
+	title = KMK.0004.t
+	desc = KMK.0004.desc
+	picture = GFX_KMK_leimi_event
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = KMK.0004.a
+		country_event = {
+			id = KMK.0005
+			days = 1
+		}
+	}
+}
+
+country_event = {
+	#
+	id = KMK.0005
+	title = KMK.0005.t
+	desc = KMK.0005.desc
+	picture = GFX_KMK_leimi_event
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = KMK.0005.a
+		country_event = {
+			id = KMK.0006
+			days = 1
+		}
+	}
+}
+
+country_event = {
+	#
+	id = KMK.0006
+	title = KMK.0006.t
+	desc = KMK.0006.desc
+	picture = GFX_KMK_leimi_event
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = KMK.0006.a
+		complete_national_focus = KMK_01
+	}
+}
+
+country_event = {
+	#
+	id = KMK.0007
+	title = KMK.0007.t
+	desc = KMK.0007.desc
+	picture = GFX_KMK_leimi_event
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = KMK.0007.a
+		country_event = {
+			id = KMK.0008
+			days = 1
+		}
+	}
+}
+
+country_event = {
+	#
+	id = KMK.0008
+	title = KMK.0008.t
+	desc = KMK.0008.desc
+	picture = GFX_KMK_leimi_event
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = KMK.0008.a
+		set_power_balance = {
+			id = KMK_balance
+			left_side = KMK_balance_left_side
+			right_side = KMK_balance_right_side
+			set_default = yes
+		}
+		country_event = {
+			id = KMK.0014
+			days = 1
+		}
+	}
+}
+
+country_event = {
+	#妖精人民党的胜利
+	id = KMK.0009
+	title = KMK.0009.t
+	desc = KMK.0009.desc
+	picture = GFX_KMK_9_event
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = KMK.0009.a
+		set_politics = {
+			ruling_party = communism
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.2
+		}
+		set_capital = {
+			state = 7
+			remember_old_capital = no
+		}
+		news_event = {
+			id = KMK_news.0001
+			days = 1
+		}
+		remove_power_balance = {
+			id = KMK_balance
+		}
+		mark_focus_tree_layout_dirty = yes
+		complete_national_focus = KMK_Cirno_01
+		remove_ideas = KMK_Sakuya_idea
+	}
+}
+
+country_event = {
+	#斯卡蕾特的存续
+	id = KMK.0010
+	title = KMK.0010.t
+	desc = KMK.0010.desc
+	picture = GFX_KMK_leimi_event
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = KMK.0010.a
+		remove_power_balance = {
+			id = KMK_balance
+		}
+		complete_national_focus = KMK_Remilia_01
+		# KMK = {
+		# 	country_event = {
+		# 		id = KMK.0011
+		# 		days = 7
+		# 	}
+		# }
+	}
+}
+
+country_event = {
+	#经济危机波及红魔馆
+	id = KMK.0011
+	title = KMK.0011.t
+	desc = KMK.0011.desc
+	picture = GFX_KMK_leimi_event
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = KMK.0011.a
+		set_country_flag = KMK_econmic_scar
+		remove_ideas = KMK_gold_age
+		ROOT = {
+			add_dynamic_modifier = {
+				modifier = KMK_Financial_crisis
+			}
+		}
+		set_variable = {
+			KMK_Financial_crisis_exincome = 0.6
+		}
+		add_to_variable = {
+			exincome_modifier = -0.6
+		}
+		activate_mission = KMK_goodbye_to_Financial_crisis
+		custom_effect_tooltip = can_start_foucs
+	}
+}
+
+country_event = {
+	#刺客袭击蕾米莉亚
+	id = KMK.0012
+	title = KMK.0012.t
+	desc = KMK.0012.desc
+	picture = GFX_KMK_leimi_event
+	immediate = {
+		hidden_effect = {
+			retire_character = KMK_Remilia
+			KMK_Sakuya = {
+				add_country_leader_role = {
+					country_leader = {
+						desc = "KMK_Sakuya_desc"
+						ideology = moderatism
+						traits = {
+							perfect_meidou
+							nvpu_xiaoye
+						}
+						expire = "1999.1.1.1"
+						id = -1
+					}
+					promote_leader = yes
+				}
+			}
+			set_party_name = {
+				ideology = neutrality
+				long_name = KMK_Sakuya_party
+				name = KMK_Sakuya_party
+			}
+			country_event = {
+				id = KMK.0013
+				days = 7
+			}
+			remove_power_balance = {
+				id = KMK_balance
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			add_ideas = KMK_left_violence
+			remove_ideas = KMK_Sakuya_idea
+			if = {
+				limit = {
+					KMK_Flandre = {
+						is_corps_commander = yes
+					}
+				}
+				KMK_Flandre = {
+					promote_leader = yes
+				}
+			}
+		}
+	}
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = KMK.0012.a
+	}
+	option = {
+		name = KMK.0012.b
+	}
+}
+
+country_event = {
+	#摄政结束
+	id = KMK.0013
+	title = KMK.0013.t
+	desc = KMK.0013.desc
+	picture = GFX_KMK_fulan_event
+	immediate = {
+		hidden_effect = {
+			KMK_Flandre = {
+				add_country_leader_role = {
+					country_leader = {
+						desc = "KMK_Flandre_desc"
+						ideology = Absolute_monarchy
+						traits = {
+							destoryer_power
+						}
+						expire = "1999.1.1.1"
+						id = -1
+					}
+					promote_leader = yes
+				}
+			}
+			set_party_name = {
+				ideology = neutrality
+				long_name = KMK_Flandre_party
+				name = KMK_Flandre_party
+			}
+			mark_focus_tree_layout_dirty = yes
+			complete_national_focus = KMK_Flandre_01
+			add_ideas = KMK_Sakuya_idea
+		}
+	}
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = KMK.0013.a
+		#set_country_flag = KMK_econmic_scar
+		news_event = {
+			id = KMK_news.0002
+			days = 1
+		}
+	}
+	option = {
+		name = KMK.0013.b
+		#set_country_flag = KMK_econmic_scar
+		news_event = {
+			id = KMK_news.0002
+			days = 1
+		}
+	}
+}
+
+country_event = {
+	#港口问题
+	id = KMK.0014
+	title = KMK.0014.t
+	desc = KMK.0014.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	picture = GFX_KMK_leimi_event
+	option = {
+		name = KMK.0014.a
+		country_event = {
+			id = KMK.0015
+			days = 1
+		}
+		add_power_balance_value = {
+			id = KMK_balance
+			value = 0.3
+			#tooltip_side = my_bop_side
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.1
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				has_game_rule = {
+					rule = AH_KMK_ai_behavior_SELECTION
+					option = KMK_GAME_RULE_2
+				}
+				add = -10
+			}
+			modifier = {
+				has_game_rule = {
+					rule = AH_KMK_ai_behavior_SELECTION
+					option = KMK_GAME_RULE_3
+				}
+				add = -10
+			}
+		}
+	}
+	option = {
+		name = KMK.0014.b
+		country_event = {
+			id = KMK.0015
+			days = 1
+		}
+		add_power_balance_value = {
+			id = KMK_balance
+			value = -0.3
+			#tooltip_side = my_bop_side
+		}
+		add_ideas = limited_exports
+		add_popularity = {
+			ideology = communism
+			popularity = 0.1
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				has_game_rule = {
+					rule = AH_KMK_ai_behavior_SELECTION
+					option = KMK_GAME_RULE_1
+				}
+				add = -10
+			}
+		}
+	}
+}
+
+country_event = {
+	#生产问题
+	id = KMK.0015
+	title = KMK.0015.t
+	desc = KMK.0015.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	picture = GFX_KMK_leimi_event
+	option = {
+		name = KMK.0014.a
+		country_event = {
+			id = KMK.0016
+			days = 1
+		}
+		add_power_balance_value = {
+			id = KMK_balance
+			value = 0.3
+			#tooltip_side = my_bop_side
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.1
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				has_game_rule = {
+					rule = AH_KMK_ai_behavior_SELECTION
+					option = KMK_GAME_RULE_2
+				}
+				add = -10
+			}
+		}
+	}
+	option = {
+		name = KMK.0014.b
+		country_event = {
+			id = KMK.0016
+			days = 1
+		}
+		add_power_balance_value = {
+			id = KMK_balance
+			value = -0.3
+			#tooltip_side = my_bop_side
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.1
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				has_game_rule = {
+					rule = AH_KMK_ai_behavior_SELECTION
+					option = KMK_GAME_RULE_1
+				}
+				add = -10
+			}
+			modifier = {
+				has_game_rule = {
+					rule = AH_KMK_ai_behavior_SELECTION
+					option = KMK_GAME_RULE_3
+				}
+				add = -10
+			}
+		}
+	}
+}
+
+country_event = {
+	#粮食问题
+	id = KMK.0016
+	title = KMK.0016.t
+	desc = KMK.0016.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	picture = GFX_KMK_leimi_event
+	option = {
+		name = KMK.0014.a
+		country_event = {
+			id = KMK.0017
+			days = 1
+		}
+		add_power_balance_value = {
+			id = KMK_balance
+			value = 0.3
+			#tooltip_side = my_bop_side
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.1
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				has_game_rule = {
+					rule = AH_KMK_ai_behavior_SELECTION
+					option = KMK_GAME_RULE_2
+				}
+				add = -10
+			}
+			modifier = {
+				has_game_rule = {
+					rule = AH_KMK_ai_behavior_SELECTION
+					option = KMK_GAME_RULE_3
+				}
+				add = -10
+			}
+		}
+	}
+	option = {
+		name = KMK.0014.b
+		country_event = {
+			id = KMK.0017
+			days = 1
+		}
+		add_power_balance_value = {
+			id = KMK_balance
+			value = -0.3
+			#tooltip_side = my_bop_side
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.1
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				has_game_rule = {
+					rule = AH_KMK_ai_behavior_SELECTION
+					option = KMK_GAME_RULE_1
+				}
+				add = -10
+			}
+		}
+	}
+}
+
+country_event = {
+	#工会问题
+	id = KMK.0017
+	title = KMK.0017.t
+	desc = KMK.0017.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	picture = GFX_KMK_leimi_event
+	option = {
+		name = KMK.0014.a
+		add_power_balance_value = {
+			id = KMK_balance
+			value = 0.3
+			#tooltip_side = my_bop_side
+		}
+		complete_national_focus = KMK_02
+		custom_effect_tooltip = KMK_0017_tt
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.1
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				has_game_rule = {
+					rule = AH_KMK_ai_behavior_SELECTION
+					option = KMK_GAME_RULE_2
+				}
+				add = -10
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					is_power_balance_in_range = {
+						id = KMK_balance
+						range = right_side_range
+					}
+				}
+				country_event = {
+					id = KMK.0010
+					days = 7
+				}
+			}
+			else_if = {
+				limit = {
+					is_power_balance_in_range = {
+						id = KMK_balance
+						range = left_side_range
+					}
+				}
+				country_event = {
+					id = KMK.0009
+					days = 7
+				}
+			}
+			else = {
+				country_event = {
+					id = KMK.0012
+					days = 7
+				}
+			}
+		}
+	}
+	option = {
+		name = KMK.0014.b
+		add_power_balance_value = {
+			id = KMK_balance
+			value = -0.3
+			#tooltip_side = my_bop_side
+		}
+		complete_national_focus = KMK_02
+		custom_effect_tooltip = KMK_0017_tt
+		add_popularity = {
+			ideology = communism
+			popularity = 0.1
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				has_game_rule = {
+					rule = AH_KMK_ai_behavior_SELECTION
+					option = KMK_GAME_RULE_1
+				}
+				add = -10
+			}
+			modifier = {
+				has_game_rule = {
+					rule = AH_KMK_ai_behavior_SELECTION
+					option = KMK_GAME_RULE_3
+				}
+				add = -10
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					is_power_balance_in_range = {
+						id = KMK_balance
+						range = right_side_range
+					}
+				}
+				country_event = {
+					id = KMK.0010
+					days = 7
+				}
+			}
+			else_if = {
+				limit = {
+					is_power_balance_in_range = {
+						id = KMK_balance
+						range = left_side_range
+					}
+				}
+				country_event = {
+					id = KMK.0009
+					days = 7
+				}
+			}
+			else = {
+				country_event = {
+					id = KMK.0012
+					days = 7
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	#告别大萧条
+	id = KMK.0018
+	title = KMK.0018.t
+	desc = KMK.0018.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	picture = GFX_KMK_leimi_event
+	option = {
+		name = KMK.0018.a
+	}
+}
+
+country_event = {
+	#告别大萧条
+	id = KMK.0019
+	title = KMK.0018.t
+	desc = KMK.0018.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	picture = GFX_KMK_fulan_event
+	option = {
+		name = KMK.0018.a
+	}
+}
+
+country_event = {
+	#告别大萧条
+	id = KMK.0020
+	title = KMK.0018.t
+	desc = KMK.0018.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	picture = GFX_KMK_9_event
+	option = {
+		name = KMK.0018.a
+	}
+}
+
+country_event = {
+	#重启《白玉楼条约》谈判
+	id = KMK.0021
+	title = KMK.0021.t
+	desc = KMK.0021.desc
+	picture = GFX_KMK_leimi_event
+	is_triggered_only = yes
+	fire_only_once = no
+	#picture = GFX_KMK_9_event
+	option = {
+		name = KMK.0021.a
+		KMK = {
+			country_event = {
+				id = KMK.0022
+				days = 1
+			}
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = KMK.0021.b
+		ai_chance = {
+			base = 10
+		}
+		trigger = {
+			is_faction_leader = yes
+		}
+		KMK = {
+			country_event = {
+				id = KMK.0023
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = KMK.0021.c
+		ai_chance = {
+			base = 10
+		}
+		trigger = {
+			is_faction_leader = yes
+		}
+		KMK = {
+			country_event = {
+				id = KMK.0024
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = KMK.0021.d
+		ai_chance = {
+			base = 0
+		}
+		KMK = {
+			country_event = {
+				id = KMK.0025
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	#圣杯的条件-钱
+	id = KMK.0022
+	title = KMK.0022.t
+	desc = KMK.0022.desc
+	picture = GFX_KMK_leimi_event
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = KMK.0022.a
+		add_timed_idea = {
+			idea = KMK_Reparations_under_the_Treaty
+			days = 720
+		}
+		ENG = {
+			add_timed_idea = {
+				idea = ENG_Reparations_under_the_Treaty
+				days = 720
+			}
+		}
+		KMK = {
+			transfer_state = 30
+			transfer_state = 23
+			transfer_state = 14
+			transfer_state = 983
+		}
+		ai_chance = {
+			base = 10
+		}
+		set_global_flag = white_tower_meeting_1
+		news_event = {
+			#白玉楼会议
+			id = KMK_news.0004
+			days = 1
+		}
+	}
+	option = {
+		name = KMK.0022.b
+		set_country_flag = fall_of_White_Jade_Tower_Conference
+		ai_chance = {
+			base = 0
+		}
+		set_global_flag = white_tower_meeting_5
+		news_event = {
+			#白玉楼会议
+			id = KMK_news.0004
+			days = 1
+		}
+	}
+}
+
+country_event = {
+	#圣杯的条件-阵营
+	id = KMK.0023
+	title = KMK.0022.t
+	desc = KMK.0023.desc
+	picture = GFX_KMK_leimi_event
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = KMK.0022.a
+		ENG = {
+			add_to_faction = KMK
+		}
+		KMK = {
+			transfer_state = 30
+			transfer_state = 23
+			transfer_state = 14
+			transfer_state = 983
+		}
+		ai_chance = {
+			base = 10
+		}
+		set_global_flag = white_tower_meeting_2
+		news_event = {
+			#白玉楼会议
+			id = KMK_news.0004
+			days = 1
+		}
+	}
+	option = {
+		name = KMK.0022.b
+		set_country_flag = fall_of_White_Jade_Tower_Conference
+		ai_chance = {
+			base = 0
+		}
+		set_global_flag = white_tower_meeting_5
+		news_event = {
+			#白玉楼会议
+			id = KMK_news.0004
+			days = 1
+		}
+	}
+}
+
+country_event = {
+	#圣杯的条件-钱以及阵营
+	id = KMK.0024
+	title = KMK.0022.t
+	desc = KMK.0024.desc
+	picture = GFX_KMK_leimi_event
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = KMK.0022.a
+		add_timed_idea = {
+			idea = KMK_Reparations_under_the_Treaty
+			days = 720
+		}
+		ENG = {
+			add_timed_idea = {
+				idea = ENG_Reparations_under_the_Treaty
+				days = 720
+			}
+		}
+		ENG = {
+			add_to_faction = KMK
+		}
+		KMK = {
+			transfer_state = 30
+			transfer_state = 23
+			transfer_state = 14
+			transfer_state = 983
+		}
+		ai_chance = {
+			base = 10
+		}
+		set_global_flag = white_tower_meeting_3
+		news_event = {
+			#白玉楼会议
+			id = KMK_news.0004
+			days = 1
+		}
+	}
+	option = {
+		name = KMK.0022.b
+		set_country_flag = fall_of_White_Jade_Tower_Conference
+		ai_chance = {
+			base = 0
+		}
+		set_global_flag = white_tower_meeting_5
+		news_event = {
+			#白玉楼会议
+			id = KMK_news.0004
+			days = 1
+		}
+	}
+}
+
+country_event = {
+	#圣杯的条件-无条件
+	id = KMK.0025
+	title = KMK.0022.t
+	desc = KMK.0025.desc
+	picture = GFX_KMK_leimi_event
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = KMK.0025.a
+		KMK = {
+			transfer_state = 30
+			transfer_state = 23
+			transfer_state = 14
+			transfer_state = 983
+		}
+		ai_chance = {
+			base = 10
+		}
+		set_global_flag = white_tower_meeting_4
+		news_event = {
+			#白玉楼会议
+			id = KMK_news.0004
+			days = 1
+		}
+	}
+}
+
+country_event = {
+	#[KMK.Getname]请求经济援助
+	id = KMK.0026
+	title = KMK.0026.t
+	desc = KMK.0026.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	picture = GFX_KMK_9_event
+	option = {
+		name = KMK.0026.a
+		KMK = {
+			country_event = {
+				id = KMK.0027
+				days = 1
+			}
+		}
+		add_political_power = -50
+		ai_chance = {
+			base = 8
+		}
+	}
+	option = {
+		name = KMK.0026.b
+		KMK = {
+			country_event = {
+				id = KMK.0028
+				days = 1
+			}
+		}
+		ai_chance = {
+			base = 2
+		}
+	}
+}
+
+country_event = {
+	#[FROM.Getname]同意了
+	id = KMK.0027
+	title = KMK.0027.t
+	desc = KMK.0027.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	picture = GFX_KMK_9_event
+	option = {
+		name = KMK.0027.a
+		add_ideas = KMK_Soviet_economic_assistance
+	}
+}
+
+country_event = {
+	#[FROM.Getname]拒绝了
+	id = KMK.0028
+	title = KMK.0028.t
+	desc = KMK.0028.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	picture = GFX_KMK_9_event
+	option = {
+		name = KMK.0028.a
+		set_country_flag = The_USSR_refused_to_provide_economic_aid
+	}
+}
+
+#尚未完成
+country_event = {
+	id = KMK.0029
+	title = KMK.0029.t
+	desc = KMK.0029.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	picture = GFX_KMK_leimi_event
+	option = {
+		name = KMK.0029.a
+	}
+}
+
+##################################################################
+##################      新    闻     #############################
+##################################################################
+news_event = {
+	#琪露诺
+	id = KMK_news.0001
+	title = KMK_news.0001.t
+	desc = KMK_news.0001.desc
+	picture = GFX_KMK_Cirno_in_power
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	fire_only_once = no
+	option = {
+		name = KMK_news.0001.a
+		trigger = {
+			tag = KMK
+		}
+	}
+	option = {
+		name = KMK_news.0001.b
+		trigger = {
+			tag = FRA
+		}
+	}
+	option = {
+		name = KMK_news.0001.c
+		trigger = {
+			not = {
+				or = {
+					tag = FRA
+					tag = KMK
+				}
+			}
+			has_government = communism
+		}
+	}
+	option = {
+		name = KMK_news.0001.d
+		trigger = {
+			not = {
+				or = {
+					tag = FRA
+					tag = KMK
+					has_government = communism
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	#二小姐
+	id = KMK_news.0002
+	title = KMK_news.0002.t
+	desc = KMK_news.0002.desc
+	picture = GFX_KMK_Flandre_in_power
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	fire_only_once = no
+	option = {
+		name = KMK_news.0002.a
+		trigger = {
+			tag = KMK
+		}
+	}
+	option = {
+		name = KMK_news.0002.b
+		trigger = {
+			tag = FRA
+		}
+	}
+	option = {
+		name = KMK_news.0002.c
+		trigger = {
+			not = {
+				or = {
+					tag = FRA
+					tag = KMK
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	#斯卡蕾特帝国的延续
+	id = KMK_news.0003
+	title = KMK_news.0003.t
+	desc = KMK_news.0003.desc
+	picture = GFX_KMK_Remilia_reunit
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	fire_only_once = no
+	option = {
+		name = KMK_news.0003.a
+		set_country_flag = super_event_FRA_unit_2
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			tag = KMK
+		}
+	}
+	option = {
+		name = KMK_news.0003.b
+		set_country_flag = super_event_FRA_unit_2
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			tag = DVL
+		}
+	}
+	option = {
+		name = KMK_news.0003.c
+		set_country_flag = super_event_FRA_unit_2
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			not = {
+				or = {
+					tag = DVL
+					tag = KMK
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	#白玉楼会议
+	id = KMK_news.0004
+	title = KMK_news.0004.t
+	desc = {
+		text = KMK_news.0004.desc.1
+		trigger = {
+			has_global_flag = white_tower_meeting_1
+		}
+	}
+	desc = {
+		text = KMK_news.0004.desc.2
+		trigger = {
+			has_global_flag = white_tower_meeting_2
+		}
+	}
+	desc = {
+		text = KMK_news.0004.desc.3
+		trigger = {
+			has_global_flag = white_tower_meeting_3
+		}
+	}
+	desc = {
+		text = KMK_news.0004.desc.4
+		trigger = {
+			has_global_flag = white_tower_meeting_4
+		}
+	}
+	desc = {
+		text = KMK_news.0004.desc.5
+		trigger = {
+			has_global_flag = white_tower_meeting_5
+		}
+	}
+	picture = GFX_whit_tower_meeting
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	fire_only_once = no
+	option = {
+		name = KMK_news.0004.a
+		trigger = {
+			not = {
+				has_global_flag = white_tower_meeting_5
+			}
+			or = {
+				tag = KMK
+				tag = ENG
+				is_in_faction_with = ENG
+				is_subject_of = KMK
+			}
+		}
+	}
+	option = {
+		name = KMK_news.0004.b
+		trigger = {
+			tag = DVL
+		}
+	}
+	option = {
+		name = KMK_news.0004.c
+		trigger = {
+			not = {
+				has_global_flag = white_tower_meeting_5
+			}
+			has_government = communism
+		}
+	}
+	option = {
+		name = KMK_news.0004.d
+		trigger = {
+			not = {
+				has_global_flag = white_tower_meeting_5
+			}
+			not = {
+				or = {
+					tag = DVL
+					tag = KMK
+					tag = ENG
+					has_government = communism
+					is_in_faction_with = ENG
+					is_subject_of = KMK
+				}
+			}
+		}
+	}
+	option = {
+		name = KMK_news.0004.e
+		trigger = {
+			has_global_flag = white_tower_meeting_5
+			or = {
+				tag = KMK
+				is_subject_of = KMK
+			}
+		}
+	}
+	option = {
+		name = KMK_news.0004.f
+		trigger = {
+			has_global_flag = white_tower_meeting_5
+			or = {
+				tag = ENG
+				is_in_faction_with = ENG
+			}
+		}
+	}
+	option = {
+		name = KMK_news.0004.g
+		trigger = {
+			has_global_flag = white_tower_meeting_5
+			has_government = communism
+		}
+	}
+	option = {
+		name = KMK_news.0004.h
+		trigger = {
+			has_global_flag = white_tower_meeting_5
+			not = {
+				tag = DVL
+				tag = KMK
+				is_subject_of = KMK
+				tag = ENG
+				is_in_faction_with = ENG
+				has_government = communism
+			}
+		}
+	}
+}
+
+#################
+######测 试#######
+##################
+country_event = {
+	#直升机
+	id = KMK.2000
+	title = KMK.2000.t
+	#desc = KMK.2000.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = KMK.2000.a
+		set_technology = {
+			Siege_helicopter_0 = 1
+		}
+	}
+	option = {
+		name = KMK.2000.b
+		set_technology = {
+			Siege_helicopter_1 = 1
+		}
+	}
+	option = {
+		name = KMK.2000.b
+		set_technology = {
+			Siege_helicopter_2 = 1
+		}
+	}
+	option = {
+		name = KMK.2000.b
+		set_technology = {
+			Siege_helicopter_3 = 1
+		}
+	}
+	option = {
+		name = KMK.2000.b
+		set_technology = {
+			Siege_helicopter_4 = 1
+		}
+	}
+}
+
+country_event = {
+	#
+	id = KMK.2001
+	title = KMK.2000.t
+	#desc = KMK.2000.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = KMK.2000.a
+		add_to_variable = {
+			KMK_Financial_crisis_consumer_goods_factor = 1
+		}
+	}
+	option = {
+		name = KMK.2000.a
+		add_to_variable = {
+			KMK_Financial_crisis_stability_factor = 1
+		}
+	}
+	option = {
+		name = KMK.2000.a
+		add_to_variable = {
+			FRA_election_states_01_var = 1
+		}
+	}
+}
+
+country_event = {
+	#
+	id = KMK.2002
+	title = KMK.2000.t
+	#desc = KMK.2000.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = KMK.2000.a
+		add_to_variable = {
+			FRA_election_state_power_01_var = 20
+		}
+	}
+	option = {
+		name = KMK.2000.a
+		add_to_variable = {
+			FRA_election_state_power_01_var = -20
+		}
+	}
+	option = {
+		name = KMK.2000.a
+		set_country_flag = super_event_THE_BIG_DEPRESSION
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+	}
+	option = {
+		name = KMK.2000.a
+		set_country_flag = super_event_PAN_USER
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+	}
+	option = {
+		name = KMK.2000.a
+		set_country_flag = super_event_PAN_WSY
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+	}
+}
+
+country_event = {
+	#
+	id = KMK.2003
+	title = KMK.2000.t
+	#desc = KMK.2000.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = KMK.2000.a
+		set_variable = {
+			FRA_Government_support_button_var = 1
+		}
+	}
+	option = {
+		name = KMK.2000.a
+		set_variable = {
+			FRA_Government_support_button_var = 2
+		}
+	}
+	option = {
+		name = KMK.2000.a
+		add_to_array = {
+			Gensokyo_Parlement_window_array = 1
+		}
+	}
+}

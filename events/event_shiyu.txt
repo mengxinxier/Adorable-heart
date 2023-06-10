@@ -1,0 +1,1707 @@
+﻿###########################
+# shiyu Events
+###########################
+add_namespace = shiyu
+# 与依甸为敌
+country_event = {
+	id = shiyu.500
+	title = shiyu.500.t
+	desc = shiyu.500.d
+	picture = GFX_report_event_canadian_soldiers
+	is_triggered_only = no
+	fire_only_once = no
+	trigger = {
+		SHY = {
+			has_country_leader = {
+				ruling_only = yes
+				character = SHY_carlos_prio
+			}
+		}
+		NOT = {
+			has_country_flag = MGU_ANTI_SHY_MAGIC
+		}
+		OR = {
+			AND = {
+				has_war_with = SHY
+				SHY = {
+					has_idea = yidianmofa
+				}
+			}
+			AND = {
+				has_war_with = AST
+				AST = {
+					has_idea = yidianmofa
+				}
+			}
+		}
+		not = {
+			has_idea = diren
+		}
+		not = {
+			has_idea = chengfa
+		}
+	}
+	option = {
+		name = shiyu.500.b
+		if = {
+			limit = {
+				has_war_with = SHY
+			}
+			add_ideas = diren
+		}
+		else_if = {
+			limit = {
+				has_war_with = AST
+			}
+			add_ideas = chengfa
+		}
+	}
+}
+
+# 依甸和平/投降
+country_event = {
+	id = shiyu.501
+	title = shiyu.501.t
+	desc = shiyu.501.d
+	picture = GFX_report_event_canadian_soldiers
+	is_triggered_only = no
+	fire_only_once = no
+	trigger = {
+		OR = {
+			AND = {
+				has_idea = diren
+				OR = {
+					not = {
+						has_war_with = SHY
+					}
+					SHY = {
+						NOT = {
+							has_idea = yidianmofa
+						}
+					}
+				}
+			}
+			AND = {
+				has_idea = chengfa
+				OR = {
+					not = {
+						has_war_with = AST
+					}
+					AST = {
+						NOT = {
+							has_idea = yidianmofa
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = shiyu.501.a
+		if = {
+			limit = {
+				not = {
+					has_war_with = SHY
+				}
+			}
+			remove_ideas = diren
+		}
+		if = {
+			limit = {
+				not = {
+					has_war_with = AST
+				}
+			}
+			remove_ideas = chengfa
+		}
+	}
+}
+
+# 和樱花帝国谈判
+country_event = {
+	id = shiyu.1
+	title = shiyu.1.t
+	desc = shiyu.1.d
+	picture = GFX_report_event_asian_politicians
+	is_triggered_only = yes
+	option = {
+		name = shiyu.1.a
+		ai_chance = {
+			base = 80
+		}
+		SHY = {
+			add_to_faction = JAP
+			country_event = {
+				days = 1
+				id = shiyu.2
+			}
+		}
+		CHI = {
+			country_event = {
+				days = 2
+				id = shiyu.3
+			}
+		}
+	}
+	option = {
+		name = shiyu.1.b
+		ai_chance = {
+			base = 20
+		}
+		SHY = {
+			country_event = {
+				days = 1
+				id = shiyu.4
+			}
+		}
+	}
+}
+
+# 日本同意瓜分东亚
+country_event = {
+	id = shiyu.2
+	title = shiyu.2.t
+	desc = shiyu.2.d
+	picture = GFX_report_event_chinese_shiyuese_handshake
+	is_triggered_only = yes
+	option = {
+		name = shiyu.2.a
+		SHY = {
+			transfer_state = 524
+		}
+	}
+}
+
+# （中国）世羽调停战争三个选项
+country_event = {
+	id = shiyu.3
+	title = shiyu.3.t
+	desc = shiyu.3.d
+	picture = GFX_report_event_chinese_shiyuese_handshake
+	is_triggered_only = yes
+	option = {
+		name = shiyu.3.a
+		ai_chance = {
+			base = 20
+		}
+		CHI = {
+			remove_from_faction = CHI
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+		}
+		SHY = {
+			white_peace = CHI
+			white_peace = SHX
+			add_to_faction = CHI
+			add_state_core = 524
+			country_event = {
+				days = 2
+				id = shiyu.20
+			}
+		}
+		JAP = {
+			white_peace = CHI
+			white_peace = SHX
+		}
+		XSM = {
+			create_wargoal = {
+				type = take_state
+				target = CHI
+				generator = owned_states
+			}
+		}
+		SHX = {
+			create_wargoal = {
+				type = take_state
+				target = CHI
+				generator = owned_states
+			}
+		}
+		YUN = {
+			create_wargoal = {
+				type = take_state
+				target = CHI
+				generator = owned_states
+			}
+		}
+		PRC = {
+			create_wargoal = {
+				type = take_state
+				target = CHI
+				generator = owned_states
+			}
+		}
+		GXC = {
+			create_wargoal = {
+				type = take_state
+				target = CHI
+				generator = owned_states
+			}
+		}
+	}
+	option = {
+		name = shiyu.3.b
+		ai_chance = {
+			base = 70
+		}
+		SHY = {
+			add_state_core = 524
+			white_peace = CHI
+			white_peace = SHX
+			country_event = {
+				days = 1
+				id = shiyu.21
+			}
+		}
+		JAP = {
+			white_peace = CHI
+			white_peace = SHX
+			give_military_access = CHI
+			give_military_access = PRC
+			give_military_access = XSM
+			give_military_access = GXC
+		}
+	}
+	option = {
+		name = shiyu.3.c
+		ai_chance = {
+			base = 10
+		}
+		CHI = {
+			create_wargoal = {
+				target = SHY
+				type = take_state
+			}
+			add_timed_idea = {
+				idea = SHY_109
+				days = 183
+			}
+		}
+		SHY = {
+			country_event = {
+				days = 1
+				id = shiyu.32
+			}
+		}
+	}
+}
+
+# 日本不停战
+country_event = {
+	id = shiyu.4
+	title = shiyu.4.t
+	desc = shiyu.4.d
+	picture = GFX_report_event_chinese_shiyuese_handshake
+	is_triggered_only = yes
+	option = {
+		name = shiyu.4.a
+		create_wargoal = {
+			type = take_state
+			target = JAP
+			generator = owned_states
+		}
+	}
+}
+
+# 中国加入我们
+country_event = {
+	id = shiyu.20
+	title = shiyu.20.t
+	desc = shiyu.20.d
+	picture = GFX_report_event_chinese_shiyuese_handshake
+	is_triggered_only = yes
+	option = {
+		name = shiyu.20.a
+	}
+}
+
+# 中国同意和谈
+country_event = {
+	id = shiyu.21
+	title = shiyu.21.t
+	desc = shiyu.21.d
+	picture = GFX_report_event_chinese_shiyuese_handshake
+	is_triggered_only = yes
+	option = {
+		name = shiyu.21.a
+	}
+}
+
+# 中国拒绝
+country_event = {
+	id = shiyu.32
+	title = shiyu.32.t
+	desc = shiyu.32.d
+	picture = GFX_report_event_chinese_shiyuese_handshake
+	is_triggered_only = yes
+	option = {
+		name = shiyu.32.a
+		create_wargoal = {
+			type = take_state
+			target = CHI
+			generator = owned_states
+		}
+	}
+}
+
+# 傀儡秘鲁
+country_event = {
+	id = shiyu.16
+	title = shiyu.16.t
+	desc = shiyu.16.d
+	picture = GFX_report_event_asian_politicians
+	is_triggered_only = yes
+	#Accept - become puppet
+	option = {
+		name = shiyu.16.a
+		ai_chance = {
+			base = 99
+		}
+		SHY = {
+			country_event = {
+				id = shiyu.17
+			}
+			effect_tooltip = {
+				puppet = PRU
+			}
+		}
+	}
+	option = {
+		name = shiyu.16.b
+		ai_chance = {
+			base = 1
+		}
+		SHY = {
+			country_event = {
+				id = shiyu.18
+			}
+			effect_tooltip = {
+				create_wargoal = {
+					type = take_state
+					target = PRU
+					generator = owned_states
+				}
+			}
+		}
+	}
+}
+
+# 秘鲁同意成为傀儡
+country_event = {
+	id = shiyu.17
+	title = shiyu.17.t
+	desc = shiyu.17.d
+	picture = GFX_report_event_lithuania_army
+	is_triggered_only = yes
+	option = {
+		name = shiyu.17.a
+		puppet = PRU
+		hidden_effect = {
+			country_event = {
+				days = 1
+				id = news.741
+			}
+		}
+	}
+}
+
+# 秘鲁拒绝，获得战争目标
+country_event = {
+	id = shiyu.18
+	title = shiyu.18.t
+	desc = shiyu.18.d
+	picture = GFX_report_event_chinese_soldiers_02
+	is_triggered_only = yes
+	option = {
+		name = shiyu.18.a
+		create_wargoal = {
+			type = take_state
+			target = PRU
+			generator = owned_states
+		}
+	}
+}
+
+# 苏联同意
+country_event = {
+	id = shiyu.775
+	title = shiyu.775.t
+	desc = shiyu.775.d
+	picture = GFX_report_event_canadian_soldiers
+	is_triggered_only = yes
+	option = {
+		name = shiyu.775.a
+		SOV = {
+			add_to_faction = SHY
+		}
+	}
+}
+
+# 苏联拒绝
+country_event = {
+	id = shiyu.233
+	title = shiyu.233.t
+	desc = shiyu.233.d
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	option = {
+		name = shiyu.233.a
+	}
+}
+
+# 中国志愿军
+country_event = {
+	id = shiyu.13
+	title = shiyu.13.t
+	desc = shiyu.13.d
+	picture = GFX_report_event_vienna_award_hungary
+	is_triggered_only = yes
+	option = {
+		name = excellent
+		add_timed_idea = {
+			idea = renli
+			days = 200
+		}
+	}
+}
+
+# 世羽独裁
+country_event = {
+	id = shiyu.960
+	title = shiyu.960.t
+	desc = shiyu.960.d
+	picture = GFX_report_event_canadian_soldiers
+	is_triggered_only = yes
+	option = {
+		name = shiyu.960.a
+		add_stability = 0.1
+	}
+}
+
+# 反对皇室
+country_event = {
+	id = shiyu.111
+	title = shiyu.111.t
+	desc = shiyu.111.d
+	picture = GFX_report_event_vienna_award_hungary
+	is_triggered_only = yes
+	option = {
+		name = shiyu.111.a
+		add_stability = -0.1
+		army_experience = 10
+	}
+}
+
+# 澳大利亚屈服
+country_event = {
+	id = shiyu.22
+	title = shiyu.22.t
+	desc = shiyu.22.d
+	picture = GFX_report_event_vienna_award_hungary
+	is_triggered_only = yes
+	option = {
+		name = excellent
+		SHY = {
+			transfer_state = 634
+			transfer_state = 737
+			transfer_state = 523
+			transfer_state = 669
+			transfer_state = 843
+			transfer_state = 757
+		}
+		SHY = {
+			give_military_access = AST
+		}
+	}
+}
+
+# 澳大利亚拒绝
+country_event = {
+	id = shiyu.23
+	title = shiyu.23.t
+	desc = shiyu.23.d
+	picture = GFX_report_event_lithuania_army
+	is_triggered_only = yes
+	option = {
+		name = news.330.b
+		create_wargoal = {
+			type = take_state
+			target = AST
+			generator = {
+				634
+			}
+		}
+	}
+}
+
+# 圣杯屈服给岛
+country_event = {
+	id = shiyu.6
+	title = shiyu.6.t
+	desc = shiyu.6.d
+	picture = GFX_report_event_vienna_award_hungary
+	is_triggered_only = yes
+	option = {
+		name = excellent
+		SHY = {
+			transfer_state = 635
+		}
+		SHY = {
+			give_military_access = NZL
+		}
+	}
+}
+
+# 圣杯拒绝给岛
+country_event = {
+	id = shiyu.7
+	title = shiyu.7.t
+	desc = shiyu.7.d
+	picture = GFX_report_event_lithuania_army
+	is_triggered_only = yes
+	option = {
+		name = news.330.b
+		create_wargoal = {
+			type = take_state
+			target = ENG
+			generator = {
+				635
+			}
+		}
+	}
+}
+
+# 圣杯同意
+country_event = {
+	id = shiyu.88
+	title = shiyu.88.t
+	desc = shiyu.88.d
+	picture = GFX_report_event_vienna_award_hungary
+	is_triggered_only = yes
+	option = {
+		name = excellent
+		add_timed_idea = {
+			idea = SHY_113
+			days = 100
+		}
+		SHY = {
+			transfer_state = 270
+			transfer_state = 636
+			transfer_state = 643
+			transfer_state = 639
+			transfer_state = 725
+			transfer_state = 941
+			transfer_state = 641
+		}
+		SHY = {
+			give_military_access = ENG
+		}
+	}
+}
+
+# 圣杯拒绝
+country_event = {
+	id = shiyu.99
+	title = shiyu.99.t
+	desc = shiyu.99.d
+	picture = GFX_report_event_lithuania_army
+	is_triggered_only = yes
+	option = {
+		name = news.330.b
+		create_wargoal = {
+			type = take_state
+			target = ENG
+			generator = {
+				270
+			}
+		}
+	}
+}
+
+# 苏联交易
+country_event = {
+	id = shiyu.44
+	title = shiyu.44.t
+	desc = shiyu.44.d
+	picture = GFX_report_event_lithuania_army
+	is_triggered_only = yes
+	option = {
+		name = excellent
+		add_timed_idea = {
+			idea = jianzhu
+			days = 200
+		}
+	}
+}
+
+# 苏联不交易
+country_event = {
+	id = shiyu.45
+	title = shiyu.233.t
+	desc = shiyu.233.d
+	picture = GFX_report_event_lithuania_army
+	is_triggered_only = yes
+	option = {
+		name = shiyu.233.a
+	}
+}
+
+# 日本同意
+country_event = {
+	id = shiyu.98
+	title = shiyu.98.t
+	desc = shiyu.98.d
+	picture = GFX_report_event_lithuania_army
+	is_triggered_only = yes
+	option = {
+		name = excellent
+		add_timed_idea = {
+			idea = zujie
+			days = 365
+		}
+	}
+}
+
+# 日本拒绝
+country_event = {
+	id = shiyu.95
+	title = shiyu.95.t
+	desc = shiyu.95.d
+	picture = GFX_report_event_lithuania_army
+	is_triggered_only = yes
+	option = {
+		name = news.330.b
+	}
+}
+
+# 依甸来华
+country_event = {
+	id = shiyu.47
+	title = shiyu.47.t
+	desc = shiyu.47.d
+	picture = GFX_report_event_japan_army_mountainside
+	is_triggered_only = yes
+	option = {
+		# Accept demands
+		name = bangzhu
+		add_timed_idea = {
+			idea = baifang
+			days = 200
+		}
+		SHY = {
+			country_event = {
+				days = 2
+				id = shiyu.13
+			}
+		}
+	}
+}
+
+#樱花与依甸的和平条约
+country_event = {
+	id = shiyu.48
+	title = shiyu.48.t
+	desc = shiyu.48.d
+	picture = GFX_report_event_physics_lab_01
+	is_triggered_only = yes
+	option = {
+		name = shiyu.48.a		#sounds good
+		SHY = {
+			country_event = {
+				days = 1
+				id = shiyu.49
+			}
+		}
+		add_opinion_modifier = {
+			target = SHY
+			modifier = shy_pro_ally
+		}
+		add_opinion_modifier = {
+			target = SHY
+			modifier = shy_treaty_trade
+		}
+	}
+	option = {
+		name = shiyu.48.b		#no way 
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -20
+		add_opinion_modifier = {
+			target = SHY
+			modifier = refused_shy_pact
+		}
+		# no pact 
+		SHY = {
+			country_event = {
+				days = 1
+				id = shiyu.50
+			}
+		}
+	}
+}
+
+#中国与依甸的和平条约
+country_event = {
+	id = shiyu.58
+	title = shiyu.58.t
+	desc = shiyu.58.d
+	picture = GFX_report_event_physics_lab_01
+	is_triggered_only = yes
+	option = {
+		name = shiyu.58.a		#sounds good
+		SHY = {
+			country_event = {
+				days = 1
+				id = shiyu.51
+			}
+		}
+		add_opinion_modifier = {
+			target = SHY
+			modifier = shy_pro_ally
+		}
+		add_opinion_modifier = {
+			target = SHY
+			modifier = shy_treaty_trade
+		}
+	}
+	option = {
+		name = shiyu.58.b		#no way 
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -20
+		add_opinion_modifier = {
+			target = SHY
+			modifier = refused_shy_pact
+		}
+		# no pact 
+		SHY = {
+			country_event = {
+				days = 1
+				id = shiyu.51
+			}
+		}
+	}
+}
+
+# 樱花签署和平条约
+country_event = {
+	id = shiyu.49
+	title = shiyu.49.t
+	desc = shiyu.49.d
+	picture = GFX_report_event_physics_lab_02
+	is_triggered_only = yes
+	option = {
+		name = shiyu.49.a		#bah
+		add_opinion_modifier = {
+			target = JAP
+			modifier = shy_pro_ally
+		}
+		add_opinion_modifier = {
+			target = JAP
+			modifier = shy_treaty_trade
+		}
+	}
+}
+
+#樱花拒签和平协议
+country_event = {
+	id = shiyu.50
+	title = shiyu.50.t
+	desc = shiyu.50.d
+	picture = GFX_report_event_physics_lab_02
+	is_triggered_only = yes
+	option = {
+		name = shiyu.50.a
+		ROOT = {
+			add_opinion_modifier = {
+				target = JAP
+				modifier = refused_shy_pact
+			}
+			# no pact
+		}
+	}
+}
+
+# 中国签署和平条约
+country_event = {
+	id = shiyu.51
+	title = shiyu.51.t
+	desc = shiyu.51.d
+	picture = GFX_report_event_physics_lab_02
+	is_triggered_only = yes
+	option = {
+		name = shiyu.49.a		#bah
+		SHY = {
+			add_opinion_modifier = {
+				target = CHI
+				modifier = shy_pro_ally
+			}
+			add_opinion_modifier = {
+				target = CHI
+				modifier = shy_treaty_trade
+			}
+		}
+	}
+}
+
+#中国拒签和平协议
+country_event = {
+	id = shiyu.52
+	title = shiyu.52.t
+	desc = shiyu.52.d
+	picture = GFX_report_event_physics_lab_02
+	is_triggered_only = yes
+	option = {
+		name = shiyu.50.a
+		add_opinion_modifier = {
+			target = CHI
+			modifier = refused_shy_pact
+		}
+		# no pact
+	}
+}
+
+#世羽卖棉花糖
+country_event = {
+	id = shiyu.53
+	title = shiyu.53.t
+	desc = shiyu.53.d
+	picture = GFX_report_event_physics_lab_02
+	is_triggered_only = yes
+	option = {
+		name = shiyu.53.a
+		ai_chance = {
+			base = 99
+		}
+		SHY = {
+			country_event = {
+				days = 1
+				id = shiyu.54
+			}
+		}
+		add_ideas = mianhuatang
+	}
+	option = {
+		name = shiyu.53.b
+		ai_chance = {
+			base = 1
+		}
+		SHY = {
+			country_event = {
+				days = 1
+				id = shiyu.55
+			}
+		}
+	}
+}
+
+#中国买我们的棉花糖
+country_event = {
+	id = shiyu.54
+	title = shiyu.54.t
+	desc = shiyu.54.d
+	picture = GFX_report_event_physics_lab_02
+	is_triggered_only = yes
+	option = {
+		name = shiyu.54.a
+		add_ideas = chukou
+	}
+}
+
+#中国不买棉花糖
+country_event = {
+	id = shiyu.55
+	title = shiyu.55.t
+	desc = shiyu.55.d
+	picture = GFX_report_event_physics_lab_02
+	is_triggered_only = yes
+	option = {
+		name = shiyu.50.a
+	}
+}
+
+#外籍将领
+country_event = {
+	id = shiyu.56
+	title = shiyu.56.t
+	desc = shiyu.56.d
+	picture = GFX_report_event_czech_soldiers_02
+	is_triggered_only = yes
+	option = {
+		name = shiyu.56.a
+		create_corps_commander = {
+			name = "曲林静树"
+			picture = "jingshu.dds"
+			traits = {
+				infantry_officer
+				cavalry_officer
+				commando
+				ranger
+			}
+			skill = 3
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 4
+		}
+		create_corps_commander = {
+			name = "木下秀吉"
+			picture = "xiuji.dds"
+			traits = {
+				career_officer
+				armor_officer
+				jungle_rat
+			}
+			skill = 4
+			attack_skill = 3
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 4
+		}
+		create_corps_commander = {
+			name = "有川姬"
+			picture = "youchuanji.dds"
+			traits = {
+				inflexible_strategist
+				trait_cautious
+				trait_engineer
+				ranger
+			}
+			skill = 4
+			attack_skill = 6
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 4
+		}
+		create_corps_commander = {
+			name = "泷口伊月"
+			picture = "yiyue.dds"
+			traits = {
+				bearer_of_artillery
+				trait_reckless
+				trickster
+				trait_mountaineer
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 5
+			logistics_skill = 4
+		}
+	}
+}
+
+#巴拿马条约
+country_event = {
+	id = shiyu.57
+	title = shiyu.57.t
+	desc = shiyu.57.d
+	picture = GFX_report_event_physics_lab_02
+	is_triggered_only = yes
+	option = {
+		name = shiyu.57.a
+		ai_chance = {
+			base = 10
+			modifier = {
+				add = 15
+				OR = {
+					num_of_factories > 150
+					NOT = {
+						has_government = democratic
+					}
+					CAN = {
+						has_government = fascism
+					}
+					MEX = {
+						NOT = {
+							has_government = neutrality
+							has_government = democratic
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				MEX = {
+					is_subject = no
+				}
+				country_exists = MEX
+			}
+			MEX = {
+				country_event = shiyu.67
+			}
+		}
+		if = {
+			limit = {
+				PAN = {
+					is_subject = no
+				}
+				country_exists = PAN
+			}
+			annex_country = {
+				target = PAN
+			}
+		}
+		add_timed_idea = {
+			idea = yidianyuanzhu
+			days = 200
+		}
+		SHY = {
+			country_event = {
+				id = shiyu.59
+			}
+		}
+	}
+	option = {
+		name = shiyu.57.b
+		ai_chance = {
+			base = 5
+			modifier = {
+				add = 15
+				strength_ratio = {
+					tag = SHY
+					ratio > 1
+				}
+			}
+		}
+		add_war_support = 0.1
+		give_guarantee = PAN
+		give_guarantee = COS
+		give_guarantee = NIC
+		give_guarantee = HON
+		give_guarantee = GUA
+		give_guarantee = MEX
+		SHY = {
+			country_event = {
+				id = shiyu.60
+			}
+		}
+	}
+}
+
+#羽国在巴拿马条约的利益
+country_event = {
+	id = shiyu.59
+	title = shiyu.59.t
+	desc = shiyu.59.d
+	picture = GFX_report_event_physics_lab_02
+	is_triggered_only = yes
+	option = {
+		name = shiyu.59.a
+		if = {
+			limit = {
+				COS = {
+					is_subject = no
+				}
+				country_exists = COS
+			}
+			puppet = COS
+		}
+		if = {
+			limit = {
+				NIC = {
+					is_subject = no
+				}
+				country_exists = NIC
+			}
+			puppet = NIC
+		}
+		if = {
+			limit = {
+				HON = {
+					is_subject = no
+				}
+				country_exists = HON
+			}
+			puppet = HON
+		}
+		if = {
+			limit = {
+				GUA = {
+					is_subject = no
+				}
+				country_exists = GUA
+			}
+			puppet = GUA
+		}
+		news_event = {
+			days = 1
+			id = news.731
+		}
+	}
+}
+
+# 要地
+country_event = {
+	id = shiyu.77
+	title = tfv_australia.47.t
+	desc = tfv_australia.47.d
+	picture = GFX_report_event_japan_army_mountainside
+	is_triggered_only = yes
+	option = {
+		# Accept demands
+		name = france.1.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 50
+				has_war = yes
+				any_enemy_country = {
+					strength_ratio = {
+						tag = ROOT
+						ratio < 0.4
+					}
+				}
+			}
+			modifier = {
+				factor = 75
+				16 = {
+					NOT = {
+						is_controlled_by = AST
+					}
+				}
+				#Paris	
+			}
+		}
+		SHY = {
+			country_event = {
+				days = 5
+				id = shiyu.22
+			}
+		}
+	}
+	option = {
+		# Refuse
+		name = france.1.b
+		ai_chance = {
+			factor = 1
+		}
+		SHY = {
+			country_event = {
+				days = 5
+				id = shiyu.23
+			}
+		}
+	}
+}
+
+# 依甸入共产国际.
+country_event = {
+	id = shiyu.123
+	title = soviet.tt.t
+	picture = GFX_report_event_stalin_meeting
+	is_triggered_only = yes
+	option = {
+		name = soviet.tt.a
+		ai_chance = {
+			base = 100
+		}
+		effect_tooltip = {
+			add_to_faction = SHY
+		}
+		hidden_effect = {
+			SHY = {
+				country_event = {
+					id = shiyu.775
+				}
+			}
+		}
+	}
+	option = {
+		name = soviet.tt.b
+		ai_chance = {
+			base = 0
+		}
+		hidden_effect = {
+			SHY = {
+				country_event = {
+					id = shiyu.233
+				}
+			}
+		}
+	}
+}
+
+# 推销魔法晶矿.
+country_event = {
+	id = shiyu.97
+	title = soviet.77.t
+	desc = soviet.77.d
+	picture = GFX_report_event_stalin_meeting
+	is_triggered_only = yes
+	option = {
+		name = soviet.77.a
+		ai_chance = {
+			base = 100
+		}
+		add_timed_idea = {
+			idea = shuru
+			days = 200
+		}
+		hidden_effect = {
+			SHY = {
+				country_event = {
+					id = shiyu.44
+				}
+			}
+		}
+	}
+	option = {
+		name = soviet.77.b
+		ai_chance = {
+			base = 0
+		}
+		hidden_effect = {
+			SHY = {
+				country_event = {
+					id = shiyu.45
+				}
+			}
+		}
+	}
+}
+
+# 南部世羽要地
+country_event = {
+	id = shiyu.84
+	title = france.47.t
+	desc = france.47.d
+	picture = GFX_report_event_japan_army_mountainside
+	is_triggered_only = yes
+	option = {
+		# Accept demands
+		name = france.1.a
+		ai_chance = {
+			base = 100
+		}
+		SHY = {
+			country_event = {
+				days = 5
+				id = shiyu.6
+			}
+		}
+	}
+	option = {
+		# Refuse
+		name = france.1.b
+		ai_chance = {
+			base = 0
+		}
+		add_stability = -0.3
+		add_political_power = -50
+		SHY = {
+			country_event = {
+				days = 5
+				id = shiyu.7
+			}
+		}
+	}
+}
+
+# 买地
+country_event = {
+	id = shiyu.75
+	title = britain.47.t
+	desc = britain.47.d
+	picture = GFX_report_event_japan_army_mountainside
+	is_triggered_only = yes
+	option = {
+		# Accept demands
+		name = tongyi
+		ai_chance = {
+			factor = 99
+		}
+		add_timed_idea = {
+			idea = goumai
+			days = 100
+		}
+		SHY = {
+			country_event = {
+				days = 1
+				id = shiyu.88
+			}
+		}
+	}
+	option = {
+		# Refuse
+		name = jujue
+		ai_chance = {
+			factor = 25
+		}
+		SHY = {
+			country_event = {
+				days = 5
+				id = shiyu.99
+			}
+		}
+	}
+}
+
+# 严神
+country_event = {
+	id = shiyu.61
+	title = shiyu.61.t
+	desc = shiyu.61.d
+	picture = GFX_report_event_germany_politician_handshake
+	is_triggered_only = yes
+	option = {
+		# Accept demands
+		name = shiyu.61.a
+		ai_chance = {
+			base = 10
+		}
+		add_country_leader_trait = SHY_shenli
+		add_ideas = shenming_1
+	}
+	option = {
+		# Refuse
+		name = shiyu.61.b
+		ai_chance = {
+			base = 10
+		}
+		create_corps_commander = {
+			name = "日枝田史绪"
+			picture = "shixu.dds"
+			traits = {
+				brilliant_strategist
+				infantry_officer
+				trait_engineer
+				ranger
+			}
+			skill = 4
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 4
+		}
+		create_corps_commander = {
+			name = "藤切七生"
+			picture = "qisheng.dds"
+			traits = {
+				harsh_leader
+				bearer_of_artillery
+				naval_invader
+				trickster
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 4
+		}
+		create_corps_commander = {
+			name = "古屋敷由良"
+			picture = "youliang.dds"
+			traits = {
+				brilliant_strategist
+				harsh_leader
+				armor_officer
+				swamp_fox
+			}
+			skill = 4
+			attack_skill = 5
+			defense_skill = 5
+			planning_skill = 3
+			logistics_skill = 3
+		}
+		create_navy_leader = {
+			name = "严岛响"
+			picture = "xiang.dds"
+			traits = {
+				ground_pounder
+				seawolf
+				bold
+				superior_tactician
+			}
+			skill = 5
+			attack_skill = 5
+			defense_skill = 2
+			maneuvering_skill = 4
+			coordination_skill = 3
+		}
+		create_navy_leader = {
+			name = "宗形巡"
+			picture = "xun.dds"
+			traits = {
+				gunnery_expert
+				fly_swatter
+				air_controller
+				superior_tactician
+			}
+			skill = 5
+			attack_skill = 4
+			defense_skill = 3
+			maneuvering_skill = 4
+			coordination_skill = 3
+		}
+	}
+	option = {
+		# Refuse
+		name = shiyu.61.c
+		ai_chance = {
+			base = 10
+		}
+		add_political_power = 100
+		add_stability = 0.5
+		add_ideas = shenming_1
+		create_corps_commander = {
+			name = "仲夏守严神"
+			picture = "yanshen.dds"
+			traits = {
+				brilliant_strategist
+				career_officer
+				infantry_officer
+				infantry_officer
+				armor_officer
+				trickster
+				winter_specialist
+				trait_engineer
+				fortress_buster
+				desert_fox
+				swamp_fox
+				trait_mountaineer
+			}
+			skill = 7
+			attack_skill = 7
+			defense_skill = 5
+			planning_skill = 6
+			logistics_skill = 7
+		}
+	}
+}
+
+#精灵国拒绝
+country_event = {
+	id = shiyu.60
+	title = shiyu.60.t
+	desc = shiyu.60.d
+	picture = GFX_report_event_physics_lab_02
+	is_triggered_only = yes
+	option = {
+		name = shiyu.60.a
+		create_wargoal = {
+			type = annex_everything
+			target = PAN
+			generator = owned_states
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = COS
+			generator = owned_states
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = NIC
+			generator = owned_states
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = HON
+			generator = owned_states
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = GUA
+			generator = owned_states
+		}
+	}
+}
+
+#为公主造船
+country_event = {
+	id = shiyu.62
+	title = shiyu.62.t
+	desc = shiyu.62.d
+	picture = GFX_report_event_airplane_crash
+	fire_only_once = yes
+	is_triggered_only = no
+	trigger = {
+		TAG = SHY
+		date > 1936.9.20
+		date < 1936.11.22
+		has_country_leader = {
+			ruling_only = yes
+			character = SHY_carlos_prio
+		}
+	}
+	option = {
+		name = shiyu.62.a
+		ai_chance = {
+			factor = 10
+		}
+		set_country_flag = SHY_kaishi_zaochuan
+		add_ideas = SHY_haiyaun_zaochuan
+	}
+}
+
+#船造好了
+country_event = {
+	id = shiyu.63
+	title = shiyu.63.t
+	desc = shiyu.63.d
+	picture = GFX_report_event_airplane_crash
+	is_triggered_only = yes
+	option = {
+		name = shiyu.63.a
+		ai_chance = {
+			factor = 10
+		}
+		custom_effect_tooltip = SHY_haiyuan_wancheng
+		hidden_effect = {
+			load_oob = SHY_haiyuan
+		}
+		remove_ideas = SHY_haiyaun_zaochuan
+		create_navy_leader = {
+			name = "大海原"
+			picture = "dahaiyuan.dds"
+			traits = {
+				jingyan
+				bold
+				battleship_adherent
+				blockade_runner
+				naval_lineage
+				gunnery_expert
+			}
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			maneuvering_skill = 3
+			coordination_skill = 4
+		}
+	}
+}
+
+####索取西巴布亚###
+country_event = {
+	id = shiyu.64
+	title = shiyu.64.t
+	desc = shiyu.64.d
+	picture = GFX_report_event_saf_soldiers
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	option = {
+		name = shiyu.64.a
+		ai_chance = {
+			factor = 10
+		}
+		effect_tooltip = {
+			SHY = {
+				transfer_state = 669
+			}
+		}
+		SHY = {
+			country_event = shiyu.65
+		}
+	}
+	option = {
+		name = shiyu.64.b
+		ai_chance = {
+			factor = 2
+		}
+		SHY = {
+			country_event = shiyu.66
+		}
+	}
+}
+
+####XX国同意加入同萌会####
+country_event = {
+	id = shiyu.65
+	title = shiyu.65.t
+	desc = shiyu.65.d
+	picture = GFX_report_event_molotov_ribentrop_handshake
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	option = {
+		name = shiyu.65.a
+		ai_chance = {
+			factor = 10
+		}
+		if = {
+			limit = {
+				FROM = {
+					TAG = INS
+				}
+			}
+			transfer_state = 669
+		}
+		if = {
+			limit = {
+				FROM = {
+					is_in_faction = no
+				}
+				ROOT = {
+					is_faction_leader = yes
+				}
+			}
+			ROOT = {
+				add_to_faction = FROM
+			}
+		}
+	}
+}
+
+####xx国拒绝加入我们###
+country_event = {
+	id = shiyu.66
+	title = shiyu.66.t
+	desc = shiyu.66.d
+	picture = GFX_report_event_merchant_ship_01
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	option = {
+		name = shiyu.66.a
+		ai_chance = {
+			factor = 10
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = FROM
+		}
+	}
+}
+
+####墨西哥向精灵投降###
+country_event = {
+	id = shiyu.67
+	title = shiyu.67.t
+	desc = shiyu.67.d
+	picture = GFX_report_event_merchant_ship_01
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	option = {
+		name = shiyu.67.a
+		ai_chance = {
+			factor = 10
+		}
+		USA = {
+			puppet = MEX
+		}
+	}
+	option = {
+		name = shiyu.67.b
+		ai_chance = {
+			factor = 2
+			modifier = {
+				factor = 10
+				has_army_manpower = {
+					size > 399999
+				}
+			}
+		}
+		country_event = shiyu.66
+	}
+}

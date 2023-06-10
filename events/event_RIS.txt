@@ -1,0 +1,227 @@
+###########################
+# Rhodes Island Pharmaceutical Inc.
+###########################
+@RIS_opening_days = 365
+#How many years are we going to open this time？
+
+add_namespace = ris
+country_event = {
+	id = ris.0
+	title = ris.0.t
+	desc = ris.0.desc
+	picture = GFX_report_event_carol_party
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ris.0.a
+		ai_chance = { factor = 10 }
+		hidden_effect = { set_variable = { RIS_gratitude_reward_goods_factor = 0 } }
+		add_ideas = RIS_medical_profit_in_mediterranean_idea
+		add_ideas = RIS_gratitude_and_reward_idea
+		ENG = { add_ideas = RIS_goods_from_ris_super }
+		add_to_variable = { RIS_gratitude_reward_goods_factor = 0.03 }
+		USA = { add_ideas = RIS_goods_from_ris_super }
+		add_to_variable = { RIS_gratitude_reward_goods_factor = 0.03 }
+		FRA = { add_ideas = RIS_goods_from_ris_powerful }
+		add_to_variable = { RIS_gratitude_reward_goods_factor = 0.02 }
+		GER = { add_ideas = RIS_goods_from_ris_powerful }
+		add_to_variable = { RIS_gratitude_reward_goods_factor = 0.02 }
+		ITA = { add_ideas = RIS_goods_from_ris_normal }
+		add_to_variable = { RIS_gratitude_reward_goods_factor = 0.01 }
+		TUR = { add_ideas = RIS_goods_from_ris_normal }
+		add_to_variable = { RIS_gratitude_reward_goods_factor = 0.01 }
+	}
+}
+
+#preparation before opening
+country_event = {
+	id = ris.1
+
+	is_triggered_only = yes
+	
+	hidden = yes
+	
+	immediate = {
+		RIS_change_num_of_tickets = yes
+		RIS_check_member_in_theatre = yes
+		country_event = { id = ris.1 days = 365 }
+	}
+}
+
+#was abandoned
+country_event = {
+	id = ris.2
+	
+	is_triggered_only = yes
+	
+	hidden = yes
+	
+	immediate = {
+		#log = "[GetDateText]: [ROOT.GetName]: Are you where?"
+		#RIS_check_goods_tickets = yes
+	}
+}
+
+#let's get money and send it again
+country_event = {
+	id = ris.3
+	title = ris.3.t
+	desc = ris.3.desc
+	picture = GFX_report_event_carol_party
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { NOT = { has_idea = RIS_medical_profit_in_mediterranean_idea } }
+				add_ideas = RIS_medical_profit_in_mediterranean_idea
+			}
+			add_ideas = RIS_gratitude_and_reward_idea
+			RIS_time_of_share_goods = yes
+		}
+	}
+	
+	option = {
+		name = ris.3.a
+		ai_chance = { factor = 10 }
+		effect_tooltip = {
+			add_ideas = RIS_medical_profit_in_mediterranean_idea
+			add_ideas = RIS_gratitude_and_reward_idea
+		}
+	}
+}
+
+#lucky time
+country_event = {
+	id = ris.4
+	title = ris.4.t
+	desc = ris.4.desc
+	picture = GFX_report_event_carol_party
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ris.4.a
+		ai_chance = { factor = 100 }
+		effect_tooltip = {
+			if = {
+				limit = { check_variable = { RIS_guaranteed_country = 3 } }
+				add_ideas = RIS_goods_from_ris_super
+			}
+			if = {
+				limit = { check_variable = { RIS_guaranteed_country = 2 } }
+				add_ideas = RIS_goods_from_ris_powerful
+			}
+			if = {
+				limit = { check_variable = { RIS_guaranteed_country = 1 } }
+				add_ideas = RIS_goods_from_ris_normal
+			}
+		}
+	}
+	
+	option = {
+		name = ris.4.b
+		ai_chance = { factor = 100 }
+		if = {
+			limit = { check_variable = { RIS_guaranteed_country = 3 } }
+			set_country_flag = { flag = RIS_temp_flag days = 2 value = 1 }
+			remove_ideas = RIS_goods_from_ris_super
+			HCP_banknote_printing_large = yes
+			add_ideas = RIS_goods_from_ris_super_alternate
+		}
+		if = {
+			limit = { check_variable = { RIS_guaranteed_country = 2 } }
+			set_country_flag = { flag = RIS_temp_flag days = 2 value = 1 }
+			remove_ideas = RIS_goods_from_ris_powerful
+			HCP_banknote_printing_medium = yes
+			add_ideas = RIS_goods_from_ris_powerful_alternate
+		}
+		if = {
+			limit = { check_variable = { RIS_guaranteed_country = 1 } }
+			set_country_flag = { flag = RIS_temp_flag days = 2 value = 1 }
+			remove_ideas = RIS_goods_from_ris_normal
+			HCP_banknote_printing_small = yes
+			add_ideas = RIS_goods_from_ris_normal_alternate
+		}
+	}
+}
+
+#find suitable buyer Or eat it alone?
+country_event = {
+	id = ris.5
+	title = ris.5.t
+	desc = ris.5.desc
+	picture = GFX_report_event_carol_party
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ris.5.a
+		ai_chance = { factor = 10 }
+	}
+}
+
+#will close door
+country_event = {
+	id = ris.6
+	title = ris.6.t
+	desc = ris.6.desc
+	picture = GFX_report_event_carol_party
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			clear_variable = RIS_guaranteed_country
+		}
+	}
+	
+	option = {
+		name = ris.6.a
+		ai_chance = { factor = 10 }
+		effect_tooltip = {
+			RIS_will_close_door = yes
+		}
+	}
+}
+
+#will close door - ris
+country_event = {
+	id = ris.7
+	title = ris.7.t
+	desc = ris.7.desc
+	picture = GFX_report_event_carol_party
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			
+		}
+	}
+	
+	option = {
+		name = ris.7.a
+		ai_chance = { factor = 10 }
+		effect_tooltip = {
+			remove_ideas = RIS_medical_profit_in_mediterranean_idea
+			remove_ideas = RIS_gratitude_and_reward_idea
+		}
+	}
+}
+
+country_event = {
+	id = ris.1001
+	title = ris.1001.t
+	desc = ris.1001.desc
+	picture = GFX_report_event_carol_party
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = ris.1001.a
+		ai_chance = { factor = 10 }
+	}
+}

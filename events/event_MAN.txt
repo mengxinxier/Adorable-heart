@@ -1,0 +1,4264 @@
+﻿add_namespace = man
+##开局介绍
+country_event = {
+	id = man.1
+	title = man.1.t
+	desc = man.1.d
+	picture = GFX_event_generic_north_east_map
+	is_triggered_only = yes
+	option = {
+		name = man.1.a
+	}
+}
+
+##用餐奇遇
+country_event = {
+	id = man.2
+	title = man.2.t
+	desc = man.2.d
+	picture = GFX_event_chongfeng
+	is_triggered_only = yes
+	option = {
+		name = man.2.a
+		add_stability = 0.02
+	}
+}
+
+##苏格兰情调
+country_event = {
+	id = man.3
+	title = man.3.t
+	desc = man.3.d
+	picture = GFX_event_mian
+	is_triggered_only = yes
+	option = {
+		name = man.3.a
+		add_stability = -0.01
+		add_political_power = 20
+	}
+	option = {
+		name = man.3.b
+		add_stability = 0.02
+		add_political_power = -25
+	}
+}
+
+##思考未来
+country_event = {
+	id = man.4
+	title = man.4.t
+	desc = man.4.d
+	picture = GFX_report_event_iww_demonstration
+	is_triggered_only = yes
+	option = {
+		name = man.4.a
+	}
+}
+
+##奉天进贡
+country_event = {
+	id = man.5
+	title = man.5.t
+	desc = man.5.d
+	picture = GFX_report_event_pla_in_beijing
+	is_triggered_only = yes
+	option = {
+		name = man.5.a
+	}
+}
+
+##时机已到
+country_event = {
+	id = man.6
+	title = man.6.t
+	desc = man.6.d
+	picture = GFX_report_event_chinese_soldiers_02
+	is_triggered_only = yes
+	option = {
+		name = man.6.a
+		country_event = man.7
+	}
+}
+
+##刺客袭击
+country_event = {
+	id = man.7
+	title = man.7.t
+	desc = man.7.d
+	picture = GFX_report_event_dead_soldiers
+	is_triggered_only = yes
+	option = {
+		name = man.7.a
+		load_focus_tree = {
+			tree = MAN_focus_fengtian
+			keep_completed = yes
+		}
+		unlock_national_focus = MAN_naixindengdai
+		unlock_national_focus = MAN_qianjunyifa
+		add_ideas = MAN_difangzhuyizhedikang_idea
+	}
+	option = {
+		name = man.7.b
+		country_event = {
+			id = man.40
+			days = 1
+		}
+		retire_character = MAN_zhangzuolin
+	}
+}
+
+##奉天请求合作
+country_event = {
+	id = man.8
+	title = man.8.t
+	desc = man.8.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = man.8.a
+		ai_chance = {
+			factor = 5
+		}
+		MAN = {
+			country_event = {
+				id = man.9
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = man.8.b
+		ai_chance = {
+			factor = 0
+		}
+		trigger = {
+			tag = JAP
+		}
+		MAN = {
+			country_event = {
+				id = man.10
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = man.8.c
+		ai_chance = {
+			factor = 0
+		}
+		trigger = {
+			tag = RJE
+		}
+		MAN = {
+			country_event = {
+				id = man.11
+				days = 1
+			}
+		}
+	}
+}
+
+##樱花同意合作
+country_event = {
+	id = man.9
+	title = man.9.t
+	desc = man.9.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = man.9.a
+		set_country_flag = JAP_tongyihezuo
+	}
+}
+
+##樱花拒绝合作
+country_event = {
+	id = man.10
+	title = man.10.t
+	desc = man.10.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = man.10.a
+	}
+	option = {
+		name = man.10.b
+		trigger = {
+			RJE = {
+				exists = yes
+			}
+		}
+		RJE = {
+			country_event = {
+				id = man.8
+				days = 1
+			}
+		}
+		set_country_flag = JAP_buhezuo
+	}
+}
+
+##日本也拒绝合作
+country_event = {
+	id = man.11
+	title = man.11.t
+	desc = man.11.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = man.11.a
+	}
+}
+
+##奉天请求购买坦克
+country_event = {
+	id = man.12
+	title = man.12.t
+	desc = man.12.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = man.12.a
+		MAN = {
+			country_event = {
+				id = man.13
+				days = 1
+			}
+		}
+		add_political_power = 100
+	}
+	option = {
+		name = man.12.b
+		MAN = {
+			country_event = {
+				id = man.14
+				days = 1
+			}
+		}
+	}
+}
+
+##日本同意
+country_event = {
+	id = man.13
+	title = man.13.t
+	desc = man.13.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = man.13.a
+		add_political_power = -100
+		add_equipment_to_stockpile = {
+			type = light_tank_chassis_1
+			amount = 200
+			producer = JAP
+			variant_name = "Type 95 Ha-Go"
+		}
+		add_tech_bonus = {
+			name = armor_bonus
+			bonus = 1
+			uses = 2
+			category = armor
+		}
+	}
+}
+
+##日本拒绝
+country_event = {
+	id = man.14
+	title = man.14.t
+	desc = man.14.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = man.14.a
+	}
+}
+
+##奉天请求购买军火
+country_event = {
+	id = man.15
+	title = man.15.t
+	desc = man.15.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = man.15.a
+		ai_chance = {
+			factor = 5
+		}
+		MAN = {
+			country_event = {
+				id = man.16
+				days = 1
+			}
+		}
+		add_political_power = 100
+	}
+	option = {
+		name = man.15.b
+		ai_chance = {
+			factor = 0
+		}
+		MAN = {
+			country_event = {
+				id = man.17
+				days = 1
+			}
+		}
+	}
+}
+
+##卖
+country_event = {
+	id = man.16
+	title = man.16.t
+	desc = man.16.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = man.16.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = -100
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_0
+			amount = 1500
+			producer = JAP
+		}
+		add_tech_bonus = {
+			name = MAN_ribenwuqi
+			bonus = 1
+			uses = 2
+			category = infantry_weapons
+		}
+	}
+}
+
+##不卖
+country_event = {
+	id = man.17
+	title = man.17.t
+	desc = man.17.d
+	picture = GFX_report_event_generic_sign_treaty1
+	is_triggered_only = yes
+	option = {
+		name = man.17.a
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+
+##奉天就中东路铁路归属问题展开谈判
+country_event = {
+	id = man.18
+	title = man.18.t
+	desc = man.18.d
+	picture = GFX_report_event_generic_train
+	is_triggered_only = yes
+	option = {
+		name = man.18.a
+		ai_chance = {
+			factor = 5
+		}
+		MAN = {
+			country_event = {
+				id = man.19
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = man.18.b
+		ai_chance = {
+			factor = 5
+		}
+		MAN = {
+			country_event = {
+				id = man.20
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = man.18.c
+		ai_chance = {
+			factor = 5
+		}
+		MAN = {
+			country_event = {
+				id = man.23
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = man.18.e
+		ai_chance = {
+			factor = 5
+		}
+		MAN = {
+			country_event = {
+				id = man.24
+				days = 1
+			}
+		}
+	}
+}
+
+##还一部分
+country_event = {
+	id = man.19
+	title = man.19.t
+	desc = man.19.d
+	picture = GFX_report_event_generic_train
+	is_triggered_only = yes
+	option = {
+		name = man.19.a
+		ai_chance = {
+			factor = 5
+		}
+		swap_ideas = {
+			remove_idea = MAN_zhongdonglutielu_idea
+			add_idea = MAN_zhongdonglutielu_idea_2
+		}
+		add_political_power = -20
+	}
+}
+
+##要赎
+country_event = {
+	id = man.20
+	title = man.20.t
+	desc = man.20.d
+	picture = GFX_report_event_generic_train
+	is_triggered_only = yes
+	option = {
+		name = man.20.a
+		ai_chance = {
+			factor = 5
+		}
+		SOV = {
+			country_event = man.21
+		}
+		add_political_power = -300
+		add_timed_idea = {
+			idea = MAN_shuhuitielu_idea
+			days = 180
+		}
+		effect_tooltip = {
+			remove_ideas = MAN_zhongdonglutielu_idea
+		}
+	}
+	option = {
+		name = man.20.b
+		ai_chance = {
+			factor = 5
+		}
+		SOV = {
+			country_event = man.22
+		}
+	}
+}
+
+##奉天赎回铁路
+country_event = {
+	id = man.21
+	title = man.21.t
+	desc = man.21.d
+	picture = GFX_report_event_generic_train
+	is_triggered_only = yes
+	option = {
+		name = man.21.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 300
+		add_timed_idea = {
+			idea = MAN_shuhuitielu_idea_sov
+			days = 180
+		}
+		MAN = {
+			remove_ideas = MAN_zhongdonglutielu_idea
+		}
+	}
+}
+
+##奉天拒绝赎回
+country_event = {
+	id = man.22
+	title = man.22.t
+	desc = man.22.d
+	picture = GFX_report_event_generic_train
+	is_triggered_only = yes
+	option = {
+		name = man.22.a
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+
+##苏联归还全部铁路
+country_event = {
+	id = man.23
+	title = man.23.t
+	desc = man.23.d
+	picture = GFX_report_event_generic_train
+	is_triggered_only = yes
+	option = {
+		name = man.23.a
+		ai_chance = {
+			factor = 5
+		}
+		remove_ideas = MAN_zhongdonglutielu_idea
+		add_stability = 0.05
+	}
+}
+
+##苏联拒绝归还铁路
+country_event = {
+	id = man.24
+	title = man.24.t
+	desc = man.24.d
+	picture = GFX_report_event_generic_train
+	is_triggered_only = yes
+	option = {
+		name = man.24.a
+		ai_chance = {
+			factor = 5
+		}
+		add_stability = -0.05
+	}
+}
+
+##对国民党策略
+country_event = {
+	id = man.25
+	title = man.25.t
+	desc = man.25.d
+	picture = GFX_report_event_chinese_soldiers
+	is_triggered_only = yes
+	option = {
+		name = man.25.a
+		ai_chance = {
+			factor = 5
+		}
+		ROC = {
+			country_event = {
+				id = man.26
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = man.25.b
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+
+##奉天意欲谈判
+country_event = {
+	id = man.26
+	title = man.26.t
+	desc = man.26.d
+	picture = GFX_report_event_chinese_japanese_handshake
+	is_triggered_only = yes
+	option = {
+		name = man.26.a
+		ai_chance = {
+			factor = 5
+		}
+		MAN = {
+			country_event = {
+				id = man.27
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = man.26.b
+		ai_chance = {
+			factor = 0
+		}
+		MAN = {
+			country_event = {
+				id = man.28
+				days = 1
+			}
+		}
+	}
+}
+
+##广州——沈阳同盟
+country_event = {
+	id = man.27
+	title = man.27.t
+	desc = man.27.d
+	picture = GFX_report_event_china_infiltration
+	is_triggered_only = yes
+	option = {
+		name = man.27.a
+		ai_chance = {
+			factor = 5
+		}
+		give_guarantee = ROC
+		ROC = {
+			give_guarantee = MAN
+		}
+		ROC = {
+			give_military_access = MAN
+		}
+		ROC = {
+			add_opinion_modifier = {
+				target = MAN
+				modifier = ROC_ally_with_man
+			}
+		}
+		give_military_access = ROC
+		add_opinion_modifier = {
+			target = ROC
+			modifier = ROC_ally_with_man
+		}
+		add_ideas = ROC_MAN_ally
+		ROC = {
+			add_ideas = ROC_MAN_ally
+		}
+		CHI = {
+			country_event = {
+				id = roc.36
+				days = 1
+			}
+		}
+		add_ai_strategy = {
+			type = befriend
+			id = "ROC"
+			value = 200
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = "ROC"
+			value = 200
+		}
+		ROC = {
+			add_ai_strategy = {
+				type = befriend
+				id = "MAN"
+				value = 200
+			}
+			add_ai_strategy = {
+				type = alliance
+				id = "MAN"
+				value = 200
+			}
+		}
+		ROC = {
+			country_event = man.29
+		}
+	}
+}
+
+##kmt拒绝谈判
+country_event = {
+	id = man.28
+	title = man.28.t
+	desc = man.28.d
+	picture = GFX_report_event_chinese_soldiers_mountain
+	is_triggered_only = yes
+	option = {
+		name = man.28.a
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+
+##广州——沈阳同盟
+country_event = {
+	id = man.29
+	title = man.29.t
+	desc = man.29.d
+	picture = GFX_report_event_china_infiltration
+	is_triggered_only = yes
+	option = {
+		name = man.29.a
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+
+##中国提出经济合作
+country_event = {
+	id = man.30
+	title = man.30.t
+	desc = man.30.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = man.30.a
+		ai_chance = {
+			factor = 5
+		}
+		add_ideas = MAN_jingjihezuo_idea
+	}
+}
+
+##中国提出军事合作
+country_event = {
+	id = man.31
+	title = man.31.t
+	desc = man.31.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+	option = {
+		name = man.31.a
+		ai_chance = {
+			factor = 5
+		}
+		add_ideas = MAN_junshihezuo_idea
+	}
+}
+
+##大选
+country_event = {
+	id = man.32
+	title = man.32.t
+	desc = man.32.d
+	picture = GFX_report_event_generic_rally
+	is_triggered_only = yes
+	option = {
+		name = man.32.a
+		ai_chance = {
+			factor = 5
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.4
+		}
+	}
+}
+
+##奉天煽动暴乱
+country_event = {
+	id = man.33
+	title = man.33.t
+	desc = man.33.d
+	picture = GFX_report_event_generic_rally
+	is_triggered_only = yes
+	option = {
+		name = man.33.a
+		ai_chance = {
+			factor = 5
+		}
+		add_stability = -0.02
+		random_list = {
+			33 = {
+				random_owned_state = {
+					limit = {
+						is_fully_controlled_by = ROOT
+						arms_factory > 0
+					}
+					damage_building = {
+						type = arms_factory
+						damage = 0.5
+					}
+				}
+			}
+			33 = {
+				random_owned_state = {
+					limit = {
+						is_fully_controlled_by = ROOT
+						industrial_complex > 0
+					}
+					damage_building = {
+						type = industrial_complex
+						damage = 0.5
+					}
+				}
+			}
+			34 = {
+				random_owned_state = {
+					limit = {
+						is_fully_controlled_by = ROOT
+						infrastructure > 0
+					}
+					damage_building = {
+						type = infrastructure
+						damage = 1
+					}
+				}
+			}
+		}
+	}
+}
+
+##奉天谴责革新派
+country_event = {
+	id = man.34
+	title = man.34.t
+	desc = man.34.d
+	picture = GFX_report_event_generic_rally
+	is_triggered_only = yes
+	option = {
+		name = man.34.a
+		ai_chance = {
+			factor = 5
+		}
+		add_stability = -0.05
+		add_political_power = -50
+	}
+}
+
+##奉天谴责改良派
+country_event = {
+	id = man.35
+	title = man.35.t
+	desc = man.35.d
+	picture = GFX_report_event_generic_rally
+	is_triggered_only = yes
+	option = {
+		name = man.35.a
+		ai_chance = {
+			factor = 5
+		}
+		add_stability = -0.05
+		add_political_power = -50
+	}
+}
+
+##奉天谴责袁克定
+country_event = {
+	id = man.36
+	title = man.36.t
+	desc = man.36.d
+	picture = GFX_report_event_generic_rally
+	is_triggered_only = yes
+	option = {
+		name = man.36.a
+		ai_chance = {
+			factor = 5
+		}
+		add_stability = -0.05
+		add_political_power = -50
+	}
+}
+
+##帝国士兵叛逃
+country_event = {
+	id = man.37
+	title = man.37.t
+	desc = man.37.d
+	picture = GFX_report_event_generic_rally
+	is_triggered_only = yes
+	option = {
+		name = man.37.a
+		ai_chance = {
+			factor = 5
+		}
+		add_manpower = -1000
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -250
+		}
+		MAN = {
+			country_event = {
+				id = man.38
+				days = 1
+			}
+		}
+	}
+}
+
+##帝国士兵投诚
+country_event = {
+	id = man.38
+	title = man.38.t
+	desc = man.38.d
+	picture = GFX_report_event_generic_rally
+	is_triggered_only = yes
+	option = {
+		name = man.38.a
+		ai_chance = {
+			factor = 5
+		}
+		add_manpower = 1000
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_0
+			amount = 250
+		}
+	}
+}
+
+##失败的宣传
+country_event = {
+	id = man.39
+	title = man.39.t
+	desc = man.39.d
+	picture = GFX_report_event_generic_rally
+	is_triggered_only = yes
+	option = {
+		name = man.39.a
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+
+##葬礼
+country_event = {
+	id = man.40
+	title = man.40.t
+	desc = man.40.d
+	picture = GFX_report_event_generic_funeral
+	is_triggered_only = yes
+	option = {
+		name = man.40.a
+		ai_chance = {
+			factor = 5
+		}
+		country_event = {
+			id = man.41
+			days = 1
+		}
+	}
+	option = {
+		name = man.40.b
+		ai_chance = {
+			factor = 5
+		}
+		country_event = {
+			id = man.44
+			days = 15
+		}
+	}
+}
+
+##kmt劝降
+country_event = {
+	id = man.41
+	title = man.41.t
+	desc = man.41.d
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = man.41.a
+		ai_chance = {
+			factor = 5
+		}
+		country_event = {
+			id = man.42
+			days = 15
+		}
+	}
+	option = {
+		name = man.41.b
+		ai_chance = {
+			factor = 5
+		}
+		country_event = {
+			id = man.44
+			days = 7
+		}
+	}
+}
+
+##东北易帜
+country_event = {
+	id = man.42
+	title = man.42.t
+	desc = man.42.d
+	picture = GFX_report_event_chinese_soldiers
+	is_triggered_only = yes
+	option = {
+		name = man.42.a
+		ai_chance = {
+			factor = 5
+		}
+		set_country_flag = dongbeiyizhi_flag
+		ROC = {
+			country_event = man.43
+		}
+		load_focus_tree = {
+			tree = MAN_focus_kmt
+			keep_completed = yes
+		}
+		unlock_national_focus = MAN_dongbeiyizhi
+		set_cosmetic_tag = MAN_KMT
+		add_ideas = MAN_fengxixiaozhongzhededikang_idea_1
+		remove_ideas = CHI_Corrupt_and_incompetent_army_1
+		add_ideas = ROC_NRA_1
+		ROC = {
+			set_autonomy = {
+				target = MAN
+				autonomy_state = chi_xiang
+			}
+		}
+		set_party_name = {
+			ideology = neutrality
+			long_name = MAN_dongbeikmt_party_long
+			name = MAN_dongbeikmt_party
+		}
+		set_party_name = {
+			ideology = democratic
+			long_name = MAN_dongbeikmt_party_long
+			name = MAN_dongbeikmt_party
+		}
+		complete_tooltip = {
+			every_possible_country = {
+				limit = {
+					has_character = ROC_chencheng
+				}
+				random_character = {
+					limit = {
+						is_character = ROC_chencheng
+					}
+					set_nationality = MAN
+				}
+			}
+		}
+	}
+}
+
+##东北易帜
+country_event = {
+	id = man.43
+	title = man.43.t
+	desc = man.43.d
+	picture = GFX_report_event_chinese_soldiers
+	is_triggered_only = yes
+	option = {
+		name = man.43.a
+		ai_chance = {
+			factor = 5
+		}
+		complete_tooltip = {
+			ROC = {
+				set_autonomy = {
+					target = MAN
+					autonomy_state = chi_xiang
+				}
+			}
+		}
+		every_possible_country = {
+			limit = {
+				has_character = ROC_chencheng
+			}
+			random_character = {
+				limit = {
+					is_character = ROC_chencheng
+				}
+				set_nationality = MAN
+			}
+		}
+	}
+}
+
+##沈阳之夜
+country_event = {
+	id = man.44
+	title = man.44.t
+	desc = man.44.d
+	picture = GFX_report_event_chinese_soldiers_running
+	is_triggered_only = yes
+	option = {
+		name = man.44.a
+		ai_chance = {
+			factor = 5
+		}
+		set_country_flag = difangzhuyizhe_win
+		load_focus_tree = {
+			tree = MAN_focus_difangzhuyizhe
+			keep_completed = yes
+		}
+		unlock_national_focus = MAN_difangzhuyizheshengli
+		add_ideas = MAN_fengxixiaozhongzhededikang_idea_1
+		promote_character = {
+			character = MAN_hu_niu
+			ideology = moderatism
+		}
+		remove_country_leader_role = {
+			character = MAN_zhangxueliang
+			ideology = Four_Principles_of_the_People_d
+		}
+		remove_country_leader_role = {
+			character = MAN_zhangxueliang
+			ideology = Three_Principles_of_the_People_c
+		}
+		remove_country_leader_role = {
+			character = MAN_zhangxueliang
+			ideology = Four_Principles_of_the_People_n
+		}
+		set_party_name = {
+			ideology = democratic
+			long_name = MAN_difangzhuyizhe_party_long
+			name = MAN_difangzhuyizhe_party
+		}
+		set_party_name = {
+			ideology = communism
+			long_name = MAN_difangzhuyizhe_party_long
+			name = MAN_difangzhuyizhe_party
+		}
+		set_party_name = {
+			ideology = fascism
+			long_name = MAN_difangzhuyizhe_party_long
+			name = MAN_difangzhuyizhe_party
+		}
+		set_party_name = {
+			ideology = neutrality
+			long_name = MAN_difangzhuyizhe_party_long
+			name = MAN_difangzhuyizhe_party
+		}
+	}
+	option = {
+		name = man.44.b
+		ai_chance = {
+			factor = 5
+		}
+		country_event = man.45
+	}
+}
+
+##马占山胜利
+country_event = {
+	id = man.45
+	title = man.45.t
+	desc = man.45.d
+	picture = GFX_report_event_chinese_japanese_handshake
+	is_triggered_only = yes
+	option = {
+		name = man.45.a
+		ai_chance = {
+			factor = 5
+		}
+		set_country_flag = dongbeiyizhi_flag
+		ROC = {
+			country_event = man.46
+		}
+		retire_character = MAN_zhangxueliang
+		retire_character = MAN_hu_niu
+		add_country_leader_role = {
+			character = MAN_Ma_Zhan_Shan
+			promote_leader = yes
+			country_leader = {
+				desc = "MAN_mazhanshan_DESC"
+				expire = "1965.1.1"
+				ideology = moderatism
+				traits = {
+				}
+			}
+		}
+		load_focus_tree = {
+			tree = MAN_focus_kmt
+			keep_completed = yes
+		}
+		unlock_national_focus = MAN_dongbeiyizhi
+		set_cosmetic_tag = MAN_KMT
+		add_ideas = MAN_fengxixiaozhongzhededikang_idea_1
+		remove_ideas = CHI_Corrupt_and_incompetent_army_1
+		add_ideas = ROC_NRA_1
+		set_party_name = {
+			ideology = neutrality
+			long_name = MAN_dongbeikmt_party_long
+			name = MAN_dongbeikmt_party
+		}
+		set_party_name = {
+			ideology = democratic
+			long_name = MAN_dongbeikmt_party_long
+			name = MAN_dongbeikmt_party
+		}
+		ROC = {
+			set_autonomy = {
+				target = MAN
+				autonomy_state = chi_xiang
+			}
+		}
+	}
+}
+
+##马占山效忠kmt
+country_event = {
+	id = man.46
+	title = man.46.t
+	desc = man.46.d
+	picture = GFX_report_event_chinese_japanese_handshake
+	is_triggered_only = yes
+	option = {
+		name = man.46.a
+		ai_chance = {
+			factor = 5
+		}
+		MAN = {
+			country_event = man.47
+		}
+		complete_tooltip = {
+			ROC = {
+				set_autonomy = {
+					target = MAN
+					autonomy_state = chi_xiang
+				}
+			}
+			every_possible_country = {
+				limit = {
+					has_character = ROC_chencheng
+				}
+				random_character = {
+					limit = {
+						is_character = ROC_chencheng
+					}
+					set_nationality = MAN
+				}
+			}
+			MAN = {
+				add_country_leader_role = {
+					character = ROC_chencheng
+					promote_leader = yes
+					country_leader = {
+						expire = "1965.1.1"
+						ideology = despotism
+						traits = {
+						}
+					}
+				}
+				add_country_leader_role = {
+					character = ROC_chencheng
+					promote_leader = yes
+					country_leader = {
+						expire = "1965.1.1"
+						ideology = conservatism
+						traits = {
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+##陈诚担任长官
+country_event = {
+	id = man.47
+	title = man.47.t
+	desc = man.47.d
+	picture = GFX_report_event_china_politicians_captured
+	is_triggered_only = yes
+	option = {
+		name = man.47.a
+		ai_chance = {
+			factor = 5
+		}
+		every_possible_country = {
+			limit = {
+				has_character = ROC_chencheng
+			}
+			random_character = {
+				limit = {
+					is_character = ROC_chencheng
+				}
+				set_nationality = MAN
+			}
+		}
+		add_country_leader_role = {
+			character = ROC_chencheng
+			promote_leader = yes
+			country_leader = {
+				expire = "1965.1.1"
+				ideology = despotism
+				traits = {
+				}
+			}
+		}
+		add_country_leader_role = {
+			character = ROC_chencheng
+			promote_leader = yes
+			country_leader = {
+				expire = "1965.1.1"
+				ideology = conservatism
+				traits = {
+				}
+			}
+		}
+	}
+}
+
+##杀马特向沈阳进军
+country_event = {
+	id = man.48
+	title = man.48.t
+	desc = man.48.d
+	picture = GFX_report_event_chinese_soldiers_running
+	is_triggered_only = yes
+	option = {
+		name = man.48.a
+		ai_chance = {
+			factor = 5
+		}
+		country_event = man.49
+	}
+}
+
+##杀马特挑衅
+country_event = {
+	id = man.49
+	title = man.49.t
+	desc = man.49.d
+	picture = GFX_event_shamateweixie
+	is_triggered_only = yes
+	option = {
+		name = man.49.a
+		ai_chance = {
+			factor = 5
+		}
+		hidden_effect = {
+			country_event = {
+				id = man.50
+				days = 3
+			}
+		}
+	}
+	option = {
+		name = man.49.b
+		ai_chance = {
+			factor = 5
+		}
+		hidden_effect = {
+			country_event = {
+				id = man.52
+				days = 3
+			}
+		}
+	}
+}
+
+##埋伏！
+country_event = {
+	id = man.50
+	title = man.50.t
+	desc = man.50.d
+	picture = GFX_report_event_dead_soldiers
+	is_triggered_only = yes
+	option = {
+		name = man.50.a
+		ai_chance = {
+			factor = 5
+		}
+		country_event = {
+			id = man.51
+			days = 1
+		}
+		promote_character = {
+			character = MAN_sha_ma_te
+			ideology = moderatism
+		}
+		promote_character = {
+			character = MAN_sha_ma_te
+			ideology = Homuraism
+		}
+		promote_character = {
+			character = MAN_sha_ma_te
+			ideology = kazumaism
+		}
+		promote_character = {
+			character = MAN_sha_ma_te
+			ideology = socialism
+		}
+	}
+}
+
+##和解
+country_event = {
+	id = man.51
+	title = man.51.t
+	desc = man.51.d
+	picture = GFX_event_hejie
+	is_triggered_only = yes
+	option = {
+		name = man.51.a
+		ai_chance = {
+			factor = 5
+		}
+		set_country_flag = shamate_hejie
+		unlock_national_focus = MAN_shenyangdajiezhizhan
+	}
+}
+
+##团长到达沈阳
+country_event = {
+	id = man.52
+	title = man.52.t
+	desc = man.52.d
+	picture = GFX_event_shamatedaoshenyang
+	is_triggered_only = yes
+	option = {
+		name = man.52.a
+		ai_chance = {
+			factor = 5
+		}
+		hidden_effect = {
+			country_event = {
+				id = man.53
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = man.52.b
+		ai_chance = {
+			factor = 5
+		}
+		hidden_effect = {
+			country_event = {
+				id = man.54
+				days = 1
+			}
+		}
+	}
+}
+
+##团长胜利
+country_event = {
+	id = man.53
+	title = man.53.t
+	desc = man.53.d
+	picture = GFX_report_event_dead_soldiers
+	is_triggered_only = yes
+	option = {
+		name = man.53.a
+		ai_chance = {
+			factor = 5
+		}
+		promote_character = {
+			character = MAN_sha_ma_te
+			ideology = moderatism
+		}
+		promote_character = {
+			character = MAN_sha_ma_te
+			ideology = Homuraism
+		}
+		promote_character = {
+			character = MAN_sha_ma_te
+			ideology = kazumaism
+		}
+		promote_character = {
+			character = MAN_sha_ma_te
+			ideology = socialism
+		}
+		hidden_effect = {
+			country_event = {
+				id = man.51
+				days = 3
+			}
+		}
+	}
+}
+
+##伏击成功
+country_event = {
+	id = man.54
+	title = man.54.t
+	desc = man.54.d
+	picture = GFX_event_fujichenggong
+	is_triggered_only = yes
+	option = {
+		name = man.54.a
+		ai_chance = {
+			factor = 5
+		}
+		hidden_effect = {
+			country_event = {
+				id = man.55
+				days = 3
+			}
+		}
+	}
+}
+
+##战事不利
+country_event = {
+	id = man.55
+	title = man.55.t
+	desc = man.55.d
+	picture = GFX_event_zhanshibuli
+	is_triggered_only = yes
+	option = {
+		name = man.55.a
+		ai_chance = {
+			factor = 5
+		}
+		hidden_effect = {
+			country_event = {
+				id = man.56
+				days = 3
+			}
+		}
+	}
+}
+
+##黑牛来降
+country_event = {
+	id = man.56
+	title = man.56.t
+	desc = man.56.d
+	picture = GFX_event_heiniulaixiang
+	is_triggered_only = yes
+	option = {
+		name = man.56.a
+		ai_chance = {
+			factor = 5
+		}
+		hidden_effect = {
+			country_event = {
+				id = man.57
+				days = 3
+			}
+		}
+	}
+}
+
+##决斗
+country_event = {
+	id = man.57
+	title = man.57.t
+	desc = man.57.d
+	picture = GFX_event_juedou
+	is_triggered_only = yes
+	option = {
+		name = man.57.a
+		ai_chance = {
+			factor = 5
+		}
+		hidden_effect = {
+			country_event = {
+				id = man.58
+				days = 3
+			}
+		}
+	}
+}
+
+##决斗开始
+country_event = {
+	id = man.58
+	title = man.58.t
+	desc = man.58.d
+	picture = GFX_event_juedoukaishi
+	is_triggered_only = yes
+	option = {
+		name = man.58.a
+		ai_chance = {
+			factor = 5
+		}
+		hidden_effect = {
+			country_event = {
+				id = man.59
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = man.58.b
+		ai_chance = {
+			factor = 5
+		}
+		hidden_effect = {
+			country_event = {
+				id = man.61
+				days = 1
+			}
+		}
+	}
+}
+
+##虎妞胜利
+country_event = {
+	id = man.59
+	title = man.59.t
+	desc = man.59.d
+	picture = GFX_event_huniushengli
+	is_triggered_only = yes
+	option = {
+		name = man.59.a
+		ai_chance = {
+			factor = 5
+		}
+		hidden_effect = {
+			country_event = {
+				id = man.60
+				days = 3
+			}
+		}
+	}
+}
+
+##和解（虎妞）
+country_event = {
+	id = man.60
+	title = man.60.t
+	desc = man.60.d
+	picture = GFX_event_hejie
+	is_triggered_only = yes
+	option = {
+		name = man.60.a
+		ai_chance = {
+			factor = 5
+		}
+		set_country_flag = huniu_hejie
+		unlock_national_focus = MAN_shenyangdajiezhizhan
+	}
+}
+
+##被黑牛偷袭
+country_event = {
+	id = man.61
+	title = man.61.t
+	desc = man.61.d
+	picture = GFX_event_heiniutouxi
+	is_triggered_only = yes
+	option = {
+		name = man.61.a
+		ai_chance = {
+			factor = 5
+		}
+		promote_character = {
+			character = MAN_sha_ma_te
+			ideology = moderatism
+		}
+		promote_character = {
+			character = MAN_sha_ma_te
+			ideology = Homuraism
+		}
+		promote_character = {
+			character = MAN_sha_ma_te
+			ideology = kazumaism
+		}
+		promote_character = {
+			character = MAN_sha_ma_te
+			ideology = socialism
+		}
+		hidden_effect = {
+			country_event = {
+				id = man.51
+				days = 3
+			}
+		}
+	}
+}
+
+##少帅的命运
+country_event = {
+	id = man.62
+	title = man.62.t
+	desc = man.62.d
+	picture = GFX_report_event_tur_political_rally
+	is_triggered_only = yes
+	option = {
+		name = man.62.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = -50
+		add_stability = 0.05
+	}
+	option = {
+		name = man.62.b
+		ai_chance = {
+			factor = 5
+		}
+		retire_character = MAN_zhangxueliang
+		add_stability = -0.1
+	}
+}
+
+##锻炼小亮
+country_event = {
+	id = man.63
+	title = man.63.t
+	desc = man.63.d
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = man.63.a
+		ai_chance = {
+			factor = 5
+		}
+		add_war_support = 0.15
+	}
+}
+
+##聚餐
+country_event = {
+	id = man.64
+	title = man.64.t
+	desc = man.64.d
+	picture = GFX_event_jucan
+	is_triggered_only = yes
+	option = {
+		name = man.64.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 50
+		add_stability = 0.05
+	}
+}
+
+##劈砖失败
+country_event = {
+	id = man.65
+	title = man.65.t
+	desc = man.65.d
+	picture = GFX_event_pizhuanshibai
+	is_triggered_only = yes
+	option = {
+		name = man.65.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = -50
+		add_stability = -0.05
+	}
+}
+
+##劈砖成功
+country_event = {
+	id = man.66
+	title = man.66.t
+	desc = man.66.d
+	picture = GFX_event_pizhuanchenggong
+	is_triggered_only = yes
+	option = {
+		name = man.66.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 50
+		add_stability = 0.05
+		add_to_variable = {
+			var = ubs_save
+			value = 200
+			tooltip = UBS_SAVE_UP_200
+		}
+		UBS_bank_icon_frames = yes
+	}
+}
+
+##挑战武馆失败
+country_event = {
+	id = man.67
+	title = man.67.t
+	desc = man.67.d
+	picture = GFX_event_tiguanshibai
+	is_triggered_only = yes
+	option = {
+		name = man.67.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = -50
+		add_stability = -0.05
+	}
+}
+
+##挑战武馆成功
+country_event = {
+	id = man.68
+	title = man.68.t
+	desc = man.68.d
+	picture = GFX_event_tiguanchenggong
+	is_triggered_only = yes
+	option = {
+		name = man.68.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 50
+		add_stability = 0.05
+		add_to_variable = {
+			var = ubs_save
+			value = 200
+			tooltip = UBS_SAVE_UP_200
+		}
+		UBS_bank_icon_frames = yes
+	}
+}
+
+##洒水失败，挨了顿打
+country_event = {
+	id = man.69
+	title = man.69.t
+	desc = man.69.d
+	picture = GFX_event_tiguanshibai
+	is_triggered_only = yes
+	option = {
+		name = man.69.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = -50
+		add_stability = -0.05
+	}
+}
+
+##跑路成功
+country_event = {
+	id = man.70
+	title = man.70.t
+	desc = man.70.d
+	picture = GFX_event_taopao
+	is_triggered_only = yes
+	option = {
+		name = man.70.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 50
+		add_stability = 0.05
+		add_to_variable = {
+			var = ubs_save
+			value = 200
+			tooltip = UBS_SAVE_UP_200
+		}
+		UBS_bank_icon_frames = yes
+	}
+}
+
+##挑战失败
+country_event = {
+	id = man.71
+	title = man.71.t
+	desc = man.71.d
+	picture = GFX_event_zhentianlei2
+	is_triggered_only = yes
+	option = {
+		name = man.71.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = -50
+		add_stability = -0.05
+	}
+}
+
+##挑战成功
+country_event = {
+	id = man.72
+	title = man.72.t
+	desc = man.72.d
+	picture = GFX_event_zhentianlei
+	is_triggered_only = yes
+	option = {
+		name = man.72.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 50
+		add_stability = 0.05
+		add_to_variable = {
+			var = ubs_save
+			value = 200
+			tooltip = UBS_SAVE_UP_200
+		}
+		UBS_bank_icon_frames = yes
+	}
+}
+
+##挨了顿揍
+country_event = {
+	id = man.73
+	title = man.73.t
+	desc = man.73.d
+	picture = GFX_event_tiguanshibai
+	is_triggered_only = yes
+	option = {
+		name = man.73.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = -100
+		add_stability = -0.1
+	}
+}
+
+##跑路成功
+country_event = {
+	id = man.74
+	title = man.74.t
+	desc = man.74.d
+	picture = GFX_event_jietouyiren
+	is_triggered_only = yes
+	option = {
+		name = man.74.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 100
+		add_stability = 0.05
+		add_to_variable = {
+			var = ubs_save
+			value = 300
+			tooltip = UBS_SAVE_UP_300
+		}
+		UBS_bank_icon_frames = yes
+	}
+}
+
+##冰窟窿挑战失败
+country_event = {
+	id = man.75
+	title = man.75.t
+	desc = man.75.d
+	picture = GFX_event_bieqishibai
+	is_triggered_only = yes
+	option = {
+		name = man.75.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = -50
+		add_stability = -0.05
+	}
+}
+
+##冰窟窿挑战成功
+country_event = {
+	id = man.76
+	title = man.76.t
+	desc = man.76.d
+	picture = GFX_event_bieqichenggong
+	is_triggered_only = yes
+	option = {
+		name = man.76.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 50
+		add_stability = 0.05
+		add_to_variable = {
+			var = ubs_save
+			value = 200
+			tooltip = UBS_SAVE_UP_200
+		}
+		UBS_bank_icon_frames = yes
+	}
+}
+
+##头顶西瓜失败
+country_event = {
+	id = man.77
+	title = man.77.t
+	desc = man.77.d
+	picture = GFX_event_xigua2
+	is_triggered_only = yes
+	option = {
+		name = man.77.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = -50
+		add_stability = -0.05
+	}
+}
+
+##头顶西瓜成功
+country_event = {
+	id = man.78
+	title = man.78.t
+	desc = man.78.d
+	picture = GFX_event_xigua
+	is_triggered_only = yes
+	option = {
+		name = man.78.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 50
+		add_stability = 0.05
+		add_to_variable = {
+			var = ubs_save
+			value = 200
+			tooltip = UBS_SAVE_UP_200
+		}
+		UBS_bank_icon_frames = yes
+	}
+}
+
+##芥末刷牙失败
+country_event = {
+	id = man.79
+	title = man.79.t
+	desc = man.79.d
+	picture = GFX_event_jiemo2
+	is_triggered_only = yes
+	option = {
+		name = man.79.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = -50
+		add_stability = -0.05
+	}
+}
+
+##芥末刷牙成功
+country_event = {
+	id = man.80
+	title = man.80.t
+	desc = man.80.d
+	picture = GFX_event_jiemo
+	is_triggered_only = yes
+	option = {
+		name = man.80.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 50
+		add_stability = 0.05
+		add_to_variable = {
+			var = ubs_save
+			value = 200
+			tooltip = UBS_SAVE_UP_200
+		}
+		UBS_bank_icon_frames = yes
+	}
+}
+
+##直播间被封了
+country_event = {
+	id = man.81
+	title = man.81.t
+	desc = man.81.d
+	picture = GFX_report_event_dao1
+	is_triggered_only = yes
+	option = {
+		name = man.81.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = -50
+		add_stability = -0.05
+		add_to_variable = {
+			var = ubs_save
+			value = 700
+			tooltip = UBS_SAVE_down_700
+		}
+		UBS_bank_icon_frames = yes
+	}
+}
+
+##咬打火机成功
+country_event = {
+	id = man.82
+	title = man.82.t
+	desc = man.82.d
+	picture = GFX_event_dahuoji
+	is_triggered_only = yes
+	option = {
+		name = man.82.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 50
+		add_stability = 0.05
+		add_to_variable = {
+			var = ubs_save
+			value = 600
+			tooltip = UBS_SAVE_UP_600
+		}
+		UBS_bank_icon_frames = yes
+	}
+}
+
+##观众没兴趣
+country_event = {
+	id = man.83
+	title = man.83.t
+	desc = man.83.d
+	picture = GFX_report_event_dao1
+	is_triggered_only = yes
+	option = {
+		name = man.83.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = -10
+		add_stability = -0.02
+	}
+}
+
+##收到打赏
+country_event = {
+	id = man.84
+	title = man.84.t
+	desc = man.84.d
+	picture = GFX_event_shuochang
+	is_triggered_only = yes
+	option = {
+		name = man.84.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 30
+		add_stability = 0.02
+		add_to_variable = {
+			var = ubs_save
+			value = 50
+			tooltip = UBS_SAVE_UP_50
+		}
+		UBS_bank_icon_frames = yes
+	}
+}
+
+##被指作秀
+country_event = {
+	id = man.85
+	title = man.85.t
+	desc = man.85.d
+	picture = GFX_report_event_dao1
+	is_triggered_only = yes
+	option = {
+		name = man.85.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = -10
+		add_stability = -0.02
+	}
+}
+
+##受到赞誉
+country_event = {
+	id = man.86
+	title = man.86.t
+	desc = man.86.d
+	picture = GFX_event_cishan
+	is_triggered_only = yes
+	option = {
+		name = man.86.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 30
+		add_stability = 0.02
+		add_to_variable = {
+			var = ubs_save
+			value = 50
+			tooltip = UBS_SAVE_UP_50
+		}
+		UBS_bank_icon_frames = yes
+	}
+}
+
+##观众没兴趣
+country_event = {
+	id = man.87
+	title = man.87.t
+	desc = man.87.d
+	picture = GFX_report_event_dao1
+	is_triggered_only = yes
+	option = {
+		name = man.87.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = -10
+		add_stability = -0.02
+	}
+}
+
+##收到打赏
+country_event = {
+	id = man.88
+	title = man.88.t
+	desc = man.88.d
+	picture = GFX_event_tiaowu
+	is_triggered_only = yes
+	option = {
+		name = man.88.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 30
+		add_stability = 0.02
+		add_to_variable = {
+			var = ubs_save
+			value = 50
+			tooltip = UBS_SAVE_UP_50
+		}
+		UBS_bank_icon_frames = yes
+	}
+}
+
+##合体了家人们
+country_event = {
+	id = man.89
+	title = man.89.t
+	desc = man.89.d
+	picture = GFX_event_heti
+	is_triggered_only = yes
+	option = {
+		name = man.89.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 50
+		set_country_flag = laobalaile
+		unlock_decision_tooltip = man_dec_chibaba
+	}
+}
+
+##呕
+country_event = {
+	id = man.90
+	title = man.90.t
+	desc = man.90.d
+	picture = GFX_event_chibaba2
+	is_triggered_only = yes
+	option = {
+		name = man.90.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = -150
+		add_stability = -0.15
+	}
+}
+
+##咽下去了
+country_event = {
+	id = man.91
+	title = man.91.t
+	desc = man.91.d
+	picture = GFX_event_chibaba
+	is_triggered_only = yes
+	option = {
+		name = man.91.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 150
+		add_stability = 0.15
+		add_to_variable = {
+			var = ubs_save
+			value = 1000
+			tooltip = UBS_SAVE_UP_1000
+		}
+		UBS_bank_icon_frames = yes
+	}
+}
+
+##杀马特联盟成立
+country_event = {
+	id = man.92
+	title = man.92.t
+	desc = man.92.d
+	picture = GFX_event_shamatelianmeng
+	is_triggered_only = yes
+	option = {
+		name = man.92.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 100
+	}
+}
+
+##活跃的课堂
+country_event = {
+	id = man.93
+	title = man.93.t
+	desc = man.93.d
+	picture = GFX_event_ketangrewu
+	is_triggered_only = yes
+	option = {
+		name = man.93.a
+		ai_chance = {
+			factor = 5
+		}
+		add_tech_bonus = {
+			name = industrial_bonus
+			bonus = 1
+			uses = 2
+			category = industry
+		}
+		add_tech_bonus = {
+			bonus = 1
+			uses = 2
+			category = electronics
+		}
+	}
+}
+
+##冬泳大赛
+country_event = {
+	id = man.94
+	title = man.94.t
+	desc = man.94.d
+	picture = GFX_event_dongyong
+	is_triggered_only = yes
+	option = {
+		name = man.94.a
+		ai_chance = {
+			factor = 5
+		}
+		navy_experience = 50
+	}
+}
+
+##真正的东北人
+country_event = {
+	id = man.95
+	title = man.95.t
+	desc = man.95.d
+	picture = GFX_event_happyend
+	is_triggered_only = yes
+	option = {
+		name = man.95.a
+		ai_chance = {
+			factor = 5
+		}
+		add_stability = 0.1
+		add_war_support = 0.1
+	}
+}
+
+##东北人都是活雷锋
+country_event = {
+	id = man.96
+	title = man.96.t
+	desc = man.96.d
+	picture = GFX_report_event_generic_truck
+	is_triggered_only = yes
+	option = {
+		name = man.96.a
+		ai_chance = {
+			factor = 5
+		}
+		add_stability = 0.05
+		add_political_power = 50
+		every_country = {
+			limit = {
+				NOT = {
+					TAG = MAN
+				}
+			}
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = huoleifeng
+			}
+		}
+	}
+}
+
+##奉天政府投诚
+country_event = {
+	id = man.97
+	title = man.97.t
+	desc = man.97.d
+	picture = GFX_report_event_chinese_soldiers
+	is_triggered_only = yes
+	option = {
+		name = man.97.a
+		ai_chance = {
+			factor = 5
+		}
+		MAN = {
+			every_unit_leader = {
+				set_nationality = ROC
+			}
+		}
+		annex_country = {
+			target = MAN
+			transfer_troops = yes
+		}
+	}
+}
+
+##资助文艺作品
+country_event = {
+	id = man.98
+	title = man.98.t
+	desc = man.98.d
+	picture = GFX_event_wenyi
+	is_triggered_only = yes
+	option = {
+		name = man.98.a
+		ai_chance = {
+			factor = 5
+		}
+		add_stability = 0.15
+		add_political_power = 100
+	}
+}
+
+##我们未来的道路
+country_event = {
+	id = man.99
+	title = man.99.t
+	desc = man.99.d
+	picture = GFX_report_event_china_politicians_captured
+	is_triggered_only = yes
+	option = {
+		name = man.99.a
+		ai_chance = {
+			factor = 5
+		}
+		add_ideas = MAN_lianshengzizhi_idea
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.5
+		}
+		if = {
+			limit = {
+				has_country_leader = {
+					character = MAN_hu_niu
+					ruling_only = yes
+				}
+			}
+			promote_character = {
+				character = MAN_hu_niu
+				ideology = socialism
+			}
+		}
+		if = {
+			limit = {
+				has_country_leader = {
+					character = MAN_sha_ma_te
+					ruling_only = yes
+				}
+			}
+			promote_character = {
+				character = MAN_sha_ma_te
+				ideology = socialism
+			}
+		}
+	}
+	option = {
+		name = man.99.b
+		ai_chance = {
+			factor = 5
+		}
+		add_ideas = MAN_qianglijiquan_idea
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.5
+		}
+		if = {
+			limit = {
+				has_country_leader = {
+					character = MAN_hu_niu
+					ruling_only = yes
+				}
+			}
+			promote_character = {
+				character = MAN_hu_niu
+				ideology = kazumaism
+			}
+		}
+		if = {
+			limit = {
+				has_country_leader = {
+					character = MAN_sha_ma_te
+					ruling_only = yes
+				}
+			}
+			promote_character = {
+				character = MAN_sha_ma_te
+				ideology = kazumaism
+			}
+		}
+	}
+	option = {
+		name = man.99.c
+		ai_chance = {
+			factor = 5
+		}
+		add_ideas = MAN_zhongdao_idea
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.3
+		}
+	}
+	option = {
+		name = man.99.e
+		ai_chance = {
+			factor = 5
+		}
+		add_ideas = MAN_xiaomeiyanzhuyi_idea
+		set_technology = {
+			strike_unit1 = 1
+		}
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = no
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.5
+		}
+		if = {
+			limit = {
+				has_country_leader = {
+					character = MAN_hu_niu
+					ruling_only = yes
+				}
+			}
+			promote_character = {
+				character = MAN_hu_niu
+				ideology = Homuraism
+			}
+		}
+		if = {
+			limit = {
+				has_country_leader = {
+					character = MAN_sha_ma_te
+					ruling_only = yes
+				}
+			}
+			promote_character = {
+				character = MAN_sha_ma_te
+				ideology = Homuraism
+			}
+		}
+	}
+}
+
+##经济体制
+country_event = {
+	id = man.100
+	title = man.100.t
+	desc = man.100.d
+	picture = GFX_report_event_generic_factory
+	is_triggered_only = yes
+	option = {
+		name = man.100.a
+		ai_chance = {
+			factor = 5
+		}
+		add_ideas = MAN_ziyoushichang_idea
+	}
+	option = {
+		name = man.100.b
+		ai_chance = {
+			factor = 5
+		}
+		add_ideas = MAN_fatuanzhuyi_idea
+	}
+	option = {
+		name = man.100.c
+		ai_chance = {
+			factor = 5
+		}
+		add_ideas = MAN_jitizhuyijingji_idea
+	}
+}
+
+##审判，或和解
+country_event = {
+	id = man.101
+	title = man.101.t
+	desc = man.101.d
+	picture = GFX_report_event_sanation_left_victory
+	is_triggered_only = yes
+	option = {
+		name = man.101.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 100
+		add_stability = -0.2
+		add_war_support = -0.1
+	}
+	option = {
+		name = man.101.b
+		ai_chance = {
+			factor = 5
+		}
+		add_stability = -0.1
+		add_war_support = -0.05
+	}
+	option = {
+		name = man.101.c
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = -100
+		add_stability = 0.15
+		add_war_support = 0.1
+	}
+}
+
+##新国名
+country_event = {
+	id = man.102
+	title = man.102.t
+	desc = man.102.d
+	picture = GFX_report_event_pla_in_beijing
+	is_triggered_only = yes
+	option = {
+		name = man.102.a
+		ai_chance = {
+			factor = 5
+		}
+		set_cosmetic_tag = MAN_ROC
+	}
+	option = {
+		name = man.102.b
+		ai_chance = {
+			factor = 5
+		}
+		trigger = {
+			has_idea = MAN_lianshengzizhi_idea
+		}
+		set_cosmetic_tag = UPC
+	}
+	option = {
+		name = man.102.c
+		ai_chance = {
+			factor = 5
+		}
+		trigger = {
+			has_idea = MAN_xiaomeiyanzhuyi_idea
+			has_idea = MAN_jitizhuyijingji_idea
+		}
+		set_cosmetic_tag = MAN_CSR
+	}
+	option = {
+		name = man.102.e
+		ai_chance = {
+			factor = 5
+		}
+		trigger = {
+			has_idea = MAN_qianglijiquan_idea
+			has_idea = MAN_fatuanzhuyi_idea
+		}
+		set_cosmetic_tag = MAN_minzu
+	}
+}
+
+##整合外东北
+country_event = {
+	id = man.103
+	title = man.103.t
+	desc = man.103.d
+	picture = GFX_report_event_soviet_soldiers
+	is_triggered_only = yes
+	option = {
+		name = man.103.a
+		ai_chance = {
+			factor = 5
+		}
+		add_state_core = 561
+		add_state_core = 657
+		add_state_core = 560
+		add_state_core = 409
+		add_state_core = 408
+		add_state_core = 537
+		561 = {
+			add_manpower = -200000
+		}
+		657 = {
+			add_manpower = -150000
+		}
+		560 = {
+			add_manpower = -20000
+		}
+		409 = {
+			add_manpower = -100000
+		}
+		408 = {
+			add_manpower = -300000
+		}
+		537 = {
+			add_manpower = -100000
+		}
+		add_stability = -0.15
+		add_political_power = -100
+	}
+	option = {
+		name = man.103.b
+		ai_chance = {
+			factor = 5
+		}
+		add_state_core = 561
+		add_state_core = 657
+		add_state_core = 560
+		add_state_core = 409
+		add_state_core = 408
+		add_state_core = 537
+		561 = {
+			add_state_modifier = {
+				modifier = {
+					local_building_slots_factor = -0.15
+					local_manpower = -0.75
+					local_resources_factor = -0.15
+				}
+			}
+		}
+		657 = {
+			add_state_modifier = {
+				modifier = {
+					local_building_slots_factor = -0.15
+					local_manpower = -0.75
+					local_resources_factor = -0.15
+				}
+			}
+		}
+		560 = {
+			add_state_modifier = {
+				modifier = {
+					local_building_slots_factor = -0.15
+					local_manpower = -0.75
+					local_resources_factor = -0.15
+				}
+			}
+		}
+		409 = {
+			add_state_modifier = {
+				modifier = {
+					local_building_slots_factor = -0.15
+					local_manpower = -0.75
+					local_resources_factor = -0.15
+				}
+			}
+		}
+		408 = {
+			add_state_modifier = {
+				modifier = {
+					local_building_slots_factor = -0.15
+					local_manpower = -0.75
+					local_resources_factor = -0.15
+				}
+			}
+		}
+		537 = {
+			add_state_modifier = {
+				modifier = {
+					local_building_slots_factor = -0.15
+					local_manpower = -0.75
+					local_resources_factor = -0.15
+				}
+			}
+		}
+	}
+	option = {
+		name = man.103.c
+		ai_chance = {
+			factor = 5
+		}
+		561 = {
+			add_core_of = TRM
+		}
+		657 = {
+			add_core_of = TRM
+		}
+		560 = {
+			add_core_of = TRM
+		}
+		409 = {
+			add_core_of = TRM
+		}
+		408 = {
+			add_core_of = TRM
+		}
+		537 = {
+			add_core_of = TRM
+		}
+		TRM = {
+			transfer_state = 561
+			transfer_state = 657
+			transfer_state = 560
+			transfer_state = 409
+			transfer_state = 408
+			transfer_state = 537
+		}
+		MAN = {
+		MAN_Fu_La_Fu = {
+			set_nationality = TRM
+		}
+		}
+		TRM = {
+			add_country_leader_role = {
+				character = MAN_Fu_La_Fu
+				promote_leader = yes
+				country_leader = {
+					expire = "1965.1.1"
+					ideology = socialism
+					traits = {
+					}
+				}
+			}
+			add_country_leader_role = {
+				character = MAN_Fu_La_Fu
+				promote_leader = yes
+				country_leader = {
+					expire = "1965.1.1"
+					ideology = marxism
+					traits = {
+					}
+				}
+			}
+			add_country_leader_role = {
+				character = MAN_Fu_La_Fu
+				promote_leader = yes
+				country_leader = {
+					expire = "1965.1.1"
+					ideology = rexism
+					traits = {
+					}
+				}
+			}
+			add_country_leader_role = {
+				character = MAN_Fu_La_Fu
+				promote_leader = yes
+				country_leader = {
+					expire = "1965.1.1"
+					ideology = despotism
+					traits = {
+					}
+				}
+			}
+		}
+		set_global_flag = man_trm_tebie
+		set_autonomy = {
+			target = TRM
+			autonomy_state = chi_tebie
+		}
+	}
+}
+
+##建议联合进攻帝国
+country_event = {
+	id = man.104
+	title = man.104.t
+	desc = man.104.d
+	picture = GFX_report_event_soviet_tanks
+	is_triggered_only = yes
+	option = {
+		name = man.104.a
+		ai_chance = {
+			factor = 5
+		}
+		declare_war_on = {
+			target = CHI
+			type = annex_everything
+		}
+	}
+	option = {
+		name = man.104.b
+		ai_chance = {
+			factor = 5
+		}
+		MAN = {
+			country_event = {
+				id = man.105
+				days = 1
+			}
+		}
+	}
+}
+
+##拒绝
+country_event = {
+	id = man.105
+	title = man.105.t
+	desc = man.105.d
+	picture = GFX_report_event_soviet_tanks
+	is_triggered_only = yes
+	option = {
+		name = man.105.a
+		ai_chance = {
+			factor = 5
+		}
+	}
+}
+
+##重新整合
+country_event = {
+	id = man.106
+	title = man.106.t
+	desc = man.106.d
+	picture = GFX_report_event_chinese_soldiers
+	is_triggered_only = yes
+	option = {
+		name = man.106.a
+		ai_chance = {
+			factor = 5
+		}
+		MAN = {
+			every_unit_leader = {
+				set_nationality = ROC
+			}
+		}
+		annex_country = {
+			target = MAN
+			transfer_troops = yes
+		}
+	}
+}
+
+##宣称国民党领导权
+country_event = {
+	id = man.107
+	title = man.107.t
+	desc = man.107.d
+	picture = GFX_report_event_china_politicians_captured
+	is_triggered_only = yes
+	option = {
+		name = man.107.a
+		ai_chance = {
+			base = 30
+			modifier = {
+				MAN = {
+					owns_state = 613
+				}
+				add = 30
+			}
+			modifier = {
+				MAN = {
+					owns_state = 1048
+				}
+				add = 30
+			}
+		}
+		MAN = {
+			country_event = {
+				id = man.108
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = man.107.b
+		ai_chance = {
+			base = 30
+		}
+		MAN = {
+			country_event = {
+				id = man.109
+				days = 1
+			}
+		}
+	}
+}
+
+##中央同意
+country_event = {
+	id = man.108
+	title = man.108.t
+	desc = man.108.d
+	picture = GFX_report_event_china_politicians_captured
+	is_triggered_only = yes
+	option = {
+		name = man.108.a
+		ai_chance = {
+			factor = 5
+		}
+		ROC = {
+			every_unit_leader = {
+				set_nationality = MAN
+			}
+		}
+		annex_country = {
+			target = ROC
+			transfer_troops = yes
+		}
+		if = {
+			limit = {
+				YUN = {
+					is_subject_of = ROC
+				}
+			}
+			YUN = {
+				every_unit_leader = {
+					set_nationality = MAN
+				}
+			}
+			annex_country = {
+				target = YUN
+				transfer_troops = yes
+			}
+		}
+	}
+}
+
+##中央拒绝
+country_event = {
+	id = man.109
+	title = man.109.t
+	desc = man.109.d
+	picture = GFX_report_event_china_politicians_captured
+	is_triggered_only = yes
+	option = {
+		name = man.109.a
+		ai_chance = {
+			factor = 5
+		}
+		ROC = {
+			country_event = man.106
+		}
+		ROC = {
+			change_tag_from = MAN
+		}
+	}
+	option = {
+		name = man.109.b
+		ai_chance = {
+			factor = 0
+		}
+		ROC = {
+			set_autonomy = {
+				target = MAN
+				autonomy_state = autonomy_free
+			}
+		}
+		declare_war_on = {
+			target = ROC
+			type = annex_everything
+		}
+	}
+}
+
+##帝国效忠者的命运
+country_event = {
+	id = man.110
+	title = man.110.t
+	desc = man.110.d
+	picture = GFX_report_event_soviet_purge_trial
+	is_triggered_only = yes
+	option = {
+		name = man.110.a
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 150
+		add_manpower = -1000
+	}
+	option = {
+		name = man.110.b
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = 100
+	}
+	option = {
+		name = man.110.c
+		ai_chance = {
+			factor = 5
+		}
+		add_political_power = -50
+		add_stability = -0.05
+		CHI = {
+			if = {
+				limit = {
+					has_character = CHI_yanxishan
+				}
+				CHI_yanxishan = {
+					set_nationality = ROOT
+				}
+			}
+			if = {
+				limit = {
+					has_character = CHI_lvbu
+				}
+				CHI_lvbu = {
+					set_nationality = ROOT
+				}
+			}
+			if = {
+				limit = {
+					has_character = CHI_liuhuaqiang
+				}
+				CHI_liuhuaqiang = {
+					set_nationality = ROOT
+				}
+			}
+			if = {
+				limit = {
+					has_character = CHI_liujiangjun
+				}
+				CHI_liujiangjun = {
+					set_nationality = ROOT
+				}
+			}
+			if = {
+				limit = {
+					has_character = CHI_zhangzongchang
+				}
+				CHI_zhangzongchang = {
+					set_nationality = ROOT
+				}
+			}
+			if = {
+				limit = {
+					has_character = CHI_chentiaoyuan
+				}
+				CHI_chentiaoyuan = {
+					set_nationality = ROOT
+				}
+			}
+			if = {
+				limit = {
+					has_character = CHI_fuhua
+				}
+				CHI_fuhua = {
+					set_nationality = ROOT
+				}
+			}
+			if = {
+				limit = {
+					has_character = CHI_songzheyuan
+				}
+				CHI_songzheyuan = {
+					set_nationality = ROOT
+				}
+			}
+			if = {
+				limit = {
+					has_character = CHI_yangsen
+				}
+				CHI_yangsen = {
+					set_nationality = ROOT
+				}
+			}
+		}
+	}
+}
+
+##常凯申的评价
+country_event = {
+	id = man.111
+	title = man.111.t
+	desc = man.111.d
+	picture = GFX_report_event_hitler_china
+	is_triggered_only = yes
+	option = {
+		name = man.111.a
+		ai_chance = {
+			factor = 5
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.1
+		}
+		add_political_power = -50
+		add_stability = 0.05
+	}
+	option = {
+		name = man.111.b
+		ai_chance = {
+			factor = 0
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.05
+		}
+		add_political_power = 10
+		add_stability = -0.02
+	}
+	option = {
+		name = man.111.c
+		ai_chance = {
+			factor = 0
+		}
+		add_political_power = 25
+	}
+	option = {
+		name = man.111.e
+		ai_chance = {
+			factor = 0
+		}
+		trigger = {
+			ROC = {
+				has_country_flag = blue_win
+			}
+		}
+		add_political_power = 50
+		add_stability = 0.05
+		add_popularity = {
+			ideology = neutrality
+			popularity = -0.05
+		}
+	}
+}
+
+##我们未来的道路
+country_event = {
+	id = man.112
+	title = man.112.t
+	desc = man.112.d
+	picture = GFX_report_event_election_vote
+	is_triggered_only = yes
+	option = {
+		name = man.112.a
+		ai_chance = {
+			factor = 5
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.5
+		}
+		if = {
+			limit = {
+				has_country_leader = {
+					character = MAN_zhangxueliang
+					ruling_only = yes
+				}
+			}
+			add_country_leader_role = {
+				character = MAN_zhangxueliang
+				promote_leader = yes
+				country_leader = {
+					desc = "MAN_xiaoliuzi_shengping"
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_leader = {
+					character = ROC_chencheng
+					ruling_only = yes
+				}
+			}
+			add_country_leader_role = {
+				character = ROC_chencheng
+				promote_leader = yes
+				country_leader = {
+					desc = "MAN_CHENCHENG_DESC"
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = man.112.b
+		ai_chance = {
+			factor = 5
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.5
+		}
+		if = {
+			limit = {
+				has_country_leader = {
+					character = MAN_zhangxueliang
+					ruling_only = yes
+				}
+			}
+			add_country_leader_role = {
+				character = MAN_zhangxueliang
+				promote_leader = yes
+				country_leader = {
+					desc = "MAN_xiaoliuzi_shengping"
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_leader = {
+					character = ROC_chencheng
+					ruling_only = yes
+				}
+			}
+			add_country_leader_role = {
+				character = ROC_chencheng
+				promote_leader = yes
+				country_leader = {
+					desc = "MAN_CHENCHENG_DESC"
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = man.112.c
+		ai_chance = {
+			factor = 5
+		}
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.5
+		}
+		if = {
+			limit = {
+				has_country_leader = {
+					character = MAN_zhangxueliang
+					ruling_only = yes
+				}
+			}
+			add_country_leader_role = {
+				character = MAN_zhangxueliang
+				promote_leader = yes
+				country_leader = {
+					desc = "MAN_xiaoliuzi_shengping"
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_leader = {
+					character = ROC_chencheng
+					ruling_only = yes
+				}
+			}
+			add_country_leader_role = {
+				character = ROC_chencheng
+				promote_leader = yes
+				country_leader = {
+					desc = "MAN_CHENCHENG_DESC"
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+					}
+				}
+			}
+		}
+	}
+}
+
+##邀请加入阵营	
+country_event = {
+	id = man.113
+	title = man.113.t
+	desc = man.113.d
+	picture = GFX_report_event_chinese_japanese_handshake
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			save_event_target_as = MANalliance_applicant
+			FROM = {
+				save_event_target_as = MANalliance_inviter
+			}
+		}
+	}
+	option = {
+		name = man.113.a
+		ai_chance = {
+			base = 100
+		}
+		FROM = {
+			add_to_faction = ROOT
+			country_event = {
+				id = man.114
+				hours = 6
+			}
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = FROM
+			value = 200
+		}
+		hidden_effect = {
+			set_country_flag = alliance_applicant@ROOT
+			FROM = {
+				set_country_flag = alliance_inviter@ROOT
+			}
+			news_event = {
+				id = news.289
+				hours = 12
+			}
+		}
+	}
+	option = {
+		name = man.113.b
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0.1
+				has_war = yes
+				FROM = {
+					has_war = no
+				}
+			}
+		}
+		FROM = {
+			country_event = {
+				id = man.115
+				hours = 6
+			}
+		}
+	}
+}
+
+##加入阵营	
+country_event = {
+	id = man.114
+	title = man.114.t
+	desc = man.114.d
+	picture = GFX_report_event_chinese_japanese_handshake
+	is_triggered_only = yes
+	option = {
+		name = man.114.a
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+##拒绝加入阵营	
+country_event = {
+	id = man.115
+	title = man.115.t
+	desc = man.115.d
+	picture = GFX_report_event_chinese_japanese_handshake
+	is_triggered_only = yes
+	option = {
+		name = man.115.a
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+##蓝衣社夺权	
+country_event = {
+	id = man.116
+	title = man.116.t
+	desc = man.116.d
+	picture = GFX_report_event_chinese_soldiers
+	fire_only_once = yes
+	trigger = {
+		tag = MAN
+		ROC = {
+			has_country_flag = blue_win
+		}
+		is_subject_of = ROC
+		OR = {
+			has_country_leader = {
+				character = ROC_chencheng
+				ruling_only = yes
+			}
+			has_country_leader = {
+				character = MAN_zhangxueliang
+				ruling_only = yes
+			}
+		}
+	}
+	option = {
+		name = man.116.a
+		ai_chance = {
+			base = 100
+		}
+		ROC = {
+			set_autonomy = {
+				target = MAN
+				autonomy_state = autonomy_free
+			}
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = -0.15
+		}
+	}
+}
+
+##清党运动	
+country_event = {
+	id = man.117
+	title = man.117.t
+	desc = man.117.d
+	picture = GFX_report_event_chinese_soldiers_running
+	is_triggered_only = yes
+	option = {
+		name = man.117.a
+		ai_chance = {
+			base = 100
+		}
+		add_manpower = -2000
+		add_popularity = {
+			ideology = communism
+			popularity = -0.15
+		}
+		hidden_effect = {
+			country_event = {
+				id = man.118
+				days = 10
+			}
+		}
+	}
+}
+
+##赤党突袭	
+country_event = {
+	id = man.118
+	title = man.118.t
+	desc = man.118.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = yes
+	option = {
+		name = man.118.a
+		ai_chance = {
+			base = 20
+		}
+		set_country_flag = cpc_flag
+		load_focus_tree = {
+			tree = MAN_focus_cpc
+			keep_completed = yes
+		}
+		unlock_national_focus = MAN_dongbeirenminzhengfu
+		set_cosmetic_tag = MAN_jiefangqu
+		add_ideas = MAN_zuoqingmaojinzhuyi_idea_1
+		add_ideas = MAN_youqingzhuyi_idea_1
+		add_ideas = MAN_pibeihongjun_idea_1
+		set_party_name = {
+			ideology = communism
+			long_name = MAN_dongbeicpc_party_long
+			name = MAN_dongbeicpc_party
+		}
+		add_manpower = -500
+		add_popularity = {
+			ideology = communism
+			popularity = 0.5
+		}
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = no
+		}
+		ROC = {
+			set_autonomy = {
+				target = MAN
+				autonomy_state = autonomy_free
+			}
+		}
+		every_state = {
+			limit = {
+				is_core_of = CHI
+			}
+			MAN = {
+				add_state_core = PREV
+			}
+		}
+		if = {
+			limit = {
+				has_character = MAN_zhangxueliang
+			}
+			MAN_zhangxueliang = {
+				set_nationality = ROC
+			}
+		}
+		if = {
+			limit = {
+				has_character = ROC_chencheng
+			}
+			ROC_chencheng = {
+				set_nationality = ROC
+			}
+		}
+		AHM = {
+			ROC_561 = {
+				set_nationality = MAN
+			}
+			ROC_56 = {
+				set_nationality = MAN
+			}
+			ROC_59 = {
+				set_nationality = MAN
+			}
+			ROC_63 = {
+				set_nationality = MAN
+			}
+			ROC_64 = {
+				set_nationality = MAN
+			}
+			ROC_79 = {
+				set_nationality = MAN
+			}
+			ROC_80 = {
+				set_nationality = MAN
+			}
+			ROC_81 = {
+				set_nationality = MAN
+			}
+			ROC_92 = {
+				set_nationality = MAN
+			}
+			ROC_97 = {
+				set_nationality = MAN
+			}
+			ROC_linmiao = {
+				set_nationality = MAN
+			}
+			ROC_liyunlong = {
+				set_nationality = MAN
+			}
+			ROC_nz75 = {
+				set_nationality = MAN
+			}
+			ROC_xuechu = {
+				set_nationality = MAN
+			}
+			ROC_zi = {
+				set_nationality = MAN
+			}
+			ROC_zhaogang = {
+				set_nationality = MAN
+			}
+			ROC_lidesheng = {
+				set_nationality = MAN
+			}
+		}
+		promote_character = ROC_lidesheng
+		set_country_leader_ideology = Maoist_subideology
+		remove_country_leader_trait = revolutionary_author
+		remove_country_leader_trait = education_reformer
+		add_country_leader_trait = veteran_communist
+		clr_country_flag = dongbeiyizhi_flag
+		ROC = {
+			country_event = man.119
+		}
+		if = {
+			limit = {
+				has_idea = ROC_NRA_1
+			}
+			remove_ideas = ROC_NRA_1
+		}
+		if = {
+			limit = {
+				has_idea = ROC_NRA_2
+			}
+			remove_ideas = ROC_NRA_2
+		}
+		if = {
+			limit = {
+				has_idea = ROC_NRA_3
+			}
+			remove_ideas = ROC_NRA_3
+		}
+		if = {
+			limit = {
+				has_idea = ROC_Mass_production_idea
+			}
+			remove_ideas = ROC_Mass_production_idea
+		}
+		if = {
+			limit = {
+				has_idea = huangpujunxiao
+			}
+			remove_ideas = huangpujunxiao
+		}
+		if = {
+			limit = {
+				has_idea = huangpujunxiao_2
+			}
+			remove_ideas = huangpujunxiao_2
+		}
+		if = {
+			limit = {
+				has_idea = huangpujunxiao_3
+			}
+			remove_ideas = huangpujunxiao_3
+		}
+		if = {
+			limit = {
+				has_idea = huangpujunxiao_4
+			}
+			remove_ideas = huangpujunxiao_4
+		}
+		if = {
+			limit = {
+				has_idea = ROC_Military_council_idea_1
+			}
+			remove_ideas = ROC_Military_council_idea_1
+		}
+		if = {
+			limit = {
+				has_idea = ROC_Military_council_idea_2
+			}
+			remove_ideas = ROC_Military_council_idea_2
+		}
+		if = {
+			limit = {
+				has_idea = ROC_Logistics_support_idea
+			}
+			remove_ideas = ROC_Logistics_support_idea
+		}
+		if = {
+			limit = {
+				has_idea = ROC_Military_council_idea_3
+			}
+			remove_ideas = ROC_Military_council_idea_3
+		}
+	}
+	option = {
+		name = man.118.b
+		ai_chance = {
+			base = 5
+		}
+		add_manpower = -500
+		retire_character = MAN_Ma_Zhan_Shan
+	}
+}
+
+##东北丢了	
+country_event = {
+	id = man.119
+	title = man.119.t
+	desc = man.119.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	is_triggered_only = yes
+	option = {
+		name = man.119.a
+		ai_chance = {
+			base = 100
+		}
+		complete_tooltip = {
+			if = {
+				limit = {
+					has_character = MAN_zhangxueliang
+				}
+				MAN_zhangxueliang = {
+					set_nationality = ROC
+				}
+			}
+			if = {
+				limit = {
+					has_character = ROC_chencheng
+				}
+				ROC_chencheng = {
+					set_nationality = ROC
+				}
+			}
+		}
+	}
+}
+
+##中共请求援助	
+country_event = {
+	id = man.120
+	title = man.120.t
+	desc = man.120.d
+	picture = GFX_report_event_chinese_officers
+	is_triggered_only = yes
+	option = {
+		name = man.120.a
+		ai_chance = {
+			base = 80
+		}
+		complete_tooltip = {
+			send_equipment = {
+				target = MAN
+				type = infantry_equipment
+				amount = 2500
+			}
+		}
+		MAN = {
+			country_event = man.121
+		}
+	}
+	option = {
+		name = man.120.b
+		ai_chance = {
+			base = 0
+		}
+		MAN = {
+			country_event = man.122
+		}
+	}
+}
+
+##苏联同意援助
+country_event = {
+	id = man.121
+	title = man.121.t
+	desc = man.121.d
+	picture = GFX_report_event_chinese_officers
+	is_triggered_only = yes
+	option = {
+		name = man.121.a
+		ai_chance = {
+			base = 100
+		}
+		SOV = {
+			send_equipment = {
+				target = MAN
+				type = infantry_equipment
+				amount = 5000
+			}
+		}
+		army_experience = 50
+		remove_ideas = MAN_zhongdonglutielu_idea
+	}
+}
+
+##苏联拒绝援助
+country_event = {
+	id = man.122
+	title = man.122.t
+	desc = man.122.d
+	picture = GFX_report_event_chinese_officers
+	is_triggered_only = yes
+	option = {
+		name = man.122.a
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+##工人罢工！
+country_event = {
+	id = man.123
+	title = man.123.t
+	desc = man.123.d
+	picture = GFX_report_event_generic_rally2
+	is_triggered_only = yes
+	option = {
+		name = man.123.a
+		ai_chance = {
+			base = 100
+		}
+		add_stability = -0.02
+		add_timed_idea = {
+			idea = MAN_bagong_idea
+			days = 30
+		}
+	}
+}
+
+##赤匪的传单！
+country_event = {
+	id = man.124
+	title = man.124.t
+	desc = man.124.d
+	picture = GFX_report_event_spain_civil_war_volunteers_02
+	is_triggered_only = yes
+	option = {
+		name = man.124.a
+		ai_chance = {
+			base = 100
+		}
+		add_stability = -0.02
+		random_list = {
+			33 = {
+				random_owned_state = {
+					limit = {
+						is_fully_controlled_by = ROOT
+						arms_factory > 0
+					}
+					damage_building = {
+						type = arms_factory
+						damage = 0.5
+					}
+				}
+			}
+			33 = {
+				random_owned_state = {
+					limit = {
+						is_fully_controlled_by = ROOT
+						industrial_complex > 0
+					}
+					damage_building = {
+						type = industrial_complex
+						damage = 0.5
+					}
+				}
+			}
+			34 = {
+				random_owned_state = {
+					limit = {
+						is_fully_controlled_by = ROOT
+						infrastructure > 0
+					}
+					damage_building = {
+						type = infrastructure
+						damage = 1
+					}
+				}
+			}
+		}
+	}
+}
+
+##军火失窃
+country_event = {
+	id = man.125
+	title = man.125.t
+	desc = man.125.d
+	picture = GFX_report_event_generic_soldiers_surrendering
+	is_triggered_only = yes
+	option = {
+		name = man.125.a
+		ai_chance = {
+			factor = 5
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = -250
+		}
+		MAN = {
+			country_event = {
+				id = man.126
+				days = 1
+			}
+		}
+	}
+}
+
+##行动成功
+country_event = {
+	id = man.126
+	title = man.126.t
+	desc = man.126.d
+	picture = GFX_report_event_generic_soldiers_surrendering
+	is_triggered_only = yes
+	option = {
+		name = man.126.a
+		ai_chance = {
+			factor = 5
+		}
+		add_equipment_to_stockpile = {
+			type = infantry_equipment_0
+			amount = 250
+		}
+	}
+}
+
+##行动失败
+country_event = {
+	id = man.127
+	title = man.127.t
+	desc = man.127.d
+	picture = GFX_report_event_generic_soldiers_surrendering
+	is_triggered_only = yes
+	option = {
+		name = man.127.a
+		ai_chance = {
+			factor = 5
+		}
+		add_manpower = -50
+	}
+}
+
+##后方失守
+country_event = {
+	id = man.128
+	title = man.128.t
+	desc = man.128.d
+	picture = GFX_report_event_spain_civil_war_soldiers
+	is_triggered_only = yes
+	option = {
+		name = man.128.a
+		ai_chance = {
+			factor = 5
+		}
+		add_timed_idea = {
+			idea = MAN_houfangshishou_idea
+			days = 180
+		}
+	}
+}
+
+##一位来自圣杯的医师
+country_event = {
+	id = man.129
+	title = man.129.t
+	desc = man.129.d
+	picture = GFX_event_lifuxi
+	is_triggered_only = yes
+	option = {
+		name = man.129.a
+		ai_chance = {
+			factor = 5
+		}
+		custom_effect_tooltip = qiyonglifuxi
+		set_country_flag = lifuxidaolai
+	}
+}
+
+##伏拉夫请求效忠
+country_event = {
+	id = man.130
+	title = man.130.t
+	desc = man.130.d
+	picture = GFX_event_fulafu
+	is_triggered_only = yes
+	option = {
+		name = man.130.a
+		ai_chance = {
+			factor = 5
+		}
+		MAN_Fu_La_Fu = {
+			add_corps_commander_role = {
+				traits = {
+					media_personality
+				}
+				skill = 1
+				attack_skill = 1
+				defense_skill = 1
+				planning_skill = 1
+				logistics_skill = 1
+				legacy_id = -1
+			}
+		}
+	}
+	option = {
+		name = man.130.b
+		ai_chance = {
+			factor = 5
+		}
+		add_stability = 0.02
+	}
+}
+
+##李甫西大显身手
+country_event = {
+	id = man.131
+	title = man.131.t
+	desc = man.131.d
+	picture = GFX_event_lifuxi2
+	is_triggered_only = yes
+	option = {
+		name = man.131.a
+		ai_chance = {
+			factor = 5
+		}
+		army_experience = 25
+	}
+}
+
+##将领投诚
+country_event = {
+	id = man.132
+	title = man.132.t
+	desc = man.132.d
+	picture = GFX_report_event_chinese_japanese_handshake
+	is_triggered_only = yes
+	option = {
+		name = man.132.a
+		ai_chance = {
+			factor = 5
+		}
+		every_possible_country = {
+			limit = {
+				has_character = CHI_lvbu
+			}
+			random_character = {
+				limit = {
+					is_character = CHI_lvbu
+				}
+				set_nationality = ROOT
+			}
+		}
+		every_possible_country = {
+			limit = {
+				has_character = CHI_chitu
+			}
+			random_character = {
+				limit = {
+					is_character = CHI_chitu
+				}
+				set_nationality = ROOT
+			}
+		}
+		every_possible_country = {
+			limit = {
+				has_character = ROC_changchun
+			}
+			random_character = {
+				limit = {
+					is_character = ROC_changchun
+				}
+				set_nationality = ROOT
+			}
+		}
+		every_possible_country = {
+			limit = {
+				has_character = ROC_lizongren
+			}
+			random_character = {
+				limit = {
+					is_character = ROC_lizongren
+				}
+				set_nationality = ROOT
+			}
+		}
+		every_possible_country = {
+			limit = {
+				has_character = ROC_tangshengzhi
+			}
+			random_character = {
+				limit = {
+					is_character = ROC_tangshengzhi
+				}
+				set_nationality = ROOT
+			}
+		}
+		every_possible_country = {
+			limit = {
+				has_character = ROC_huangxing
+			}
+			random_character = {
+				limit = {
+					is_character = ROC_huangxing
+				}
+				set_nationality = ROOT
+			}
+		}
+		every_possible_country = {
+			limit = {
+				has_character = XSM_Ma_Dun_Jing
+			}
+			random_character = {
+				limit = {
+					is_character = XSM_Ma_Dun_Jing
+				}
+				set_nationality = ROOT
+			}
+		}
+		every_possible_country = {
+			limit = {
+				has_character = XSM_Ma_Hong_Bin
+			}
+			random_character = {
+				limit = {
+					is_character = XSM_Ma_Hong_Bin
+				}
+				set_nationality = ROOT
+			}
+		}
+	}
+}
+
+##邀请加入阵营	
+country_event = {
+	id = man.133
+	title = man.133.t
+	desc = man.133.d
+	picture = GFX_report_event_chinese_japanese_handshake
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			save_event_target_as = MANalliance_applicant
+			FROM = {
+				save_event_target_as = MANalliance_inviter
+			}
+		}
+	}
+	option = {
+		name = man.133.a
+		ai_chance = {
+			base = 100
+		}
+		FROM = {
+			add_to_faction = ROOT
+			country_event = {
+				id = man.134
+				hours = 6
+			}
+		}
+		add_ai_strategy = {
+			type = alliance
+			id = FROM
+			value = 200
+		}
+		hidden_effect = {
+			set_country_flag = alliance_applicant@ROOT
+			FROM = {
+				set_country_flag = alliance_inviter@ROOT
+			}
+			news_event = {
+				id = news.289
+				hours = 12
+			}
+		}
+	}
+	option = {
+		name = man.133.b
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0.1
+				has_war = yes
+				FROM = {
+					has_war = no
+				}
+			}
+		}
+		FROM = {
+			country_event = {
+				id = man.135
+				hours = 6
+			}
+		}
+	}
+}
+
+##加入阵营	
+country_event = {
+	id = man.134
+	title = man.134.t
+	desc = man.134.d
+	picture = GFX_report_event_chinese_japanese_handshake
+	is_triggered_only = yes
+	option = {
+		name = man.134.a
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+##拒绝加入阵营	
+country_event = {
+	id = man.135
+	title = man.135.t
+	desc = man.135.d
+	picture = GFX_report_event_chinese_japanese_handshake
+	is_triggered_only = yes
+	option = {
+		name = man.135.a
+		ai_chance = {
+			base = 100
+		}
+	}
+}

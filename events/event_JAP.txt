@@ -1,0 +1,2252 @@
+﻿###########################
+# JAP
+###########################
+
+add_namespace = jap
+#卢沟桥事变（原版改）
+country_event = {
+	id = jap.100
+	title = jap.100.t
+	desc = jap.100.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	is_triggered_only = yes
+	
+	option = { # Breaking point!
+		name = jap.100.a
+		ai_chance = { factor = 90 }
+		effect_tooltip = {
+			JAP = {
+				add_war_support = 0.05
+				country_event = { id = jap.200 }
+				create_wargoal = {
+  					type = annex_everything
+  					target = CHI
+  				}
+  				create_wargoal = {
+  					type = annex_everything
+  					target = MEN
+  				}
+			}
+		}
+		hidden_effect = {
+			JAP = { country_event = { id = jap.200 } }
+		}
+	}
+	option = { # Make more concessions
+		name = jap.100.b
+		ai_chance = { factor = 0 }
+		JAP = {
+			set_truce = { target = ROOT days = 180 }
+			effect_tooltip = {	
+				transfer_state = 608
+				transfer_state = 609
+				transfer_state = 597
+				transfer_state = 614
+				add_state_claim = 613
+			}
+			country_event = { id = jap.300 }
+		}
+	}
+}
+#中国卢沟桥拒绝
+country_event = {
+	id = jap.200
+	title = jap.200.t
+	desc = jap.200.d
+	picture = GFX_report_event_chinese_soldiers_01
+
+	is_triggered_only = yes
+	
+	option = {
+		name = jap.200.a
+		add_war_support = 0.05
+		
+		create_wargoal = {
+  			type = annex_everything
+  			target = CHI
+  		}
+  		if = {
+			limit = {
+				ROC = {
+					exists = yes
+					NOT = {
+						is_in_faction_with = JAP
+					}
+				}
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = ROC
+			}
+		}
+		if = {
+			limit = {
+				PRC = {
+					exists = yes
+					NOT = {
+						is_in_faction_with = JAP
+					}
+				}
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = PRC
+			}
+		}
+		if = {
+			limit = {
+				MON = {
+					exists = yes
+					NOT = {
+						is_in_faction_with = JAP
+						is_in_faction_with = SOV
+					}
+				}
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = MON
+			}
+		}
+		if = {
+			limit = {
+				XSM = {
+					exists = yes
+					NOT = {
+						is_in_faction_with = JAP
+					}
+				}
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = XSM
+			}
+		}
+		if = {
+			limit = {
+				SIK = {
+					exists = yes
+					NOT = {
+						is_in_faction_with = JAP
+						is_in_faction_with = SOV
+					}
+				}
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = SIK
+			}
+		}
+		if = {
+			limit = {
+				YUN = {
+					exists = yes
+					NOT = {
+						is_in_faction_with = JAP
+					}
+				}
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = YUN
+			}
+		}
+		if = {
+			limit = {
+				TIB = {
+					exists = yes
+					NOT = {
+						is_in_faction_with = JAP
+						is_in_faction_with = SOV
+					}
+				}
+			}
+			create_wargoal = {
+				type = annex_everything
+				target = TIB
+			}
+		}
+		hidden_effect = {
+			news_event = { days = 5 id = news.1 }
+		}
+	}
+}
+#中国卢沟桥同意
+country_event = {
+	id = jap.300
+	title = jap.300.t
+	desc = jap.300.d
+	picture = GFX_report_event_chinese_soldiers_running
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = jap.300.a
+		effect_tooltip = {
+			set_truce = { target = FROM days = 180 }
+		}
+		hidden_effect = {
+			news_event = { days = 5 id = news.2 }
+		}
+		if = {
+			limit = {
+				608 = {
+					is_controlled_by = FROM
+				}
+			}
+			JAP = {
+				transfer_state = 608
+			}
+		}
+		if = {
+			limit = {
+				609 = {
+					is_controlled_by = FROM
+				}
+			}
+			JAP = {
+				transfer_state = 609
+			}
+		}
+		if = {
+			limit = {
+				597 = {
+					is_controlled_by = FROM
+				}
+			}
+			JAP = {
+				transfer_state = 597
+			}
+		}
+		if = {
+			limit = {
+				614 = {
+					is_controlled_by = FROM
+				}
+			}
+			JAP = {
+				transfer_state = 614
+			}
+		}
+		if = {
+			limit = {
+				743 = {
+					is_controlled_by = FROM
+				}
+			}
+			JAP = {
+				transfer_state = 743
+			}
+		}
+		add_state_claim = 613
+		if = {
+			limit = {
+				has_country_leader = { id = 700 ruling_only = yes }
+			}
+			remove_country_leader_trait = imperial_sanction
+		}
+		
+		add_ai_strategy = {
+			type = antagonize
+			id = "CHI"
+			value = 500
+		}
+	}
+}
+#日本来要回岛屿
+country_event = {
+	id = jap.1
+	title = jap.1.t
+	desc = jap.1.d
+	picture = GFX_report_event_czech_soldiers_02
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = jap.1.b
+		ai_chance = {
+			factor = 0
+			
+		}
+		
+		if = {
+			limit = { 				
+					owns_state = 528
+					controls_state = 528
+				
+			}
+			JAP = {
+			transfer_state = 528
+			}
+		}
+		if = {
+			limit = { 				
+					owns_state = 530
+					controls_state = 530
+				
+			}
+			JAP = {
+			transfer_state = 530
+			}
+		}
+		if = {
+			limit = { 				
+					owns_state = 645
+					controls_state = 645
+				
+			}
+			JAP = {
+			transfer_state = 645
+			}
+		}
+		JAP = {
+			country_event = jap.2
+		}
+		
+		
+	}
+	option = {
+		name = jap.1.a
+		ai_chance = { 
+			factor = 100
+		}
+		ENG = {
+		country_event = jap.3
+		}
+		
+	}
+	
+}
+#琉球还岛了！
+country_event = {
+	id = jap.2
+	title = jap.2.t
+	desc = jap.2.d
+	picture = GFX_report_event_french_resistance_01
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = jap.2.a
+		RYU = {
+		set_cosmetic_tag = RYU_newname
+		}
+	}
+	
+	
+}
+#（英国）日本想要回岛
+country_event = {
+	id = jap.3
+	title = jap.3.t
+	desc = jap.3.d
+	picture = GFX_report_event_czech_soldiers_02
+	
+	is_triggered_only = yes
+	
+	
+	option = {#许诺日本
+		name = jap.3.a
+		trigger = {
+		526 = { CONTROLLER = {	OR = {tag = ENG is_subject_of = ENG } } }
+	}
+		ai_chance = { factor = 10 }
+		
+		JAP = {
+		country_event = jap.4
+		}
+						
+	}
+	option = {#不给日本
+		name = jap.3.b
+		ai_chance = { 
+			factor = 0 
+		
+		}
+		add_political_power = -200
+			reverse_add_opinion_modifier = {
+				target = JAP
+				modifier = faction_traitor
+			}
+		JAP = {
+		country_event = jap.6
+		}
+						
+	}
+}
+
+#（日本）英国许诺冲绳
+country_event = {
+	id = jap.4
+	title = jap.4.t
+	desc = jap.4.d
+	picture = GFX_event_Saber
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = jap.4.a
+		ai_chance = { 
+			factor = 5
+			modifier = {
+				add = 3
+				is_historical_focus_on = yes
+			}
+		}
+		set_country_flag = JAP_xunuo
+		add_timed_idea = {
+			idea = liangdaozujie
+			days = 90
+        }
+		add_state_core = 526
+		news_event = { days = 1 id = news.770 }	
+		custom_effect_tooltip = JAP_xuqian_buman
+					
+	}
+	option = {
+		name = jap.4.b
+		ai_chance = { 
+			factor = 0
+			
+		}
+		set_country_flag = JAP_jujue_ENG
+		JAP = {
+				give_military_access = RYU	
+				give_military_access = ENG	
+			}
+		if = {
+			limit = { 
+			RYU = {
+				owns_state = 528
+				controls_state = 528
+				}	
+				
+			}			
+			transfer_state = 528						
+		}
+		if = {
+			limit = { 
+			RYU = {
+				owns_state = 530
+				controls_state = 530
+				}	
+				
+			}			
+			transfer_state = 530			
+		}
+		if = {
+			limit = { 
+			RYU = {
+				owns_state = 645
+				controls_state = 645
+				}	
+				
+			}			
+			transfer_state = 645			
+		}
+		if = {
+			limit = { 
+			RYU = {
+				owns_state = 526
+				controls_state = 526
+				}	
+				
+			}			
+			transfer_state = 526			
+		}
+		hidden_effect = {
+			news_event = { days = 1 id = news.768 }
+		}			
+		
+	}	
+
+}	
+#（日本）英国兑现承诺
+country_event = {
+	id = jap.5
+	title = jap.5.t
+	desc = jap.5.d
+	picture = GFX_event_Saber
+	
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = {
+		has_idea = liangdaozujie
+		}
+		
+		has_civil_war = no
+
+		has_country_flag = JAP_xunuo
+	}
+	
+	
+	option = {
+		name = jap.5.a
+		ai_chance = { factor = 1 }
+		RYU = {
+		set_cosmetic_tag = RYU_newname
+		}
+		add_stability = 0.1
+		if = {
+			limit = { 
+			RYU = {
+				owns_state = 528
+				controls_state = 528
+				}	
+				
+			}			
+			transfer_state = 528
+			JAP = {
+				give_military_access = RYU	
+				give_military_access = ENG	
+			}			
+		}
+		if = {
+			limit = { 
+			RYU = {
+				owns_state = 530
+				controls_state = 530
+				}	
+				
+			}			
+			transfer_state = 530			
+		}
+		if = {
+			limit = { 
+			RYU = {
+				owns_state = 526
+				controls_state = 526
+				}	
+				
+			}			
+			transfer_state = 526			
+		}
+		if = {
+			limit = { 
+			RYU = {
+				owns_state = 645
+				controls_state = 645
+				}	
+				
+			}			
+			transfer_state = 645			
+		}
+		
+		
+						
+	}
+	
+
+}
+#英国人拒绝还岛（骗子！）
+country_event = {
+	id = jap.6
+	title = jap.6.t
+	desc = jap.6.d
+	picture = GFX_event_Saber	
+	is_triggered_only = yes		
+	option = {
+		name = jap.6.a
+		
+		add_opinion_modifier = { target = ENG modifier = ziyou_usa_bad }
+		set_country_flag = JAP_shibaizhengfu
+		add_popularity = { ideology = fascism popularity = 0.05 }
+		add_popularity = { ideology = communism popularity = 0.05 }
+		add_popularity = { ideology = democratic popularity = -0.1 }
+		add_stability = -0.1
+		remove_ideas = dongyatiaoyue
+		hidden_effect = {
+			news_event = { days = 1 id = news.769 }	
+		}
+		
+	}
+	
+	
+}	
+#民族主义者不满
+country_event = {
+	id = jap.7
+	title = jap.7.t
+	desc = jap.7.d
+	picture = GFX_report_event_generic_army
+	
+	fire_only_once = yes
+	trigger = {
+	has_country_flag = JAP_xunuo
+	}
+	mean_time_to_happen = { days = 10 }
+	
+		option = {
+			name = jap.7.a
+			ai_chance = { factor = 10 }
+			add_popularity = { ideology = fascism popularity = 0.05 }
+			add_stability = -0.05
+			
+		}
+	
+	
+    }
+#日本向美国购买岛屿	
+country_event = {
+	id = jap.8
+	title = jap.8.t
+	desc = jap.8.d
+	picture = GFX_report_event_usa_heavy_cruiser
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+		option = {
+			name = jap.8.b
+			ai_chance = { 
+				factor = 100
+			}
+			JAP = {
+			  country_event = jap.9
+			}
+			add_political_power = 50
+			add_offsite_building = { type = industrial_complex level = 2 }
+		}
+		option = {
+			name = jap.8.a
+			ai_chance = {
+			factor = 0
+			}
+			JAP = {
+			  country_event = jap.10
+			  
+			}
+			
+		}
+	
+	
+    }
+#美国同意出售岛	
+country_event = {
+	id = jap.9
+	title = jap.9.t
+	desc = jap.9.d
+	picture = GFX_report_event_usa_election_roosevelt_wilkie
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+		option = {
+			name = jap.9.a
+			ai_chance = { factor = 10 }
+						
+			transfer_state = 631	
+            transfer_state = 632			
+		
+			
+		}
+	
+	
+}	
+#美国拒绝卖岛	
+country_event = {
+	id = jap.10
+	title = jap.10.t
+	desc = jap.10.d
+	picture = GFX_report_event_usa_election_roosevelt_wilkie
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+		option = {
+			name = jap.10.a
+			ai_chance = { factor = 10 }
+		
+			
+		}
+	
+	
+    }	
+#奉系遭到日本挑衅	
+country_event = {
+	id = jap.11
+	title = jap.11.t
+	desc = jap.11.d
+	picture = GFX_report_event_japanese_officers
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+		option = {
+			name = jap.11.a
+			ai_chance = { factor = 20 }
+			add_political_power = -50
+			add_stability = -0.1
+			JAP = {
+			set_country_flag = zhimiantiaoxin
+			}
+			
+		}
+		option = {
+			name = jap.11.b
+			ai_chance = { factor = 15 }
+			JAP = { country_event { days = 1 id = jap.16 } }
+			
+		}
+	
+	
+    }
+	#日本挑衅成功
+	country_event = {
+	id = jap.12
+	title = jap.12.t
+	desc = jap.12.d
+	picture = GFX_report_event_fascists_posing
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+		option = {
+			name = jap.12.a
+			ai_chance = { factor = 10 }
+			set_country_flag = JAP_tiaoxin_chenggong
+			add_tech_bonus = {
+					  name = land_doc_bonus
+					  bonus = 0.5
+					  uses = 1
+					  category = land_doctrine
+					}
+		}
+	
+	
+    }
+	#日本挑衅失败
+	country_event = {
+	id = jap.13
+	title = jap.13.t
+	desc = jap.13.d
+	picture = GFX_report_event_polish_tanks_01
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+		option = {
+			name = jap.13.a
+			ai_chance = { factor = 30 }
+			army_experience = 10
+			add_manpower = -1500
+		}
+	
+	
+    }
+	#中国防御成功
+	country_event = {
+	id = jap.14
+	title = jap.14.t
+	desc = jap.14.d
+	picture = GFX_report_event_japanese_officers
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+		option = {
+			name = jap.14.a
+			ai_chance = { factor = 10 }
+			add_tech_bonus = {
+					  name = land_doc_bonus
+					  bonus = 0.5
+					  uses = 1
+					  category = land_doctrine
+			}
+			
+		}
+	
+	
+    }
+	#奉系防御失败
+	country_event = {
+	id = jap.15
+	title = jap.15.t
+	desc = jap.15.d
+	picture = GFX_report_event_polish_tanks_01
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+		option = {
+			name = jap.15.a
+			ai_chance = { factor = 30 }
+			army_experience = 10
+			add_manpower = -1500
+		}
+	
+	
+    }
+	#奉系不抵抗
+	country_event = {
+	id = jap.16
+	title = jap.16.t
+	desc = jap.16.d
+	picture = GFX_report_event_asian_politicians
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+		option = {
+			name = jap.16.a
+			ai_chance = { factor = 10 }
+			set_country_flag = JAP_tiaoxin_chenggong
+			transfer_state = 408
+			transfer_state = 409
+			
+		}
+	
+	
+    }
+	#给苏联的和谈书
+	country_event = {
+	id = jap.17
+	title = jap.17.t
+	desc = jap.17.d
+	#picture = GFX_report_event_hitler_china
+	
+	is_triggered_only = yes
+	
+	#fire_only_once = yes#
+	
+		option = {
+			name = jap.17.a
+			ai_chance = { factor = 10 }
+			if = {
+			 limit = { owns_state = 657 }
+			 
+			 JAP = {
+			 transfer_state = 657
+			 }
+			}	
+			
+			if = {
+			 limit = { owns_state = 560 }
+			 
+		    JAP = {
+		     transfer_state = 560
+		    }
+			}
+			
+			if = {
+			    limit = { owns_state = 562 }
+			 
+				JAP = {
+				 transfer_state = 562
+				}
+			}
+			if = {
+			    limit = { owns_state = 637 }
+			 
+				JAP = {
+				 transfer_state = 637
+				}
+			}
+			if = {
+			    limit = { owns_state = 644 }
+			 
+				JAP = {
+				 transfer_state = 644
+				}
+			}
+			if = {
+			    limit = { owns_state = 574 }
+			 
+				JAP = {
+				 transfer_state = 574
+				}
+			}
+			if = {
+			    limit = { owns_state = 561 }
+			 
+				JAP = {
+				 transfer_state = 561
+				}
+			}
+			if = {
+			    limit = { owns_state = 565 }
+			 
+				JAP = {
+				 transfer_state = 565
+				}
+			}
+			if = {
+			    limit = { owns_state = 563 }
+			 
+				JAP = {
+				 transfer_state = 563
+				}
+			}
+			if = {
+			    limit = { owns_state = 564 }
+			 
+				JAP = {
+				 transfer_state = 564
+				}
+			}
+			if = {
+			    limit = { owns_state = 409 }
+			 
+				JAP = {
+				 transfer_state = 409
+				}
+			}
+			if = {
+			    limit = { owns_state = 408 }
+			 
+				JAP = {
+				 transfer_state = 408
+				}
+			}
+			white_peace = {
+				tag = JAP
+				message = JAP_SOV_tiaoyue
+			}
+			every_country = {
+				limit = {
+					is_in_faction_with = SOV
+					NOT = {
+						is_subject_of = SOV
+						TAG = SOV
+					}
+				}
+				white_peace = {
+					tag = JAP
+					message = JAP_SOV_tiaoyue
+				}
+			}
+			
+			
+			
+		}
+		option = {
+			name = jap.17.b
+			ai_chance = { factor = 1 }
+			add_stability = 0.1
+			add_war_support = 0.1
+	
+	    }
+    }
+	#西太平洋反殖民峰会
+	country_event = {
+	id = jap.18
+	title = jap.18.t
+	desc = jap.18.d
+	picture = GFX_report_event_gathering_protest
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+		option = {
+			name = jap.18.a
+			ai_chance = { factor = 10 }
+			if = {
+				limit = { RYU = { is_subject_of = ENG } }
+				set_autonomy = { target = RYU autonomy_state = autonomy_free }
+				RYU = {
+					retire_country_leader = yes 
+					remove_unit_leader = 121416
+					set_politics = {ruling_party = neutrality elections_allowed = no }
+					leave_faction = yes
+				}
+			}
+			if = {
+				limit = { MAL = { is_subject_of = ENG } }
+				set_autonomy = { target = MAL autonomy_state = autonomy_free }
+				MAL = {
+					set_politics = {ruling_party = neutrality elections_allowed = no }
+					leave_faction = yes
+				}
+			}
+			every_country = {
+				limit = {
+					has_war_with = ENG	
+					is_faction_leader = yes
+				}
+				white_peace = {
+					tag = RYU
+					message = 琉球退出战争并保持中立
+				}
+				white_peace = {
+					tag = MAL
+					message = 马来亚退出战争并保持中立
+				}
+				
+			}
+					
+		   
+			if = {
+			   limit = {
+					RYU = {
+						owns_state = 530 
+						JAP = {
+							exists = yes
+							has_capitulated = no
+						}
+					}	
+			   
+				}
+				JAP = {
+					transfer_state = 530
+				}
+			}
+		   if = {
+				limit = {
+					RYU = {owns_state = 528}
+					JAP = {
+						exists = yes
+						has_capitulated = no
+					}
+				}
+				JAP = {
+				   transfer_state = 528
+				}
+			} 
+		   if = {
+			   limit = { 
+					RYU = {owns_state = 645}
+					JAP = {
+						exists = yes
+						has_capitulated = no
+					}
+				}
+				JAP = {
+					transfer_state = 645
+				}
+		   } 
+		   if = {
+				limit = {
+					RYU = { owns_state = 526 }
+					ROC = {
+						exists = yes
+						has_capitulated = no
+					}
+				}	
+				ROC = {
+					transfer_state = 526
+				}
+		   }
+		   if = {
+				limit = { 
+					RYU = {owns_state = 524}
+					ROC = {
+						exists = yes
+						has_capitulated = no
+					}
+					
+				}
+				ROC = {
+					transfer_state = 524
+				}
+			} 
+		   if = {
+				limit = {
+					RYU = {owns_state = 729}
+					ROC = {
+						exists = yes
+						has_capitulated = no
+					}
+				}
+				ROC = {
+					transfer_state = 729
+				}
+			}  
+			if = {
+				limit = { 
+					RYU = {owns_state = 326}
+					ROC = {
+						exists = yes
+						has_capitulated = no
+					}
+				}
+				ROC = {
+					transfer_state = 326
+				}
+			} 
+		   if = {
+				limit = {
+				  RYU = { owns_state = 591}
+				   ROC = {
+						exists = yes
+						has_capitulated = no
+					}
+				}
+				ROC = {
+					transfer_state = 591
+				}
+		   } 
+		   if = {
+			   limit = { 
+					RYU = {owns_state = 745}
+					MAN = {
+						exists = yes
+						has_capitulated = no
+					}
+				}
+				MAN = {
+					transfer_state = 745
+				}
+			} 
+			if = {
+			   limit = { 
+					RYU = {owns_state = 743}
+					CHI = {
+						exists = yes
+						has_capitulated = no
+					}
+				}
+				CHI = {
+					transfer_state = 743
+				}
+			}
+			if = {
+				limit = { 
+					RYU = {owns_state = 613}
+					CHI = {
+						exists = yes
+						has_capitulated = no
+					}
+				}
+				CHI = {
+					transfer_state = 613
+				}
+			}
+			if = {
+				limit = { 
+					RYU = {owns_state = 623 }
+				}
+				MAL = {
+					transfer_state = 623
+				}
+			} 
+			if = {
+				limit = {
+				RYU = {owns_state = 327}
+				}
+				MAL = {
+					transfer_state = 327
+				}
+			}
+			
+			
+		   
+		   
+			
+		}
+		option = {
+			name = jap.18.b
+			ai_chance = { factor = 0 }
+			JAP = { country_event = jap.31 }
+	    }
+	}	
+	#拒绝了我们的建议（减好感度）	
+	country_event = {
+	id = jap.31
+	title = jap.31.t
+	desc = jap.31.d
+	picture = GFX_report_event_chamberlain
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+		option = {
+			name = jap.31.a
+			ai_chance = { factor = 10 }
+			add_opinion_modifier = { target = ROOT modifier = eng_jap_bad }
+			remove_ideas = dongyatiaoyue
+			remove_ideas = MTG_naval_treaty_adherent
+			
+			
+			
+		}
+	
+    }		
+	
+	
+    
+	#樱花军事援助
+	country_event = {
+	id = jap.19
+	title = jap.19.t
+	desc = jap.19.d
+	picture = GFX_report_event_japanese_army_parade
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+		option = {
+			name = jap.19.a
+			ai_chance = { factor = 30 }
+			add_ideas = JAP_guwen
+			
+			
+		}
+		option = {
+			name = jap.19.b
+			ai_chance = { factor = 10 }
+			add_offsite_building = { type = arms_factory level = 2 }
+			add_offsite_building = { type = industrial_complex level = 2 }
+			
+			
+		}
+	
+	
+    }
+	#共产（内战）
+	country_event = {
+	id = jap.20
+	title = jap.20.t
+	desc = jap.20.d
+	picture = GFX_report_event_polish_tanks_01
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+		option = {
+			name = jap.20.a
+			ai_chance = { factor = 10 }
+			set_global_flag = JAP_neizhan
+			custom_effect_tooltip = JAP_event_neizhan
+		hidden_effect ={
+			news_event = { days = 2 id = news.756 }
+			set_cosmetic_tag = JAP_GC
+		    set_capital = 532
+			set_stability = 0.7
+			set_war_support = 0.7
+			add_popularity = {
+				ideology = communism
+				popularity = 0.5
+	        }
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.5
+	        }
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.1
+	       }
+			
+			start_civil_war = {
+				ruling_party = communism
+				ideology = democratic
+				size = 0.5				
+				states = { 282 534 535 533 536 537 655 555 648 646 684 647 633 638 }
+				capital = 536
+				keep_unit_leaders = {
+			  753 754 755 756 757 758 759 760 761 762 763 764 765 766
+				    }
+				
+				
+				
+			}
+			load_oob = "JAP_GC"
+			random_other_country = {
+				limit = {
+					original_tag = JAP
+					has_government = democratic
+				}
+				load_oob = "JAP_shoubei"
+				add_stability = -0.05
+				add_war_support = -0.05
+			
+			
+	        }
+	
+	    }
+			
+    }
+	}
+	#内战（法西斯）
+	country_event = {
+	id = jap.21
+	title = jap.21.t
+	desc = jap.21.d
+	picture = GFX_report_event_polish_tanks_01
+
+	is_triggered_only = yes
+	#fire_only_once = yes#
+		trigger = {
+		}
+
+		option = {
+				name = jap.21.a
+				ai_chance = { factor = 10 }
+				set_global_flag = JAP_neizhan
+				custom_effect_tooltip = JAP_event_neizhan
+			hidden_effect ={
+				news_event = { days = 2 id = news.757 }
+				set_stability = 0.5
+				set_war_support = 0.4
+				add_popularity = {
+					ideology = fascism
+					popularity = 0.5
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = -0.5
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = -0.1
+			   }
+				
+				start_civil_war = {
+					ruling_party = fascism
+					ideology = democratic
+					size = 0.5
+					capital = 531
+					states = {  534 529 531 539 530 528 532 535 533 536 537 655 555 648 646 684 647 633 638 }
+					keep_unit_leaders = {
+				  753 754 755 756 757 758 759 760 761 762 763 764 765 766
+						}
+					
+					
+					
+				}
+				load_oob = "JAP_FXS"
+				random_other_country = {
+					limit = {
+						original_tag = JAP
+						has_government = democratic
+					}
+					load_oob = "JAP_zhenya"
+					add_stability = -0.05
+					add_war_support = -0.05
+				
+				
+				}
+
+			}
+		}
+	}
+	#日本想要加入共产国际
+	country_event = {
+	id = jap.22
+	title = jap.22.t
+	desc = jap.22.d
+	picture = GFX_report_event_chinese_japanese_handshake
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+		option = {
+			name = jap.22.a
+			ai_chance = { factor = 50 }
+			SOV = { 
+			add_to_faction = JAP
+			}
+			
+			
+			
+		}
+		option = {
+			name = jap.22.a
+			ai_chance = { factor = 1 }
+			JAP = { country_event = jap.23  }
+			
+			
+		}
+	
+    }
+	#苏联拒绝
+	country_event = {
+	id = jap.23
+	title = jap.23.t
+	desc = jap.23.d
+	picture = GFX_report_event_japanese_soldiers_03
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+		option = {
+			name = jap.23.a
+			ai_chance = { factor = 10 }	
+			
+		}
+	
+    }
+	#奉系，被共产党破坏
+	country_event = {
+	id = jap.24
+	title = jap.24.t
+	desc = jap.24.d
+	picture = GFX_report_event_japanese_soldiers_03
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+		option = {
+			name = jap.24.a
+			ai_chance = { factor = 10 }
+			add_popularity = { ideology = communism popularity = 0.05 }
+			
+			add_stability = -0.05
+			
+			add_political_power = -50
+			
+			random_owned_controlled_state = {
+			limit ={ infrastructure > 1 }
+			damage_building = {
+				type = infrastructure
+				damage = 1
+			}
+			}
+			
+			
+		}
+	
+    }
+	#奉系，机关遭到袭击
+	country_event = {
+	id = jap.25
+	title = jap.25.t
+	desc = jap.25.d
+	picture = GFX_report_event_indian_soldiers
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+		option = {
+			name = jap.25.a
+			ai_chance = { factor = 10 }
+			add_popularity = { ideology = neutrality  popularity = -0.05 }
+			add_popularity = { ideology = fascism  popularity = -0.05 }
+			add_political_power = -100
+			
+			
+			
+			
+		}
+	
+    }
+	#日本招降
+	country_event = {
+	id = jap.26
+	title = jap.26.t
+	desc = jap.26.d
+	picture = GFX_report_event_japanese_chinese_surrender
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+		option = {
+			name = jap.26.a
+			ai_chance = { factor = 100 }
+			JAP = { country_event = { days = 1 id = jap.27 }}
+			
+			
+		}
+		option = {
+			name = jap.26.b
+			ai_chance = { factor = 1  }
+			JAP = {country_event = { days = 1 id = jap.28 }}
+			
+			
+			
+		}
+	
+    }
+	#韩国再次屈服我们
+	country_event = {
+	id = jap.27
+	title = jap.27.t
+	desc = jap.27.d
+	picture = GFX_report_event_japanese_chinese_surrender
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+		option = {
+			name = jap.27.a
+			ai_chance = { factor = 10 }
+			
+			JAP = { annex_country = { target = KOR  } }
+			
+			
+		}
+		
+	
+    }
+	#拒绝服从，获得战争借口
+	country_event = {
+	id = jap.28
+	title = jap.28.t
+	desc = jap.28.d
+	picture = GFX_report_event_kenya_army
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+		option = {
+			name = jap.28.a
+			ai_chance = { factor = 10 }
+			
+			create_wargoal = {
+				type = take_state_focus
+				target = FROM
+			}
+			
+			
+		}
+		
+	
+    }
+	#大帅被炸死了
+	country_event = {
+	id = jap.29
+	title = jap.29.t
+	desc = jap.29.d
+	picture = GFX_report_event_manchukuo_army
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+		option = {
+			name = jap.29.a
+			ai_chance = { factor = 100 }
+				if = {
+				
+					limit = { is_subject = yes }
+					
+					CHI = {
+					set_autonomy = { target = MAN autonomy_state = autonomy_free }
+					}
+					add_popularity = { ideology = fascism popularity = 0.3 }
+					set_politics = {ruling_party = fascism elections_allowed = no }
+
+				}
+				if = {
+				
+					limit = { is_subject = no }	
+					
+					add_popularity = { ideology = fascism popularity = 0.3 }
+					add_popularity = { ideology = neutrality popularity = -0.2 }
+					set_politics = {ruling_party = fascism elections_allowed = no }
+
+				}
+				add_timed_idea = {
+					idea = gaocenghunluan
+					days = 180
+				}
+				hidden_effect = {
+					country_event = {  id = news.759}
+				}
+				set_global_flag = CHI_zhang_zuoling_die
+			
+		}
+		option = {
+			name = jap.29.b
+			JAP = {
+			add_war_support = 0.05
+			set_country_flag = MAN_jujue_JAP_beikuilei_1
+			}
+			ai_chance = { factor = 0 }
+		}
+	
+    }
+	#接触张雪娘
+	country_event = {
+	id = jap.30
+	title = jap.30.t
+	desc = jap.30.d
+	picture = GFX_report_event_japanese_officers
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+		option = {
+			name = jap.30.a
+			ai_chance = { factor = 100 }
+			JAP = { country_event = jap.32 }
+			load_focus_tree = generic_focus
+			set_party_name = { ideology = fascism long_name = "满洲国协和会" name = "满洲国协和会" }
+			MAN_Dong_Xue_Lian = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "1999.1.1"
+					ideology = fascism_ideology
+					traits = {
+						harsh_propagandist
+					}
+				}
+				promote_leader = yes
+				}
+			}
+			remove_ideas = MAN_zhongdonglutielu_idea
+			every_state = {
+			limit = {
+			is_core_of = CHI
+			not = { is_owned_and_controlled_by = MAN }
+			}
+			remove_claim_by = MAN
+			remove_core_of = MAN
+			}
+			
+		}
+		option = {
+			name = jap.30.b
+			ai_chance = { factor = 0 }
+			JAP = {
+				add_war_support = 0.05
+				set_country_flag = MAN_jujue_JAP_beikuilei_1
+			}
+			
+			
+		}
+	
+    }
+	#满洲同意合作
+	country_event = {
+	id = jap.32
+	title = jap.32.t
+	desc = jap.32.d
+	picture = GFX_report_event_japanese_officers
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+		option = {
+			name = jap.32.a
+			ai_chance = { factor = 30 }			
+			set_autonomy = {
+			target = MAN
+			autonomy_state = autonomy_wtt_imperial_protectorate
+			}
+			MAN = {
+			set_cosmetic_tag = JAP_MAN_CZ
+			}
+			transfer_state = 745
+			hidden_effect = {
+			country_event = { days = 3 id = jap.51 }
+			}
+			
+		}
+		
+	
+    }
+	#向中国投降
+	country_event = {
+	id = jap.33
+	title = jap.33.t
+	desc = jap.33.d
+	picture = GFX_report_event_japanese_chinese_surrender
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+	
+		option = {
+			name = jap.33.a
+			ai_chance = { factor = 30 }		
+			set_global_flag = JAP_zhongrizhanzhengshibai
+			ROOT = {
+			 annex_country = { target = KOR }
+			 transfer_state = 527
+			 transfer_state = 525
+			}
+			hidden_effect = {
+			FROM = {
+			annex_country = { target = MAN }
+			every_state = {
+			limit = {
+			is_core_of = CHI
+			}
+			add_core_of = MAN
+			}
+			release_puppet = MAN
+			}
+			annex_country = { target = MAN transfer_troops = no }
+			every_state = {
+			limit = {
+			is_core_of = MAN
+			}
+			remove_core_of = MAN
+			}
+			}
+			if = {
+				limit = { 
+					OR = {
+						ROC= {
+							is_subject_of = JAP
+						}
+					}					
+					
+				}
+				ROOT = { annex_country = { target = MAN transfer_troops = yes } }
+
+			}
+			if = {
+				limit = { 
+					OR = {
+						ROC= {
+							is_subject_of = JAP
+						}
+					}					
+					
+				}
+				ROOT = { annex_country = { target = ROC transfer_troops = yes } }
+
+			}
+			if = {
+				limit = { 
+					OR = {
+						PRC= {
+							is_subject_of = JAP
+						}
+					}
+					
+				}
+				ROOT = { annex_country = { target = PRC transfer_troops = yes } }
+
+			}
+			white_peace = { 
+			tag = FROM
+			message = JAP_beiluorili
+			}
+			
+			
+			
+		}
+		
+		option = {
+			name = jap.33.b
+			ai_chance = { factor = 0 }		
+		}
+		
+	
+    }
+	###日本寻求合作###
+	country_event = {
+	id = jap.34
+	title = jap.34.t
+	desc = jap.34.d
+	picture = GFX_report_event_japanese_army_parade
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+		option = {
+			name = jap.34.a
+			ai_chance = { 
+				factor = 5
+				modifier = {
+					add = 100
+					FROM = {
+						is_ai = no
+					}
+				}
+				
+			}
+			JAP = {
+				country_event = jap.35
+			}
+			
+			
+		}
+		option = {
+			name = jap.34.b
+			ai_chance = { 
+				factor = 5
+			}
+			set_country_flag = JAP_dengdai
+			custom_effect_tooltip = 200_tian
+			
+		}
+	
+    }
+	###国民党同意与樱花合作####
+	country_event = {
+	id = jap.35
+	title = jap.35.t
+	desc = jap.35.d
+	picture = GFX_report_event_chinese_japanese_handshake
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+		option = {
+			name = jap.35.a
+			ai_chance = { factor = 10 }
+			JAP = {
+				add_to_faction = ROC
+			}
+			
+			
+		}
+	
+    }
+	###国民党拒绝合作####
+	country_event = {
+	id = jap.36
+	title = jap.36.t
+	desc = jap.36.d
+	picture = GFX_report_event_chinese_officers
+	
+	is_triggered_only = yes
+	#fire_only_once = yes#
+	trigger = {
+	}
+	
+		option = {
+			name = jap.36.a
+			ai_chance = { factor = 10 }
+			
+			
+			
+		}
+	
+    } 
+	###内战结束，获得军舰####
+	country_event = {
+	id = jap.37
+	title = jap.37.t
+	desc = jap.37.d
+	picture = GFX_report_event_ast_navy
+	is_triggered_only = no
+	fire_only_once = yes
+	trigger = {
+		TAG = JAP
+		OR  = {
+			has_government = communism
+			has_government = fascism
+		}
+		has_global_flag = JAP_neizhan_no
+	}
+	 mean_time_to_happen = { days = 1 }
+	
+		option = {
+			name = jap.37.a
+			ai_chance = { factor = 10 }
+			hidden_effect = {  
+				load_oob = JAP_neizhan_navy
+			}
+			
+			
+			
+		}
+	
+    }
+	
+	
+	###军国主义者政变####
+	country_event = {
+	id = jap.38
+	title = jap.38.t
+	desc = jap.38.d
+	#picture = GFX_report_event_chinese_officers
+	
+	is_triggered_only = yes
+	
+		option = {
+			name = jap.38.a
+			country_event = jap.39
+			hidden_effect = {
+			
+			}
+			ai_chance = { factor = 100 }
+		}
+		option = {
+			name = jap.38.b
+			set_country_flag = JAP_zhengbianshibai_cz
+			add_stability = 0.2
+			ai_chance = { factor = 0 }
+		}
+    } 
+	
+	###组建新政府###
+	country_event = {
+	id = jap.39
+	title = jap.39.t
+	desc = jap.39.d
+	#picture = GFX_report_event_chinese_officers
+	
+	is_triggered_only = yes
+	
+		option = {
+			name = jap.39.a
+			JAP_tufangsuisan = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "1999.1.1"
+					ideology = militarism_subtype
+					traits = {
+						zuizhong_wushi
+					}
+				}
+				promote_leader = yes
+				}
+			}
+			set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+			}
+			add_popularity = { ideology = fascism popularity = 0.3 }
+			hidden_effect = {
+				add_ideas = JAP_cz_ling_lx
+			}
+			ai_chance = { factor = 0 }
+		}
+		option = {
+			name = jap.39.b
+			JAP_yuanlaiguang = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "1999.1.1"
+					ideology = militarism_subtype
+					traits = {
+						trait_jap_wqdwl
+					}
+				}
+				promote_leader = yes
+				}
+			}
+			set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+			}
+			add_popularity = { ideology = fascism popularity = 0.3 }
+			hidden_effect = {
+				add_ideas = JAP_cz_ling_lx
+			}
+			ai_chance = { factor = 0 }
+		}
+		option = {
+			name = jap.39.c
+			JAP_bayuqian = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "1999.1.1"
+					ideology = militarism_subtype
+					traits = {
+						trait_jap_gzzm
+					}
+				}
+				promote_leader = yes
+				}
+			}
+			set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+			}
+			add_popularity = { ideology = fascism popularity = 0.3 }
+			hidden_effect = {
+				add_ideas = JAP_cz_ling_lx
+			}
+			ai_chance = { factor = 100 }
+		}
+    }
+	
+	###大萧条####
+	country_event = {
+	id = jap.40
+	title = jap.40.t
+	desc = jap.40.d
+	#picture = GFX_report_event_chinese_officers
+	
+	is_triggered_only = yes
+	
+		option = {
+			name = jap.40.a
+			add_ideas = JAP_daxiaotiao
+			ai_chance = { factor = 100 }
+		}
+    }
+	
+	country_event = {
+	id = jap.41
+	title = jap.41.t
+	desc = jap.41.d
+	#picture = GFX_report_event_chinese_officers
+	
+	is_triggered_only = yes
+	
+		option = {
+			name = jap.41.a
+			add_war_support = 0.05
+			ai_chance = { factor = 100 }
+		}
+    }
+	
+	country_event = {
+	id = jap.42
+	title = jap.42.t
+	desc = jap.42.d
+	#picture = GFX_report_event_chinese_officers
+	
+	is_triggered_only = yes
+	
+		option = {
+			name = jap.42.a
+			add_ideas = JAP_bjl
+			ai_chance = { factor = 0 }
+		}
+		option = {
+			name = jap.42.b
+			add_ideas = JAP_njl
+			ai_chance = { factor = 100 }
+		}
+    }
+	
+	country_event = {
+	id = jap.43
+	title = jap.43.t
+	desc = jap.43.d
+	#picture = GFX_report_event_chinese_officers
+	
+	is_triggered_only = yes
+	
+		option = {
+			name = jap.43.a
+			JAP = {
+			country_event = jap.44
+			}
+			ai_chance = { factor = 6 }
+		}
+		option = {
+			name = jap.43.b
+			JAP = {
+			country_event = jap.45
+			}
+			ai_chance = { factor = 4 }
+		}
+    }
+
+	country_event = {
+	id = jap.44
+	title = jap.44.t
+	desc = jap.44.d
+	#picture = GFX_report_event_chinese_officers
+	
+	is_triggered_only = yes
+	
+		option = {
+			name = jap.44.a
+			set_autonomy = {
+			target = FROM
+			autonomy_state = autonomy_wtt_imperial_protectorate
+			}
+			ai_chance = { factor = 100 }
+		}
+    }
+
+	country_event = {
+	id = jap.45
+	title = jap.45.t
+	desc = jap.45.d
+	#picture = GFX_report_event_chinese_officers
+	
+	is_triggered_only = yes
+	
+		option = {
+			name = jap.45.a
+			create_wargoal = {
+				type = annex_everything
+				target = FROM
+			}
+			ai_chance = { factor = 100 }
+		}
+    }
+	
+	#租借广州湾
+	country_event = {
+	id = jap.46
+	title = jap.46.t
+	desc = jap.46.d
+	#picture = GFX_report_event_chinese_officers
+	
+	is_triggered_only = yes
+	
+		option = {
+			name = jap.46.a
+			custom_effect_tooltip = HCP_300
+			add_to_variable = {
+				var = ubs_save
+				value = 300
+			}
+			592 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+			JAP = {
+			country_event = jap.47
+			}
+			ai_chance = { factor = 100 }
+		}
+		option = {
+			name = jap.46.b
+			JAP = {
+			country_event = jap.48
+			}
+			ai_chance = { factor = 0 }
+		}
+    }
+
+	country_event = {
+	id = jap.47
+	title = jap.47.t
+	desc = jap.47.d
+	#picture = GFX_report_event_chinese_officers
+	
+	is_triggered_only = yes
+	
+		option = {
+			name = jap.47.a
+			custom_effect_tooltip = HCP_300
+			if = {
+			limit = {
+			is_ai = no
+			}
+			add_to_variable = {
+				var = ubs_save
+				value = -300
+			}
+			}
+			transfer_state = 728
+			728 = {
+			add_building_construction = {
+			type = naval_base
+			level = 3
+			province = 11981
+			instant_build = yes
+			}
+				
+			}
+			ai_chance = { factor = 100 }
+		}
+    }
+	
+	country_event = {
+	id = jap.48
+	title = jap.48.t
+	desc = jap.48.d
+	#picture = GFX_report_event_chinese_officers
+	
+	is_triggered_only = yes
+	
+		option = {
+			name = jap.48.a
+			ai_chance = { factor = 100 }
+		}
+    }
+	
+	country_event = {
+	id = jap.49
+	title = jap.49.t
+	desc = jap.49.d
+	#picture = GFX_report_event_chinese_officers
+	
+	is_triggered_only = yes
+	
+		option = {
+			name = jap.49.a
+			add_war_support = 0.05
+			ai_chance = { factor = 100 }
+		}
+    }
+	
+	country_event = {
+	id = jap.50
+	title = jap.50.t
+	desc = jap.50.d
+	#picture = GFX_report_event_chinese_officers
+	
+	is_triggered_only = yes
+	
+		option = {
+			name = jap.50.a
+			custom_effect_tooltip = HCP_300
+			add_to_variable = {
+				var = ubs_save
+				value = 300
+			}
+			ai_chance = { factor = 100 }
+		}
+    }
+	
+	country_event = {
+	id = jap.51
+	title = jap.51.t
+	desc = jap.51.d
+	#picture = GFX_report_event_chinese_officers
+	
+	is_triggered_only = yes
+	
+		option = {
+			name = jap.51.a
+			custom_effect_tooltip = HCP_300
+			if = {
+			limit = {
+			is_ai = no
+			}
+			add_to_variable = {
+				var = ubs_save
+				value = -300
+			}
+			}
+			ai_chance = { factor = 100 }
+			SOV = {
+			country_event = jap.50
+			}
+		}
+    }

@@ -1,0 +1,1550 @@
+﻿###########################
+# Canadian TFV events Events
+###########################
+add_namespace = tfv_canada
+# Completed CAN_north_american_alliance.
+# Canadian national focus.
+country_event = {
+	id = tfv_canada.1
+	title = tfv_canada.1.t	# Canada asks US to create a faction.
+	desc = tfv_canada.1.d	#
+	picture = GFX_report_event_canada_patriation
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.1.a		# US Accepts the faction proposal
+		ai_chance = {
+			base = 100
+		}
+		effect_tooltip = {
+			create_faction = "north_american_alliance"
+			add_to_faction = CAN
+		}
+		hidden_effect = {
+			CAN = {
+				country_event = {
+					id = tfv_canada.2
+				}
+			}
+		}
+	}
+	option = {
+		name = tfv_canada.1.b		# US Rejects the faction proposal
+		ai_chance = {
+			base = 0
+		}
+		hidden_effect = {
+			CAN = {
+				country_event = {
+					id = tfv_canada.3
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.55
+	title = tfv_canada.55.t	#
+	desc = tfv_canada.55.d	#
+	picture = GFX_report_event_canadian_soldiers
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.2.a
+		hidden_effect = {
+			every_state = {
+				limit = {
+					or = {
+						is_core_of = USA
+					}
+				}
+				PREV = {
+					ADD_STATE_CORE = PREV
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.2
+	title = tfv_canada.2.t	#
+	desc = tfv_canada.2.d	#
+	picture = GFX_report_event_canadian_soldiers
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.2.a
+		USA = {
+			create_faction = "north_american_alliance"
+			add_to_faction = CAN
+		}
+		news_event = {
+			id = news.246
+			hours = 6
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.3
+	title = tfv_canada.3.t	#
+	desc = tfv_canada.3.d	#
+	picture = GFX_report_event_king_speech
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.3.a
+	}
+}
+
+# Completed CAN_join_comintern.
+# Canadian national focus.
+country_event = {
+	id = tfv_canada.10
+	title = tfv_canada.10.t	# Canada asks CCCP for membership in Comintern
+	desc = tfv_canada.10.d	#
+	picture = GFX_report_event_stalin_meeting
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.10.a		# CCCP accepts Canadian membership
+		ai_chance = {
+			base = 100
+		}
+		effect_tooltip = {
+			add_to_faction = CAN
+		}
+		hidden_effect = {
+			CAN = {
+				country_event = {
+					id = tfv_canada.11
+				}
+			}
+		}
+	}
+	option = {
+		name = tfv_canada.10.b		# CCCP denies the request.
+		ai_chance = {
+			base = 0
+		}
+		hidden_effect = {
+			CAN = {
+				country_event = {
+					id = tfv_canada.12
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.11
+	title = tfv_canada.11.t	#
+	desc = tfv_canada.11.d	#
+	picture = GFX_report_event_canadian_soldiers
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.11.a
+		SOV = {
+			add_to_faction = CAN
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.12
+	title = tfv_canada.12.t	#
+	desc = tfv_canada.12.d	#
+	picture = GFX_report_event_generic_rally_3
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.12.a
+	}
+}
+
+# Completed CAN_join_germany.
+# Canadian national focus.
+country_event = {
+	id = tfv_canada.20
+	title = tfv_canada.20.t	# Canada asks Germany for membership in Axis
+	desc = tfv_canada.20.d	#
+	picture = GFX_report_event_canadian_tank
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.20.a		# Germany accepts Canadian membership
+		ai_chance = {
+			base = 100
+		}
+		effect_tooltip = {
+			add_to_faction = CAN
+		}
+		hidden_effect = {
+			CAN = {
+				country_event = {
+					id = tfv_canada.21
+				}
+			}
+		}
+	}
+	option = {
+		name = tfv_canada.20.b		# Germany rejects Canadian membership
+		ai_chance = {
+			base = 0
+		}
+		hidden_effect = {
+			CAN = {
+				country_event = {
+					id = tfv_canada.22
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.21
+	title = tfv_canada.21.t	# 
+	desc = tfv_canada.21.d	#
+	picture = GFX_report_event_hitler_handshake
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.21.a		# Germany accepts Canadian membership
+		DVL = {
+			add_to_faction = CAN
+		}
+		if = {
+			limit = {
+				DVL = {
+					has_war = yes
+				}
+			}
+			news_event = {
+				id = news.247
+				hours = 6
+			}
+		}
+		if = {
+			limit = {
+				DVL = {
+					has_war = no
+				}
+			}
+			news_event = {
+				id = news.252
+				hours = 6
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.22
+	title = tfv_canada.22.t	# 
+	desc = tfv_canada.22.d	#
+	picture = GFX_report_event_canadian_artillery
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.22.a		# Germany rejects Canadian membership
+	}
+}
+
+# Completed CAN_support_a_synarchist_baja.
+# Canadian national focus.
+country_event = {
+	id = tfv_canada.30
+	title = tfv_canada.30.t	# Mexican civil war starts.
+	desc = tfv_canada.30.d	#
+	picture = GFX_report_event_mex_civil_war
+	fire_only_once = yes
+	trigger = {
+		original_tag = MEX
+		has_defensive_war = no
+		NOT = {
+			has_government = fascism
+		}
+		has_idea = synarchist_support_surge
+		fascism > 0.3
+	}
+	mean_time_to_happen = {
+		months = 4
+		modifier = {
+			factor = 0.5
+			fascism > 0.5
+		}
+	}
+	option = {
+		# Support Nationalists
+		name = tfv_canada.30.a
+		trigger = {
+			is_ai = no
+		}
+		hidden_effect = {
+			start_civil_war = {
+				ruling_party = fascism
+				ideology = neutrality
+				size = 0.5
+			}
+			random_other_country = {
+				limit = {
+					original_tag = MEX
+					has_government = neutrality
+				}
+				set_equipment_fraction = 0.3
+				set_national_unity = 0.9
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.35
+				}
+			}
+			news_event = {
+				hours = 6
+				id = news.250
+			}
+			set_equipment_fraction = 0.3
+			set_national_unity = 0.9
+			add_popularity = {
+				ideology = fascism
+				popularity = 1
+			}
+			remove_ideas = synarchist_support_surge
+		}
+		custom_effect_tooltip = mex_nationalists_chosen
+	}
+	option = {
+		# Support Republicans
+		name = tfv_canada.30.b
+		hidden_effect = {
+			start_civil_war = {
+				ideology = fascism
+				size = 0.5
+			}
+			random_other_country = {
+				limit = {
+					original_tag = MEX
+					has_government = fascism
+				}
+				set_equipment_fraction = 0.3
+				set_national_unity = 0.9
+			}
+			news_event = {
+				hours = 6
+				id = news.250
+			}
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.5
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = -1
+			}
+			set_equipment_fraction = 0.3
+			set_national_unity = 0.8
+			remove_ideas = synarchist_support_surge
+		}
+		custom_effect_tooltip = mex_republicans_chosen
+	}
+	option = {
+		name = tfv_canada.30.c		# Peacefully let the fascists form the government
+		trigger = {
+			fascism > 0.5
+		}
+		ai_chance = {
+			base = 5
+		}
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+		remove_ideas = synarchist_support_surge
+		add_ideas = shattered_government
+	}
+}
+
+# Completed CAN_skewer_the_eagle.
+# Canadian national focus.
+country_event = {
+	id = tfv_canada.40
+	title = tfv_canada.40.t	# Canada proposes alliance with Mexico to surround the US.
+	desc = tfv_canada.40.d	#
+	picture = GFX_report_event_canadian_artillery
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.40.a
+		ai_chance = {
+			base = 100
+		}
+		effect_tooltip = {
+			CAN = {
+				create_faction = "northern_sovereignty_coalition"
+				random_country = {
+					limit = {
+						original_tag = MEX
+						has_government = fascism
+					}
+					CAN = {
+						add_to_faction = PREV
+					}
+				}
+			}
+			add_state_claim = 375			# Texas
+			add_state_claim = 378			# California
+			add_state_claim = 379			# Nevada
+			add_state_claim = 377			# Arizona
+			add_state_claim = 380			# Utah
+			add_state_claim = 382			# Colorado
+			add_state_claim = 376			# New Mexico
+		}
+		hidden_effect = {
+			CAN = {
+				country_event = {
+					id = tfv_canada.41
+				}
+			}
+		}
+	}
+	option = {
+		name = tfv_canada.40.b
+		ai_chance = {
+			base = 0
+		}
+		hidden_effect = {
+			CAN = {
+				country_event = {
+					id = tfv_canada.42
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.41
+	title = tfv_canada.41.t
+	desc = tfv_canada.41.d
+	picture = GFX_report_event_military_planning
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.41.a
+		create_faction = "northern_sovereignty_coalition"
+		random_country = {
+			limit = {
+				original_tag = MEX
+				has_government = fascism
+			}
+			CAN = {
+				add_to_faction = PREV
+			}
+		}
+		MEX = {
+			add_state_claim = 375			# Texas
+			add_state_claim = 378			# California
+			add_state_claim = 379			# Nevada
+			add_state_claim = 377			# Arizona
+			add_state_claim = 380			# Utah
+			add_state_claim = 382			# Colorado
+			add_state_claim = 376			# New Mexico
+		}
+		news_event = {
+			id = news.249
+			hours = 6
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.42
+	title = tfv_canada.42.t
+	desc = tfv_canada.42.desc
+	picture = GFX_report_event_american_hunger_march
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.42.a
+	}
+}
+
+# mean_time_to_happen after Completion of CAN_forced_quebec_conscription.
+# Canadian national focus.
+country_event = {
+	id = tfv_canada.50
+	title = tfv_canada.50.t	# Factory sabotaged
+	desc = tfv_canada.50.d	#
+	picture = GFX_report_event_generic_factory
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		#####has_completed_focus = CAN_forced_quebec_conscription
+		any_owned_state = {
+			industrial_complex > 0
+		}
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	option = {
+		name = tfv_canada.50.a
+		set_country_flag = can_quebec_sabotage_1
+		random_owned_state = {
+			limit = {
+				industrial_complex > 0
+			}
+			damage_building = {
+				type = industrial_complex
+				damage = 0.7
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.51
+	title = tfv_canada.51.t
+	desc = tfv_canada.51.d
+	picture = GFX_report_event_generic_factory
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		has_country_flag = can_quebec_sabotage_1
+		#####has_completed_focus = CAN_forced_quebec_conscription
+		any_owned_state = {
+			arms_factory > 0
+		}
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	option = {
+		name = tfv_canada.51.a
+		set_country_flag = can_quebec_sabotage_2
+		random_owned_state = {
+			limit = {
+				arms_factory > 0
+			}
+			damage_building = {
+				type = arms_factory
+				damage = 0.5
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.52
+	title = tfv_canada.52.t
+	desc = tfv_canada.52.d
+	picture = GFX_report_event_generic_factory
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		has_country_flag = can_quebec_sabotage_2
+		#####has_completed_focus = CAN_forced_quebec_conscription
+		any_owned_state = {
+			arms_factory > 0
+		}
+	}
+	mean_time_to_happen = {
+		months = 3
+	}
+	option = {
+		name = tfv_canada.52.a
+		set_country_flag = can_quebec_sabotage_3
+		random_owned_state = {
+			limit = {
+				arms_factory > 0
+			}
+			damage_building = {
+				type = arms_factory
+				damage = 0.6
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.53
+	title = tfv_canada.53.t
+	desc = tfv_canada.53.d
+	picture = GFX_report_event_RCMP
+	fire_only_once = yes
+	trigger = {
+		tag = CAN
+		has_country_flag = can_quebec_sabotage_3
+		#####has_completed_focus = CAN_forced_quebec_conscription
+		any_owned_state = {
+			arms_factory > 0
+		}
+	}
+	mean_time_to_happen = {
+		months = 2
+	}
+	option = {
+		name = tfv_canada.53.a
+		clr_country_flag = can_quebec_sabotage_1
+		clr_country_flag = can_quebec_sabotage_2
+		clr_country_flag = can_quebec_sabotage_3
+		random_owned_state = {
+			limit = {
+				arms_factory > 0
+			}
+			damage_building = {
+				type = arms_factory
+				damage = 0.4
+			}
+		}
+	}
+}
+
+# Completed CAN_demand_labrador_and_newfoundland.
+# Canadian national focus.
+country_event = {
+	id = tfv_canada.60
+	title = tfv_canada.60.t	# Fascist CAN demads Labrador and Newfoundland from ENG
+	desc = tfv_canada.60.d	#
+	picture = GFX_report_event_canadian_soldiers
+	is_triggered_only = yes
+	option = {
+		# Agree to demands
+		name = tfv_canada.60.a
+		ai_chance = {
+			base = 0
+		}
+		effect_tooltip = {
+			CAN = {
+				transfer_state = 331
+				transfer_state = 332
+			}
+		}
+		hidden_effect = {
+			CAN = {
+				country_event = {
+					id = tfv_canada.61
+				}
+			}
+		}
+	}
+	option = {
+		# Refuse
+		name = tfv_canada.60.b
+		ai_chance = {
+			base = 100
+		}
+		hidden_effect = {
+			CAN = {
+				country_event = {
+					id = tfv_canada.62
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.61
+	title = tfv_canada.61.t
+	desc = tfv_canada.61.d
+	picture = GFX_report_event_canada_treaty
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.61.a
+		transfer_state = 331
+		transfer_state = 332
+		news_event = {
+			id = news.248
+			hours = 6
+		}
+	}
+}
+
+country_event = {
+	id = tfv_canada.62
+	title = tfv_canada.62.t
+	desc = tfv_canada.62.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.62.a
+		create_wargoal = {
+			type = take_state_focus
+			target = ENG
+			generator = {
+				331
+				332
+			}
+		}
+	}
+}
+
+#精灵同意
+country_event = {
+	id = tfv_canada.255
+	title = tfv_canada.255.t
+	desc = tfv_canada.255.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.62.a
+		CAN = {
+			transfer_state = 386
+			transfer_state = 463
+			transfer_state = 385
+			transfer_state = 378
+			transfer_state = 387
+			transfer_state = 379
+			transfer_state = 377
+			transfer_state = 376
+			transfer_state = 382
+			transfer_state = 381
+			transfer_state = 380
+			transfer_state = 388
+			transfer_state = 389
+			transfer_state = 390
+			transfer_state = 384
+			transfer_state = 383
+			transfer_state = 374
+			transfer_state = 375
+			transfer_state = 391
+			transfer_state = 394
+			add_ideas = baihe
+		}
+		USA = {
+			add_ideas = baihe
+		}
+		puppet = USA
+	}
+}
+
+#精灵拒绝
+country_event = {
+	id = tfv_canada.256
+	title = tfv_canada.256.t
+	desc = tfv_canada.256.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.256.a
+		declare_war_on = {
+			target = USA
+			type = take_state
+			generator = owned_states
+		}
+	}
+}
+
+#晴空回归
+country_event = {
+	id = tfv_canada.257
+	title = tfv_canada.257.t
+	desc = tfv_canada.257.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.257.a
+		war_support_factor = 0.2
+		add_stability = 0.15
+	}
+}
+
+#要独立吗？
+country_event = {
+	id = tfv_canada.258
+	title = tfv_canada.258.t
+	desc = tfv_canada.258.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.258.a
+		add_opinion_modifier = {
+			target = CAN
+			modifier = tfv_duli
+		}
+		ai_chance = {
+			base = 50
+		}
+		if = {
+			limit = {
+				CAN = {
+					NOT = {
+						has_government = fascism
+					}
+				}
+			}
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.6
+			}
+		}
+		if = {
+			limit = {
+				CAN = {
+					has_government = fascism
+				}
+			}
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			set_popularity = {
+				ideology = fascism
+				popularity = 0.6
+			}
+		}
+		ENG = {
+			set_autonomy = {
+				target = ROOT
+				autonomy_state = autonomy_free
+			}
+		}
+		ENG = {
+			remove_from_faction = ROOT
+		}
+		add_stability = -0.1
+		CAN = {
+			country_event = {
+				days = 1
+				id = tfv_canada.260
+			}
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = tfv_duli
+			}
+		}
+		every_country = {
+			limit = {
+				has_war_with = ENG
+				has_war_with = ROOT
+			}
+			white_peace = {
+				tag = ROOT
+				message = DULI_ENG_peace
+			}
+		}
+		news_event = news.733
+	}
+	option = {
+		name = tfv_canada.258.b
+		ai_chance = {
+			base = 50
+		}
+		add_stability = 0.1
+	}
+}
+
+#晴空独立了
+country_event = {
+	id = tfv_canada.259
+	title = tfv_canada.259.t
+	desc = tfv_canada.259.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.259.a
+		add_opinion_modifier = {
+			target = CAN
+			modifier = CAN_eng_bad
+		}
+		ENG = {
+			remove_from_faction = CAN
+		}
+		set_autonomy = {
+			target = CAN
+			autonomy_state = autonomy_free
+		}
+		CAN = {
+			set_party_name = {
+				ideology = neutrality
+				long_name = 晴空皇室
+				name = 晴空皇室
+			}
+		}
+	}
+}
+
+#某个英联邦独立了
+country_event = {
+	id = tfv_canada.260
+	title = tfv_canada.260.t
+	desc = tfv_canada.260.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.260.a
+	}
+}
+
+#晴空要求正统皇位
+country_event = {
+	id = tfv_canada.261
+	title = tfv_canada.261.t
+	desc = tfv_canada.261.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.261.a
+		ai_chance = {
+			base = 80
+		}
+		add_stability = -0.3
+		CAN = {
+			country_event = {
+				days = 1
+				id = tfv_canada.262
+			}
+		}
+	}
+	option = {
+		name = tfv_canada.260.b
+		ai_chance = {
+			base = 20
+		}
+		CAN = {
+			country_event = {
+				id = tfv_canada.263
+			}
+		}
+	}
+}
+
+#给晴空正统皇位
+country_event = {
+	id = tfv_canada.262
+	title = tfv_canada.262.t
+	desc = tfv_canada.262.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.262.a
+		add_stability = 0.1
+		add_country_leader_trait = guowang
+	}
+}
+
+#不承认晴空皇位
+country_event = {
+	id = tfv_canada.263
+	title = tfv_canada.263.t
+	desc = tfv_canada.263.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.263.a
+		create_wargoal = {
+			type = annex_everything
+			target = ENG
+		}
+		add_timed_idea = {
+			idea = SHY_109
+			days = 250
+		}
+	}
+}
+
+# 索取冰岛
+country_event = {
+	id = tfv_canada.264
+	title = tfv_canada.264.t
+	desc = tfv_canada.264.d
+	picture = GFX_report_event_asian_politicians
+	is_triggered_only = yes
+	#Accept - become puppet
+	option = {
+		name = tfv_canada.264.a
+		ai_chance = {
+			base = 80
+		}
+		CAN = {
+			country_event = {
+				id = tfv_canada.265
+			}
+			transfer_state = 101
+			transfer_state = 100
+		}
+	}
+	option = {
+		name = tfv_canada.264.b
+		ai_chance = {
+			base = 20
+		}
+		CAN = {
+			country_event = {
+				id = tfv_canada.266
+			}
+		}
+	}
+}
+
+#大洗退让
+country_event = {
+	id = tfv_canada.265
+	title = tfv_canada.265.t
+	desc = tfv_canada.265.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.265.a
+		add_war_support = 0.1
+	}
+}
+
+#大洗拒绝
+country_event = {
+	id = tfv_canada.266
+	title = tfv_canada.266.t
+	desc = tfv_canada.266.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.266.a
+		add_war_support = 0.15
+		effect_tooltip = {
+			create_wargoal = {
+				type = take_state
+				target = DEN
+				generator = owned_states
+			}
+		}
+	}
+}
+
+# 索取荷属东印度
+country_event = {
+	id = tfv_canada.267
+	title = tfv_canada.267.t
+	desc = tfv_canada.267.d
+	picture = GFX_report_event_asian_politicians
+	is_triggered_only = yes
+	#Accept - become puppet
+	option = {
+		name = tfv_canada.267.a
+		end_puppet = INS
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 2
+				has_war = yes
+			}
+		}
+		CAN = {
+			country_event = {
+				days = 2
+				id = tfv_canada.268
+			}
+		}
+	}
+	option = {
+		name = tfv_canada.267.b
+		ai_chance = {
+			base = 10
+			modifier = {
+				factor = 2
+				has_war = no
+			}
+		}
+		CAN = {
+			country_event = {
+				id = tfv_canada.269
+			}
+		}
+	}
+}
+
+#荷兰退让
+country_event = {
+	id = tfv_canada.268
+	title = tfv_canada.268.t
+	desc = tfv_canada.268.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.268.a
+		transfer_state = 335
+		transfer_state = 667
+		transfer_state = 721
+	}
+}
+
+#荷兰拒绝
+country_event = {
+	id = tfv_canada.269
+	title = tfv_canada.269.t
+	desc = tfv_canada.269.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.269.a
+		add_stability = 0.15
+		create_wargoal = {
+			type = take_state
+			target = HOL
+			generator = owned_states
+		}
+	}
+}
+
+#晴空买回独立
+country_event = {
+	id = tfv_canada.270
+	title = tfv_canada.270.t
+	desc = tfv_canada.270.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.270.a
+		add_timed_idea = {
+			idea = goumai
+			days = 365
+		}
+		set_autonomy = {
+			target = CAN
+			autonomy_state = autonomy_free
+		}
+		ENG = {
+			remove_from_faction = CAN
+		}
+		CAN = {
+			add_timed_idea = {
+				idea = SHY_113
+				days = 365
+			}
+			set_party_name = {
+				ideology = neutrality
+				long_name = 晴空皇室
+				name = 晴空皇室
+			}
+		}
+	}
+}
+
+#向圣杯申请仲裁
+country_event = {
+	id = tfv_canada.271
+	title = tfv_canada.271.t
+	desc = tfv_canada.271.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.271.a
+		ai_chance = {
+			base = 50
+		}
+		add_stability = 0.1
+		add_political_power = 100
+		USA = {
+			add_opinion_modifier = {
+				target = ENG
+				modifier = eng_usa_bad
+			}
+			country_event = tfv_canada.272
+		}
+	}
+	option = {
+		name = tfv_canada.271.b
+		ai_chance = {
+			base = 0
+		}
+		add_political_power = -50
+		CAN = {
+			country_event = tfv_canada.243
+		}
+	}
+}
+
+#晴空联合圣杯制裁我们
+country_event = {
+	id = tfv_canada.272
+	title = tfv_canada.272.t
+	desc = tfv_canada.272.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.272.a
+		ai_chance = {
+			base = 20
+			modifier = {
+				add = 10
+				has_idea = jingjiyilai
+			}
+			modifier = {
+				add = 15
+				has_war_support < 0.5
+			}
+			modifier = {
+				add = 10
+				OR = {
+					has_idea = jiabi_1
+					has_idea = jiabi_2
+					has_idea = jiabi_3
+				}
+			}
+		}
+		CAN = {
+			transfer_state = 381
+			transfer_state = 385
+			transfer_state = 386
+			transfer_state = 387
+			transfer_state = 388
+			transfer_state = 389
+			transfer_state = 390
+			transfer_state = 391
+			transfer_state = 394
+		}
+		country_event = {
+			days = 1
+			id = news.735
+		}
+	}
+	option = {
+		name = tfv_canada.272.b
+		ai_chance = {
+			base = 20
+			modifier = {
+				add = 25
+			}
+			modifier = {
+				add = 20
+				has_idea = deterrence
+			}
+			modifier = {
+				add = 20
+				NOT = {
+					has_idea = isolation
+				}
+			}
+			modifier = {
+				add = 15
+				num_of_factories > 100
+			}
+			modifier = {
+				add = 10
+				NOT = {
+					has_government = democratic
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_completed_focus = USA_45
+			}
+			add_timed_idea = {
+				idea = lianbangfengsuo
+				days = 730
+			}
+		}
+		ENG = {
+			country_event = tfv_canada.274
+		}
+	}
+}
+
+#精灵拒绝仲裁
+country_event = {
+	id = tfv_canada.274
+	title = tfv_canada.274.t
+	desc = tfv_canada.274.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.274.a
+		create_wargoal = {
+			type = annex_everything
+			target = USA
+		}
+		add_ai_strategy = {
+			type = antagonize
+			id = "USA"
+			value = 200
+		}
+	}
+}
+
+#圣杯不仲裁精灵
+country_event = {
+	id = tfv_canada.243
+	title = tfv_canada.243.t
+	desc = tfv_canada.243.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.243.a
+		add_autonomy_ratio = {
+			value = 0.15
+		}
+		add_political_power = 100
+	}
+}
+
+#（附庸）晴空要回他们的土地
+country_event = {
+	id = tfv_canada.275
+	title = tfv_canada.275.t
+	desc = tfv_canada.275.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.275.a
+		ai_chance = {
+			base = 90
+		}
+		add_timed_idea = {
+			idea = goumai
+			days = 100
+		}
+		CAN = {
+			country_event = tfv_canada.276
+		}
+	}
+	option = {
+		name = tfv_canada.275.b
+		ai_chance = {
+			base = 10
+		}
+		add_stability = -0.2
+		add_political_power = -80
+		CAN = {
+			country_event = tfv_canada.277
+		}
+	}
+}
+
+#（附庸）圣杯给我南部的地区
+country_event = {
+	id = tfv_canada.276
+	title = tfv_canada.276.t
+	desc = tfv_canada.276.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.276.a
+		add_timed_idea = {
+			idea = SHY_113
+			days = 100
+		}
+		every_state = {
+			limit = {
+				is_controlled_by = ENG
+				is_core_of = CAN
+			}
+			CAN = {
+				transfer_state = PREV
+			}
+		}
+	}
+}
+
+#（附庸）圣杯不给我们南部的地区
+country_event = {
+	id = tfv_canada.277
+	title = tfv_canada.277.t
+	desc = tfv_canada.277.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.277.a
+		add_autonomy_ratio = {
+			value = 0.2
+		}
+	}
+}
+
+#（独立）晴空挑战我们
+country_event = {
+	id = tfv_canada.280
+	title = tfv_canada.280.t
+	desc = tfv_canada.280.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.280.a
+		ai_chance = {
+			base = 75
+		}
+		CAN = {
+			country_event = tfv_canada.61
+			every_state = {
+				limit = {
+					is_controlled_by = ENG
+					is_core_of = CAN
+				}
+				CAN = {
+					transfer_state = PREV
+				}
+			}
+		}
+	}
+	option = {
+		name = tfv_canada.280.b
+		ai_chance = {
+			base = 25
+		}
+		CAN = {
+			country_event = tfv_canada.62
+		}
+	}
+}
+
+#美国被吹喇叭
+country_event = {
+	id = tfv_canada.285
+	title = tfv_canada.285.t
+	desc = tfv_canada.285.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.285.a
+		add_ideas = chire_ailian
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.2
+		}
+	}
+}
+
+# 晴空来联姻
+country_event = {
+	id = tfv_canada.286
+	title = tfv_canada.286.t
+	desc = tfv_canada.286.d
+	picture = GFX_report_event_molotov_ribentrop_handshake
+	is_triggered_only = yes
+	trigger = {
+	}
+	#Accept - become puppet
+	option = {
+		name = shiyu.16.a
+		ai_chance = {
+			base = 85
+		}
+		CAN = {
+			country_event = {
+				id = tfv_canada.255
+			}
+			news_event = {
+				id = news.3101
+			}
+			effect_tooltip = {
+				puppet = USA
+			}
+		}
+	}
+	option = {
+		name = shiyu.16.b
+		ai_chance = {
+			base = 15
+		}
+		add_stability = -0.3
+		start_civil_war = {
+			ruling_party = democratic
+			ideology = fascism
+			size = 0
+			keep_unit_leaders = {
+				333
+				57
+			}
+		}
+		CAN = {
+			country_event = {
+				id = tfv_canada.256
+			}
+			effect_tooltip = {
+				create_wargoal = {
+					type = take_state
+					target = USA
+					generator = owned_states
+				}
+			}
+		}
+	}
+}
+
+# 工人受伤
+country_event = {
+	id = tfv_canada.290
+	title = tfv_canada.290.t
+	desc = tfv_canada.290.d
+	picture = GFX_report_event_airplane_factory
+	is_triggered_only = yes
+	trigger = {
+	}
+	#Accept - become puppet
+	option = {
+		name = tfv_canada.290.a
+		add_manpower = -2000
+		add_stability = -0.1
+	}
+}
+
+#晴空帮助建设
+country_event = {
+	id = tfv_canada.295
+	title = tfv_canada.295.t
+	desc = tfv_canada.295.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.295.a
+		CAN = {
+			add_autonomy_ratio = {
+				value = 0.1
+			}
+		}
+		120 = {
+			add_building_construction = {
+				type = arms_factory
+				level = 3
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 3
+		}
+		136 = {
+			add_building_construction = {
+				type = industrial_complex
+				level = 3
+				instant_build = yes
+			}
+			add_extra_state_shared_building_slots = 3
+		}
+	}
+}
+
+#（精灵）联合晴空钢铁
+country_event = {
+	id = tfv_canada.300
+	title = tfv_canada.300.t
+	desc = tfv_canada.300.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.300.a
+		add_resource = {
+			type = steel
+			amount = 20
+			state = 368
+		}
+	}
+}
+
+#（圣杯）联合晴空橡胶
+country_event = {
+	id = tfv_canada.305
+	title = tfv_canada.305.t
+	desc = tfv_canada.305.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = tfv_canada.305.a
+		add_resource = {
+			type = rubber
+			amount = 10
+			state = 284
+		}
+		add_resource = {
+			type = rubber
+			amount = 10
+			state = 723
+		}
+	}
+}

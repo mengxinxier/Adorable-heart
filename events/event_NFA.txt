@@ -1,0 +1,800 @@
+add_namespace = nfa
+country_event = {
+	id = nfa.1
+	title = nfa.1.t
+	desc = nfa.1.d
+	#picture = 
+	is_triggered_only = yes
+	
+	option = {
+		name = nfa.1.a
+		custom_effect_tooltip = NFA_xuanjudays7
+		add_popularity = { ideology = democratic popularity = 0.2 }
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = no
+		}
+		hidden_effect = {
+			remove_ideas = NFA_rangbaer
+			add_ideas = NFA_dangao
+			country_event = { id = nfa.11 days = 7 }
+			country_event = { id = nfa.10 days = 15 }
+		}
+		ai_chance = {
+			factor = 60
+		}
+	}
+	option = {
+		name = nfa.1.b
+		add_popularity = { ideology = neutrality popularity = 0.2 }
+		set_party_name = { ideology = neutrality long_name = "基督教社会党" name = "基督教社会党" }
+		hidden_effect = {
+			remove_ideas = NFA_rangbaer
+			add_ideas = NFA_ssn
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	
+	option = {
+		name = nfa.1.c
+		add_popularity = { ideology = neutrality popularity = 0.2 }
+		set_party_name = { ideology = neutrality long_name = "忠君派" name = "忠君派" }
+		hidden_effect = {
+			remove_ideas = NFA_rangbaer
+			add_ideas = NFA_dayuanshuai
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = nfa.2
+	title = nfa.2.t
+	desc = nfa.2.d
+	#picture = 
+	is_triggered_only = yes
+	
+	option = {
+		name = nfa.2.a
+		USA = {
+		country_event = { id = nfa.3 days = 1 }
+		}
+		ai_chance = {
+			factor = 60
+		}
+	}
+	option = {
+		name = nfa.2.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+	
+}
+
+country_event = {
+	id = nfa.3
+	title = nfa.3.t
+	desc = nfa.3.d
+	#picture = 
+	is_triggered_only = yes
+	
+	option = {
+		name = nfa.3.a
+		set_global_flag = NFA_xieyidacheng_flag
+		set_country_flag = USA_flag_friend_with_NFA
+		NFA = {
+		country_event = { id = nfa.4 days = 1 }
+		}
+		remove_ideas = NA_WAR
+		delete_units = {
+			division_template = "民兵团"
+			disband = no				#will refund equipment and manpower
+		}
+		add_opinion_modifier = { target = NFA modifier = NFA_friend_with_USA }
+		NFA = {
+		add_opinion_modifier = { target = USA modifier = NFA_friend_with_USA }
+		}
+		add_ai_strategy = {
+		type = diplo_action_desire
+		id = NFA
+		target = military_access
+		value = 1000
+		}
+		add_ai_strategy = {
+		type = alliance	
+		id = "NFA"			
+		value = 400
+		}
+		add_ai_strategy = {
+		type = befriend	
+		id = "NFA"			
+		value = 400
+		}
+		NFA = {
+		add_ai_strategy = {
+		type = diplo_action_desire
+		id = USA
+		target = military_access
+		value = 1000
+		}
+		add_ai_strategy = {
+		type = alliance	
+		id = "USA"			
+		value = 400
+		}
+		add_ai_strategy = {
+		type = befriend	
+		id = "USA"			
+		value = 400
+		}
+		}
+		hidden_effect = {
+		white_peace = { 
+			tag = NFA
+			message = NFA_dachengxieyi
+		}
+		white_peace = { 
+			tag = NGD
+		}
+		white_peace = { 
+			tag = FRG
+		}
+		}
+		ai_chance = {
+			factor = 50
+			
+		}
+	}
+	option = {
+		name = nfa.3.b
+		NFA = {
+		country_event = { id = nfa.5 days = 1 }
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+			NFA = {
+			is_ai = no
+			factor = 0
+			}
+			}
+		}
+	}
+	
+}
+
+country_event = {
+	id = nfa.4
+	title = nfa.4.t
+	desc = nfa.4.d
+	#picture = 
+	is_triggered_only = yes
+	
+	option = {
+		name = nfa.4.a
+		every_state = {
+			limit = {
+			is_core_of = USA
+			is_on_continent = north_america
+				}
+			remove_claim_by = NFA
+			}
+		ai_chance = {
+			factor = 60
+		}
+	}
+	
+}
+
+country_event = {
+	id = nfa.5
+	title = nfa.5.t
+	desc = nfa.5.d
+	#picture = 
+	is_triggered_only = yes
+	
+	option = {
+		name = nfa.5.a
+		ai_chance = {
+			factor = 60
+		}
+	}
+	
+}
+
+country_event = {
+	id = nfa.6
+	title = nfa.6.t
+	desc = nfa.6.d
+	#picture = 
+	is_triggered_only = yes
+	option = {
+		name = nfa.6.a
+		add_ideas = NFA_daxiaotiao
+		ai_chance = {
+			factor = 100
+		}
+	}
+	
+}
+
+country_event = {
+	id = nfa.7
+	title = nfa.7.t
+	desc = nfa.7.d
+	#picture = 
+	is_triggered_only = yes
+	option = {
+		name = nfa.7.a
+		add_political_power = 100
+		add_stability = -0.05
+		add_war_support = -0.05
+		remove_ideas = NFA_zycydk
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = nfa.7.b
+		add_stability = 0.15
+		add_war_support = 0.1
+		remove_ideas = NFA_zycydk
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = nfa.8
+	title = nfa.8.t
+	desc = nfa.8.d
+	fire_only_once = yes
+	trigger = {
+	tag = NFA
+	focus_progress = {
+			focus = NFA_1
+			progress > 0.1
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	#picture = 
+	option = {
+		name = nfa.8.a
+		add_popularity = { ideology = communism popularity = 0.05 }
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = nfa.8.b
+		add_popularity = { ideology = communism popularity = 0.05 }
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = nfa.9
+	title = nfa.9.t
+	desc = nfa.9.d
+	fire_only_once = yes
+	trigger = {
+	tag = NFA
+	focus_progress = {
+			focus = NFA_1
+			progress > 0.2
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	#picture = 
+	option = {
+		name = nfa.9.a
+		add_popularity = { ideology = fascism popularity = -0.05 }
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = nfa.9.b
+		set_country_flag = NFA_daigaoleshangtai
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+		add_popularity = { ideology = fascism popularity = 0.1 }
+		hidden_effect = {
+			remove_ideas = NFA_rangbaer
+			add_ideas = NFA_dangao
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = nfa.10
+	title = nfa.10.t
+	desc = nfa.10.d
+	#picture = 
+	is_triggered_only = yes
+	option = {
+		name = nfa.10.a
+		add_popularity = { ideology = fascism popularity = -0.05 }
+		set_party_name = { ideology = neutrality long_name = "维希教廷" name = "维希教廷" }
+		set_party_name = { ideology = fascism long_name = "法兰西行动" name = "法兰西行动" }
+		NFA_Jean_Bart = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "1999.1.1"
+					desc = "BART_DESC_1"
+					ideology = centrism
+					traits = {
+						
+					}
+				}
+				promote_leader = yes
+				}
+		}
+		hidden_effect = {
+		country_event = { id = nfa.13 days = 240 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	
+}
+
+country_event = {
+	id = nfa.11
+	title = nfa.11.t
+	desc = nfa.11.d
+	#picture = 
+	is_triggered_only = yes
+	option = {
+		name = nfa.11.a
+		set_party_name = { ideology = democratic long_name = "基督教社会党" name = "基督教社会党" }
+		ai_chance = {
+			factor = 80
+		}
+	}
+	option = {
+		name = nfa.11.b
+		NFA_Richelieu = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "1999.1.1"
+					desc = "RICHELIEU_DESC"
+					ideology = conservatism
+					traits = {
+						trait_nfa_hyzj
+					}
+				}
+				promote_leader = yes
+				}
+		}
+		set_party_name = { ideology = democratic long_name = "基督教民主党" name = "基督教民主党" }
+		ai_chance = {
+			factor = 20
+		}
+	}
+	option = {
+		name = nfa.11.c
+		NFA_Marie = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "1999.1.1"
+					desc = "MALI_DESC"
+					ideology = liberalism
+					traits = {
+						trait_nfa_zctj
+					}
+				}
+				promote_leader = yes
+				}
+		}
+		set_party_name = { ideology = democratic long_name = "BC自由" name = "BC自由" }
+		ai_chance = {
+			factor = 30
+		}
+	}
+	option = {
+		name = nfa.11.e
+		#Trade_liberalism
+		add_stability = -0.05
+		NFA_laifaer = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "1999.1.1"
+					ideology = conservatism
+					traits = {
+						trait_nfa_jyytqz
+					}
+				}
+				promote_leader = yes
+				}
+		}
+		set_party_name = { ideology = democratic long_name = "激进党" name = "激进党" }
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = nfa.0
+	title = nfa.0.t
+	desc = nfa.0.d
+	#picture = 
+	is_triggered_only = yes
+	option = {
+		name = nfa.0.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+	
+}
+
+country_event = {
+	id = nfa.12
+	title = nfa.12.t
+	desc = nfa.12.d
+	fire_only_once = yes
+	trigger = {
+	tag = NFA
+	date > 1939.6.1
+	has_government =  neutrality
+	has_idea = NFA_dayuanshuai
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	#picture = 
+	option = {
+		name = nfa.12.a
+		add_stability = -0.05
+		retire_character = NFA_beidang
+		add_popularity = { ideology = fascism popularity = 0.3 }
+		set_party_name = { ideology = fascism long_name = "火十字团" name = "火十字团" }
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+		NFA_shangxiao = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "1999.1.1"
+					desc = "SHANGXIAO_DESC"
+					ideology = fascism_ideology
+					traits = {
+						trait_nfa_sx
+					}
+				}
+				promote_leader = yes
+				}
+		}
+		hidden_effect = {
+			remove_ideas = NFA_dayuanshuai
+			add_ideas = NFA_dangao
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+	option = {
+		name = nfa.12.b
+		add_stability = -0.05
+		retire_character = NFA_beidang
+		add_popularity = { ideology = fascism popularity = 0.3 }
+		set_party_name = { ideology = fascism long_name = "加速主义者" name = "加速主义者" }
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+		NFA_aertuo = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "1999.1.1"
+					#desc = "SHANGXIAO_DESC"
+					ideology = fascism_ideology
+					traits = {
+						trait_nfa_fdian
+					}
+				}
+				promote_leader = yes
+				}
+		}
+		hidden_effect = {
+			remove_ideas = NFA_dayuanshuai
+			add_ideas = NFA_dangao
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = nfa.12.c
+		add_stability = -0.05
+		retire_character = NFA_beidang
+		
+		hidden_effect = {
+			remove_ideas = NFA_dayuanshuai
+			add_ideas = NFA_dangao
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = nfa.13
+	title = nfa.13.t
+	desc = nfa.13.d
+	#picture = 
+	is_triggered_only = yes
+	option = {
+		name = nfa.13.a
+		add_popularity = { ideology = fascism popularity = -0.03 }
+		set_party_name = { ideology = fascism long_name = "火十字团" name = "火十字团" }
+		NFA_shangxiao = {
+			add_country_leader_role = {
+				country_leader = {
+					expire = "1999.1.1"
+					desc = "SHANGXIAO_DESC"
+					ideology = fascism_ideology
+					traits = {
+						trait_nfa_sx
+					}
+				}
+				promote_leader = yes
+				}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	
+}
+
+country_event = {
+	id = nfa.14
+	title = nfa.14.t
+	desc = nfa.14.d
+	#picture = 
+	is_triggered_only = yes
+	option = {
+		name = nfa.14.a
+		ai_chance = {
+			factor = 100
+		}
+		ROOT = {
+			add_to_faction = FROM
+		}
+		FROM = {
+			adorable_heart_faction_buff = yes
+			news_event = {
+				id = generic.2003
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = nfa.14.b
+		FROM = {
+			country_event = {
+				id = generic.2009
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = nfa.15
+	title = nfa.15.t
+	desc = nfa.15.d
+	#picture = 
+	is_triggered_only = yes
+	option = {
+		name = nfa.15.a
+		ai_chance = {
+			factor = 100
+		}
+		ROOT = {
+			add_to_faction = FROM
+		}
+		FROM = {
+			adorable_heart_faction_buff = yes
+			annex_country = { target = FRA transfer_troops = no }	
+			news_event = {
+				id = generic.2003
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = nfa.15.b
+		FROM = {
+			country_event = {
+				id = generic.2009
+			}
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = nfa.16
+	title = nfa.16.t
+	desc = nfa.16.d
+	#picture = 
+	is_triggered_only = yes
+	option = {
+		name = nfa.16.a
+			hidden_effect = {
+			release_puppet = FRA
+			NFA = {
+			annex_country = { target = FRA transfer_troops = no }
+			}
+			}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = nfa.16.b
+		NFA = {
+		set_country_flag = NFA_AI_nottwo
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = nfa.17
+	title = nfa.17.t
+	desc = nfa.17.d
+	#picture = 
+	is_triggered_only = yes
+	option = {
+		name = nfa.17.a
+		add_political_power = 150
+		add_stability = -0.1
+		add_war_support = -0.1
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = nfa.17.b
+		add_political_power = -100
+		add_stability = 0.1
+		ai_chance = {
+			factor = 0
+		}
+	}
+	
+	option = {
+		name = nfa.17.c
+		add_political_power = 50
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {
+	id = nfa.18
+	title = nfa.18.t
+	desc = nfa.18.d
+	#picture = 
+	is_triggered_only = yes
+	option = {
+		name = nfa.18.a
+		add_political_power = 75
+		add_stability = -0.1
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = nfa.18.b
+		add_political_power = 50
+		ai_chance = {
+			factor = 30
+		}
+	}
+	
+	#option = {	#洗脑需要护国主路线
+	#	name = nfa.18.c
+	#	
+	#	ai_chance = {
+	#		factor = 100
+	#	}
+	#}
+}
+
+country_event = {
+	id = nfa.19
+	title = nfa.19.t
+	desc = nfa.19.d
+	#picture = 
+	is_triggered_only = yes
+	option = {
+		name = nfa.19.a
+		ai_chance = {
+			factor = 0
+		}
+	}
+	
+}
+
+country_event = {
+	id = nfa.20
+	title = nfa.20.t
+	desc = nfa.20.d
+	#picture = 
+	is_triggered_only = yes
+	option = {
+		name = nfa.20.a
+		add_political_power = 100
+		add_stability = -0.2
+		add_popularity = { ideology = fascism popularity = 0.15 }
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = nfa.20.b
+		add_stability = 0.05
+		add_popularity = { ideology = communism popularity = 0.1 }
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = nfa.21
+	title = nfa.21.t
+	desc = nfa.21.d
+	#picture = 
+	is_triggered_only = yes
+	option = {
+		name = nfa.21.a
+		add_political_power = 100
+		add_stability = -0.15
+		add_popularity = { ideology = fascism popularity = 0.15 }
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = nfa.21.b
+		add_stability = 0.05
+		add_popularity = { ideology = fascism popularity = 0.1 }
+		ai_chance = {
+			factor = 100
+		}
+	}
+}

@@ -1,0 +1,275 @@
+
+add_namespace = KEI_news
+
+news_event = {#宣布天启之国的复兴
+
+	#新闻名称
+    id = KEI_news.1
+	#新闻图片
+    picture = GFX_report_news_event_KEI_1
+	#新闻标题
+    title = KEI_news.1.t
+	#新闻内容
+    desc = KEI_news.1.d
+
+	#世界新闻？
+    major = yes
+
+	#只能被调出来?
+	is_triggered_only = yes
+
+	option = {#选项
+
+		name = KEI_news.1.a
+		
+		trigger = {
+			tag = KEI
+			tag = CKP
+			tag = SHY
+		}
+		
+	}
+
+	option = {#选项
+
+		name = KEI_news.1.b
+
+		trigger = {
+			NOT = {
+				tag = KEI
+				tag = CKP
+				tag = SHY
+			}
+		}
+
+	}
+
+}
+
+news_event = {#重新开放自动人偶交易
+
+	#新闻名称
+    id = KEI_news.0
+	#新闻图片
+    picture = GFX_report_news_event_KEI_0
+	#新闻标题
+    title = KEI_news.0.t
+	#新闻内容
+    desc = KEI_news.0.d
+
+	#只能被调出来?
+	is_triggered_only = yes
+
+	#世界新闻？
+    major = yes
+
+	option = {#选项
+
+		name = KEI_news.0.a
+
+	}
+
+}
+
+news_event = {#站边圣杯
+	#新闻名称
+    id = KEI_news.2
+	#新闻图片
+    picture = GFX_report_news_event_KEI_2
+	#新闻标题
+    title = KEI_news.2.t
+	#新闻内容
+    desc = KEI_news.2.d
+	#世界新闻？
+    major = yes
+	#只能被调出来?
+	is_triggered_only = yes
+	option = {#选项
+		name = KEI_news.2.a
+		trigger = {
+			is_in_faction_with = ENG
+		}
+	}
+	option = {#选项
+		name = KEI_news.2.b
+		trigger = {
+			NOT = {
+				is_in_faction_with = ENG
+			}
+		}
+	}
+}
+news_event = {#站边德佬AUS
+	#新闻名称
+    id = KEI_news.3
+	#新闻图片
+    picture = GFX_report_news_event_KEI_3
+	#新闻标题
+    title = KEI_news.3.t
+	#新闻内容
+    desc = KEI_news.3.d
+	#世界新闻？
+    major = yes
+	#只能被调出来?
+	is_triggered_only = yes
+	option = {#选项
+		name = KEI_news.3.a
+		trigger = {
+			is_in_faction_with = AUS
+		}
+	}
+	option = {#选项
+		name = KEI_news.3.b
+		trigger = {
+			NOT = {
+				is_in_faction_with = AUS
+			}
+		}
+	}
+}
+news_event = {#站边德佬GER
+	#新闻名称
+    id = KEI_news.4
+	#新闻图片
+    picture = GFX_report_news_event_KEI_4
+	#新闻标题
+    title = KEI_news.4.t
+	#新闻内容
+    desc = KEI_news.4.d
+	#世界新闻？
+    major = yes
+	#只能被调出来?
+	is_triggered_only = yes
+	option = {#选项
+		name = KEI_news.4.a
+		trigger = {
+			is_in_faction_with = GER
+		}
+	}
+	option = {#选项
+		name = KEI_news.4.b
+		trigger = {
+			NOT = {
+				is_in_faction_with = GER
+			}
+		}
+	}
+}
+news_event = {#呆逼
+	#新闻名称
+    id = KEI_news.5
+	#新闻图片
+    picture = GFX_report_news_event_KEI_5
+	#新闻标题
+    title = KEI_news.5.t
+	#新闻内容
+    desc = KEI_news.5.d
+	#世界新闻？
+    major = yes
+	#只能被调出来?
+	is_triggered_only = yes
+	option = {#选项
+		name = KEI_news.5.a
+		trigger = {
+			is_in_faction_with = DVL
+		}
+	}
+	option = {#选项
+		name = KEI_news.5.b
+		trigger = {
+			NOT = {
+				is_in_faction_with = DVL
+			}
+		}
+	}
+}
+news_event = {#站边苏联
+	#新闻名称
+    id = KEI_news.6
+	#新闻图片
+    picture = GFX_report_news_event_KEI_6
+	#新闻标题
+    title = KEI_news.6.t
+	#新闻内容
+    desc = KEI_news.6.d
+	#世界新闻？
+    major = yes
+	#只能被调出来?
+	is_triggered_only = yes
+	option = {#选项
+		name = KEI_news.6.a
+		trigger = {
+			is_in_faction_with = SOV
+		}
+	}
+	option = {#选项
+		name = KEI_news.6.b
+		trigger = {
+			NOT = {
+				is_in_faction_with = SOV
+			}
+		}
+	}
+}
+
+news_event = {#北欧进同
+	#新闻名称
+    id = KEI_news.7
+	#新闻图片
+    picture = GFX_report_news_event_KEI_7
+	#新闻标题
+    title = KEI_news.7.t
+	#新闻内容
+    desc = KEI_news.7.d
+	#世界新闻？
+    major = yes
+	#只能被调出来?
+	is_triggered_only = yes
+	option = {#选项
+		name = KEI_news.7.a
+		trigger = {
+			is_in_faction_with = ENG
+		}
+	}
+	option = {#选项
+		name = KEI_news.7.b
+		trigger = {
+			NOT = {
+				is_in_faction_with = ENG
+			}
+		}
+	}
+}
+
+news_event = {#工党统一北欧
+	#新闻名称
+    id = KEI_news.8
+	#新闻图片
+    picture = GFX_report_news_event_KEI_8
+	#新闻标题
+    title = KEI_news.8.t
+	#新闻内容
+    desc = KEI_news.8.d
+	#世界新闻？
+    major = yes
+	#只能被调出来?
+	is_triggered_only = yes
+	option = {#选项
+		name = KEI_news.8.a
+		trigger = {
+			has_government = communism
+			NOT = {
+				has_war_with = CKP
+			}
+		}
+	}
+	option = {#选项
+		name = KEI_news.8.b
+		trigger = {
+			NOT = {
+				has_government = communism
+			}
+			has_war_with = CKP
+		}
+	}
+}

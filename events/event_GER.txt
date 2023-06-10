@@ -1,0 +1,3519 @@
+add_namespace = austria
+add_namespace = ah_germany
+###############################################################
+######################奥地利##################################
+###############################################################
+news_event = {
+	###磷叶石遇刺
+	id = austria.01
+	title = austria.01.t
+	picture = GFX_news_event_DEATH_HUN
+	desc = austria.01.d
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	immediate = {
+		hidden_effect = {
+			HUN = {
+				remove_ideas = {
+					HUN_DONGLUAN
+				}
+				add_ideas = {
+					HUN_DONGLUAN_2
+				}
+				retire_character = HUN_miklos_horthy
+			}
+		}
+	}
+	option = {
+		name = austria.01.a
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = austria.01.b
+		trigger = {
+			tag = HUN
+		}
+	}
+	option = {
+		name = austria.01.c
+		trigger = {
+			NOT = {
+				tag = GER
+			}
+			NOT = {
+				tag = HUN
+			}
+		}
+	}
+}
+
+news_event = {
+	###吞并宝石之国
+	id = austria.02
+	title = austria.02.t
+	picture = GFX_news_event_042
+	desc = austria.02.d
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = austria.02.a
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = austria.02.b
+		trigger = {
+			NOT = {
+				tag = GER
+			}
+		}
+	}
+}
+
+country_event = {
+	#黑夜中的黑色车队
+	id = austria.03
+	title = austria.03.t
+	desc = austria.03.d
+	picture = GFX_EVENT_AUS_HSF_COMING
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = austria.03.a
+		set_country_flag = AUS_HSF_COMING
+		create_equipment_variant = {
+			name = "Panzer III Ausf. F"
+			type = medium_tank_chassis_1
+			parent_version = 0
+			modules = {
+				main_armament_slot = tank_small_cannon_2
+				turret_type_slot = tank_medium_three_man_tank_turret
+				suspension_type_slot = tank_torsion_bar_suspension
+				armor_type_slot = tank_welded_armor
+				engine_type_slot = tank_gasoline_engine
+				special_type_slot_1 = tank_radio_1
+				special_type_slot_2 = smoke_launchers
+				special_type_slot_3 = empty
+				special_type_slot_4 = empty
+			}
+			upgrades = {
+				tank_nsb_engine_upgrade = 6
+				tank_nsb_armor_upgrade = 3
+			}
+			icon = "GFX_GER_basic_medium_tank_medium"
+		}
+		add_manpower = 10
+		add_equipment_to_stockpile = {
+			type = infantry_equipment
+			amount = 10
+			producer = HSF
+		}
+		add_equipment_to_stockpile = {
+			type = motorized_equipment
+			amount = 2
+			producer = HSF
+		}
+		add_equipment_to_stockpile = {
+			type = medium_tank_chassis_1
+			amount = 2
+			producer = HSF
+			variant_name = "Panzer III Ausf. F"
+		}
+		add_corps_commander_role = {
+			character = GER_ailika
+			traits = {
+				brilliant_strategist
+				commando
+				desert_fox
+				armor_officer
+			}
+			skill = 4
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id = -1
+		}
+		add_field_marshal_role = {
+			character = GER_zhensui
+			traits = {
+				brilliant_strategist
+				armor_officer
+				trickster
+				panzer_leader
+				desert_fox
+				hill_fighter
+			}
+			skill = 5
+			attack_skill = 6
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 4
+			legacy_id = -1
+		}
+	}
+}
+
+country_event = {
+	#长刀之夜
+	id = austria.04
+	title = austria.04.t
+	desc = austria.04.d
+	picture = GFX_UBR_guess_who
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = austria.04.a
+		add_manpower = -7000
+		add_stability = 0.2
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.1
+		}
+	}
+}
+
+country_event = {
+	#元首在看着你
+	id = austria.05
+	title = austria.05.t
+	desc = austria.05.d
+	picture = GFX_event_lisa
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = austria.05.a
+	}
+}
+
+country_event = {
+	#德意志人民返回故土
+	id = austria.06
+	title = austria.06.t
+	desc = austria.06.d
+	picture = GFX_event_lisa
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = austria.06.a
+	}
+}
+
+country_event = {
+	#德意志共产党的命运
+	id = austria.07
+	title = austria.07.t
+	desc = austria.07.desc
+	picture = GFX_event_GEU_rev
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = austria.07.a
+		custom_effect_tooltip = KPD_lagerer_power
+		add_ideas = AUS_work_with_KPD
+		add_popularity = {
+			ideology = communism
+			popularity = 0.1
+		}
+		set_global_flag = KPD_lagerer_power
+		country_event = {
+			#红与黑的交织之夜
+			id = austria.16
+			days = 1
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				has_game_rule = {
+					rule = AH_AUS_ai_behavior_SELECTION
+					option = AUS_GAME_RULE_2
+				}
+				add = -10
+			}
+			modifier = {
+				has_game_rule = {
+					rule = AH_AUS_ai_behavior_SELECTION
+					option = AUS_GAME_RULE_3
+				}
+				add = -10
+			}
+		}
+	}
+	option = {
+		name = austria.07.b
+		country_event = {
+			#
+			id = austria.17
+			days = 1
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				has_game_rule = {
+					rule = AH_AUS_ai_behavior_SELECTION
+					option = AUS_GAME_RULE_2
+				}
+				add = -10
+			}
+			modifier = {
+				has_game_rule = {
+					rule = AH_AUS_ai_behavior_SELECTION
+					option = AUS_GAME_RULE_4
+				}
+				add = -10
+			}
+		}
+	}
+	option = {
+		name = austria.07.c
+		custom_effect_tooltip = KPD_none_power
+		add_stability = -0.1
+		add_manpower = -100
+		add_popularity = {
+			ideology = communism
+			popularity = -1
+		}
+		country_event = {
+			#
+			id = austria.18
+			days = 1
+		}
+		set_global_flag = KPD_none_power
+		ai_chance = {
+			base = 10
+			modifier = {
+				has_game_rule = {
+					rule = AH_AUS_ai_behavior_SELECTION
+					option = AUS_GAME_RULE_3
+				}
+				add = -10
+			}
+			modifier = {
+				has_game_rule = {
+					rule = AH_AUS_ai_behavior_SELECTION
+					option = AUS_GAME_RULE_4
+				}
+				add = -10
+			}
+		}
+	}
+}
+
+#地堡中的“新元首”
+news_event = {
+	id = austria.08
+	title = austria.08.t
+	picture = GFX_AUS_leader_in_prison
+	desc = austria.08.desc
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = austria.08.a
+		set_country_flag = Caught_xier
+		trigger = {
+			controls_state = 4
+		}
+	}
+	option = {
+		name = austria.08.b
+		trigger = {
+			not = {
+				controls_state = 4
+			}
+		}
+	}
+}
+
+country_event = {
+	#安抚方法
+	id = austria.09
+	title = austria.09.t
+	#desc = austria.09.d
+	picture = GFX_xier_catch_event
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = prisoner.11.a
+		hidden_effect = {
+			country_event = {
+				id = austria.10
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = prisoner.11.b
+		hidden_effect = {
+			country_event = {
+				id = austria.10
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = prisoner.11.c
+		hidden_effect = {
+			country_event = {
+				id = austria.10
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = prisoner.11.d
+		hidden_effect = {
+			country_event = {
+				id = austria.10
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	#希尔不感兴趣
+	id = austria.10
+	title = austria.10.t
+	desc = austria.10.desc
+	picture = GFX_xier_catch_event
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = austria.10.a
+		clr_country_flag = xier_PRISON_RUNNING
+	}
+}
+
+country_event = {
+	#拷打方法
+	id = austria.11
+	title = austria.11.t
+	#desc = austria.10.desc
+	picture = GFX_xier_catch_event
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = austria.11.a
+		hidden_effect = {
+			country_event = {
+				id = austria.12
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = austria.11.c
+		hidden_effect = {
+			country_event = {
+				id = austria.12
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = austria.11.b
+		trigger = {
+			has_government = communism
+		}
+		hidden_effect = {
+			country_event = {
+				id = austria.13
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	#希尔向我们屈服了
+	id = austria.12
+	title = austria.12.t
+	desc = austria.12.desc
+	picture = GFX_xier_catch_chenggong
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = austria.12.a
+		set_country_flag = xier_join
+		GER = {
+			every_character = {
+				limit = {
+					or = {
+						is_character = GER_xier
+						is_character = GER_zhensui
+						is_character = GER_ailika
+						is_character = GER_heinz_guderian
+					}
+				}
+				set_nationality = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	#希尔向我们屈服了
+	id = austria.13
+	title = austria.12.t
+	desc = austria.12.desc
+	picture = GFX_xier_catch_chenggong
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = austria.12.a
+		set_country_flag = xier_join
+		GER = {
+			every_character = {
+				limit = {
+					or = {
+						is_character = GER_xier
+						is_character = GER_zhensui
+						is_character = GER_ailika
+						is_character = GER_heinz_guderian
+					}
+				}
+				set_nationality = ROOT
+			}
+		}
+		remove_trait = {
+			character = GER_xier
+			slot = political_advisor
+			trait = AUS_shehuidaerwenzhuyizhe
+		}
+		add_trait = {
+			character = GER_xier
+			slot = political_advisor
+			trait = gemingzhanshi
+		}
+	}
+}
+
+country_event = {
+	#洗脑
+	id = austria.14
+	title = austria.14.t
+	desc = austria.14.desc
+	picture = GFX_xier_xinao
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = austria.12.a
+		set_country_flag = xier_join
+		GER = {
+			every_character = {
+				limit = {
+					or = {
+						is_character = GER_xier
+						is_character = GER_zhensui
+						is_character = GER_ailika
+						is_character = GER_heinz_guderian
+					}
+				}
+				set_nationality = ROOT
+			}
+		}
+		add_corps_commander_role = {
+			character = GER_xier
+			traits = {
+				brilliant_strategist
+				commando
+				armor_officer
+			}
+			skill = 4
+			attack_skill = 5
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 3
+			legacy_id = -1
+		}
+	}
+}
+
+country_event = {
+	#告别流亡
+	id = austria.15
+	title = austria.15.t
+	desc = austria.15.desc
+	picture = GFX_xier_xinao
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = austria.15.a
+		set_global_flag = GER_REBUILD_ALREADY
+		custom_effect_tooltip = AUS_event_15_tt
+		add_ideas = GER_WAR_BREAK
+		add_ideas = GER_serious_lose_job
+		add_ideas = GER_ant_educate
+		#add_ideas = GER_xier_idea
+		set_capital = {
+			state = 64
+			remember_old_capital = no
+		}
+	}
+}
+
+country_event = {
+	#红与黑的交织之夜
+	id = austria.16
+	title = austria.16.t
+	desc = austria.16.desc
+	picture = GFX_event_ernst_thalmann
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = austria.16.a
+	}
+}
+
+country_event = {
+	#暗号
+	id = austria.17
+	title = austria.17.t
+	desc = austria.17.desc
+	#picture = GFX_event_ernst_thalmann
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = austria.17.a
+	}
+}
+
+country_event = {
+	#真理不死
+	id = austria.18
+	title = austria.18.t
+	desc = austria.18.desc
+	#picture = GFX_event_ernst_thalmann
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = austria.18.a
+	}
+}
+
+#德意志归来
+news_event = {
+	id = austria.1666
+	title = austria.1666.t
+	picture = GFX_news_event_rebuild_of_GER
+	desc = {
+		text = austria.1666.1
+		trigger = {
+			country_exists = DVL
+		}
+	}
+	desc = {
+		text = austria.1666.2
+		trigger = {
+			NOT = {
+				country_exists = DVL
+			}
+		}
+	}
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = austria.1666.a
+		set_country_flag = super_event_rebuild_of_GER
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			or = {
+				tag = GER
+				tag = GER
+			}
+		}
+	}
+	option = {
+		name = austria.1666.b
+		set_country_flag = super_event_rebuild_of_GER
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			NOT = {
+				tag = GER
+			}
+			NOT = {
+				tag = GER
+			}
+		}
+	}
+}
+
+news_event = {
+	###轴心国介入大战
+	id = austria.2010
+	title = austria.2010.t
+	picture = GFX_news_GEU_victo
+	desc = austria.2010.desc
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = austria.2010.a
+		trigger = {
+			tag = GER
+		}
+		set_country_flag = super_event_AUS_WAR
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+	}
+	option = {
+		name = austria.2010.b
+		trigger = {
+			or = {
+				tag = DVL
+				is_in_faction_with = DVL
+			}
+		}
+		set_country_flag = super_event_AUS_WAR
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+	}
+	option = {
+		name = austria.2010.c
+		trigger = {
+			NOT = {
+				tag = GER
+			}
+			is_in_faction_with = GER
+		}
+		set_country_flag = super_event_AUS_WAR
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+	}
+	option = {
+		name = austria.2010.d
+		trigger = {
+			has_war_with = DVL
+		}
+		set_country_flag = super_event_AUS_WAR
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+	}
+	option = {
+		name = austria.2010.e
+		trigger = {
+			NOT = {
+				tag = GER
+			}
+			NOT = {
+				tag = DVL
+			}
+			NOT = {
+				is_in_faction_with = DVL
+			}
+			NOT = {
+				is_in_faction_with = GER
+			}
+			NOT = {
+				has_war_with = DVL
+			}
+		}
+		set_country_flag = super_event_AUS_WAR
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+	}
+}
+
+###############################################################
+######################德意志###################################
+###############################################################
+country_event = {
+	#宝石之国的叛乱
+	id = ah_germany.01
+	title = ah_germany.01.t
+	desc = ah_germany.01.d
+	is_triggered_only = yes
+	fire_only_once = no
+	immediate = {
+		every_state = {
+			limit = {
+				is_core_of = HUN
+				NOT = {
+					has_state_flag = L_GER
+				}
+				is_owned_and_controlled_by = GER
+			}
+			HUN = {
+				transfer_state = PREV
+			}
+			remove_core_of = GER
+		}
+	}
+	option = {
+		name = ah_germany.01.a
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = ah_germany.01.b
+		declare_war_on = {
+			target = HUN
+			type = annex_everything
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	#德共革命
+	id = ah_germany.02
+	title = ah_germany.02.t
+	desc = ah_germany.02.d
+	picture = GFX_event_GEU_rev
+	is_triggered_only = yes
+	fire_only_once = no
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					has_global_flag = KPD_lagerer_power
+				}
+				if = {
+					limit = {
+						781 = {
+							is_owned_and_controlled_by = GER
+						}
+					}
+					GEU = {
+						transfer_state = 781
+					}
+				}
+				else = {
+					random_owned_controlled_state = {
+						GEU = {
+							transfer_state = PREV
+						}
+					}
+				}
+				if = {
+					limit = {
+						57 = {
+							is_owned_and_controlled_by = GER
+						}
+					}
+					GEU = {
+						transfer_state = 57
+					}
+				}
+				else = {
+					random_owned_controlled_state = {
+						GEU = {
+							transfer_state = PREV
+						}
+					}
+				}
+				if = {
+					limit = {
+						56 = {
+							is_owned_and_controlled_by = GER
+						}
+					}
+					GEU = {
+						transfer_state = 56
+					}
+				}
+				else = {
+					random_owned_controlled_state = {
+						GEU = {
+							transfer_state = PREV
+						}
+					}
+				}
+				if = {
+					limit = {
+						42 = {
+							is_owned_and_controlled_by = GER
+						}
+					}
+					GEU = {
+						transfer_state = 42
+					}
+				}
+				else = {
+					random_owned_controlled_state = {
+						GEU = {
+							transfer_state = PREV
+						}
+					}
+				}
+				if = {
+					limit = {
+						51 = {
+							is_owned_and_controlled_by = GER
+						}
+					}
+					GEU = {
+						transfer_state = 51
+					}
+				}
+				else = {
+					random_owned_controlled_state = {
+						GEU = {
+							transfer_state = PREV
+						}
+					}
+				}
+				if = {
+					limit = {
+						60 = {
+							is_owned_and_controlled_by = GER
+						}
+					}
+					GEU = {
+						transfer_state = 60
+					}
+				}
+				else = {
+					random_owned_controlled_state = {
+						GEU = {
+							transfer_state = PREV
+						}
+					}
+				}
+				if = {
+					limit = {
+						59 = {
+							is_owned_and_controlled_by = GER
+						}
+					}
+					GEU = {
+						transfer_state = 59
+					}
+				}
+				else = {
+					random_owned_controlled_state = {
+						GEU = {
+							transfer_state = PREV
+						}
+					}
+				}
+				if = {
+					limit = {
+						55 = {
+							is_owned_and_controlled_by = GER
+						}
+					}
+					GEU = {
+						transfer_state = 55
+					}
+				}
+				else = {
+					random_owned_controlled_state = {
+						GEU = {
+							transfer_state = PREV
+						}
+					}
+				}
+				GER = {
+					transfer_units_fraction = {
+						target = GEU
+						size = 0.6
+						stockpile_ratio = 0.6
+						army_ratio = 0.6
+						navy_ratio = 0.6
+						air_ratio = 0.6
+						keep_unit_leaders_trigger = {
+							NOT = {
+								has_unit_leader_flag = my_test_flag
+							}
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						781 = {
+							is_owned_and_controlled_by = GER
+						}
+					}
+					GEU = {
+						transfer_state = 781
+					}
+				}
+				else = {
+					random_owned_controlled_state = {
+						GEU = {
+							transfer_state = PREV
+						}
+					}
+				}
+				if = {
+					limit = {
+						57 = {
+							is_owned_and_controlled_by = GER
+						}
+					}
+					GEU = {
+						transfer_state = 57
+					}
+				}
+				else = {
+					random_owned_controlled_state = {
+						GEU = {
+							transfer_state = PREV
+						}
+					}
+				}
+				if = {
+					limit = {
+						56 = {
+							is_owned_and_controlled_by = GER
+						}
+					}
+					GEU = {
+						transfer_state = 56
+					}
+				}
+				else = {
+					random_owned_controlled_state = {
+						GEU = {
+							transfer_state = PREV
+						}
+					}
+				}
+				if = {
+					limit = {
+						42 = {
+							is_owned_and_controlled_by = GER
+						}
+					}
+					GEU = {
+						transfer_state = 42
+					}
+				}
+				else = {
+					random_owned_controlled_state = {
+						GEU = {
+							transfer_state = PREV
+						}
+					}
+				}
+				if = {
+					limit = {
+						51 = {
+							is_owned_and_controlled_by = GER
+						}
+					}
+					GEU = {
+						transfer_state = 51
+					}
+				}
+				else = {
+					random_owned_controlled_state = {
+						GEU = {
+							transfer_state = PREV
+						}
+					}
+				}
+				GER = {
+					transfer_units_fraction = {
+						target = GEU
+						size = 0.4
+						stockpile_ratio = 0.5
+						army_ratio = 0.4
+						navy_ratio = 0.4
+						air_ratio = 0.4
+						keep_unit_leaders_trigger = {
+							NOT = {
+								has_unit_leader_flag = my_test_flag
+							}
+						}
+					}
+				}
+			}
+			GEU = {
+				inherit_technology = GER
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = 100000
+					producer = GER
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 1000
+					producer = GER
+				}
+				add_manpower = 800000
+				country_event = {
+					id = germany_union.0003
+					days = 2
+				}
+			}
+			GER = {
+				#dismantle_faction = yes
+				GEU = {
+					create_intelligence_agency = yes
+					transfer_int_upgrade = yes
+				}
+			}
+			# every_country = {
+			# 	limit = {
+			# 		is_subject_of = GER
+			# 	}
+			# 	GER = {
+			# 		set_autonomy = {
+			# 			target = PREV
+			# 			autonomy_state = autonomy_free
+			# 		}
+			# 	}
+			# }
+			every_state = {
+				limit = {
+					has_state_flag = L_GER
+				}
+				add_core_of = GEU
+			}
+		}
+	}
+	option = {
+		name = ah_germany.02.a
+		GER = {
+			declare_war_on = {
+				target = GEU
+				type = annex_everything
+			}
+		}
+	}
+	option = {
+		name = ah_germany.02.b
+		#custom_effect_tooltip = have_not_complete
+		GER = {
+			declare_war_on = {
+				target = GEU
+				type = annex_everything
+			}
+		}
+		GEU = {
+			change_tag_from = GER
+		}
+	}
+}
+
+country_event = {
+	#柏林审判
+	id = ah_germany.03
+	title = ah_germany.03.t
+	desc = ah_germany.03.d
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.03.a
+		custom_effect_tooltip = UNCOM_QINGXI_GER
+		add_manpower = -12000
+		add_stability = -0.1
+		set_country_flag = UNCOM_QINGXI_GER
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = ah_germany.03.b
+		add_manpower = -20000
+		add_stability = -0.3
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+news_event = {
+	###响彻世界的一枪
+	id = ah_germany.04
+	title = ah_germany.04.t
+	picture = GFX_news_event_042
+	desc = ah_germany.04.d
+	trigger = {
+		wants_world_news = yes
+	}
+	immediate = {
+		hidden_effect = {
+			retire_character = GER_Adolf_lisha
+			GER_NO_GOVER = {
+				add_country_leader_role = {
+					country_leader = {
+						desc = "GER_NO_GOVER_desc"
+						ideology = nazism
+						traits = {
+						}
+						expire = "1999.1.1.1"
+						id = -1
+					}
+					promote_leader = yes
+				}
+			}
+			country_event = {
+				id = ah_germany.05
+				days = 2
+			}
+		}
+	}
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = ah_germany.04.a
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = ah_germany.04.b
+		trigger = {
+			NOT = {
+				tag = GER
+			}
+		}
+	}
+}
+
+country_event = {
+	#社会秩序恶化
+	id = ah_germany.05
+	title = ah_germany.05.t
+	desc = ah_germany.05.d
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.05.a
+		swap_ideas = {
+			remove_idea = GER_basic_order
+			add_idea = GER_worst_social
+		}
+		swap_ideas = {
+			remove_idea = GER_serious_lose_job
+			add_idea = GER_serious_lose_job_1
+		}
+		swap_ideas = {
+			remove_idea = GER_WAR_BREAK
+			add_idea = GER_WAR_BREAK_1
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = KPD_none_power
+					}
+				}
+				country_event = {
+					id = ah_germany.41
+					days = 5
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	#尾声
+	id = ah_germany.06
+	title = ah_germany.06.t
+	desc = ah_germany.06.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.06.a
+		country_event = {
+			id = ah_germany.07
+		}
+	}
+	option = {
+		name = ah_germany.06.b
+		custom_effect_tooltip = have_not_complete
+		GER_heinrich_himmler = {
+			add_country_leader_role = {
+				country_leader = {
+					desc = "POLITICS_GER_Himmler_DESC"
+					ideology = occultism
+					traits = {
+						Great_magic
+					}
+					expire = "1999.1.1.1"
+					id = -1
+				}
+				promote_leader = yes
+			}
+		}
+		mark_focus_tree_layout_dirty = yes
+	}
+	option = {
+		name = ah_germany.06.c
+		custom_effect_tooltip = have_not_complete
+		remove_ideas = GER_xier_idea
+		add_ideas = GER_Auto_Strasser_idea
+		GER_joseph_goebbels = {
+			add_country_leader_role = {
+				country_leader = {
+					desc = "POLITICS_GER_Goebbels_DESC"
+					ideology = Strasserism
+					traits = {
+						fascist_demagogue
+						propaganda_expert
+					}
+					expire = "1999.1.1.1"
+					id = -1
+				}
+				promote_leader = yes
+			}
+		}
+		mark_focus_tree_layout_dirty = yes
+	}
+	option = {
+		name = ah_germany.06.d
+		custom_effect_tooltip = have_not_complete
+		GER_Konrad_Adenauer = {
+			add_country_leader_role = {
+				country_leader = {
+					desc = "POLITICS_GER_Bismarck_DESC"
+					ideology = nazism
+					traits = {
+					}
+					expire = "1999.1.1.1"
+					id = -1
+				}
+				promote_leader = yes
+			}
+		}
+		mark_focus_tree_layout_dirty = yes
+	}
+}
+
+country_event = {
+	#国防军的决定
+	id = ah_germany.07
+	title = ah_germany.07.t
+	desc = ah_germany.07.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.07.a
+		GER_maiye = {
+			add_country_leader_role = {
+				country_leader = {
+					desc = "POLITICS_GER_Goring_DESC"
+					ideology = nazism
+					traits = {
+						AUS_MY
+					}
+					expire = "1999.1.1.1"
+					id = -1
+				}
+				promote_leader = yes
+			}
+		}
+		mark_focus_tree_layout_dirty = yes
+	}
+	option = {
+		name = ah_germany.07.b
+		GER_ailika = {
+			add_country_leader_role = {
+				country_leader = {
+					desc = "POLITICS_GER_Erika_DESC"
+					ideology = nazism
+					traits = {
+					}
+					expire = "1999.1.1.1"
+					id = -1
+				}
+				promote_leader = yes
+			}
+		}
+		mark_focus_tree_layout_dirty = yes
+	}
+	option = {
+		name = ah_germany.07.c
+		custom_effect_tooltip = have_not_complete
+		country_event = {
+			id = ah_germany.16
+			days = 1
+		}
+	}
+}
+
+country_event = {
+	#完美的演讲
+	id = ah_germany.08
+	title = ah_germany.08.t
+	desc = ah_germany.08.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.08.a
+		custom_effect_tooltip = new_foucs_is_ready
+		remove_ideas = GER_basic_order
+		mark_focus_tree_layout_dirty = yes
+	}
+}
+
+country_event = {
+	#新的国名？
+	id = ah_germany.09
+	title = ah_germany.09.t
+	desc = ah_germany.09.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.09.a
+		set_cosmetic_tag = GERMANIA_EMPER1
+		hidden_effect = {
+			news_event = {
+				id = ah_germany.12
+				hours = 12
+			}
+		}
+	}
+	option = {
+		name = ah_germany.09.b
+		set_cosmetic_tag = GERMANIA_EMPER2
+		hidden_effect = {
+			news_event = {
+				id = ah_germany.12
+				hours = 12
+			}
+		}
+	}
+	option = {
+		name = ah_germany.09.c
+		set_cosmetic_tag = GERMANIA_EMPER3
+		hidden_effect = {
+			news_event = {
+				id = ah_germany.12
+				hours = 12
+			}
+		}
+	}
+	option = {
+		name = ah_germany.09.d
+		set_cosmetic_tag = great_ger_black
+		hidden_effect = {
+			news_event = {
+				id = ah_germany.12
+				hours = 12
+			}
+		}
+	}
+}
+
+news_event = {
+	###革命被镇压
+	id = ah_germany.10
+	title = ah_germany.10.t
+	picture = GFX_new_event_ger_win_civil_war
+	desc = ah_germany.10.d
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = ah_germany.10.a
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = ah_germany.10.b
+		trigger = {
+			NOT = {
+				tag = GER
+			}
+		}
+	}
+}
+
+country_event = {
+	#处置外星人的纪念碑
+	id = ah_germany.11
+	title = ah_germany.11.t
+	desc = ah_germany.11.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.11.a
+	}
+	option = {
+		name = ah_germany.11.b
+		add_political_power = -100
+		add_stability = 0.2
+	}
+}
+
+news_event = {
+	###大德意志统一
+	id = ah_germany.12
+	title = ah_germany.12.t
+	picture = GFX_GER_UNIT_GREAT_GERMANY
+	desc = ah_germany.12.desc
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = ah_germany.12.a
+		set_country_flag = super_event_great_germania
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = ah_germany.12.b
+		set_country_flag = super_event_great_germania
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			NOT = {
+				tag = GER
+			}
+			is_in_faction_with = GER
+		}
+	}
+	option = {
+		name = ah_germany.12.c
+		set_country_flag = super_event_great_germania
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			NOT = {
+				or = {
+					tag = GER
+					is_in_faction_with = GER
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	#不可思议的同萌？
+	id = ah_germany.13
+	title = ah_germany.13.t
+	desc = ah_germany.13.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.13.a
+		add_stability = -0.2
+		GER = {
+			leave_faction = yes
+			create_faction = "柏林-莫斯科轴心"
+			country_event = {
+				id = ah_germany.14
+			}
+		}
+		SOV = {
+			leave_faction = yes
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = ah_germany.13.b
+		GER = {
+			country_event = {
+				id = ah_germany.15
+			}
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+country_event = {
+	#苏联同意了
+	id = ah_germany.14
+	title = ah_germany.14.t
+	#desc = ah_germany.13.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.14.a
+		add_stability = -0.2
+		GER = {
+			add_to_faction = SOV
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	#苏联拒绝了
+	id = ah_germany.15
+	title = ah_germany.15.t
+	#desc = ah_germany.13.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.15.a
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+country_event = {
+	#大选
+	id = ah_germany.17
+	title = ah_germany.17.t
+	desc = ah_germany.17.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.17.a
+		add_ideas = GER_Willy_Brandt_idea
+		remove_ideas = GER_Konrad_Adenauer_idea
+		remove_ideas = GER_Ebenholz_idea
+		set_country_leader_ideology = socialism
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = ah_germany.17.b
+		add_ideas = GER_Konrad_Adenauer_idea
+		remove_ideas = GER_Willy_Brandt_idea
+		remove_ideas = GER_Ebenholz_idea
+		set_country_leader_ideology = liberalism
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = ah_germany.17.c
+		add_ideas = GER_Ebenholz_idea
+		set_country_leader_ideology = conservatism
+		remove_ideas = GER_Willy_Brandt_idea
+		remove_ideas = GER_Konrad_Adenauer_idea
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+news_event = {
+	id = ah_germany.18
+	title = {
+		text = ah_germany.18.t.1
+		trigger = {
+			GER = {
+				has_country_leader = {
+					ruling_only = yes
+					name = "希尔"
+				}
+			}
+		}
+	}
+	title = {
+		text = ah_germany.18.t.2
+		trigger = {
+			GER = {
+				NOT = {
+					has_country_leader = {
+						ruling_only = yes
+						name = "希尔"
+					}
+				}
+			}
+		}
+	}
+	picture = GFX_AUS_leader_in_prison
+	desc = {
+		text = ah_germany.18.desc.1
+		trigger = {
+			GER = {
+				has_country_leader = {
+					ruling_only = yes
+					name = "希尔"
+				}
+			}
+		}
+	}
+	desc = {
+		text = ah_germany.18.desc.2
+		trigger = {
+			GER = {
+				NOT = {
+					has_country_leader = {
+						ruling_only = yes
+						name = "希尔"
+					}
+				}
+			}
+		}
+	}
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = austria.08.a
+		set_country_flag = Caught_xier
+		trigger = {
+			controls_state = 64
+		}
+	}
+	option = {
+		name = austria.08.b
+		trigger = {
+			not = {
+				controls_state = 64
+			}
+		}
+	}
+}
+
+#元首之死
+country_event = {
+	id = ah_germany.20
+	title = ah_germany.20.t
+	desc = ah_germany.20.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.20.a
+		country_event = {
+			id = ah_germany.21
+			days = 1
+		}
+	}
+}
+
+#分歧
+country_event = {
+	id = ah_germany.21
+	title = ah_germany.21.t
+	desc = ah_germany.21.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.21.a
+		country_event = {
+			id = ah_germany.22
+			days = 1
+		}
+	}
+}
+
+#密谋
+country_event = {
+	id = ah_germany.22
+	title = ah_germany.22.t
+	desc = ah_germany.22.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.22.a
+		country_event = {
+			id = ah_germany.23
+			days = 1
+		}
+	}
+}
+
+#猎犬
+country_event = {
+	id = ah_germany.23
+	title = ah_germany.23.t
+	desc = ah_germany.23.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.23.a
+		country_event = {
+			id = ah_germany.24
+			days = 1
+		}
+	}
+}
+
+#决定
+country_event = {
+	id = ah_germany.24
+	title = ah_germany.24.t
+	desc = ah_germany.24.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.24.a
+		custom_effect_tooltip = have_not_complete
+		country_event = {
+			id = ah_germany.25
+			days = 1
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+	option = {
+		name = ah_germany.24.b
+		country_event = {
+			id = ah_germany.31
+			days = 1
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+#炸弹没有爆炸
+#一分钟的判决
+country_event = {
+	id = ah_germany.25
+	title = ah_germany.25.t
+	desc = ah_germany.25.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.25.a
+		retire_character = GER_martin_bormann
+		retire_character = GER_joseph_goebbels
+		country_event = {
+			id = ah_germany.26
+			days = 1
+		}
+	}
+}
+
+#吼姆啦的邀请
+country_event = {
+	id = ah_germany.26
+	title = ah_germany.26.t
+	desc = ah_germany.26.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.26.a
+		country_event = {
+			id = ah_germany.30
+			days = 1
+		}
+	}
+	option = {
+		name = ah_germany.26.b
+		custom_effect_tooltip = new_foucs_is_ready
+		country_event = {
+			id = ah_germany.27
+			days = 1
+		}
+		GER_xier = {
+			add_country_leader_role = {
+				country_leader = {
+					desc = "POLITICS_AUS_xier_DESC"
+					ideology = lisha_xierism
+					traits = {
+						AUS_shehuidaerwenzhuyizhe
+					}
+					expire = "1999.1.1.1"
+					id = -1
+				}
+				promote_leader = yes
+			}
+		}
+		set_portraits = {
+			character = GER_xier
+			civilian = {
+				large = "gfx/leaders/GER/GER_xier_II.png"
+			}
+		}
+		remove_ideas = GER_xier_idea
+		add_ideas = GER_heinrich_himmler_idea
+		mark_focus_tree_layout_dirty = yes
+	}
+}
+
+#葬礼(希尔)
+country_event = {
+	id = ah_germany.27
+	title = ah_germany.27.t
+	desc = ah_germany.27.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.27.a
+	}
+}
+
+#葬礼(鸡农)
+country_event = {
+	id = ah_germany.28
+	title = ah_germany.28.t
+	desc = ah_germany.28.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.28.a
+	}
+}
+
+#鸡农
+#希尔
+country_event = {
+	id = ah_germany.30
+	title = ah_germany.30.t
+	desc = ah_germany.30.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.30.a
+		custom_effect_tooltip = new_foucs_is_ready
+		retire_character = GER_xier
+		GER_heinrich_himmler = {
+			add_country_leader_role = {
+				country_leader = {
+					desc = "POLITICS_GER_Himmler_DESC"
+					ideology = occultism
+					traits = {
+						Great_magic
+					}
+					expire = "1999.1.1.1"
+					id = -1
+				}
+				promote_leader = yes
+			}
+		}
+		mark_focus_tree_layout_dirty = yes
+		country_event = {
+			id = ah_germany.28
+			days = 1
+		}
+	}
+}
+
+#爆炸案发生
+country_event = {
+	id = ah_germany.31
+	title = ah_germany.31.t
+	desc = ah_germany.31.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.31.a
+		if = {
+			limit = {
+				has_character = GER_xier
+			}
+			retire_character = GER_xier
+		}
+		if = {
+			limit = {
+				has_character = GER_heinrich_himmler
+			}
+			retire_character = GER_heinrich_himmler
+		}
+		country_event = {
+			id = ah_germany.32
+			days = 1
+		}
+	}
+}
+
+#柏林混战
+country_event = {
+	id = ah_germany.32
+	title = ah_germany.32.t
+	desc = ah_germany.32.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.32.a
+		country_event = {
+			id = ah_germany.33
+			days = 1
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = ah_germany.32.b
+		custom_effect_tooltip = have_not_complete
+		country_event = {
+			id = ah_germany.34
+			days = 1
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+#计划失败
+country_event = {
+	id = ah_germany.33
+	title = ah_germany.33.t
+	desc = ah_germany.33.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.33.a
+		custom_effect_tooltip = new_foucs_is_ready
+		retire_character = GER_joseph_goebbels
+		GER_maiye = {
+			add_country_leader_role = {
+				country_leader = {
+					desc = "POLITICS_GER_Goring_DESC"
+					ideology = nazism
+					traits = {
+						AUS_MY
+					}
+					expire = "1999.1.1.1"
+					id = -1
+				}
+				promote_leader = yes
+			}
+		}
+		mark_focus_tree_layout_dirty = yes
+	}
+}
+
+#混乱之后
+country_event = {
+	id = ah_germany.34
+	title = ah_germany.34.t
+	desc = ah_germany.34.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.34.a
+		retire_character = GER_maiye
+		add_ideas = GER_Auto_Strasser_idea
+		GER_joseph_goebbels = {
+			add_country_leader_role = {
+				country_leader = {
+					desc = "POLITICS_GER_Goebbels_DESC"
+					ideology = Strasserism
+					traits = {
+						fascist_demagogue
+						propaganda_expert
+					}
+					expire = "1999.1.1.1"
+					id = -1
+				}
+				promote_leader = yes
+			}
+		}
+	}
+}
+
+###
+#领袖之殇
+country_event = {
+	id = ah_germany.35
+	title = ah_germany.35.t
+	desc = ah_germany.35.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.35.a
+		country_event = {
+			id = ah_germany.36
+		}
+	}
+}
+
+#告别
+country_event = {
+	id = ah_germany.36
+	title = ah_germany.36.t
+	desc = ah_germany.36.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.36.a
+		country_event = {
+			id = ah_germany.37
+			days = 3
+		}
+		hidden_effect = {
+			news_event = {
+				id = ah_germany.04
+				days = 1
+			}
+		}
+	}
+}
+
+#未来
+country_event = {
+	id = ah_germany.37
+	title = ah_germany.37.t
+	desc = ah_germany.37.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.37.a
+		custom_effect_tooltip = ah_germany_37_tt_1
+		country_event = {
+			id = ah_germany.21
+			days = 1
+		}
+		ai_chance = {
+			base = 20
+		}
+	}
+	option = {
+		name = ah_germany.37.b
+		custom_effect_tooltip = ah_germany_37_tt_2
+		GER_xier = {
+			add_country_leader_role = {
+				country_leader = {
+					desc = "POLITICS_AUS_xier_DESC"
+					ideology = lisha_xierism
+					traits = {
+						AUS_shehuidaerwenzhuyizhe
+					}
+					expire = "1999.1.1.1"
+					id = -1
+				}
+				promote_leader = yes
+			}
+		}
+		remove_ideas = GER_xier_idea
+		add_ideas = GER_heinrich_himmler_idea
+		country_event = {
+			id = ah_germany.38
+			days = 1
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+#悲剧
+country_event = {
+	id = ah_germany.38
+	title = ah_germany.38.t
+	desc = ah_germany.38.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.38.a
+		country_event = {
+			id = ah_germany.39
+			days = 1
+		}
+	}
+}
+
+#提案
+country_event = {
+	id = ah_germany.39
+	title = ah_germany.39.t
+	desc = ah_germany.39.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.39.a
+		country_event = {
+			id = ah_germany.40
+			days = 1
+		}
+	}
+}
+
+#对峙
+country_event = {
+	id = ah_germany.40
+	title = ah_germany.40.t
+	desc = ah_germany.40.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.40.a
+		country_event = {
+			id = ah_germany.47
+			days = 1
+		}
+	}
+}
+
+#复燃
+country_event = {
+	id = ah_germany.41
+	title = ah_germany.41.t
+	desc = ah_germany.41.desc
+	picture = GFX_event_ernst_thalmann
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.41.a
+		country_event = {
+			id = ah_germany.42
+			days = 5
+		}
+	}
+}
+
+#风雨
+country_event = {
+	id = ah_germany.42
+	title = ah_germany.42.t
+	desc = ah_germany.42.desc
+	picture = GFX_event_Wilhelm_Pieck
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.42.a
+		country_event = {
+			id = ah_germany.43
+			days = 5
+		}
+	}
+}
+
+#分别
+country_event = {
+	id = ah_germany.43
+	title = ah_germany.43.t
+	desc = ah_germany.43.desc
+	picture = GFX_GEU_Heisenberg_coming
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.43.a
+		country_event = {
+			id = ah_germany.44
+			days = 5
+		}
+	}
+}
+
+#重逢
+country_event = {
+	id = ah_germany.44
+	title = ah_germany.44.t
+	desc = ah_germany.44.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.44.a
+		country_event = {
+			id = ah_germany.02
+			days = 1
+		}
+	}
+}
+
+#绝望之夜
+country_event = {
+	id = ah_germany.45
+	title = ah_germany.45.t
+	desc = ah_germany.45.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.45.a
+	}
+}
+
+#德意志之死
+country_event = {
+	id = ah_germany.46
+	title = ah_germany.46.t
+	desc = ah_germany.46.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.46.a
+		set_country_flag = super_event_death_of_germany
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+	}
+}
+
+#离去
+country_event = {
+	id = ah_germany.47
+	title = ah_germany.47.t
+	desc = ah_germany.47.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.47.a
+		country_event = {
+			id = ah_germany.48
+			days = 1
+		}
+	}
+}
+
+#希姆莱
+country_event = {
+	id = ah_germany.48
+	title = ah_germany.48.t
+	desc = ah_germany.48.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.48.a
+		country_event = {
+			id = ah_germany.49
+			days = 1
+		}
+	}
+}
+
+#新秩序的前夜
+country_event = {
+	id = ah_germany.49
+	title = ah_germany.49.t
+	desc = ah_germany.49.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.49.a
+		country_event = {
+			id = ah_germany.50
+			days = 1
+		}
+	}
+}
+
+#希望
+country_event = {
+	id = ah_germany.50
+	title = ah_germany.50.t
+	desc = ah_germany.50.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.50.a
+		country_event = {
+			id = ah_germany.51
+			days = 1
+		}
+	}
+}
+
+#序曲
+country_event = {
+	id = ah_germany.51
+	title = ah_germany.51.t
+	desc = ah_germany.51.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.51.a
+		country_event = {
+			id = ah_germany.52
+			days = 1
+		}
+	}
+}
+
+#柏林
+country_event = {
+	id = ah_germany.52
+	title = ah_germany.52.t
+	desc = ah_germany.52.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.52.a
+		country_event = {
+			id = ah_germany.53
+			days = 1
+		}
+	}
+}
+
+#命运
+country_event = {
+	id = ah_germany.53
+	title = ah_germany.53.t
+	desc = ah_germany.53.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.53.a
+		country_event = {
+			id = ah_germany.54
+			days = 1
+		}
+	}
+}
+
+#决斗
+country_event = {
+	id = ah_germany.54
+	title = ah_germany.54.t
+	desc = ah_germany.54.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.54.a
+		country_event = {
+			id = ah_germany.55
+			days = 1
+		}
+	}
+}
+
+#朋友
+country_event = {
+	id = ah_germany.55
+	title = ah_germany.55.t
+	desc = ah_germany.55.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.55.a
+		country_event = {
+			id = ah_germany.56
+			days = 1
+		}
+	}
+}
+
+#密谋
+country_event = {
+	id = ah_germany.56
+	title = ah_germany.56.t
+	desc = ah_germany.56.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.56.a
+		country_event = {
+			id = ah_germany.57
+			days = 1
+		}
+	}
+}
+
+#科隆暴动
+country_event = {
+	id = ah_germany.57
+	title = ah_germany.57.t
+	desc = ah_germany.57.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.57.a
+		country_event = {
+			id = ah_germany.58
+			days = 1
+		}
+	}
+}
+
+#基督教民主联盟
+country_event = {
+	id = ah_germany.58
+	title = ah_germany.58.t
+	desc = ah_germany.58.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.58.a
+		country_event = {
+			id = ah_germany.59
+			days = 1
+		}
+	}
+}
+
+#柏林之变
+country_event = {
+	id = ah_germany.59
+	title = ah_germany.59.t
+	desc = ah_germany.59.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.59.a
+		hidden_effect = {
+			set_faction_name = Right_wing_countries_united
+			leave_faction = yes
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.2
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.2
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = -0.3
+		}
+		if = {
+			limit = {
+				has_character = GER_xier
+			}
+			retire_character = GER_xier
+		}
+		if = {
+			limit = {
+				has_character = GER_heinrich_himmler
+			}
+			retire_character = GER_heinrich_himmler
+		}
+		remove_ideas = GER_heinrich_himmler_idea
+		add_ideas = GER_Konrad_Adenauer_idea
+		GER_August_von_Mackensen = {
+			add_country_leader_role = {
+				country_leader = {
+					desc = "GER_August_von_Mackensen_DESC"
+					ideology = military_politicism
+					traits = {
+						AH_great_war_hero
+					}
+					expire = "1999.1.1.1"
+					id = -1
+				}
+				promote_leader = yes
+			}
+		}
+		set_politics = {
+			ruling_party = neutrality
+		}
+		set_party_name = {
+			ideology = neutrality
+			long_name = German_junta
+			name = German_junta
+		}
+		country_event = {
+			id = ah_germany.60
+			days = 1
+		}
+		add_ideas = GER_Nazi_resistance
+	}
+}
+
+#前路
+country_event = {
+	id = ah_germany.60
+	title = ah_germany.60.t
+	desc = ah_germany.60.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.60.a
+		custom_effect_tooltip = ah_germany_60_tt_1
+		country_event = {
+			id = ah_germany.16
+			days = 1
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = ah_germany.60.b
+		custom_effect_tooltip = ah_germany_60_tt_2
+		custom_effect_tooltip = have_not_complete
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.2
+		}
+		country_event = {
+			id = ah_germany.58
+			days = 1
+		}
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+#帝皇归来
+country_event = {
+	id = ah_germany.16
+	title = ah_germany.16.t
+	desc = ah_germany.16.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.16.a
+		custom_effect_tooltip = new_foucs_is_ready
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.2
+		}
+		set_party_name = {
+			ideology = neutrality
+			long_name = German_Royal_William
+			name = German_Royal_William
+		}
+		promote_character = GER_Wilhelm_TTT_Auth
+		remove_ideas = GER_Konrad_Adenauer_idea
+		add_ideas = GER_August_von_Mackensen_idea
+		complete_national_focus = GER_The_return_of_the_emperor
+		mark_focus_tree_layout_dirty = yes
+		hidden_effect = {
+			news_event = {
+				id = ah_germany.79
+				days = 1
+			}
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+#联邦共和国的归来
+country_event = {
+	id = ah_germany.61
+	title = ah_germany.61.t
+	desc = ah_germany.61.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.61.a
+	}
+	option = {
+		name = ah_germany.61.b
+	}
+	option = {
+		name = ah_germany.61.c
+	}
+}
+
+news_event = {
+	###苏联宣布反德备战
+	id = ah_germany.62
+	title = ah_germany.62.title
+	picture = GFX_SOV_attack_GER
+	desc = ah_germany.62.desc
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = ah_germany.62.a
+		trigger = {
+			tag = SOV
+		}
+	}
+	option = {
+		name = ah_germany.62.b
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = ah_germany.62.c
+		trigger = {
+			has_government = democratic
+		}
+	}
+	option = {
+		name = ah_germany.62.d
+		trigger = {
+			not = {
+				or = {
+					tag = SOV
+					tag = GER
+					has_government = democratic
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	###大雷雨行动
+	id = ah_germany.63
+	title = ah_germany.63.title
+	picture = GFX_SOV_attack_GER
+	desc = ah_germany.63.desc
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = ah_germany.63.a
+		trigger = {
+			tag = SOV
+		}
+	}
+	option = {
+		name = ah_germany.63.b
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = ah_germany.63.c
+		trigger = {
+			has_government = democratic
+		}
+	}
+	option = {
+		name = ah_germany.63.d
+		trigger = {
+			not = {
+				or = {
+					tag = SOV
+					tag = GER
+					has_government = democratic
+				}
+			}
+		}
+	}
+}
+
+#德国确立反苏政策
+country_event = {
+	id = ah_germany.64
+	title = ah_germany.64.title
+	desc = ah_germany.64.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.64.a
+		activate_mission = SOV_Operation_Thunderstorm
+		add_timed_idea = {
+			idea = SOV_prepare_to_attack_GER
+			days = 720
+		}
+		FROM = {
+			activate_mission = GER_An_imminent_invasion
+		}
+		hidden_effect = {
+			news_event = {
+				###苏联宣布反德备战
+				id = ah_germany.62
+				days = 1
+			}
+		}
+		ai_chance = {
+			base = 10
+		}
+	}
+	option = {
+		name = ah_germany.64.b
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+###生活状态
+#莉莎
+country_event = {
+	id = ah_germany.65
+	title = ah_germany.65.title
+	desc = ah_germany.65.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.65.a
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+#希尔
+country_event = {
+	id = ah_germany.66
+	title = ah_germany.66.title
+	desc = ah_germany.66.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.66.a
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+#吼姆菈
+country_event = {
+	id = ah_germany.67
+	title = ah_germany.67.title
+	desc = ah_germany.67.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.67.a
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+#麦椰
+country_event = {
+	id = ah_germany.68
+	title = ah_germany.68.title
+	desc = ah_germany.68.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.68.a
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+#戈培尔
+country_event = {
+	id = ah_germany.69
+	title = ah_germany.69.title
+	desc = ah_germany.69.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.69.a
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+#薇莲三世
+country_event = {
+	id = ah_germany.70
+	title = ah_germany.70.title
+	desc = ah_germany.70.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.70.a
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+#阿登纳
+country_event = {
+	id = ah_germany.71
+	title = ah_germany.71.title
+	desc = ah_germany.71.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.71.a
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+#勃兰特
+country_event = {
+	id = ah_germany.72
+	title = ah_germany.72.title
+	desc = ah_germany.72.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.72.a
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+#黑键
+country_event = {
+	id = ah_germany.73
+	title = ah_germany.73.title
+	desc = ah_germany.73.desc
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = ah_germany.73.a
+		ai_chance = {
+			base = 10
+		}
+	}
+}
+
+####上台新闻
+#莉莎
+news_event = {
+	id = ah_germany.74
+	title = ah_germany.74.title
+	picture = GFX_SOV_attack_GER
+	desc = ah_germany.74.desc
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = ah_germany.74.a
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = ah_germany.74.b
+		trigger = {
+			has_government = communism
+		}
+	}
+	option = {
+		name = ah_germany.74.c
+		trigger = {
+			has_government = democratic
+		}
+	}
+	option = {
+		name = ah_germany.74.d
+		trigger = {
+			has_government = fascism
+		}
+	}
+	option = {
+		name = ah_germany.74.e
+		trigger = {
+			has_government = neutrality
+			not = {
+				tag = GER
+			}
+		}
+	}
+}
+
+#希尔
+news_event = {
+	id = ah_germany.75
+	title = ah_germany.75.title
+	picture = GFX_SOV_attack_GER
+	desc = ah_germany.75.desc
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = ah_germany.75.a
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = ah_germany.75.b
+		trigger = {
+			has_government = communism
+		}
+	}
+	option = {
+		name = ah_germany.75.c
+		trigger = {
+			has_government = democratic
+		}
+	}
+	option = {
+		name = ah_germany.75.d
+		trigger = {
+			has_government = fascism
+		}
+	}
+	option = {
+		name = ah_germany.75.e
+		trigger = {
+			has_government = neutrality
+			not = {
+				tag = GER
+			}
+		}
+	}
+}
+
+#希姆莱
+news_event = {
+	id = ah_germany.76
+	title = ah_germany.76.title
+	picture = GFX_SOV_attack_GER
+	desc = ah_germany.76.desc
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = ah_germany.76.a
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = ah_germany.76.b
+		trigger = {
+			has_government = communism
+		}
+	}
+	option = {
+		name = ah_germany.76.c
+		trigger = {
+			has_government = democratic
+		}
+	}
+	option = {
+		name = ah_germany.76.d
+		trigger = {
+			has_government = fascism
+		}
+	}
+	option = {
+		name = ah_germany.76.e
+		trigger = {
+			has_government = neutrality
+			not = {
+				tag = GER
+			}
+		}
+	}
+}
+
+#麦椰
+news_event = {
+	id = ah_germany.77
+	title = ah_germany.77.title
+	picture = GFX_SOV_attack_GER
+	desc = ah_germany.77.desc
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = ah_germany.77.a
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = ah_germany.77.b
+		trigger = {
+			has_government = communism
+		}
+	}
+	option = {
+		name = ah_germany.77.c
+		trigger = {
+			has_government = democratic
+		}
+	}
+	option = {
+		name = ah_germany.77.d
+		trigger = {
+			has_government = fascism
+		}
+	}
+	option = {
+		name = ah_germany.77.e
+		trigger = {
+			has_government = neutrality
+			not = {
+				tag = GER
+			}
+		}
+	}
+}
+
+#戈培尔
+news_event = {
+	id = ah_germany.78
+	title = ah_germany.78.title
+	picture = GFX_SOV_attack_GER
+	desc = ah_germany.78.desc
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = ah_germany.78.a
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = ah_germany.78.b
+		trigger = {
+			has_government = communism
+		}
+	}
+	option = {
+		name = ah_germany.78.c
+		trigger = {
+			has_government = democratic
+		}
+	}
+	option = {
+		name = ah_germany.78.d
+		trigger = {
+			has_government = fascism
+		}
+	}
+	option = {
+		name = ah_germany.78.e
+		trigger = {
+			has_government = neutrality
+			not = {
+				tag = GER
+			}
+		}
+	}
+}
+
+#薇莲三世
+news_event = {
+	id = ah_germany.79
+	title = ah_germany.79.title
+	picture = GFX_WEILIAN_III_news
+	desc = ah_germany.79.desc
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = ah_germany.79.a
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = ah_germany.79.b
+		trigger = {
+			has_government = communism
+		}
+	}
+	option = {
+		name = ah_germany.79.c
+		trigger = {
+			has_government = democratic
+		}
+	}
+	option = {
+		name = ah_germany.79.d
+		trigger = {
+			has_government = fascism
+		}
+	}
+	option = {
+		name = ah_germany.79.e
+		trigger = {
+			has_government = neutrality
+			not = {
+				tag = GER
+			}
+		}
+	}
+}
+
+#阿登纳
+news_event = {
+	id = ah_germany.80
+	title = ah_germany.80.title
+	picture = GFX_SOV_attack_GER
+	desc = ah_germany.80.desc
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = ah_germany.80.a
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = ah_germany.80.b
+		trigger = {
+			has_government = communism
+		}
+	}
+	option = {
+		name = ah_germany.80.c
+		trigger = {
+			has_government = democratic
+		}
+	}
+	option = {
+		name = ah_germany.80.d
+		trigger = {
+			has_government = fascism
+		}
+	}
+	option = {
+		name = ah_germany.80.e
+		trigger = {
+			has_government = neutrality
+			not = {
+				tag = GER
+			}
+		}
+	}
+}
+
+#勃兰特
+news_event = {
+	id = ah_germany.81
+	title = ah_germany.81.title
+	picture = GFX_SOV_attack_GER
+	desc = ah_germany.81.desc
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = ah_germany.81.a
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = ah_germany.81.b
+		trigger = {
+			has_government = communism
+		}
+	}
+	option = {
+		name = ah_germany.81.c
+		trigger = {
+			has_government = democratic
+		}
+	}
+	option = {
+		name = ah_germany.81.d
+		trigger = {
+			has_government = fascism
+		}
+	}
+	option = {
+		name = ah_germany.81.e
+		trigger = {
+			has_government = neutrality
+			not = {
+				tag = GER
+			}
+		}
+	}
+}
+
+#黑键
+news_event = {
+	id = ah_germany.82
+	title = ah_germany.82.title
+	picture = GFX_SOV_attack_GER
+	desc = ah_germany.82.desc
+	trigger = {
+		wants_world_news = yes
+	}
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = ah_germany.82.a
+		trigger = {
+			tag = GER
+		}
+	}
+	option = {
+		name = ah_germany.82.b
+		trigger = {
+			has_government = communism
+		}
+	}
+	option = {
+		name = ah_germany.82.c
+		trigger = {
+			has_government = democratic
+		}
+	}
+	option = {
+		name = ah_germany.82.d
+		trigger = {
+			has_government = fascism
+		}
+	}
+	option = {
+		name = ah_germany.82.e
+		trigger = {
+			has_government = neutrality
+			not = {
+				tag = GER
+			}
+		}
+	}
+}
+
+############################################################
+country_event = {
+	#神罗
+	id = ah_germany.2008
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = germany.2008.a
+		every_state = {
+			limit = {
+				has_state_flag = HRR
+			}
+			add_core_of = GER
+			GER = {
+				transfer_state = PREV
+			}
+		}
+	}
+	option = {
+		name = germany.2008.b
+		every_state = {
+			limit = {
+				has_state_flag = G_GER
+			}
+			add_core_of = GER
+			GER = {
+				transfer_state = PREV
+			}
+		}
+	}
+	option = {
+		name = germany.2008.b
+		set_cosmetic_tag = GER_HRR
+	}
+	option = {
+		name = germany.2008.b
+		dismantle_faction = yes
+		create_faction = "团结协定"
+	}
+	option = {
+		name = germany.2008.b
+		set_province_name = {
+			id = 6174
+			name = "兴登堡"
+		}
+		set_province_name = {
+			id = 3529
+			name = "阿道夫·莉莎"
+		}
+		set_province_name = {
+			id = 6380
+			name = "巴巴罗萨"
+		}
+	}
+}
+
+country_event = {
+	#神罗
+	id = ah_germany.2009
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = germany.2008.b
+		GER = {
+			country_event = generic.2002
+		}
+	}
+	option = {
+		name = germany.2008.b
+		every_state = {
+			limit = {
+				has_state_flag = L_GER
+			}
+			add_core_of = GER
+			GER = {
+				transfer_state = PREV
+			}
+		}
+	}
+	option = {
+		name = germany.2008.b
+		division_template = {
+			name = "内战民兵团"
+			is_locked = yes
+			regiments = {
+				infantry = {
+					x = 0
+					y = 0
+				}
+				infantry = {
+					x = 0
+					y = 1
+				}
+				infantry = {
+					x = 0
+					y = 2
+				}
+				infantry = {
+					x = 0
+					y = 3
+				}
+			}
+		}
+		capital_scope = {
+			create_unit = {
+				division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+				owner = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	#神罗
+	id = ah_germany.2010
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = germany.2008.b
+		set_variable = {
+			GER_b_s_progress = 50
+		}
+		clamp_variable = {
+			var = GER_b_s_progress
+			min = 0
+			max = 100
+		}
+	}
+	option = {
+		name = germany.2008.b
+		add_to_variable = {
+			GER_b_s_progress = 10
+		}
+		clamp_variable = {
+			var = GER_b_s_progress
+			min = 0
+			max = 100
+		}
+	}
+	option = {
+		name = germany.2008.b
+		add_to_variable = {
+			GER_b_s_progress = -10
+		}
+		clamp_variable = {
+			var = GER_b_s_progress
+			min = 0
+			max = 100
+		}
+	}
+	option = {
+		name = germany.2008.b
+		add_to_variable = {
+			GER_Strasserism_progress = 20
+		}
+		clamp_variable = {
+			var = GER_Strasserism_progress
+			min = 0
+			max = 100
+		}
+	}
+}
+
+country_event = {
+	#神罗
+	id = ah_germany.2011
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = germany.2008.b
+		add_ideas = GER_August_von_Mackensen_idea
+		remove_ideas = GER_Willy_Brandt_idea
+		remove_ideas = GER_Konrad_Adenauer_idea
+		remove_ideas = GER_Ebenholz_idea
+	}
+	option = {
+		name = germany.2008.b
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.5
+		}
+		set_politics = {
+			ruling_party = democratic
+		}
+		GER_ailika = {
+			add_country_leader_role = {
+				country_leader = {
+					desc = "POLITICS_GER_Erika_DESC_1"
+					ideology = conservatism
+					traits = {
+					}
+					expire = "1999.1.1.1"
+					id = -1
+				}
+				promote_leader = yes
+			}
+		}
+	}
+	option = {
+		name = germany.2008.b
+		leave_faction = yes
+	}
+	option = {
+		name = germany.2008.b
+		add_ideas = SOV_prepare_to_attack_GER
+	}
+	option = {
+		name = germany.2008.b
+		activate_mission = SOV_Operation_Thunderstorm
+	}
+}
+
+country_event = {
+	#神罗
+	id = ah_germany.2012
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = Market_socialism
+		set_country_leader_ideology = Market_socialism
+	}
+	option = {
+		name = Theocracy_subideology
+		set_country_leader_ideology = Theocracy_subideology
+	}
+	option = {
+		name = militarism_subtype
+		set_country_leader_ideology = militarism_subtype
+	}
+	option = {
+		name = lovecraftianism_subtype
+		set_country_leader_ideology = lovecraftianism_subtype
+	}
+	option = {
+		name = Right_populism_subideology
+		set_country_leader_ideology = Right_populism_subideology
+	}
+	option = {
+		name = autocracy_subideology
+		set_country_leader_ideology = autocracy_subideology
+	}
+}

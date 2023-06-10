@@ -1,0 +1,3404 @@
+﻿###########################
+# News Events
+###########################
+add_namespace = news
+news_event = {
+	id = news.175
+	title = news.175.t
+	picture = GFX_news_event_churchill_degaulle
+	desc = news.175.d
+	major = yes
+	is_triggered_only = yes
+	#We stand together.
+	option = {
+		name = news.175.a
+		trigger = {
+			OR = {
+				tag = ENG
+				tag = FRA
+			}
+		}
+	}
+	#They are preparing for the worst.
+	option = {
+		name = news.175.b
+		trigger = {
+			FRA = {
+				has_war = no
+			}
+			NOT = {
+				OR = {
+					tag = FRA
+					tag = ENG
+					tag = DVL
+				}
+			}
+		}
+	}
+	#Banding together like cornered rats.
+	option = {
+		name = news.175.c
+		trigger = {
+			OR = {
+				tag = DVL
+				has_war_with = FRA
+			}
+		}
+	}
+	#Britain has thrown in their lot.
+	option = {
+		name = news.175.e
+		trigger = {
+			FRA = {
+				has_war = yes
+			}
+			NOT = {
+				has_war_with = FRA
+			}
+			NOT = {
+				OR = {
+					tag = FRA
+					tag = ENG
+					tag = DVL
+				}
+			}
+		}
+	}
+}
+
+#架空世羽
+news_event = {
+	id = news.999
+	title = news.999.t
+	desc = news.999.desc
+	picture = GFX_news_event_lixian
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.999.a
+		trigger = {
+			TAG = SHY
+		}
+	}
+	option = {
+		name = news.999.b
+		trigger = {
+			has_government = democratic
+			NOT = {
+				TAG = SHY
+			}
+		}
+	}
+	option = {
+		name = news.999.c
+		trigger = {
+			NOT = {
+				has_government = democratic
+			}
+			NOT = {
+				TAG = SHY
+			}
+		}
+	}
+}
+
+#世羽结婚
+news_event = {
+	id = news.201314
+	title = news.201314.t
+	desc = news.201314.desc
+	picture = GFX_news_event_jiehun
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.201314.a
+		trigger = {
+			TAG = AST
+		}
+	}
+	option = {
+		name = news.201314.b
+		trigger = {
+			has_government = democratic
+			NOT = {
+				TAG = AST
+			}
+		}
+	}
+	option = {
+		name = news.201314.c
+		trigger = {
+			NOT = {
+				has_government = democratic
+			}
+			NOT = {
+				TAG = AST
+			}
+		}
+	}
+}
+
+#公审世羽
+news_event = {
+	id = news.998
+	title = news.998.t
+	desc = news.998.desc
+	picture = GFX_news_event_gongshen
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.998.a
+		trigger = {
+			TAG = SHY
+		}
+	}
+	option = {
+		name = news.998.b
+		trigger = {
+			has_government = communism
+			NOT = {
+				TAG = SHY
+			}
+		}
+	}
+	option = {
+		name = news.998.c
+		trigger = {
+			NOT = {
+				has_government = communism
+			}
+			NOT = {
+				TAG = SHY
+			}
+		}
+	}
+}
+
+#世羽称帝
+news_event = {
+	id = news.997
+	title = news.997.t
+	desc = news.997.desc
+	picture = GFX_news_event_wansui
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.997.a
+		trigger = {
+			TAG = SHY
+		}
+	}
+	option = {
+		name = news.997.b
+		trigger = {
+			has_government = fascism
+			NOT = {
+				TAG = SHY
+			}
+		}
+	}
+	option = {
+		name = news.997.c
+		trigger = {
+			NOT = {
+				has_government = fascism
+			}
+			NOT = {
+				TAG = SHY
+			}
+		}
+	}
+}
+
+#晴空宣称北美
+news_event = {
+	id = news.3000
+	title = news.3000.t
+	desc = news.3000.desc
+	picture = GFX_news_event_xuancheng
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.3000.a
+		trigger = {
+			TAG = CAN
+		}
+	}
+	option = {
+		name = news.3000.b
+		trigger = {
+			has_government = fascism
+			NOT = {
+				TAG = CAN
+			}
+		}
+	}
+	option = {
+		name = news.3000.c
+		trigger = {
+			NOT = {
+				has_government = fascism
+			}
+			NOT = {
+				TAG = CAN
+			}
+		}
+	}
+}
+
+#晴空联姻
+news_event = {
+	id = news.3101
+	title = news.3101.t
+	desc = news.3101.desc
+	picture = GFX_news_event_lianyin
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.3101.a
+		trigger = {
+			TAG = CAN
+		}
+	}
+	option = {
+		name = news.3101.b
+		trigger = {
+			has_government = fascism
+			NOT = {
+				TAG = CAN
+			}
+		}
+	}
+	option = {
+		name = news.3101.c
+		trigger = {
+			NOT = {
+				has_government = fascism
+			}
+			NOT = {
+				TAG = CAN
+			}
+		}
+	}
+}
+
+#晴空称帝
+news_event = {
+	id = news.2018
+	title = news.2018.t
+	desc = news.2018.desc
+	picture = GFX_news_event_xuancheng
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.2018.a
+		trigger = {
+			TAG = CAN
+		}
+	}
+	option = {
+		name = news.2018.b
+		trigger = {
+			has_government = fascism
+			NOT = {
+				TAG = CAN
+			}
+		}
+	}
+	option = {
+		name = news.2018.c
+		trigger = {
+			NOT = {
+				has_government = fascism
+			}
+			NOT = {
+				TAG = CAN
+			}
+		}
+	}
+}
+
+#巴拿马协定
+news_event = {
+	id = news.731
+	title = news.731.t
+	desc = news.731.desc
+	picture = GFX_news_event_hitler_handshake
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.731.a
+		trigger = {
+			OR = {
+				TAG = SHY
+				TAG = USA
+			}
+		}
+	}
+	option = {
+		name = news.731.b
+		trigger = {
+			has_government = fascism
+			NOT = {
+				TAG = FSHY
+			}
+		}
+	}
+	option = {
+		name = news.731.c
+		trigger = {
+			NOT = {
+				has_government = fascism
+			}
+			NOT = {
+				TAG = USA
+			}
+		}
+	}
+}
+
+#幻想乡国王
+news_event = {
+	id = news.732
+	title = news.732.t
+	desc = news.732.desc
+	picture = GFX_news_event_057
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.732.a
+		trigger = {
+			OR = {
+				TAG = FRA
+			}
+		}
+	}
+	option = {
+		name = news.732.b
+		trigger = {
+			has_government = neutrality
+			NOT = {
+				TAG = FRA
+			}
+		}
+	}
+	option = {
+		name = news.732.c
+		trigger = {
+			NOT = {
+				has_government = neutrality
+			}
+		}
+	}
+}
+
+#某个英联邦独立了
+news_event = {
+	id = news.733
+	title = news.733.t
+	desc = news.733.desc
+	picture = GFX_news_event_017
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.733.a
+		trigger = {
+			TAG = ENG
+		}
+	}
+	option = {
+		name = news.733.b
+		trigger = {
+			NOT = {
+				TAG = CAN
+				has_government = democratic
+			}
+		}
+	}
+	option = {
+		name = news.733.c
+		trigger = {
+			TAG = CAN
+		}
+	}
+}
+
+#阿克娅的战争承诺
+news_event = {
+	id = news.734
+	title = news.734.t
+	desc = news.734.desc
+	picture = GFX_news_event_soldiers_marching
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.734.a
+		trigger = {
+			TAG = ITA
+		}
+	}
+	option = {
+		name = news.734.b
+		trigger = {
+			NOT = {
+				TAG = ITA
+			}
+			has_government = fascism
+		}
+	}
+	option = {
+		name = news.734.c
+		trigger = {
+			NOT = {
+				has_government = fascism
+			}
+		}
+	}
+}
+
+#精灵放弃北面领土
+news_event = {
+	id = news.735
+	title = news.735.t
+	desc = news.735.desc
+	picture = GFX_event_Tokisaki_Kurumi
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.735.a
+		trigger = {
+			TAG = CAN
+			TAG = ENG
+		}
+	}
+	option = {
+		name = news.735.b
+		trigger = {
+			NOT = {
+				TAG = CAN
+				TAG = ENG
+				TAG = USA
+				has_government = democratic
+			}
+		}
+	}
+	option = {
+		name = news.735.c
+		trigger = {
+			NOT = {
+				TAG = CAN
+				TAG = ENG
+			}
+			has_government = democratic
+		}
+	}
+}
+
+#晴空废除条约
+news_event = {
+	id = news.736
+	title = news.736.t
+	desc = news.736.desc
+	picture = GFX_news_event_009
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.736.a
+		trigger = {
+			TAG = CAN
+		}
+	}
+	option = {
+		name = news.736.b
+		trigger = {
+			TAG = ENG
+		}
+	}
+	option = {
+		name = news.736.c
+		trigger = {
+			NOT = {
+				TAG = CAN
+				TAG = ENG
+			}
+		}
+	}
+}
+
+#学园都市独立
+news_event = {
+	id = news.737
+	title = news.737.t
+	desc = news.737.desc
+	picture = GFX_news_event_herman_goring
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.737.a
+		trigger = {
+			TAG = ENG
+		}
+	}
+	option = {
+		name = news.737.b
+		trigger = {
+			NOT = {
+				TAG = ENG
+			}
+		}
+	}
+}
+
+#学园都市被查禁
+news_event = {
+	id = news.738
+	title = news.738.t
+	desc = news.738.desc
+	picture = GFX_news_event_herman_goring
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.738.a
+		trigger = {
+			TAG = ENG
+		}
+	}
+	option = {
+		name = news.738.b
+		trigger = {
+			NOT = {
+				TAG = ENG
+			}
+		}
+	}
+}
+
+#锡兰旅游
+news_event = {
+	id = news.739
+	title = news.739.t
+	desc = news.739.desc
+	picture = GFX_event_yongzhuang
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.739.a
+		trigger = {
+			TAG = ENG
+		}
+	}
+	option = {
+		name = news.739.b
+		trigger = {
+			NOT = {
+				TAG = ENG
+			}
+		}
+	}
+}
+
+#大洗与德国密切联系
+news_event = {
+	id = news.740
+	title = news.740.t
+	desc = news.740.desc
+	picture = GFX_news_event_italian_tank_desert
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.740.a
+		trigger = {
+			is_in_faction_with = DVL
+		}
+	}
+	option = {
+		name = news.740.b
+		trigger = {
+			NOT = {
+				has_government = fascism
+			}
+		}
+	}
+	option = {
+		name = news.740.c
+		trigger = {
+			has_government = fascism
+			NOT = {
+				is_in_faction_with = DVL
+			}
+		}
+	}
+}
+
+# 依甸占领秘鲁
+news_event = {
+	id = news.741
+	title = news.741.t
+	desc = news.741.desc
+	picture = GFX_news_event_wansui
+	major = yes
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = {
+		name = news.741.a
+		trigger = {
+			TAG = SHY
+		}
+	}
+	option = {
+		name = news.741.b
+		trigger = {
+			NOT = {
+				TAG = SHY
+			}
+		}
+	}
+}
+
+# 世羽向南美宣战
+news_event = {
+	id = news.742
+	title = news.742.t
+	desc = news.742.desc
+	picture = GFX_news_event_wansui
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.742.a
+		trigger = {
+			TAG = SHY
+		}
+		set_country_flag = super_event_SOUTH_AMERICAN_WAR
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+	}
+	option = {
+		name = news.742.b
+		trigger = {
+			NOT = {
+				TAG = SHY
+			}
+			NOT = {
+				TAG = CHI
+			}
+			NOT = {
+				TAG = JAP
+			}
+			NOT = {
+				TAG = PRC
+			}
+		}
+		set_country_flag = super_event_SOUTH_AMERICAN_WAR
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+	}
+	option = {
+		name = news.742.b
+		trigger = {
+			OR = {
+				TAG = JAP
+				TAG = CHI
+				TAG = PRC
+			}
+		}
+		set_country_flag = super_event_SOUTH_AMERICAN_WAR
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+	}
+}
+
+#放弃精灵国货币体系
+news_event = {
+	id = news.743
+	title = news.743.t
+	desc = news.743.desc
+	picture = GFX_news_event_hitler_handshake
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.743.a
+		trigger = {
+			TAG = USA
+		}
+	}
+	option = {
+		name = news.743.b
+		trigger = {
+			NOT = {
+				TAG = USA
+			}
+		}
+	}
+}
+
+#精灵国走出困境
+news_event = {
+	id = news.744
+	title = news.744.t
+	desc = news.744.desc
+	picture = GFX_news_event_herman_goring
+	major = yes
+	is_triggered_only = yes
+	trigger = {
+		USA = {
+			NOT = {
+				has_idea = isolation
+				has_idea = jiabi_1
+				has_idea = jiabi_2
+				has_idea = jiabi_3
+				has_idea = jingjiyilai
+				has_idea = zhanzhengshui
+			}
+		}
+	}
+	option = {
+		name = news.744.a
+		trigger = {
+			TAG = USA
+		}
+	}
+	option = {
+		name = news.744.b
+		trigger = {
+			NOT = {
+				TAG = USA
+			}
+		}
+	}
+}
+
+# 五河琴里上台
+news_event = {
+	id = news.745
+	title = news.745.t
+	desc = news.745.desc
+	picture = GFX_news_event_wuheqinli
+	major = yes
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = {
+		name = news.745.a
+		trigger = {
+			has_government = communism
+		}
+	}
+	option = {
+		name = news.745.b
+		trigger = {
+			NOT = {
+				has_government = communism
+			}
+		}
+	}
+}
+
+# 精灵国内战事件
+news_event = {
+	id = news.746
+	title = news.746.t
+	desc = news.746.desc
+	picture = GFX_news_evennt_USA_neizhan
+	major = yes
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = {
+		name = news.746.a
+		trigger = {
+			TAG = USA
+		}
+	}
+	option = {
+		name = news.746.b
+		trigger = {
+			NOT = {
+				TAG = USA
+			}
+		}
+	}
+}
+
+# 精灵国贸易保护
+news_event = {
+	id = news.747
+	title = news.747.t
+	desc = news.747.desc
+	picture = GFX_news_event_wuheqinli
+	major = yes
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 2
+	}
+	option = {
+		name = news.747.a
+		trigger = {
+			TAG = USA
+		}
+	}
+	option = {
+		name = news.747.b
+		trigger = {
+			NOT = {
+				TAG = USA
+			}
+		}
+	}
+}
+
+# 武侦合并
+news_event = {
+	id = news.748
+	title = news.748.t
+	desc = news.748.desc
+	picture = GFX_news_event_hebing
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.748.a
+		trigger = {
+			is_in_faction_with = AST
+		}
+	}
+	option = {
+		name = news.748.b
+		trigger = {
+			NOT = {
+				is_in_faction_with = AST
+			}
+		}
+	}
+}
+
+# 刺杀莉莎
+news_event = {
+	id = news.749
+	title = news.749.t
+	desc = news.749.desc
+	picture = GFX_news_event_fascist_gathering
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.749.a
+		trigger = {
+			TAG = DVL
+		}
+	}
+	option = {
+		name = news.749.b
+		trigger = {
+			is_in_faction_with = AST
+		}
+	}
+	option = {
+		name = news.749.c
+		trigger = {
+			NOT = {
+				is_in_faction_with = AST
+				TAG = DVL
+			}
+		}
+	}
+}
+
+# 刺杀大和
+news_event = {
+	id = news.750
+	title = news.750.t
+	desc = news.750.desc
+	picture = GFX_news_event_AST_dahe
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.750.a
+		trigger = {
+			TAG = JAP
+		}
+	}
+	option = {
+		name = news.750.b
+		trigger = {
+			is_in_faction_with = AST
+		}
+	}
+	option = {
+		name = news.750.c
+		trigger = {
+			NOT = {
+				is_in_faction_with = AST
+				TAG = JAP
+			}
+		}
+	}
+}
+
+# 刺杀世羽
+news_event = {
+	id = news.751
+	title = news.751.t
+	desc = news.751.desc
+	picture = GFX_news_event_SHY_jiehun
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.751.a
+		trigger = {
+			TAG = SHY
+		}
+	}
+	option = {
+		name = news.751.b
+		trigger = {
+			is_in_faction_with = AST
+		}
+	}
+	option = {
+		name = news.751.c
+		trigger = {
+			NOT = {
+				is_in_faction_with = AST
+				TAG = SHY
+			}
+		}
+	}
+}
+
+# 刺杀狂三
+news_event = {
+	id = news.752
+	title = news.752.t
+	desc = news.752.desc
+	picture = GFX_event_Tokisaki_Kurumi
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.752.a
+		trigger = {
+			TAG = USA
+		}
+	}
+	option = {
+		name = news.752.b
+		trigger = {
+			is_in_faction_with = AST
+		}
+	}
+	option = {
+		name = news.752.c
+		trigger = {
+			NOT = {
+				is_in_faction_with = AST
+				TAG = USA
+			}
+		}
+	}
+}
+
+# 刺杀斯大林
+news_event = {
+	id = news.753
+	title = news.753.t
+	desc = news.753.desc
+	picture = GFX_news_event_herman_goring
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.753.a
+		trigger = {
+			TAG = SOV
+		}
+	}
+	option = {
+		name = news.753.b
+		trigger = {
+			is_in_faction_with = AST
+		}
+	}
+	option = {
+		name = news.753.c
+		trigger = {
+			NOT = {
+				is_in_faction_with = AST
+				TAG = SOV
+			}
+		}
+	}
+}
+
+# 世羽出嫁
+news_event = {
+	id = news.754
+	title = news.754.t
+	desc = news.754.desc
+	picture = GFX_news_event_SHY_jiehun
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.754.a
+		trigger = {
+			TAG = AST
+		}
+	}
+	option = {
+		name = news.754.b
+		trigger = {
+			is_in_faction_with = AST
+			NOT = {
+				TAG = AST
+			}
+		}
+	}
+	option = {
+		name = news.754.c
+		trigger = {
+			NOT = {
+				is_in_faction_with = AST
+				TAG = AST
+			}
+		}
+	}
+}
+
+# 夏尔
+news_event = {
+	id = news.755
+	title = news.755.t
+	desc = news.755.desc
+	picture = GFX_news_event_german_inspect_troops
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.755.a
+		trigger = {
+			TAG = HOL
+		}
+	}
+	option = {
+		name = news.755.b
+		trigger = {
+			TAG = INS
+		}
+	}
+	option = {
+		name = news.755.c
+		trigger = {
+			NOT = {
+				TAG = HOL
+				TAG = INS
+			}
+		}
+	}
+}
+
+# 袁克定称帝
+news_event = {
+	id = news.760
+	title = news.760.t
+	desc = news.760.desc
+	picture = GFX_evews_CHI_diguo
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.760.a
+		trigger = {
+			TAG = CHI
+		}
+	}
+	option = {
+		name = news.760.b
+		trigger = {
+			NOT = {
+				TAG = CHI
+			}
+			has_government = fascism
+		}
+	}
+	option = {
+		name = news.760.c
+		trigger = {
+			NOT = {
+				TAG = CHI
+				has_government = fascism
+			}
+		}
+	}
+}
+
+# 中国战胜饥荒
+news_event = {
+	id = news.762
+	title = news.762.t
+	desc = news.762.desc
+	picture = GFX_news_event_german_speech
+	major = yes
+	immediate = {
+		set_global_flag = zhanshengjihuang
+	}
+	mean_time_to_happen = {
+		days = 2
+	}
+	trigger = {
+		NOT = {
+			has_global_flag = zhanshengjihuang
+		}
+		CHI = {
+			NOT = {
+				has_idea = CHI_famine_1
+			}
+			NOT = {
+				has_idea = CHI_famine_2
+			}
+			NOT = {
+				has_idea = CHI_famine_3
+			}
+			NOT = {
+				has_idea = CHI_famine_4
+			}
+			NOT = {
+				has_idea = CHI_famine_5
+			}
+		}
+	}
+	option = {
+		name = news.762.a
+		trigger = {
+			TAG = CHI
+		}
+	}
+	option = {
+		name = news.762.b
+		trigger = {
+			NOT = {
+				TAG = CHI
+			}
+		}
+	}
+}
+
+#中德结盟
+news_event = {
+	id = news.763
+	title = news.763.t
+	desc = news.763.desc
+	picture = GFX_evews_CHI_GER
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.763.a
+		trigger = {
+			is_in_faction_with = DVL
+		}
+	}
+	option = {
+		name = news.763.b
+		trigger = {
+			has_government = fascism
+			NOT = {
+				is_in_faction_with = DVL
+			}
+		}
+	}
+	option = {
+		name = news.763.c
+		trigger = {
+			NOT = {
+				has_government = fascism
+			}
+		}
+	}
+}
+
+#缅甸爆发红色革命
+news_event = {
+	id = news.764
+	title = news.764.t
+	desc = news.764.desc
+	picture = GFX_news_event_india_protests
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.764.a
+		trigger = {
+			is_in_faction_with = ENG
+			NOT = {
+				has_government = communism
+			}
+		}
+	}
+	option = {
+		name = news.764.b
+		trigger = {
+			has_government = communism
+			NOT = {
+				is_in_faction_with = ENG
+			}
+		}
+	}
+	option = {
+		name = news.764.c
+		trigger = {
+			NOT = {
+				has_government = communism
+				is_in_faction_with = ENG
+			}
+		}
+	}
+}
+
+#中国国共两党重启合作
+news_event = {
+	id = news.765
+	title = news.765.t
+	desc = news.765.desc
+	picture = GFX_news_event_chinese_soldiers_mountain
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.765.a
+		trigger = {
+			is_in_faction_with = GXC
+		}
+	}
+	option = {
+		name = news.765.b
+		trigger = {
+			NOT = {
+				TAG = CHI
+				is_in_faction_with = GXC
+			}
+		}
+	}
+	option = {
+		name = news.765.c
+		trigger = {
+			TAG = CHI
+		}
+	}
+}
+
+#中国共产党建国
+news_event = {
+	id = news.766
+	title = news.766.t
+	desc = news.766.desc
+	picture = GFX_event_PRC_CHI
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.766.a
+		trigger = {
+			OR = {
+				TAG = PRC
+				is_in_faction_with = PRC
+			}
+		}
+	}
+	option = {
+		name = news.766.b
+		trigger = {
+			has_government = communism
+			NOT = {
+				TAG = PRC
+				is_in_faction_with = PRC
+			}
+		}
+	}
+	option = {
+		name = news.766.c
+		trigger = {
+			NOT = {
+				has_government = communism
+				TAG = PRC
+				is_in_faction_with = PRC
+			}
+		}
+	}
+}
+
+#中国国民党建国
+news_event = {
+	id = news.767
+	title = news.767.t
+	desc = news.767.desc
+	picture = GFX_event_GXC_CHI
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.767.a
+		trigger = {
+			OR = {
+				TAG = GXC
+				is_in_faction_with = GXC
+			}
+		}
+	}
+	option = {
+		name = news.767.b
+		trigger = {
+			has_government = democratic
+			NOT = {
+				TAG = GXC
+				is_in_faction_with = GXC
+			}
+		}
+	}
+	option = {
+		name = news.767.c
+		trigger = {
+			NOT = {
+				has_government = democratic
+				TAG = GXC
+				is_in_faction_with = GXC
+			}
+		}
+	}
+}
+
+#石油喷发
+news_event = {
+	id = news.775
+	title = news.775.t
+	desc = news.775.desc
+	picture = GFX_news_event_indian_parade
+	major = yes
+	trigger = {
+		NOT = {
+			has_global_flag = SAU_oil
+		}
+		date > 1938.4.19
+		date < 1938.4.30
+	}
+	immediate
+	{
+		set_global_flag = SAU_oil
+		hidden_effect = {
+			add_resource = {
+				type = oil
+				amount = 60
+				state = 292
+			}
+		}
+	}
+	option = {
+		name = news.775.a
+		trigger = {
+			TAG = SAU
+		}
+	}
+	option = {
+		name = news.775.b
+		trigger = {
+			TAG = USA
+		}
+	}
+	option = {
+		name = news.775.c
+		trigger = {
+			is_in_faction_with = ENG
+		}
+	}
+	option = {
+		name = news.775.d
+		trigger = {
+			NOT = {
+				is_in_faction_with = ENG
+				TAG = SAU
+				TAG = USA
+			}
+		}
+	}
+}
+
+#石油公司开放贸易
+news_event = {
+	id = news.776
+	title = news.776.t
+	desc = news.776.desc
+	picture = GFX_news_event_strasbourg
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = news.776.a
+		trigger = {
+			TAG = SAU
+		}
+	}
+	option = {
+		name = news.776.b
+		trigger = {
+			OR = {
+				TAG = USA
+				TAG = PER
+			}
+		}
+	}
+	option = {
+		name = news.776.c
+		trigger = {
+			NOT = {
+				TAG = USA
+				TAG = PER
+				TAG = YEM
+				TAG = SAU
+			}
+		}
+	}
+}
+
+#石油协商破裂
+news_event = {
+	id = news.777
+	title = news.777.t
+	desc = news.777.desc
+	picture = GFX_news_event_desertion_poster
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = news.777.a
+		trigger = {
+			TAG = SAU
+		}
+	}
+	option = {
+		name = news.777.b
+		trigger = {
+			is_in_faction_with = ENG
+		}
+	}
+	option = {
+		name = news.777.c
+		trigger = {
+			NOT = {
+				is_in_faction_with = ENG
+				TAG = SAU
+			}
+		}
+	}
+}
+
+#伊甸之都被核平
+news_event = {
+	id = news.778
+	title = news.778.t
+	desc = news.778.desc
+	picture = GFX_news_event_nuke
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		FROM.FROM = {
+			state = 734
+		}
+	}
+	option = {
+		name = news.778.a
+		trigger = {
+			NOT = {
+				owns_state = 734
+			}
+		}
+	}
+	option = {
+		name = news.778.b
+		trigger = {
+			owns_state = 734
+		}
+	}
+}
+
+#梅洛马格女王米蕾莉亚遇刺
+news_event = {
+	id = news.779
+	title = news.779.t
+	desc = news.779.desc
+	picture = GFX_event_SAU_1
+	major = yes
+	trigger = {
+		NOT = {
+			has_global_flag = SAU_nvw_yuci
+		}
+		date > 1937.10.1
+		date < 1937.11.30
+		SAU = {
+			has_civil_war = no
+		}
+	}
+	immediate
+	{
+		hidden_effect = {
+			set_global_flag = SAU_nvw_yuci
+			SAU = {
+				remove_ideas = SAU_aotuo_gelei
+				create_country_leader = {
+					name = "奥托克雷·梅洛马格"
+					desc = "POLITICS_ABDULAZIZ_DESC"
+					picture = "aotuokelei.dds"
+					expire = "1975.1.1"
+					ideology = despotism
+					traits = {
+						popular_figurehead
+						hunyong
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = news.779.a
+		trigger = {
+			TAG = SAU
+		}
+	}
+	option = {
+		name = news.779.b
+		trigger = {
+			NOT = {
+				TAG = SAU
+			}
+		}
+	}
+}
+
+#麦蒂继承王位
+news_event = {
+	id = news.780
+	title = news.780.t
+	desc = news.780.desc
+	picture = GFX_event_SAU_2
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = news.780.a
+		trigger = {
+			TAG = SAU
+		}
+	}
+	option = {
+		name = news.780.b
+		trigger = {
+			NOT = {
+				TAG = SAU
+			}
+		}
+	}
+}
+
+#梅尔继承王位
+news_event = {
+	id = news.781
+	title = news.781.t
+	desc = news.781.desc
+	picture = GFX_event_SAU_3
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = news.781.a
+		trigger = {
+			TAG = SAU
+		}
+	}
+	option = {
+		name = news.781.b
+		trigger = {
+			NOT = {
+				TAG = SAU
+			}
+		}
+	}
+}
+
+#收购中东石油公司（石油租借）
+news_event = {
+	id = news.782
+	title = news.782.t
+	desc = news.782.desc
+	picture = GFX_news_event_election_vote
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = news.782.a
+		trigger = {
+			TAG = SAU
+		}
+	}
+	option = {
+		name = news.782.b
+		trigger = {
+			TAG = ENG
+		}
+	}
+	option = {
+		name = news.782.c
+		trigger = {
+			NOT = {
+				TAG = ENG
+				TAG = SAU
+			}
+		}
+	}
+}
+
+#收购中东石油公司（房地产）
+news_event = {
+	id = news.783
+	title = news.782.t
+	desc = news.783.desc
+	picture = GFX_news_event_generic_sign_treaty2
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = news.782.a
+		trigger = {
+			TAG = SAU
+		}
+	}
+	option = {
+		name = news.782.b
+		trigger = {
+			TAG = ENG
+		}
+	}
+	option = {
+		name = news.782.c
+		trigger = {
+			NOT = {
+				TAG = ENG
+				TAG = SAU
+			}
+		}
+	}
+}
+
+#夺取中东石油公司
+news_event = {
+	id = news.784
+	title = news.784.t
+	desc = news.784.desc
+	picture = GFX_news_event_saf_soldiers
+	major = yes
+	trigger = {
+		exists = yes
+		NOT = {
+			has_global_flag = SAU_ENG_WW
+		}
+		SAU = {
+			has_war_with = ENG
+			has_war_with = YEM
+			has_completed_focus = SAU_51
+		}
+		YEM = {
+			is_subject_of = ENG
+		}
+	}
+	immediate
+	{
+		set_global_flag = SAU_ENG_WW
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	option = {
+		name = news.784.a
+		trigger = {
+			TAG = SAU
+		}
+	}
+	option = {
+		name = news.784.b
+		trigger = {
+			is_in_faction_with = ENG
+		}
+	}
+	option = {
+		name = news.784.c
+		trigger = {
+			NOT = {
+				is_in_faction_with = ENG
+				TAG = SAU
+			}
+		}
+	}
+}
+
+#教皇叛乱-—（FXS）
+news_event = {
+	id = news.785
+	title = news.785.t
+	desc = news.785.desc
+	picture = GFX_event_siluokayi
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = news.785.a
+		trigger = {
+			TAG = SAU
+		}
+	}
+	option = {
+		name = news.785.b
+		trigger = {
+			NOT = {
+				TAG = SAU
+			}
+		}
+	}
+}
+
+#教皇叛乱-—（非FXS）
+news_event = {
+	id = news.786
+	title = news.786.t
+	desc = news.786.desc
+	picture = GFX_event_siluokayi
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = news.786.a
+		trigger = {
+			original_tag = SAU
+			has_government = fascism
+		}
+	}
+	option = {
+		name = news.786.b
+		trigger = {
+			original_tag = SAU
+			NOT = {
+				has_government = fascism
+			}
+		}
+	}
+	option = {
+		name = news.786.c
+		trigger = {
+			NOT = {
+				original_tag = SAU
+			}
+		}
+	}
+}
+
+#治理旱灾
+news_event = {
+	id = news.787
+	title = news.787.t
+	desc = news.787.desc
+	picture = GFX_news_event_germany_victory
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = news.787.a
+		trigger = {
+			original_tag = SAU
+		}
+	}
+	option = {
+		name = news.787.b
+		trigger = {
+			NOT = {
+				original_tag = SAU
+			}
+		}
+	}
+}
+
+#四女神回归
+news_event = {
+	id = news.1000
+	title = news.1000.t
+	desc = news.1000.desc
+	picture = GFX_news_event_sinvshen
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1000.a
+		trigger = {
+			TAG = NPT
+		}
+	}
+	option = {
+		name = news.1000.b
+		trigger = {
+			NOT = {
+				TAG = NPT
+			}
+		}
+	}
+}
+
+#涅普姬雅下台
+news_event = {
+	id = news.1001
+	title = news.1001.t
+	desc = news.1001.desc
+	picture = GFX_news_event_nptgc
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1001.a
+		trigger = {
+			TAG = NPT
+		}
+	}
+	option = {
+		name = news.1001.b
+		trigger = {
+			NOT = {
+				TAG = NPT
+			}
+		}
+	}
+}
+
+#决战犯罪神
+news_event = {
+	id = news.1002
+	title = news.1002.t
+	desc = news.1002.desc
+	picture = GFX_news_event_juezhangoc
+	major = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			NPT = {
+				set_country_flag = NPT_FIGHT_AGAINST_GOC
+			}
+			GOC = {
+				transfer_state = 175
+				transfer_state = 1082
+				add_state_core = 175
+				add_state_core = 1082
+				set_rule = {
+					can_puppet = no
+					can_create_factions = no
+					can_join_factions = no
+				}
+				division_template = {
+					name = "犯罪神部队"
+					regiments = {
+						infantry = {
+							x = 0
+							y = 0
+						}
+						infantry = {
+							x = 0
+							y = 1
+						}
+						infantry = {
+							x = 0
+							y = 2
+						}
+						infantry = {
+							x = 0
+							y = 3
+						}
+						infantry = {
+							x = 0
+							y = 4
+						}
+						infantry = {
+							x = 1
+							y = 0
+						}
+						infantry = {
+							x = 1
+							y = 1
+						}
+						infantry = {
+							x = 1
+							y = 2
+						}
+						infantry = {
+							x = 1
+							y = 3
+						}
+						infantry = {
+							x = 1
+							y = 4
+						}
+						infantry = {
+							x = 2
+							y = 0
+						}
+						infantry = {
+							x = 2
+							y = 1
+						}
+						infantry = {
+							x = 2
+							y = 2
+						}
+						infantry = {
+							x = 2
+							y = 3
+						}
+						infantry = {
+							x = 2
+							y = 4
+						}
+						infantry = {
+							x = 3
+							y = 0
+						}
+						infantry = {
+							x = 3
+							y = 1
+						}
+						infantry = {
+							x = 3
+							y = 2
+						}
+						infantry = {
+							x = 3
+							y = 3
+						}
+						infantry = {
+							x = 3
+							y = 4
+						}
+					}
+				}
+				175 = {
+					create_unit = {
+						division = "name = \"犯罪神\" division_template = \"犯罪神部队\" start_experience_factor = 1"
+						owner = GOC
+					}
+					create_unit = {
+						division = "name = \"四大天王一号\" division_template = \"犯罪神部队\" start_experience_factor = 0.5"
+						owner = GOC
+					}
+					create_unit = {
+						division = "name = \"四大天王二号\" division_template = \"犯罪神部队\" start_experience_factor = 0.5"
+						owner = GOC
+					}
+					create_unit = {
+						division = "name = \"犯罪神邪教怪物\" division_template = \"犯罪神部队\" start_experience_factor = 0.3"
+						owner = GOC
+					}
+					create_unit = {
+						division = "name = \"犯罪神邪教怪物\" division_template = \"犯罪神部队\" start_experience_factor = 0.3"
+						owner = GOC
+					}
+				}
+				793 = {
+					create_unit = {
+						division = "name = \"四大天王三号\" division_template = \"犯罪神部队\" start_experience_factor = 0.5"
+						owner = GOC
+					}
+					create_unit = {
+						division = "name = \"四大天王四号\" division_template = \"犯罪神部队\" start_experience_factor = 0.5"
+						owner = GOC
+					}
+					create_unit = {
+						division = "name = \"犯罪神邪教怪物\" division_template = \"犯罪神部队\" start_experience_factor = 0.3"
+						owner = GOC
+					}
+					create_unit = {
+						division = "name = \"犯罪神邪教怪物\" division_template = \"犯罪神部队\" start_experience_factor = 0.3"
+						owner = GOC
+					}
+					create_unit = {
+						division = "name = \"犯罪神邪教怪物\" division_template = \"犯罪神部队\" start_experience_factor = 0.3"
+						owner = GOC
+					}
+				}
+				declare_war_on = {
+					target = NPT
+					type = annex_everything
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1002.a
+		trigger = {
+			OR = {
+				TAG = NPT
+				is_in_faction_with = NPT
+			}
+		}
+	}
+	option = {
+		name = news.1002.b
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = NPT
+					is_in_faction_with = NPT
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	id = news.1003
+	title = news.1003.t
+	desc = news.1003.desc
+	picture = GFX_news_event_NPT_gcvictory
+	major = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			NPT = {
+				annex_country = {
+					target = GOC
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1003.a
+		trigger = {
+			TAG = NPT
+		}
+	}
+	option = {
+		name = news.1003.b
+		trigger = {
+			NOT = {
+				TAG = NPT
+			}
+		}
+	}
+}
+
+news_event = {
+	id = news.1004
+	title = news.1004.t
+	desc = news.1004.desc
+	picture = GFX_news_event_NPT_qiezi
+	major = no
+	is_triggered_only = yes
+	option = {
+		name = news.1004.a
+		add_ideas = nptqiezi
+		create_corps_commander = {
+			name = "玛吉空努"
+			picture = "mjkn.dds"
+			traits = {
+				skilled_staffer
+				organizer
+				infantry_leader
+				infantry_expert
+				life_long_badass
+			}
+			skill = 7
+			attack_skill = 7
+			defense_skill = 4
+			planning_skill = 7
+			logistics_skill = 4
+		}
+	}
+}
+
+news_event = {
+	id = news.1005
+	title = news.1005.t
+	desc = news.1005.desc
+	picture = GFX_news_event_NPT_wxgm
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1005.a
+		trigger = {
+			TAG = NPT
+		}
+	}
+	option = {
+		name = news.1005.b
+		trigger = {
+			NOT = {
+				TAG = NPT
+			}
+		}
+	}
+}
+
+news_event = {
+	id = news.1006
+	title = news.1006.t
+	desc = news.1006.desc
+	picture = GFX_news_event_NPT_yaojingxiangzhimen
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1006.a
+		trigger = {
+			TAG = NPT
+		}
+	}
+	option = {
+		name = news.1006.b
+		trigger = {
+			NOT = {
+				TAG = NPT
+			}
+		}
+	}
+}
+
+news_event = {
+	id = news.1007
+	title = news.1007.t
+	desc = news.1007.desc
+	picture = GFX_news_event_NPT_menghuanliandong
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1007.a
+		trigger = {
+			OR = {
+				TAG = NPT
+				TAG = USA
+			}
+		}
+	}
+	option = {
+		name = news.1007.b
+		trigger = {
+			NOT = {
+				TAG = NPT
+			}
+			NOT = {
+				TAG = USA
+			}
+		}
+	}
+}
+
+news_event = {
+	id = news.1008
+	title = news.1008.t
+	desc = news.1008.desc
+	picture = GFX_news_event_NPT_mzvictory
+	major = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			NPT = {
+				annex_country = {
+					target = GOC
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1008.a
+		trigger = {
+			OR = {
+				TAG = NPT
+				TAG = USA
+			}
+		}
+	}
+	option = {
+		name = news.1008.b
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = NPT
+					TAG = USA
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	#魔剑内战胜利
+	id = news.1009
+	title = news.1009.t
+	desc = news.1009.desc
+	picture = GFX_news_event_NPT_civilwar
+	major = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = news.1009.a
+		trigger = {
+			TAG = NPT
+		}
+		NPT = {
+			swap_ideas = {
+				remove_idea = mojian_1
+				add_idea = mojian_2
+			}
+		}
+	}
+	option = {
+		name = news.1009.b
+		trigger = {
+			NOT = {
+				TAG = NPT
+			}
+		}
+	}
+}
+
+news_event = {
+	#阿库娅遇刺
+	id = news.1010
+	title = news.1010.t
+	desc = news.1010.desc
+	picture = GFX_news_event_NPT_auqakilled
+	major = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			news_event = {
+				id = news.1011
+				days = 360
+			}
+			ITA = {
+				kill_country_leader = yes
+				create_country_leader = {
+					name = "阿库西丝神教"
+					desc = "POLITICS_ITA_Axcis_DESC"
+					picture = "Portrait_Italy_Generic_navy_1.dds"
+					expire = "1999.1.1"
+					ideology = fascism_ideology
+					traits = {
+						dontstop
+					}
+				}
+				declare_war_on = {
+					target = NPT
+					type = annex_everything
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1010.a
+		trigger = {
+			TAG = NPT
+		}
+		NPT = {
+			swap_ideas = {
+				remove_idea = mojian_2
+				add_idea = mojian_3
+			}
+			add_manpower = -1
+		}
+	}
+	option = {
+		name = news.1010.b
+		trigger = {
+			TAG = ITA
+		}
+	}
+	option = {
+		name = news.1010.c
+		trigger = {
+			NOT = {
+				OR = {
+					TAG = NPT
+					TAG = ITA
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	#冥界归来
+	id = news.1011
+	title = news.1011.t
+	desc = news.1011.desc
+	picture = GFX_news_event_ITA_gohellandback
+	major = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			ITA = {
+				retire_country_leader = yes
+				create_country_leader = {
+					name = "阿库娅"
+					desc = "POLITICS_BENITO_MUSSOLINI_DESC"
+					picture = "shengqi.dds"
+					expire = "1999.1.1"
+					ideology = fascism_ideology
+					traits = {
+						dajisi
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1011.a
+		trigger = {
+			TAG = ITA
+		}
+	}
+	option = {
+		name = news.1011.b
+		trigger = {
+			NOT = {
+				TAG = ITA
+			}
+		}
+	}
+}
+
+news_event = {
+	#涅普姬雅独裁
+	id = news.1012
+	title = news.1012.t
+	desc = news.1012.desc
+	picture = GFX_news_event_NPT_dominant_end
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1012.a
+		trigger = {
+			TAG = NPT
+		}
+		NPT = {
+			swap_ideas = {
+				remove_idea = mojian_2
+				add_idea = mojian_3
+			}
+		}
+	}
+	option = {
+		name = news.1012.b
+		trigger = {
+			NOT = {
+				TAG = NPT
+			}
+		}
+	}
+}
+
+news_event = {
+	#涅普姬雅加冕（靠姐姐击败蕾伊）
+	id = news.1013
+	title = news.1013.t
+	desc = news.1013.desc
+	picture = GFX_news_event_NPT_defeat_atari01
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1013.a
+		trigger = {
+			TAG = NPT
+		}
+		NPT = {
+			add_country_leader_trait = npt_high_queen
+			swap_ideas = {
+				add_idea = mojian_4
+				remove_idea = mojian_3
+			}
+		}
+	}
+	option = {
+		name = news.1013.b
+		trigger = {
+			NOT = {
+				TAG = NPT
+			}
+		}
+	}
+}
+
+news_event = {
+	#涅普姬雅加冕（靠自己击败蕾伊）
+	id = news.1014
+	title = news.1014.t
+	desc = news.1014.desc
+	picture = GFX_news_event_NPT_defeat_atari02
+	major = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			NPT = {
+				kill_country_leader = yes
+				create_country_leader = {
+					name = "涅普姬雅"
+					picture = "gfx/leaders/NPT/Nepgear3.dds"
+					desc = "POLITICS_NPT_NEPGEAR3_DESC"
+					expire = "1999.1.1"
+					ideology = fascism_ideology
+					traits = {
+						npt_high_queen
+						cruel_goddess
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1014.a
+		trigger = {
+			TAG = NPT
+		}
+		NPT = {
+			swap_ideas = {
+				add_idea = mojian_4
+				remove_idea = mojian_3
+			}
+			random_unit_leader = {
+				limit = {
+					is_character = NPT_neptune
+				}
+				add_unit_leader_trait = kuroka
+			}
+		}
+	}
+	option = {
+		name = news.1014.b
+		trigger = {
+			NOT = {
+				TAG = NPT
+			}
+		}
+	}
+}
+
+news_event = {
+	#蕾伊击败涅普姬雅
+	id = news.1015
+	title = news.1015.t
+	desc = news.1015.desc
+	picture = GFX_news_event_NPT_atari_return
+	major = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			NPT = {
+				kill_country_leader = yes
+				retire_character = NPT_Nepgear
+				create_field_marshal = {
+					name = "蕾伊"
+					picture = "Rei.dds"
+					traits = {
+						organizer
+						harsh_leader
+						aggressive_assaulter
+						offensive_doctrine
+						sharepower
+						kuroka
+					}
+					skill = 7
+					attack_skill = 9
+					defense_skill = 6
+					planning_skill = 6
+					logistics_skill = 6
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1015.a
+		trigger = {
+			TAG = NPT
+		}
+		NPT = {
+			swap_ideas = {
+				add_idea = mojian_4
+				remove_idea = mojian_3
+			}
+			set_cosmetic_tag = NPT_ATARI
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.5
+			}
+			set_party_name = {
+				ideology = neutrality
+				long_name = NPT_ATARI_PARTYNAME
+				name = NPT_ATARI_PARTYNAME
+			}
+			create_country_leader = {
+				name = "蕾伊"
+				picture = "gfx/leaders/NPT/Rei.dds"
+				desc = "POLITICS_NPT_REI_DESC"
+				expire = "1999.1.1"
+				ideology = despotism
+				traits = {
+					atari_goddess
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1015.b
+		trigger = {
+			NOT = {
+				TAG = NPT
+			}
+		}
+	}
+}
+
+news_event = {
+	#涅普姬雅加冕（有姐姐，蕾伊之前被逮捕）
+	id = news.1016
+	title = news.1016.t
+	desc = news.1016.desc
+	picture = GFX_news_event_NPT_highqueen01
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1016.a
+		trigger = {
+			TAG = NPT
+		}
+		NPT = {
+			add_country_leader_trait = npt_high_queen
+		}
+	}
+	option = {
+		name = news.1016.b
+		trigger = {
+			NOT = {
+				TAG = NPT
+			}
+		}
+	}
+}
+
+news_event = {
+	#涅普姬雅加冕（无姐姐，蕾伊之前被逮捕）
+	id = news.1017
+	title = news.1017.t
+	desc = news.1017.desc
+	picture = GFX_news_event_NPT_highqueen02
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1017.a
+		trigger = {
+			TAG = NPT
+		}
+		NPT = {
+			add_country_leader_trait = npt_high_queen
+		}
+	}
+	option = {
+		name = news.1017.b
+		trigger = {
+			NOT = {
+				TAG = NPT
+			}
+		}
+	}
+}
+
+news_event = {
+	#诸神黄昏
+	id = news.1018
+	title = news.1018.t
+	desc = news.1018.desc
+	picture = GFX_news_event_NPT_ragnarok
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1018.a
+		trigger = {
+			TAG = NPT
+		}
+	}
+	option = {
+		name = news.1018.b
+		trigger = {
+			NOT = {
+				TAG = NPT
+			}
+		}
+	}
+}
+
+news_event = {
+	#维也纳艺术展
+	id = news.1029
+	title = news.1029.t
+	desc = news.1029.desc
+	picture = GFX_news_event_DVL_art_festival
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1029.a
+	}
+}
+
+news_event = {
+	#黑森峰学院扩大校区
+	id = news.1030
+	title = news.1030.t
+	desc = news.1030.desc
+	picture = GFX_news_event_DVL_HSF_expand
+	major = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			DVL = {
+				add_to_variable = {
+					var = ubs_load
+					value = 100
+				}
+				add_state_core = 188
+			}
+			LIT = {
+				add_to_variable = {
+					var = ubs_save
+					value = 100
+				}
+			}
+			HSF = {
+				transfer_state = 188
+				add_state_core = 188
+			}
+		}
+	}
+	option = {
+		name = news.1030.a
+		trigger = {
+			tag = DVL
+		}
+	}
+	option = {
+		name = news.1030.b
+		trigger = {
+			tag = LIT
+		}
+	}
+	option = {
+		name = news.1030.c
+		trigger = {
+			NOT = {
+				tag = DVL
+			}
+			NOT = {
+				tag = LIT
+			}
+		}
+	}
+}
+
+news_event = {
+	#黑森峰学院扩大校区（全立陶宛）
+	id = news.1031
+	title = news.1031.t
+	desc = news.1031.desc
+	picture = GFX_news_event_DVL_HSF_expand
+	major = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			DVL = {
+				add_state_core = 188
+			}
+			HSF = {
+				transfer_state = 188
+				add_state_core = 188
+				annex_country = {
+					target = LIT
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1031.a
+		trigger = {
+			tag = DVL
+		}
+	}
+	option = {
+		name = news.1031.b
+		trigger = {
+			NOT = {
+				tag = DVL
+			}
+		}
+	}
+}
+
+news_event = {
+	#黑森峰学院扩大校区败露
+	id = news.1032
+	title = news.1032.t
+	desc = news.1032.desc
+	picture = GFX_news_event_DVL_HSF_expand_be
+	major = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			DVL = {
+				add_state_core = 188
+				add_named_threat = {
+					threat = -10
+					name = DVL_HSF_BE
+				}
+			}
+			HSF = {
+				transfer_state = 188
+				add_state_core = 188
+				annex_country = {
+					target = LIT
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1032.a
+		trigger = {
+			tag = DVL
+		}
+	}
+	option = {
+		name = news.1032.b
+		trigger = {
+			NOT = {
+				tag = DVL
+			}
+		}
+	}
+}
+
+news_event = {
+	#戴比路克皇室婚约
+	id = news.1033
+	title = news.1033.t
+	desc = news.1033.desc
+	picture = GFX_news_event_DVL_engagement
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1033.a
+		trigger = {
+			tag = DVL
+		}
+	}
+	option = {
+		name = news.1033.b
+		trigger = {
+			NOT = {
+				tag = DVL
+			}
+		}
+	}
+}
+
+news_event = {
+	#戴比路克合并水晶之都
+	id = news.1034
+	title = news.1034.t
+	desc = news.1034.desc
+	picture = GFX_news_event_DVL_AUS
+	major = yes
+	immediate = {
+		hidden_effect = {
+			4 = {
+				if = {
+					limit = {
+						is_owned_by = DVL
+					}
+					add_core_of = DVL
+				}
+			}
+			152 = {
+				if = {
+					limit = {
+						is_owned_by = DVL
+					}
+					add_core_of = DVL
+				}
+			}
+			153 = {
+				if = {
+					limit = {
+						is_owned_by = DVL
+					}
+					add_core_of = DVL
+				}
+			}
+		}
+	}
+	is_triggered_only = yes
+	option = {
+		name = news.1034.a
+		trigger = {
+			tag = DVL
+		}
+	}
+	option = {
+		name = news.1034.b
+		trigger = {
+			NOT = {
+				tag = DVL
+			}
+		}
+	}
+}
+
+news_event = {
+	#普拉尼提努条约
+	id = news.1035
+	title = news.1035.t
+	desc = news.1035.desc
+	picture = GFX_news_event_DVL_NPT_COO
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1035.a
+		trigger = {
+			OR = {
+				tag = DVL
+				tag = NPT
+			}
+		}
+	}
+	option = {
+		name = news.1035.b
+		trigger = {
+			OR = {
+				tag = ENG
+				tag = FRA
+			}
+		}
+	}
+	option = {
+		name = news.1035.c
+		trigger = {
+			NOT = {
+				tag = DVL
+			}
+			NOT = {
+				tag = NPT
+			}
+			NOT = {
+				tag = FRA
+			}
+			NOT = {
+				tag = ENG
+			}
+		}
+	}
+}
+
+news_event = {
+	#伊甸之都加入帝国阵线
+	id = news.1036
+	title = news.1036.t
+	desc = news.1036.desc
+	picture = GFX_news_event_DVL_SHY_COO
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1036.a
+		trigger = {
+			OR = {
+				tag = DVL
+				tag = SHY
+			}
+		}
+	}
+	option = {
+		name = news.1036.b
+		trigger = {
+			OR = {
+				tag = ENG
+				tag = FRA
+			}
+		}
+	}
+	option = {
+		name = news.1036.c
+		trigger = {
+			NOT = {
+				tag = DVL
+			}
+			NOT = {
+				tag = SHY
+			}
+			NOT = {
+				tag = FRA
+			}
+			NOT = {
+				tag = ENG
+			}
+		}
+	}
+}
+
+news_event = {
+	#超次元联盟加入帝国阵线
+	id = news.1037
+	title = news.1037.t
+	desc = news.1037.desc
+	picture = GFX_news_event_DVL_NPT_FAC
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1037.a
+		trigger = {
+			OR = {
+				tag = DVL
+				tag = NPT
+			}
+		}
+	}
+	option = {
+		name = news.1037.b
+		trigger = {
+			OR = {
+				tag = ENG
+				tag = FRA
+			}
+		}
+	}
+	option = {
+		name = news.1037.c
+		trigger = {
+			NOT = {
+				tag = DVL
+			}
+			NOT = {
+				tag = NPT
+			}
+			NOT = {
+				tag = FRA
+			}
+			NOT = {
+				tag = ENG
+			}
+		}
+	}
+}
+
+news_event = {
+	#阿库西斯教团加入帝国阵线
+	id = news.1038
+	title = news.1038.t
+	desc = news.1038.desc
+	picture = GFX_event_Aqua
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1038.a
+		trigger = {
+			OR = {
+				tag = DVL
+				tag = ITA
+			}
+		}
+	}
+	option = {
+		name = news.1038.b
+		trigger = {
+			OR = {
+				tag = ENG
+				tag = FRA
+			}
+		}
+	}
+	option = {
+		name = news.1038.c
+		trigger = {
+			NOT = {
+				tag = DVL
+			}
+			NOT = {
+				tag = ITA
+			}
+			NOT = {
+				tag = FRA
+			}
+			NOT = {
+				tag = ENG
+			}
+		}
+	}
+}
+
+news_event = {
+	#维也纳条约
+	id = news.1039
+	title = news.1039.t
+	desc = news.1039.desc
+	picture = GFX_news_event_DVL_HUN_COO
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1039.a
+		trigger = {
+			OR = {
+				tag = DVL
+				tag = HUN
+			}
+		}
+	}
+	option = {
+		name = news.1039.b
+		trigger = {
+			OR = {
+				tag = ROM
+				tag = CZE
+			}
+		}
+	}
+	option = {
+		name = news.1039.c
+		trigger = {
+			NOT = {
+				tag = DVL
+			}
+			NOT = {
+				tag = HUN
+			}
+			NOT = {
+				tag = CZE
+			}
+			NOT = {
+				tag = HUN
+			}
+		}
+	}
+}
+
+news_event = {
+	#魔联阴云
+	id = news.1040
+	title = news.1040.t
+	desc = news.1040.desc
+	picture = GFX_news_event_DVL_MGU
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1040.a
+		SOV_DVL_WAR_super_event = yes
+		trigger = {
+			OR = {
+				tag = DVL
+				is_in_faction_with = DVL
+			}
+		}
+	}
+	option = {
+		name = news.1040.b
+		SOV_DVL_WAR_super_event = yes
+		trigger = {
+			OR = {
+				is_in_faction_with = SOV
+				tag = SOV
+			}
+		}
+	}
+	option = {
+		name = news.1040.c
+		SOV_DVL_WAR_super_event = yes
+		trigger = {
+			has_war_with = DVL
+			NOT = {
+				OR = {
+					is_in_faction_with = SOV
+					tag = SOV
+					tag = DVL
+					is_in_faction_with = DVL
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1040.d
+		SOV_DVL_WAR_super_event = yes
+		trigger = {
+			NOT = {
+				OR = {
+					has_war_with = DVL
+					is_in_faction_with = SOV
+					tag = SOV
+					tag = DVL
+					is_in_faction_with = DVL
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	#戴比路克的继承者
+	id = news.1041
+	title = news.1041.t
+	desc = news.1041.desc
+	picture = GFX_news_event_DVL_succeed
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1041.a
+		trigger = {
+			OR = {
+				tag = DVL
+				is_in_faction_with = DVL
+			}
+		}
+	}
+	option = {
+		name = news.1041.b
+		trigger = {
+			NOT = {
+				OR = {
+					tag = DVL
+					is_in_faction_with = DVL
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	#幻想乡被炮击
+	id = news.1042
+	title = news.1042.t
+	desc = news.1042.desc
+	picture = GFX_news_event_DVL_FRA_SPACE_NUKE
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1042.a
+		trigger = {
+			OR = {
+				tag = DVL
+				is_in_faction_with = DVL
+			}
+		}
+	}
+	option = {
+		name = news.1042.b
+		trigger = {
+			NOT = {
+				OR = {
+					tag = DVL
+					is_in_faction_with = DVL
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	#Magius加入征服者同盟
+	id = news.1043
+	title = news.1043.t
+	desc = news.1043.desc
+	picture = GFX_news_event_DVL_MGS_ally
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1043.a
+		trigger = {
+			OR = {
+				tag = DVL
+				tag = MGS
+			}
+		}
+	}
+	option = {
+		name = news.1043.b
+		trigger = {
+			NOT = {
+				OR = {
+					tag = DVL
+					tag = MGS
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	#征服之誓
+	id = news.1044
+	title = news.1044.t
+	desc = news.1044.desc
+	picture = GFX_news_event_DVL_threaten
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1044.a
+		trigger = {
+			or = {
+				tag = DVL
+				is_in_faction_with = DVL
+			}
+		}
+	}
+	option = {
+		name = news.1044.b
+		trigger = {
+			NOT = {
+				tag = DVL
+			}
+			NOT = {
+				is_in_faction_with = DVL
+			}
+		}
+	}
+}
+
+news_event = {
+	#xeno之力的觉醒
+	id = news.1045
+	title = news.1045.t
+	desc = news.1045.desc
+	picture = GFX_news_event_DVL_SHY_COO
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1045.a
+		trigger = {
+			OR = {
+				tag = DVL
+				tag = SHY
+			}
+		}
+	}
+	option = {
+		name = news.1045.b
+		trigger = {
+			NOT = {
+				OR = {
+					tag = DVL
+					tag = SHY
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	#天降神兵
+	id = news.1046
+	title = news.1046.t
+	desc = news.1046.desc
+	picture = GFX_news_event_DVL_ENG_SPACE_NUKE
+	major = yes
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			127 = {
+				create_unit = {
+					division = "name = \"戴比路克行星突击队\" division_template = \"戴比路克行星突击队\" start_experience_factor = 1 start_equipment_factor = 0.8 "
+					owner = DVL
+					count = 6
+					allow_spawning_on_enemy_provs = yes
+				}
+			}
+		}
+	}
+	option = {
+		name = news.1046.a
+		trigger = {
+			OR = {
+				tag = DVL
+				is_in_faction_with = DVL
+			}
+		}
+	}
+	option = {
+		name = news.1046.b
+		trigger = {
+			NOT = {
+				OR = {
+					tag = DVL
+					is_in_faction_with = DVL
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	#谜之力量的阻碍
+	id = news.1047
+	title = news.1047.t
+	desc = news.1047.desc
+	picture = GFX_news_event_DVL_SPACE_ATTACK_INVALID
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1047.a
+		trigger = {
+			OR = {
+				tag = DVL
+				tag = SHY
+			}
+		}
+	}
+	option = {
+		name = news.1047.b
+		trigger = {
+			NOT = {
+				OR = {
+					tag = DVL
+					tag = SHY
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	#罪域的骨终为王
+	id = news.1048
+	title = news.1048.t
+	desc = news.1048.desc
+	picture = GFX_news_event_POL_zuiyudeguzhongweiwang
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1048.a
+		trigger = {
+			OR = {
+				tag = POL
+			}
+		}
+	}
+	option = {
+		name = news.1048.b
+		trigger = {
+			NOT = {
+				OR = {
+					tag = POL
+				}
+			}
+		}
+	}
+}
+
+news_event = {
+	#天使的心跳
+	id = news.1049
+	title = news.1049.t
+	desc = news.1049.desc
+	picture = GFX_news_event_POL_tianshidexintiao
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = news.1049.a
+		trigger = {
+			OR = {
+				tag = POL
+			}
+		}
+	}
+	option = {
+		name = news.1049.b
+		trigger = {
+			NOT = {
+				OR = {
+					tag = POL
+				}
+			}
+		}
+	}
+}

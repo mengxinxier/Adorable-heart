@@ -1,0 +1,3388 @@
+﻿###########################
+# USA
+###########################
+add_namespace = USA
+
+#崩溃的预兆
+country_event = {
+	id = usa.101
+	title = usa.101.t
+	desc = usa.101.d
+	picture = GFX_usa_event_Nia_Alter	
+	is_triggered_only = yes
+	option = {
+		name = usa.101.a
+		complete_national_focus = USA_party_goes_on
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = usa.101.b
+		complete_national_focus = USA_Expose_the_lie
+		remove_ideas = Prosperity_since_the_war
+		add_ideas = USA_Breaking_point
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+#圣杯友谊
+country_event = {
+	id = usa.102
+	title = usa.102.t
+	desc = usa.102.d
+	picture = GFX_usa_event_tohka_cross
+	is_triggered_only = yes
+	option = {
+		name = usa.102.a
+		ENG = { 
+			country_event = { id = usa.103 hours = 2 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = usa.102.b
+		ENG = { 
+			country_event = { id = usa.104 hours = 2 }
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+#圣杯：精灵希望加深友谊
+country_event = {
+	id = usa.103
+	title = usa.103.t
+	desc = usa.103.d
+	picture = GFX_usa_event_tohka_cross
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = usa.103.a
+		add_ideas = USA_Holy_Cup_franchise
+		USA = {
+			country_event = { id = usa.105 hours = 2 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = usa.103.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+#圣杯同意加深友谊
+country_event = {
+	id = usa.105
+	title = usa.105.t
+	desc = usa.105.d
+	picture = GFX_usa_event_tohka_cross
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		trigger = {
+			tag = USA
+		}
+		name = usa.105.a
+		add_ideas = USA_Holy_Cup_franchise
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+#圣杯：精灵希望合作
+country_event = {
+	id = usa.104
+	title = usa.104.t
+	desc = usa.104.d
+	picture = GFX_usa_event_tohka_cross
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = usa.104.a
+		army_experience = 10
+		add_tech_bonus = {
+			name = USA_Excellent_Magic_Gun_spirit_suit
+			bonus = 2.0
+			uses = 1
+			category = magic_army_tech
+		}
+		USA = {
+			country_event = { id = usa.11 hours = 2 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = usa.104.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+#圣杯同意合作
+country_event = {
+	id = usa.106
+	title = usa.106.t
+	desc = usa.106.d
+	picture = GFX_usa_event_tohka_cross
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = usa.106.a
+		air_experience = 25
+		navy_experience = 25
+		add_doctrine_cost_reduction = {
+			name = USA_air_war_plans_division
+			cost_reduction = 0.5
+			uses = 1
+			category = air_doctrine
+		}
+		add_doctrine_cost_reduction = {
+			name = USA_Marine_propulsion
+			cost_reduction = 0.5
+			uses = 1
+			category = naval_doctrine
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+#精灵希望加入圣杯联邦
+country_event = {
+	id = usa.107
+	title = usa.107.t
+	desc = usa.107.d
+	picture = GFX_usa_event_tohka_cross
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = usa.107.a
+		ENG = { add_to_faction = USA }
+		hidden_effect = {
+			news_event = { hours = 6 id = usa.501 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = usa.107.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+#精灵希望收复新英格兰地区
+country_event = {
+	id = usa.108
+	title = usa.108.t
+	desc = usa.108.d
+	picture = GFX_usa_event_tohka_cross
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = usa.108.a
+		USA = {
+			country_event = { id = usa.109 hours = 2 }
+		}
+		ai_chance = {
+			factor = 50
+		}
+	}
+	option = {
+		name = usa.108.b
+		custom_effect_tooltip = USA_tooltip_new_england
+		custom_effect_tooltip = USA_tooltip_new_england_2
+		USA = {
+			country_event = { id = usa.110 hours = 2 }
+		}
+		ai_chance = {
+			factor = 50
+		}
+	}
+	option = {
+		name = usa.108.c
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+#圣杯完全同意交还
+country_event = {
+	id = usa.109
+	title = usa.109.t
+	desc = usa.109.d
+	picture = GFX_usa_event_tohka_cross
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = USA.109.a
+		930 = {
+			add_core_of = USA
+			USA = { transfer_state = 930 }
+		}
+		796 = {
+			add_core_of = USA
+			USA = { transfer_state = 796 }
+		}
+		931 = {
+			add_core_of = USA
+			USA = { transfer_state = 931 }
+		}
+		932 = {
+			add_core_of = USA
+			USA = { transfer_state = 932 }
+		}
+		933 = {
+			add_core_of = USA
+			USA = { transfer_state = 933 }
+		}
+		934 = {
+			add_core_of = USA
+			USA = { transfer_state = 934 }
+		}
+		468 = {
+			add_core_of = USA
+			USA = { transfer_state = 468 }
+		}
+		357 = {
+			add_core_of = USA
+			USA = { transfer_state = 357 }
+		}
+		465 = {
+			add_core_of = USA
+			USA = { transfer_state = 465 }
+		}
+		464 = {
+			add_core_of = USA
+			USA = { transfer_state = 464 }
+		}
+		935 = {
+			add_core_of = USA
+			USA = { transfer_state = 935 }
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+#圣杯有条件交还
+country_event = {
+	id = usa.110
+	title = usa.110.t
+	desc = usa.110.d
+	picture = GFX_usa_event_tohka_cross
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = USA.110.a
+		add_timed_idea = {
+			idea = USA_pay_new_england
+			days = 180
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				industrial_complex > 0
+			}
+			remove_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				industrial_complex > 0
+			}
+			remove_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				industrial_complex > 0
+			}
+			remove_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				industrial_complex > 0
+			}
+			remove_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				industrial_complex > 0
+			}
+			remove_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				is_fully_controlled_by = ROOT
+				industrial_complex > 0
+			}
+			remove_building = {
+				type = industrial_complex
+				level = 1
+			}
+		}
+		ENG = {
+			country_event = { id = usa.111 hours = 2 }
+		}
+		930 = {
+			add_core_of = USA
+			USA = { transfer_state = 930 }
+		}
+		796 = {
+			add_core_of = USA
+			USA = { transfer_state = 796 }
+		}
+		931 = {
+			add_core_of = USA
+			USA = { transfer_state = 931 }
+		}
+		932 = {
+			add_core_of = USA
+			USA = { transfer_state = 932 }
+		}
+		933 = {
+			add_core_of = USA
+			USA = { transfer_state = 933 }
+		}
+		934 = {
+			add_core_of = USA
+			USA = { transfer_state = 934 }
+		}
+		468 = {
+			add_core_of = USA
+			USA = { transfer_state = 468 }
+		}
+		357 = {
+			add_core_of = USA
+			USA = { transfer_state = 357 }
+		}
+		465 = {
+			add_core_of = USA
+			USA = { transfer_state = 465 }
+		}
+		464 = {
+			add_core_of = USA
+			USA = { transfer_state = 464 }
+		}
+		935 = {
+			add_core_of = USA
+			USA = { transfer_state = 935 }
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+#来自精灵国的诚意
+country_event = {
+	id = usa.111
+	title = usa.111.t
+	desc = usa.111.d
+	picture = GFX_usa_event_tohka_cross
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = USA.111.a
+		add_timed_idea = {
+			idea = USA_pay_new_england_2
+			days = 180
+		}
+		random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+#从邻界归来
+country_event = {
+	id = usa.112
+	title = usa.112.t
+	desc = usa.112.d
+	picture = GFX_usa_event_tohka_cross
+	is_triggered_only = yes
+	trigger = {
+		tag = USA
+	}
+	option = {
+		name = USA.112.a
+		army_experience = 10
+		capital_scope = { 
+			create_unit = {
+				division = "name = \"“冷溪”第414近卫团\" division_template = \"精灵军团\" start_experience_factor = 0.7" 
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"“高地”第539近卫掷弹兵团\" division_template = \"精灵近卫掷弹兵团\" start_experience_factor = 0.7" 
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"“高墙”第517近卫掷弹兵团\" division_template = \"精灵近卫掷弹兵团\" start_experience_factor = 0.7" 
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"“强援”第414近卫掷弹兵团\" division_template = \"精灵近卫掷弹兵团\" start_experience_factor = 0.7" 
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"“狼牙”第659近卫掷弹兵团\" division_template = \"精灵近卫掷弹兵团\" start_experience_factor = 0.7" 
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"“高贵”第319近卫掷弹兵团\" division_template = \"精灵近卫掷弹兵团\" start_experience_factor = 0.7" 
+				owner = ROOT
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+#士织计划
+country_event = {
+	id = usa.113
+	title = usa.113.t
+	desc = usa.113.d
+	picture = GFX_usa_event_tohka_cross
+	is_triggered_only = yes
+	option = {
+		name = USA.113.a
+		random_owned_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		ai_chance = {
+			factor = 45
+		}
+	}
+	option = {
+		name = USA.113.b
+		random_owned_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+			}
+		}
+		ai_chance = {
+			factor = 45
+		}
+	}
+	option = {
+		name = USA.113.c
+		add_to_variable = {
+			var = ubs_save
+			value = 300
+			tooltip = UBS_SAVE_up_300
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+#从邻界归来：薇拉
+country_event = {
+	id = usa.114
+	title = usa.114.t
+	desc = usa.114.d
+	picture = GFX_usa_event_tohka_cross
+	is_triggered_only = yes
+	option = {
+		name = USA.114.a
+		add_field_marshal_role = {
+			character = "USA_Vera_Liere"
+			traits={ brilliant_strategist armor_officer harsh_leader jingling trickster skilled_staffer }
+			skill=6
+			attack_skill=7
+			defense_skill=7
+			planning_skill=4
+			logistics_skill=4
+			legacy_id=0
+		}
+		division_template = {
+			name = "精灵近卫掷弹兵团"
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+				infantry = { x = 0 y = 2 }
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+				infantry = { x = 1 y = 2 }
+				infantry = { x = 2 y = 0 }
+				infantry = { x = 2 y = 1 }
+				infantry = { x = 2 y = 2 }
+				artillery_brigade = { x = 0 y = 3 }
+				artillery_brigade = { x = 1 y = 3 }
+				artillery_brigade = { x = 2 y = 3 }
+			}
+			support = {
+				artillery = { x = 0 y = 0 }		
+				engineer = { x = 0 y = 1 }		
+				recon = { x = 0 y = 2 }	
+			}
+		}
+		capital_scope = { 
+			create_unit = {
+				division = "name = \"“帝国边境”第1014近卫掷弹兵团\" division_template = \"精灵近卫掷弹兵团\" start_experience_factor = 0.8" 
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"“风暴前哨”第1015近卫掷弹兵团\" division_template = \"精灵近卫掷弹兵团\" start_experience_factor = 0.8" 
+				owner = ROOT
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+#从邻界归来：列克星敦
+country_event = {
+	id = usa.115
+	title = usa.115.t
+	desc = usa.115.d
+	picture = GFX_usa_event_Lexington
+	is_triggered_only = yes
+	trigger = {
+		tag = USA
+	}
+	option = {
+		name = USA.115.a
+		set_country_flag = USA_flag_lexington
+		add_naval_commander_role = {
+			character = "USA_Lexington"
+			traits={ naval_lineage aviation_enthusiast air_controller flight_deck_manager superior_tactician blue_water_expert  }
+			skill=5
+			attack_skill=6
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=6
+			legacy_id=0
+		}
+		custom_effect_tooltip = USA_tooltip_lexington
+		hidden_effect = {
+			USA_Lexington_cuming = yes
+			create_equipment_variant = {
+				name = "列克星敦R级"
+				type = ship_hull_carrier_1
+				name_group = USA_CV_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_deck_slot_1 = ship_deck_space
+					fixed_ship_deck_slot_2 = ship_deck_space
+					fixed_ship_anti_air_slot = ship_anti_air_2
+					fixed_ship_radar_slot = empty
+					fixed_ship_engine_slot = carrier_ship_engine_2
+					fixed_ship_secondaries_slot = ship_secondaries_2
+					front_1_custom_slot = ship_deck_space
+				}
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_carrier_1
+					creator = "USA" 
+					version_name = "列克星敦R级"
+				}
+				name = "列克星敦R" 
+				requested_factories = 1
+				progress = 0.95
+				amount = 1
+			}
+			USA_Lexington_cuming = yes
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	option = {
+		name = USA.115.b
+		set_country_flag = USA_flag_lexington
+		custom_effect_tooltip = USA_tooltip_lexington_fadian
+		add_stability = -0.01
+		add_war_support = 0.01
+		add_naval_commander_role = {
+			character = "USA_Lexington"
+			traits={ naval_lineage aviation_enthusiast air_controller flight_deck_manager superior_tactician blue_water_expert  }
+			skill=5
+			attack_skill=6
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=6
+			legacy_id=0
+		}
+		custom_effect_tooltip = USA_tooltip_lexington
+		hidden_effect = {
+			USA_Lexington_cuming = yes
+			create_equipment_variant = {
+				name = "列克星敦R级"
+				type = ship_hull_carrier_1
+				name_group = USA_CV_HISTORICAL
+				parent_version = 0
+				modules = {
+					fixed_ship_deck_slot_1 = ship_deck_space
+					fixed_ship_deck_slot_2 = ship_deck_space
+					fixed_ship_anti_air_slot = ship_anti_air_2
+					fixed_ship_radar_slot = empty
+					fixed_ship_engine_slot = carrier_ship_engine_2
+					fixed_ship_secondaries_slot = ship_secondaries_2
+					front_1_custom_slot = ship_deck_space
+				}
+			}
+			add_equipment_production = {
+				equipment = {
+					type = ship_hull_carrier_1
+					creator = "USA" 
+					version_name = "列克星敦R级"
+				}
+				name = "列克星敦R" 
+				requested_factories = 1
+				progress = 0.95
+				amount = 1
+			}
+			USA_Lexington_cuming = yes		
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+#独立日庆典
+country_event = {
+	id = usa.116
+	title = usa.116.t
+	desc = usa.116.d
+	picture = GFX_report_event_usa_election_landon_roosevelt
+	is_triggered_only = yes
+	trigger = {
+		tag = USA
+	}
+	option = {
+		name = USA.116.a
+		add_political_power = 25
+		add_timed_idea = { 
+			idea = USA_independence_day
+			days = 60
+				}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+#圣路易斯安那的精灵同情者
+country_event = {
+	id = usa.117
+	title = usa.117.t
+	desc = usa.117.d
+	picture = GFX_usa_event_zhezhi_king
+	is_triggered_only = no
+	fire_only_once = yes
+	mean_time_to_happen = { days = 2 }
+	trigger = {
+		tag = USA
+		or = {
+			has_war_with = NFA
+			has_war_with = FRG
+			has_war_with = NGD
+		}
+	}
+	option = {
+		name = USA.117.a
+		373 = {
+			limit = {
+				is_core_of = NFA
+				NOT = { is_core_of = USA }
+			}
+			add_core_of = USA
+		}
+		150 = {
+			limit = {
+				is_core_of = NFA
+				NOT = { is_core_of = USA }
+			}
+			add_core_of = USA
+		}
+		371 = {
+			limit = {
+				is_core_of = NFA
+				NOT = { is_core_of = USA }
+			}
+			add_core_of = USA
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+#[FRG.GetName]的精灵同情者
+country_event = {
+	id = usa.118
+	title = usa.118.t
+	desc = usa.118.d
+	picture = GFX_usa_event_zhezhi_king
+	is_triggered_only = no
+	fire_only_once = yes
+	mean_time_to_happen = { days = 3 }
+	trigger = {
+		tag = USA
+		or = {
+			has_war_with = NFA
+			has_war_with = FRG
+			has_war_with = NGD
+		}
+		date > 1938.2.6
+	}
+	option = {
+		name = USA.118.a
+		375 = {
+			limit = {
+				is_core_of = NFA
+				NOT = { is_core_of = USA }
+			}
+			add_core_of = USA
+		}
+		376 = {
+			limit = {
+				is_core_of = NFA
+				NOT = { is_core_of = USA }
+			}
+			add_core_of = USA
+		}
+		382 = {
+			limit = {
+				is_core_of = NFA
+				NOT = { is_core_of = USA }
+			}
+			add_core_of = USA
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+#[NGD.GetName]的精灵同情者
+country_event = {
+	id = usa.119
+	title = usa.119.t
+	desc = usa.119.d
+	picture = GFX_usa_event_zhezhi_king
+	is_triggered_only = no
+	fire_only_once = yes
+	mean_time_to_happen = { days = 4 }
+	trigger = {
+		tag = USA
+		or = {
+			has_war_with = NFA
+			has_war_with = FRG
+			has_war_with = NGD
+		}
+		date > 1938.4.10
+	}
+	option = {
+		name = USA.119.a
+		379 = {
+			limit = {
+				is_core_of = NFA
+				NOT = { is_core_of = USA }
+			}
+			add_core_of = USA
+		}
+		829 = {
+			limit = {
+				is_core_of = NFA
+				NOT = { is_core_of = USA }
+			}
+			add_core_of = USA
+		}
+		798 = {
+			limit = {
+				is_core_of = NFA
+				NOT = { is_core_of = USA }
+			}
+			add_core_of = USA
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+#精灵加入联邦经济体系
+country_event = {
+	id = usa.120
+	title = usa.120.t
+	desc = usa.120.d
+	picture = GFX_usa_event_tohka_cross
+	is_triggered_only = yes
+	option = {
+		name = USA.120.a
+		add_ideas = USA_spirit_economic_reciprocity_agreement
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+#从邻界归来：老兵不死
+country_event = {
+	id = usa.121
+	title = usa.121.t
+	desc = usa.121.d
+	picture = GFX_usa_event_tohka_cross
+	is_triggered_only = yes
+	trigger = {
+		tag = FRA
+	}
+	option = {
+		name = USA.121.a
+		division_template = {
+			name = "大战步兵旅"
+			priority = 0
+			is_locked = yes
+			regiments = {
+				infantry = { x = 0 y = 0 }
+				infantry = { x = 0 y = 1 }
+
+				infantry = { x = 1 y = 0 }
+				infantry = { x = 1 y = 1 }
+			}
+		}
+		capital_scope = { 
+			create_unit = {
+				division = "name = \"法兰西第3集团军步兵旅\" division_template = \"大战步兵师\" start_experience_factor = 0.5 start_equipment_factor = 0.5" 
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"法兰西第3集团军步兵旅\" division_template = \"大战步兵师\" start_experience_factor = 0.5 start_equipment_factor = 0.5" 
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"法兰西第3集团军步兵旅\" division_template = \"大战步兵师\" start_experience_factor = 0.5 start_equipment_factor = 0.5" 
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"法兰西第6集团军步兵旅\" division_template = \"大战步兵师\" start_experience_factor = 0.5 start_equipment_factor = 0.5" 
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"法兰西第6集团军步兵旅\" division_template = \"大战步兵师\" start_experience_factor = 0.5 start_equipment_factor = 0.5" 
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"法兰西第6集团军步兵旅\" division_template = \"大战步兵师\" start_experience_factor = 0.5 start_equipment_factor = 0.5" 
+				owner = ROOT
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+#援助精灵
+country_event = {
+	id = usa.122
+	title = usa.122.t
+	desc = usa.122.d
+	picture = GFX_usa_event_tohka_cross
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = USA.122.a
+		send_equipment = {
+			equipment = infantry_equipment
+			amount = 2500
+			target = USA
+		}
+		add_political_power = -30
+		USA = { 
+			add_political_power = 30
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 150
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 150
+				producer = USA
+			} 
+		}
+		ai_chance = {
+			factor = 30
+		}
+	}
+	option = {
+		name = USA.122.b
+		send_equipment = {
+			equipment = infantry_equipment
+			amount = 1000
+			target = USA
+		}
+		add_political_power = -15
+		USA = { 
+			add_political_power = 15 
+			add_equipment_to_stockpile = {
+				type = artillery_equipment
+				amount = 75
+				producer = USA
+			}
+			add_equipment_to_stockpile = {
+				type = support_equipment
+				amount = 75
+				producer = USA
+			}
+		}
+		ai_chance = {
+			factor = 40
+		}
+	}
+	option = {
+		name = USA.122.c
+		add_political_power = -1
+		USA = { add_political_power = 1 }
+		ai_chance = {
+			factor = 30
+		}
+	}
+}
+#卓越灵装
+country_event = {
+	id = usa.123
+	title = usa.123.t
+	desc = usa.123.d
+	picture = GFX_usa_event_tohka_cross
+	is_triggered_only = yes
+	option = {
+		name = USA.123.a
+		add_ideas = USA_Limited_spirit_suit
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = USA.123.b
+		add_ideas = USA_Modern_spirit_suit
+		ai_chance = {
+			factor = 5
+		}
+	}
+	option = {
+		name = USA.123.c
+		add_ideas = USA_Excellent_spirit_suit
+		ai_chance = {
+			factor = 95
+		}
+	}
+}
+#从邻界归来:来自第十领域
+country_event = {
+	id = usa.124
+	title = usa.124.t
+	desc = usa.124.d
+	picture = GFX_usa_event_tohka_cross
+	is_triggered_only = yes
+	option = {
+		name = USA.124.a
+		army_experience = 10
+		if = {
+			limit = {
+				not = { has_tech = magic_weapons2 }
+			}
+			set_technology = {
+				magic_weapons2 = 1
+			}
+		}
+		hidden_effect = {
+		capital_scope = { 
+			create_unit = {
+				division = "name = \"“血染钟楼”第8灵装突击师\" division_template = \"精灵灵装突击军团\" start_experience_factor = 0.7" 
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"“紫晶罗兰”第9灵装突击师\" division_template = \"精灵灵装突击军团\" start_experience_factor = 0.7" 
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"“混乱风暴”第10灵装突击师\" division_template = \"精灵灵装突击军团\" start_experience_factor = 0.7" 
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"“蒙大拿”第9国民卫队\" division_template = \"精灵国民警卫师\" start_experience_factor = 0.2 start_equipment_factor = 0.5" 
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"“佛蒙特”第10国民卫队\" division_template = \"精灵国民警卫师\" start_experience_factor = 0.2 start_equipment_factor = 0.5" 
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"“圣路易斯”第11国民卫队\" division_template = \"精灵国民警卫师\" start_experience_factor = 0.2 start_equipment_factor = 0.5" 
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"“凤凰城”第12国民卫队\" division_template = \"精灵国民警卫师\" start_experience_factor = 0.2 start_equipment_factor = 0.5" 
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"“奥马哈”第13国民卫队\" division_template = \"精灵国民警卫师\" start_experience_factor = 0.2 start_equipment_factor = 0.5" 
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"“彭萨科拉”第14国民卫队\" division_template = \"精灵国民警卫师\" start_experience_factor = 0.2 start_equipment_factor = 0.5" 
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"“新奥尔良”第15国民卫队\" division_template = \"精灵国民警卫师\" start_experience_factor = 0.2 start_equipment_factor = 0.5" 
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"“巴尔的摩”第16国民卫队\" division_template = \"精灵国民警卫师\" start_experience_factor = 0.2 start_equipment_factor = 0.5" 
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"“水牛城”第17国民卫队\" division_template = \"精灵国民警卫师\" start_experience_factor = 0.2 start_equipment_factor = 0.5" 
+				owner = ROOT
+			}
+		}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+#开始重建
+country_event = {
+	id = usa.125
+	title = usa.125.t
+	desc = usa.125.d
+	picture = GFX_event_USA_PRISONER_1
+	
+	is_triggered_only = yes
+	trigger = {
+		tag = USA
+	}
+	option = {
+		name = USA.125.a
+		complete_national_focus = USA_unity_of_spirits
+		add_ideas = USA_Rebuild_home
+		add_ideas = partial_economic_mobilisation
+		add_timed_idea = {
+			idea = USA_Rremaining_threat
+			days = 240
+		}
+		set_country_flag = USA_flag_Rebuild_home
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+#海军追赶
+country_event = {
+	id = usa.126
+	title = usa.126.t
+	desc = usa.126.d
+	picture = GFX_usa_event_Lexington
+	
+	is_triggered_only = no
+	fire_only_once = yes
+	mean_time_to_happen = { days = 3 }
+	trigger = {
+		tag = USA
+		or = {
+			USA = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+			ENG = {
+				NOT = {
+					has_government = democratic
+				}
+			}
+		}
+	}
+	option = {
+		name = USA.126.a
+		navy_experience = 50
+		hidden_effect = {
+			add_ideas = USA_Naval_pursuit
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+#团聚
+country_event = {
+	id = usa.127
+	title = usa.127.t
+	desc = usa.127.d
+	picture = GFX_event_USA_PRISONER_1
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = USA.127.a
+		set_country_flag = USA_FRG_comeback
+		add_field_marshal_role = {
+			character = "USA_Yatogami_Tohka"
+			traits={ Princess jingling FRG_Army_blood harsh_leader inflexible_strategist logistics_wizard }
+			skill=6
+			attack_skill=7
+			defense_skill=8
+			planning_skill=1
+			logistics_skill=6
+			legacy_id=0
+		}
+		add_corps_commander_role = {
+			character = "USA_Tobiichi_Origami"
+			traits={ Angel jingling FRG_Army_blood brilliant_strategist trait_reckless harsh_leader commando panzer_leader }
+			skill=5
+			attack_skill=6
+			defense_skill=4
+			planning_skill=5
+			logistics_skill=4
+			legacy_id=0
+		}
+		add_corps_commander_role = {
+			character = "USA_Yamai_Kaguya"
+			traits={ Yamai FRG_Army_blood jingling armor_officer trait_reckless trickster }
+			skill=4
+			attack_skill=4
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=4
+			legacy_id=0
+		}
+		add_corps_commander_role = {
+			character = "USA_Yamai_Yuzuru"
+			traits={ Yamai FRG_Army_blood jingling armor_officer trait_cautious trickster naval_invader }
+			skill=4
+			attack_skill=4
+			defense_skill=3
+			planning_skill=4
+			logistics_skill=2
+			legacy_id=0
+		}
+		add_corps_commander_role = {
+			character = "USA_Tsuan"
+			traits={ FRG_Army_blood jingling trait_reckless armor_officer }
+			skill=5
+			attack_skill=5
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=5
+			legacy_id=0
+		}
+		capital_scope = { 
+		create_unit = {
+			division = "name = \"“智慧之门”第1精灵突击军团\" division_template = \"精灵灵装突击军团\" start_experience_factor = 0.5" 
+			owner = ROOT
+		}
+		create_unit = {
+			division = "name = \"“失声控诉”第2精灵突击军团\" division_template = \"精灵灵装突击军团\" start_experience_factor = 0.5" 
+			owner = ROOT
+		}
+		create_unit = {
+			division = "name = \"“拉结尔之盾”第1机动军团\" division_template = \"精灵机动军团\" start_experience_factor = 0.5" 
+			owner = ROOT
+		}
+		}
+		#hidden_effect = {
+		#load_oob = "USA_1936_naval_2"
+		#}
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+#精灵海建总局战舰订单
+country_event = {
+	id = usa.128
+	title = usa.128.t
+	desc = usa.128.d
+	picture = GFX_usa_event_Lexington
+	
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = USA.128.a
+		country_event = {
+			id = usa.129
+			hours = 1
+		}
+		ai_chance = {
+			factor = 50
+		}
+	}
+	option = {
+		name = USA.128.b
+		custom_effect_tooltip = USA_tooltip_wait_one_year
+		country_event = {
+			id = usa.128
+			days = 365
+		}
+		ai_chance = {
+			factor = 40
+		}
+	}
+	option = {
+		name = USA.128.c
+		custom_effect_tooltip = USA_tooltip_dont_buy_any_ship
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+#舰种一览
+country_event = {
+	id = usa.129
+	title = usa.129.t
+	desc = usa.129.d
+	picture = GFX_usa_event_Lexington
+	
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = USA.129.a
+		country_event = {
+			id = usa.130
+			hours = 1
+		}
+		ai_chance = {
+			factor = 35
+		}
+	}
+	option = {
+		name = USA.129.b
+		country_event = {
+			id = usa.131
+			hours = 1
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = USA.129.c
+		country_event = {
+			id = usa.132
+			hours = 1
+		}
+		ai_chance = {
+			factor = 50
+		}
+	}
+	option = {
+		name = USA.129.d
+		custom_effect_tooltip = USA_tooltip_wait_one_year
+		country_event = {
+			id = usa.128
+			days = 365
+		}
+		ai_chance = {
+			factor = 40
+		}
+	}
+}
+#购买主力舰
+country_event = {
+	id = usa.130
+	title = usa.130.t
+	desc = usa.130.d
+	picture = GFX_usa_event_Lexington
+	
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = USA.130.a
+		custom_effect_tooltip = USA_tooltip_buy_one_BB
+		USA_Ship_orders_BB = yes
+		country_event = {
+			id = usa.133
+			days = 365
+		}
+		ai_chance = {
+			factor = 30
+		}
+	}
+	option = {
+		name = USA.130.b
+		custom_effect_tooltip = USA_tooltip_buy_one_CV
+		USA_Ship_orders_CV = yes
+		country_event = {
+			id = usa.134
+			days = 365
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+	option = {
+		name = USA.130.c
+		country_event = {
+			id = usa.129
+			hours = 1
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+#购买巡洋舰
+country_event = {
+	id = usa.131
+	title = usa.131.t
+	desc = usa.131.d
+	picture = GFX_usa_event_Lexington
+	
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = USA.131.a
+		custom_effect_tooltip = USA_tooltip_buy_two_CA
+		USA_Ship_orders_CACL = yes
+		country_event = {
+			id = usa.135
+			days = 365
+		}
+		ai_chance = {
+			factor = 50
+		}
+	}
+	option = {
+		name = USA.131.b
+		custom_effect_tooltip = USA_tooltip_buy_three_CL
+		USA_Ship_orders_CACL = yes
+		country_event = {
+			id = usa.136
+			days = 365
+		}
+		ai_chance = {
+			factor = 50
+		}
+	}
+	option = {
+		name = USA.131.c
+		country_event = {
+			id = usa.129
+			hours = 1
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+#购买驱逐舰
+country_event = {
+	id = usa.132
+	title = usa.132.t
+	desc = usa.132.d
+	picture = GFX_usa_event_Lexington
+	
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = USA.132.a
+		custom_effect_tooltip = USA_tooltip_buy_5_DD
+		USA_Ship_orders_DD = yes
+		country_event = {
+			id = usa.137
+			days = 365
+		}
+		ai_chance = {
+			factor = 70
+		}
+	}
+	option = {
+		name = USA.132.b
+		custom_effect_tooltip = USA_tooltip_buy_10_DD
+		USA_Ship_orders_DD_2 = yes
+		country_event = {
+			id = usa.138
+			days = 365
+		}
+		ai_chance = {
+			factor = 30
+		}
+	}
+	option = {
+		name = USA.132.c
+		country_event = {
+			id = usa.129
+			hours = 1
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+#战列舰交付
+country_event = {
+	id = usa.133
+	title = usa.133.t
+	desc = usa.133.d
+	picture = GFX_usa_event_Lexington
+	
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = USA.133.a
+			create_ship = {
+				type = ship_hull_heavy_1
+				equipment_variant = "筑梦师级"
+				creator = USA
+			}
+			if = {
+				limit = {
+					or = {
+						has_war_with = USA
+						USA = { exists = no }
+					}
+				}
+				custom_effect_tooltip = USA_tooltip_cannot_buy_ship
+			}
+		if = {
+			limit = {
+					NOT = { has_war_with = USA }
+					USA = { exists = yes }
+				}
+				country_event = {
+					id = usa.128
+					days = 1
+				}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+#航母交付
+country_event = {
+	id = usa.134
+	title = usa.134.t
+	desc = usa.134.d
+	picture = GFX_usa_event_Lexington
+	
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = USA.134.a
+		create_ship = {
+			type = ship_hull_carrier_1
+			equipment_variant = "空想级"
+			creator = USA
+		}
+		if = {
+			limit = {
+				or = {
+					has_war_with = USA
+					USA = { exists = no }
+				}
+			}
+			custom_effect_tooltip = USA_tooltip_cannot_buy_ship
+		}
+		if = {
+			limit = {
+					NOT = { has_war_with = USA }
+					USA = { exists = yes }
+				}
+				country_event = {
+					id = usa.128
+					days = 1
+				}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+#重型巡洋舰交付
+country_event = {
+	id = usa.135
+	title = usa.135.t
+	desc = usa.135.d
+	picture = GFX_usa_event_Lexington
+	
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = USA.135.a
+		create_ship = {
+			type = ship_hull_cruiser_2
+			equipment_variant = "空间级"
+			creator = USA
+		}
+		create_ship = {
+			type = ship_hull_cruiser_2
+			equipment_variant = "空间级"
+			creator = USA
+		}
+		if = {
+			limit = {
+				or = {
+					has_war_with = USA
+					USA = { exists = no }
+				}
+			}
+			custom_effect_tooltip = USA_tooltip_cannot_buy_ship
+		}
+		if = {
+			limit = {
+					NOT = { has_war_with = USA }
+					USA = { exists = yes }
+				}
+				country_event = {
+					id = usa.128
+					days = 1
+				}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+#轻型巡洋舰交付
+country_event = {
+	id = usa.136
+	title = usa.136.t
+	desc = usa.136.d
+	picture = GFX_usa_event_Lexington
+	
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = USA.136.a
+		create_ship = {
+			type = ship_hull_cruiser_2
+			equipment_variant = "盟约者级"
+			creator = USA
+		}
+		create_ship = {
+			type = ship_hull_cruiser_2
+			equipment_variant = "盟约者级"
+			creator = USA
+		}
+		create_ship = {
+			type = ship_hull_cruiser_2
+			equipment_variant = "盟约者级"
+			creator = USA
+		}
+		if = {
+			limit = {
+				or = {
+					has_war_with = USA
+					USA = { exists = no }
+				}
+			}
+			custom_effect_tooltip = USA_tooltip_cannot_buy_ship
+		}
+		if = {
+			limit = {
+					NOT = { has_war_with = USA }
+					USA = { exists = yes }
+				}
+				country_event = {
+					id = usa.128
+					days = 1
+				}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+#驱逐舰交付
+country_event = {
+	id = usa.137
+	title = usa.137.t
+	desc = usa.137.d
+	picture = GFX_usa_event_Lexington
+	
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = USA.137.a
+		create_ship = { type = ship_hull_light_2 equipment_variant = "追随者级" creator = USA }
+		create_ship = { type = ship_hull_light_2 equipment_variant = "追随者级" creator = USA }
+		create_ship = { type = ship_hull_light_2 equipment_variant = "追随者级" creator = USA }
+		create_ship = { type = ship_hull_light_2 equipment_variant = "追随者级" creator = USA }
+		create_ship = { type = ship_hull_light_2 equipment_variant = "追随者级" creator = USA }
+		if = {
+			limit = {
+				or = {
+					has_war_with = USA
+					USA = { exists = no }
+				}
+			}
+			custom_effect_tooltip = USA_tooltip_cannot_buy_ship
+		}
+		if = {
+			limit = {
+					NOT = { has_war_with = USA }
+					USA = { exists = yes }
+				}
+				country_event = {
+					id = usa.128
+					days = 1
+				}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+#驱逐舰交付2
+country_event = {
+	id = usa.138
+	title = usa.138.t
+	desc = usa.138.d
+	picture = GFX_usa_event_Lexington
+	
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = USA.138.a
+		create_ship = { type = ship_hull_light_2 equipment_variant = "追随者级" creator = USA }
+		create_ship = { type = ship_hull_light_2 equipment_variant = "追随者级" creator = USA }
+		create_ship = { type = ship_hull_light_2 equipment_variant = "追随者级" creator = USA }
+		create_ship = { type = ship_hull_light_2 equipment_variant = "追随者级" creator = USA }
+		create_ship = { type = ship_hull_light_2 equipment_variant = "追随者级" creator = USA }
+		create_ship = { type = ship_hull_light_2 equipment_variant = "追随者级" creator = USA }
+		create_ship = { type = ship_hull_light_2 equipment_variant = "追随者级" creator = USA }
+		create_ship = { type = ship_hull_light_2 equipment_variant = "追随者级" creator = USA }
+		create_ship = { type = ship_hull_light_2 equipment_variant = "追随者级" creator = USA }
+		create_ship = { type = ship_hull_light_2 equipment_variant = "追随者级" creator = USA }
+		if = {
+			limit = {
+				or = {
+					has_war_with = USA
+					USA = { exists = no }
+				}
+			}
+			custom_effect_tooltip = USA_tooltip_cannot_buy_ship
+		}
+		if = {
+			limit = {
+					NOT = { has_war_with = USA }
+					USA = { exists = yes }
+				}
+				country_event = {
+					id = usa.128
+					days = 1
+				}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+#精灵海建总局：海军舰艇外贸订单
+country_event = {
+	id = usa.139
+	title = usa.139.t
+	desc = usa.139.d
+	picture = GFX_usa_event_Lexington
+	
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = USA.139.a
+		PAN = {
+			country_event = {
+				id = usa.128
+				days = 1
+			}
+		}
+		NFA = {
+			country_event = {
+				id = usa.128
+				days = 1
+			}
+		}
+		FRG = {
+			country_event = {
+				id = usa.128
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+	option = {
+		name = USA.139.b
+		custom_effect_tooltip = USA_tooltip_stop_build_ship_other
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+#一日的辛劳
+country_event = {
+	id = usa.140
+	title = usa.140.t
+	desc = usa.140.d
+	picture = GFX_usa_event_tohka_cross
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = USA.140.a
+		372 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		388 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		389 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		381 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		390 = {
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = infrastructure
+				level = 1
+				instant_build = yes
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+#愈合的伤痛
+country_event = {
+	id = usa.141
+	title = usa.141.t
+	desc = usa.141.d
+	picture = GFX_usa_event_tohka_cross
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = USA.141.a
+		add_resource = { type = tungsten amount = 27 state = 388 }
+		add_resource = { type = aluminium amount = 24 state = 373 }
+		add_resource = { type = aluminium amount = 24 state = 372 }
+		add_resource = { type = oil amount = 20 state = 371 }
+		add_resource = { type = oil amount = 20 state = 381 }
+		USA = {
+			country_event = {
+				id = usa.142 days = 1
+			}
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+#愈合的伤痛2
+country_event = {
+	id = usa.142
+	title = usa.142.t
+	desc = usa.142.d
+	picture = GFX_usa_event_tohka_cross
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = USA.142.a
+		add_resource = { type = aluminium amount = 24 state = 975 }
+		add_resource = { type = tungsten amount = 30 state = 362 }
+		add_resource = { type = oil amount = 24 state = 393 }
+		add_resource = { type = steel amount = 24 state = 365 }
+		add_resource = { type = steel amount = 36 state = 368 }
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+#憧憬
+country_event = {
+	id = usa.143
+	title = usa.143.t
+	desc = usa.143.d
+	picture = GFX_event_USA_PRISONER_2
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = USA.143.a
+		add_ideas = USA_longing
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+#信任
+country_event = {
+	id = usa.144
+	title = usa.144.t
+	desc = usa.144.d
+	picture = GFX_event_USA_PRISONER_2
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = USA.144.a
+		add_ideas = USA_trust
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+#普罗旺斯计划
+country_event = {
+	id = usa.145
+	title = usa.145.t
+	desc = usa.145.d
+	picture = GFX_usa_event_tohka_cross
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = USA.145.a
+		swap_ideas = {
+			add_idea = USA_Provence_programme
+			remove_idea = USA_Old_friend_return_way
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = USA.145.b
+		swap_ideas = {
+			add_idea = USA_Provence_programme
+			remove_idea = USA_Old_friend_return_way
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+#返乡船票
+country_event = {
+	id = usa.146
+	title = usa.146.t
+	desc = usa.146.d
+	picture = GFX_usa_event_tohka_cross
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = USA.146.a
+		custom_effect_tooltip = USA_tooltip_get_usa_ship
+		hidden_effect = {
+			load_oob = USA_1936_naval
+		}
+		add_tech_bonus = {
+				name = USA_expand_the_USMC
+				bonus = 1.0
+				uses = 2
+				technology = marines2
+				technology = marines3
+		}
+		division_template = {
+			name = "精灵海军陆战队"
+			regiments = {
+				marine = { x = 0 y = 0 }
+				marine = { x = 0 y = 1 }
+				marine = { x = 0 y = 2 }
+				marine = { x = 0 y = 3 }
+				marine = { x = 0 y = 4 }
+				marine = { x = 1 y = 0 }
+				marine = { x = 1 y = 1 }
+				marine = { x = 1 y = 2 }
+				marine = { x = 1 y = 3 }
+				marine = { x = 1 y = 4 }
+				marine = { x = 2 y = 0 }
+				marine = { x = 2 y = 1 }
+				marine = { x = 2 y = 2 }
+				marine = { x = 2 y = 3 }
+				marine = { x = 2 y = 4 }
+				marine = { x = 3 y = 0 }
+				marine = { x = 3 y = 1 }
+				marine = { x = 3 y = 2 }
+				marine = { x = 3 y = 3 }
+				marine = { x = 3 y = 4 }
+				
+			}
+			support = {
+				artillery = { x = 0 y = 0 }		
+				engineer = { x = 0 y = 1 }		
+				recon = { x = 0 y = 2 }	
+			}
+		}
+		capital_scope = { 
+			create_unit = {
+				division = "name = \"“帝国边境”第1海军陆战队\" division_template = \"精灵海军陆战队\" start_experience_factor = 1" 
+				owner = ROOT
+			}
+			create_unit = {
+				division = "name = \"“落日余晖”第2海军陆战队\" division_template = \"精灵海军陆战队\" start_experience_factor = 1" 
+				owner = ROOT
+			}
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+#回巢之鸟
+country_event = {
+	id = usa.147
+	title = usa.147.t
+	desc = usa.147.d
+	picture = GFX_usa_event_tohka_cross
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = USA.147.a
+		navy_experience = 25
+		add_tech_bonus = {
+				name = USA_throne_of_ocean
+				bonus = 1.0
+				uses = 1
+				ahead_reduction = 1
+				category = cv_tech
+			}
+			add_doctrine_cost_reduction = {
+				name = USA_Marine_propulsion
+				cost_reduction = 0.5
+				uses = 1
+				category = naval_doctrine
+			}
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+#本条二亚计划
+country_event = {
+	id = usa.148
+	title = usa.148.t
+	desc = usa.148.d
+	picture = GFX_usa_event_tohka_cross
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = USA.148.a
+		add_timed_idea = {
+			idea = USA_Honjo_Nia_plan
+			days = 360
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+#承诺的回报
+country_event = {
+	id = usa.149
+	title = usa.149.t
+	desc = usa.149.d
+	picture = GFX_usa_event_tohka_cross
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = USA.149.a
+		add_timed_idea = {
+			idea = USA_Promised_return
+			days = 720
+		}
+		random_owned_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+#不息的友谊
+country_event = {
+	id = usa.150
+	title = usa.150.t
+	desc = usa.150.d
+	picture = GFX_usa_event_tohka_cross
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = USA.150.a
+		random_owned_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+#################新闻#################
+#################新闻#################
+#################新闻#################
+
+#精灵国加入圣杯联邦
+news_event = {
+	id = usa.501
+	title = usa.501.t
+	desc = usa.501.d
+	picture = GFX_USA_news_event_NA_WAR_2
+	trigger = {
+		wants_world_news = yes
+	}
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = usa.501.a
+		trigger = {
+			or = {
+				tag = ENG
+				tag = USA
+			}
+		}
+	}
+	option = {
+		name = usa.501.b
+		trigger = {
+			NOT = {
+				or = {
+					tag = ENG
+					tag = USA
+				}
+			}
+		}
+	}
+}
+#精灵国宣布进行战争动员
+news_event = {
+	id = usa.502
+	title = usa.502.t
+	desc = usa.502.d
+	picture = GFX_USA_news_event_NA_WAR_2
+	trigger = {
+		wants_world_news = yes
+	}
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = usa.502.a
+		custom_effect_tooltip = USA_tooltip_NA_war_nearby
+		trigger = {
+			or = {
+				tag = NFA
+				tag = USA
+				tag = FRG
+				tag = CAN
+				tag = NGD
+			}
+		}
+	}
+	option = {
+		name = usa.502.b
+		trigger = {
+			NOT = { 
+				or = {
+					tag = NFA
+					tag = USA
+					tag = FRG
+					tag = CAN
+					tag = NGD
+				}
+		 	}
+		}
+	}
+}
+
+
+#我们去帮助圣杯
+
+# 精灵反转
+country_event = {
+	id = usa.199
+	title = usa.199.t
+	desc = usa.199.d
+	picture = GFX_report_event_usa_election_landon_roosevelt
+	is_triggered_only = no
+	fire_only_once = yes
+	trigger = {
+		TAG = USA
+		surrender_progress > 0.6
+	}
+	option = {
+		name = usa.199.a
+		custom_effect_tooltip = jinglingfanhzuan
+		hidden_effect = {
+			add_country_leader_trait = emo
+			if = {
+				limit = {
+					has_country_leader = {
+						ruling_only = yes
+						name = "时崎狂三"
+					}
+				}
+				create_country_leader = {
+					name = "狂狂帝"
+					desc = "POLITICS_THOMAS_DEWEY_DESC"
+					picture = "kuangkuangdi.dds"
+					expire = "1965.1.1"
+					ideology = liberalism
+					traits = {
+						emo
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_leader = {
+						ruling_only = yes
+						name = "鸢一折纸"
+					}
+				}
+				create_country_leader = {
+					name = "救世恶魔"
+					desc = "POLITICS_THOMAS_DEWEY_DESC"
+					picture = "jiushimowang.dds"
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+						emo
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_leader = {
+						ruling_only = yes
+						name = "本条二亚"
+					}
+				}
+				create_country_leader = {
+					name = "神蚀篇帙"
+					desc = "POLITICS_THOMAS_DEWEY_DESC"
+					picture = "shenshipianzhi.dds"
+					expire = "1965.1.1"
+					ideology = fascism_ideology
+					traits = {
+						emo
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_leader = {
+						ruling_only = yes
+						name = "夜刀神十香"
+					}
+					has_government = democratic
+				}
+				create_country_leader = {
+					name = "暴虐公"
+					desc = "POLITICS_THOMAS_DEWEY_DESC"
+					picture = "baonuegong.dds"
+					expire = "1965.1.1"
+					ideology = conservatism
+					traits = {
+						emo
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_leader = {
+						ruling_only = yes
+						name = "夜刀神十香"
+					}
+					has_government = neutrality
+				}
+				create_country_leader = {
+					name = "暴虐公"
+					desc = "POLITICS_THOMAS_DEWEY_DESC"
+					picture = "baonuegong.dds"
+					expire = "1965.1.1"
+					ideology = despotism
+					traits = {
+						emo
+					}
+				}
+			}
+		}
+	}
+}
+
+#奢侈品进口
+country_event = {
+	id = usa.200
+	title = usa.200.t
+	desc = usa.200.d
+	picture = GFX_report_event_usa_election_roosevelt_wilkie
+	is_triggered_only = yes
+	option = {
+		name = usa.200.a
+		add_stability = 0.1
+		SHY = {
+			add_opinion_modifier = {
+				target = USA
+				modifier = usa_shechipin_love
+			}
+			country_event = {
+				days = 1
+				id = usa.201
+			}
+		}
+	}
+	option = {
+		name = usa.200.b
+		add_stability = 0.1
+		ITA = {
+			add_opinion_modifier = {
+				target = USA
+				modifier = usa_shechipin_love
+			}
+			country_event = {
+				days = 1
+				id = usa.201
+			}
+		}
+	}
+	option = {
+		name = usa.200.c
+		add_stability = 0.1
+		ENG = {
+			add_opinion_modifier = {
+				target = USA
+				modifier = usa_shechipin_love
+			}
+			country_event = {
+				days = 1
+				id = usa.201
+			}
+		}
+	}
+}
+
+#获得美国工厂
+country_event = {
+	id = usa.201
+	title = usa.201.t
+	desc = usa.201.d
+	picture = GFX_report_event_usa_election_landon_roosevelt
+	is_triggered_only = yes
+	option = {
+		name = usa.201.a
+		add_offsite_building = {
+			type = industrial_complex
+			level = 2
+		}
+	}
+}
+
+#异党支持率上升
+country_event = {
+	id = usa.202
+	title = usa.202.t
+	desc = usa.202.d
+	picture = GFX_report_event_molotov_signing_pact
+	is_triggered_only = yes
+	option = {
+		name = usa.202.a
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.05
+		}
+		USA_congress_small_support = yes
+	}
+	option = {
+		name = usa.202.b
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.05
+		}
+		USA_congress_small_opposition = yes
+	}
+	option = {
+		name = usa.202.c
+		add_popularity = {
+			ideology = communism
+			popularity = 0.05
+		}
+		USA_congress_small_opposition = yes
+	}
+}
+
+#圣杯国的条件
+country_event = {
+	id = usa.203
+	title = usa.203.t
+	desc = usa.203.d
+	picture = GFX_event_Saber
+	is_triggered_only = yes
+	option = {
+		name = usa.203.a
+		add_timed_idea = {
+			idea = daxiyangtiaoyue
+			days = 1300
+		}
+		ai_chance = {
+			factor = 20
+		}
+	}
+	option = {
+		name = usa.203.b
+		ENG = {
+			country_event = usa.204
+		}
+	}
+}
+
+#（圣杯）精灵同意公开魔法
+country_event = {
+	id = usa.204
+	title = usa.204.t
+	desc = usa.204.d
+	picture = GFX_report_event_usa_election_roosevelt_wilkie
+	is_triggered_only = yes
+	option = {
+		name = usa.204.a
+		add_ideas = zhangwojingling
+	}
+}
+
+#把岛卖给谁？
+country_event = {
+	id = usa.205
+	title = usa.205.t
+	desc = usa.205.d
+	picture = GFX_report_event_usa_macarthur_speech
+	is_triggered_only = yes
+	option = {
+		name = usa.205.a
+		every_country = {
+			limit = {
+				controls_state = 282
+			}
+			country_event = usa.206
+		}
+	}
+	option = {
+		name = usa.205.b
+		SHY = {
+			country_event = usa.206
+		}
+	}
+	option = {
+		name = usa.205.c
+		ENG = {
+			country_event = usa.206
+		}
+	}
+}
+
+#精灵国卖岛给我们
+country_event = {
+	id = usa.206
+	title = usa.206.t
+	desc = usa.206.d
+	picture = GFX_report_event_usa_macarthur_speech
+	is_triggered_only = yes
+	option = {
+		name = usa.206.a
+		add_opinion_modifier = {
+			target = USA
+			modifier = maidao_usa_love
+		}
+		transfer_state = 638
+		transfer_state = 632
+	}
+}
+
+#要求自由美洲
+country_event = {
+	id = usa.207
+	title = usa.207.t
+	desc = usa.207.d
+	picture = GFX_report_event_usa_heavy_cruiser
+	is_triggered_only = yes
+	option = {
+		name = usa.207.a
+		ai_chance = {
+			factor = 0
+		}
+		custom_effect_tooltip = shiqu_jialebi
+		hidden_effect = {
+			if = {
+				limit = {
+					CUB = {
+						is_subject_of = ENG
+					}
+				}
+				set_autonomy = {
+					target = CUB
+					autonomy_state = autonomy_free
+				}
+				ENG = {
+					remove_from_faction = CUB
+				}
+				USA = {
+					add_to_faction = CUB
+				}
+			}
+			if = {
+				limit = {
+					HAI = {
+						is_subject_of = ENG
+					}
+				}
+				set_autonomy = {
+					target = HAI
+					autonomy_state = autonomy_free
+				}
+				ENG = {
+					remove_from_faction = HAI
+				}
+				USA = {
+					add_to_faction = HAI
+				}
+			}
+			if = {
+				limit = {
+					DOM = {
+						is_subject_of = ENG
+					}
+				}
+				set_autonomy = {
+					target = DOM
+					autonomy_state = autonomy_free
+				}
+				ENG = {
+					remove_from_faction = DOM
+				}
+				USA = {
+					add_to_faction = DOM
+				}
+			}
+			if = {
+				limit = {
+					controls_state = 696
+				}
+				USA = {
+					transfer_state = 696
+				}
+			}
+		}
+	}
+	option = {
+		name = usa.207.b
+		ai_chance = {
+			factor = 100
+		}
+		add_opinion_modifier = {
+			target = USA
+			modifier = ziyou_usa_bad
+		}
+	}
+}
+
+#警告晴空
+country_event = {
+	id = usa.208
+	title = usa.208.t
+	desc = usa.208.d
+	picture = GFX_report_event_usa_election_roosevelt_dewey
+	is_triggered_only = yes
+	option = {
+		name = usa.208.a
+		ai_chance = {
+			factor = 20
+			modifier = {
+				add = 50
+				has_army_manpower = {
+					size < 399999
+				}
+			}
+		}
+		diplomatic_relation = {
+			country = USA
+			relation = non_aggression_pact
+			active = yes
+		}
+		random_owned_controlled_state = {
+			limit = {
+				arms_factory > 0
+			}
+			remove_building = {
+				type = arms_factory
+				level = 1
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				arms_factory > 0
+			}
+			remove_building = {
+				type = arms_factory
+				level = 1
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				arms_factory > 0
+			}
+			remove_building = {
+				type = arms_factory
+				level = 1
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				arms_factory > 0
+			}
+			remove_building = {
+				type = arms_factory
+				level = 1
+			}
+		}
+		random_owned_controlled_state = {
+			limit = {
+				arms_factory > 0
+			}
+			remove_building = {
+				type = arms_factory
+				level = 1
+			}
+		}
+	}
+	option = {
+		name = usa.208.b
+		ai_chance = {
+			factor = 40
+		}
+		add_political_power = -50
+		USA = {
+			country_event = usa.209
+		}
+	}
+}
+
+#晴空不接受条约
+country_event = {
+	id = usa.209
+	title = usa.209.t
+	desc = usa.209.d
+	picture = GFX_report_event_canada_army
+	is_triggered_only = yes
+	option = {
+		name = usa.209.a
+		add_ideas = deterrence
+		CAN = {
+			add_opinion_modifier = {
+				target = USA
+				modifier = embargo
+			}
+			add_opinion_modifier = {
+				target = USA
+				modifier = gc_usa_bad
+			}
+		}
+	}
+}
+
+#对墨西哥的领土要求
+country_event = {
+	id = usa.210
+	title = usa.210.t
+	desc = usa.210.d
+	picture = GFX_report_event_usa_macarthur_speech
+	is_triggered_only = yes
+	option = {
+		name = usa.210.a
+		if = {
+			limit = {
+				MEX = {
+					controls_state = 484
+				}
+			}
+			USA = {
+				transfer_state = 484
+			}
+		}
+		if = {
+			limit = {
+				MEX = {
+					controls_state = 483
+				}
+			}
+			USA = {
+				transfer_state = 483
+			}
+		}
+		if = {
+			limit = {
+				MEX = {
+					controls_state = 482
+				}
+			}
+			USA = {
+				transfer_state = 482
+			}
+		}
+		if = {
+			limit = {
+				MEX = {
+					controls_state = 480
+				}
+			}
+			USA = {
+				transfer_state = 480
+			}
+		}
+		if = {
+			limit = {
+				MEX = {
+					controls_state = 479
+				}
+			}
+			USA = {
+				transfer_state = 479
+			}
+		}
+	}
+	option = {
+		name = usa.210.b
+		USA = {
+			country_event = usa.211
+		}
+	}
+}
+
+#墨西哥找死
+country_event = {
+	id = usa.211
+	title = usa.211.t
+	desc = usa.211.d
+	picture = GFX_report_event_usa_macarthur_speech
+	is_triggered_only = yes
+	option = {
+		name = usa.211.a
+		484 = {
+			add_claim_by = USA
+		}
+		483 = {
+			add_claim_by = USA
+		}
+		482 = {
+			add_claim_by = USA
+		}
+		480 = {
+			add_claim_by = USA
+		}
+		create_wargoal = {
+			type = annex_everything
+			target = MEX
+		}
+	}
+}
+
+#共产边境管控
+country_event = {
+	id = usa.212
+	title = usa.212.t
+	desc = usa.212.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes
+	option = {
+		name = usa.212.a
+		CAN = {
+			add_opinion_modifier = {
+				target = USA
+				modifier = gc_usa_bad
+			}
+		}
+	}
+	option = {
+		name = usa.212.b
+		DVL = {
+			add_opinion_modifier = {
+				target = USA
+				modifier = gc_usa_bad
+			}
+		}
+		ENG = {
+			add_opinion_modifier = {
+				target = USA
+				modifier = gc_usa_bad
+			}
+		}
+	}
+	option = {
+		name = usa.212.c
+		FRA = {
+			add_opinion_modifier = {
+				target = USA
+				modifier = gc_usa_bad
+			}
+		}
+	}
+	option = {
+		name = usa.212.e
+		ITA = {
+			add_opinion_modifier = {
+				target = USA
+				modifier = gc_usa_bad
+			}
+		}
+		CCY = {
+			add_opinion_modifier = {
+				target = USA
+				modifier = gc_usa_bad
+			}
+		}
+	}
+}
+
+#精灵国内战
+country_event = {
+	id = usa.213
+	title = usa.213.t
+	desc = usa.213.d
+	picture = GFX_report_event_polish_tanks_01
+	is_triggered_only = yes
+	option = {
+		name = usa.213.a
+		custom_effect_tooltip = jinglingxianruneizhan
+		hidden_effect = {
+			set_capital = 363
+			start_civil_war = {
+				ruling_party = neutrality
+				ideology = democratic
+				size = 0.5
+				capital = 261
+				states = {
+					361
+					360
+					359
+					362
+					261
+					363
+					369
+					396
+					388
+					395
+					394
+					391
+					389
+					387
+					386
+					385
+					381
+					390
+					392
+					384
+				}
+				keep_unit_leaders_trigger = {
+					NOT = {
+						has_id = 333
+					}
+				}
+			}
+			set_cosmetic_tag = USA_neizhan
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.4
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.35
+			}
+			load_oob = "USA_neizhanjundui"
+			set_stability = 0.9
+			set_war_support = 0.8
+			random_other_country = {
+				limit = {
+					original_tag = USA
+					has_government = democratic
+				}
+				set_stability = 0.9
+				set_war_support = 0.8
+				load_oob = "USA_kuangsanweidui"
+				set_cosmetic_tag = USA_minzhu
+			}
+			country_event = news.746
+		}
+	}
+}
+
+#法西斯精灵国经济崩溃
+country_event = {
+	id = usa.214
+	title = usa.214.t
+	desc = usa.214.d
+	picture = GFX_report_event_usa_election_roosevelt_macarthur
+	is_triggered_only = yes
+	option = {
+		name = usa.214.a
+		add_stability = -0.3
+		war_support_factor = -0.5
+		add_political_power = -100
+		add_timed_idea = {
+			idea = great_depression
+			days = 365
+		}
+	}
+}
+
+#德国给我们提供支援
+country_event = {
+	id = usa.215
+	title = usa.215.t
+	desc = usa.215.d
+	picture = GFX_event_lisa
+	is_triggered_only = yes
+	option = {
+		name = usa.215.a
+		add_tech_bonus = {
+			name = land_doc_bonus
+			bonus = 0.5
+			uses = 1
+			category = armor
+		}
+		add_tech_bonus = {
+			name = land_doc_bonus
+			bonus = 0.5
+			uses = 1
+			category = ss_tech
+		}
+	}
+	option = {
+		name = usa.215.b
+		add_ideas = GER_junshiguwen
+	}
+	option = {
+		name = usa.215.c
+		add_stability = 0.05
+		add_political_power = 100
+	}
+}
+
+#精灵与圣杯和解
+country_event = {
+	id = usa.216
+	title = usa.216.t
+	desc = usa.216.d
+	picture = GFX_report_event_usa_macarthur_speech
+	is_triggered_only = yes
+	option = {
+		name = usa.216.a
+		add_political_power = 100
+		USA = {
+			country_event = usa.217
+		}
+	}
+}
+
+#精灵国边界非军事化
+country_event = {
+	id = usa.217
+	title = usa.217.t
+	desc = usa.217.d
+	picture = GFX_event_Saber
+	is_triggered_only = yes
+	option = {
+		name = usa.217.a
+		359 = {
+			set_demilitarized_zone = yes
+		}
+		360 = {
+			set_demilitarized_zone = yes
+		}
+		261 = {
+			set_demilitarized_zone = yes
+		}
+		396 = {
+			set_demilitarized_zone = yes
+		}
+		395 = {
+			set_demilitarized_zone = yes
+		}
+		394 = {
+			set_demilitarized_zone = yes
+		}
+		remove_state_core = 690
+		remove_state_core = 693
+		remove_state_core = 308
+		remove_state_core = 694
+		remove_ideas = jingjiyilai
+	}
+}
+
+#买精灵国的装备吗？
+country_event = {
+	id = usa.218
+	title = usa.218.t
+	desc = usa.218.d
+	picture = GFX_report_event_chinese_soldiers_02
+	is_triggered_only = yes
+	option = {
+		name = usa.218.a
+		add_political_power = -70
+		USA = {
+			send_equipment = {
+				target = ROOT
+				type = infantry_equipment
+				amount = 20000
+			}
+			send_equipment = {
+				target = ROOT
+				type = artillery_equipment
+				amount = 10000
+			}
+			add_political_power = 20
+		}
+	}
+	option = {
+		name = usa.218.b
+	}
+}

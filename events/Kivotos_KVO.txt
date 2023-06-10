@@ -1,0 +1,268 @@
+add_namespace = KVO
+country_event = {
+	id = KVO.1
+	title = KVO.1.t
+	desc = KVO.1.d
+	major = no
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = KVO.1.a
+		ai_chance = {
+			factor = 1
+		}
+		add_political_power = 25
+	}
+}
+country_event = {
+	id = KVO.2
+	title = KVO.2.t
+	desc = KVO.2.d
+	major = no
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = KVO.2.a
+		ai_chance = {
+			factor = 1
+		}
+		add_political_power = 25
+	}
+}
+country_event = {
+	id = KVO.3
+	title = KVO.3.t
+	desc = KVO.3.d
+	major = no
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = KVO.3.a
+		trigger = {
+			OR = {
+				is_ai = no
+				has_game_rule = { rule = Kivotos_ai_trust_sensai option = DEFAULT }
+				has_game_rule = { rule = Kivotos_ai_trust_sensai option = TRUST }
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.05
+		}
+		complete_national_focus = KVO_focus_5
+		hidden_effect = {
+			SCH = {
+				add_to_variable = {
+					SCH_sensei_KVO_prestige = 5
+				}
+				add_to_variable = {
+					SCH_sensei_TRY_prestige = 3
+				}
+				add_to_variable = {
+					SCH_sensei_GEH_prestige = 3
+				}
+				add_to_variable = {
+					SCH_sensei_MIL_prestige = 3
+				}
+				add_to_variable = {
+					SCH_sensei_SRT_prestige = 1
+				}
+				add_to_variable = {
+					SCH_sensei_VAL_prestige = 1
+				}
+			}
+		}
+	}
+	option = {
+		name = KVO.3.b
+		trigger = {
+			OR = {
+				is_ai = no
+				has_game_rule = { rule = Kivotos_ai_trust_sensai option = DEFAULT }
+				has_game_rule = { rule = Kivotos_ai_trust_sensai option = SUSPICION }
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.05
+		}
+		complete_national_focus = KVO_focus_4
+		hidden_effect = {
+			SCH = {
+				add_to_variable = {
+					SCH_sensei_KVO_prestige = 3
+				}
+				add_to_variable = {
+					SCH_sensei_TRY_prestige = 1
+				}
+				add_to_variable = {
+					SCH_sensei_GEH_prestige = 1
+				}
+				add_to_variable = {
+					SCH_sensei_MIL_prestige = 1
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = KVO.4
+	title = KVO.4.t
+	desc = KVO.4.d
+	major = no
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = KVO.4.a
+		ai_chance = {
+			factor = 1
+		}
+		complete_national_focus = KVO_focus_6
+	}
+}
+country_event = {
+	id = KVO.5
+	title = KVO.5.t
+	desc = KVO.5.d
+	major = no
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = KVO.5.a
+		trigger = {
+			has_completed_focus = KVO_focus_5
+		}
+		ai_chance = {
+			factor = 1
+		}
+		country_event = {
+			id = KVO.1001
+			hours = 1
+		}
+	}
+	option = {
+		name = KVO.5.a1
+		trigger = {
+			has_completed_focus = KVO_focus_4
+		}
+		ai_chance = {
+			factor = 1
+		}
+		country_event = {
+			id = KVO.1002
+			hours = 1
+		}
+	}
+}
+country_event = {
+	id = KVO.1001
+	title = KVO.1001.t
+	desc = KVO.1001.d
+	major = no
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = KVO.1001.a
+		ai_chance = {
+			factor = 1
+		}
+		complete_national_focus = KVO_focus_8
+		add_political_power = 10
+	}
+}
+country_event = {
+	id = KVO.1002
+	title = KVO.1002.t
+	desc = KVO.1002.d
+	major = no
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = KVO.1002.a
+		ai_chance = {
+			factor = 1
+		}
+		add_political_power = -25
+	}
+}
+country_event = {
+	id = KVO.6
+	title = KVO.6.t
+	desc = KVO.6.d
+	major = no
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = KVO.6.a
+		ai_chance = {
+			factor = 1
+		}
+		country_event = {
+			id = KVO.1001
+			hours = 1
+		}
+	}
+}
+country_event = {
+	id = KVO.7
+	title = KVO.7.t
+	desc = KVO.7.d
+	major = no
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = KVO.7.a
+		trigger = {
+			has_completed_focus = KVO_focus_5
+		}
+		ai_chance = {
+			factor = 1
+		}
+		SCH = {
+			add_state_core = 766
+			transfer_state = 766
+			hidden_effect = {
+				add_to_variable = {
+					SCH_sensei_SCH_prestige = 10
+				}
+			}
+		}
+		add_to_faction = SCH
+	}
+	option = {
+		name = KVO.7.a
+		trigger = {
+			has_completed_focus = KVO_focus_5
+		}
+		ai_chance = {
+			factor = 1
+		}
+		SCH = {
+			add_state_core = 766
+			transfer_state = 766
+			hidden_effect = {
+				add_to_variable = {
+					SCH_sensei_SCH_prestige = 10
+				}
+			}
+			change_tag_from = KVO
+		}
+		add_to_faction = SCH
+	}
+	option = {
+		name = KVO.7.a1
+		trigger = {
+			has_completed_focus = KVO_focus_4
+		}
+		ai_chance = {
+			factor = 1
+		}
+		set_global_flag = KVO_sensei_leisure
+	}
+}

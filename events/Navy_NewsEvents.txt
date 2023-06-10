@@ -1,0 +1,478 @@
+﻿###########################
+# News Events
+###########################
+add_namespace = navy
+#大和战列舰
+news_event = {
+	id = navy.1
+	title = navy.1.t
+	desc = navy.1.d
+	picture = GFX_evews_dahe
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = navy.1.a
+		trigger = {
+			tag = JAP
+		}
+	}
+	option = {
+		name = navy.1.b
+		trigger = {
+			OR = {
+				tag = ENG
+				has_government = democratic
+			}
+			JAP = {
+				has_government = democratic
+			}
+			NOT = {
+				tag = JAP
+			}
+		}
+	}
+	option = {
+		name = navy.1.c
+		trigger = {
+			has_government = fascism
+			NOT = {
+				tag = JAP
+			}
+		}
+	}
+	option = {
+		name = navy.1.e
+		trigger = {
+			NOT = {
+				has_government = fascism
+			}
+			NOT = {
+				has_government = democratic
+			}
+			NOT = {
+				tag = JAP
+			}
+		}
+	}
+}
+
+#大凤航母
+news_event = {
+	id = navy.2
+	title = navy.2.t
+	desc = navy.2.d
+	picture = GFX_evews_dafeng
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = navy.2.a
+		trigger = {
+			tag = JAP
+		}
+	}
+	option = {
+		name = navy.2.b
+		trigger = {
+			OR = {
+				tag = ENG
+				has_government = democratic
+			}
+			JAP = {
+				has_government = democratic
+			}
+			NOT = {
+				tag = JAP
+			}
+		}
+	}
+	option = {
+		name = navy.2.c
+		trigger = {
+			has_government = fascism
+			NOT = {
+				tag = JAP
+			}
+		}
+	}
+	option = {
+		name = navy.2.e
+		trigger = {
+			NOT = {
+				has_government = fascism
+			}
+			NOT = {
+				has_government = democratic
+			}
+			NOT = {
+				tag = JAP
+			}
+		}
+	}
+}
+
+#俾斯麦
+news_event = {
+	id = navy.3
+	title = navy.3.t
+	desc = navy.3.d
+	picture = GFX_evews_bisimai
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = navy.3.a
+		trigger = {
+			tag = DVL
+		}
+	}
+	option = {
+		name = navy.3.b
+		trigger = {
+			OR = {
+				tag = ITA
+				has_government = fascism
+			}
+			DVL = {
+				has_government = fascism
+			}
+			NOT = {
+				tag = DVL
+			}
+		}
+	}
+	option = {
+		name = navy.3.c
+		trigger = {
+			has_government = democratic
+			NOT = {
+				tag = DVL
+			}
+		}
+	}
+	option = {
+		name = navy.3.e
+		trigger = {
+			NOT = {
+				has_government = fascism
+			}
+			NOT = {
+				has_government = democratic
+			}
+			NOT = {
+				tag = DVL
+			}
+		}
+	}
+}
+
+#齐柏林
+news_event = {
+	id = navy.4
+	title = navy.4.t
+	desc = navy.4.d
+	picture = GFX_evews_qibolin
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = navy.4.a
+		trigger = {
+			tag = DVL
+		}
+	}
+	option = {
+		name = navy.4.b
+		trigger = {
+			OR = {
+				tag = ITA
+				has_government = fascism
+			}
+			DVL = {
+				has_government = fascism
+			}
+			NOT = {
+				tag = DVL
+			}
+		}
+	}
+	option = {
+		name = navy.4.c
+		trigger = {
+			has_government = democratic
+			NOT = {
+				tag = DVL
+			}
+		}
+	}
+	option = {
+		name = navy.4.e
+		trigger = {
+			NOT = {
+				has_government = fascism
+			}
+			NOT = {
+				has_government = democratic
+			}
+			NOT = {
+				tag = DVL
+			}
+		}
+	}
+}
+
+#维内托
+news_event = {
+	id = navy.5
+	title = navy.5.t
+	desc = navy.5.d
+	picture = GFX_evews_weineituo
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = navy.5.a
+		trigger = {
+			tag = ITA
+		}
+	}
+	option = {
+		name = navy.5.b
+		trigger = {
+			OR = {
+				tag = DVL
+				has_government = fascism
+			}
+			ITA = {
+				has_government = fascism
+			}
+			NOT = {
+				tag = ITA
+			}
+		}
+	}
+	option = {
+		name = navy.5.c
+		trigger = {
+			has_government = democratic
+			NOT = {
+				tag = ITA
+			}
+		}
+	}
+	option = {
+		name = navy.5.e
+		trigger = {
+			NOT = {
+				has_government = fascism
+			}
+			NOT = {
+				has_government = democratic
+			}
+			NOT = {
+				tag = ITA
+			}
+		}
+	}
+}
+
+#天鹰
+news_event = {
+	id = navy.6
+	title = navy.6.t
+	desc = navy.6.d
+	picture = GFX_evews_tianying
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = navy.6.a
+		trigger = {
+			tag = ITA
+		}
+	}
+	option = {
+		name = navy.6.b
+		trigger = {
+			OR = {
+				tag = DVL
+				has_government = fascism
+			}
+			ITA = {
+				has_government = fascism
+			}
+			NOT = {
+				tag = ITA
+			}
+		}
+	}
+	option = {
+		name = navy.6.c
+		trigger = {
+			has_government = democratic
+			NOT = {
+				tag = ITA
+			}
+		}
+	}
+	option = {
+		name = navy.6.e
+		trigger = {
+			NOT = {
+				has_government = fascism
+			}
+			NOT = {
+				has_government = democratic
+			}
+			NOT = {
+				tag = ITA
+			}
+		}
+	}
+}
+
+#亚瑟
+news_event = {
+	id = navy.7
+	title = navy.7.t
+	desc = navy.7.d
+	picture = GFX_evews_yase
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = navy.7.a
+		trigger = {
+			tag = ENG
+		}
+	}
+	option = {
+		name = navy.7.b
+		trigger = {
+			OR = {
+				tag = USA
+				has_government = democratic
+			}
+			ENG = {
+				has_government = democratic
+			}
+			NOT = {
+				tag = ENG
+			}
+		}
+	}
+	option = {
+		name = navy.7.c
+		trigger = {
+			OR = {
+				has_government = fascism
+				has_government = communism
+			}
+			NOT = {
+				tag = ENG
+			}
+		}
+	}
+	option = {
+		name = navy.7.e
+		trigger = {
+			NOT = {
+				has_government = fascism
+			}
+			NOT = {
+				has_government = democratic
+			}
+			NOT = {
+				has_government = communism
+			}
+			NOT = {
+				tag = ENG
+			}
+		}
+	}
+}
+
+#伊甸
+news_event = {
+	id = navy.8
+	title = navy.8.t
+	desc = navy.8.d
+	picture = GFX_news_event_017
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = navy.8.a
+		trigger = {
+			tag = SHY
+		}
+	}
+	option = {
+		name = navy.8.b
+		trigger = {
+			OR = {
+				tag = USA
+				tag = ENG
+			}
+		}
+	}
+	option = {
+		name = navy.8.c
+		trigger = {
+			OR = {
+				tag = JAP
+				tag = AST
+			}
+		}
+	}
+	option = {
+		name = navy.8.e
+		trigger = {
+			NOT = {
+				tag = JAP
+				tag = AST
+				tag = USA
+				tag = ENG
+				tag = SHY
+			}
+		}
+	}
+}
+
+#梦魇
+news_event = {
+	id = navy.9
+	title = navy.9.t
+	desc = navy.9.d
+	picture = GFX_news_event_017
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = navy.9.a
+		trigger = {
+			tag = USA
+		}
+	}
+	option = {
+		name = navy.9.b
+		trigger = {
+			OR = {
+				tag = ITA
+				tag = DVL
+			}
+		}
+	}
+	option = {
+		name = navy.9.c
+		trigger = {
+			has_government = democratic
+			NOT = {
+				tag = USA
+			}
+		}
+	}
+	option = {
+		name = navy.9.e
+		trigger = {
+			NOT = {
+				tag = USA
+				tag = ENG
+				tag = ITA
+				tag = DVL
+			}
+		}
+	}
+}

@@ -1,0 +1,1720 @@
+add_namespace = deviluke
+country_event = {
+	#戴比内战
+	id = deviluke.11
+	title = deviluke.11.t
+	desc = deviluke.11.d
+	picture = GFX_event_DVL_AUS_refuse
+	is_triggered_only = yes
+	fire_only_once = yes
+	immediate = {
+		hidden_effect = {
+			DV1 = {
+				transfer_state = 59
+				transfer_state = 61
+				transfer_state = 781
+				transfer_state = 51
+				transfer_state = 57
+				transfer_state = 56
+				transfer_state = 58
+				transfer_state = 147
+				transfer_state = 62
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_2
+					amount = 40000
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 1000
+				}
+				add_manpower = 800000
+				inherit_technology = DVL
+				add_ideas = DVL_civil_war
+				division_template = {
+					name = "内战民兵团"
+					is_locked = yes
+					regiments = {
+						infantry = {
+							x = 0
+							y = 0
+						}
+						infantry = {
+							x = 0
+							y = 1
+						}
+						infantry = {
+							x = 0
+							y = 2
+						}
+						infantry = {
+							x = 0
+							y = 3
+						}
+					}
+				}
+				capital_scope = {
+					create_unit = {
+						division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+						owner = DV1
+					}
+					create_unit = {
+						division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+						owner = DV1
+					}
+					create_unit = {
+						division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+						owner = DV1
+					}
+					create_unit = {
+						division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+						owner = DV1
+					}
+					create_unit = {
+						division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+						owner = DV1
+					}
+					create_unit = {
+						division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+						owner = DV1
+					}
+					create_unit = {
+						division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+						owner = DV1
+					}
+					create_unit = {
+						division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+						owner = DV1
+					}
+					create_unit = {
+						division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+						owner = DV1
+					}
+					create_unit = {
+						division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+						owner = DV1
+					}
+				}
+			}
+			DV2 = {
+				transfer_state = 54
+				transfer_state = 60
+				transfer_state = 65
+				transfer_state = 52
+				transfer_state = 53
+				transfer_state = 55
+				transfer_state = 42
+				transfer_state = 780
+				transfer_state = 50
+				add_equipment_to_stockpile = {
+					type = infantry_equipment_2
+					amount = 40000
+				}
+				add_equipment_to_stockpile = {
+					type = support_equipment
+					amount = 1000
+				}
+				add_manpower = 800000
+				inherit_technology = DVL
+				add_ideas = DVL_civil_war
+				division_template = {
+					name = "内战民兵团"
+					is_locked = yes
+					regiments = {
+						infantry = {
+							x = 0
+							y = 0
+						}
+						infantry = {
+							x = 0
+							y = 1
+						}
+						infantry = {
+							x = 0
+							y = 2
+						}
+						infantry = {
+							x = 0
+							y = 3
+						}
+					}
+				}
+				capital_scope = {
+					create_unit = {
+						division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+						owner = DV2
+					}
+					create_unit = {
+						division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+						owner = DV2
+					}
+					create_unit = {
+						division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+						owner = DV2
+					}
+					create_unit = {
+						division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+						owner = DV2
+					}
+					create_unit = {
+						division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+						owner = DV2
+					}
+					create_unit = {
+						division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+						owner = DV2
+					}
+					create_unit = {
+						division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+						owner = DV2
+					}
+					create_unit = {
+						division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+						owner = DV2
+					}
+					create_unit = {
+						division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+						owner = DV2
+					}
+					create_unit = {
+						division = "name = \"内战民兵团\" division_template = \"内战民兵团\" start_experience_factor = 0"
+						owner = DV2
+					}
+				}
+			}
+			DVL = {
+				set_autonomy = {
+					target = HSF
+					autonomy_state = autonomy_free
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = DVL
+				}
+				add_core_of = DV1
+				add_core_of = DV2
+			}
+		}
+		HSF = {
+			leave_faction = yes
+		}
+	}
+	option = {
+		name = deviluke.11.a
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			DV1 = {
+				change_tag_from = DVL
+			}
+			DV2 = {
+				declare_war_on = {
+					target = DV1
+					type = annex_everything
+				}
+				news_event = {
+					id = deviluke.14
+					days = 2
+				}
+			}
+		}
+	}
+	option = {
+		name = deviluke.11.b
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			DV2 = {
+				change_tag_from = DVL
+			}
+			DV2 = {
+				declare_war_on = {
+					target = DV1
+					type = annex_everything
+				}
+				news_event = {
+					id = deviluke.14
+					days = 2
+				}
+			}
+		}
+	}
+	option = {
+		name = deviluke.11.c
+		ai_chance = {
+			factor = 10
+		}
+		hidden_effect = {
+			DV2 = {
+				declare_war_on = {
+					target = DV1
+					type = annex_everything
+				}
+				news_event = {
+					id = deviluke.14
+					days = 2
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	#梨斗赢得内战
+	id = deviluke.12
+	hidden = yes
+	trigger = {
+		country_exists = DV1
+		NOT = {
+			country_exists = DV2
+		}
+	}
+	fire_only_once = yes
+	immediate = {
+		hidden_effect = {
+			DVL = {
+				change_tag_from = DV1
+			}
+		}
+		DVL = {
+			add_ideas = DVL_rara_idea
+			annex_country = {
+				target = DV1
+				transfer_troops = yes
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			DVL_RITO = {
+				add_country_leader_role = {
+					country_leader = {
+						desc = "POLITICS_DVL_RITO1_DESC"
+						ideology = dvlism
+						traits = {
+						}
+						expire = "1999.1.1.1"
+						id = -1
+					}
+					promote_leader = yes
+				}
+			}
+			delete_unit_template_and_units = {
+				division_template = "内战民兵团"
+				disband = no				#will refund equipment and manpower
+			}
+			set_country_flag = lidou_win
+		}
+		every_state = {
+			limit = {
+				is_core_of = DV1
+			}
+			remove_core_of = DV1
+		}
+		every_state = {
+			limit = {
+				is_core_of = DV2
+			}
+			remove_core_of = DV2
+		}
+	}
+}
+
+country_event = {
+	#奇多赢得内战
+	id = deviluke.13
+	hidden = yes
+	trigger = {
+		country_exists = DV2
+		NOT = {
+			country_exists = DV1
+		}
+	}
+	fire_only_once = yes
+	immediate = {
+		hidden_effect = {
+			DVL = {
+				change_tag_from = DV2
+			}
+		}
+		DVL = {
+			annex_country = {
+				target = DV2
+				transfer_troops = yes
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			DVL_CHITO = {
+				add_country_leader_role = {
+					country_leader = {
+						desc = "POLITICS_DVL_CHITO_DESC"
+						ideology = dvlism
+						traits = {
+							prestige_leader
+						}
+						expire = "1999.1.1.1"
+						id = -1
+					}
+					promote_leader = yes
+				}
+			}
+			delete_unit_template_and_units = {
+				division_template = "内战民兵团"
+				disband = no				#will refund equipment and manpower
+			}
+			set_country_flag = qiduo_win
+		}
+		every_state = {
+			limit = {
+				is_core_of = DV1
+			}
+			remove_core_of = DV1
+		}
+		every_state = {
+			limit = {
+				is_core_of = DV2
+			}
+			remove_core_of = DV2
+		}
+	}
+}
+
+news_event = {
+	#戴比内战
+	id = deviluke.14
+	title = deviluke.14.t
+	desc = deviluke.14.d
+	picture = GFX_news_event_DVL_threaten
+	is_triggered_only = yes
+	major = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.14.a
+		trigger = {
+			tag = DV1
+		}
+	}
+	option = {
+		name = deviluke.14.b
+		trigger = {
+			tag = DV2
+		}
+	}
+	option = {
+		name = deviluke.14.c
+		trigger = {
+			tag = DVL
+		}
+	}
+	option = {
+		name = deviluke.14.e
+		trigger = {
+			NOT = {
+				tag = DVL
+			}
+			NOT = {
+				tag = DV1
+			}
+			NOT = {
+				tag = DV2
+			}
+		}
+	}
+}
+
+country_event = {
+	#皇女的怒火
+	id = deviluke.15
+	title = deviluke.15.t
+	desc = deviluke.15.d
+	picture = GFX_event_MGU_DVL_AGREE
+	trigger = {
+		date > 1936.5.30
+		country_exists = DV1
+		country_exists = DV2
+		tag = DVL
+	}
+	fire_only_once = no
+	option = {
+		name = deviluke.15.a
+		hidden_effect = {
+			DV2 = {
+				white_peace = {
+					tag = DV1
+					message = DV1_WIN_DV2_I
+				}
+			}
+			DVL = {
+				change_tag_from = DV1
+			}
+			DVL = {
+				annex_country = {
+					target = DV2
+					transfer_troops = yes
+				}
+				annex_country = {
+					target = DV1
+					transfer_troops = yes
+				}
+				add_ideas = DVL_rara_idea
+			}
+			every_state = {
+				limit = {
+					is_core_of = DV1
+				}
+				remove_core_of = DV1
+			}
+			every_state = {
+				limit = {
+					is_core_of = DV2
+				}
+				remove_core_of = DV2
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			DVL_RITO = {
+				add_country_leader_role = {
+					country_leader = {
+						desc = "POLITICS_DVL_RITO1_DESC"
+						ideology = dvlism
+						traits = {
+						}
+						expire = "1999.1.1.1"
+						id = -1
+					}
+					promote_leader = yes
+				}
+			}
+			delete_unit_template_and_units = {
+				division_template = "内战民兵团"
+				disband = no				#will refund equipment and manpower
+			}
+			set_country_flag = lidou_win
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				DV1 = {
+					is_ai = no
+				}
+				factor = 100
+			}
+			modifier = {
+				DV2 = {
+					is_ai = no
+				}
+				factor = 0
+			}
+		}
+	}
+	option = {
+		name = deviluke.15.b
+		hidden_effect = {
+			DV2 = {
+				white_peace = {
+					tag = DV1
+					message = DV2_WIN_DV1_I
+				}
+			}
+			DVL = {
+				change_tag_from = DV2
+			}
+			DVL = {
+				annex_country = {
+					target = DV2
+					transfer_troops = yes
+				}
+				annex_country = {
+					target = DV1
+					transfer_troops = yes
+				}
+			}
+			every_state = {
+				limit = {
+					is_core_of = DV1
+				}
+				remove_core_of = DV1
+			}
+			every_state = {
+				limit = {
+					is_core_of = DV2
+				}
+				remove_core_of = DV2
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			DVL_CHITO = {
+				add_country_leader_role = {
+					country_leader = {
+						desc = "POLITICS_DVL_CHITO_DESC"
+						ideology = dvlism
+						traits = {
+							prestige_leader
+						}
+						expire = "1999.1.1.1"
+						id = -1
+					}
+					promote_leader = yes
+				}
+			}
+			delete_unit_template_and_units = {
+				division_template = "内战民兵团"
+				disband = no				#will refund equipment and manpower
+			}
+			set_country_flag = qiduo_win
+		}
+		ai_chance = {
+			base = 10
+			modifier = {
+				DV2 = {
+					is_ai = no
+				}
+				factor = 100
+			}
+			modifier = {
+				DV1 = {
+					is_ai = no
+				}
+				factor = 0
+			}
+		}
+	}
+}
+
+country_event = {
+	#戴比路克要求我们臣服
+	id = deviluke.16
+	title = deviluke.16.t
+	desc = deviluke.16.d
+	picture = GFX_report_event_lithuania_army
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.16.a
+		ai_chance = {
+			factor = 100
+		}
+		DVL = {
+			country_event = {
+				id = deviluke.17
+				days = 1
+			}
+		}
+	}
+	option = {
+		name = deviluke.16.b
+		ai_chance = {
+			factor = 0
+		}
+		DVL = {
+			country_event = {
+				id = deviluke.18
+				days = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	#捷克斯洛伐克接受了我们的要求
+	id = deviluke.17
+	title = deviluke.17.t
+	desc = deviluke.17.d
+	picture = GFX_event_MGU_DVL_REFUSE
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.17.a
+		hidden_effect = {
+			HUN = {
+				transfer_state = 70
+				transfer_state = 73
+				add_ideas = {
+					HUN_DONGLUAN
+				}
+				set_country_flag = DONGLUAN
+			}
+			DVL = {
+				annex_country = {
+					target = CZE
+					transfer_troops = no
+				}
+			}
+			news_event = deviluke.24
+		}
+	}
+}
+
+country_event = {
+	#捷克斯洛伐克拒绝了我们的要求
+	id = deviluke.18
+	title = deviluke.18.t
+	desc = deviluke.18.d
+	picture = GFX_event_MGU_DVL_REFUSE
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.18.a
+		create_wargoal = {
+			target = CZE
+			type = annex_everything
+		}
+		HUN = {
+			create_wargoal = {
+				target = CZE
+				type = annex_everything
+			}
+			add_ideas = {
+				HUN_DONGLUAN
+			}
+			set_country_flag = DONGLUAN
+		}
+	}
+}
+
+country_event = {
+	#选择对立陶宛渗透程度
+	id = deviluke.19
+	title = deviluke.19.t
+	desc = deviluke.19.d
+	picture = GFX_event_DVL_LIT
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.19.a
+		ai_chance = {
+			factor = 75
+		}
+		news_event = news.1030
+	}
+	option = {
+		name = deviluke.19.b
+		ai_chance = {
+			factor = 25
+		}
+		hidden_effect = {
+			random_list = {
+				50 = {
+					news_event = news.1031
+				}
+				50 = {
+					news_event = news.1032
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	#戴比路克邀请伊甸
+	id = deviluke.20
+	title = deviluke.20.t
+	desc = deviluke.20.d
+	picture = GFX_event_MGU_DVL_AGREE
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.20.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				OR = {
+					has_government = democratic
+					has_government = communism
+					has_war_with = DVL
+				}
+			}
+		}
+		news_event = news.1045
+		SHY = {
+			give_military_access = DVL
+			give_guarantee = DVL
+			add_ideas = xeno_power			#制作中
+			add_opinion_modifier = {
+				target = DVL
+				modifier = DVL_SHY_SUPPORT
+			}
+		}
+		DVL = {
+			give_military_access = SHY
+			give_guarantee = SHY
+			country_event = deviluke.21
+			add_opinion_modifier = {
+				target = SHY
+				modifier = DVL_SHY_SUPPORT
+			}
+		}
+	}
+	option = {
+		name = deviluke.20.b
+		ai_chance = {
+			factor = 0
+		}
+		DVL = {
+			country_event = deviluke.22
+		}
+	}
+}
+
+country_event = {
+	#对方同意合作
+	id = deviluke.21
+	title = deviluke.21.t
+	desc = deviluke.21.d
+	picture = GFX_event_DVL_NPT_AGREE
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.21.a
+	}
+}
+
+country_event = {
+	#邀请遭拒绝
+	id = deviluke.22
+	title = deviluke.22.t
+	desc = deviluke.22.d
+	picture = GFX_event_DVL_AUS_refuse
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.22.a
+	}
+}
+
+country_event = {
+	#陛下的决定
+	id = deviluke.23
+	title = deviluke.23.t
+	desc = deviluke.23.d
+	picture = GFX_DVL_EMRER_IS_BUSY
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.23.a
+		complete_national_focus = DVL_51
+	}
+	option = {
+		name = deviluke.23.b
+		complete_national_focus = DVL_39
+		custom_effect_tooltip = DVL_39_01
+	}
+}
+
+news_event = {
+	#进军布拉格
+	id = deviluke.24
+	title = deviluke.24.t
+	desc = deviluke.24.d
+	picture = GFX_news_event_DVL_HSF_expand_be
+	is_triggered_only = yes
+	major = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.24.a
+		trigger = {
+			tag = DVL
+		}
+	}
+	option = {
+		name = deviluke.24.b
+		trigger = {
+			NOT = {
+				tag = DVL
+			}
+			NOT = {
+				tag = HUN
+			}
+		}
+	}
+	option = {
+		name = deviluke.24.c
+		trigger = {
+			tag = HUN
+		}
+	}
+}
+
+country_event = {
+	#“二等公民”的一日
+	id = deviluke.25
+	title = deviluke.25.t
+	desc = deviluke.25.d
+	picture = GFX_DVL_EMRER_IS_BUSY
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.25.a
+	}
+}
+
+country_event = {
+	#电影院的一夜
+	id = deviluke.26
+	title = deviluke.26.t
+	desc = deviluke.26.d
+	picture = GFX_DVL_EMRER_IS_BUS
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.26.a
+	}
+}
+
+country_event = {
+	#风靡全国的“德老鼠”
+	id = deviluke.27
+	title = deviluke.27.t
+	desc = deviluke.27.d
+	picture = GFX_DVL_EMRER_IS_BUS
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.27.a
+	}
+}
+
+country_event = {
+	#陆军军官会议
+	id = deviluke.28
+	title = deviluke.28.t
+	desc = deviluke.28.d
+	picture = GFX_DVL_EMRER_IS_BUS
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.28.a
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.8
+			uses = 3
+			category = cat_mobile_warfare
+		}
+		add_ideas = DVL_cat_mobile_warfare
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = deviluke.28.b
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.8
+			uses = 3
+			category = cat_superior_firepower
+		}
+		add_ideas = DVL_cat_superior_firepower
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = deviluke.28.c
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.8
+			uses = 3
+			category = cat_grand_battle_plan
+		}
+		add_ideas = DVL_cat_grand_battle_plan
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = deviluke.28.d
+		add_doctrine_cost_reduction = {
+			cost_reduction = 0.8
+			uses = 3
+			category = cat_mass_assault
+		}
+		add_ideas = DVL_cat_mass_assault
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+#####################
+country_event = {
+	#对付革新主义者
+	id = deviluke.29
+	title = deviluke.29.t
+	desc = deviluke.29.d
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.29.a
+		country_event = {
+			id = deviluke.30
+			days = 1
+		}
+	}
+}
+
+country_event = {
+	#  第一次戴比路克王室学术会议
+	id = deviluke.30
+	title = deviluke.30.t
+	desc = deviluke.30.d
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.30.a
+		add_popularity = {
+			ideology = communism
+			popularity = -0.05
+		}
+		country_event = {
+			id = deviluke.35
+			days = 1
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				has_country_leader = {
+					ruling_only = yes
+					name = "奇多·路西翁·戴比路克"
+				}
+				factor = 100
+			}
+		}
+	}
+	option = {
+		name = deviluke.30.b
+		add_popularity = {
+			ideology = communism
+			popularity = -0.05
+		}
+		country_event = {
+			id = deviluke.31
+			days = 1
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				has_country_leader = {
+					ruling_only = yes
+					name = "结城梨斗"
+				}
+				factor = 100
+			}
+			modifier = {
+				has_country_leader = {
+					ruling_only = yes
+					name = "賽菲·米卡埃拉·戴比路克"
+				}
+				factor = 100
+			}
+		}
+	}
+}
+
+country_event = {
+	#  宣传活动的起步
+	id = deviluke.31
+	title = deviluke.31.t
+	desc = deviluke.31.d
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.31.a
+		add_popularity = {
+			ideology = communism
+			popularity = -0.05
+		}
+		country_event = {
+			id = deviluke.32
+			days = 1
+		}
+	}
+}
+
+country_event = {
+	#  皇家学会请求政府拨款
+	id = deviluke.32
+	title = deviluke.32.t
+	desc = deviluke.32.d
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.32.a
+		add_stability = -0.3
+		complete_national_focus = DVL_121
+		remove_ideas = DVL_kill_com
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = deviluke.32.b
+		add_political_power = -100
+		add_popularity = {
+			ideology = communism
+			popularity = -0.05
+		}
+		country_event = {
+			id = deviluke.33
+			days = 1
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	#  “开明专制”与“奴役之路”
+	id = deviluke.33
+	title = deviluke.33.t
+	desc = deviluke.33.d
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.33.a
+		add_stability = 0.1
+		country_event = {
+			id = deviluke.34
+			days = 1
+		}
+		ENG = {
+			country_event = {
+				id = deviluke.331
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				has_country_leader = {
+					ruling_only = yes
+					name = "賽菲·米卡埃拉·戴比路克"
+				}
+				factor = 100
+			}
+		}
+	}
+	option = {
+		name = deviluke.33.b
+		set_country_flag = qiyong_Friedrich_August_von_Hayek
+		add_ideas = Friedrich_August_von_Hayek
+		add_stability = -0.05
+		add_popularity = {
+			ideology = communism
+			popularity = -0.1
+		}
+		country_event = {
+			id = deviluke.34
+			days = 1
+		}
+		ai_chance = {
+			factor = 10
+			modifier = {
+				has_country_leader = {
+					ruling_only = yes
+					name = "结城梨斗"
+				}
+				factor = 100
+			}
+		}
+	}
+}
+
+country_event = {
+	#  弗里德里希·奥古斯特·冯·哈耶克到来 
+	id = deviluke.331
+	title = deviluke.331.t
+	desc = deviluke.331.d
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.331.a
+		ai_chance = {
+			factor = 0
+		}
+	}
+	option = {
+		name = deviluke.331.b
+		DVL = {
+			every_character = {
+				limit = {
+					is_character = DVL_Friedrich_August_von_Hayek
+				}
+				set_nationality = ROOT
+			}
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	#   回归正轨
+	id = deviluke.34
+	title = deviluke.34.t
+	desc = deviluke.34.d
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.34.a
+		add_popularity = {
+			ideology = communism
+			popularity = -0.1
+		}
+		complete_national_focus = DVL_121
+		remove_ideas = DVL_kill_com
+	}
+}
+
+country_event = {
+	#   准备武力镇压
+	id = deviluke.35
+	title = deviluke.35.t
+	desc = deviluke.35.d
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.35.a
+		custom_effect_tooltip = deviluke_35_1
+		add_popularity = {
+			ideology = communism
+			popularity = -0.1
+		}
+		country_event = {
+			id = deviluke.37
+			days = 1
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = deviluke.35.b
+		custom_effect_tooltip = deviluke_35_2
+		add_popularity = {
+			ideology = communism
+			popularity = -0.1
+		}
+		add_manpower = -1000
+		country_event = {
+			id = deviluke.36
+			days = 1
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	#   一切为了帝国
+	id = deviluke.36
+	title = deviluke.36.t
+	desc = deviluke.36.d
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.36.a
+		add_popularity = {
+			ideology = communism
+			popularity = -0.1
+		}
+		add_stability = -0.2
+		custom_effect_tooltip = deviluke_36_1
+		complete_national_focus = DVL_121
+		remove_ideas = DVL_kill_com
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = deviluke.36.b
+		custom_effect_tooltip = deviluke_36_2
+		add_popularity = {
+			ideology = communism
+			popularity = -0.1
+		}
+		add_stability = -0.1
+		country_event = {
+			id = deviluke.38
+			days = 1
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	#   另辟蹊径
+	id = deviluke.37
+	title = deviluke.37.t
+	desc = deviluke.37.d
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.37.a
+		country_event = {
+			id = deviluke.38
+			days = 1
+		}
+	}
+}
+
+country_event = {
+	#   黑名单
+	id = deviluke.38
+	title = deviluke.38.t
+	desc = deviluke.38.d
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.38.a
+		country_event = {
+			id = deviluke.39
+			days = 1
+		}
+	}
+}
+
+country_event = {
+	#   行动成功
+	id = deviluke.39
+	title = deviluke.39.t
+	desc = deviluke.39.d
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.39.a
+		add_manpower = -523
+		country_event = {
+			id = deviluke.40
+			days = 1
+		}
+	}
+}
+
+country_event = {
+	#   魔联的回应
+	id = deviluke.40
+	title = deviluke.40.t
+	desc = deviluke.40.d
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.40.a
+		country_event = {
+			id = deviluke.41
+			days = 1
+		}
+	}
+}
+
+country_event = {
+	#   回归正轨
+	id = deviluke.41
+	title = deviluke.41.t
+	desc = deviluke.41.d
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.41.a
+		complete_national_focus = DVL_121
+		remove_ideas = DVL_kill_com
+	}
+}
+
+country_event = {
+	#梨斗的身份
+	id = deviluke.42
+	title = deviluke.42.t
+	desc = deviluke.42.d
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.42.a
+		add_stability = 0.15
+	}
+	option = {
+		name = deviluke.42.b
+		add_stability = 0.15
+	}
+}
+
+country_event = {
+	#梨斗的身份
+	id = deviluke.43
+	title = deviluke.43.t
+	desc = deviluke.43.d
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.43.a
+		add_stability = 0.15
+	}
+}
+
+##################################
+country_event = {
+	#到达
+	id = deviluke.44
+	title = deviluke.44.t
+	desc = deviluke.44.d
+	picture = GFX_DVL_SAIFEI_1
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.44.a
+		ai_chance = {
+			factor = 10
+		}
+		country_event = {
+			id = deviluke.45
+			days = 1
+		}
+	}
+	option = {
+		name = deviluke.44.b
+		complete_national_focus = DVL_48
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	#温泉
+	id = deviluke.45
+	title = deviluke.45.t
+	desc = deviluke.45.d
+	picture = GFX_DVL_SAIFEI_2
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.45.a
+		country_event = {
+			id = deviluke.46
+			days = 1
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	#意外
+	id = deviluke.46
+	title = deviluke.46.t
+	desc = deviluke.46.d
+	picture = GFX_DVL_SAIFEI_3
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.46.a
+		country_event = {
+			id = deviluke.47
+			days = 1
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	#真容
+	id = deviluke.47
+	title = deviluke.47.t
+	desc = deviluke.47.d
+	picture = GFX_DVL_SAIFEI_4
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.47.a
+		country_event = {
+			id = deviluke.48
+			days = 1
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	#娜娜的朋友
+	id = deviluke.48
+	title = deviluke.48.t
+	desc = deviluke.48.d
+	picture = GFX_DVL_SAIFEI_5
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.48.a
+		country_event = {
+			id = deviluke.49
+			days = 1
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	#两面受敌？
+	id = deviluke.49
+	title = deviluke.49.t
+	desc = deviluke.49.d
+	picture = GFX_DVL_SAIFEI_6
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.49.a
+		country_event = {
+			id = deviluke.50
+			days = 1
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	#逃跑
+	id = deviluke.50
+	title = deviluke.50.t
+	desc = deviluke.50.d
+	picture = GFX_DVL_SAIFEI_7
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.50.a
+		country_event = {
+			id = deviluke.51
+			days = 1
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	#被凌辱
+	id = deviluke.51
+	title = deviluke.51.t
+	desc = deviluke.51.d
+	picture = GFX_DVL_SAIFEI_8
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.51.a
+		country_event = {
+			id = deviluke.52
+			days = 1
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	#逃脱
+	id = deviluke.52
+	title = deviluke.52.t
+	desc = deviluke.52.d
+	picture = GFX_DVL_SAIFEI_9
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.52.a
+		country_event = {
+			id = deviluke.53
+			days = 1
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	#落幕
+	id = deviluke.53
+	title = deviluke.53.t
+	desc = deviluke.53.d
+	picture = GFX_DVL_SAIFEI_10
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.53.a
+		set_country_flag = DVL_renkelidou
+		custom_effect_tooltip = DVL_renkelidou_1
+		country_event = {
+			id = deviluke.54
+			days = 1
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	#离别
+	id = deviluke.54
+	title = deviluke.54.t
+	desc = deviluke.54.d
+	picture = GFX_DVL_SAIFEI_11
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.54.a
+		set_country_flag = DVL_zhichimengmeng
+		custom_effect_tooltip = DVL_zhichimengmeng_1
+		complete_national_focus = DVL_48
+		ai_chance = {
+			factor = 10
+		}
+	}
+}
+
+country_event = {
+	#光荣和平？
+	id = deviluke.55
+	title = deviluke.55.t
+	desc = deviluke.55.d
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.55.a
+		add_stability = -0.1
+		ENG_great_peace = yes
+		set_global_flag = ENG_great_peace
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = deviluke.55.b
+		add_war_support = 0.1
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	#与戴比路克的和平？
+	id = deviluke.56
+	title = deviluke.56.t
+	desc = deviluke.56.d
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.56.a
+		add_stability = -0.1
+		white_peace = DVL
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = deviluke.56.b
+		leave_faction = yes
+		DVL = {
+			declare_war_on = {
+				target = ROOT
+				type = annex_everything
+			}
+		}
+		add_war_support = 0.1
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	#与外星人的联盟？
+	id = deviluke.57
+	title = deviluke.57.t
+	desc = deviluke.57.d
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.57.a
+		ENG = {
+			every_subject_country = {
+				PREV = {
+					set_autonomy = {
+						target = PREV
+						autonomy_state = autonomy_free
+					}
+				}
+			}
+			leave_faction = yes
+		}
+		ENG = {
+			set_autonomy = {
+				target = ENF
+				autonomy_state = autonomy_reichskommissariat
+			}
+		}
+		DVL = {
+			add_to_faction = ROOT
+		}
+		DVL = {
+			set_faction_name = "圣代同萌"
+		}
+		add_stability = -0.1
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = deviluke.57.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+###############测试
+country_event = {
+	id = deviluke.2001
+	title = deviluke.2001.t
+	desc = deviluke.2001.d
+	picture = GFX_event_DVL_AUS_refuse
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = deviluke.2001.a
+		SOV = {
+			add_ideas = MGU_economic
+		}
+	}
+}
+
+country_event = {
+	id = deviluke.2002
+	title = deviluke.2001.t
+	desc = deviluke.2001.d
+	picture = GFX_event_DVL_AUS_refuse
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		set_country_flag = HSF_coming
+	}
+}

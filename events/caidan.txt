@@ -1,0 +1,299 @@
+﻿###########################
+# caidan Events
+###########################
+add_namespace = caidan
+# 希尔薇
+country_event = {
+	id = caidan.1
+	title = caidan.1.t
+	desc = caidan.1.d
+	picture = GFX_news_event_xierwei
+	is_triggered_only = no
+	fire_only_once = yes
+	trigger = {
+		is_ai = no
+		NOT = {
+			tag = DVL
+			has_government = fascism
+		}
+		date < 1942.1.1
+		controls_state = 5
+		num_of_factories > 100
+		has_stability > 0.85
+	}
+	option = {
+		name = caidan.1.a
+		create_corps_commander = {
+			name = "希尔薇"
+			portrait_path = "gfx/leaders/caidan/xierwei.dds"
+			traits = {
+				inspirational_leader
+				organisational_leader
+				panzer_leader
+			}
+			skill = 5
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 4
+			logistics_skill = 5
+		}
+	}
+}
+
+# 尼洛维娅
+country_event = {
+	id = caidan.2
+	title = caidan.2.t
+	desc = caidan.2.d
+	picture = GFX_news_event_xierwei
+	is_triggered_only = no
+	fire_only_once = yes
+	trigger = {
+		is_ai = no
+		NOT = {
+			tag = DVL
+			tag = RAJ
+			tag = ENG
+			tag = FRA
+		}
+		controls_state = 422
+	}
+	option = {
+		name = caidan.2.a
+		create_navy_leader = {
+			name = "尼洛维娅"
+			portrait_path = "gfx/leaders/caidan/niya.dds"
+			traits = {
+				navy_media_personality
+				ironside
+				spotter
+				chief_engineer
+			}
+			skill = 5
+			attack_skill = 4
+			defense_skill = 4
+			maneuvering_skill = 3
+			coordination_skill = 3
+		}
+	}
+}
+
+# 冬马&雪菜
+country_event = {
+	id = caidan.3
+	title = caidan.3.t
+	desc = caidan.3.d
+	picture = GFX_evews_baixue
+	is_triggered_only = no
+	fire_only_once = yes
+	trigger = {
+		is_ai = no
+		original_tag = JAP
+		OR = {
+			AND = {
+				date > 1936.12.1
+				date < 1937.3.1
+			}
+			AND = {
+				date > 1937.12.1
+				date < 1938.3.1
+			}
+			AND = {
+				date > 1938.12.1
+				date < 1939.3.1
+			}
+			AND = {
+				date > 1939.12.1
+				date < 1934.3.1
+			}
+		}
+		divisions_in_state = {
+			type = infantry
+			size > 1
+			state = 655
+		}
+		divisions_in_state = {
+			type = infantry
+			size > 1
+			state = 555
+		}
+	}
+	mean_time_to_happen = {
+		days = 40
+	}
+	option = {
+		name = caidan.3.a
+		create_corps_commander = {
+			name = "冬马和纱"
+			portrait_path = "gfx/leaders/caidan/dongma.dds"
+			traits = {
+				infantry_officer
+				winter_specialist
+			}
+			skill = 3
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+		add_ideas = baixuejia
+	}
+	option = {
+		name = caidan.3.b
+		create_corps_commander = {
+			name = "小木曾雪菜"
+			portrait_path = "gfx/leaders/caidan/xuecai.dds"
+			traits = {
+				inflexible_strategist
+				winter_specialist
+			}
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+		add_ideas = baixuejia
+	}
+}
+
+###初音未来
+country_event = {
+	id = caidan.4
+	title = caidan.4.t
+	desc = caidan.4.d
+	picture = GFX_evews_chuyin
+	is_triggered_only = no
+	fire_only_once = yes
+	trigger = {
+		date > 1945.1.1
+		has_ai = no
+		has_government = democratic
+		has_war = yes
+		has_army_manpower = {
+			size > 999999
+		}
+		NOT = {
+			has_idea = scraping_the_barrel
+			has_idea = all_adults_serve
+		}
+	}
+	option = {
+		name = caidan.4.a
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = 0.1
+		add_war_support = 0.1
+		create_corps_commander = {
+			name = "初音未来"
+			portrait_path = "gfx/leaders/caidan/mi_ku.dds"
+			traits = {
+				media_personality
+			}
+			skill = 5
+			attack_skill = 5
+			defense_skill = 5
+			planning_skill = 5
+			logistics_skill = 5
+		}
+	}
+}
+
+####阿荣####
+country_event = {
+	id = caidan.5
+	title = caidan.5.t
+	desc = caidan.5.d
+	picture = GFX_evews_fushihui
+	is_triggered_only = no
+	fire_only_once = yes
+	trigger = {
+		has_ai = no
+		tag = SHY
+		has_completed_focus = SHY_43
+		has_political_power > 150
+		has_stability > 0.85
+		OR = {
+			JAP = {
+				is_subject_of = SHY
+				owns_state = 282
+			}
+			SHY = {
+				owns_state = 282
+			}
+		}
+	}
+	option = {
+		name = caidan.5.a
+		ai_chance = {
+			factor = 10
+		}
+		create_corps_commander = {
+			name = "阿荣"
+			portrait_path = "gfx/leaders/caidan/arong.dds"
+			traits = {
+				brilliant_strategist
+				trait_cautious
+				trickster
+				commando
+				naval_invader
+			}
+			skill = 6
+			attack_skill = 6
+			defense_skill = 5
+			planning_skill = 5
+			logistics_skill = 4
+		}
+	}
+}
+
+####风见一姬####
+country_event = {
+	id = caidan.6
+	title = caidan.6.t
+	desc = caidan.6.d
+	picture = GFX_evews_guoshi
+	is_triggered_only = no
+	fire_only_once = yes
+	trigger = {
+		has_ai = no
+		tag = ENG
+		OR = {
+			owns_state = 182
+			owns_state = 186
+			owns_state = 47
+			owns_state = 185
+			owns_state = 731
+			owns_state = 184
+			owns_state = 187
+		}
+		POL = {
+			is_subject_of = ENG
+		}
+		NOT = {
+			has_government = democratic
+		}
+	}
+	option = {
+		name = caidan.6.a
+		ai_chance = {
+			factor = 10
+		}
+		create_corps_commander = {
+			name = "风见一姬"
+			portrait_path = "gfx/leaders/caidan/fengjianyiji.dds"
+			traits = {
+				harsh_leader
+				infantry_officer
+				cavalry_officer
+				armor_officer
+			}
+			skill = 6
+			attack_skill = 5
+			defense_skill = 4
+			planning_skill = 5
+			logistics_skill = 6
+		}
+	}
+}

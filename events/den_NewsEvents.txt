@@ -1,0 +1,340 @@
+﻿###########################
+# News Events
+###########################
+add_namespace = dennews
+# Befriend Germany
+news_event = {
+	id = dennews.2000
+	title = dennews.2000.t
+	desc = dennews.2000.d
+	picture = GFX_news_event_german_speech
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = dennews.2000.a
+		trigger = {
+			original_tag = DEN
+		}
+	}
+}
+
+news_event = {
+	id = dennews.2001
+	title = dennews.2001.t
+	desc = dennews.2001.d
+	picture = GFX_news_event_german_speech
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = dennews.2001.a
+		trigger = {
+			original_tag = DEN
+		}
+	}
+}
+
+# Befriend Sweden
+news_event = {
+	id = dennews.2002
+	title = dennews.2002.t
+	desc = dennews.2002.d
+	picture = GFX_news_event_german_speech
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = dennews.2002.a
+		trigger = {
+			original_tag = DEN
+		}
+	}
+}
+
+news_event = {
+	id = dennews.2003
+	title = dennews.2003.t
+	desc = dennews.2003.d
+	picture = GFX_news_event_german_speech
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = dennews.2003.a
+		trigger = {
+			original_tag = DEN
+		}
+	}
+}
+
+# Befriend Norway
+news_event = {
+	id = dennews.2004
+	title = dennews.2004.t
+	desc = dennews.2004.d
+	picture = GFX_news_event_german_speech
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = dennews.2004.a
+		trigger = {
+			original_tag = DEN
+		}
+	}
+}
+
+news_event = {
+	id = dennews.2005
+	title = dennews.2005.t
+	desc = dennews.2005.d
+	picture = GFX_news_event_german_speech
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = dennews.2005.a
+		trigger = {
+			original_tag = DEN
+		}
+	}
+}
+
+# Befriend Finland
+news_event = {
+	id = dennews.2006
+	title = dennews.2006.t
+	desc = dennews.2006.d
+	picture = GFX_news_event_german_speech
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = dennews.2006.a
+		trigger = {
+			original_tag = DEN
+		}
+	}
+}
+
+news_event = {
+	id = dennews.2007
+	title = dennews.2007.t
+	desc = dennews.2007.d
+	picture = GFX_news_event_german_speech
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = dennews.2007.a
+		trigger = {
+			original_tag = DEN
+		}
+	}
+}
+
+# Befriend France
+news_event = {
+	id = dennews.2008
+	title = dennews.2008.t
+	desc = dennews.2008.d
+	picture = GFX_news_event_german_speech
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = dennews.2008.a
+		trigger = {
+			original_tag = DEN
+		}
+	}
+}
+
+news_event = {
+	id = dennews.2009
+	title = dennews.2009.t
+	desc = dennews.2009.d
+	picture = GFX_news_event_german_speech
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = dennews.2009.a
+		trigger = {
+			original_tag = DEN
+		}
+	}
+}
+
+# Befriend Britain
+news_event = {
+	id = dennews.2010
+	title = dennews.2010.t
+	desc = dennews.2010.d
+	picture = GFX_news_event_german_speech
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = dennews.2010.a
+		trigger = {
+			original_tag = DEN
+		}
+	}
+}
+
+news_event = {
+	id = dennews.2011
+	title = dennews.2011.t
+	desc = dennews.2011.d
+	picture = GFX_news_event_german_speech
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = dennews.2011.a
+		trigger = {
+			original_tag = DEN
+		}
+	}
+}
+
+# International Struggle
+country_event = {
+	id = dennews.2012
+	title = dennews.2012.t
+	desc = dennews.2012.d
+	is_triggered_only = yes
+	option = {
+		name = dennews.2012.a
+		trigger = {
+			original_tag = DEN
+		}
+	}
+}
+
+country_event = {
+	id = dennews.2013
+	title = dennews.2013.t
+	desc = dennews.2013.d
+	is_triggered_only = yes
+	option = {
+		name = dennews.2013.a
+		trigger = {
+			original_tag = DEN
+		}
+	}
+}
+
+# Swedish Brotherhood
+news_event = {
+	id = dennews.2014
+	title = dennews.2014.t
+	desc = dennews.2014.d
+	picture = GFX_news_event_german_speech
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = dennews.2014.a
+		trigger = {
+			original_tag = DEN
+		}
+	}
+}
+
+news_event = {
+	id = dennews.2015
+	title = dennews.2015.t
+	desc = dennews.2015.d
+	picture = GFX_news_event_german_speech
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = dennews.2015.a
+		trigger = {
+			original_tag = DEN
+		}
+	}
+}
+
+# Norwegian Brotherhood
+news_event = {
+	id = dennews.2016
+	title = dennews.2016.t
+	desc = dennews.2016.d
+	picture = GFX_news_event_german_speech
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = dennews.2016.a
+		trigger = {
+			original_tag = DEN
+		}
+	}
+}
+
+news_event = {
+	id = dennews.2017
+	title = dennews.2017.t
+	desc = dennews.2017.d
+	picture = GFX_news_event_german_speech
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = dennews.2017.a
+		trigger = {
+			original_tag = DEN
+		}
+	}
+}
+
+# Finnish Brotherhood
+news_event = {
+	id = dennews.2018
+	title = dennews.2018.t
+	desc = dennews.2018.d
+	picture = GFX_news_event_german_speech
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = dennews.2018.a
+		trigger = {
+			original_tag = DEN
+		}
+	}
+}
+
+news_event = {
+	id = dennews.2019
+	title = dennews.2019.t
+	desc = dennews.2019.d
+	picture = GFX_news_event_german_speech
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = dennews.2019.a
+		trigger = {
+			original_tag = DEN
+		}
+	}
+}
+
+# Denmark Join Allies
+news_event = {
+	id = dennews.1002
+	title = dennews.1002.t
+	desc = dennews.1002.d
+	picture = GFX_news_event_german_speech
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = dennews.1002.a
+		trigger = {
+			original_tag = DEN
+		}
+	}
+}
+
+news_event = {
+	id = dennews.2020
+	title = dennews.2020.t
+	desc = dennews.2020.d
+	picture = GFX_news_event_german_speech
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = dennews.2020.a
+		trigger = {
+			original_tag = DEN
+		}
+	}
+}

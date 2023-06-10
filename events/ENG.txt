@@ -1,0 +1,162 @@
+add_namespace = eng
+add_namespace = ENG_news
+news_event = {
+	id = ENG_news.1
+	picture = GFX_event_big_depression
+	title = ENG_news.1.t
+	desc = ENG_news.1.d
+	is_triggered_only = yes
+	#fire_only_once = yes 
+	major = yes
+	immediate = {
+		set_global_flag = THE_BIG_DEPRESSION_has_come
+	}
+	option = {
+		name = ENG_news.1.a
+		trigger = {
+			tag = ENG
+		}
+		set_country_flag = super_event_THE_BIG_DEPRESSION
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+	}
+	option = {
+		name = ENG_news.1.b
+		set_country_flag = super_event_THE_BIG_DEPRESSION
+		set_country_flag = adorable_heart_Super_Event_Visible
+		adorable_heart_fire_super_event = yes
+		trigger = {
+			NOT = {
+				tag = ENG
+			}
+		}
+	}
+}
+
+news_event = {
+	id = eng.666
+	title = eng.666.t
+	desc = eng.666.d
+	picture = GFX_news_event_ENG_PRISONER_1
+	fire_only_once = no
+	major = yes
+	trigger = {
+		ENG = {
+			is_subject = no
+			surrender_progress > 0.8
+			NOT = {
+				has_country_flag = has_capitulated
+			}
+		}
+	}
+	immediate = {
+		every_country = {
+			limit = {
+				is_in_faction_with = ENG
+				not = {
+					tag = ENG
+				}
+			}
+			set_country_flag = former_eng_country
+			#faction_collapse_member_peace_effect = yes
+		}
+		# ENG = {
+		# 	set_country_flag = has_capitulated
+		# 	dismantle_faction = yes
+		# }
+		ENG_JIETI = yes
+		every_state = {
+			limit = {
+				is_controlled_by = ENG
+				is_core_of = CAN
+			}
+			CAN = {
+				transfer_state = PREV
+			}
+		}
+		every_state = {
+			limit = {
+				is_controlled_by = ENG
+				is_core_of = RAJ
+			}
+			RAJ = {
+				transfer_state = PREV
+			}
+		}
+		every_state = {
+			limit = {
+				is_controlled_by = ENG
+				is_core_of = NPT
+			}
+			NPT = {
+				transfer_state = PREV
+			}
+		}
+	}
+	option = {
+		name = eng.666.a
+		#set_country_flag = win_eng
+		trigger = {
+			has_war_with = ENG
+		}
+	}
+	option = {
+		name = eng.666.b
+		# country_event = {
+		# 	id = eng.667
+		# }
+		# country_event = {
+		# 	id = eng.668
+		# }
+		#ENG_JIETI = yes
+		trigger = {
+			has_country_flag = former_eng_country
+			not = {
+				tag = ENG
+			}
+		}
+	}
+	option = {
+		name = eng.666.c
+		trigger = {
+			NOT = {
+				has_country_flag = former_eng_country
+			}
+			NOT = {
+				has_war_with = ENG
+			}
+			NOT = {
+				tag = ENG
+			}
+		}
+	}
+}
+
+country_event = {
+	id = eng.667
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		ENG = {
+			set_autonomy = {
+				target = ROOT
+				autonomy_state = autonomy_free
+			}
+			set_country_flag = former_eng_country_1
+		}
+	}
+}
+
+country_event = {
+	id = eng.668
+	hidden = yes
+	is_triggered_only = yes
+	immediate = {
+		# every_enemy_country = {
+		# 	start_peace_conference = {
+		# 		tag = PREV
+		# 		score_factor = 1
+		# 	}
+		# }
+	}
+}

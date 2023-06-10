@@ -1,0 +1,108 @@
+﻿###########################
+# turkey Events
+###########################
+add_namespace = gtmx_jueyi
+###########################
+# turkey Events
+###########################
+add_namespace = juezhan
+#德国精锐党卫军
+country_event = {
+	id = juezhan.1
+	title = juezhan.1.t
+	desc = juezhan.1.d
+	picture = GFX_event_juezhan_ger
+	trigger = {
+		TAG = DVL
+		has_war = yes
+		has_government = fascism
+		surrender_progress > 0.4
+		controls_state = 64
+	}
+	is_triggered_only = no
+	fire_only_once = yes
+	option = {
+		name = juezhan.1.a
+		custom_effect_tooltip = ger_juezhan
+		hidden_effect = {
+			if = {
+				limit = {
+					date > 1940.1.1
+				}
+				load_oob = GER_juezhan_1
+			}
+			else_if = {
+				load_oob = GER_juezhan_2
+			}
+		}
+	}
+}
+
+#圣杯荣耀亲卫军
+country_event = {
+	id = juezhan.2
+	title = juezhan.2.t
+	desc = juezhan.2.d
+	picture = GFX_event_juezhan_eng
+	trigger = {
+		TAG = ENG
+		has_war = yes
+		surrender_progress > 0.2
+		controls_state = 128
+	}
+	is_triggered_only = no
+	fire_only_once = yes
+	option = {
+		name = juezhan.2.a
+		custom_effect_tooltip = eng_juezhan
+		hidden_effect = {
+			load_oob = ENG_juezhan
+		}
+	}
+}
+
+#苏联近卫军
+country_event = {
+	id = juezhan.3
+	title = juezhan.3.t
+	desc = juezhan.3.d
+	picture = GFX_event_juezhan_sov
+	trigger = {
+		TAG = SOV
+		has_war = yes
+		surrender_progress > 0.5
+		controls_state = 291
+	}
+	is_triggered_only = no
+	fire_only_once = yes
+	option = {
+		name = juezhan.3.a
+		custom_effect_tooltip = sov_juezhan
+		hidden_effect = {
+			load_oob = SOV_juezhan
+		}
+	}
+}
+
+#精灵近卫军
+country_event = {
+	id = juezhan.4
+	title = juezhan.4.t
+	desc = juezhan.4.d
+	picture = GFX_event_juezhan_usa
+	trigger = {
+		TAG = USA
+		has_war = yes
+		surrender_progress > 0.45
+		controls_state = 368
+	}
+	is_triggered_only = no
+	fire_only_once = yes
+	option = {
+		name = juezhan.4.a
+		custom_effect_tooltip = usa_juezhan
+		hidden_effect = {
+			load_oob = USA_juezhan
+		}
+	}
+}

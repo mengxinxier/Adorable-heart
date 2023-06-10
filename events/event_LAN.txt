@@ -1,0 +1,1667 @@
+add_namespace = lan
+
+#彩蛋
+country_event = {
+	id = lan.caidan
+	title = lan.caidan.t
+	desc = lan.caidan.d
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = no
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	trigger = {
+		TAG = LAN
+		has_country_flag = yongyou_bingjiao_1
+		has_country_flag = yongyou_bingjiao_2
+	}
+	option = {
+		name = lan.caidan.a
+		if = {
+			limit = {
+				NOT = { has_government = fascism }
+			}
+			set_politics = {
+				ruling_party = fascism
+			}
+		}
+		add_field_marshal_role = {
+			character = LAN_Gasai_Yuno
+			traits={ brilliant_strategist harsh_leader trait_reckless trickster }
+			skill=7
+			attack_skill=7
+			defense_skill=5
+			planning_skill=4
+			logistics_skill=6
+			legacy_id=0
+		}
+		add_country_leader_role = {
+			character = LAN_Gasai_Yuno
+			promote_leader = yes
+			country_leader = {
+			  ideology = fascism_ideology
+			  expire = "1965.1.1.1"
+			  traits = { 2th time_fleeting edge_of_trance devour_hope }
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+
+}
+
+#墨丘利财团的成果
+country_event = {
+	id = lan.1
+	title = lan.1.t
+	desc = lan.1.d
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = no
+	fire_only_once = yes
+	mean_time_to_happen = { days = 1 }
+	trigger = {
+		TAG = LAN
+		num_of_factories > 50
+	}
+	
+	option = {
+		name = lan.1.a
+		random_owned_controlled_state = {
+			add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		ai_chance = {
+			base = 100
+		}
+		
+	}
+
+}
+#召集将军
+country_event = {
+	id = lan.2
+	title = lan.2.t
+	desc = lan.2.d
+	picture = GFX_report_event_usa_election_landon_roosevelt
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = lan.2.a
+		trigger = {
+			OR = {
+				has_completed_focus = LAN_ahead
+				AND = {
+					has_completed_focus = LAN_unforgettable_old_days
+					LAN_prisoner_threat_low = yes
+				}
+			}
+		}
+		complete_national_focus = LAN_General_Jun
+		ai_chance = {
+			base = 40
+		}
+		
+	}
+	option = {
+		name = lan.2.b
+		trigger = {
+			OR = {
+				has_completed_focus = LAN_ahead
+				AND = {
+					has_completed_focus = LAN_unforgettable_old_days
+					LAN_prisoner_threat_medium = yes
+				}
+			}
+		}
+		complete_national_focus = LAN_General_Makoto
+		ai_chance = {
+			base = 50
+		}
+		
+	}
+	option = {
+		name = lan.2.c
+		trigger = {
+			OR = {
+				has_completed_focus = LAN_ahead
+				AND = {
+					has_completed_focus = LAN_unforgettable_old_days
+					LAN_prisoner_threat_high = yes
+				}
+			}
+		}
+		complete_national_focus = LAN_General_Suzuna
+		ai_chance = {
+			base = 10
+		}
+		
+	}
+
+}
+#新年的皇室科研资金
+country_event = {
+	id = lan.3
+	title = lan.3.t
+	desc = lan.3.d
+	picture = GFX_report_event_usa_election_landon_roosevelt
+	
+	is_triggered_only = no
+	fire_only_once = yes
+	mean_time_to_happen = { days = 2 }
+	trigger = {
+		TAG = LAN
+		date > 1937.2.6
+		has_completed_focus = LAN_unforgettable_old_days
+		OR = {
+			LAN_Senri_Mana = { is_country_leader = yes }
+			LAN_Momochi_Kiruya = { is_country_leader = yes }
+		}
+	}
+	option = {
+		name = lan.3.a
+		add_tech_bonus = {
+			name = lan.3.t
+			bonus = 0.75
+			uses = 1
+			category = electronics
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = lan.3.b
+		add_tech_bonus = {
+			name = lan.3.t
+			bonus = 0.75
+			uses = 1
+			category = industry
+		}
+		ai_chance = {
+			base = 98
+		}
+	}
+	option = {
+		name = lan.3.c
+		add_tech_bonus = {
+			name = lan.3.t
+			bonus = 0.75
+			uses = 1
+			category = infantry_weapons
+			category = support_tech
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+
+}
+#安艺真琴的近卫军团
+country_event = {
+	id = lan.4
+	title = lan.4.t
+	desc = lan.4.d
+	picture = GFX_report_event_usa_election_landon_roosevelt
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = lan.4.a
+		custom_effect_tooltip = hidden_jinweijun
+		hidden_effect = {
+			division_template = {
+				name = "近卫军山地师"
+				division_names_group = LAN_MNT_01
+				regiments = {
+					mountaineers = { x = 0 y = 0 }
+					mountaineers = { x = 0 y = 1 }
+					mountaineers = { x = 0 y = 2 }
+					mountaineers = { x = 0 y = 3 }
+					mountaineers = { x = 0 y = 4 }
+					mountaineers = { x = 1 y = 0 }
+					mountaineers = { x = 1 y = 1 }
+					mountaineers = { x = 1 y = 2 }
+					mountaineers = { x = 1 y = 3 }
+					mountaineers = { x = 2 y = 0 }
+					mountaineers = { x = 2 y = 1 }
+					mountaineers = { x = 2 y = 2 }
+					mountaineers = { x = 2 y = 3 }
+					mountaineers = { x = 2 y = 4 }
+					artillery_brigade = { x = 3 y = 0 }
+					artillery_brigade = { x = 3 y = 1 }
+					artillery_brigade = { x = 3 y = 2 }
+					artillery_brigade = { x = 3 y = 3 }
+				}
+			}
+			random_owned_state = {
+				limit = { is_capital = yes }
+				create_unit = {
+					division = "division_template = \"近卫军山地师\" start_experience_factor = 0.3 start_equipment_factor = 1.0 start_manpower_factor = 1.0" 
+					owner = ROOT
+					count = 8
+				}
+			}
+		}
+		ai_chance = {
+			base = 99
+		}
+	}
+	option = {
+		name = lan.4.b
+		custom_effect_tooltip = hidden_jinweijun_1
+		hidden_effect = {
+			division_template = {
+				name = "摩托化近卫军"
+				division_names_group = LAN_MOT_02
+				regiments = {
+					motorized = { x = 0 y = 0 }
+					motorized = { x = 0 y = 1 }
+					motorized = { x = 0 y = 2 }
+					motorized = { x = 0 y = 3 }
+					motorized = { x = 0 y = 4 }
+					motorized = { x = 1 y = 0 }
+					motorized = { x = 1 y = 1 }
+					motorized = { x = 1 y = 2 }
+					motorized = { x = 1 y = 3 }
+					motorized = { x = 2 y = 0 }
+					motorized = { x = 2 y = 1 }
+					motorized = { x = 2 y = 2 }
+					motorized = { x = 2 y = 3 }
+					motorized = { x = 2 y = 4 }
+					mot_artillery_brigade = { x = 3 y = 0 }
+					mot_artillery_brigade = { x = 3 y = 1 }
+					mot_artillery_brigade = { x = 3 y = 2 }
+					mot_artillery_brigade = { x = 3 y = 3 }
+				}
+			}
+			random_owned_state = {
+				limit = { is_capital = yes }
+				create_unit = {
+					division = "division_template = \"摩托化近卫军\" start_experience_factor = 0.3 start_equipment_factor = 1.0 start_manpower_factor = 1.0" 
+					owner = ROOT
+					count = 4
+				}
+			}
+		}
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+#公会管理协会完成重组
+country_event = {
+	id = lan.5
+	title = lan.5.t
+	desc = lan.5.d
+	picture = GFX_report_event_usa_election_landon_roosevelt
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = lan.5.a
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+#无限饭团技术
+country_event = {
+	id = lan.6
+	title = lan.6.t
+	desc = lan.6.d
+	picture = GFX_lan_event_palace
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = {
+		name = lan.6.a
+		ai_chance = { base = 90 }
+		add_political_power = -50
+		add_stability = 0.05
+		random_owned_controlled_state = {
+			limit = {
+				free_building_slots = {
+					building = industrial_complex
+					size > 0
+					include_locked = yes
+				}
+				OR = {
+					is_in_home_area = yes
+					NOT = {
+						owner = {
+							any_owned_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size > 0
+									include_locked = yes
+								}
+								is_in_home_area = yes
+							}
+						}
+					}
+				}
+			}
+			add_extra_state_shared_building_slots = 2
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+			}
+		}
+		LAN = { add_political_power = 25 }
+	}
+	option = {
+		name = lan.6.b
+		ai_chance = { base = 10 }
+	}
+}
+
+country_event = {
+	id = lan.11
+	title = lan.11.t
+	desc = lan.11.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.11.a
+		#custom_effect_tooltip = LAN_ahead_tt
+		set_country_flag = LAN_ahead_flag
+		ai_chance = {
+			base = 100
+		}
+	}
+	option = {
+		name = lan.11.b
+		#custom_effect_tooltip = LAN_unforgettable_old_days_tt
+		set_country_flag = LAN_unforgettable_old_days_flag
+		ai_chance = {
+			base = 1
+		}
+	}
+}
+
+country_event = {
+	id = lan.12
+	title = lan.12.t
+	desc = lan.12.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { has_idea = LAN_if_last_battle }
+				remove_ideas = LAN_if_last_battle
+			}
+			add_ideas = civilian_economy
+		}
+	}
+	
+	option = {
+		name = lan.12.a
+		effect_tooltip = {
+			remove_ideas = LAN_if_last_battle
+			add_ideas = civilian_economy
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = lan.13
+	title = lan.13.t
+	desc = lan.13.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_politics = {
+				ruling_party = fascism
+				#last_election = "1936.1.1"
+				election_frequency = 48
+				elections_allowed = no
+			}
+			if = {
+				limit = { has_idea = LAN_if_last_battle }
+				remove_ideas = LAN_if_last_battle
+			}
+			add_ideas = low_economic_mobilisation
+		}
+	}
+	
+	option = {
+		name = lan.13.a
+		effect_tooltip = {
+			remove_ideas = LAN_if_last_battle
+			add_ideas = low_economic_mobilisation
+		}
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = lan.14
+	title = lan.14.t
+	desc = lan.14.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.14.a
+		set_country_flag = LAN_continue_united_line_flag
+		add_stability = 0.05
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = lan.14.b
+		set_country_flag = LAN_gvg_flag
+		add_political_power = 15
+		ai_chance = {
+			base = 100
+		}
+	}
+}
+
+country_event = {
+	id = lan.15
+	title = lan.15.t
+	desc = lan.15.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.15.a
+		ai_chance = {
+			base = 100
+		}
+		unlock_decision_category_tooltip = LAN_change_united_leader_decision_category
+	}
+}
+
+country_event = {
+	id = lan.16
+	title = lan.16.t
+	desc = lan.16.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.16.a
+		ai_chance = {
+			base = 100
+		}
+	}
+	
+	option = {
+		name = lan.16.b
+		ai_chance = {
+			base = 100
+		}
+		every_owned_state = {
+			limit = { has_state_flag = LAN_rubber_for_money_flag }
+			add_resource = {
+				type = rubber
+				amount = -5
+			}
+		}
+		every_owned_state = {
+			limit = { has_state_flag = LAN_aluminium_for_money_flag }
+			add_resource = {
+				type = aluminium
+				amount = -10
+			}
+		}
+		every_owned_state = {
+			limit = { has_state_flag = LAN_tungsten_for_money_flag }
+			add_resource = {
+				type = aluminium
+				amount = -10
+			}
+		}
+		every_owned_state = {
+			limit = { has_state_flag = LAN_steel_for_money_flag }
+			add_resource = {
+				type = steel
+				amount = -12
+			}
+		}
+		every_owned_state = {
+			limit = { has_state_flag = LAN_chromium_for_money_flag }
+			add_resource = {
+				type = chromium
+				amount = -6
+			}
+		}
+		every_owned_state = {
+			limit = { has_state_flag = LAN_oil_for_money_flag }
+			add_resource = {
+				type = oil
+				amount = -8
+			}
+		}
+		add_timed_idea = { idea = LAN_extra_money days = 180 }
+	}
+}
+
+country_event = {
+	id = lan.17
+	title = lan.17.t
+	desc = lan.17.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			every_owned_state = {
+				limit = { NOT = { is_core_of = FROM } }
+				add_core_of = FROM
+			}
+		}
+	}
+	
+	option = {
+		name = lan.17.a
+		ai_chance = {
+			base = 90
+		}
+		if = {
+			limit = { is_ai = no }
+			FROM = { change_tag_from = ROOT }
+		}
+		FROM = {
+			annex_country = {
+				target = ROOT
+				transfer_troops = yes
+			}
+		}
+	}
+	
+	option = {
+		name = lan.17.b
+		ai_chance = {
+			base = 10
+		}
+		if = {
+			limit = { has_dlc = "Together for Victory" }
+			FROM = {
+				set_autonomy = {
+					target = ROOT
+					autonomous_state = autonomy_integrated_puppet
+				}
+			}
+		}
+		else = {
+			FROM = { puppet = ROOT }
+		}
+	}
+}
+
+country_event = {
+	id = lan.18
+	title = lan.18.t
+	desc = lan.18.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.18.a
+		ai_chance = {
+			base = 60
+		}
+		FROM = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = LAN_major_promise
+			}
+			add_political_power = -25
+		}
+		add_political_power = 25
+	}
+	
+	option = {
+		name = lan.18.b
+		ai_chance = {
+			base = 40
+		}
+	}
+}
+
+country_event = {
+	id = lan.19
+	title = lan.19.t
+	desc = lan.19.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.19.a
+		ai_chance = {
+			base = 50
+		}
+		hidden_effect = {
+			FROM = {
+				subtract_from_variable = { LAN_id_days = 45 }
+				subtract_from_variable = { LAN_2_after_id_days = 45 }
+			}
+		}
+	}
+	
+	option = {
+		name = lan.19.b
+		ai_chance = {
+			base = 50
+		}
+		hidden_effect = {
+			FROM = {
+				add_to_variable = { LAN_id_days = 45 }
+				add_to_variable = { LAN_2_after_id_days = 45 }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = lan.20
+	title = lan.20.t
+	desc = lan.20.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			remove_ideas = {
+				LAN_weak_population_identity
+				LAN_weak_population_identity_1
+				LAN_weak_population_identity_2
+				LAN_weak_population_identity_3
+				LAN_weak_population_identity_4
+				LAN_weak_population_identity_5
+				LAN_weak_population_identity_6
+			}
+		}
+	}
+	
+	option = {
+		name = lan.20.a
+		ai_chance = {
+			base = 100
+		}
+		custom_effect_tooltip = LAN_datifying_tt_2
+		remove_mission = LAN_identity_is_disappearing_mission
+	}
+}
+
+country_event = {
+	id = lan.21
+	title = lan.21.t
+	desc = lan.21.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.21.a
+		ai_chance = {
+			base = 100
+		}
+		add_ideas = LAN_pay_for_sinai_pipe_EGY
+		effect_tooltip = {
+			FROM = {
+				add_ideas = LAN_pay_for_sinai_pipe_LAN
+			}
+		}
+	}
+	
+	option = {
+		name = lan.21.b
+		ai_chance = {
+			base = 100
+		}
+		add_political_power = 25
+	}
+}
+
+country_event = {
+	id = lan.22
+	title = lan.22.t
+	desc = lan.22.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.22.a
+		ai_chance = {
+			base = 100
+		}
+		add_ideas = LAN_pay_for_sinai_pipe_LAN
+	}
+}
+
+country_event = {
+	id = lan.23
+	title = lan.23.t
+	desc = lan.23.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.23.a
+		ai_chance = {
+			base = 100
+		}
+		add_political_power = -25
+	}
+}
+
+country_event = {
+	id = lan.24
+	title = lan.24.t
+	desc = lan.24.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.24.a
+		ai_chance = {
+			base = 100
+		}
+		add_ideas = LAN_trade_treaty_with_egy_idea
+		FROM = {
+			add_ideas = LAN_trade_treaty_with_egy_idea
+			add_political_power = -50
+		}
+	}
+	
+	option = {
+		name = lan.24.b
+		ai_chance = {
+			base = 100
+		}
+		add_political_power = 50
+	}
+}
+
+country_event = {
+	id = lan.25
+	title = lan.25.t
+	desc = lan.25.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.25.a
+		ai_chance = {
+			base = 100
+			modifier = {
+				factor = 0
+				SOV = {
+					OR = {
+						exists = no
+						communism < 0.5
+						AND = {
+							is_subject = yes
+							NOT = { is_subject_of = LAN }
+						}
+					}
+				}
+			}
+		}
+		SOV = {
+			add_opinion_modifier = {
+				target = ROOT
+				modifier = LAN_support_SOV
+			}
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.05
+		}
+	}
+	
+	option = {
+		name = lan.25.b
+		ai_chance = {
+			base = 100
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.10
+		}
+	}
+}
+
+country_event = {
+	id = lan.26
+	title = lan.26.t
+	desc = lan.26.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.26.a
+		ai_chance = {
+			base = 0
+		}
+		set_political_power = 0
+	}
+	
+	option = {
+		name = lan.26.b
+		ai_chance = {
+			base = 100
+		}
+		add_stability = -0.30
+		if = {
+			limit = { has_idea = LAN_super_industrialization_plan }
+			remove_ideas = LAN_super_industrialization_plan
+		}
+	}
+}
+
+country_event = {
+	id = lan.27
+	title = lan.27.t
+	desc = lan.27.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			every_owned_state = {
+				limit = { NOT = { is_core_of = FROM } }
+				add_core_of = FROM
+			}
+		}
+	}
+	
+	option = {
+		name = lan.27.a
+		ai_chance = {
+			base = 90
+		}
+		if = {
+			limit = { is_ai = no }
+			FROM = { change_tag_from = ROOT }
+		}
+		FROM = {
+			annex_country = {
+				target = ROOT
+				transfer_troops = yes
+			}
+		}
+	}
+	
+	option = {
+		name = lan.27.b
+		ai_chance = {
+			base = 10
+		}
+		leave_faction = yes
+		FROM = {
+			create_wargoal = {
+				target = ROOT
+				type = annex_everything
+			}
+		}
+	}
+}
+
+country_event = {
+	id = lan.31
+	title = lan.31.t
+	desc = lan.31.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.31.a
+		ai_chance = {
+			base = 90
+		}
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.20
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.05
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = -0.05
+		}
+		add_popularity = {
+			ideology = neutrality
+			popularity = -0.10
+		}
+	}
+}
+
+country_event = {
+	id = lan.32
+	title = lan.32.t
+	desc = lan.32.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.32.a
+		ai_chance = {
+			base = 90
+		}
+		add_ideas = LAN_guild_management_association
+	}
+}
+
+country_event = {
+	id = lan.33
+	title = lan.33.t
+	desc = lan.33.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = LAN_reorganize_guild_management_association_flag
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	
+	option = {
+		name = lan.33.a
+		ai_chance = {
+			base = 90
+		}
+		add_ideas = LAN_mass_of_GMA
+		custom_effect_tooltip = global_modifier_focus_tree_tt
+	}
+}
+
+country_event = {
+	id = lan.34
+	title = lan.34.t
+	desc = lan.34.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.34.a
+		ai_chance = {
+			base = 90
+		}
+		hidden_effect = {
+			set_country_flag = LAN_Kindness_Karyl
+		}
+	}
+	
+	option = {
+		name = lan.34.b
+		ai_chance = {
+			base = 90
+		}
+		hidden_effect = {
+			set_country_flag = LAN_loyal_Karyl
+		}
+	}
+}
+
+country_event = {
+	id = lan.35
+	title = lan.35.t
+	desc = lan.35.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.35.a
+		ai_chance = {
+			base = 90
+		}
+	}
+}
+
+country_event = {
+	id = lan.36
+	title = lan.36.t
+	desc = lan.36.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.36.a
+		ai_chance = {
+			base = 90
+		}
+		custom_effect_tooltip = LAN_event_36_tt
+		hidden_effect = { country_event = { id = lan.37 days = 7 } }
+	}
+	
+	option = {
+		name = lan.36.b
+		ai_chance = {
+			base = 90
+		}
+		custom_effect_tooltip = LAN_event_36_tt_2
+		hidden_effect = { country_event = { id = lan.38 days = 7 } }
+	}
+}
+
+country_event = {
+	id = lan.37
+	title = lan.37.t
+	desc = lan.37.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = LAN_coup_success_flag
+			mark_focus_tree_layout_dirty = yes
+		}
+	}
+	
+	option = {
+		name = lan.37.a
+		ai_chance = {
+			base = 90
+		}
+		custom_effect_tooltip = global_modifier_focus_tree_tt
+		hidden_effect = {
+			complete_national_focus = LAN_compassionate_conservatism
+		}
+	}
+}
+
+country_event = {
+	id = lan.38
+	title = lan.38.t
+	desc = lan.38.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.38.a
+		ai_chance = {
+			base = 90
+		}
+	}
+}
+
+country_event = {
+	id = lan.39
+	title = lan.39.t
+	desc = lan.39.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.39.a
+		ai_chance = {
+			base = 90
+		}
+	}
+}
+
+country_event = {
+	id = lan.40
+	title = lan.40.t
+	desc = lan.40.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.40.a
+		ai_chance = {
+			base = 90
+		}
+	}
+}
+
+country_event = {
+	id = lan.41
+	title = lan.41.t
+	desc = lan.41.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.41.a
+		ai_chance = {
+			base = 90
+		}
+	}
+}
+
+country_event = {
+	id = lan.42
+	title = lan.42.t
+	desc = lan.42.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.42.a
+		ai_chance = {
+			base = 90
+		}
+	}
+}
+
+country_event = {
+	id = lan.43
+	title = lan.43.t
+	desc = lan.43.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.43.a
+		ai_chance = {
+			base = 90
+		}
+		hidden_effect = {
+			set_politics = {
+				ruling_party = fascism
+				#last_election = "1936.1.1"
+				election_frequency = 240
+				elections_allowed = no
+			}
+		}
+		add_country_leader_role = {
+			character = LAN_Momochi_Kiruya
+			country_leader={
+				ideology = astraea_route_fascism_subtype
+				traits = { lord }
+				expire = "1965.1.1.1"
+				id = -1
+			}
+			promote_leader = yes
+		}
+	}
+}
+
+country_event = {
+	id = lan.44
+	title = lan.44.t
+	desc = lan.44.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.44.a
+		ai_chance = {
+			base = 90
+		}
+		give_military_access = FROM
+		give_guarantee = FROM
+		FROM = { give_military_access = ROOT }
+		FROM = { give_guarantee = ROOT }
+	}
+	
+	option = {
+		name = lan.44.b
+		ai_chance = {
+			base = 90
+		}
+	}
+}
+
+country_event = {
+	id = lan.45
+	title = lan.45.t
+	desc = lan.45.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.45.a
+		ai_chance = {
+			base = 90
+		}
+		add_political_power = -25
+		hidden_effect = { set_country_flag = LAN_ITA_refused_flag }
+	}
+}
+
+country_event = {
+	id = lan.46
+	title = lan.46.t
+	desc = lan.46.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.46.a
+		ai_chance = {
+			base = 90
+		}
+		add_ideas = LAN_ITA_good_arms_race
+		FROM = { add_ideas = LAN_ITA_good_arms_race }
+	}
+	
+	option = {
+		name = lan.46.b
+		ai_chance = {
+			base = 90
+		}
+		add_political_power = 25
+		FROM = { country_event = { id = lan.47 days = 1 } }
+	}
+}
+
+country_event = {
+	id = lan.47
+	title = lan.47.t
+	desc = lan.47.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.47.a
+		ai_chance = {
+			base = 90
+		}
+		add_political_power = -25
+		if = {
+			limit = { has_country_flag = LAN_ITA_refused_flag }
+			create_wargoal = {
+				target = FROM
+				type = puppet_wargoal_focus
+			}
+		}
+	}
+}
+
+country_event = {
+	id = lan.48
+	title = lan.48.t
+	desc = lan.48.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.48.a
+		ai_chance = {
+			base = 90
+		}
+		leave_faction = yes
+	}
+}
+
+country_event = {
+	id = lan.49
+	title = lan.49.t
+	desc = lan.49.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			every_owned_state = {
+				limit = { NOT = { is_core_of = FROM } }
+				add_core_of = FROM
+			}
+		}
+	}
+	
+	option = {
+		name = lan.49.a
+		ai_chance = {
+			base = 90
+		}
+		if = {
+			limit = { is_ai = no }
+			FROM = { change_tag_from = ROOT }
+		}
+		FROM = {
+			annex_country = {
+				target = ROOT
+				transfer_troops = yes
+			}
+		}
+	}
+	
+	option = {
+		name = lan.49.b
+		ai_chance = {
+			base = 90
+		}
+		FROM = {
+			create_wargoal = {
+				target = ROOT
+				type = annex_everything
+			}
+		}
+	}
+}
+
+country_event = {
+	id = lan.50
+	title = lan.50.t
+	desc = lan.50.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.50.a
+		ai_chance = {
+			base = 90
+		}
+		army_experience = 60
+		add_doctrine_cost_reduction = {
+			name = LAN_Kaiser_army
+			cost_reduction = 0.25
+			uses = 1
+			category = land_doctrine
+		}
+		add_ideas = LAN_Kaiser_army
+		hidden_effect = {
+			add_power_balance_value = {
+				id = LAN_power_struggle_bop
+				value = -0.15
+			}
+		}
+	}
+}
+
+country_event = {
+	id = lan.51
+	title = lan.51.t
+	desc = lan.51.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.51.a
+		ai_chance = {
+			base = 60
+		}
+		every_state = {
+			limit = {
+				is_on_continent = middle_east
+				is_core_of = ROOT
+			}
+			remove_core_of = ROOT
+			add_claim_by = ROOT
+			add_core_of = FROM
+			FROM = { transfer_state = PREV }
+		}
+		add_timed_idea = { idea = LAN_sinai_income days = 730 }
+		FROM = { country_event = { id = lan.52 days = 1 } }
+	}
+	
+	option = {
+		name = lan.51.b
+		ai_chance = {
+			base = 40
+		}
+		FROM = { country_event = { id = lan.52 days = 1 } }
+	}
+}
+
+country_event = {
+	id = lan.52
+	title = lan.52.t
+	desc = lan.52.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.52.a
+		ai_chance = {
+			base = 60
+		}
+		every_state = {
+			limit = {
+				is_on_continent = middle_east
+				is_core_of = FROM
+			}
+			remove_core_of = FROM
+			add_claim_by = FROM
+			add_core_of = ROOT
+			ROOT = { transfer_state = PREV }
+		}
+		add_timed_idea = { idea = LAN_pay_for_sinai days = 730 }
+	}
+}
+
+country_event = {
+	id = lan.53
+	title = lan.53.t
+	desc = lan.53.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.53.a
+		ai_chance = {
+			base = 60
+		}
+		add_political_power = -50
+	}
+	
+	option = {
+		name = lan.53.b
+		ai_chance = {
+			base = 40
+		}
+		create_wargoal = {
+			target = FROM
+			type = annex_everything
+		}
+	}
+}
+
+country_event = {
+	id = lan.101
+	title = lan.101.t
+	desc = lan.101.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = lan.101.a
+		ai_chance = {
+			base = 60
+		}
+		SAU = { inherit_technology = ROOT }
+		every_controlled_state = {
+			if = {
+				limit = { is_core_of = ROOT }
+				add_core_of = SAU
+			}
+		}
+		every_controlled_state = {
+			limit = { impassable = no }
+			SAU = { transfer_state = PREV }
+		}
+		every_other_country = {
+			limit = { is_subject_of = ROOT }
+			SAU = {
+				set_autonomy = {
+					target = PREV
+					autonomous_state = autonomy_puppet
+				}
+			}
+		}
+		if = {
+			limit = { ROOT = { is_faction_leader = yes } }
+			ROOT = { add_to_faction = SAU }
+			every_other_country = {
+				limit = { is_in_faction_with = ROOT }
+				set_country_flag = LAN_same_faction
+			}
+		}
+		else = {
+			ROOT = {
+				faction_leader = { add_to_faction = SAU }
+				every_other_country = {
+					limit = { is_subject_of = SAU }
+					ROOT = { faction_leader = { add_to_faction = PREV } }
+				}
+			}
+		}
+		hidden_effect = {
+			every_possible_country = {
+				limit = { has_character = LAN_Sakai_Naoto }
+				random_character = {
+					limit = { is_character = LAN_Sakai_Naoto }
+					set_nationality = SAU
+				}
+			}
+		}
+		SAU = {
+			add_ideas = LAN_new_country
+			change_tag_from = ROOT
+			hidden_effect = { country_event = { id = lan.102 days = 7 } }
+		}
+	}
+}
+
+country_event = {
+	id = lan.102
+	title = lan.102.t
+	desc = lan.102.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			SAU = {
+				annex_everything = {
+					target = LAN
+					transfer_troops = yes
+				}
+			}
+			if = {
+				limit = { any_other_country = { has_country_flag = LAN_same_faction } }
+				SAU = {
+					create_faction = "ArabicUnion"
+					every_other_country = {
+						limit = { has_country_flag = LAN_same_faction }
+						PREV = { add_to_faction = PREV }
+						clr_country_flag = LAN_same_faction
+					}
+					if = {
+						limit = { has_country_flag = LAN_same_faction }
+						clr_country_flag = LAN_same_faction
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = lan.102.a
+		ai_chance = {
+			base = 60
+		}
+		SAU = { country_event = { id = lan.103 days = 3 } }
+	}
+}
+
+country_event = {
+	id = lan.103
+	title = lan.103.t
+	desc = lan.103.desc
+	picture = GFX_report_event_tur_ataturk_death
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			set_popularities = {
+				democratic = 20
+				neutrality = 60
+				fascism = 10
+				communism = 10
+			}
+			set_politics = {
+				ruling_party = neutrality
+				elections_allowed = no
+			}
+		}
+	}
+	
+	option = {
+		name = lan.103.a
+		ai_chance = {
+			base = 40
+		}
+		add_political_power = 300
+	}
+	
+	option = {
+		name = lan.103.b
+		ai_chance = {
+			base = 60
+		}
+		add_country_leader_role = {
+			character = LAN_Sakai_Naoto
+			country_leader={
+				ideology=interim_government_subtype
+				traits={ knight_Sakai_Naoto }
+				expire="1965.1.1.1"
+				id=-1
+			}
+			promote_leader = yes
+		}
+	}
+}

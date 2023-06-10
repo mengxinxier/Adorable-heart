@@ -1,0 +1,84 @@
+add_namespace = welcome
+country_event = {
+	##大德意志
+	id = welcome.01
+	title = welcome.01.t
+	picture = GFX_GER_welcome
+	desc = welcome.01.d
+	is_triggered_only = yes
+	option = {
+		name = welcome.01.a
+		country_event = {
+			id = welcome.02
+		}
+	}
+	option = {
+		name = welcome.01.b
+		country_event = {
+			id = welcome.03
+		}
+	}
+	option = {
+		name = welcome.01.c
+		country_event = {
+			id = welcome.04
+		}
+	}
+	option = {
+		name = welcome.01.e
+	}
+}
+
+country_event = {
+	##奥地利
+	id = welcome.02
+	title = welcome.02.t
+	picture = GFX_GER_welcome
+	desc = welcome.02.d
+	is_triggered_only = yes
+	option = {
+		name = welcome.02.a
+		country_event = {
+			id = welcome.01
+		}
+	}
+	option = {
+		name = welcome.01.e
+	}
+}
+
+country_event = {
+	##戴比路克
+	id = welcome.03
+	title = welcome.03.t
+	picture = GFX_GER_welcome
+	desc = welcome.03.d
+	is_triggered_only = yes
+	option = {
+		name = welcome.02.a
+		country_event = {
+			id = welcome.01
+		}
+	}
+	option = {
+		name = welcome.01.e
+	}
+}
+
+country_event = {
+	##帝国海军部
+	id = welcome.04
+	title = welcome.04.t
+	picture = GFX_GER_welcome
+	desc = welcome.04.d
+	is_triggered_only = yes
+	option = {
+		name = welcome.02.a
+		country_event = {
+			id = welcome.01
+		}
+	}
+	option = {
+		name = welcome.01.e
+	}
+}

@@ -1,0 +1,289 @@
+add_namespace = CHL
+country_event = {
+	#
+	id = CHL.0001
+	title = CHL.0001.t
+	desc = CHL.0001.desc
+	#picture = GFX_GEU_Heisenberg_coming
+	is_triggered_only = yes
+	fire_only_once = no
+	option = {
+		name = CHL.0001.a
+		every_state = {
+			limit = {
+				is_on_continent = south_america
+			}
+			add_core_of = CHL
+			CHL = {
+				transfer_state = PREV
+			}
+		}
+		set_cosmetic_tag = CHL_com_gongshe
+		add_popularity = {
+			ideology = communism
+			popularity = 0.4
+		}
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = no
+		}
+	}
+	option = {
+		name = CHL.0001.b
+		CHL_Salvador_Allende = {
+			add_country_leader_role = {
+				country_leader = {
+					desc = ""
+					ideology = warm_syndicalism_group
+					traits = {
+					}
+					expire = "1999.1.1.1"
+					id = -1
+				}
+				promote_leader = yes
+			}
+		}
+	}
+}
+
+news_event = {
+	###南美联萌的解体
+	id = CHL.0002
+	title = CHL.0002.t
+	picture = GFX_news_event_german_inspect_troops
+	desc = CHL.0002.desc
+	trigger = {
+		wants_world_news = yes
+	}
+	immediate = {
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_in_faction_with = BRA
+					is_country_leader = yes
+				}
+				dismantle_faction = yes
+			}
+			every_country = {
+				limit = {
+					is_in_faction_with = BRA
+				}
+				leave_faction = yes
+			}
+		}
+	}
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = CHL.0002.a
+	}
+}
+
+country_event = {
+	id = CHL.0003
+	title = chile.44.t
+	desc = chile.44.desc
+	is_triggered_only = yes
+	option = {
+		name = chile.44.a
+		CHL = {
+			country_event = {
+				id = CHL.0004
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 0
+			modifier = {
+				is_subject_of = CHL
+				add = 100
+			}
+			modifier = {
+				add = 50
+				or = {
+					and = {
+						CHL = {
+							has_government = democratic
+						}
+						has_government = democratic
+					}
+					and = {
+						CHL = {
+							has_government = fascism
+						}
+						has_government = fascism
+					}
+					and = {
+						CHL = {
+							has_government = communism
+						}
+						has_government = communism
+					}
+					and = {
+						CHL = {
+							has_government = neutrality
+						}
+						has_government = neutrality
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = chile.44.b
+		leave_faction = yes
+		CHL = {
+			country_event = {
+				id = CHL.0005
+				days = 1
+			}
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				is_subject_of = CHL
+				add = -50
+			}
+			modifier = {
+				add = -50
+				or = {
+					and = {
+						CHL = {
+							has_government = democratic
+						}
+						has_government = democratic
+					}
+					and = {
+						CHL = {
+							has_government = fascism
+						}
+						has_government = fascism
+					}
+					and = {
+						CHL = {
+							has_government = communism
+						}
+						has_government = communism
+					}
+					and = {
+						CHL = {
+							has_government = neutrality
+						}
+						has_government = neutrality
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = CHL.0004
+	title = chile.45.t
+	is_triggered_only = yes
+	option = {
+		name = chile.45.a
+		every_state = {
+			limit = {
+				is_core_of = FROM
+			}
+			add_core_of = ROOT
+		}
+		annex_country = {
+			target = FROM
+			transfer_troops = yes
+		}
+		FROM = {
+			every_unit_leader = {
+				set_nationality = ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = CHL.0005
+	title = chile.46.t
+	is_triggered_only = yes
+	option = {
+		name = chile.46.a
+		create_wargoal = {
+			target = FROM
+			type = annex_everything
+		}
+		every_state = {
+			limit = {
+				is_core_of = FROM
+			}
+			add_claim_by = ROOT
+		}
+		ai_chance = {
+			factor = 10
+		}
+	}
+	option = {
+		name = chile.46.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+country_event = {
+	id = CHL.0006
+	title = CHL.0006.t
+	is_triggered_only = yes
+	option = {
+		name = CHL.0006.a
+		set_country_flag = Allende_WIN
+	}
+	option = {
+		name = CHL.0006.b
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+	}
+}
+
+country_event = {
+	id = CHL.2000
+	title = CHL.00026.t
+	is_triggered_only = yes
+	option = {
+		name = CHL.0006.a
+		set_cosmetic_tag = GER_north_am
+		set_politics = {
+			ruling_party = fascism
+		}
+		leave_faction = yes
+		every_state = {
+			limit = {
+				is_on_continent = south_america
+				not = {
+					is_core_of = BRA
+				}
+			}
+			add_core_of = CHL
+			CHL = {
+				transfer_state = PREV
+			}
+		}
+	}
+	option = {
+		name = CHL.0006.b
+		set_cosmetic_tag = CHL_ger_emper_grey
+		set_politics = {
+			ruling_party = neutrality
+		}
+		create_country_leader = {
+			name = "薇莲三世"
+			desc = ""
+			picture = "gfx/leaders/GER/Wilhelm_II_Auth.png"
+			expire = "1985.1.1"
+			ideology = Absolute_monarchy
+			traits = {
+			}
+		}
+	}
+}
